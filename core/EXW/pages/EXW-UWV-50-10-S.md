@@ -1,5 +1,5 @@
-화면명: 비플머니
-목적: 비플머니 화면이다. 원본은 `zero_webview_money_v2_view.jsp` 다.
+화면명: 비플머니 기본정보
+목적: 비플머니 기본정보 화면이다. 원본은 `zero_webview_money_v2_view.jsp` 다.
 id: EXW-UWV-50-10-S / system: EXW / 기능: 외부제공 웹뷰 > 통합웹뷰API > 비플머니 > 기본정보 / 과업: []
 
 --- 화면명세 ---

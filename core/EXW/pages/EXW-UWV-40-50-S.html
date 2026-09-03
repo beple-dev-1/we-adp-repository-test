@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>계좌 등록 완료</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/popup.css">
+</head>
+<body data-screen-id="EXW-UWV-40-50-S">
+<!-- 공유 스크립트(comPopup_v2.js·comWebkey.js)가 참조하는 전역변수.
+     hidden 이 아니라 이 블록이 출처다 — v1 과 동일하게 유지한다. -->
+<script>
+_APP_CD = "";
+</script>
+
+<form name="frm" id="frm" method="post">
+	<!-- ORG_ID · DATA 는 두 용도로 쓴다.
+	     ① 데이터 API(ajax) 요청부 — DATA 는 이 화면의 현재 봉투(selfData)다
+	     ② 화면 간 이동 전송용 — 상위 화면으로 돌아갈 때 JS 가 DATA_BACK 을 DATA 로 옮겨 담아
+	        폼 POST 한다. 이용기관 콜백으로 나갈 때는 location 이동이라 전송되지 않는다. -->
+	<input type="hidden" name="ORG_ID" id="ORG_ID" value="">
+	<input type="hidden" name="DATA"   id="DATA"   value="">
+
+	<!-- 이동용 봉투·대상. name 을 주지 않는다 — 폼 POST 에 섞이면 복귀 스택이 어긋난다 -->
+	<input type="hidden" id="DATA_CHILD"   value="">
+	<input type="hidden" id="DATA_BACK"    value="">
+	<input type="hidden" id="BACK_URL"     value="">
+	<input type="hidden" id="CANCEL_URL"   value="">
+	<input type="hidden" id="FAIL_URL"     value="">
+	<input type="hidden" id="CALLBACK_URL" value="">
+
+	<!-- 시작 스텝 분기 — R 계좌등록 / M 계좌관리 -->
+	<input type="hidden" id="TYPE_CD" value="">
+
+	<!-- 등록정보 입력란 프리필. 세트 검증을 통과하지 못하면 둘 다 공백이다.
+	     ※ 개인정보 hidden(MEMB_CD·MEMB_NM·BRT_DT·MOB_NO·PAYR_NO·CI)은 두지 않는다 —
+	       데이터 API 가 봉투로 회원을 확정하고 필요한 값은 서버에서 직접 조회한다. -->
+	<input type="hidden" id="PRE_BANK_CD" value="">
+	<input type="hidden" id="PRE_ACCT_NO" value="">
+</form>
+
+<!-- ================================================================
+     step1 — 계좌 관리 (퍼블리싱 D850a 계좌있음 / D850b 계좌없음)
+
+     헤더 타이틀 「계좌 관리」는 퍼블리싱 v1.3 에서 확정됐다 — v1.2 D850b 의
+     「거래승인번호 재설정」오기가 정정된 것이라 현행 그대로 둔다.
+     ================================================================ -->
+
+<!-- ================================================================
+     step2 — 등록정보 입력 (퍼블리싱 D854a 입력전/입력중 · D854b 입력후)
+
+     헤더 타이틀은 퍼블리싱 v1.3(2026-08-31) 에서 「계좌 등록」으로 확정됐다 —
+     v1.2 의 「본인인증」은 ARS 스텝(D855a) 문구가 남은 오기였다.
+     ================================================================ -->
+
+<!-- ================================================================
+     step3 — 계좌 인증 (1원). 퍼블리싱 「계좌인증_입력전 / 입력후」
+     ================================================================ -->
+
+<!-- ================================================================
+     step4 — ARS 인증 (퍼블리싱 D855a 본인인증_전화)
+
+     결과 조회 버튼은 퍼블리싱 v1.3(2026-08-31) 에서 수신됐다(미결 #1 해소).
+     퍼블리싱은 「인증완료」 단일 버튼이라 선구성해 뒀던 v1 형태의
+     「처음으로」(#btnArsRestart) 버튼은 걷어냈다. JS 는 #btn_complArs 를
+     id 로만 바인딩하므로 마크업 교체만으로 끝난다.
+     ================================================================ -->
+
+<!-- ================================================================
+     step5 — 등록 완료 (퍼블리싱 D856)
+     ================================================================ -->
+<div class="wrap" com-step-id="step5">
+
+	<header class="header position-sticky">
+		<div class="header__title-wrap">
+			<h1 class="page-name"><span class="blind">계좌 등록 완료</span></h1>
+		</div>
+	</header>
+
+	<main class="container-wrap js-container-wrap pdt32">
+		<section class="container end-container js-container">
+			<article class="container__body justify-spacing-def">
+				<div class="body__content">
+					<i class="icon icon--state_check-64" aria-hidden="true">계좌 등록을 완료했습니다</i>
+					<div class="desc-box">
+						<h3 class="container__headline--lv5 fw-600">계좌 등록을 완료했습니다</h3>
+					</div>
+				</div>
+			</article>
+		</section>
+
+		<section class="container-floating js-floating-container">
+			<div class="infomation infomation-box mgb24">
+				<div class="flex-column">
+					<div class="column__head">
+						<i class="icon icon--info-16"><span class="blind">안내</span></i>
+						<h5 class="container__headline container__headline--lv1">오픈뱅킹 자동이체 등록 안내</h5>
+					</div>
+					<div class="column__item">
+						<!-- 퍼블리싱 v1.3 (2026-08-31) — 줄바꿈 <br> 제거, 자연 개행 -->
+						<p class="info__text--lv1 bullet-text">
+							금융기관에서 자동이체 등록 안내 문자를 발송할 수 있습니다.
+							고객님의 요청 없이 출금되지 않으니 안심하고 이용해 주세요.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="floating__box button-box-spacing">
+				<a href="#none" class="button button-xl button--lv1" id="btnComplete" aria-label="확인">
+					<span>확인</span>
+				</a>
+			</div>
+		</section>
+	</main>
+</div>
+
+<!-- ================================================================
+     팝업 1 — 계좌 설정 (퍼블리싱 D850c). 주계좌 설정 / 계좌 삭제
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="account-setting" style="display:none;">
+	<section class="popup-container popup--bottom">
+		<header class="popup-container__header">
+			<h3 class="container__headline container__headline--lv4" id="setAcctTitle"></h3>
+			<div class="popup-button">
+				<button type="button" class="popup-button--close js-popup-close" role="button" aria-label="팝업 창 닫기 버튼">
+					<i class="icon icon--close-32">팝업 창 닫기</i>
+				</button>
+			</div>
+		</header>
+		<div class="popup-container__body justify-spacing-def">
+			<section class="body__content">
+				<ul class="pdb24">
+					<li>
+						<button type="button" id="btnSetMainAcct"
+						        class="flex-row align-center height-48 fs-16 ta-left js-popup-close">
+							<span class="grow-y">주계좌 설정</span>
+						</button>
+					</li>
+					<li>
+						<button type="button" id="btnDelAcct"
+						        class="flex-row align-center height-48 fs-16 ta-left js-popup-close">
+							<span class="grow-y">계좌 삭제</span>
+						</button>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</section>
+</div>
+
+<!-- ================================================================
+     팝업 2 — 금융기관 선택 (퍼블리싱 D853). 증권사 없음
+
+     데이터 계약 (Phase 3 은행 추천이 이 집합을 노출 필터로 쓴다)
+       · 컨테이너 : ul#bank_only
+       · 항목     : li > a.a_bank_list[bank_cd][bank_nm]
+     Phase 2 가 확정한 계약이며 D853 마크업으로 감싸면서 그대로 유지했다.
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="bank-select" style="display:none;">
+	<section class="popup-container popup--bottom bank-select">
+		<header class="popup-container__header">
+			<h3 class="container__headline container__headline--lv4">금융기관 선택</h3>
+			<div class="popup-button">
+				<button type="button" class="popup-button--close js-popup-close" role="button" aria-label="팝업 창 닫기 버튼">
+					<i class="icon icon--close-32">팝업 창 닫기</i>
+				</button>
+			</div>
+		</header>
+
+		<section class="popup-container__body">
+			<div class="flex-column">
+				<div class="form-box js-form-box scroll-box">
+					<div class="scroll-box--view">
+						<ul class="bank-select__list" id="bank_only">
+
+							<li class="bank-select__item">
+								<a href="#none" class="button a_bank_list js-popup-close" role="button"
+								   bank_cd=""
+								   bank_nm="">
+									<img src="../assets/image/bank/ico_bank_004.png" alt=""
+									     onerror="this.style.visibility='hidden';">
+									<span></span>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+</div>
+
+<!-- ================================================================
+     팝업 3 — 약관동의 (퍼블리싱 BM100b 체크박스형. BM101 드롭박스형은 미사용)
+
+     퍼블리싱은 기능 단위로 쪼개 그려서 배경이 없는 화면처럼 보이지만, 실제로는
+     <b>호출한 화면(step2 등록정보)이 배경으로 남고 그 위에 시트가 올라온다.</b>
+     금융기관 선택 팝업과 같은 규칙이다.
+
+     열기만 화면 JS 가 한다 — 약관 조회(clause_000001_v1) 응답을 보고 열지 말지가
+     갈리므로 js-popup-open 규약으로는 조건을 걸 수 없다. 닫기는 공통이 처리한다
+     (money_withdraw_v2 의 정보확인 팝업과 같은 사유).
+
+     ★ 「동의하기」에는 js-popup-close 를 붙이지 않는다 — 필수 약관 미체크로 dis 상태일 때도
+       공통 핸들러는 조건을 못 보고 팝업을 닫아 버린다. 닫기는 화면 JS 가 통과 시점에 한다.
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="terms-agree" style="display:none;">
+	<section class="popup-container popup--bottom popup-cert--agree">
+		<header class="popup-container__header">
+			<h3 class="container__headline container__headline--lv4">
+				계좌를 등록하려면<br>
+				약관 동의가 필요해요
+			</h3>
+			<div class="popup-button">
+				<button type="button" class="popup-button--close js-popup-close" role="button"
+				        aria-label="팝업 창 닫기 버튼">
+					<i class="icon icon--close-32">팝업 창 닫기</i>
+				</button>
+			</div>
+		</header>
+
+		<section class="popup-container__body cert--agree__body">
+			<div class="flex-column gap-16">
+				<div class="column__head agree-head">
+					<label class="input-type--check flex-row">
+						<input type="checkbox" id="allAgr"><span>전체 동의하기</span>
+					</label>
+				</div>
+
+				<div class="form-box js-form-box scroll-box">
+					<div class="scroll-box--view form__item-wrap" id="div_cls"></div>
+				</div>
+			</div>
+
+			<div class="flex-row justify-spacing-btn pdt32">
+				<button type="button" class="button button-xl button--lv1 dis" id="btnAgree">
+					<span>동의하기</span>
+				</button>
+			</div>
+		</section>
+	</section>
+</div>
+
+<!-- ================================================================
+     팝업 4 — 약관 상세 (퍼블리싱 D852). full 팝업
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="popup-terms-sv" style="display:none;">
+	<section class="popup-container popup--full popup-terms">
+		<header class="header popup-container__header position-sticky">
+			<div class="header__title-wrap">
+				<h1 class="page-name">
+					<span class="ellipsis-line--1">약관상세</span>
+				</h1>
+			</div>
+			<nav class="header__navi">
+				<a href="#none" class="header__btn btn-close js-popup-close">
+					<span class="blind">페이지 닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<div class="terms">
+			<header class="terms-header justify-spacing-def">
+				<h2 class="flex-row">
+					<p class="page-title" id="detail_header"></p>
+				</h2>
+			</header>
+
+			<!-- 약관 본문은 tb_clause.ctnt 의 HTML 원문이다. 감싸개를 두지 않고
+			     container(js-container) 직속으로 심는다.
+
+			     계약 — DB 본문은 퍼블리싱 Ably-Point v1.4 `html/약관` 의
+			     `section.container.js-container` <b>안쪽 전체</b>다.
+			     조문 하나뿐인 약관은 section.container__body 한 덩이지만,
+			     오픈뱅킹 참여은행 약관(062091)처럼 은행 47곳으로 나뉜 약관은
+			     div.container__header + section.container__body 쌍이 반복된다.
+			     그래서 주입 지점은 container__body 가 아니라 container 여야 한다.
+
+			     예전에는 terms__item + info__text--lv2 로 한 번 더 감쌌고 그것이
+			     2026-08-26 「약관 상세 본문 깨짐」의 화면측 원인이었다. 기전은 이렇다 —
+			     info__text--lv2 에 display:inherit 이 있어서, 부모 terms__item 의
+			     display:flex 를 그대로 물려받는다. flex-direction 은 상속되지 않으므로
+			     본문 컨테이너가 row 가 되고 약관 블록이 가로로 늘어선다. 글자크기·색이
+			     덮어써지는 것은 부수 효과다.
+
+			     ※ 간격을 주는 CSS 는 `.terms .container__body`(flex column + gap)와
+			       `.terms .container__body .flex-column`(후손 결합자)이다. container__body
+			       를 빠뜨리면 문단 간격이 사라진다.
+			     ※ `js-container` 는 잡는 코드가 없다(common-ui.js 는 `js-container-wrap` 만
+			       쓴다). 퍼블리싱 마크업 대조용으로 남긴다. -->
+			<section class="container js-container justify-spacing-def" id="detail_ctnt"></section>
+		</div>
+	</section>
+</div>
+
+<!-- ================================================================
+     팝업 5 — ARS 인증 전화 안내 (퍼블리싱 D855a 팝업)
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="popup-phone--info" style="display:none;">
+	<section class="popup-container popup--bottom phone--info">
+		<div class="popup-container__header">
+			<h2 class="headline headline--lv4">인증 전화가 오지 않나요?</h2>
+		</div>
+
+		<div class="popup-container__body justify-spacing-def">
+			<section class="body__content">
+				<ul class="list-bullet">
+					<li>ARS 인증 전화번호(1670-0136)가 수신 차단 목록에 등록되어 있는지 확인해 주세요.</li>
+					<li>휴대폰이 착신 정지 상태가 아닌지 확인해 보시고, 본인 명의의 휴대폰을 사용 중인지도 점검해 보세요.</li>
+				</ul>
+			</section>
+		</div>
+
+		<section class="body__button--box button-box-spacing">
+			<button type="button" class="button button-xl button--lv1 col--block js-popup-close">
+				<span>확인</span>
+			</button>
+		</section>
+	</section>
+</div>
+
+<!-- ================================================================
+     로딩 오버레이 — ARS 결과확인 경로 전용 (v1 승계)
+
+     프레임워크 인디케이터(ComUtil.startLoading)는 DOM 을 막지 않는다. 화면 전체를
+     가리는 것은 이것뿐이라 외부 발신이 나가는 구간에 필요하다.
+     ================================================================ -->
+<div class="loading" id="loading_bar" style="display:none;">
+	<div class="loading_inner">
+		<div class="ui-loader loader-blk">
+			<svg viewBox="22 22 44 44" class="multiColor-loader">
+				<circle cx="44" cy="44" r="20.2" class="loader-circle loader-circle-animation"></circle>
+			</svg>
+		</div>
+	</div>
+</div>
+
+<!-- ================================================================
+     템플릿 — 조립은 화면 JS 가 하고 이스케이프는 uf_esc 가 한다 (규약 §9-3)
+     ================================================================ -->
+
+<!-- 계좌 목록 항목 (퍼블리싱 D850a). 🔴 계좌번호 평문을 심지 않는다 -->
+<script type="text/template" id="tmpl_acct_item">
+	<div class="list {{ mainClass }}">
+		<button type="button" class="content-box js-popup-open" data-modal="account-setting" data-idx="{{ idx }}">
+			<div class="img img-44">
+				<!-- 아이콘이 없는 기관(증권사 등)은 깨진 이미지 대신 빈 자리로 둔다 -->
+				<img src="../assets/image/bank/ico_bank_{{ bankCd }}.png" alt="은행 로고"
+				     onerror="this.style.visibility='hidden';"/>
+			</div>
+			<div class="flex-column">
+				<div class="account-item__name">
+					<p class="info__text--lv2">
+						<span class="ellipsis-line--1">{{ bankNm }}</span>
+						<span>({{ tail4 }})</span>
+					</p>
+					{{ mainFlag }}
+				</div>
+			</div>
+			<i class="icon icon--more-24">계좌 설정</i>
+		</button>
+	</div>
+</script>
+
+<!-- 은행 추천 항목 (퍼블리싱 D854a quick-list--bank) -->
+<script type="text/template" id="tmpl_bank_suggest">
+	<li class="quick-box__item">
+		<button type="button" class="button js-bank-suggest" data-bank-cd="{{ bankCd }}" data-bank-nm="{{ bankNm }}">
+			<img src="../assets/image/bank/ico_bank_{{ bankCd }}.png" alt=""
+			     onerror="this.style.visibility='hidden';">
+			<span>{{ bankNm }}</span>
+		</button>
+	</li>
+</script>
+
+<!-- 약관 항목 (퍼블리싱 BM100b). cls_cd 속성은 선택약관(062093) 판정에 쓴다 -->
+<script type="text/template" id="tmpl_cls_item">
+	<div class="input-type--check flex-row">
+		<label class="grow-y flex-row">
+			<input type="checkbox" name="clsChk" class="js-cls-chk"
+			       cls_cd="{{ clsCd }}" data-req="{{ reqYn }}">
+			<span>({{ reqTxt }}) {{ title }}</span>
+		</label>
+		<a href="#none" class="grow-n js-popup-open js-cls-detail" data-modal="popup-terms-sv" data-cls-cd="{{ clsCd }}">
+			<span class="blind">약관 상세보기</span>
+			<i class="icon icon--arrow-16"></i>
+		</a>
+	</div>
+</script>
+</body>
+</html>

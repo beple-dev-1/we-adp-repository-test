@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>계좌관리</title>
+  <title>계좌 등록</title>
   <link rel="stylesheet" href="../assets/css/reset.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/popup.css">
 </head>
-<body data-screen-id="EXW-UWV-40-S">
+<body data-screen-id="EXW-UWV-40-20-S">
 <!-- 공유 스크립트(comPopup_v2.js·comWebkey.js)가 참조하는 전역변수.
      hidden 이 아니라 이 블록이 출처다 — v1 과 동일하게 유지한다. -->
 <script>
@@ -48,110 +48,6 @@ _APP_CD = "";
      헤더 타이틀 「계좌 관리」는 퍼블리싱 v1.3 에서 확정됐다 — v1.2 D850b 의
      「거래승인번호 재설정」오기가 정정된 것이라 현행 그대로 둔다.
      ================================================================ -->
-<div class="wrap" com-step-id="step1">
-
-	<header class="header position-sticky">
-		<div class="header__title-wrap">
-			<h1 class="page-name"><span>계좌 관리</span></h1>
-		</div>
-		<nav class="header__navi">
-			<a href="#none" class="header__btn btn-close js-btn-close">
-				<span class="blind">닫기</span>
-			</a>
-		</nav>
-	</header>
-
-	<main class="container-wrap js-container-wrap">
-		<div class="account-status">
-
-			<!-- 계좌 있음 -->
-			<section class="container js-container justify-spacing-def" id="acctHasWrap" style="display: none;">
-				<article class="container__body">
-					<div class="body__content account-status-list">
-						<!-- 🔴 계좌번호 평문을 DOM 에 심지 않는다 — 항목은 data-idx 로 배열 위치만
-						     가리키고 실제 값은 화면 JS 가 배열로 들고 있는다(형제 v2 화면과 동일). -->
-						<div class="account-status__group" id="acctListWrap"><!-- sample:begin -->
-	<div class="list list--main">
-		<button type="button" class="content-box js-popup-open" data-modal="account-setting" data-idx="0">
-			<div class="img img-44">
-				<!-- 아이콘이 없는 기관(증권사 등)은 깨진 이미지 대신 빈 자리로 둔다 -->
-				<img src="../assets/image/bank/ico_bank_004.png" alt="은행 로고"
-				     onerror="this.style.visibility='hidden';"/>
-			</div>
-			<div class="flex-column">
-				<div class="account-item__name">
-					<p class="info__text--lv2">
-						<span class="ellipsis-line--1">국민은행</span>
-						<span>(1234)</span>
-					</p>
-					<span class="badge">주계좌</span>
-				</div>
-			</div>
-			<i class="icon icon--more-24">계좌 설정</i>
-		</button>
-	</div>
-
-	<div class="list ">
-		<button type="button" class="content-box js-popup-open" data-modal="account-setting" data-idx="1">
-			<div class="img img-44">
-				<!-- 아이콘이 없는 기관(증권사 등)은 깨진 이미지 대신 빈 자리로 둔다 -->
-				<img src="../assets/image/bank/ico_bank_088.png" alt="은행 로고"
-				     onerror="this.style.visibility='hidden';"/>
-			</div>
-			<div class="flex-column">
-				<div class="account-item__name">
-					<p class="info__text--lv2">
-						<span class="ellipsis-line--1">신한은행</span>
-						<span>(5678)</span>
-					</p>
-					
-				</div>
-			</div>
-			<i class="icon icon--more-24">계좌 설정</i>
-		</button>
-	</div>
-<!-- sample:end --></div>
-					</div>
-				</article>
-			</section>
-
-			<!-- 계좌 없음 -->
-			<section class="container end-container" id="acctNoneWrap" style="display: none;">
-				<article class="container__body">
-					<div class="body__content">
-						<i class="icon icon--document2-64" aria-hidden="true">등록 계좌 없음 아이콘</i>
-						<div class="desc-box">
-							<p class="info__text--lv2 fc-999">등록된 계좌가 없습니다</p>
-						</div>
-					</div>
-				</article>
-			</section>
-
-			<section class="container-floating js-floating-container">
-				<div class="infomation infomation-box mgb24">
-					<div class="flex-column">
-						<div class="column__head">
-							<i class="icon icon--info-16"><span class="blind">안내</span></i>
-							<h5 class="container__headline container__headline--lv1">계좌 사용 안내</h5>
-						</div>
-						<div class="column__item">
-							<p class="info__text--lv1 bullet-text">
-								비플머니 충전·출금을 위해 ㈜비즈플레이가 계좌
-								정보를 수집·이용하며, 계좌 인증 및 출금이체는
-								㈜비즈플레이 명의로 처리됩니다
-							</p>
-						</div>
-					</div>
-				</div>
-				<article class="floating__box button-box-spacing">
-					<a href="#none" class="button button-xl button--lv1" id="btnAcctAdd">
-						<span>계좌 등록하기</span>
-					</a>
-				</article>
-			</section>
-		</div>
-	</main>
-</div>
 
 <!-- ================================================================
      step2 — 등록정보 입력 (퍼블리싱 D854a 입력전/입력중 · D854b 입력후)
@@ -159,7 +55,7 @@ _APP_CD = "";
      헤더 타이틀은 퍼블리싱 v1.3(2026-08-31) 에서 「계좌 등록」으로 확정됐다 —
      v1.2 의 「본인인증」은 ARS 스텝(D855a) 문구가 남은 오기였다.
      ================================================================ -->
-<div class="wrap" com-step-id="step2" style="display: none;">
+<div class="wrap" com-step-id="step2">
 
 	<header class="header position-sticky">
 		<nav class="header__navi">
@@ -255,87 +151,6 @@ _APP_CD = "";
 <!-- ================================================================
      step3 — 계좌 인증 (1원). 퍼블리싱 「계좌인증_입력전 / 입력후」
      ================================================================ -->
-<div class="wrap" com-step-id="step3" style="display: none;">
-
-	<header class="header position-sticky">
-		<nav class="header__navi">
-			<a href="#none" class="header__btn btn-back js-btn-back">
-				<span class="blind">이전페이지로</span>
-			</a>
-		</nav>
-		<div class="header__title-wrap">
-			<h1 class="page-name"><span>계좌 인증</span></h1>
-		</div>
-		<nav class="header__navi">
-			<a href="#none" class="header__btn btn-close js-btn-close">
-				<span class="blind">닫기</span>
-			</a>
-		</nav>
-	</header>
-
-	<main class="container-wrap js-container-wrap">
-		<div class="account-status">
-
-			<section class="page-header justify-spacing-def box-padding--type2_top">
-				<article class="page-header__content">
-					<div class="page-header__headline-wrap">
-						<h2 class="flex-column">
-							<p class="container__headline container__headline--lv4 display-block">
-								<strong class="fc-primary" id="certAcctText"></strong><br>
-								해당 계좌로 1원을 입금했습니다
-							</p>
-						</h2>
-					</div>
-
-					<div class="flex-column mgt16">
-						<p class="page__description fc-666">
-							입금자명 뒤 숫자 3자리를 입력해 주세요.
-						</p>
-					</div>
-				</article>
-			</section>
-
-			<section class="container js-container">
-				<article class="container__body">
-					<div class="body__content account-cert">
-						<div class="pd-lr50">
-							<img src="../assets/image/contents/acc_cert-sampleimg.png"
-							     alt="계좌인증 예시 이미지 // 입금자명 : 비플*** / 입금액 : 1원">
-						</div>
-
-						<!-- 3칸 입력. 퍼블리싱 인라인 스크립트를 화면 JS 로 옮겨 스코프를 좁혔다
-						     (원본은 $(document) 전역 click 바인딩이라 다른 스텝까지 건드린다). -->
-						<div class="cert_input-wrap js-cert-input">
-							<div class="cert_input-item on">
-								<input type="tel" maxlength="1">
-							</div>
-							<div class="cert_input-item">
-								<input type="tel" maxlength="1">
-							</div>
-							<div class="cert_input-item">
-								<input type="tel" maxlength="1">
-							</div>
-						</div>
-
-						<div class="input-button-wrap">
-							<a href="#none" class="button button-small button--lv5 js-num-input">
-								<span>숫자 입력하기</span>
-							</a>
-						</div>
-					</div>
-				</article>
-			</section>
-		</div>
-
-		<div class="container-floating js-floating-container">
-			<article class="floating__box button-box-spacing">
-				<a href="#none" class="button button-xl button--lv1 dis" id="btnCertNext">
-					<span>ARS 인증 받기</span>
-				</a>
-			</article>
-		</div>
-	</main>
-</div>
 
 <!-- ================================================================
      step4 — ARS 인증 (퍼블리싱 D855a 본인인증_전화)
@@ -345,104 +160,10 @@ _APP_CD = "";
      「처음으로」(#btnArsRestart) 버튼은 걷어냈다. JS 는 #btn_complArs 를
      id 로만 바인딩하므로 마크업 교체만으로 끝난다.
      ================================================================ -->
-<div class="wrap" com-step-id="step4" style="display: none;">
-
-	<header class="header position-sticky">
-		<div class="header__title-wrap">
-			<h1 class="page-name"><span>본인인증</span></h1>
-		</div>
-		<nav class="header__navi">
-			<a href="#none" class="header__btn btn-close js-btn-close">
-				<span class="blind">닫기</span>
-			</a>
-		</nav>
-	</header>
-
-	<main class="container-wrap js-container-wrap">
-		<section class="cert-container ars">
-			<section class="animation-container animation-pulse">
-				<div class="phone-icon"></div>
-				<div class="dots-container">
-					<div class="dot"></div>
-					<div class="dot"></div>
-					<div class="dot"></div>
-					<div class="dot"></div>
-					<div class="dot"></div>
-					<div class="dot"></div>
-					<div class="dot"></div>
-					<div class="dot"></div>
-				</div>
-			</section>
-			<div class="cert-container__content">
-				<p class="cert-text">
-					인증 전화를 받고<br>
-					생년월일 6자리를 입력해 주세요
-				</p>
-
-				<p class="btn-box">
-					<button type="button" class="ars-info-button js-popup-open" data-modal="popup-phone--info">인증 전화가 오지 않나요?</button>
-				</p>
-			</div>
-		</section>
-
-		<!-- 퍼블리싱 v1.3 D855a 본인인증_전화 (2026-08-31 추가분) -->
-		<div class="container-floating js-floating-container">
-			<article class="floating__box button-box-spacing">
-				<a href="#none" class="button button-xl button--lv1" id="btn_complArs">
-					<span>인증완료</span>
-				</a>
-			</article>
-		</div>
-	</main>
-</div>
 
 <!-- ================================================================
      step5 — 등록 완료 (퍼블리싱 D856)
      ================================================================ -->
-<div class="wrap" com-step-id="step5" style="display: none;">
-
-	<header class="header position-sticky">
-		<div class="header__title-wrap">
-			<h1 class="page-name"><span class="blind">계좌 등록 완료</span></h1>
-		</div>
-	</header>
-
-	<main class="container-wrap js-container-wrap pdt32">
-		<section class="container end-container js-container">
-			<article class="container__body justify-spacing-def">
-				<div class="body__content">
-					<i class="icon icon--state_check-64" aria-hidden="true">계좌 등록을 완료했습니다</i>
-					<div class="desc-box">
-						<h3 class="container__headline--lv5 fw-600">계좌 등록을 완료했습니다</h3>
-					</div>
-				</div>
-			</article>
-		</section>
-
-		<section class="container-floating js-floating-container">
-			<div class="infomation infomation-box mgb24">
-				<div class="flex-column">
-					<div class="column__head">
-						<i class="icon icon--info-16"><span class="blind">안내</span></i>
-						<h5 class="container__headline container__headline--lv1">오픈뱅킹 자동이체 등록 안내</h5>
-					</div>
-					<div class="column__item">
-						<!-- 퍼블리싱 v1.3 (2026-08-31) — 줄바꿈 <br> 제거, 자연 개행 -->
-						<p class="info__text--lv1 bullet-text">
-							금융기관에서 자동이체 등록 안내 문자를 발송할 수 있습니다.
-							고객님의 요청 없이 출금되지 않으니 안심하고 이용해 주세요.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="floating__box button-box-spacing">
-				<a href="#none" class="button button-xl button--lv1" id="btnComplete" aria-label="확인">
-					<span>확인</span>
-				</a>
-			</div>
-		</section>
-	</main>
-</div>
 
 <!-- ================================================================
      팝업 1 — 계좌 설정 (퍼블리싱 D850c). 주계좌 설정 / 계좌 삭제
