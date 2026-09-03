@@ -6,6 +6,12 @@
 - HIT: 힛플러스
 - HIT/ACCT: 계좌관리
 - HIT/ACCT/10: 계좌관리(개인)
+- HIT/ACCT/10/10: 계좌 관리
+- HIT/ACCT/10/20: 계좌 선택
+- HIT/ACCT/10/30: 계좌번호 입력
+- HIT/ACCT/10/40: 계좌 등록 완료
+- HIT/ACCT/10/50: 오픈뱅킹 약관 동의
+- HIT/ACCT/10/60: 오픈뱅킹 금융정보조회 약관
 - HIT/COMN: 공통
 - HIT/COMN/10: 약관
 - HIT/COMN/10/10: 엔터프라이즈 - 약관 목록조회
