@@ -1,8 +1,82 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head><meta charset="utf-8"><title>확인</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>거래승인번호 확인</title>
+  <link rel="stylesheet" href="../assets/css/welfare_reset.css">
+  <link rel="stylesheet" href="../assets/css/welfare.css">
+  <link rel="stylesheet" href="../assets/css/beple_popup.css">
+</head>
 <body data-screen-id="EXW-UWV-30-20-S">
-<h1>확인</h1>
-<p>zero_webview_password_confirm_v1_view.jsp — 3차에서 채운다.</p>
+<!-- [D] 보안키패드 사용 시 "custom-transkey" 추가 -->
+	<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<nav class="header__navi">
+				<a id="btn_close" class="header__btn btn-back">
+					<span class="blind">페이지 닫기</span>
+				</a>
+			</nav>
+
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span></span></h1>
+			</div>
+		</header>
+
+		<main class="container-wrap">
+			<div class="online-payment--cert">
+				<section class="page-header justify-spacing-def">
+					<article class="page-header__content flex-column">
+						<div class="page-header__headline-wrap">
+							<h2 class="flex-row">
+								<p class="page__headline page__headline--lv1" id="guide_txt">
+									거래승인번호 <br> 6자리 비밀번호를 입력해 주세요
+								</p>
+							</h2>
+						</div>
+					</article>
+				</section>
+
+				<!-- 컨테이너 -->
+				<section class="container cert__view js-container justify-spacing-def">
+					<article class="container__body">
+						<div class="body__content">
+							<input type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+							<input type="hidden" name="pwd2" id="pwd2" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+
+							<div id="tac_num" class="cert__view--input">
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+							</div>
+						</div>
+					</article>
+				</section>
+
+				<section class="container" style="display: ;">
+					<article class="button-box-spacing pdt12" style="display: none;">
+						<a href="#none" class="button button-xl button--lv1 dis"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+							<span>확인</span>
+						</a>
+					</article>
+				</section>
+			</div>
+		</main>
+	</div>
+    <!-- 로딩 -->
+    <div class="loading">
+        <div class="loading_inner">
+            <div class="ui-loader loader-blk">
+                <svg viewBox="22 22 44 44" class="multiColor-loader">
+                    <circle cx="44" cy="44" r="20.2" class="loader-circle loader-circle-animation"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- //로딩 -->
 </body>
 </html>

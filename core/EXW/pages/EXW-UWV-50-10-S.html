@@ -1,8 +1,490 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head><meta charset="utf-8"><title>기본정보</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플머니</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/popup.css">
+</head>
 <body data-screen-id="EXW-UWV-50-10-S">
-<h1>기본정보</h1>
-<p>zero_webview_money_v2_view.jsp — 3차에서 채운다.</p>
+<!-- 하위 화면 이동용 폼 — 요청부는 전 화면 ORG_ID + DATA 로 통일돼 있다 -->
+<form name="frm" id="frm" method="post">
+	<input type="hidden" id="ORG_ID" name="ORG_ID" value="">
+	<input type="hidden" id="DATA"   name="DATA"   value="">
+
+	<!-- 이하 화면 내부 참조용 (전송 대상 아님 — name 을 두지 않는다)
+	     회원 식별자(CI·MEMB_CD)는 내리지 않는다 — ajax 회원 식별은 봉투(DATA)가 한다 (규약 §9-5) -->
+	<input type="hidden" id="APP_CD"     value="">
+	<input type="hidden" id="CANCEL_URL" value="">
+	<input type="hidden" id="FAIL_URL"   value="">
+	<input type="hidden" id="RES_CD"     value="">
+	<input type="hidden" id="RES_MSG"    value="">
+</form>
+
+	<div class="wrap">
+		<!-- 헤더 -->
+		<!-- 퍼블리싱 v1.2(BM300d_비플머니-메인) 기준 — 왼쪽 닫기 하나다.
+		     v1 은 이전페이지로 + 오른쪽 이용안내였고, v1.2 에서 이용안내가 주석 처리됐다.
+		     동작은 그대로다 — CANCEL_URL 로 복귀한다(웹뷰는 이용기관 앱 안에서 뜨므로
+		     "닫기"와 "뒤로가기"가 같은 의미다).
+		     v1.2 안에서도 (내역없음)·A-1(팝업) 파일의 헤더가 서로 달라 본체를 정본으로 삼았다. -->
+		<header class="header position-sticky">
+			<nav class="header__navi">
+				<a href="#none" class="header__btn btn-close" id="btnClose">
+					<span class="blind">닫기</span>
+				</a>
+			</nav>
+
+			<!-- 헤더 타이틀(페이지 이름) - 어떤 경우에도 header__title-wrap 삭제 금지. -->
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span>비플머니</span></h1>
+			</div>
+		</header>
+
+		<main class="container-wrap js-container-wrap">
+			<div class="container beple-money">
+				<!-- 페이지 헤더 -->
+				<section class="page-header justify-spacing-def">
+					<div class="wallet">
+						<div class="wallet-content">
+							<div class="wallet__title">
+								<i class="display-block width-20"><img src="../assets/image/icons/icon_money-20.png" alt=""></i>
+								<span class="title-text">비플머니</span>
+							</div>
+							<div class="wallet__balance">
+								<!-- 잔액 — zero_webview_money_v1_r001 의 MNY_CUR_PRICE -->
+								<p class="balance-text"><strong id="cur_price">128,400</strong>원</p>
+								<!-- BM303a 상세 팝업 — 여는 동작은 common-ui.js 가 맡는다(js-popup-open + data-modal).
+								     화면 JS 는 같은 버튼에서 데이터 조회만 붙인다. -->
+								<button type="button" id="btnBalanceDetail" class="js-popup-open" data-modal="popup-beple-money-detail"><i class="icon icon--arrow-24"></i></button>
+							</div>
+						</div>
+					</div>
+					<div class="button-wrap mgt24">
+						<button type="button" class="button button--narrow button-large button--lv5_line" id="btnWithdraw"><span>출금하기</span></button>
+						<button type="button" class="button button--wide button-large button--lv1" id="btnCharge"><span>충전하기</span></button>
+					</div>
+					<!-- 소멸예정 — 금액 0 이면 화면 JS 가 숨긴다 -->
+					<button class="notification mgt20" id="btnExpire">
+						<i class="noti-icon"><img src="../assets/image/icons/icon_noti-16.png" alt=""></i>
+						<p class="notification-text"><span><strong id="tot_expr_amt">5,000</strong>원</span>소멸예정 비플머니를 확인하세요.</p>
+						<i class="icon icon--arrow-16"></i>
+					</button>
+				</section>
+
+				<hr class="divide divide-h10 mgt32">
+
+				<!-- 컨테이너 -->
+				<section class="container__body js-container">
+					<!-- 바디 헤더 -->
+					<div class="body__header">
+						<div class="pay-history__header filter-container justify-spacing-def">
+							<div class="filter__body">
+								<!-- [D] 설정되면 active 클래스 추가 -->
+								<button class="button button-small button--lv5 radius-lv5 active js-popup-open"
+						        data-modal="popup-history--filter" id="btnFilterPeriod">
+									<span id="filterPeriodText">3개월</span>
+									<i class="icon	icon--arrow-16 pointer-bottom"></i>
+								</button>
+								<button class="button button-small button--lv5 radius-lv5 js-popup-open"
+						        data-modal="popup-history--filter" id="btnFilterType">
+									<span id="filterTypeText">이용구분</span>
+									<i class="icon	icon--arrow-16 pointer-bottom"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- 바디 컨텐츠 — 목록 데이터는 별도 조회로 주입한다.
+					     연도 묶음은 화면 JS 가 아래 tmpl_history_year 로 그린다. -->
+					<article class="pay-history" id="historyWrap">
+						<section class="body__content pay-history__body">
+							<div class="pay-history__wrap" id="historyList"><!-- sample:begin -->
+	<section class="pay-history__year">
+		<div class="body__header justify-spacing-def">
+			<h4 class="container__headline container__headline--lv1">2026</h4>
+		</div>
+		<div class="body__content justify-spacing-def">
+	<section class="flex-column">
+		<div class="column__head">
+			<h5 class="container__headline container__headline--lv1 fw-600">9월 2일 화요일</h5>
+		</div>
+		
+	<div class="column__item item--minus">
+		<a href="#none" class="flex-column" data-trx-dt="20260902" data-trx-seq="1">
+			<div class="item__header">
+				<p class="info__text--lv2 item__title ellipsis-line--1">스타벅스 역삼점</p>
+				<p class="info__text--lv2 item__price"><strong>4,500</strong>원</p>
+			</div>
+			<div class="item__details">
+				<div class="status">
+					<p class="info__text--lv1 status__item">14:22</p>
+					<p class="info__text--lv1 status__item status__cancel">취소</p>
+				</div>
+				<p class="info__text--lv1">비플머니 결제</p>
+			</div>
+		</a>
+	</div>
+
+	<div class="column__item item--plus">
+		<a href="#none" class="flex-column" data-trx-dt="20260902" data-trx-seq="2">
+			<div class="item__header">
+				<p class="info__text--lv2 item__title ellipsis-line--1">비플머니 충전</p>
+				<p class="info__text--lv2 item__price"><strong>50,000</strong>원</p>
+			</div>
+			<div class="item__details">
+				<div class="status">
+					<p class="info__text--lv1 status__item">09:10</p>
+					<p class="info__text--lv1 status__item status__cancel">취소</p>
+				</div>
+				<p class="info__text--lv1">국민은행 (1234)</p>
+			</div>
+		</a>
+	</div>
+
+	<div class="column__item item--cancel">
+		<a href="#none" class="flex-column" data-trx-dt="20260902" data-trx-seq="3">
+			<div class="item__header">
+				<p class="info__text--lv2 item__title ellipsis-line--1">GS25 삼성점</p>
+				<p class="info__text--lv2 item__price"><strong>3,200</strong>원</p>
+			</div>
+			<div class="item__details">
+				<div class="status">
+					<p class="info__text--lv1 status__item">08:41</p>
+					<p class="info__text--lv1 status__item status__cancel">취소</p>
+				</div>
+				<p class="info__text--lv1">비플머니 결제</p>
+			</div>
+		</a>
+	</div>
+
+	</section>
+</div>
+	</section>
+<!-- sample:end --></div>
+						</section>
+					</article>
+				</section>
+
+				<!-- 이용내역 없음 -->
+				<section class="body__content pay-history__body--none" id="historyNone" style="display:none;">
+					<i class="icon icon--document2-64" aria-hidden="true">조회 결과가 없습니다</i>
+					<div class="desc-box">
+						<p class="info__text--lv2">
+							조회 결과가 없습니다
+						</p>
+					</div>
+				</section>
+			</div>
+		</main>
+	</div>
+
+<!-- ================================================================
+     조회 필터 팝업 — 기간 + 이용구분
+
+     퍼블리싱은 상태별로 파일이 4개(선택 전·기간설정·월별·기간초과)지만
+     실물은 같은 팝업이고 차이가 3줄뿐이다. 마크업 1벌에 클래스 토글로 처리한다.
+       기간 버튼 active
+       .date-picker--disabled  기간설정 미선택 (기본)
+       .date-picker--month     월별 선택
+       .date-picker--error     기간 초과
+
+     열기·닫기·딤클릭·body 스크롤 잠금은 common-ui.js 의 activeModalHandler 가 처리한다
+     (js-popup-open + data-modal 규약). comPopup_v2.js 는 자기가 생성하는
+     alert·confirm 만 다루므로 임의 마크업의 js-popup-close 를 잡지 않는다.
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="popup-history--filter" id="filterPopup" style="display:none;">
+	<section class="popup-container popup--bottom popup--filter">
+		<header class="popup-container__header">
+			<div class="popup-button">
+				<button type="button" class="popup-button--close js-popup-close" role="button" aria-label="팝업 창 닫기 버튼">
+					<i class="icon icon--close-32">팝업 창 닫기</i>
+				</button>
+			</div>
+		</header>
+
+		<div class="popup-container__body justify-spacing-def">
+			<section class="body__content">
+				<!-- 기간 -->
+				<div class="flex-column">
+					<div class="column__head">
+						<h4 class="container__headline container__headline--lv2">기간</h4>
+					</div>
+					<div class="column__item filter-container">
+						<div class="filter__body" id="filterPeriodBox">
+							<button class="button button-small button--lv5 radius-lv5" data-period="1"><span>1개월</span></button>
+							<button class="button button-small button--lv5 radius-lv5 active" data-period="3"><span>3개월</span></button>
+							<button class="button button-small button--lv5 radius-lv5" data-period="M"><span>월별</span></button>
+							<button class="button button-small button--lv5 radius-lv5" data-period="D"><span>기간설정</span></button>
+						</div>
+					</div>
+
+					<!-- 데이트 피커 -->
+					<div class="column__item date-picker date-picker--disabled" id="datePickerBox">
+						<div class="date-picker__wrap">
+							<div class="date date--before">
+								<button type="button" class="date-button">
+									<input type="tel" id="pickStartDt" value="" readonly>
+									<i class="icon icon--calendar-24"></i>
+								</button>
+							</div>
+							<span class="dash"></span>
+							<div class="date date--before">
+								<button type="button" class="date-button">
+									<input type="tel" id="pickEndDt" value="" readonly>
+									<i class="icon icon--calendar-24"></i>
+								</button>
+							</div>
+						</div>
+						<!-- ComDatePick 의 alertMsg 대상이다 — 기간이 dateDiff 를 넘으면 여기에 문구가 들어간다 -->
+						<p class="message fc-red" id="pickErrMsg">최대 1년 단위로 선택할 수 있습니다.</p>
+
+						<!-- ComDatePick 의 diffRslt 대상 — 선택한 기간의 일수가 들어온다.
+
+						     🔴 값을 쓰지 않아도 이 요소가 반드시 있어야 한다.
+						        comSlideDate.js:366 의 bindRtnFn 이 dateDiff·fromDate·toDate 만
+						        검사하고 diffRslt 는 검사하지 않은 채 diffRslt.val(...) 을 부른다.
+						        옵션에서 빼면 기본값이 빈 문자열이 되어 .val() 이 없다며 터진다
+						        (2026-08-24 실측). webview_pay_history 는 #totD 를 넘겨 이를 피한다. -->
+						<input type="hidden" id="pickDiffDays" value="">
+					</div>
+				</div>
+
+				<!-- 이용구분 — 퍼블리싱 BM501 의 8개 (판정은 액션 §7)
+				       1 충전 0700 · 2 지급 0300·0310·0320 · 3 사용 0100 · 4 출금 0800
+				       5 취소 0101·0200·0311·0701·0801 (환급 제외) · 6 소멸 0400
+				       7 환급 0101·0200 중 제로페이 410000 원장 건
+
+				     각 구분은 자기 취소분을 담지 않는다 — 취소는 5 로 모인다(사용자 확정 2026-08-26).
+				     환급만 4자리 TRX_TP 로 갈리지 않아 원장(BIZ_CD)까지 본다. -->
+				<div class="flex-column">
+					<div class="column__head">
+						<h4 class="container__headline container__headline--lv2">이용구분</h4>
+					</div>
+					<div class="column__item filter-container">
+						<div class="filter__body" id="filterCtgryBox">
+							<button class="button button-small button--lv5 radius-lv5 active" data-ctgry="0"><span>전체</span></button>
+							<button class="button button-small button--lv5 radius-lv5" data-ctgry="1"><span>충전</span></button>
+							<button class="button button-small button--lv5 radius-lv5" data-ctgry="2"><span>지급</span></button>
+							<button class="button button-small button--lv5 radius-lv5" data-ctgry="3"><span>사용</span></button>
+							<button class="button button-small button--lv5 radius-lv5" data-ctgry="4"><span>출금</span></button>
+							<button class="button button-small button--lv5 radius-lv5" data-ctgry="5"><span>취소</span></button>
+							<button class="button button-small button--lv5 radius-lv5" data-ctgry="6"><span>소멸</span></button>
+							<button class="button button-small button--lv5 radius-lv5" data-ctgry="7"><span>환급</span></button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<section class="body__button--box button-box-spacing">
+			<!-- [D] 비활성화 시 dis 클래스 추가 -->
+			<button class="button button-xl button--lv1 col--block js-popup-close" id="btnFilterApply">
+				<span>조회</span>
+			</button>
+		</section>
+	</section>
+</div>
+
+<!-- ================================================================
+     BM303a · 비플머니 상세 (전체화면 팝업)
+
+     상단 잔액 옆 화살표(#btnBalanceDetail)로 연다. 열기·닫기·딤클릭은
+     common-ui.js 의 activeModalHandler 가 처리하므로 화면 JS 는 바인딩하지 않는다.
+
+     값은 팝업을 열 때 zero_webview_money_v2_r002 로 조회한다 —
+     메인 화면이 들고 있는 값을 재사용하지 않는 이유는 액션 JSP 주석 참조.
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="popup-beple-money-detail" id="mnyDetailPopup" style="display:none;">
+	<section class="popup-container popup--full popup-beple-money-detail">
+		<header class="header popup-container__header position-sticky">
+			<div class="header__title-wrap">
+				<h1 class="page-name">
+					<span class="ellipsis-line--1">보유 비플머니 상세</span>
+				</h1>
+			</div>
+			<nav class="header__navi">
+				<a href="#none" class="header__btn btn-close js-popup-close">
+					<span class="blind">페이지 닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<!-- 컨테이너 -->
+		<section class="container beple-money js-container">
+			<!-- 보유 비플머니 -->
+			<section class="current page-header gap-24 justify-spacing-def">
+				<div class="current-content">
+					<div class="current__title">
+						<span class="title-text">보유 비플머니</span>
+					</div>
+					<div class="current__balance">
+						<p class="balance-text"><strong id="dtlHoldTot">0</strong>원</p>
+					</div>
+				</div>
+				<!-- 보유내역 -->
+				<div class="table-wrap bg-fa">
+					<table class="table table--data">
+						<colgroup>
+							<col style="width: 102px;">
+							<col style="width: 210px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>
+									<p>충전</p>
+								</th>
+								<th>
+									<p><span id="dtlHoldChrg">0</span> 원</p>
+								</th>
+							</tr>
+							<tr>
+								<th>
+									<p>지급</p>
+								</th>
+								<th>
+									<p><span id="dtlHoldAcu">0</span> 원</p>
+								</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</section>
+			<hr class="divide divide-h10 mgt32">
+			<!-- 소멸예정 내역 -->
+			<section class="expire-money justify-spacing-def">
+				<div class="table-wrap pdt32">
+					<table class="table table--data">
+						<colgroup>
+							<col style="width: 142px;">
+							<col style="width: 170px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>
+									<p>소멸 예정 비플머니</p>
+								</th>
+								<th>
+									<p class="fw-700"><span id="dtlExprTot">0</span> 원</p>
+								</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="table-wrap bg-fa">
+					<table class="table table--data">
+						<colgroup>
+							<col style="width: 102px;">
+							<col style="width: 210px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>
+									<p>충전</p>
+								</th>
+								<th>
+									<p><span id="dtlExprChrg">0</span> 원</p>
+								</th>
+							</tr>
+							<tr>
+								<th>
+									<p>지급</p>
+								</th>
+								<th>
+									<p><span id="dtlExprAcu">0</span> 원</p>
+								</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<!-- 소멸 예정 내역 -->
+				<div class="expire-money flex-column drop-box js-drop-box open">
+					<div class="column__head">
+						<button type="button" class="drop--trigger js-drop-trigger">
+							<h5 class="container__headline container__headline--lv2 fw-600">소멸 예정내역</h5>
+							<i class="icon icon--arrow-24"><span class="blind">소멸 예정내역 열기</span></i>
+						</button>
+					</div>
+
+					<!-- 소멸 예정내역 드롭다운 -->
+					<div class="column__item drop--content js-drop-content" style="display: block;">
+						<ul class="history-list" id="dtlExprList"></ul>
+
+						<!-- 이용내역 없음 — 목록이 0건일 때만 노출한다 -->
+						<section class="body__content history-none" id="dtlExprNone" style="display:none;">
+							<i class="icon icon--document2-64" aria-hidden="true">소멸 예정 내역이 없습니다.</i>
+							<div class="desc-box">
+								<p class="info__text--lv2">소멸 예정 내역이 없습니다.</p>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+		</section>
+	</section>
+</div>
+
+<!-- 소멸예정 내역 항목 템플릿
+     desc 는 적립명이다 — 충전 건에는 없으므로 화면 JS 가 통째로 지운다. -->
+<script type="text/template" id="tmpl_expire_item">
+	<li class="history-item">
+		<div class="left">
+			<h3 class="name">{{ name }}</h3>
+			{{ desc }}
+		</div>
+		<div class="right">
+			<p class="value">-<span>{{ amount }}</span>원</p>
+			<p class="desc">{{ expLabel }}<span>(D-{{ dday }})</span></p>
+		</div>
+	</li>
+</script>
+
+<!-- ================================================================
+     거래내역 렌더링 템플릿 (underscore — 구분자는 헤더에서 {{ }} 로 설정돼 있다)
+
+     항목 상태는 column__item 의 클래스 하나로 정해진다.
+       (무클래스)   부호 없음
+       item--plus   +  증가
+       item--minus  -  감소
+       item--cancel 취소 배지 노출 (status__cancel 은 CSS 가 숨겼다가 이 클래스에서만 보인다)
+     ================================================================ -->
+<script type="text/template" id="tmpl_history_year">
+	<section class="pay-history__year">
+		<div class="body__header justify-spacing-def">
+			<h4 class="container__headline container__headline--lv1">{{ year }}</h4>
+		</div>
+		<div class="body__content justify-spacing-def">{{ days }}</div>
+	</section>
+</script>
+
+<script type="text/template" id="tmpl_history_day">
+	<section class="flex-column">
+		<div class="column__head">
+			<h5 class="container__headline container__headline--lv1 fw-600">{{ dayLabel }}</h5>
+		</div>
+		{{ items }}
+	</section>
+</script>
+
+<script type="text/template" id="tmpl_history_item">
+	<div class="column__item {{ stateClass }}">
+		<a href="#none" class="flex-column" data-trx-dt="{{ trxDt }}" data-trx-seq="{{ trxSeq }}">
+			<div class="item__header">
+				<p class="info__text--lv2 item__title ellipsis-line--1">{{ title }}</p>
+				<p class="info__text--lv2 item__price"><strong>{{ amount }}</strong>원</p>
+			</div>
+			<div class="item__details">
+				<div class="status">
+					<p class="info__text--lv1 status__item">{{ time }}</p>
+					<p class="info__text--lv1 status__item status__cancel">취소</p>
+				</div>
+				<p class="info__text--lv1">{{ subText }}</p>
+			</div>
+		</a>
+	</div>
+</script>
 </body>
 </html>

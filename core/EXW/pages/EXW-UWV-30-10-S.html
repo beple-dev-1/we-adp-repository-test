@@ -1,8 +1,73 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head><meta charset="utf-8"><title>등록</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>거래승인번호 등록</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/popup.css">
+</head>
 <body data-screen-id="EXW-UWV-30-10-S">
-<h1>등록</h1>
-<p>zero_webview_password_regist_v2_view.jsp — 3차에서 채운다.</p>
+<!-- 재설정 화면과 달리 단계가 하나뿐이라 com-step-id 를 두지 않는다.
+	     ComStep.showStep 을 부를 일이 없고, 키패드는 진입 즉시 열린다. -->
+	<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span>거래승인번호 등록</span></h1>
+			</div>
+			<nav class="header__navi">
+				<a id="btn_close" class="header__btn btn-close">
+					<span class="blind">페이지 닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<main class="container-wrap">
+			<div class="online-payment--cert">
+				<section class="page-header justify-spacing-def">
+					<article class="page-header__content flex-column">
+						<div class="page-header__headline-wrap">
+							<h2 class="flex-row">
+								<p class="page__headline page__headline--lv1" id="guide_txt">
+									거래승인번호 등록을 위한 6자리 비밀번호를 입력해 주세요
+								</p>
+							</h2>
+						</div>
+					</article>
+				</section>
+
+				<!-- 컨테이너 -->
+				<section class="container cert__view js-container justify-spacing-def">
+					<article class="container__body">
+						<div class="body__content">
+							<input type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+							<input type="hidden" name="pwd2" id="pwd2" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+
+							<div id="tac_num" class="cert__view--input">
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+							</div>
+						</div>
+					</article>
+				</section>
+
+				<!-- 퍼블리싱 구조 유지용. 6자리가 차면 키패드가 곧바로 제출해 눌릴 일이 없다 -->
+				<section class="container" style="display: ;">
+					<article class="button-box-spacing pdt12" style="display: none;">
+						<a href="#none" class="button button-xl button--lv1 dis"><!-- [D] 활성화 시 'dis' 클래스 제거 -->
+							<span>확인</span>
+						</a>
+					</article>
+				</section>
+			</div>
+		</main>
+	</div>
 </body>
 </html>

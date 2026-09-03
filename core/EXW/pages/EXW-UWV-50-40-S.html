@@ -1,8 +1,75 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head><meta charset="utf-8"><title>소멸예정</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>소멸예정</title>
+  <link rel="stylesheet" href="../assets/css/welfare_reset.css">
+  <link rel="stylesheet" href="../assets/css/welfare.css">
+  <link rel="stylesheet" href="../assets/css/beple_popup.css">
+</head>
 <body data-screen-id="EXW-UWV-50-40-S">
-<h1>소멸예정</h1>
-<p>zero_webview_money_expire_v1_view.jsp — 3차에서 채운다.</p>
+<form method="post" name="frm" id="frm">
+	<!-- DATA 는 진입 시 받은 원본 봉투다 — 소멸예정 조회 API 가 이 값으로 회원을 식별한다.
+	     뒤로가기 때는 JS 가 전송 직전에 DATA_BACK 으로 덮어쓴다(말단 화면이라 충돌 없음). -->
+	<input type="hidden" id="ORG_ID"    name="ORG_ID"    value="">
+	<input type="hidden" id="DATA"      name="DATA"      value="">
+
+	<input type="hidden" id="DATA_BACK" value="">
+	<input type="hidden" id="BACK_URL"  value="">
+
+	<!-- 화면 내부 참조용 -->
+	<input type="hidden" id="APP_CD"  value="">
+</form>
+	<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<nav class="header__navi">
+				<a id="btnBack" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav>
+
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span>비플머니</span></h1>
+			</div>
+		</header>
+
+		<main class="container-wrap js-container-wrap">
+			<!--비플머니 -->
+			<div class="bp_money">
+				<!-- 소멸예정비플머니 잔액 -->
+				<div class="top_bx bdt_none">
+					<div class="inner">
+						<div class="balance_info">
+							<dl>
+								<dt>소멸 예정 비플머니</dt>
+								<dd>
+									<strong class="txt_r" id="tot_trx_amt">0<span class="won">원</span></strong>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+
+				<!-- 소멸예정 비플머니 내역 -->
+				<div class="expires_list_wrap">
+					<!-- 메세지 -->
+					<p class="message">30일 내의 소멸 예정 비플머니만 조회됩니다.</p>
+
+					<div class="list_none" style="display:none;">
+                        <p>소멸 예정 내역이 없습니다.</p>
+                    </div>
+
+					<!-- 소멸 예정 내역 목록 -->
+					<div class="balance_list">
+						<ul id="li_list">
+						</ul>
+					</div>
+					<!-- 소멸 예정 내역 목록 -->
+				</div>
+			</div>
+		</main>
+	</div>
 </body>
 </html>

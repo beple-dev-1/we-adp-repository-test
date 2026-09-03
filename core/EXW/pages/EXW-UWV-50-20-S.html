@@ -1,8 +1,331 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head><meta charset="utf-8"><title>충전</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플머니 충전</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/popup.css">
+</head>
 <body data-screen-id="EXW-UWV-50-20-S">
-<h1>충전</h1>
-<p>zero_webview_money_charge_v2_view.jsp — 3차에서 채운다.</p>
+<form name="frm" id="frm" method="post">
+	<!-- 서버간 요청부 — 하위 화면(계좌등록·거래승인번호)으로 폼 POST 할 때 그대로 실린다 -->
+	<input type="hidden" name="ORG_ID" id="ORG_ID" value="">
+	<input type="hidden" name="DATA"   id="DATA"   value="">
+
+	<!-- 뒤로가기용 봉투·대상. name 을 주지 않는다 — 폼 POST 에 섞이면 스택이 어긋난다 -->
+	<input type="hidden" id="DATA_BACK"    value="">
+	<input type="hidden" id="BACK_URL"     value="">
+	<input type="hidden" id="CANCEL_URL"   value="">
+	<input type="hidden" id="FAIL_URL"     value="">
+	<input type="hidden" id="CALLBACK_URL" value="">
+	<input type="hidden" id="APP_CD"       value="">
+
+	<!-- 거래승인번호 결과. 값이 있으면 화면 JS 가 중단됐던 충전을 이어간다 -->
+	<input type="hidden" id="PWD_RES_CD"   value="">
+</form>
+
+<!-- ================================================================
+     step1 — 금액·계좌 입력
+
+     완료는 별도 화면이 아니라 이 화면의 step2 다 (v1 과 같은 방식).
+     자금 실행이 끝난 뒤 봉투를 다시 전송하지 않아도 되고, 복귀 지점을
+     다시 계산할 필요도 없다. 퍼블리싱이 BM310e 를 별도 파일로 준 것은
+     디자인 산출물 단위이며 구현 단위와 다르다.
+     ================================================================ -->
+<div class="wrap" com-step-id="step1">
+
+	<!-- ================================================================
+	     헤더
+	     ================================================================ -->
+	<header class="header position-sticky">
+		<div class="header__title-wrap">
+			<h1 class="page-name"><span>비플머니 충전</span></h1>
+		</div>
+		<nav class="header__navi">
+			<a href="#none" class="header__btn btn-close" id="btnClose">
+				<span class="blind">닫기</span>
+			</a>
+		</nav>
+	</header>
+
+	<main class="container-wrap js-container-wrap">
+		<div class="container beple-money">
+
+			<!-- ================================================================
+			     보유 비플머니 + 충전계좌 선택
+			     ================================================================ -->
+			<section class="current page-header justify-spacing-def">
+				<div class="current-content">
+					<div class="current__title">
+						<span class="title-text">보유 비플머니</span>
+					</div>
+					<div class="current__balance">
+						<p class="balance-text"><strong id="curBalance">0</strong>원</p>
+					</div>
+				</div>
+
+				<!-- 계좌 선택 — 팝업 열기는 common-ui.js 의 activeModalHandler 가 처리한다.
+				     표시 갱신은 selectHandler 가 js-select--result 의 .target 에 넣는다. -->
+				<button type="button" class="select-account--button js-popup-open js-select--result"
+				        data-modal="popup-select--bank" id="btnSelectAccount">
+					<p>충전계좌</p>
+
+					<!-- 계좌 있는 경우 -->
+					<div class="account" id="acctHasWrap" style="display:none;">
+						<span class="target" id="acctText"></span>
+						<i class="icon icon--arrow-24 pointer-bottom"></i>
+					</div>
+
+					<!-- 계좌 없는 경우 -->
+					<div class="account" id="acctNoneWrap" style="display:none;">
+						<span class="fc-primary">계좌를 등록해 주세요</span>
+						<i class="icon icon--arrow-24"></i>
+					</div>
+				</button>
+			</section>
+
+			<!-- ================================================================
+			     충전금액 입력
+			     상태 클래스 — item--on(활성) / item--disabled / item--error
+			     ================================================================ -->
+			<div class="transfer">
+				<div class="form-box js-form-box justify-spacing-def">
+					<div class="form__item js-form-item" id="frmItemAmt">
+						<div class="form__item-header">
+							<h3 class="form__label container__headline container__headline--lv1 fc-333">
+								<label for="inpAmt">충전금액</label>
+							</h3>
+						</div>
+						<div class="form__item-wrap">
+							<div class="form__item-wrap">
+								<div class="input-type--box input-unit">
+									<input type="tel" id="inpAmt" value="" placeholder="충전금액 입력"
+									       maxlength="11" jex-input="commaFormat" data-input="commaFormat">
+									<button type="button" class="input__unit" id="btnClearAmt" style="display: none;">
+										<i class="icon icon--close_cr-16"></i>
+									</button>
+								</div>
+							</div>
+
+							<!-- 퀵버튼 — 누른 금액을 현재 입력값에 더한다 -->
+							<div class="quick-amount revers-mgt2" id="quickAmount">
+								<button type="button" class="button button--lv5_line button-mid" data-add="10000"><span>+1만원</span></button>
+								<button type="button" class="button button--lv5_line button-mid" data-add="50000"><span>+5만원</span></button>
+								<button type="button" class="button button--lv5_line button-mid" data-add="100000"><span>+10만원</span></button>
+							</div>
+
+							<p class="fc-red mgt2" id="amtErrMsg" style="display: none;"></p>
+						</div>
+					</div>
+				</div>
+
+				<hr class="divide divide-h10 mgt32">
+
+				<!-- ================================================================
+				     충전 안내 — 열기·닫기는 common-ui.js 의 dropDownHandler 가 처리한다.
+				     한도는 서버 설정값으로 채운다(퍼블리싱의 숫자는 예시다).
+				     ================================================================ -->
+				<div class="transfer__infomation flex-column drop-box js-drop-box open justify-spacing-def">
+					<div class="column__head">
+						<button type="button" class="drop--trigger js-drop-trigger">
+							<h5 class="container__headline container__headline--lv2 fw-600">충전 안내</h5>
+							<i class="icon icon--arrow-24"><span class="blind">충전 안내 열기</span></i>
+						</button>
+					</div>
+					<div class="column__item drop--content js-drop-content" style="display: block;">
+						<div class="infomation-content">
+							<dl>
+								<dt class="content-title">충전 한도</dt>
+								<dd class="content-detail">
+									<ul class="list-bullet" id="limitList">
+										<li>최소 충전 금액 : <span id="txtOnceMin">-</span>원</li>
+										<li>1회 충전 한도 : <span id="txtOnceMax">-</span>원</li>
+										<li>1일 충전 한도 : <span id="txtDayMax">-</span>원</li>
+										<li>월별 충전 한도 : <span id="txtMmMax">-</span>원</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt class="content-title">충전 계좌</dt>
+								<dd class="content-detail">
+									<ul class="list-bullet">
+										<li>충전 계좌는 비플페이 &gt; 더보기 &gt; 설정 &gt; 계좌 관리에 등록된 계좌로만 이용 가능합니다.</li>
+										<li>비플머니 충전 계좌를 변경하려면 주계좌를 변경해 주세요.</li>
+										<li>
+											<strong class="fw-600">
+												충전가능 금융기관 :<br>
+												SC제일 , 토스뱅크, 저축은행중앙회, 산림조합중앙회 및 증권사 제외한 모든 은행
+											</strong>
+										</li>
+										<li>은행 공통 점검시간(23:50~00:11) 및 각 은행별 점검 시간에는 충전 이용이 제한될 수 있습니다.</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ================================================================
+		     하단 고정 버튼 — js-floating-container 는 containerBottomSpace 가
+		     본문 padding-bottom 을 계산하는 기준이다.
+		     ================================================================ -->
+		<div class="container-floating bg-white js-floating-container">
+			<p class="fc-999 pdb16 pdt24 ta-center justify-spacing-def revers-mgt8">에이블리 머니는 (주)비즈플레이가 발행·관리합니다</p>
+			<article class="floating__box button-box-spacing">
+				<a href="#none" class="button button-xl button--lv1 dis" id="btnNext">
+					<span>다음</span>
+				</a>
+			</article>
+		</div>
+	</main>
+</div>
+
+<!-- ================================================================
+     step2 — 충전 완료 (퍼블리싱 BM310e,B320e)
+
+     헤더에 닫기를 두지 않는다 — 자금이 이미 움직였으므로 확인을 눌러
+     복귀 지점으로 나가는 경로만 남긴다(퍼블리싱도 nav 가 없다).
+     ================================================================ -->
+<div class="wrap" com-step-id="step2" style="display: none;">
+
+	<header class="header position-sticky">
+		<div class="header__title-wrap">
+			<h1 class="page-name"><span class="blind">비플머니 충전</span></h1>
+		</div>
+	</header>
+
+	<main class="container-wrap js-container-wrap pdt32">
+		<section class="container end-container end--payment js-container">
+			<section class="body__content justify-space-def">
+				<div class="payment__head">
+					<i class="icon icon--state_check-64">충전 완료</i>
+					<h2 class="container__headline">
+						<p class="head-text fw-600">충전을 완료했습니다</p>
+					</h2>
+				</div>
+
+				<div class="payment__info">
+					<div class="flex-row">
+						<p class="info-head">충전 전 비플머니</p>
+						<p class="info-data fw-600 fc-primary"><span id="endBefore">0</span>원</p>
+					</div>
+					<div class="flex-row">
+						<p class="info-head">충전 후 비플머니</p>
+						<p class="info-data fw-600 fc-111"><span id="endAfter">0</span>원</p>
+					</div>
+					<div class="flex-row">
+						<p class="info-head">충전계좌</p>
+						<p class="info-data" id="endAcct"></p>
+					</div>
+				</div>
+			</section>
+		</section>
+
+		<div class="container-floating js-floating-container">
+			<article class="floating__box button-box-spacing">
+				<a href="#none" class="button button-xl button--lv1" id="btnEndOk">
+					<span>확인</span>
+				</a>
+			</article>
+		</div>
+	</main>
+</div>
+
+<!-- ================================================================
+     계좌선택 팝업 — step 밖에 둔다(공용)
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="popup-select--bank" style="display:none;">
+	<div class="popup-container popup--bottom popup-select--type1 box-padding--type2 js-popup-select">
+		<section class="popup-container__body">
+			<div class="justify-spacing-def">
+				<a href="#none" class="flex-row align-center justify-end" id="btnAcctMng">
+					<span class="info__text--lv1 fc-666 fw-600">계좌관리</span>
+					<i class="icon icon--arrow-16"></i>
+				</a>
+			</div>
+			<!-- 계좌 목록은 화면 JS 가 채운다. 선택 표시는 selectHandler 가 처리한다 -->
+			<div class="flex-column justify-spacing-def pdt8" id="acctList"><!-- sample:begin -->
+	<button type="button" class="select__button js-select-content js-popup-close active"
+	        data-idx="0">
+		<span>국민은행 (1234)</span><i class="icon icon--check-24_primary"></i>
+	</button>
+
+	<button type="button" class="select__button js-select-content js-popup-close "
+	        data-idx="1">
+		<span>신한은행 (5678)</span><i class="icon icon--check-24_primary"></i>
+	</button>
+<!-- sample:end --></div>
+		</section>
+	</div>
+</div>
+
+<!-- ================================================================
+     충전 정보확인 팝업
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="popup-payment--confirm" style="display:none;">
+	<section class="popup-container popup--bottom popup-payment--confirm">
+		<header class="popup-container__header">
+			<h3 class="headline-text">
+				<strong><span id="cfmAmt">0</span>원</strong><br>
+				충전하시겠습니까?
+			</h3>
+		</header>
+		<article class="popup-container__body">
+			<div class="table-wrap justify-spacing-def">
+				<article class="table--body border-none">
+					<table class="table table--data">
+						<colgroup>
+							<col style="width: 102px;">
+							<col style="width: 210px;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><p>충전 전 비플머니</p></th>
+								<td><p><span id="cfmBefore">0</span>원</p></td>
+							</tr>
+							<tr>
+								<th><p>충전 후 비플머니</p></th>
+								<td><p><span id="cfmAfter">0</span>원</p></td>
+							</tr>
+							<tr>
+								<th><p>충전계좌</p></th>
+								<td><p id="cfmAcct"></p></td>
+							</tr>
+						</tbody>
+					</table>
+				</article>
+			</div>
+			<div class="button-box flex-row gap-8 justify-spacing-btn">
+				<button type="button" class="button button-xl button--lv5 button--narrow js-popup-close">
+					<span>취소</span>
+				</button>
+				<!-- 실행 버튼에는 js-popup-close 를 붙이지 않는다 — 팝업을 실행 완료까지 열어 둔다.
+				     닫으면 c001 ajax 를 기다리는 동안 step1 이 노출된다(딤이 사라져서다).
+				     닫기는 화면 JS 가 성공·실패 시점에 한다. -->
+				<button type="button" class="button button-xl button--lv1 button--wide" id="btnPay">
+					<span>결제하기</span>
+				</button>
+			</div>
+		</article>
+	</section>
+</div>
+
+<!-- 계좌 목록 항목 템플릿 (underscore — 구분자는 헤더에서 {{ }} 로 설정돼 있다)
+
+     🔴 계좌번호를 DOM 에 심지 않는다. data-idx 로 배열 위치만 두고 실제 값은
+        화면 JS 가 클로저 배열(_acctList)로 들고 있는다 — c001 이 평문 계좌번호를
+        요구하므로(소유권 확인 IDO 가 encrypt(:ACCT_NO) 로 비교) 응답에는 평문이 있지만
+        HTML 소스에는 남기지 않는다. v1 은 li 속성에 dec_acct_no 를 그대로 심었다. -->
+<script type="text/template" id="tmpl_acct_item">
+	<button type="button" class="select__button js-select-content js-popup-close {{ selClass }}"
+	        data-idx="{{ idx }}">
+		<span>{{ label }}</span><i class="icon icon--check-24_primary"></i>
+	</button>
+</script>
 </body>
 </html>
