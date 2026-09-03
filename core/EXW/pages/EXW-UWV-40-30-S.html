@@ -85,7 +85,7 @@ _APP_CD = "";
 					<div class="page-header__headline-wrap">
 						<h2 class="flex-column">
 							<p class="container__headline container__headline--lv4 display-block">
-								<strong class="fc-primary" id="certAcctText"></strong><br>
+								<strong class="fc-primary" id="certAcctText"><!-- sample:begin -->국민은행 (1234)<!-- sample:end --></strong><br>
 								해당 계좌로 1원을 입금했습니다
 							</p>
 						</h2>
@@ -269,7 +269,31 @@ _APP_CD = "";
 				</div>
 
 				<div class="form-box js-form-box scroll-box">
-					<div class="scroll-box--view form__item-wrap" id="div_cls"></div>
+					<div class="scroll-box--view form__item-wrap" id="div_cls"><!-- sample:begin -->
+	<div class="input-type--check flex-row">
+		<label class="grow-y flex-row">
+			<input type="checkbox" name="clsChk" class="js-cls-chk"
+			       cls_cd="004" data-req="Y">
+			<span>(안내 문구) 안내</span>
+		</label>
+		<a href="#none" class="grow-n js-popup-open js-cls-detail" data-modal="popup-terms-sv" data-cls-cd="004">
+			<span class="blind">약관 상세보기</span>
+			<i class="icon icon--arrow-16"></i>
+		</a>
+	</div>
+
+	<div class="input-type--check flex-row">
+		<label class="grow-y flex-row">
+			<input type="checkbox" name="clsChk" class="js-cls-chk"
+			       cls_cd="004" data-req="Y">
+			<span>(안내 문구) 안내</span>
+		</label>
+		<a href="#none" class="grow-n js-popup-open js-cls-detail" data-modal="popup-terms-sv" data-cls-cd="004">
+			<span class="blind">약관 상세보기</span>
+			<i class="icon icon--arrow-16"></i>
+		</a>
+	</div>
+<!-- sample:end --></div>
 				</div>
 			</div>
 
@@ -303,7 +327,7 @@ _APP_CD = "";
 		<div class="terms">
 			<header class="terms-header justify-spacing-def">
 				<h2 class="flex-row">
-					<p class="page-title" id="detail_header"></p>
+					<p class="page-title" id="detail_header"><!-- sample:begin -->안내<!-- sample:end --></p>
 				</h2>
 			</header>
 
@@ -329,7 +353,47 @@ _APP_CD = "";
 			       를 빠뜨리면 문단 간격이 사라진다.
 			     ※ `js-container` 는 잡는 코드가 없다(common-ui.js 는 `js-container-wrap` 만
 			       쓴다). 퍼블리싱 마크업 대조용으로 남긴다. -->
-			<section class="container js-container justify-spacing-def" id="detail_ctnt"></section>
+			<section class="container js-container justify-spacing-def" id="detail_ctnt"><!-- sample:begin -->
+	<div class="list ">
+		<button type="button" class="content-box js-popup-open" data-modal="account-setting" data-idx="0">
+			<div class="img img-44">
+				<!-- 아이콘이 없는 기관(증권사 등)은 깨진 이미지 대신 빈 자리로 둔다 -->
+				<img src="../assets/image/bank/ico_bank_004.png" alt="은행 로고"
+				     onerror="this.style.visibility='hidden';"/>
+			</div>
+			<div class="flex-column">
+				<div class="account-item__name">
+					<p class="info__text--lv2">
+						<span class="ellipsis-line--1">국민은행</span>
+						<span>(1234)</span>
+					</p>
+					Y
+				</div>
+			</div>
+			<i class="icon icon--more-24">계좌 설정</i>
+		</button>
+	</div>
+
+	<div class="list ">
+		<button type="button" class="content-box js-popup-open" data-modal="account-setting" data-idx="1">
+			<div class="img img-44">
+				<!-- 아이콘이 없는 기관(증권사 등)은 깨진 이미지 대신 빈 자리로 둔다 -->
+				<img src="../assets/image/bank/ico_bank_004.png" alt="은행 로고"
+				     onerror="this.style.visibility='hidden';"/>
+			</div>
+			<div class="flex-column">
+				<div class="account-item__name">
+					<p class="info__text--lv2">
+						<span class="ellipsis-line--1">국민은행</span>
+						<span>(1234)</span>
+					</p>
+					Y
+				</div>
+			</div>
+			<i class="icon icon--more-24">계좌 설정</i>
+		</button>
+	</div>
+<!-- sample:end --></section>
 		</div>
 	</section>
 </div>
