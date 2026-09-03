@@ -1,0 +1,76 @@
+# MCH IA 이름표
+
+> `03_IA/시스템별/` 에서 기계로 옮긴 것이다. 정본은 그쪽이다.
+
+## 이름표
+- MCH/AFLT: 온라인 가맹점신청
+- MCH/AFLT/10: 가맹점 신청메인
+- MCH/AFLT/10/10: 가맹점 신청안내
+- MCH/AFLT/10/10/10: 사업자번호 입력
+- MCH/AFLT/20: 온라인가맹점신청 최종확인
+- MCH/AFLT/20/10: 접수 완료
+- MCH/AFLT/20/20: 서류첨부
+- MCH/AFLT/30: 온라인 가맹점신청 -> 기본정보입력
+- MCH/AFLT/30/10: 신청자정보 입력
+- MCH/AFLT/40: 가맹점 정보 입력
+- MCH/AFLT/50: 사장님 정보 입력
+- MCH/AFLT/60: 정산정보 입력
+- MCH/AFLT/70: 본인인증
+- MCH/AFLT/80: 신청내역 메인
+- MCH/AFLT/80/10: 신청내역 심사중
+- MCH/AFLT/80/10/10: 약관동의
+- MCH/AFMG: 가맹점 관리
+- MCH/AFMG/10: 가맹점 인증
+- MCH/AFMG/10/10: 가맹점관리
+- MCH/AFMG/10/20: 다수 가맹점 선택
+- MCH/AFMG/20: 가맹점관리 > 결제내역
+- MCH/AFMG/30: 가맹점 설정
+- MCH/AFMG/30/10: PUSH 관리
+- MCH/AFMG/30/20: 가맹점관리 > 가맹점정보관리
+- MCH/AFMG/40: 가맹점관리 > 직원관리 > 등록된 가맹점 조회
+- MCH/AFMG/40/10: 가맹점관리 > 직원 정보 수정
+- MCH/AFMG/40/20: 가맹점관리 > 직원등록
+- MCH/COMN: 공통
+- MCH/COMN/10: 약관
+- MCH/COMN/10/10: 온라인가맹점신청 이용약관
+- MCH/COMN/20: 검색
+- MCH/COMN/20/10: 주소검색
+- MCH/COMN/20/20: 업종검색
+- MCH/COMN/30: 고객센터
+- MCH/COMN/30/10: 가맹점서비스 QnA
+- MCH/COMN/40: 공지
+- MCH/COMN/40/10: 온라인가맹점신청 공지사항
+- MCH/KSQR: KSQR 온라인 가맹점신청
+- MCH/KSQR/10: KSQR온가신등록 메인
+- MCH/KSQR/10/10: KSQR온가신등록-이용약관
+- MCH/KSQR/10/20: KSQR온가신등록 안내
+- MCH/KSQR/10/20/10: KSQR온가신등록_사업자번호 입력
+- MCH/KSQR/20: KSQR온가신등록_최종확인
+- MCH/KSQR/20/10: KSQR온가신등록_접수완료
+- MCH/KSQR/20/20: KSQR온가신등록_서류첨부
+- MCH/KSQR/30: KSQR온가신등록_기본정보등록
+- MCH/KSQR/30/10: KSQR온가신 신청자정보 입력
+- MCH/KSQR/40: KSQR온가신등록_가맹점정보
+- MCH/KSQR/50: KSQR온가신등록_사장님정보등록
+- MCH/KSQR/60: KSQR온가신등록_정산정보
+- MCH/KSQR/70: KSQR온가신 본인인증
+- MCH/KSQR/80: KSQR온가신등록 신청내역
+- MCH/KSQR/80/10: KSQR온가신등록_신청내역 상세
+- MCH/KSQR/80/10/10: KSQR온가신등록 약관
+- MCH/KYC: 가맹점 고객확인서
+- MCH/KYC/10: 가맹점 고객확인서 작성을 위해
+- MCH/KYC/10/10: 본인인증
+- MCH/KYC/10/10/10: 심사현황을 확인할 가맹점을
+- MCH/KYC/10/10/20: 고객확인제도 수집정보 안내
+- MCH/KYC/10/20: &lt;수집 및 이용 목적&gt;
+- MCH/KYC/10/30: 고객확인제도 안내
+- MCH/KYC/20: 고객확인서등록_사장님정보등록
+- MCH/KYC/20/10: 고객확인서등록_사장님정보등록(실제소유자)
+- MCH/KYC/30: 고객확인서등록_기본정보등록
+- MCH/KYC/40: 고객확인서등록_거래정보등록
+- MCH/KYC/40/10: 고객확인서등록_서류첨부등록
+- MCH/KYC/50: 고객확인서등록_1원계좌인증
+- MCH/KYC/50/10: 사업자 번호 확인
+- MCH/KYC/50/10/10: 고객확인서등록_작성완료
+- MCH/KYC/60: 고객확인서등록_대리인정보입력
+- MCH/KYC/70: 고객확인서등록_실패

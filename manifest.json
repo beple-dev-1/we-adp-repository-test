@@ -1,0 +1,47 @@
+{
+  "toolchain": "we-adk-toolchain/1",
+  "systems": [
+    {
+      "id": "BPY",
+      "prefix": "BPY",
+      "label": "비플페이 앱",
+      "skins": {},
+      "styleguide": "core/BPY/styleguide.md"
+    },
+    {
+      "id": "HIT",
+      "prefix": "HIT",
+      "label": "힛플러스",
+      "skins": {},
+      "styleguide": "core/HIT/styleguide.md"
+    },
+    {
+      "id": "BPG",
+      "prefix": "BPG",
+      "label": "비플PG",
+      "skins": {},
+      "styleguide": "core/BPG/styleguide.md"
+    },
+    {
+      "id": "MCH",
+      "prefix": "MCH",
+      "label": "가맹점관리",
+      "skins": {},
+      "styleguide": "core/MCH/styleguide.md"
+    },
+    {
+      "id": "EXW",
+      "prefix": "EXW",
+      "label": "외부제공 웹뷰",
+      "skins": {},
+      "styleguide": "core/EXW/styleguide.md"
+    },
+    {
+      "id": "MGC",
+      "prefix": "MGC",
+      "label": "모바일상품권",
+      "skins": {},
+      "styleguide": "core/MGC/styleguide.md"
+    }
+  ]
+}
