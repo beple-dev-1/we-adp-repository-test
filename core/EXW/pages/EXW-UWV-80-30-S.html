@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>이용해지 완료</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/popup.css">
+</head>
+<body data-screen-id="EXW-UWV-80-30-S">
+<form name="frm" id="frm" method="post">
+	<!-- 서버간 요청부 — 재설정 화면으로 폼 POST 할 때 그대로 실린다 -->
+	<input type="hidden" name="ORG_ID" id="ORG_ID" value="">
+	<input type="hidden" name="DATA"   id="DATA"   value="">
+
+	<!-- 받은 봉투 원문 — 화면 내 ajax 가 쓴다. 폼 POST 에 섞이면 스택이 어긋나므로 name 을 주지 않는다 -->
+	<input type="hidden" id="DATA_ORG"     value="">
+
+	<!-- 뒤로가기용 봉투·대상 -->
+	<input type="hidden" id="DATA_BACK"    value="">
+	<input type="hidden" id="BACK_URL"     value="">
+	<input type="hidden" id="CANCEL_URL"   value="">
+	<input type="hidden" id="FAIL_URL"     value="">
+	<input type="hidden" id="CALLBACK_URL" value="">
+	<input type="hidden" id="APP_CD"       value="">
+
+	<!-- 키패드 복호화(_r001)가 돌려준 봉투. 해지 요청에 이것을 싣는다 -->
+	<input type="hidden" id="makeReqData"  value="">
+</form>
+
+<div class="wrap" style="overflow: hidden;">
+	<!-- 헤더 -->
+	<header class="header position-sticky">
+		<div class="header__title-wrap">
+			<h1 class="page-name">
+				<span class="ellipsis-line--1">이용해지</span>
+			</h1>
+		</div>
+		<nav class="header__navi">
+			<a href="#none" class="header__btn btn-close" id="btnClose">
+				<span class="blind">페이지 닫기</span>
+			</a>
+		</nav>
+	</header>
+	<!-- 메인 컨텐츠 -->
+	<main class="container-wrap js-container-wrap">
+		<!-- ================================================================
+		     step2 — 거래승인번호
+		            zero_webview_password_confirm_v2_view.jsp 의 키패드 영역 그대로
+		     ================================================================ -->
+		
+
+		<!-- ================================================================
+		     step3 — 해지 완료 (퍼블리싱 가입완료.html 그대로)
+		     ================================================================ -->
+		<div com-step-id="step3">
+			<section class="container end-container js-container">
+				<article class="container__body justify-spacing-def">
+					<div class="body__content">
+						<i class="icon icon--state_check-64" aria-hidden="true">이용해지가 완료되었습니다</i>
+						<div class="desc-box">
+							<h3 class="container__headline--lv5 fw-600">이용해지가 완료되었습니다</h3>
+						</div>
+					</div>
+				</article>
+			</section>
+			<section class="container-floating js-floating-container">
+				<div class="floating__box button-box-spacing">
+					<a id="btnDone" href="#none" class="button button-xl button--lv1" aria-label="확인하고 페이지 닫기">
+						<span>확인</span>
+					</a>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<!-- ================================================================
+	     step1 — 이용해지 안내 (퍼블리싱 이용해지.html 그대로)
+
+	     ★ 안내 문구는 퍼블리싱 그대로다(2026-09-02 사용자 확정). 같은 문장이 반복되는
+	       자리표시 문구이며, 확정본이 나오면 교체한다.
+	       실제 문구 원본은 cfg_webview_view.jsp:325~335 에 11개 항목으로 있다.
+
+	     ★ 문구와 코드가 어긋난 곳이 있다 — "적립금이 남아 있는 경우 이용해지 불가"라고
+	       하지만 실제로는 적립형 비플머니를 차단하지 않고 소멸시킨다(CFG_000011:354~417).
+	       문구 확정 시 함께 정리한다.
+	     ================================================================ -->
+	
+
+</div>
+</body>
+</html>

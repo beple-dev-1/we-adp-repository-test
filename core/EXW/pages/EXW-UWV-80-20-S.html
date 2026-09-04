@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>거래승인번호 입력</title>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/popup.css">
+</head>
+<body data-screen-id="EXW-UWV-80-20-S">
+<form name="frm" id="frm" method="post">
+	<!-- 서버간 요청부 — 재설정 화면으로 폼 POST 할 때 그대로 실린다 -->
+	<input type="hidden" name="ORG_ID" id="ORG_ID" value="">
+	<input type="hidden" name="DATA"   id="DATA"   value="">
+
+	<!-- 받은 봉투 원문 — 화면 내 ajax 가 쓴다. 폼 POST 에 섞이면 스택이 어긋나므로 name 을 주지 않는다 -->
+	<input type="hidden" id="DATA_ORG"     value="">
+
+	<!-- 뒤로가기용 봉투·대상 -->
+	<input type="hidden" id="DATA_BACK"    value="">
+	<input type="hidden" id="BACK_URL"     value="">
+	<input type="hidden" id="CANCEL_URL"   value="">
+	<input type="hidden" id="FAIL_URL"     value="">
+	<input type="hidden" id="CALLBACK_URL" value="">
+	<input type="hidden" id="APP_CD"       value="">
+
+	<!-- 키패드 복호화(_r001)가 돌려준 봉투. 해지 요청에 이것을 싣는다 -->
+	<input type="hidden" id="makeReqData"  value="">
+</form>
+
+<div class="wrap" style="overflow: hidden;">
+	<!-- 헤더 -->
+	<header class="header position-sticky">
+		<div class="header__title-wrap">
+			<h1 class="page-name">
+				<span class="ellipsis-line--1">이용해지</span>
+			</h1>
+		</div>
+		<nav class="header__navi">
+			<a href="#none" class="header__btn btn-close" id="btnClose">
+				<span class="blind">페이지 닫기</span>
+			</a>
+		</nav>
+	</header>
+	<!-- 메인 컨텐츠 -->
+	<main class="container-wrap js-container-wrap">
+		<!-- ================================================================
+		     step2 — 거래승인번호
+		            zero_webview_password_confirm_v2_view.jsp 의 키패드 영역 그대로
+		     ================================================================ -->
+		<div com-step-id="step2">
+			<div class="online-payment--cert">
+				<section class="page-header justify-spacing-def">
+					<article class="page-header__content flex-column">
+						<div class="page-header__headline-wrap">
+							<h2 class="flex-row">
+								<p class="page__headline page__headline--lv1" id="guide_txt">
+									거래승인번호 <br> 6자리 비밀번호를 입력해 주세요
+								</p>
+							</h2>
+						</div>
+					</article>
+				</section>
+
+				<!-- 컨테이너 -->
+				<section class="container cert__view js-container justify-spacing-def">
+					<article class="container__body">
+						<div class="body__content">
+							<input type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+							<input type="hidden" name="pwd2" id="pwd2" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+
+							<div id="tac_num" class="cert__view--input">
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+							</div>
+						</div>
+					</article>
+				</section>
+			</div>
+		</div>
+
+		<!-- ================================================================
+		     step3 — 해지 완료 (퍼블리싱 가입완료.html 그대로)
+		     ================================================================ -->
+		
+	</main>
+
+	<!-- ================================================================
+	     step1 — 이용해지 안내 (퍼블리싱 이용해지.html 그대로)
+
+	     ★ 안내 문구는 퍼블리싱 그대로다(2026-09-02 사용자 확정). 같은 문장이 반복되는
+	       자리표시 문구이며, 확정본이 나오면 교체한다.
+	       실제 문구 원본은 cfg_webview_view.jsp:325~335 에 11개 항목으로 있다.
+
+	     ★ 문구와 코드가 어긋난 곳이 있다 — "적립금이 남아 있는 경우 이용해지 불가"라고
+	       하지만 실제로는 적립형 비플머니를 차단하지 않고 소멸시킨다(CFG_000011:354~417).
+	       문구 확정 시 함께 정리한다.
+	     ================================================================ -->
+	
+
+</div>
+</body>
+</html>
