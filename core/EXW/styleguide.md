@@ -3,7 +3,7 @@
 > `we-adp-extractor/designguide.py` 가 소스 css 에서 기계로 낸 것이다.
 > ⛔ 손으로 고치지 마라 — 다음 추출에 덮인다.
 
-## 쓸 수 있는 class (8431종)
+## 쓸 수 있는 class (8434종)
 
 <!-- classes:begin -->
 - `aas-btn-section`
@@ -1511,6 +1511,8 @@
 - `dv_transkey_div3_3_qTop`
 - `dv_transkey_div3_4`
 - `dv_transkey_div_2`
+- `dv_transkey_div_a`
+- `dv_transkey_div_b`
 - `dv_transkey_div_nHeight`
 - `dv_transkey_div_nHeight2`
 - `dv_transkey_div_qHeight`
@@ -2331,6 +2333,7 @@
 - `height-99`
 - `height_full`
 - `hide`
+- `hideFocus`
 - `hide__checkbox`
 - `hide__label`
 - `highlight-style`
