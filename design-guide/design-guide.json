@@ -12,7 +12,7 @@
         "colorRoles": {
           "roles": [
             {
-              "label": "주색 토큰 `--color-primary*` · `style.css`",
+              "label": "주색 토큰 `--color-primary*` · `webview_api/css/style.css`",
               "entries": [
                 {
                   "value": "#1F1F1F"
@@ -26,7 +26,7 @@
               ]
             },
             {
-              "label": "주색 토큰 `--color-primary*` · `welfare.css`",
+              "label": "주색 토큰 `--color-primary*` · `webview_resource/css/welfare.css`",
               "entries": [
                 {
                   "value": "#EBF6FF"
@@ -72,7 +72,7 @@
               ]
             },
             {
-              "label": "보조색 토큰 `--color-second*` · `style.css`",
+              "label": "보조색 토큰 `--color-second*` · `webview_api/css/style.css`",
               "entries": [
                 {
                   "value": "rgb(13, 132, 255, 3%)"
@@ -92,7 +92,7 @@
               ]
             },
             {
-              "label": "보조색 토큰 `--color-second*` · `welfare.css` · 전체 7색 중 상위 6",
+              "label": "보조색 토큰 `--color-second*` · `webview_resource/css/welfare.css` · 전체 7색 중 상위 6",
               "entries": [
                 {
                   "value": "#80DEEA"
@@ -146,25 +146,25 @@
               ]
             },
             {
-              "label": "토큰 없이 직접 쓴 색 · 전체 98색 중 상위 6",
+              "label": "토큰 없이 직접 쓴 색 · 전체 517색 중 상위 6",
               "entries": [
                 {
+                  "value": "#222"
+                },
+                {
                   "value": "#fff"
-                },
-                {
-                  "value": "#ccc"
-                },
-                {
-                  "value": "rgba(0,0,0,0)"
                 },
                 {
                   "value": "#333"
                 },
                 {
-                  "value": "#222"
+                  "value": "#0d84ff"
                 },
                 {
-                  "value": "#0d84ff"
+                  "value": "#7e7e7e"
+                },
+                {
+                  "value": "#a9a9a9"
                 }
               ]
             }
@@ -172,6 +172,70 @@
         },
         "typography": {
           "fonts": [
+            {
+              "family": "NanumSquareR",
+              "sampleWeights": []
+            },
+            {
+              "family": "NanumSquareB",
+              "sampleWeights": []
+            },
+            {
+              "family": "NanumSquareEB",
+              "sampleWeights": []
+            },
+            {
+              "family": "NanumSquareAcR",
+              "sampleWeights": []
+            },
+            {
+              "family": "NanumSquareAcB",
+              "sampleWeights": []
+            },
+            {
+              "family": "NanumSquareAcEB",
+              "sampleWeights": []
+            },
+            {
+              "family": "PretendardR",
+              "sampleWeights": []
+            },
+            {
+              "family": "PretendardM",
+              "sampleWeights": []
+            },
+            {
+              "family": "PretendardSB",
+              "sampleWeights": []
+            },
+            {
+              "family": "PretendardB",
+              "sampleWeights": []
+            },
+            {
+              "family": "PretendardEB",
+              "sampleWeights": []
+            },
+            {
+              "family": "NanumSquareNeoL",
+              "sampleWeights": []
+            },
+            {
+              "family": "NanumSquareNeoR",
+              "sampleWeights": []
+            },
+            {
+              "family": "NanumSquareNeoB",
+              "sampleWeights": []
+            },
+            {
+              "family": "NanumSquareNeoEb",
+              "sampleWeights": []
+            },
+            {
+              "family": "NanumSquareNeoHv",
+              "sampleWeights": []
+            },
             {
               "family": "Pretendard",
               "sampleWeights": [
@@ -201,28 +265,28 @@
           ],
           "sizes": [
             {
-              "value": "1.6rem"
-            },
-            {
-              "value": "1.4rem"
+              "value": "14px"
             },
             {
               "value": "13px"
             },
             {
-              "value": "14px"
-            },
-            {
-              "value": "2rem"
-            },
-            {
-              "value": "1.2rem"
-            },
-            {
-              "value": "1.8rem"
-            },
-            {
               "value": "12px"
+            },
+            {
+              "value": "16px"
+            },
+            {
+              "value": "15px"
+            },
+            {
+              "value": "18px"
+            },
+            {
+              "value": "11px"
+            },
+            {
+              "value": "20px"
             }
           ],
           "weights": [
@@ -230,19 +294,19 @@
               "value": "400"
             },
             {
-              "value": "600"
+              "value": "700"
             },
             {
-              "value": "700"
+              "value": "600"
             },
             {
               "value": "500"
             },
             {
-              "value": "800"
+              "value": "300"
             },
             {
-              "value": "300"
+              "value": "800"
             },
             {
               "value": "900"
@@ -254,6 +318,18 @@
             "value": "1.2rem"
           },
           {
+            "value": "8px"
+          },
+          {
+            "value": "20px"
+          },
+          {
+            "value": "10px"
+          },
+          {
+            "value": "12px"
+          },
+          {
             "value": "0.4rem"
           },
           {
@@ -261,44 +337,32 @@
           },
           {
             "value": "0.8rem"
-          },
-          {
-            "value": "1.6rem"
-          },
-          {
-            "value": "2rem"
-          },
-          {
-            "value": "3.2rem"
-          },
-          {
-            "value": "1rem"
           }
         ],
         "radius": [
           {
-            "value": "0.8rem"
-          },
-          {
-            "value": "1.2rem"
+            "value": "8px"
           },
           {
             "value": "50%"
           },
           {
-            "value": "1rem"
+            "value": "6px"
           },
           {
-            "value": "0.6rem"
+            "value": "4px"
           },
           {
             "value": "3px"
           },
           {
-            "value": "0.4rem"
+            "value": "0.8rem"
           },
           {
-            "value": "4px"
+            "value": "35px"
+          },
+          {
+            "value": "12px"
           }
         ],
         "effects": {
@@ -307,21 +371,31 @@
               "value": "0 1px 2px rgba(0,0,0,.3)"
             },
             {
-              "value": "0 0.3rem 0.8rem rgba(0,0,0,.1)"
+              "value": "0 3px 2px -2px #d0d0d0"
             },
             {
-              "value": "0 -0.8rem 1.6rem 0 rgba(0,0,0,.08)"
+              "value": "0px 2px 4px rgba(0,0,0,.02)"
+            },
+            {
+              "value": "0px 8px 25px rgba(0,0,0,.1)"
+            },
+            {
+              "value": "0 10px 10px rgba(38,18,77,0.25)"
+            },
+            {
+              "value": "0px 4px 10px rgba(0,0,0,.16)"
             }
           ]
         },
         "breakpoints": [
+          "max-width: 320px",
+          "max-width: 319px",
           "max-width: 359px",
-          "max-height: 699px",
-          "min-height: 700px",
-          "max-height: 400px",
-          "max-height: 669px",
+          "max-width:320px",
+          "max-width: 350px",
+          "max-width: 321px",
           "min-width: 961px",
-          "max-width: 320px"
+          "max-height: 699px"
         ]
       },
       "components": [
@@ -428,7 +502,7 @@
             }
           ],
           "usage": {
-            "count": 77
+            "count": 127
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
@@ -451,6 +525,18 @@
           "label": "아이콘",
           "category": "etc",
           "variants": [
+            {
+              "id": "arr_right-16",
+              "label": "arr_right-16",
+              "class": "icon arr_right-16",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
             {
               "id": "icon--arrow-24-pointer-bottom",
               "label": "icon--arrow-24 pointer-bottom",
@@ -534,27 +620,15 @@
                   "renderable": true
                 }
               ]
-            },
-            {
-              "id": "icon--close-32",
-              "label": "icon--close-32",
-              "class": "icon icon--close-32",
-              "states": [
-                {
-                  "state": "default",
-                  "label": "기본",
-                  "renderable": true
-                }
-              ]
             }
           ],
           "usage": {
-            "count": 119
+            "count": 184
           },
           "evidence": {
-            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
+            "sourceScreen": "core/EXW/pages/EXW-BRWV-10-10-10-S.html",
             "range": {
-              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "file": "core/EXW/pages/EXW-BRWV-10-10-10-S.html",
               "from": 1,
               "to": 1
             }
@@ -586,7 +660,7 @@
             }
           ],
           "usage": {
-            "count": 7
+            "count": 9
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
@@ -671,7 +745,7 @@
             }
           ],
           "usage": {
-            "count": 20
+            "count": 29
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
@@ -708,7 +782,7 @@
             }
           ],
           "usage": {
-            "count": 10
+            "count": 15
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-40-10-S.html",
@@ -745,7 +819,7 @@
             }
           ],
           "usage": {
-            "count": 6
+            "count": 7
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-30-20-S.html",
@@ -868,7 +942,7 @@
             }
           ],
           "usage": {
-            "count": 33
+            "count": 41
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
@@ -929,7 +1003,7 @@
             }
           ],
           "usage": {
-            "count": 27
+            "count": 34
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
@@ -966,7 +1040,7 @@
             }
           ],
           "usage": {
-            "count": 7
+            "count": 9
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-40-10-S.html",
@@ -1015,7 +1089,7 @@
             }
           ],
           "usage": {
-            "count": 21
+            "count": 32
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
@@ -1041,7 +1115,7 @@
           "kind": "shell",
           "description": "상단 고정 헤더 + 본문. 사이드바가 없는 모바일 웹뷰 골격이다.",
           "usage": {
-            "count": 22
+            "count": 77
           },
           "regions": [
             {
@@ -1090,7 +1164,7 @@
             }
           ],
           "usage": {
-            "count": 8
+            "count": 11
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
@@ -1187,7 +1261,7 @@
             }
           ],
           "usage": {
-            "count": 17
+            "count": 30
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",

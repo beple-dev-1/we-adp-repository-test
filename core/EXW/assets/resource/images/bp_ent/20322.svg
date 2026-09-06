@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+    <g data-name="그룹 20322">
+        <g data-name="타원 351" style="isolation:isolate;stroke:#c0c1c3;stroke-miterlimit:10;fill:none">
+            <circle cx="7" cy="7" r="7" style="stroke:none"/>
+            <circle cx="7" cy="7" r="6.5" style="fill:none"/>
+        </g>
+        <g data-name="그룹 19303">
+            <g data-name="그룹 19302">
+                <path data-name="패스 9935" d="M820.155 461.263h1.092l1.052 3.923h.04l1.051-3.923h1.092l1.052 3.9h.04l1.051-3.9h1.075l-1.557 5.358h-1.071l-1.092-3.862h-.08l-1.092 3.862h-1.072z" style="fill:#c0c1c3" transform="translate(-816.926 -456.942)"/>
+            </g>
+            <path data-name="선 270" transform="translate(3 6.985)" style="stroke:#c0c1c3;stroke-miterlimit:10;fill:none" d="M0 0h1.257"/>
+            <path data-name="선 271" transform="translate(9.743 6.985)" style="stroke:#c0c1c3;stroke-miterlimit:10;fill:none" d="M0 0h1.257"/>
+        </g>
+    </g>
+</svg>

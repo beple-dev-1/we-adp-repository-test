@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>브랜드상품권 회원가입</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-80-30-10-S">
+<link rel="stylesheet" type="text/css" href="/raon/transkey_mobile/transkey.css"/>
+<form id="frm" name="frm">	
+	<input type="hidden" name="TOKEN" id="TOKEN" >
+	<input type="hidden" name="REF_PAGE" id="REF_PAGE">
+	<input type="hidden" name="ORG_APP_CD" id="ORG_APP_CD" value="">
+	<input type="hidden" name="API_KEY" id="API_KEY" value="">
+	<input type="hidden" name="ORG_CD" id="ORG_CD" value="">
+	<input type="hidden" name="MEMB_CD" id="MEMB_CD">
+	<input type="hidden" name="APP_CD" id="APP_CD" value="">
+	<input type="hidden" name="B_CI" id="B_CI" value="">
+	<input type="hidden" name="NMA_DEV_ID" id="NMA_DEV_ID" value="">
+	<input type="hidden" name="NMA_MODEL" id="NMA_MODEL" value="">
+	<input type="hidden" name="NMA_NETNM" id="NMA_NETNM" value="">
+	<input type="hidden" name="NMA_PLF" id="NMA_PLF" value="">
+	<input type="hidden" name="NMA_PLF_VER" id="NMA_PLF_VER" value="">
+</form>
+
+<input type="hidden" id="rsng_yn" value="N" />
+<input type="hidden" id="trx_dt"  value=""  />
+<input type="hidden" id="trx_seq" value=""  />
+
+<div class="wrap">
+	<div class="container">
+		<!-- content -->
+		<div class="content">
+			
+			<div class="biz_pg_w addBtn-pb58 addNav">
+				<!-- 회원가입 -->
+				<div class="pg_join" id="step1">
+					<h2 class="txt_bold">
+						회원정보를 입력해 주세요.
+					</h2>
+					<p class="txt">비플페이에 회원가입을 위한 정보를 입력합니다.</p>
+					<!-- 정보입력 폼 -->
+					<div class="ipt_section">
+						<form action="">
+							<fieldset>
+								<legend>회원정보 입력</legend>
+								<!-- 이름 -->
+								<div class="name">
+									<h3>이름</h3>
+									<div class="ipx_bx"><!-- 입력 활성화 시 "ipt"클래스 추가 -->
+										<input id="membNm" type="text" value="" placeholder="이름(실명)을 입력하세요.">
+									</div>
+								</div>
+								<!-- //이름 -->
+								<!-- 주민등록번호 -->
+								<div class="citizen_code">
+									<h3>주민등록번호</h3>
+									<div class="code_1">
+										<input id="brtDt" maxlength="6" type="tel" value="" placeholder="앞 6자리">
+									</div>
+									<div>
+										<span>-</span>
+									</div>
+									<div class="code_2">
+										<div class="ipt_bx">
+											<input type="tel" maxlength="1" value="" id="brtGndr">
+										</div>
+										<div class="code_after">
+											<i></i>
+											<i></i>
+											<i></i>
+											<i></i>
+											<i></i>
+											<i></i>
+										</div>
+									</div>
+								</div>
+								<!-- //주민등록번호 -->
+								<!-- 통신사 선택 -->
+								<div class="tel_select">
+									<h3>통신사</h3>
+									<div class="tel_name" id="sel_tel_corp">
+										<a id="teleCorp" data-value="01">SKT</a>
+									</div>
+								</div>
+								<!-- //통신사 선택 -->
+								<!-- 휴대전화 번호 -->
+								<div class="phone_number">
+									<h3>휴대폰 번호</h3>
+									<div class="ipt_bx">
+										<input id="mobNo" type="tel" value="" placeholder="휴대폰 번호를 입력하세요."><!-- 2022-04-20 -->
+									</div>
+								</div>
+								<!-- //휴대전화 번호 -->
+							</fieldset>
+						</form>
+						<!-- //정보입력 폼 -->
+					</div>
+				</div>
+				<!-- // 회원가입 -->
+				
+				<!-- 약관동의 -->
+				<div class="pg_join" id="step2" style="display:none;">
+					<p class="txt_bold">
+						아래 약관에 동의해 주세요.
+					</p>
+					<!-- 약관 전체동의 -->
+					<div class="all_agree">
+						<a id="check_all" data-attr="N" class=""><strong>전체 동의</strong></a><!-- 전체동의 시 "on"클래스 추가 -->
+					</div>
+					<!-- //약관 전체동의 -->
+					<!-- 개별 약관 동의 -->
+					<dl class="agreeCon toggleWrap">
+						<dt><!-- 약관목록 열림/닫힘 시 "open" 클래스 추가/제거 -->
+							<label><input class="checkSingle" id="agree-chk1" type="checkbox"> <span>비플페이 필수항목 모두 동의 (필수)</span></label>
+							<a href="#none" class="trigger">약관보기</a>
+						</dt>
+						<dd class="toggleCon">
+							<ul>
+								<li>
+                                    <a class="agree_chk" data-terms-code="060001">비플페이 서비스 이용약관</a>
+                                </li>
+                                <li>
+                                    <a class="agree_chk" data-terms-code="060016">개인정보 수집 및 이용 동의</a>
+                                </li>
+                                <li>
+                                    <a class="agree_chk" data-terms-code="060002">개인(신용)정보 제3자 제공 동의</a>
+                                </li>
+                                <li>
+                                    <a class="agree_chk" data-terms-code="060004">통합 전자금융거래 이용약관</a>
+                                </li>
+                                <li>
+                                    <a class="agree_chk" data-terms-code="060006">오픈뱅킹 참여은행 자동이체 이용약관</a>
+                                </li>
+                                <li>
+                                    <a class="agree_chk" data-terms-code="060015">위치기반 서비스 이용약관</a>
+                                </li>
+							</ul>  
+						</dd>
+					</dl>
+					<dl class="agreeCon toggleWrap">
+						<dt><!-- 약관목록 열림/닫힘 시 "open" 클래스 추가/제거 -->
+							<label><input class="checkSingle" id="agree-chk2" type="checkbox"> <span>본인인증 필수항목 모두 동의 (필수)</span></label>
+							<a href="#none" class="trigger">약관보기</a>
+						</dt>
+						<dd class="toggleCon">
+							<ul id="add_agree">
+								<li>
+                                    <a class="agree_chk" data-terms-code="060011">통신사 이용약관</a>
+                                </li>
+                                <li>
+                                    <a class="agree_chk" data-terms-code="060012">본인확인 서비스 이용약관</a>
+                                </li>
+                                <li>
+                                    <a class="agree_chk" data-terms-code="060013">개인정보 수집 이용 취급 위탁 동의</a>
+                                </li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="agreeCon toggleWrap">
+						<dt><!-- 약관목록 열림/닫힘 시 "open" 클래스 추가/제거 -->
+							<label><input class="checkSingle" id="agree-chk3" type="checkbox"> <span>마케팅 정보 수신 동의 (선택)</span></label>
+							<a href="#none" class="trigger">약관보기</a>
+						</dt>
+						<dd class="toggleCon">
+							<ul>
+								<li>
+									<a class="agree_chk" data-terms-code="060005">마케팅 정보 수신 동의</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+					<!-- //개별 약관 동의 -->
+				</div>
+				<!-- // 약관동의 -->
+				
+				<!-- 인증번호 입력 -->
+				<div class="pg_join" id="step3" style="display:none;">
+					<p class="txt_bold">
+						인증번호를 입력해 주세요.
+					</p>
+					<!-- 정보입력 폼 -->
+					<div class="ipt_section">
+						<form action="">
+							<fieldset>
+								<legend>인증번호 입력</legend>
+								<!-- 이름 -->
+								<div class="cert">
+									<h3>인증번호</h3>
+									<div class="ipt_bx">
+										<input id="aprv_no" type="tel" maxlength="6" jex-input="onlyNumber" placeholder="6자리 입력">
+										<span id="isTimer" class="time">00:00</span>
+									</div>
+									<div class="btn_cert">
+										<a id="send_btn">인증번호 요청</a>
+									</div>
+								</div>
+								<!-- //이름 -->
+							</fieldset>
+						</form>
+						<!-- //정보입력 폼 -->
+						<div class="cert_alert">
+							<p class="alert">인증번호가 오지 않나요?</p>
+							<div class="msg_bx">
+								<ul>
+									<li>
+										인증번호는 <a href="#none" class="fw_b">02-708-1007</a> 전화번호로 발송됩니다.<br>
+										위 인증번호가 차단되었으면 차단 해제 부탁드립니다.
+									</li>
+									<li>
+										인증 관련 문의는 <a href="#none" class="fw_b">02-708-1007</a> KCP 고객센터로 연락하시면 보다 자세히 인증 관련 안내를 받으실 수 있습니다.
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 인증번호 입력 -->
+			</div>
+						
+			<!-- 웹뷰 경남 -->
+			<div class="webView_bnk" id="step5" style="display:none;">
+				<!-- 사용인증 -->
+				<div class="transaction addBtn-pb58 addNav"><!-- 하단 네이게이션 제거 시 addNav 클래스 제거 -->
+					<p class="txt_bold"  id="guide_txt">
+						거래승인번호 등록을 위한<br>
+						6자리 비밀번호를 입력하세요.
+					</p>
+					<!-- 정보입력 폼 -->
+					<div class="ipt_section">
+						<form action="">
+							<fieldset>
+								<input inputmode="none" type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+								<input inputmode="none" type="hidden" name="pwd2" id="pwd2" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+								
+								<legend>승인번호 입력</legend>
+								<div class="tac_num" id="tac_num">
+									<div><input inputmode="none" type="password" title="결제비밀번호 첫 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 두 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 세 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 네 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 다섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 여섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+								</div>
+							</fieldset>
+						</form>
+						<!-- //정보입력 폼 -->
+					</div>
+					<div class="err_msg kn">
+						<p>
+						</p>
+					</div>
+				</div>
+				<!-- 사용인증 -->
+			</div>
+			<!-- //웹뷰 경남 -->
+			
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w webView_bnk">
+				<div class="inner bg_white">
+					<a id="next_btn" class="btn_default btn-style-h48 round_r6"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+						<span id="txt">다음</span>
+					</a>
+				</div>
+				<!-- 하단 네비게이션 -->
+				<nav class="nav_w bg_white">
+					<div class="prev">
+						<a id="goBack">
+							<span>이전</span>
+						</a>
+					</div>
+					<div class="home">
+						<a id="goMain">
+							<span>홈</span>
+						</a>
+					</div>
+					<div class="my_info">
+						<a id="goHistory">
+							<span>MY</span>
+						</a>
+					</div>
+				</nav>
+				<!-- //하단 네비게이션 -->
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+		<!-- // content -->
+		
+		<!-- modal overlay -->
+		 <div id="clause_modal" class="modaloverlay type1" style="display:none;">
+		     <div class="lytb"><div class="lytb_row"><div class="lytb_td">
+		         <!-- layerpopup -->
+		         <div class="layer_style1">
+		             <div class="layer_po">
+		                 <a class="btn_r" onclick="$('#clause_modal').hide();"><span class="btn_close"><span class="blind">닫기</span></span></a>
+		                 <div class="cont2">
+		                     <div class="ly_st_tit">
+		                         <p></p>
+		                     </div>
+		
+		                     <div class="ly_st_clause">
+		                     </div>
+		
+		                     <div class="ly_st_btn" onclick="$('#clause_modal').hide()">
+		                         <a class="on">확인</a>
+		                     </div>
+		                 </div>
+		             </div>
+		         </div>
+		         <!-- //layerpopup -->
+		     </div></div></div>
+		 </div>
+		 <!-- //modal overlay -->
+	</div>
+	<!-- // container -->
+</div><!-- // wrap -->
+
+<div class="layer_overlay" id="tel_corp_layer" style="display:none;">
+    <div class="layer_bPop">
+        <div class="popup_con pd0">
+            <!-- 통신사 선택 -->
+            <div class="tel_select">
+                <h2>
+                    <strong>통신사 선택</strong>
+                </h2>
+                <!-- 닫기버튼 -->
+                <p class="btn_close">
+                    <a id="close_tel_corp_layer">
+                        <span class="blind">닫기</span>
+                    </a>
+                </p>
+                <!-- //닫기버튼 -->
+                <!-- 통신사 목록 -->
+                <ul class="tel_list">
+                    <li>
+                        <a class="on" data-value="01" href="javascript:void(0);">SKT</a><!-- 선택 시 클래스 "on" 추가 -->
+                    </li>
+                    <li>
+                        <a data-value="02" href="javascript:void(0);">KT</a>
+                    </li>
+                    <li>
+                        <a data-value="03" href="javascript:void(0);">LG U+</a>
+                    </li>
+                    <li>
+                        <a data-value="04" href="javascript:void(0);">SKT 알뜰폰</a>
+                    </li>
+                    <li>
+                        <a data-value="05" href="javascript:void(0);">KT 알뜰폰</a>
+                    </li>
+                    <li>
+                        <a data-value="06" href="javascript:void(0);">LG U+ 알뜰폰</a>
+                    </li>
+                </ul>
+                <!-- //통신사 목록 -->
+            </div>
+            <!-- //통신사 선택 -->
+        </div>
+    </div>
+</div>
+
+</body>
+
+<!-- 토글버튼 -->
+<script>
+$(function(){
+	$('.toggleWrap .trigger').on({
+		click: function(){
+			$(this).parent().toggleClass('open');
+			$(this).parent().next().slideToggle(200)
+		}
+	})
+})
+</script>
+<!-- //토글버튼 -->
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>에이블리 비플머니 출금</title>
+  <link rel="stylesheet" href="../assets/webview_api/css/reset.css">
+  <link rel="stylesheet" href="../assets/webview_api/css/style.css">
+  <link rel="stylesheet" href="../assets/webview_api/css/header.css">
+  <link rel="stylesheet" href="../assets/webview_api/css/popup.css">
+</head>
+<body data-screen-id="EXW-UWV-70-30-60-C">
+<form name="frm" id="frm" method="post">
+	<input type="hidden" name="ORG_ID" id="ORG_ID" value="">
+	<input type="hidden" name="DATA"   id="DATA"   value="">
+
+	<!-- 뒤로가기용 봉투·대상. name 을 주지 않는다 — 폼 POST 에 섞이면 스택이 어긋난다 -->
+	<input type="hidden" id="DATA_BACK"    value="">
+	<input type="hidden" id="BACK_URL"     value="">
+	<input type="hidden" id="CANCEL_URL"   value="">
+	<input type="hidden" id="FAIL_URL"     value="">
+	<input type="hidden" id="CALLBACK_URL" value="">
+	<input type="hidden" id="APP_CD"       value="">
+
+	<input type="hidden" id="PWD_RES_CD"   value="">
+</form>
+
+<!-- ================================================================
+     step1 — 금액·계좌 입력
+     ================================================================ -->
+<div class="wrap" com-step-id="step1">
+
+	<header class="header position-sticky">
+		<div class="header__title-wrap">
+			<h1 class="page-name"><span>머니 보내기</span></h1>
+		</div>
+		<nav class="header__navi">
+			<a href="#none" class="header__btn btn-close" id="btnClose">
+				<span class="blind">닫기</span>
+			</a>
+		</nav>
+	</header>
+
+	<main class="container-wrap js-container-wrap">
+		<div class="container beple-money">
+
+			<!-- ================================================================
+			     출금가능 비플머니 + 출금계좌 선택
+
+			     info 아이콘이 popup-transper--info(출금가능 비플머니란?)를 연다.
+			     팝업 본체는 아래 계좌선택 팝업 옆에 있다.
+			     ================================================================ -->
+			<section class="current page-header justify-spacing-def">
+				<div class="current-content">
+					<div class="current__title">
+						<button type="button" class="button js-popup-open" data-modal="popup-transper--info">
+							<span class="title-text">출금가능 비플머니</span>
+							<i class="icon icon--info-16"></i>
+						</button>
+					</div>
+					<div class="current__balance">
+						<p class="balance-text"><strong id="curBalance">0</strong>원</p>
+					</div>
+
+					<!-- 총 보유 머니 — 위 출금가능액과 다른 값이다.
+					     출금가능액은 충전유형·머니상태 조건이 더 붙는다(TB_MEMBER_MNY_R010). -->
+					<div class="total-balance">
+						<p>총 보유 머니<span><strong id="totBalance">0</strong>원</span></p>
+					</div>
+				</div>
+
+				<button type="button" class="select-account--button js-popup-open js-select--result"
+				        data-modal="popup-select--bank" id="btnSelectAccount">
+					<p>충전계좌</p>
+
+					<div class="account" id="acctHasWrap">
+						<span class="target" id="acctText"><!-- sample:begin -->안내 문구<!-- sample:end --></span>
+						<i class="icon icon--arrow-24 pointer-bottom"></i>
+					</div>
+
+					<div class="account" id="acctNoneWrap" style="display:none;">
+						<span class="fc-primary">계좌를 등록해 주세요</span>
+						<i class="icon icon--arrow-24"></i>
+					</div>
+				</button>
+			</section>
+
+			<!-- ================================================================
+			     출금금액 입력 — 퀵버튼에 「전액」이 있다(충전과 다른 점)
+			     ================================================================ -->
+			<div class="transfer">
+				<div class="form-box js-form-box justify-spacing-def">
+					<div class="form__item js-form-item" id="frmItemAmt">
+						<div class="form__item-header">
+							<h3 class="form__label container__headline container__headline--lv1 fc-333">
+								<label for="inpAmt">보낼금액</label>
+							</h3>
+						</div>
+						<div class="form__item-wrap">
+							<div class="form__item-wrap">
+								<div class="input-type--box input-unit">
+									<input type="tel" id="inpAmt" value="" placeholder="금액을 입력해주세요"
+									       maxlength="11" jex-input="commaFormat" data-input="commaFormat">
+									<button type="button" class="input__unit" id="btnClearAmt" style="display: none;">
+										<i class="icon icon--close_cr-16"></i>
+									</button>
+								</div>
+							</div>
+
+							<div class="quick-amount revers-mgt2" id="quickAmount">
+								<button type="button" class="button button--lv5_line button-mid" data-add="10000"><span>+1만원</span></button>
+								<button type="button" class="button button--lv5_line button-mid" data-add="50000"><span>+5만원</span></button>
+								<button type="button" class="button button--lv5_line button-mid" data-add="100000"><span>+10만원</span></button>
+								<button type="button" class="button button--lv5_line button-mid" data-all="Y"><span>전액</span></button>
+							</div>
+
+							<p class="fc-red mgt2" id="amtErrMsg" style="display: none;"><!-- sample:begin -->4,500<!-- sample:end --></p>
+						</div>
+					</div>
+				</div>
+
+				<hr class="divide divide-h10 mgt32">
+
+				<!-- 출금 안내 — 열기·닫기는 dropDownHandler 가 처리한다 -->
+				<div class="transfer__infomation flex-column drop-box js-drop-box open justify-spacing-def">
+					<div class="column__head">
+						<button type="button" class="drop--trigger js-drop-trigger">
+							<h5 class="container__headline container__headline--lv2 fw-600">출금 안내</h5>
+							<i class="icon icon--arrow-24"><span class="blind">출금 안내 열기</span></i>
+						</button>
+					</div>
+					<div class="column__item drop--content js-drop-content" style="display: block;">
+						<div class="infomation-content">
+							<dl>
+								<dt class="content-title">출금 한도</dt>
+								<dd class="content-detail">
+									<ul class="list-bullet">
+										<li>최소 출금 금액 : <span id="txtOnceMin">1,000</span>원</li>
+										<li>출금 단위 : 1원 단위 출금 가능</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt class="content-title">출금 조건</dt>
+								<dd class="content-detail">
+									<ul class="list-bullet">
+										<li>
+											계좌로 충전한 비플머니만 출금할 수 있으며, <br>
+											지급된 비플머니는 출금할 수 없습니다.
+										</li>
+										<li>출금은 비플페이에 등록된 본인 명의의 계좌로만 가능합니다.</li>
+										<li>출금 신청한 금액은 선택한 계좌로 다음 영업일에 입금됩니다.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt class="content-title">출금 계좌</dt>
+								<dd class="content-detail">
+									<p>충전 계좌는 비플페이 &gt; 더보기 &gt; 설정 &gt; 계좌 관리에 등록된 계좌로만 이용 가능합니다.</p>
+									<button type="button" class="button button-small button--lv5_line mgt12" id="btnGuideAcct">
+										<span>비플머니 출금하기</span>
+									</button>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-floating bg-white js-floating-container">
+			<p class="fc-999 pdb16 pdt24 ta-center justify-spacing-def revers-mgt8">에이블리 머니는 (주)비즈플레이가 발행·관리합니다</p>
+			<article class="floating__box button-box-spacing">
+				<a href="#none" class="button button-xl button--lv1 dis" id="btnNext">
+					<span>다음</span>
+				</a>
+			</article>
+		</div>
+	</main>
+</div>
+
+<!-- ================================================================
+     step2 — 출금 완료 (퍼블리싱 BM310e,B320e 공용)
+     ================================================================ -->
+<div class="wrap" com-step-id="step2" style="display: none;">
+
+	<!-- 퍼블리싱 v1.3 BM323 — 헤더에 공유하기 버튼이 있으나 넣지 않는다.
+	     BM323 은 결제완료 화면을 복사해 만든 것이고(blind 텍스트가 「비플페이 온라인결제」다)
+	     공유는 그쪽 잔재다. 카톡·문자·링크복사는 웹뷰 네이티브 규격이 없어 눌러도 동작하지 않는다.
+	     결제완료(webview_pay_complete_view.jsp:163)도 같은 이유로 주석 처리돼 있다.
+	     (사용자 확정 2026-08-31 — 「일단 무시하고 안보이게」) -->
+	<header class="header position-sticky">
+		<div class="header__title-wrap">
+			<h1 class="page-name"><span class="blind">머니 보내기</span></h1>
+		</div>
+	</header>
+
+	<main class="container-wrap js-container-wrap pdt32">
+		<section class="container end-container end--payment js-container">
+			<section class="body__content justify-space-def">
+				<!-- 「보냈다」가 아니라 「보낼 예정」이다 — 즉시 이체가 아니라 예약 입금이다.
+				     날짜는 화면 JS 가 채운다(거래일+1일 · 낮 12시 고정). -->
+				<div class="payment__head">
+					<i class="icon icon--state_check-64">출금 완료</i>
+					<h2 class="container__headline">
+						<p class="head-text fw-600"><strong id="endAmt">0</strong>원을 보낼 예정이에요</p>
+					</h2>
+					<!-- 완료 화면은 날짜를 계산하지 않는다 — 고정 문구다(사용자 확정 2026-08-31).
+					     정보확인 팝업은 날짜를 보여준다(「9월 1일(화) 낮 12시」) — 표현이 다른 것이 의도다.
+
+					     🔴 이 안에 자식 요소를 두지 않는다 — .info__text--lv1 이 display:flex 라
+					        <span> 을 넣으면 flex item 이 되어 문장이 조각난다(줄바꿈·간격이 깨진다). -->
+					<p class="info__text--lv1 fc-666 pdt12">입금계좌로 1일 후 입금됩니다.</p>
+				</div>
+
+				<div class="payment__info">
+					<div class="flex-row">
+						<p class="info-head">보낼 머니</p>
+						<p class="info-data fw-600 fc-primary"><span id="endSendAmt">0</span>원</p>
+					</div>
+					<div class="flex-row">
+						<p class="info-head">입금계좌</p>
+						<p class="info-data fc-333" id="endAcct"><!-- sample:begin -->표본<!-- sample:end --></p>
+					</div>
+				</div>
+			</section>
+		</section>
+
+		<div class="container-floating js-floating-container">
+			<article class="floating__box button-box-spacing">
+				<a href="#none" class="button button-xl button--lv1" id="btnEndOk">
+					<span>확인</span>
+				</a>
+			</article>
+		</div>
+	</main>
+</div>
+
+<!-- ================================================================
+     출금가능 비플머니 안내 팝업 (퍼블리싱 BM320a)
+
+     no-dim 클래스가 있어 딤이 깔리지 않는다.
+     열기는 상단 info 버튼의 js-popup-open, 닫기는 확인 버튼의 js-popup-close —
+     둘 다 common-ui.js 의 activeModalHandler 가 처리한다.
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap no-dim" data-modal="popup-transper--info" style="display:none;">
+	<section class="popup-container popup--bottom transper--info">
+		<div class="popup-container__header">
+			<h2 class="headline headline--lv4">출금가능 비플머니란?</h2>
+		</div>
+
+		<div class="popup-container__body justify-spacing-def">
+			<section class="body__content">
+				<ul class="list-bullet">
+					<li>계좌로 충전한 비플머니만 출금이 가능합니다.</li>
+					<li>지급된 비플머니는 출금할 수 없습니다.</li>
+				</ul>
+			</section>
+		</div>
+
+		<section class="body__button--box button-box-spacing">
+			<button type="button" class="button button-xl button--lv1 col--block js-popup-close">
+				<span>확인</span>
+			</button>
+		</section>
+	</section>
+</div>
+
+<!-- ================================================================
+     계좌선택 팝업 — step 밖에 둔다(공용)
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="popup-select--bank" style="display:none;">
+	<div class="popup-container popup--bottom popup-select--type1 box-padding--type2 js-popup-select">
+		<section class="popup-container__body">
+			<div class="justify-spacing-def">
+				<a href="#none" class="flex-row align-center justify-end" id="btnAcctMng">
+					<span class="info__text--lv1 fc-666 fw-600">계좌관리</span>
+					<i class="icon icon--arrow-16"></i>
+				</a>
+			</div>
+			<div class="flex-column justify-spacing-def pdt8" id="acctList"><!-- sample:begin -->
+	<button type="button" class="select__button js-select-content js-popup-close "
+	        data-idx="0">
+		<span>안내 문구</span><i class="icon icon--check-24_primary"></i>
+	</button>
+
+	<button type="button" class="select__button js-select-content js-popup-close "
+	        data-idx="1">
+		<span>안내 문구</span><i class="icon icon--check-24_primary"></i>
+	</button>
+<!-- sample:end --></div>
+		</section>
+	</div>
+</div>
+
+<!-- ================================================================
+     출금 정보확인 팝업
+     ================================================================ -->
+<div class="popup-wrap js-popup-wrap" data-modal="popup-payment--confirm" style="display:none;">
+	<section class="popup-container popup--bottom popup-payment--confirm">
+		<header class="popup-container__header">
+			<h3 class="headline-text">
+				<strong><span id="cfmAmt">0</span>원</strong>을 보낼까요?
+			</h3>
+		</header>
+		<article class="popup-container__body">
+			<div class="table-wrap justify-spacing-def">
+				<!-- 퍼블리싱 v1.3 「출금정보확인(팝업)」 — 입금계좌 1행이다.
+				     v1.2 의 출금 전/후 비플머니 2행은 퍼블리싱에서 빠졌다(사용자 확정). -->
+				<article class="table--body border-none">
+					<table class="table table--data">
+						<colgroup>
+							<col style="width: 102px;">
+							<col style="width: 210px;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><p>입금계좌</p></th>
+								<td><p id="cfmAcct"><!-- sample:begin -->표본<!-- sample:end --></p></td>
+							</tr>
+						</tbody>
+					</table>
+				</article>
+			</div>
+
+			<!-- 입금 일정 안내 — 날짜는 화면 JS 가 채운다(거래일+1일). 낮 12시는 고정이다 -->
+			<div class="infomation infomation-box mgt24">
+				<div class="flex-column">
+					<div class="column__head">
+						<i class="icon icon--info-16"><span class="blind">안내</span></i>
+						<h5 class="container__headline container__headline--lv1">입금 일정 안내</h5>
+					</div>
+					<div class="column__item">
+						<p class="info__text--lv1 bullet-text">
+							머니를 보내면 <span id="cfmDepositDt"><!-- sample:begin -->2026.09.02<!-- sample:end --></span>에 입금 받을 수 있어요.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="button-box flex-row gap-8 justify-spacing-btn pdt24">
+				<button type="button" class="button button-xl button--lv5 button--narrow js-popup-close">
+					<span>취소</span>
+				</button>
+				<!-- 실행 버튼에는 js-popup-close 를 붙이지 않는다 — 팝업을 실행 완료까지 열어 둔다.
+				     닫으면 c001 ajax 를 기다리는 동안 step1 이 노출된다(딤이 사라져서다).
+				     닫기는 화면 JS 가 성공·실패 시점에 한다. -->
+				<!-- 🔴 라벨이 「충전하기」인 것은 퍼블리싱 v1.3 「출금정보확인(팝업)」 원문이다.
+				     출금 팝업인데 충전 문구다 — 퍼블리셔 요청 목록에 올렸고 원문 유지로 결정됐다
+				     (사용자 확정 2026-08-31). 동작은 출금 실행이다. -->
+				<button type="button" class="button button-xl button--lv1 button--wide" id="btnPay">
+					<span>충전하기</span>
+				</button>
+			</div>
+		</article>
+	</section>
+</div>
+
+<!-- 계좌 목록 항목 템플릿
+
+     🔴 계좌번호를 DOM 에 심지 않는다 — data-idx 로 배열 위치만 두고 실제 값은
+        화면 JS 가 클로저 배열로 들고 있는다. c001 이 평문 계좌번호를 요구하지만
+        HTML 소스에는 남기지 않는다(v1 은 li 속성에 dec_acct_no 를 심었다). -->
+<script type="text/template" id="tmpl_acct_item">
+	<button type="button" class="select__button js-select-content js-popup-close {{ selClass }}"
+	        data-idx="{{ idx }}">
+		<span>{{ label }}</span><i class="icon icon--check-24_primary"></i>
+	</button>
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>CPM/MPM 결제</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-UWV-60-30-S">
+<div class="wrap" com-step-id="step1" style="display: block;">
+    <!-- header -->
+    <div class="header floating-back-header floating-sticky">
+        <h1>비플페이</h1>
+        <p class="outpage">
+            <a href="#none" class="btn_outpage" id="btn_out_step1">페이지나가기</a>
+        </p>
+    </div>
+    <!-- // header -->
+
+    <div class="container">
+        <div class="content">
+            <!-- 식권 웹뷰 -->
+            <div class="webView_api">
+                <!-- 사용인증 -->
+                <div class="transaction">
+                    <p class="txt_bold">
+                        비플페이에서 사용하는<br>
+                        거래승인번호 6자리를 입력하세요.
+                    </p>
+                    <!-- 정보입력 폼 -->
+                    <div class="ipt_section">
+                        <form action="">
+                            <input type="hidden" maxlength="6" name="pwd1" id="pwd1"
+                                   data-tk-kbdType="number" data-tk-bottom="true"
+                                   onfocus="mtk.onKeyboard(this);"/>
+                            <fieldset>
+                                <legend>승인번호 입력</legend>
+                                <div class="tac_num" id="tac_num">
+                                    <div <!--class="ipt"-->><input type="password" title="결제비밀번호 첫 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                    <div><input type="password" title="결제비밀번호 두 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                    <div><input type="password" title="결제비밀번호 세 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                    <div><input type="password" title="결제비밀번호 네 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                    <div><input type="password" title="결제비밀번호 다섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                    <div><input type="password" title="결제비밀번호 여섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                </div>
+                            </fieldset>
+                        </form>
+                        <!-- //정보입력 폼 -->
+                    </div>
+                    <div class="err_msg">
+                        <p>
+                            거래승인번호가 기억나지 않으세요?</br>
+                            비플페이앱에서 재설정 가능합니다.
+                        </p>
+                        <!--<p id="pass_reset" class="pass_reset">
+                            <a href="#none">거래승인번호 재설정</a>
+                        </p>-->
+                    </div>
+                    <!--<div class="keypad_wrap">
+                        <ul>
+                            <li><a href="#none"><span>1</span></a></li>
+                            <li><a href="#none"><span>2</span></a></li>
+                            <li><a href="#none"><span>3</span></a></li>
+                            <li><a href="#none"><span>4</span></a></li>
+                            <li><a href="#none"><span>5</span></a></li>
+                            <li><a href="#none"><span>6</span></a></li>
+                            <li><a href="#none"><span>7</span></a></li>
+                            <li><a href="#none"><span>8</span></a></li>
+                            <li><a href="#none"><span>9</span></a></li>
+                            <li><a href="#none"><span>&nbsp;</span></a></li>
+                            <li><a href="#none"><span>0</span></a></li>
+                            <li><a href="#none" class="del"><span>지우기</span></a></li>
+                        </ul>
+                    </div>-->
+                </div>
+                <!-- 사용인증 -->
+            </div>
+            <!-- //식권 웹뷰 -->
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+
+<div class="wrap" com-step-id="step2" style="display: none;">
+    <div class="header floating-back-header floating-sticky">
+        <h1>비플페이</h1>
+        <div class="right">
+            <a href="#none" class="btn_outpage" id="btn_out_step2">페이지나가기</a>
+        </div>
+    </div>
+    <!-- // header -->
+
+    <div class="container">
+        <div class="content">
+            <!-- 식권 웹뷰 -->
+            <div class="webView_api">
+                <!-- 결제안내 -->
+                <div class="accbx">
+                    <div class="inner">
+                        <div class="tit">에서 결제됩니다.</div>
+                    </div>
+                </div>
+                <!-- //결제안내 -->
+                <div class="cpm_paybx">
+                    <!-- 카메라 스캔 -->
+                    <div id="call_camera" class="camera_scan">
+                        <a href="#none"><!-- 영역 클릭 시 inner클래스 영역 사라짐 -->
+                            <div class="inner">
+                                <p>
+                                    가맹점 QR을 스캔하시려면<br>
+                                    여기를 터치하세요!
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- //카메라 스캔 -->
+                    <!-- QR 및 바코드 -->
+                    <div class="code_area">
+                        <div class="inner">
+                            <div id="bar_code_div" class="bar_code" style="display: block;">
+                                <div class="code_img" id="bar_code">
+                                </div>
+                                <p id="barcode_num" class="code_num"><!-- sample:begin -->004<!-- sample:end --></p>
+                            </div>
+                            <div id="qr_code_div" class="qr_code" style="display:none;"><!-- 하단 코드 변경버튼 클릭 시 qr bar코드 태그변경 -->
+                                <div class="code_img" id="qr_code">
+                                </div>
+<!--                                <p class="code_num">800088662032207489214004</p>-->
+                            </div>
+                            <!-- QR, 바코드 변경버튼 -->
+                            <p class="change_btn"><a id="switch_code" href="#none">QR코드 보기</a></p>
+                            <!-- //QR, 바코드 변경버튼 -->
+                        </div>
+                    </div>
+                    <!-- //QR 및 바코드 -->
+                </div>
+            </div>
+            <!-- //식권 웹뷰 -->
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+
+<div class="layer_overlay" id="pwd_pop">
+    <!-- layerpopup -->
+    <div class="popup_w lytb">
+        <div class="popup_con">
+            <!-- 결제실패알림 -->
+            <div class="pg_noti">
+                <div class="inner">
+                    <p id="pwd_pop_text"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                </div>
+                <p class="ly_pop_btw btn">
+                    <a id="pwd_yes_btn" href="#none">확인</a>
+                </p>
+            </div>
+            <!-- //결제실패알림 -->
+        </div>
+    </div>
+    <!-- //layerpopup -->
+</div>
+</body>
+</html>

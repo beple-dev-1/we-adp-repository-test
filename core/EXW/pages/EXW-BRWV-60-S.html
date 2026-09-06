@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>구매내역 상세(info)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-60-S">
+<!-- wrap -->
+	<div class="wrap" id="mainPage">
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="br_gift_rn bg_f7 addBtn-pb65">
+					<!-- 구매 상세 -->
+					<div class="buy_detail">
+						<!--
+							적용예시 = class="top_bx use"
+
+							사용가능 	= ""
+							사용완료	= use
+							선물 		= present
+							기간만료	= end
+							환불완료	= refund
+						-->
+											
+						<div class="top_bx">
+					
+						<div class="top_bx use">
+					
+						<div class="top_bx present">
+					
+						<div class="top_bx refund">
+					
+						<div class="top_bx end">
+					
+							<!-- 상품(권) 이미지 & 권종 명 및 금액 -->
+							<div class="img_bx">
+								<div class="inner">
+									<p class="img">
+										<a><img src="" alt=""></a>
+									</p>
+									<p class="stemp">
+										<span class="blind"></span>
+									</p>
+								</div>
+							</div>
+							<!-- 권종 명 및 금액 -->
+							<div class="name_bx">
+								<p class="brand">비플머니</p>
+								<p class="gift_name">
+									<a>비플머니</a>
+								</p>
+							
+								<p class="balance">잔액 <span>4,500</span>원</p>
+							
+							</div>
+						</div>
+						<!-- 정보영역 -->
+						<div class="info_view">
+							<div class="inner">
+								<dl>
+									<dt>상품권 번호</dt>
+									<dd><button id="copyButton" type="button" class="copy_btn"><span></span></button></dd><!-- 2024-04-05 -->									
+								</dl>
+								<dl>
+									<dt>구매가격</dt>
+									<dd>4,500</dd>
+								</dl>
+								<dl>
+									<dt>발행일자</dt>
+									<dd>2026.09.02</dd>
+								</dl>
+								<dl>
+									<dt>유효기간</dt>
+									<dd class="expired">2026.09.02</dd><!-- 기한 만료 임박 시 class="expired" 추가 -->
+								</dl>
+								
+							
+								<dl>
+									<dt>비플머니</dt>
+									<dd></dd>
+								</dl>
+							
+							</div>
+						</div>
+
+						<!-- 토글영역 -->
+						<!-- 구매/선물/환불 내역 -->
+						<div class="dtl_history toggle_wrap">
+							<p class="trigger"><a>구매/선물/환불 내역</a></p>
+							<div class="history_con toggle_con" id="hist_area">
+								<ul>
+								
+									<li data-orderId="">
+										<div class="inner">
+										
+											<p class=""><span class="blind">비플머니</span></p>
+											<div class="status_w">
+												<p class="status"><span title="">비플머니</span><strong>비플머니</strong></p>
+												<p class="date">2026.09.02</p>
+											</div>
+											
+												<p class="bal">4,500원</p>
+											
+												<p class="bal">4,500원</p>
+											
+										</div>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+						<!-- 2023-06-09 -->
+						<!-- 상품 고시조건 및 거래조건 -->
+						<div class="dtl_notice toggle_wrap">
+							<p class="trigger"><a>상품권 상세</a></p>
+							<div class="notice_con toggle_con" style="none;">
+								<div class="inner">
+									<div class="info-box">
+										<h3 class="info-tit">기본정보</h3>
+										<div class="info-con">
+											
+											<div>
+												<p class="con-tit">상품권 소개</p>
+												<p></p>
+											</div>
+											
+											<div>
+												<p class="con-tit">상품권 종류</p>
+												<p>비플머니</p>
+											</div>
+											<div>
+												<p class="con-tit">사용 유효기간</p>
+												<p>구매일로부터 일</p>
+											</div>
+											
+											<div>
+												<p class="con-tit">사용가능 매장</p>
+												<p>
+													
+												</p>
+											</div>
+											
+										</div>
+									</div>
+									
+									<div class="info-box">
+										<h3 class="info-tit">유의사항</h3>
+										<div class="info-con">
+											<p></p>
+										</div>
+									</div>
+									
+									<div class="info-box">
+										<h3 class="info-tit">상품 필수 표기 정보</h3>
+										<div class="info-con">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //2023-06-09 -->
+						<!-- //토글영역 -->
+
+						<!-- 하단 버튼 -->		
+					
+						<div class="btn_bottom pdb0">
+						
+							<!-- <a onClick="uf_sendGift();">해당 금액권 선물하기</a> -->
+						
+							<a onclick="uf_btnAction();">유효기간 연장</a>
+						
+							<a onclick="uf_btnAction('Y');">환불</a>
+						
+						</div>
+						
+					
+						<div class="btn_bottom pdb0">
+							<a onclick="uf_btnAction('Y');">환불</a>
+						
+							<!-- <a onClick="uf_sendGift();">해당 금액권 선물하기</a> -->
+						
+						</div>
+						
+					
+						<div class="btn_bottom pdb0">
+							
+								<!-- <a onClick="uf_sendGift();">해당 금액권 선물하기</a> -->
+							
+								<a onclick="uf_btnAction();">환불 안내</a>
+							
+								<a onclick="uf_btnAction('Y');">환불</a>
+							
+						</div>
+						
+					
+					<!--
+						<div class="btn_bottom pdb0">
+							<a onclick="uf_btnAction();">선물 취소</a>
+							-->
+						
+						<!--
+							<a onClick="uf_sendGift();">해당 금액권 선물하기</a>
+							-->
+						
+						<!--
+						</div>
+						-->
+					
+					
+					
+					
+								
+						<!-- //하단 버튼 -->						
+						
+					</div>
+					<!-- //구매 상세 -->
+				</div>
+				<!-- 하단 고정버튼 -->
+				<div class="btn_botFix_w">
+					<!-- <nav class="nav_w bg_white">
+						<div class="home on">선택 시 on
+							<a onclick="uf_move('home');">
+								<span>홈</span>
+							</a>
+						</div>
+						<div class="history on">
+							<a onclick="uf_move('list');">
+								<span>내역</span>
+							</a>
+						</div>
+						<div class="prev on">
+							 <a onclick="uf_move('prev');"> 
+							<a onclick="uf_move('list');">
+								<span>이전</span>
+							</a>
+						</div>
+						<div class="next on">
+							<a onclick="uf_move('next');">
+								<span>다음</span>
+							</a>
+						</div>
+					</nav> -->
+				</div>
+				<!-- //하단 고정버튼 -->
+				
+				<!-- 하단 고정버튼 영역 -->
+				<div id="toastBox" class="btn_botFix_w" style="display: none;">
+					<!-- 토스트 메세지 -->
+					<div class="toast-container"><!-- 토스트메세지 노출 시 style="display:block;" -->
+						<p class="toast-text"><!-- 토스트메세지 노출 시 style="display:block;" -->
+							<span class="icon chk-round-18">상품권 번호 복사되었습니다.</span>
+						</p>
+					</div>
+				</div>
+				<!-- // 2024-04-05 -->
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+
+<!-- layer_overlay -->
+<div class="layer_overlay" id="refund_noti_popup" style="display: none;">
+	<!-- layerpopup -->
+	<div class="popup_w">
+		<div class="popup_con">
+			<!-- 안내팝업_type2 -->
+			<div class="temp info_pop type2">
+				<div class="icon notice">안내사항</div>
+				<h2 class="ly_pop_tit">환불 안내</h2>
+				<!-- 텍스트 입력 -->
+				<div class="inner">
+					<p>
+						
+					</p>
+				</div>
+				<!-- //텍스트 입력 -->
+				<!-- 버튼영역 -->
+				<div class="ly_pop_btw btn_full type2">
+					<a id="refund_noti_popup_close" class="typeA">확인</a>
+				</div>
+				<!-- //버튼영역 -->
+			</div>
+			<!-- //안내팝업_type2 -->
+		</div>
+	</div>
+	<!-- //layerpopup -->
+</div>
+<!-- //layer_overlay -->	
+<!--  -->
+<div class="wrap" id="keypad_area" style="display: none;">
+	<div class="container">
+		<div class="content">
+			<!-- 웹뷰 경남 -->
+			<div class="webView_bnk">
+				<!-- 사용인증 -->
+				<div class="transaction addBtn-pb58 addNav"><!-- 하단 네이게이션 제거 시 addNav 클래스 제거 -->
+					<p class="txt_bold">
+						비플페이에서 사용하는<br>
+						거래승인번호 6자리를 입력하세요.
+					</p>
+					<!-- 정보입력 폼 -->
+					<div class="ipt_section">
+						<form action="">
+							<fieldset>
+								<input type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+								
+								<legend>승인번호 입력</legend>
+								<div class="tac_num" id="tac_num">
+									<div><input inputmode="none" type="password" title="결제비밀번호 첫 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 두 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 세 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 네 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 다섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 여섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+								</div>
+							</fieldset>
+						</form>
+						<!-- //정보입력 폼 -->
+					</div>
+					<div class="err_msg kn">
+						<p id="pwd_pop_text">
+							거래승인번호가 기억나지 않으세요?<br>
+							비플페이앱에서 재설정 가능합니다.
+						</p>
+					</div>
+					<div class="bppay-app" id="fail_btn" style="display: none;">
+						<a onclick="uf_call();" class="bppay__move-btn">비플페이 실행하기</a>
+					</div>
+					<!-- // 2023-05-19 -->
+				</div>
+				<!-- 사용인증 -->
+			</div>
+			<!-- //웹뷰 경남 -->
+			<!-- 하단 네비게이션 -->
+			<div class="btn_botFix_w">
+				<!-- 2023-05-19 -->
+				<div class="transaction__cs-center">
+					<a href="tel:1670-0136">
+						비플페이 고객센터(1670-0136) 
+					</a>
+				</div>
+				<!-- // 2023-05-19 -->
+				<div class="inner bg_white">
+					<a id="pwd_yes_btn" class="btn_default round_r8 btn-style-h48 on">거래승인번호 입력하기</a>
+				</div>
+				
+				<!-- 네비영역 제거 시 문서 상단의 "addNav" 클래스 제거 -->
+				<nav class="nav_w bg_white">
+					<div class="home on"><!-- 선택 시 on -->
+						<a href="/brnd_webview_main.act?TOKEN=">
+							<span>홈</span>
+						</a>
+					</div>
+					<div class="history on">
+						<a href="/brnd_webview_gift_hist_main.act?TOKEN=">
+							<span>내역</span>
+						</a>
+					</div>
+					<div class="prev on">
+						<a href="javascript:history.back()">
+							<span>이전</span>
+						</a>
+					</div>
+					<div class="next on">
+						<a>
+							<span>다음</span>
+						</a>
+					</div>
+				</nav>
+				<!-- //하단 네비게이션 -->
+			</div>
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<!--  -->
+</body>
+</html>

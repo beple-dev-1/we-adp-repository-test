@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>결제 완료</title>
+  <link rel="stylesheet" href="../assets/webview_resource/css/welfare_reset.css">
+  <link rel="stylesheet" href="../assets/webview_resource/css/welfare.css">
+  <link rel="stylesheet" href="../assets/webview_resource/css/beple_popup.css">
+</head>
+<body data-screen-id="EXW-UWV-60-40-S">
+<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span class="blind">비플페이 온라인결제</span></h1>
+			</div>
+
+			<nav class="header__navi">
+				<!-- <a href="#none" class="header__btn btn-export">
+					<span class="blind">공유하기</span>
+				</a> -->
+			</nav>
+		</header>
+
+		<main class="container-wrap js-container-wrap pdt32">
+			<section class="container end-container end--payment js-container">
+				<section class="body__content justify-space-def">
+					<!-- 결제완료 - 헤더 -->
+					<div class="payment__head">
+						<i class="icon icon--state_check-64">결제 완료</i>
+						<h2 class="container__headline">
+							<p id="head_txt" class="head-text"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+						</h2>
+					</div>
+
+					<!-- 결제완료 - 결제정보 -->
+					<div class="payment__info">
+						<div class="flex-row">
+							<p class="info-head">가맹점명</p>
+							<p id="aflt_txt" class="info-data fw-600 fc-primary"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+						</div>
+						<div class="flex-row">
+							<p class="info-head">결제일시</p>
+							<p id="trx_dt_txt" class="info-data fw-600 fc-111"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+						</div>
+						<div class="flex-row">
+							<p class="info-head">결제번호</p>
+							<p id="trx_seq_txt" class="info-data"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+						</div>
+						<div class="flex-row">
+							<p class="info-head">결제수단</p>
+							<p id="pay_type_txt" class="info-data"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+						</div>
+					</div>
+
+					<!-- <button class="button">
+						<span>전자영수증 보기</span><i class="icon icon--arrow-16"></i>
+					</button> -->
+				</section>
+			</section>
+
+			<!-- 플로팅 컨테이너 -->
+			<div class="container-floating js-floating-container">
+				<article class="floating__box button-box-spacing">
+					<a id="btn_close" class="button button-xl button--lv1"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+						<span>확인</span>
+					</a>
+				</article>
+			</div>
+		</main>
+	</div>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>에이블리 거래승인번호 재설정</title>
+  <link rel="stylesheet" href="../assets/webview_api/css/reset.css">
+  <link rel="stylesheet" href="../assets/webview_api/css/style.css">
+  <link rel="stylesheet" href="../assets/webview_api/css/header.css">
+  <link rel="stylesheet" href="../assets/webview_api/css/popup.css">
+</head>
+<body data-screen-id="EXW-UWV-70-30-50-C">
+<!-- ============================================================
+	     단계 구성 — 퍼블리싱 Ably-Point v1.3
+
+	       step1  정보입력      「거래승인번호관리/거래승인번호재설정_정보입력」
+	       step2  약관동의      「거래승인번호관리/본인인증_약관동의」
+	       step3  인증번호      「본인인증/BM100a·b·c」 (한 화면의 3상태)
+	       step4  거래승인번호   「거래승인번호관리/거래승인번호 등록_최초·확인」
+
+	     인증번호 발송은 step2 「다음」에서 나간다 — 약관 동의를 받은 뒤에
+	     통신사 인증을 호출해야 한다.
+	     ============================================================ -->
+
+	<!-- ============================================================
+	     step1 — 정보입력 (퍼블리싱 v1.3 BM100 — 항목을 하나씩 여는 방식)
+
+	     ★ 단계 노출은 common-ui.js 의 stepFormHandler 가 관장한다.
+	       `.js-form-box` 안의 `js-step-N` 을 N 순서로 열고, `js-require` 가 전부 채워질
+	       때만 `js-step-submit` 의 dis 를 뗀다. 여기서 JS 로 또 제어하지 않는다.
+
+	     ★ DOM 은 역순으로 둔다(step4 → step1). 순서는 `js-step-N` 이 정하므로 DOM 순서와
+	       무관하며, 역순이라야 지금 물어보는 항목이 헤드라인 바로 아래에 온다(퍼블리싱 의도).
+
+	     ★ 이미 채워져 있으면 한 번에 전개된다 — 초기화의 advance() 와 150ms 재시도가
+	       채워진 항목을 애니메이션 없이 연달아 연다. 약관 화면에서 돌아온 경우가 그것이다
+	       (브라우저 폼 복원 + uf_restoreNavState 의 통신사 복원).
+
+	     ★ 이름에 maxlength 를 두지 않는다 — 단계 로직이 maxlength 있는 칸을 '자릿수형'으로
+	       보고 그 자릿수를 다 채워야 완료로 판정한다. 50자를 걸면 50자를 쳐야 다음이 열린다.
+	       길이 제한은 JS 의 input 핸들러가 대신한다.
+	     ============================================================ -->
+	<div class="wrap" com-step-id="step1">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<nav class="header__navi">
+				<a id="btn_info_back" href="#none" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav>
+
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span>본인인증</span></h1>
+			</div>
+
+			<nav class="header__navi">
+				<a id="btn_cancel" href="#none" class="header__btn btn-close">
+					<span class="blind">닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<main class="container-wrap js-container-wrap">
+			<div class="cert-form">
+				<section class="page-header justify-spacing-def pdt24">
+					<article class="page-header__content flex-column gap-16">
+						<div class="page-header__headline-wrap">
+							<h2 class="flex-row">
+								<!-- data-step 이 노출 중인 js-step-N 과 맞는 문구만 보인다 -->
+								<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="1">
+									이름을<br>
+									입력해 주세요
+								</p>
+
+								<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="2" style="display:none;">
+									주민등록번호를<br>
+									입력해 주세요
+								</p>
+
+								<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="3" style="display:none;">
+									통신사를<br>
+									선택해 주세요
+								</p>
+
+								<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="4" style="display:none;">
+									휴대폰번호를<br>
+									입력해 주세요
+								</p>
+							</h2>
+						</div>
+					</article>
+				</section>
+
+				<!-- 컨테이너 -->
+				<section class="container js-container justify-spacing-def pdt32">
+					<article class="container__body">
+						<div class="body__content">
+							<div class="flex-column">
+								<div id="info_div" class="form-box js-form-box gap-32">
+									<!-- 휴대폰번호 -->
+									<div class="form__item js-form-item js-step-4 js-require">
+										<div class="form__item-header input-line--header">
+											<h3 class="form__label container__headline container__headline--lv1">
+												<label for="mob_no">휴대폰번호</label>
+											</h3>
+										</div>
+
+										<div class="form__item-wrap">
+											<!-- js-phone-number — common-ui.js 가 하이픈을 넣어 13자로 맞춘다.
+											     단계 완료 판정이 maxlength 13 을 그대로 보므로 하이픈을 벗기면 안 된다. -->
+											<div class="input-type--line js-phone-number">
+												<input id="mob_no" type="tel" value="" placeholder="휴대폰번호" maxlength="13" inputmode="numeric">
+											</div>
+										</div>
+									</div>
+
+									<!-- 통신사 -->
+									<div class="form__item js-form-item js-step-3 js-require">
+										<div class="form__item-header input-line--header">
+											<h3 class="form__label container__headline container__headline--lv1">
+												<label>통신사</label>
+											</h3>
+										</div>
+
+										<div class="form__item-wrap">
+											<div class="input-type--line">
+												<button type="button" class="input-unit fc-placeholder js-select--result js-popup-open" data-modal="popup-select--telecom">
+													<span id="tel_corp" class="target">통신사 선택</span><i class="icon icon--arrow-24 pointer-bottom"></i>
+												</button>
+											</div>
+										</div>
+									</div>
+
+									<!-- 주민등록번호 -->
+									<div class="form__item regist-code js-form-item js-step-2 js-require">
+										<div class="form__item-header input-line--header">
+											<h3 class="form__label container__headline container__headline--lv1">
+												<label for="birth">주민등록번호</label>
+											</h3>
+										</div>
+
+										<div class="form__item-wrap">
+											<div class="input-type--line">
+												<input id="birth" type="text" inputmode="numeric" value="" placeholder="생년월일 6자리" maxlength="6">
+												<span class="between-bar">-</span>
+												<input id="gender" type="text" inputmode="numeric" value="" placeholder="0" maxlength="1">
+												<div class="currency-box">
+													<p class="currency-bullet"></p>
+													<p class="currency-bullet"></p>
+													<p class="currency-bullet"></p>
+													<p class="currency-bullet"></p>
+													<p class="currency-bullet"></p>
+													<p class="currency-bullet"></p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- 이름 -->
+									<div class="form__item js-form-item js-step-1 js-require">
+										<div class="form__item-header input-line--header">
+											<h3 class="form__label container__headline container__headline--lv1">
+												<label for="name">이름</label>
+											</h3>
+										</div>
+
+										<div class="form__item-wrap">
+											<div class="input-type--line">
+												<input id="name" type="text" value="" placeholder="이름" enterkeyhint="next">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+				</section>
+
+				<!-- 플로팅 — dis 는 common-ui.js 가 관장한다(필수 전부 완료 시 해제).
+				     그래서 여기서 dis 를 떼는 코드를 두면 안 된다 —
+				     `.button.button.dis{pointer-events:none !important}` 라 한 번 어긋나면 되살릴 수 없다. -->
+				<section class="container-floating js-floating-container">
+					<div class="floating__box button-box-spacing">
+						<a id="btn_info_next" href="#none" class="button button-xl button--lv1 dis js-step-submit">
+							<span>인증번호 전송</span>
+						</a>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<!-- 팝업 - 통신사 선택.
+		     value 는 퍼블리싱에 없다 — 서버로 보내는 통신사 코드라 되살린다(JS 가 this.value 로 읽는다). -->
+		<div class="popup-wrap js-popup-wrap" data-modal="popup-select--telecom" style="display:none;">
+			<div class="popup-container popup--bottom popup-select--type1 box-padding--type2 js-popup-select">
+				<section class="popup-container__body">
+					<div id="tel_list" class="flex-column justify-spacing-def">
+						<button type="button" value="01" class="select__button js-select-content js-popup-close">
+							<span>SKT</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="02" class="select__button js-select-content js-popup-close">
+							<span>KT</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="03" class="select__button js-select-content js-popup-close">
+							<span>LG U+</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="04" class="select__button js-select-content js-popup-close">
+							<span>SKT 알뜰폰</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="05" class="select__button js-select-content js-popup-close">
+							<span>KT 알뜰폰</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="06" class="select__button js-select-content js-popup-close">
+							<span class="target">LG U+ 알뜰폰</span><i class="icon icon--check-24_primary"></i>
+						</button>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<!-- ============================================================
+	     step2 — 약관동의
+
+	     ★ 알뜰폰 제3자 제공 동의가 이 단계로 돌아왔다.
+	       v1.2 는 약관이 통신사 선택보다 앞이라 조건부 노출이 성립하지 않아 감춰 두었으나
+	       (r125532), v1.3 이 순서를 뒤집어 이 시점에는 통신사를 이미 안다.
+	     ============================================================ -->
+	<div class="wrap" com-step-id="step2" style="display:none;">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<nav class="header__navi">
+				<a id="btn_agree_back" href="#none" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav>
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span>본인인증</span></h1>
+			</div>
+			<nav class="header__navi">
+				<a id="btn_agree_close" href="#none" class="header__btn btn-close">
+					<span class="blind">닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<main class="container-wrap js-container-wrap">
+			<section class="container cert-agree js-container">
+				<article class="container__header">
+					<div class="container__header-content justify-spacing-def">
+						<div class="">
+							<h3 class="container__headline container__headline--lv6">
+								머니 결제 비밀번호 변경을 위해<br/>
+								약관에 동의해주세요
+							</h3>
+						</div>
+					</div>
+				</article>
+
+				<article class="container__body cert--agree__body" style="display:">
+					<div class="body__content">
+						<div class="flex-column gap-16">
+							<div class="column__head agree-head">
+								<label class="input-type--check flex-row">
+									<input id="check_all" type="checkbox" class="js-all-check"><span>전체 동의하기</span>
+								</label>
+							</div>
+
+							<!-- js-checked--handle 은 '전체 동의하기'가 묶는 범위다.
+							     data-terms-code 는 약관상세(CLS_000008) 이동 키다. -->
+							<div id="agree_div" class="form-box justify-spacing-def js-form-box js-checked--handle">
+								<div class="flex-column gap-12">
+									<!-- (필수) 통신사 이용약관 -->
+									<div class="form__item-wrap flex-column">
+										<div class="input-type--check">
+											<label class="grow-y flex-row">
+												<input type="checkbox">
+												<span>(필수) 통신사 이용약관</span>
+											</label>
+											<button type="button" class="drop-trigger js-drop-trigger terms-view--button" data-terms-code="060011">
+												<i class="icon icon--arrow-16"></i>
+												<span class="blind">통신사 이용약관 보기</span>
+											</button>
+										</div>
+									</div>
+									<!-- (필수) 본인확인 서비스 이용약관 -->
+									<div class="form__item-wrap flex-column">
+										<div class="input-type--check">
+											<label class="grow-y flex-row">
+												<input type="checkbox">
+												<span>(필수) 본인확인 서비스 이용약관</span>
+											</label>
+											<button type="button" class="drop-trigger js-drop-trigger terms-view--button" data-terms-code="060012">
+												<i class="icon icon--arrow-16"></i>
+												<span class="blind">본인확인 서비스 이용약관 보기</span>
+											</button>
+										</div>
+									</div>
+									<!-- (필수) 개인정보 수집 · 이용 · 취급 · 위탁 동의 -->
+									<div class="form__item-wrap flex-column">
+										<div class="input-type--check">
+											<label class="grow-y flex-row">
+												<input type="checkbox">
+												<span>(필수) 개인정보 수집 · 이용 · 취급 · 위탁 동의</span>
+											</label>
+											<button type="button" class="drop-trigger js-drop-trigger terms-view--button" data-terms-code="060013">
+												<i class="icon icon--arrow-16"></i>
+												<span class="blind">개인정보 수집 · 이용 · 취급 · 위탁 동의 약관 보기</span>
+											</button>
+										</div>
+									</div>
+									<!-- (필수) 고유식별정보 처리 동의 -->
+									<div class="form__item-wrap flex-column">
+										<div class="input-type--check">
+											<label class="grow-y flex-row">
+												<input type="checkbox">
+												<span>(필수) 고유식별정보 처리 동의</span>
+											</label>
+											<button type="button" class="drop-trigger js-drop-trigger terms-view--button" data-terms-code="060014">
+												<i class="icon icon--arrow-16"></i>
+												<span class="blind">고유식별정보 처리 동의 약관 보기</span>
+											</button>
+										</div>
+									</div>
+									<!-- (필수) 알뜰폰 개인정보 제3자 제공 동의 — 알뜰폰 통신사 선택 시에만 노출.
+									     ※ 퍼블리싱에 이 항목이 없어 마크업은 우리가 만든 것이다. 자리 요청 중 -->
+									<div id="agree_plus" class="form__item-wrap flex-column" style="display:none !important;">
+										<div class="input-type--check">
+											<label class="grow-y flex-row">
+												<input type="checkbox">
+												<span>(필수) 알뜰폰 개인정보 제3자 제공 동의</span>
+											</label>
+											<button type="button" class="drop-trigger js-drop-trigger terms-view--button" data-terms-code="999999">
+												<i class="icon icon--arrow-16"></i>
+												<span class="blind">알뜰폰 개인정보 제3자 제공 동의 약관 보기</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
+
+			<section class="container-floating js-floating-container">
+				<article class="floating__box button-box-spacing">
+					<a id="btn_agree_next" href="#none" class="button button-xl button--lv1" data-id="submit">
+						<span>다음</span>
+					</a>
+				</article>
+			</section>
+		</main>
+	</div>
+
+	<!-- ============================================================
+	     step3 — 인증번호 (BM100a·b·c 3상태)
+	       입력전   : 타이머 shrink-n
+	       진행중   : 타이머 fc-0d84ff
+	       오류/만료 : form__item 에 item--error · 안내문 blind 제거
+	     ============================================================ -->
+	<div class="wrap" com-step-id="step3" style="display:none;">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<nav class="header__navi">
+				<a id="btn_cert_back" href="#none" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav>
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span></span></h1>
+			</div>
+			<nav class="header__navi">
+				<a id="btn_cert_close" href="#none" class="header__btn btn-close">
+					<span class="blind">닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<main class="container-wrap js-container-wrap">
+			<div class="cert-form">
+				<section class="page-header justify-spacing-def pdt24">
+					<article class="page-header__content flex-column gap-16">
+						<div class="page-header__headline-wrap">
+							<h2 class="flex-row">
+								<p class="page__headline page__headline--lv1 fw-600">
+									인증번호를<br>
+									입력해 주세요
+								</p>
+							</h2>
+						</div>
+					</article>
+				</section>
+
+				<section class="container js-container justify-spacing-def pdt32">
+					<article class="container__body">
+						<div class="body__content">
+							<div class="flex-column">
+								<div class="form-box js-form-box">
+									<div id="certify_wrap" class="form__item js-form-item">
+										<div class="form__item-header input-line--header">
+											<h3 class="form__label container__headline container__headline--lv1">
+												<label for="certify_no">인증번호</label>
+											</h3>
+										</div>
+
+										<div class="form__item-wrap">
+											<div class="input-type--line">
+												<input id="certify_no" type="tel" value="" placeholder="6자리 입력" maxlength="6">
+												<span id="timeCheck" class="shrink-n">05:00</span>
+											</div>
+										</div>
+										<div class="flex-row justify-space-b">
+											<p class="form__hint info__text--lv1">
+												<span id="cert_hint" class="blind">
+													입력 시간이 만료되었습니다.
+												</span>
+											</p>
+											<button type="button" id="req_certify" class="button button-small button--lv5_line"><span>인증번호 재요청</span></button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+				</section>
+
+				<section class="container-floating js-floating-container">
+					<!-- 안내영역 -->
+					<div class="infomation infomation-box mgb24">
+						<div class="flex-column">
+							<div class="column__head">
+								<i class="icon icon--info-16"><span class="blind">안내</span></i>
+								<h5 class="container__headline container__headline--lv1">인증번호가 오지 않나요?</h5>
+							</div>
+							<div class="column__item">
+								<p class="info__text--lv1 bullet-text">
+									인증 오류가 발생되는 경우, 02-708-1000으로 연락주세요.
+								</p>
+								<p class="info__text--lv1 bullet-text">
+									인증번호 문자가 오지 않는 경우, 02-708-1007 전화 번호 차단 여부를 확인해 주세요.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="floating__box button-box-spacing">
+						<a id="result_btn" href="#none" class="button button-xl button--lv1">
+							<span>인증 완료</span>
+						</a>
+					</div>
+				</section>
+			</div>
+		</main>
+	</div>
+
+	<!-- ============================================================
+	     step4 — 거래승인번호 입력.
+	     「등록_최초」↔「등록_확인」은 헤드라인만 달라 #guide_txt 를 JS 가 바꾼다.
+	     ============================================================ -->
+	<div class="wrap" com-step-id="step4" style="display:none;">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span></span></h1>
+			</div>
+			<nav class="header__navi">
+				<a id="btn_close" class="header__btn btn-close">
+					<span class="blind">페이지 닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<main class="container-wrap">
+			<div class="online-payment--cert">
+				<section class="page-header justify-spacing-def">
+					<article class="page-header__content flex-column">
+						<div class="page-header__headline-wrap">
+							<h2 class="flex-row">
+								<p class="page__headline page__headline--lv1" id="guide_txt">
+									변경할 머니 결제 비밀번호를 입력해주세요
+								</p>
+							</h2>
+						</div>
+					</article>
+				</section>
+
+				<!-- 컨테이너 -->
+				<section class="container cert__view js-container justify-spacing-def">
+					<article class="container__body">
+						<div class="body__content">
+							<input type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+							<input type="hidden" name="pwd2" id="pwd2" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+
+							<div id="tac_num" class="cert__view--input">
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+							</div>
+						</div>
+					</article>
+				</section>
+
+				<!-- 퍼블리싱 구조 유지용. 6자리가 차면 키패드가 곧바로 제출해 눌릴 일이 없다 -->
+				<section class="container" style="display: ;">
+					<article class="button-box-spacing pdt12" style="display: none;">
+						<a href="#none" class="button button-xl button--lv1 dis"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+							<span>확인</span>
+						</a>
+					</article>
+				</section>
+			</div>
+		</main>
+	</div>
+
+	
+	<!-- 약관 컨테이너 -->
+	<div id="clause_modal" class="popup-wrap js-popup-wrap" data-modal="popup-terms-sv" style="display:none;"><!-- [D] 2025-02-13 - 'data-modal' 참고 -->
+		<section class="popup-container popup--full popup-terms">
+			<header class="header popup-container__header">
+				<div class="header__title-wrap">
+					<h1 class="page-name">
+						<span class="ellipsis-line--1">약관상세</span>
+					</h1>
+				</div>
+				<nav class="header__navi">
+					<a id="btn_close_clause" href="#none" class="header__btn btn-close js-popup-close">
+						<span class="blind">페이지 닫기</span>
+					</a>
+				</nav>
+			</header>
+
+			<div class="page-terms">
+				<header class="terms-header justify-spacing-def">
+					<h2 class="flex-row">
+						<p class="page-title"></p>
+					</h2>
+				</header>
+	
+				<section class="popup-container__body justify-spacing-def overflow-hidden">
+					<!-- 서비스 이용약관 - 이 안으로 내용 넣어주세요 -->
+				</section>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

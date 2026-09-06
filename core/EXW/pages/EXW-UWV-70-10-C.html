@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>롯데 복지몰</title>
+  <link rel="stylesheet" href="../assets/webview_resource/css/welfare_reset.css">
+  <link rel="stylesheet" href="../assets/webview_resource/css/welfare.css">
+  <link rel="stylesheet" href="../assets/webview_resource/css/beple_popup.css">
+</head>
+<body data-screen-id="EXW-UWV-70-10-C">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="CI" 			name="CI" 			 value=>
+	<input type="hidden" id="CANCEL_URL" 	name="CANCEL_URL" 	 value=>
+	<input type="hidden" id="FAIL_URL" 		name="FAIL_URL" 	 value=>
+	<input type="hidden" id="RES_CD" 		name="RES_CD" 		 value=>
+	<input type="hidden" id="RES_MSG" 		name="RES_MSG" 		 value=>
+	<input type="hidden" id="MEMB_CD" 		name="MEMB_CD" 		 value="">
+	<input type="hidden" id="COMM" 			name="COMM" 		 value="">
+	<input type="hidden" id="ORG_ID" 		name="ORG_ID" 		 value="">
+	<input type="hidden" id="REQ_DATA" 		name="REQ_DATA" 	 value="">
+	<input type="hidden" id="APP_CD" 		name="APP_CD" 		 value="">
+	<input type="hidden" id="MNY_YN"        name="MNY_YN"        value="Y" />
+    <input type="hidden" id="MNY_CUR_PRICE" name="MNY_CUR_PRICE" value="" />
+    
+    <input type="hidden" id="TRX_DT" 		name="TRX_DT" 		 value="" />
+    <input type="hidden" id="TRX_SEQ" 		name="TRX_SEQ" 		 value="" />
+    <input type="hidden" id="TRX_CD" 		name="TRX_CD" 		 value="" />
+    <input type="hidden" id="SVC_TP" 		name="SVC_TP" 		 value="" />
+    <input type="hidden" id="BIZ_CD" 		name="BIZ_CD" 		 value="" />
+    <input type="hidden" id="CALLBACK_URL" 	name="CALLBACK_URL"  value="" />
+</form>
+	<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<nav class="header__navi">
+				<a id="btnBack" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav>
+
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span>비플머니</span></h1>
+			</div>
+		</header>
+
+		<main class="container-wrap js-container-wrap">
+			<!-- 비플머니 -->
+			<div class="bp_money">
+				<!-- 상태 및 결제 -->
+				<div class="top_bx">
+					<div class="inner">
+						<!-- 보유 비플머니 -->
+						<div class="status">
+							<p class="ico_bpmoney">
+								<img src="../assets/webview_resource/images/bpmoney/ico_bpmoney.png" alt="">
+							</p>
+							<div class="acc_paycn">
+								<p class="tit">보유 비플머니</p>
+								<p class="won"><em id="cur_price"><!-- sample:begin -->4,500<!-- sample:end --></em>원</p>
+							</div>
+						</div>
+
+						<!-- 비플머니 내역 -->
+						<div class="acc_history" id="acc_history"><!-- 내역 온/오프 시 on클래스 추가/제거 -->
+							<p class="btn_more"><a id="btn_more">내역보기</a></p>
+							<div class="inner">
+								<ul>
+									<li>
+										<p class="history_tit">적립</p>
+										<p class="money" id="tot_blc_amt_02"><!-- sample:begin -->4,500<!-- sample:end --></p>
+									</li>
+									<li>
+										<p class="history_tit">충전</p>
+										<p class="money" id="tot_blc_amt_01"><!-- sample:begin -->4,500<!-- sample:end --></p>
+									</li>
+									<li>
+										<p class="history_tit">만료예정</p>
+										<p class="money"><a id="tot_expr_amt"><span class="arr">만료예정내역보기</span></a></p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 탭영역 -->
+				<div class="tab_bx">
+					<ul>
+						<li id="info_li" class="on"><a><span class="bg">기본정보</span></a></li><!-- 활성화클래스 on -->
+						<li id="list_li"><a><span class="bg">이용내역</span></a></li>
+					</ul>
+				</div>
+
+				<!-- 기본정보/이용내역 -->
+				<div class="cont_box">
+					<!-- 기본정보 -->
+					<div class="info_bx" id="info_bx">
+						<dl>
+							<dt>
+								<em>비플머니 소개</em>
+							</dt>
+							<dd>
+								<p>비플머니는 간편하게 미리 충전한 후, 전국 제로페이 가맹점 어디서나 사용할 수 있는 결제 서비스입니다.</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<em>사용 유효기간</em>
+							</dt>
+							<dd>
+								<p>지급된 비플머니는 지급 후 60일이 지나면 만료되며, 충전한 비플머니는 충전일로부터 5년(60개월) 동안 사용할 수 있습니다. </p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<em>보유·충전 한도</em>
+							</dt>
+							<dd>
+								<ul>
+									<li>비플머니 보유·충전 한도는 회원 기준으로 통합 관리됩니다.</li>
+									<li>1회 충전한도 : 30만원</li>
+									<li>1일 충전한도 : 300만원</li>
+									<li>월 충전한도 : 1천만원</li>
+									<li>보유 한도 : 200만원</li>
+								</ul>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<em>유의사항</em>
+							</dt>
+							<dd>
+								<p>
+									지급받은 비플머니는 출금하실 수 없습니다.<br>
+									회원 탈퇴 시 보유한 비플머니는 소멸될 수 있습니다.
+								</p>
+							</dd>
+						</dl>
+						<dl>
+							<dt>
+								<em>출금안내</em>
+								<a class="btn_request" id="btn_request">출금신청하기<span class="arr">바로가기</span></a>
+							</dt>
+							<dd>
+								<p>충전한 비플머니는 자유롭게 출금할 수 있습니다.</p>
+							</dd>
+						</dl>
+					</div>
+					
+					<!-- 이용내역 -->
+					<div class="history_wrap" id="history_wrap">
+						<div class="btn_filter">
+							<a id="srch_btn">전체 · 3개월<span class="arr">유효기간 선택</span></a>
+						</div>
+						
+						<p class="list_none" id="list_none" style="display:none;">이용내역이 없습니다.</p>
+						
+						<div class="history_list" id="history_list">
+							<ul id="info_list"><!-- sample:begin -->표본<!-- sample:end --></ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+			<!-- 플로팅 컨테이너 -->
+			<div class="container-floating js-floating-container" id="chrg_area">
+				<article class="floating__box button-box-spacing">
+					<a id="btn_chrg" class="button button-xl button--lv1"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+						<span>비플머니 충전하기</span>
+					</a>
+				</article>
+			</div>
+		</main>
+		
+		<!-- 컨테이너 -->
+		<div class="popup-wrap js-popup-wrap" id="popup_dim" style="display:none;">
+			<section class="popup-container popup--bottom popup--filter">
+				<header class="popup-container__header">
+					<div class="popup-button">
+						<button type="button" class="popup-button--close js-popup-close" role="button" aria-label="팝업 창 닫기 버튼">
+							<i class="icon icon--close-32">팝업 창 닫기</i>
+						</button>
+					</div>
+				</header>
+
+				<div class="popup-container__body justify-spacing-def" id="srch_slider">
+					<section class="body__content">
+						<div class="flex-column">
+							<div class="column__head">
+								<h4 class="container__headline container__headline--lv2">기간</h4>
+							</div>
+
+							<!-- 필터 -->
+							<div class="column__item filter-container">
+								<div class="filter__body" id="period_tab">
+									<!-- <button class="button button-small button--lv5 radius-lv5">
+										<span>오늘</span>
+									</button> -->
+									<!-- <button class="button button-small button--lv5 radius-lv5 active">
+										<span>1주일</span>
+									</button> -->
+									<button class="button button-small button--lv5 radius-lv5">
+										<span>1개월</span>
+									</button>
+									<button class="active button button-small button--lv5 radius-lv5">
+										<span>3개월</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5" data-value="self">
+                                        <span>직접입력</span>
+                                    </button>
+								</div>
+							</div>
+							<!-- 데이트 피커 -->
+							<!-- 
+								[D] 월별 캘릭더 선택 시 date-picker--month 추가
+								[D] 기간설정 선택 시 date-picker--month 제거
+								------------------------------------------------
+								[D] 활성화 시 date-picker--disabled 제거
+								[D] 오류 시 date-picker--error 추가 
+								[D] 오류 시 date-picker--error 추가 
+							-->
+							<div class="column__item date-picker date-picker--disabled" id="picker_area"><!-- [D] 활성화 시 date-picker--disabled 제거, [D] 오류 시 date-picker--error -->
+								<div class="date-picker__wrap">
+									<div class="date date--before">
+										<button type="button" class="date-button" id="from_btn">
+											<input type="tel" readonly value=""  id="from_dt" name="from_dt" >
+											<i class="icon icon--calendar-24"></i>
+										</button>
+									</div>
+									<span class="dash"></span>
+									<div class="date date--before">
+										<button type="button" class="date-button" id="to_btn">
+											<input type="tel" readonly value=""  id="to_dt" name="to_dt" >
+											<i class="icon icon--calendar-24"></i>
+										</button>
+									</div>
+								</div>
+								<p class="message fc-red">최대 3개월 단위로 선택할 수 있습니다.</p>
+							</div>
+						</div>
+
+						<div class="flex-column">
+							<div class="column__head">
+								<h4 class="container__headline container__headline--lv2">카테고리</h4>
+							</div>
+							<!-- 필터 -->
+							<div class="column__item filter-container">
+								<div class="filter__body" id="ctgry_tab">
+									<button ctgry="0" class="button button-small button--lv5 radius-lv5 active">
+										<span>전체</span>
+									</button>
+									<button ctgry="1" class="button button-small button--lv5 radius-lv5">
+										<span>사용</span>
+									</button>
+									<button ctgry="2" class="button button-small button--lv5 radius-lv5">
+										<span>적립</span>
+									</button>
+									<button ctgry="3" class="button button-small button--lv5 radius-lv5">
+										<span>충전</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<section class="body__button--box button-box-spacing">
+					<div class="flex-row">
+						<button class="button button-xl button--lv3 js-popup-close" id="btn_cc"><!-- [D] 비활성화 시 dis 클래스 추가 -->
+							<span>취소</span>
+						</button>
+						<button class="button button-xl button--lv1 js-popup-close" id="btn_sh"><!-- [D] 비활성화 시 dis 클래스 추가 -->
+							<span>조회하기</span>
+						</button>
+					</div>
+				</section>
+			</section>
+		</div>		
+	</div>
+</body>
+</html>

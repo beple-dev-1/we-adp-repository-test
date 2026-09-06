@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>결제내역 상세(영수증)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-20-20-10-S">
+<form id="frm" name="frm">
+	<input type="hidden" name="TOKEN" id="TOKEN" value="">
+</form>
+	<div class="wrap">
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="contents">
+				<!-- 전자영수증 -->
+				<div class="integ_receipt">
+					<div class="top_bx">
+						<p class="date">2026.09.02 </p>
+						<p class="">비플머니</p>
+						<!-- 결제취소, 환불, 사용취소, 선물취소, 선물거절, 선물회수 시 fcRed추가 -->
+					</div>
+					<div class="st_name">
+						<h2>비플머니</h2>
+					</div>
+					<div class="amount">
+						<p>
+							<strong>4,500</strong>원
+						</p>
+					</div>
+					<!-- 결제정보 -->
+					<div class="payment_info">
+						<div class="info_con">
+							<dl>
+								<dt>가맹점명</dt>
+								<dd>비플머니</dd>
+							</dl>
+							<dl>
+								<dt>거래번호</dt>
+								<dd></dd>
+							</dl>
+							<dl>
+									
+								<dt>취소일시</dt>
+									
+								<dt>거래일시</dt>
+									
+								<dd>2026.09.02</dd>
+							</dl>
+							<dl>
+									
+								<dt>취소금액</dt>
+									
+								<dt>결제금액</dt>
+									
+								<dd>4,500원</dd>
+							</dl>
+						</div>
+					</div>
+					<!-- // 결제정보 -->
+					<div class="store_info">
+						<!-- 가맹점 정보 열기/닫기 시 "view"클래스 추가/제거 -->
+						<p class="more_btn">
+							<a>비플머니</a>
+						</p>
+						<div class="more_info" style="display: none;">
+							<!-- 상품권정보 -->
+							<div class="bg_box">
+								<dl>
+									<dt>상품명</dt>
+								<!-- 	<dd>비플머니</dd> -->
+								 	<dd>비플머니</dd> 
+								</dl>
+								<dl>
+									<dt>상품권번호</dt>
+									<dd></dd>
+								</dl>
+								<dl>
+									<dt>유효기간</dt>
+									<dd>2026.09.02</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //전자영수증 -->
+			</div>
+			<!-- //content -->
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<nav class="nav_w bg_white">
+					<div class="home on"><!-- 선택 시 on -->
+						<a onclick="uf_move('home');">
+							<span>홈</span>
+						</a>
+					</div>
+					<div class="history on">
+						<a onclick="uf_move('list');">
+							<span>내역</span>
+						</a>
+					</div>
+					<div class="prev on">
+						<a onclick="uf_move('prev');">
+							<span>이전</span>
+						</a>
+					</div>
+					<div class="next on">
+						<a onclick="uf_move('next');">
+							<span>다음</span>
+						</a>
+					</div>
+				</nav>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

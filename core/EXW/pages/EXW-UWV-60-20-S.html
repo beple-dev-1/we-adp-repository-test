@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>MPM 결제요청</title>
+  <link rel="stylesheet" href="../assets/webview_resource/css/welfare_reset.css">
+  <link rel="stylesheet" href="../assets/webview_resource/css/welfare.css">
+  <link rel="stylesheet" href="../assets/webview_resource/css/beple_popup.css">
+</head>
+<body data-screen-id="EXW-UWV-60-20-S">
+<input type="hidden" data-common="" id="PAY_AMT" 	inputmode="none">
+<input type="hidden" id="PAY_LMT_AMT" 	value="0">
+<input type="hidden" id="COMPLEX_YN" 	value="N">
+<input type="hidden" id="ENC_CI" 	   	value="">
+<input type="hidden" id="TGT_ORDER_ID" 	value="">
+<input type="hidden" id="TGT_ORDER_DT" 	value="">
+
+<form id="frm" name="frm">
+	<input type="hidden" name="COMM" 		 id="COMM" 		   value="">
+	<input type="hidden" name="ORG_ID" 		 id="ORG_ID" 	   value="">
+	<input type="hidden" name="REQ_DATA" 	 id="REQ_DATA" 	   value="">
+	<input type="hidden" name="MEMB_CD" 	 id="MEMB_CD" 	   value="">
+	<input type="hidden" name="APP_CD"  	 id="APP_CD"  	   value="">
+	<input type="hidden" name="CANCEL_URL"   id="CANCEL_URL"   value="">
+	<input type="hidden" name="FAIL_URL" 	 id="FAIL_URL"	   value="">
+	<input type="hidden" name="CALLBACK_URL" id="CALLBACK_URL" value="">
+	
+	<input type="hidden" name="CI" 		 	 id="CI" 	   	   value="">
+	<input type="hidden" name="QR_CODE"  	 id="QR_CODE" 	   value="">
+	<input type="hidden" name="PAY_TYPE" 	 id="PAY_TYPE" 	   value="">
+	<input type="hidden" name="CARD_NO" 	 id="CARD_NO" 	   value="">
+	
+	<input type="hidden" name="MNY_CHRG_AMT"           	id="MNY_CHRG_AMT"		value="0"/>
+	<input type="hidden" name="MNY_CHRG_ACCT_NO" 	 	id="MNY_CHRG_ACCT_NO" 	value="">
+	<input type="hidden" name="MNY_CHRG_BANK_CD" 	 	id="MNY_CHRG_BANK_CD" 	value="">
+	<input type="hidden" name="MNY_CHRG_ONCE_MIN_AMT"   id="MNY_CHRG_ONCE_MIN_AMT"  >
+	<input type="hidden" name="MNY_CHRG_ONCE_MAX_AMT"   id="MNY_CHRG_ONCE_MAX_AMT"  >
+	<input type="hidden" name="MNY_CHRG_DAY_MAX_AMT"    id="MNY_CHRG_DAY_MAX_AMT"   >
+	<input type="hidden" name="MNY_CHRG_MON_MAX_AMT"    id="MNY_CHRG_MON_MAX_AMT"   >
+	<input type="hidden" name="MNY_POSS_MAX_AMT"        id="MNY_POSS_MAX_AMT"       >
+	<input type="hidden" name="MNY_DAY_TOT_CHRG_AMT"    id="MNY_DAY_TOT_CHRG_AMT"   >
+	<input type="hidden" name="MNY_MON_TOT_CHRG_AMT"    id="MNY_MON_TOT_CHRG_AMT"   >
+	<input type="hidden" name="MNY_CUR_PRICE"           id="MNY_CUR_PRICE"          >
+	<input type="hidden" name="ITGR_MNY_CUR_PRICE"      id="ITGR_MNY_CUR_PRICE"     >
+</form>
+	<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<nav class="header__navi">
+				<a id="back_btn" class="header__btn btn-back">
+					<span class="blind">이전 페이지로</span>
+				</a>
+			</nav>
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span>결제하기</span></h1>
+			</div>
+		</header>
+
+		<main class="container-wrap js-container-wrap">
+			<div class="page--payment">
+				<!-- 결제하기 -->
+				<section class="container payment__info js-container justify-spacing-def">
+					<!-- 결제 수단 안내 - [D] 미사용 시 header 영역 display: none; -->
+					<header id="lmt_info_area" class="container__header">
+						<div class="headline">
+							<!-- [D] 이미지 미사용 시 주석 또는 이미지 태그 삭제 -->
+							 <img alt="" class="head-image"> 
+							<p class="head-text">
+								<span class="method-name" id="lmt_nm"><!-- sample:begin -->홍길동<!-- sample:end --></span>
+								<span class="method-amount" id="lmt_amt"><!-- sample:begin -->4,500<!-- sample:end --></span>
+							</p>
+						</div>
+					</header>
+
+					<!-- 결제정보 -->
+					<section class="container__body">
+						<div class="body__content">
+							<!-- 결제 매장 -->
+							<h2 class="pay-store">
+								<span class="store" id="aflt_nm"><!-- sample:begin -->홍길동<!-- sample:end --></span>
+							</h2>
+							<!-- 결제금액 -->
+							<div class="pay-amount">
+								<!-- 안내 메세지 - [D] 금액 입력 시 display: none; 제거 -->
+								<div id="placeholder" class="placeholder">
+									<p class="placeholder-text">결제금액을 입력해 주세요</p>
+								</div>
+								
+								<!-- 금액 입력 - [D] 금액 미입력/전체 제거 시 display: none; 추가 -->
+								<div id="input_amount_area" class="amount" style="display: none;">
+									<p class="amount-value js-amount-value"></p>
+									<p class="amount-text">원</p>
+								</div>
+								
+								<!-- 경고메세지 - [D] 안내사항 있으 시 노출 / [D] 금액 미입력/ 전체 제거 시 display: none; 추가 -->
+								<div id="auto_chrg_msg" class="noti" style="display: none;">
+									<p class="noti-text">
+										부족한 금액은 비플머니로 자동 충전됩니다.
+									</p>
+								</div>
+								
+								<div id="pay_over_msg" class="noti" style="display: none;">
+									<p class="noti-text fc-red">										
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<section class="payment__myinfo container-floating js-floating-container">
+					<div class="table-wrap justify-spacing-def">
+						<section class="table--body table--data-lite">
+							<table class="table table--data">
+								<colgroup>
+									<col style="width: 105px;">
+									<col style="width: 207px;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><p>보유 비플머니</p></th>
+										<td><p class="fw-600" id="cur_mny"><!-- sample:begin -->표본<!-- sample:end --></p></td>
+									</tr>
+									<tr>
+										<th><p>자동충전 계좌</p></th>
+										<td>
+											<p>
+												<button id="mny_acct_info" type="button" class="flex-row align-center button js-popup-open" data-modal="popup-select--bank"><!-- sample:begin -->표본<!-- sample:end --></button>
+											</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+					</div>
+					<!-- 비플 커스텀 키패드 박스 -->
+					<div class="beple-keypad beple-keypad--number js-beple-keypad">
+						<div class="keypad">
+							<button type="button" data-key="1" class="key-item"><span>1</span></button>
+							<button type="button" data-key="2" class="key-item"><span>2</span></button>
+							<button type="button" data-key="3" class="key-item"><span>3</span></button>
+							<button type="button" data-key="4" class="key-item"><span>4</span></button>
+							<button type="button" data-key="5" class="key-item"><span>5</span></button>
+							<button type="button" data-key="6" class="key-item"><span>6</span></button>
+							<button type="button" data-key="7" class="key-item"><span>7</span></button>
+							<button type="button" data-key="8" class="key-item"><span>8</span></button>
+							<button type="button" data-key="9" class="key-item"><span>9</span></button>
+							<button type="button" data-key="00" class="key-item"><span>00</span></button>
+							<button type="button" data-key="0" class="key-item"><span>0</span></button>
+							<button type="button" class="key-item delete"><span class="blind">지우기</span></button>
+						</div>
+						<!-- 메인버튼 -->
+						<div class="btn-box justify-spacing-btn">
+							<a id="btn_next" class="button button-xl button--lv1 js-popup-open dis" data-modal="popup-payment--confirm"><!-- [D] 활성화 시 dis 클래스 제거 -->
+								<span>다음</span>
+							</a>
+						</div>
+					</div>					
+					<!-- <div class="beple-keypad beple-keypad--number">
+						<div class="keypad js-keypad">
+							<button type="button" class="key-item"><span>1</span></button>
+							<button type="button" class="key-item"><span>2</span></button>
+							<button type="button" class="key-item"><span>3</span></button>
+							<button type="button" class="key-item"><span>4</span></button>
+							<button type="button" class="key-item"><span>5</span></button>
+							<button type="button" class="key-item"><span>6</span></button>
+							<button type="button" class="key-item"><span>7</span></button>
+							<button type="button" class="key-item"><span>8</span></button>
+							<button type="button" class="key-item"><span>9</span></button>
+							<button type="button" class="key-item"><span>00</span></button>
+							<button type="button" class="key-item"><span>0</span></button>
+							<button type="button" class="key-item delete"><span class="blind">지우기</span></button>
+						</div>
+						메인버튼
+						<div class="btn-box justify-spacing-btn">
+							<a id="btn_next" class="button button-xl button--lv1 js-popup-open dis" data-modal="popup-payment--confirm">[D] 활성화 시 dis 클래스 제거
+								<span>다음</span>
+							</a>
+						</div>
+					</div> -->
+				</section>
+			</div>
+		</main>
+		
+		<!-- 팝업 - 충전 계좌 선택 -->
+		<div id="mny_acct_list_area" class="popup-wrap js-popup-wrap" data-modal="popup-select--bank" style="display:none;">
+			<div class="popup-container popup--bottom popup-select--type1 box-padding--type2 js-popup-select">
+				<section class="popup-container__body">
+					<div class="justify-spacing-def">
+						<a class="flex-row align-center justify-end">
+							<span class="info__text--lv1 fc-666 fw-600" id="go_main_account">계좌관리</span>
+							<i class="icon icon--arrow-16"></i>
+						</a>
+					</div>
+					<div class="flex-column justify-spacing-def pdt8" id="mny_acct_list"><!-- sample:begin -->표본<!-- sample:end --></div>
+				</section>
+			</div>
+		</div>		
+	</div>
+
+	<!-- 팝업 - 결제 확인 -->
+	<div id="req_pay_area" class="popup-wrap js-popup-wrap" data-modal="popup-payment--confirm" style="display:none;">
+		<section class="popup-container popup--bottom popup-payment--confirm">
+			<header class="popup-container__header">
+				<h3 class="headline-text">
+					<span id="title_aflt_nm"><!-- sample:begin -->안내<!-- sample:end --></span>에서<br>
+					<strong><span id="title_pay_amt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</strong> 결제하시겠습니까?
+				</h3>
+
+				<div class="headline" id="req_lmt_info_area">
+					<!-- [D] 이미지 미사용 시 주석 또는 이미지 태그 삭제 -->
+					<img alt="" class="head-image">
+					<p class="head-text">
+						<span class="method-name" id="req_lmt_nm"><!-- sample:begin -->홍길동<!-- sample:end --></span>
+						<strong class="method-amount"><span id="req_lmt_amt"><!-- sample:begin -->4,500<!-- sample:end --></span> 원</strong>
+					</p>
+				</div>
+			</header>
+
+			<article class="popup-container__body">
+				<div class="table-wrap justify-spacing-def">
+					<article class="table--body">
+						<table class="table table--data">
+							<colgroup>
+								<col style="width: 102px;">
+								<col style="width: 210px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>
+										<p>보유 비플머니</p>
+									</th>
+									<td>
+										<p id="req_cur_mny"><!-- sample:begin -->표본<!-- sample:end --></p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<p>충전 비플머니</p>
+									</th>
+									<td>
+										<p id="req_chrg_mny"><!-- sample:begin -->표본<!-- sample:end --></p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<p>자동충전 계좌</p>
+									</th>
+									<td>
+										<p id="req_mny_acct"><!-- sample:begin -->표본<!-- sample:end --></p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</article>
+				</div>				
+
+				<div class="button-box flex-row justify-spacing-btn">
+					<button class="button button-xl button--lv5 js-popup-close">
+						<span>취소</span>
+					</button>
+					<button id="btn_approve" class="button button-xl button--lv1 js-popup-close">
+						<span>결제하기</span>
+					</button>
+				</div>
+			</article>
+		</section>
+	</div>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>거래승인번호 검증</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-70-S">
+-->
+<div class="wrap" id="keypad_area">
+	<div class="container">
+		<div class="content">
+			<!-- 웹뷰 경남 -->
+			<div class="webView_bnk">
+				<!-- 사용인증 -->
+				<div class="transaction addBtn-pb58 addNav"><!-- 하단 네이게이션 제거 시 addNav 클래스 제거 -->
+					<p class="txt_bold">
+						비플페이에서 사용하는<br>
+						거래승인번호 6자리를 입력하세요.
+					</p>
+					<!-- 정보입력 폼 -->
+					<div class="ipt_section">
+						<form action="">
+							<fieldset>
+								<input type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+								
+								<legend>승인번호 입력</legend>
+								<div class="tac_num" id="tac_num">
+									<div><input inputmode="none" type="password" title="결제비밀번호 첫 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 두 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 세 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 네 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 다섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 여섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+								</div>
+							</fieldset>
+						</form>
+						<!-- //정보입력 폼 -->
+					</div>
+					<div class="err_msg kn">
+						<p id="pwd_pop_text">
+							거래승인번호가 기억나지 않으세요?<br>
+							비플페이앱에서 재설정 가능합니다.
+						</p>
+					</div>
+					<div class="bppay-app" id="fail_btn" style="display: none;">
+						<a onclick="uf_call();" class="bppay__move-btn">비플페이 실행하기</a>
+					</div>
+					<!-- // 2023-05-19 -->
+				</div>
+				<!-- 사용인증 -->
+			</div>
+			<!-- //웹뷰 경남 -->
+			<!-- 하단 네비게이션 -->
+			<div class="btn_botFix_w">
+				<!-- 2023-05-19 -->
+				<div class="transaction__cs-center">
+					<a href="tel:1670-0136">
+						비플페이 고객센터(1670-0136) 
+					</a>
+				</div>
+				<!-- // 2023-05-19 -->
+				<div class="inner bg_white">
+					<a id="pwd_yes_btn" class="btn_default round_r8 btn-style-h48 on">거래승인번호 입력하기</a>
+				</div>
+				
+				<!-- 네비영역 제거 시 문서 상단의 "addNav" 클래스 제거 -->
+				<nav class="nav_w bg_white">
+					<div class="home on"><!-- 선택 시 on -->
+						<a href="/brnd_webview_main.act?TOKEN=">
+							<span>홈</span>
+						</a>
+					</div>
+					<div class="history on">
+						<a href="/brnd_webview_gift_hist_main.act?TOKEN=">
+							<span>내역</span>
+						</a>
+					</div>
+					<div class="prev on">
+						<a href="javascript:history.back()">
+							<span>이전</span>
+						</a>
+					</div>
+					<div class="next on">
+						<a>
+							<span>다음</span>
+						</a>
+					</div>
+				</nav>
+				<!-- //하단 네비게이션 -->
+			</div>
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<!--
+</body>
+</html>

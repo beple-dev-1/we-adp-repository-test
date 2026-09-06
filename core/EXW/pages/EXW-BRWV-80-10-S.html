@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>휴면계정해제 본인인증</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-80-10-S">
+<input type="hidden" id="trx_dt"  value=""  />
+<input type="hidden" id="trx_seq" value=""  />
+<input type="hidden" id="str_now" value=""  />
+<input type="hidden" id="str_14y_ago" value=""  />
+<form id="frm" name="frm">	
+	<input type="hidden" name="TOKEN" id="TOKEN" >
+	<input type="hidden" id="rsng_yn" value="N" />
+	<input type="hidden" name="ORG_APP_CD" id="ORG_APP_CD" value="">
+	<input type="hidden" name="API_KEY" id="API_KEY" value="">
+	<input type="hidden" name="ORG_CD" id="ORG_CD" value="">
+	<input type="hidden" name="MEMB_CD" id="MEMB_CD">
+	<input type="hidden" name="APP_CD" id="APP_CD" value="">
+	<input type="hidden" name="B_CI" id="B_CI" value="">
+	<input type="hidden" name="NMA_DEV_ID" id="NMA_DEV_ID" value="">
+	<input type="hidden" name="NMA_MODEL" id="NMA_MODEL" value="">
+	<input type="hidden" name="NMA_NETNM" id="NMA_NETNM" value="">
+	<input type="hidden" name="NMA_PLF" id="NMA_PLF" value="">
+	<input type="hidden" name="NMA_PLF_VER" id="NMA_PLF_VER" value="">
+</form>
+<!-- step 1 -->
+<div com-step-id="step1" class="wrap">
+
+	<div class="header floating-back-header floating-sticky">
+		<h1>휴면계정 해제</h1>
+	</div><!-- // header -->
+
+	<div class="container">
+		<div class="content">
+
+			<div class="row-padding25-nbottom-style">
+                <form action="">
+                    <fieldset>
+                        <legend>본인인증 정보 입력</legend>
+                                               
+                        <!-- 상단문구 -->
+						<div class="top_notibx">
+							<div class="inner">
+								<p>고객님의 계정은 1년 동안 비플머니앱에 접속하지 않아 휴면계정으로 전환되었습니다. <br>본인인증을 통한 휴면 해제를 하시면 기존과 동일하게 앱을 사용할 수 있습니다.</p>
+							</div>
+						</div>
+						<!-- //상단문구 -->
+                        
+                        <div id="agree_wrap" class="agree_wrap type2" style="padding-bottom: 10px;">
+                            <ul>                                
+                                <li><label for="agree_chk1"><input type="checkbox" id="agree_chk1" class="chk-general"> <span>본인인증 필수항목 모두 동의</span></label><a id="btn_clause1" class="btn_detail">자세히보기</a></li>
+                            </ul>
+                        </div>
+                        <div class="authentication-section">
+                            <div class="input-select-form">
+                                <div class="inputbox-none inputbox-m">
+                                    <input type="text" class="input-full44" id="memb_nm" maxlength="40" title="이름을 입력해 주세요." placeholder="이름(실명)" />
+                                    <button type="button" class="btn-clear-text" id="btn_name_del">삭제</button>
+                                </div>
+                                <div class="select-d-section  sds-white44-style">
+                                    <button type="button" class="sds-default" id="default_national">내국인</button>
+                                    <div class="sds-list-wrap">
+                                        <ul class="sds-list">
+                                            <li><button type="button" value="1">내국인</button></li>
+                                            <li><button type="button" value="2">외국인</button></li>
+                                        </ul>
+                                        <input type="hidden" class="sds-value" id="national" value="1" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-select-form">
+                                <div class="inputbox-none inputbox-m">
+                                    <input type="tel" id="brt_dt" class="input-full44" title="주민등록번호 앞 6자리를 입력해 주세요." maxlength="6" jex-input="onlyNumber" placeholder="주민등록번호 앞 6자리" />
+                                    <button type="button" class="btn-clear-text" id="btn_brdt_del">삭제</button>
+                                </div>
+                                <div class="select-d-section  sds-white44-style">
+                                    <button type="button" class="sds-default" id="default_gender">남자</button>
+                                    <div class="sds-list-wrap">
+                                        <ul class="sds-list">
+                                            <li><button type="button" value="1">남자</button></li>
+                                            <li><button type="button" value="0">여자</button></li>
+                                        </ul>
+                                        <input type="hidden" class="sds-value" id="gender" value="1" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="select-d-section  sds-white44-style sds-active-style">
+                                <button type="button" class="sds-default" id="default_telcorp">통신사 선택</button>
+                                <div class="sds-list-wrap">
+                                    <ul class="sds-list">
+                                        <li><button type="button" value="01">SKT</button></li>
+                                        <li><button type="button" value="02">KT</button></li>
+                                        <li><button type="button" value="03">LG U+</button></li>
+                                        <li><button type="button" value="04">SKT 알뜰폰</button></li>
+                                        <li><button type="button" value="05">KT 알뜰폰</button></li>
+                                        <li><button type="button" value="06">LG 알뜰폰</button></li>
+                                    </ul>
+                                    <input type="hidden" class="sds-value" id="tele_corp" />
+                                </div>
+                            </div>
+                            <div class="authentication-number-section">
+                                <div class="ans-top">
+                                    <div class="inputbox-none inputbox-m">
+                                        <input type="tel" id="tel_no" class="input-full44" maxlength="11" jex-input="onlyNumber" title="연락처를 입력해 주세요." placeholder="연락처" />
+                                        <button type="button" class="btn-clear-text" id="btn_telno_del">삭제</button>
+                                    </div>
+                                    <button type="button" class="btn-general btn-dark btn-h-44" id="aprv_send">인증번호발송</button>
+                                </div>
+                                <!-- 인증번호발송시 active 클래스 추가 -->
+                                <div class="ans-bottom active">
+                                    <div class="inputbox-none inputbox-m">
+                                        <input type="tel" class="input-full44" id="aprv_no" maxlength="6" title="인증번호를 입력해주세요." jex-input="onlyNumber" placeholder="인증번호를 입력해주세요." readonly />
+                                        <button type="button" class="btn-clear-text">삭제</button>
+                                    </div>
+                                    <span class="ans-time" id="time_check">0:00</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div style="font-size:13px">
+                        	<span>※ 반복하여 오류 발생 시 "02-708-1007"로 연락해주세요.</span><br/>
+                        	<span>※ 인증번호가 오지 않는 경우 상기 전화번호 차단 여부를 확인해주세요.</span>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            
+			<div class="fixed-bottom-section" style="position: fixed; top: 602px;">
+				<a href="#" class="btn-submit btn-full pink" id="btn_next"><span>휴면계정 해제하기</span></a>
+			</div>
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<!-- // step 1 -->
+
+<!-- step 2 -->
+<div com-step-id="step2" class="wrap" style="display: none;">
+	<div class="header floating-back-header floating-sticky">
+		<h1>이용약관</h1>
+		<a href="#" class="btn-history-back" onClick="uf_back();">뒤로가기</a>
+	</div><!-- // header -->
+	<div class="container">
+		<div class="content">
+			<div class="clause_list">
+				<ul id="clause_list"><!-- sample:begin -->표본<!-- sample:end --></ul>
+			</div>
+		</div>
+	</div><!-- // container -->
+</div>
+<!-- // step 2 -->
+
+<!-- step 3 -->
+<div com-step-id="step3" class="wrap" style="display: none;">
+	<div class="header floating-back-header floating-sticky">
+        <h1 id="clause_title"></h1>
+		<a class="btn-history-back" onClick="uf_back();">뒤로가기</a>
+	</div><!-- // header -->
+	<div class="container" style="height:100%;">
+		<div class="content" style="height:100%;">
+			<div id="clause_content" style="height:calc(100% - 120px);"><!-- sample:begin -->표본<!-- sample:end --></div>
+			<div class="fixed-bottom-section" style="position: fixed; top: 602px; ">
+				<a class="btn-submit pink" onClick="uf_back();"><span>확인</span></a>
+			</div>
+		</div>
+	</div><!-- // container -->
+</div>
+<!-- // step 3 -->
+</body>
+</html>

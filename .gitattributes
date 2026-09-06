@@ -1,0 +1,17 @@
+# ⛔ 줄끝을 LF 로 못 박는다.
+#    안 박으면 윈도우에서 `core.autocrlf=true` 가 체크아웃마다 CRLF 로 바꿔,
+#    아무도 안 고쳤는데 전 파일이 바뀐 판이 난다. 빌더가 이 파일들을 그대로 내보내므로
+#    「무엇이 바뀌었나」가 흐려지면 검수가 못 선다.
+* text=auto eol=lf
+
+# 바이트가 곧 내용인 것들. 줄끝을 건드리면 깨진다.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.woff binary
+*.woff2 binary
+*.ttf  binary
+*.eot  binary
+*.otf  binary

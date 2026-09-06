@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>에이블리 회원탈퇴</title>
+  <link rel="stylesheet" href="../assets/webview_api/css/reset.css">
+  <link rel="stylesheet" href="../assets/webview_api/css/style.css">
+  <link rel="stylesheet" href="../assets/webview_api/css/header.css">
+  <link rel="stylesheet" href="../assets/webview_api/css/popup.css">
+</head>
+<body data-screen-id="EXW-UWV-70-30-30-C">
+<form name="frm" id="frm" method="post">
+	<!-- 서버간 요청부 — 재설정 화면으로 폼 POST 할 때 그대로 실린다 -->
+	<input type="hidden" name="ORG_ID" id="ORG_ID" value="">
+	<input type="hidden" name="DATA"   id="DATA"   value="">
+
+	<!-- 받은 봉투 원문 — 화면 내 ajax 가 쓴다. 폼 POST 에 섞이면 스택이 어긋나므로 name 을 주지 않는다 -->
+	<input type="hidden" id="DATA_ORG"     value="">
+
+	<!-- 뒤로가기용 봉투·대상 -->
+	<input type="hidden" id="DATA_BACK"    value="">
+	<input type="hidden" id="BACK_URL"     value="">
+	<input type="hidden" id="CANCEL_URL"   value="">
+	<input type="hidden" id="FAIL_URL"     value="">
+	<input type="hidden" id="CALLBACK_URL" value="">
+	<input type="hidden" id="APP_CD"       value="">
+
+	<!-- 키패드 복호화(_r001)가 돌려준 봉투. 해지 요청에 이것을 싣는다 -->
+	<input type="hidden" id="makeReqData"  value="">
+</form>
+
+<div class="wrap" style="overflow: hidden;">
+	<!-- 헤더 -->
+	<header class="header position-sticky">
+		<div class="header__title-wrap">
+			<h1 class="page-name">
+				<span class="ellipsis-line--1">이용해지</span>
+			</h1>
+		</div>
+		<nav class="header__navi">
+			<a href="#none" class="header__btn btn-close" id="btnClose">
+				<span class="blind">페이지 닫기</span>
+			</a>
+		</nav>
+	</header>
+	<!-- 메인 컨텐츠 -->
+	<main class="container-wrap js-container-wrap">
+		<!-- ================================================================
+		     step2 — 거래승인번호
+		            zero_webview_password_confirm_v2_view.jsp 의 키패드 영역 그대로
+		     ================================================================ -->
+		<div com-step-id="step2" style="display: none;">
+			<div class="online-payment--cert">
+				<section class="page-header justify-spacing-def">
+					<article class="page-header__content flex-column">
+						<div class="page-header__headline-wrap">
+							<h2 class="flex-row">
+								<p class="page__headline page__headline--lv1" id="guide_txt">
+									머니 결제 비밀번호 <br> 6자리를 입력해 주세요
+								</p>
+							</h2>
+						</div>
+					</article>
+				</section>
+
+				<!-- 컨테이너 -->
+				<section class="container cert__view js-container justify-spacing-def">
+					<article class="container__body">
+						<div class="body__content">
+							<input type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+							<input type="hidden" name="pwd2" id="pwd2" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+
+							<div id="tac_num" class="cert__view--input">
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+								<input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none"><!-- [D] 입력 시 on 클래스 추가 -->
+							</div>
+						</div>
+					</article>
+				</section>
+			</div>
+		</div>
+
+		<!-- ================================================================
+		     step3 — 해지 완료 (퍼블리싱 가입완료.html 그대로)
+		     ================================================================ -->
+		<div com-step-id="step3" style="display: none;">
+			<section class="container end-container js-container">
+				<article class="container__body justify-spacing-def">
+					<div class="body__content">
+						<i class="icon icon--state_check-64" aria-hidden="true">이용해지가 완료되었습니다</i>
+						<div class="desc-box">
+							<h3 class="container__headline--lv5 fw-600">이용해지가 완료되었습니다</h3>
+						</div>
+					</div>
+				</article>
+			</section>
+			<section class="container-floating js-floating-container">
+				<div class="floating__box button-box-spacing">
+					<a id="btnDone" href="#none" class="button button-xl button--lv1" aria-label="확인하고 페이지 닫기">
+						<span>확인</span>
+					</a>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<!-- ================================================================
+	     step1 — 이용해지 안내 (퍼블리싱 이용해지.html 그대로)
+
+	     ★ 안내 문구는 퍼블리싱 그대로다(2026-09-02 사용자 확정). 같은 문장이 반복되는
+	       자리표시 문구이며, 확정본이 나오면 교체한다.
+	       실제 문구 원본은 cfg_webview_view.jsp:325~335 에 11개 항목으로 있다.
+
+	     ★ 문구와 코드가 어긋난 곳이 있다 — "적립금이 남아 있는 경우 이용해지 불가"라고
+	       하지만 실제로는 적립형 비플머니를 차단하지 않고 소멸시킨다(CFG_000011:354~417).
+	       문구 확정 시 함께 정리한다.
+	     ================================================================ -->
+	<div com-step-id="step1" style="display: none;">
+		<!-- 약관상세 컨테이너 -->
+		<div class="popup-wrap js-popup-wrap active" data-modal="popup-terms-sv" style="display:none;"><!-- [D] 'data-modal' 참고 -->
+			<section class="popup-container popup--full popup-terms">
+				<header class="header popup-container__header">
+					<div class="header__title-wrap">
+						<h1 class="page-name">
+							<span class="ellipsis-line--1">이용해지</span>
+						</h1>
+					</div>
+					<nav class="header__navi">
+						<a href="#none" class="header__btn btn-close js-popup-close" id="btnCloseTerms">
+							<span class="blind">페이지 닫기</span>
+						</a>
+					</nav>
+				</header>
+				<div class="terms terms--secession">
+					<!-- 컨테이너 -->
+					<section class="container js-container justify-spacing-def">
+						<div class="container__header">
+							<h3 class="flex-row">
+								<p class="container__headline container__headline--lv4">
+									비플페이 이용해지 안내
+								</p>
+							</h3>
+						</div>
+						<section class="container__body">
+							<div class="flex-column">
+								<article class="column__item">
+									<div class="terms__item">
+										<p class="info__text--lv2">
+											모바일상품권 잔액 및 적립금이 남아 있는 경우
+											이용해지가 불가능합니다. 모바일상품권 잔액 및
+											적립금이 남아 있는 경우 이용해지가 불가능합니다.
+											모바일상품권 잔액 및 적립금이 남아 있는 경우
+											이용해지가 불가능합니다.
+										</p>
+										<p class="info__text--lv2">
+											모바일상품권 서비스 탈퇴를 하지 않은 이용해지가
+											불가능합니다. 모바일상품권 서비스 탈퇴를 하지
+											않은 이용해지가 불가능합니다. 모바일상품권
+											서비스 탈퇴를 하지 않은 이용해지가 불가능합니다.
+											모바일상품권 잔액 및 적립금이 남아 있는 경우
+											이용해지가 불가능합니다.
+										</p>
+									</div>
+								</article>
+							</div>
+							<div class="flex-column">
+								<div class="column__head">
+									<h4 class="flex-row">
+										<p class="container__headline container__headline--lv2">
+											제 1조 중제목
+										</p>
+									</h4>
+								</div>
+								<article class="column__item">
+									<div class="terms__item">
+										<p class="info__text--lv2">
+											모바일상품권 잔액 및 적립금이 남아 있는 경우
+											이용해지가 불가능합니다. 모바일상품권 잔액 및
+											적립금이 남아 있는 경우 이용해지가 불가능합니다.
+											모바일상품권 잔액 및 적립금이 남아 있는 경우
+											이용해지가 불가능합니다.
+										</p>
+									</div>
+								</article>
+							</div>
+						</section>
+						<div class="flex-row justify-end mgt24">
+							<button type="button" id="btnLeave" class="button button-small button--lv5_line"><span>이용해지</span></button>
+						</div>
+					</section>
+				</div>
+			</section>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>상품권 사용하기</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-50-10-S">
+<form id="frm" name="frm">
+	<input type="hidden" name="BGC_ID" id="BGC_ID" value=""/>
+ 	<div id="bar_code_temp" style="display: none;"><!-- sample:begin -->004<!-- sample:end --></div>
+ 	<div id="dateInfo_temp" style="display: none;"><!-- sample:begin -->2026.09.02<!-- sample:end --></div>
+	<input type="hidden" name="TOKEN" id="TOKEN" value="">
+</form>
+<div class="wrap">
+	<div class="container">
+		<div class="content">
+			<!-- 웹뷰 - 경남 -->
+			
+			<div class="webView_bnk">
+				<!-- 상품권 결제하기 -->
+				<div class="brand_payment_bnk addBtn-pb58 overHidden">
+					<!-- 상단고정영역 -->
+					<div class="top_bx" id="title_area"><!-- sample:begin -->안내<!-- sample:end --></div>
+					<!-- 상품권 슬라이드 영역 -->
+					<div class="card_slide">
+						<div class="swiper-container">
+							<div class="swiper-wrapper" id="bgc_area"><!-- sample:begin -->표본<!-- sample:end --></div>
+						</div>
+						<!-- //상품권 슬라이드 영역 -->
+					<div class="barcode" id="barcode_area"><!-- sample:begin -->004<!-- sample:end --></div>
+					<div class="card_pager_wrap">
+						<div class="swiper-pagination"></div>
+					</div>
+					</div>
+				</div>
+				<!-- //상품권 결제하기 -->
+			</div>
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<nav class="nav_w bg_white">
+					<div class="home on"><!-- 선택 시 on -->
+						<a onclick="uf_move('home');">
+							<span>홈</span>
+						</a>
+					</div>
+					<div class="history on">
+						<a onclick="uf_move('list');">
+							<span>내역</span>
+						</a>
+					</div>
+					<div class="prev on">
+						<a onclick="uf_move('prev');">
+							<span>이전</span>
+						</a>
+					</div>
+					<div class="next on">
+						<a onclick="uf_move('next');">
+							<span>다음</span>
+						</a>
+					</div>
+				</nav>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</body>
+</html>

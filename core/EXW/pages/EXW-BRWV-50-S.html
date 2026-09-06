@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>보유상품권 조회</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-50-S">
+<form id="frm" name="frm">
+	<input type="hidden" name="BGC_ID" id="BGC_ID"/>
+	<input type="hidden" name="TOKEN" id="TOKEN" value="">
+</form>
+<div class="wrap">
+	<div class="container">
+		<!-- content -->
+		<div class="content">
+			<!-- 웹뷰 - 경남 -->
+			<div class="webView_bnk">
+				<!-- 경남_브랜드 메인 -->
+				<div class="brand_main_bnk addBtn-pb58">
+					<!-- 상단고정영역 -->
+					<div class="top_bx">
+						<h2 class="tit">보유 상품권</h2>
+					</div>
+					<!-- 상품권 리스트 -->
+					<div class="gift_list_w" id="bgc_area"><!-- sample:begin -->표본<!-- sample:end --></div>
+					<!-- //상품권 리스트 -->
+					<div class="item_none" id="bgcNone_area" style="display: none;">
+						<p>보유한 상품권이 없습니다</p>
+	                    <div class="buy_btn" >
+	                        <a href="#none" class="btn_mediun round_r4 on" onclick="uf_move('buy');">
+	                            <span>구매하러 가기</span>
+	                        </a>
+	                    </div>
+					</div>
+				</div>
+				<!-- 하단 고정버튼 -->
+				<div class="btn_botFix_w">
+					<nav class="nav_w bg_white">
+						<div class="home on"><!-- 선택 시 on -->
+							<a onclick="uf_move('home');">
+								<span>홈</span>
+							</a>
+						</div>
+						<div class="history on">
+							<a onclick="uf_move('list');">
+								<span>내역</span>
+							</a>
+						</div>
+						<div class="prev on">
+							<a onclick="uf_move('prev');">
+								<span>이전</span>
+							</a>
+						</div>
+						<div class="next on">
+							<!-- <a onclick="uf_move('next');"> -->
+							<a onclick="#">
+								<span>다음</span>
+							</a>
+						</div>
+					</nav>
+				</div>
+				<!-- //하단 고정버튼 -->
+			</div>
+			<!-- //웹뷰 - 경남 -->
+		</div>
+		<!-- // content -->
+	</div>
+	<!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

@@ -1,0 +1,13 @@
+.ly_pop_btw.btns_half {
+    display: flex;
+    justify-content: flex-end;
+}
+.bp_money .history_wrap .history_list .inner .icon.type_use {
+    background-image: url(../../resource/images/bpmoney/ico_history_icon_t97.png)
+}
+.bp_money .history_wrap .history_list .inner .icon.type_topup {
+    background-image: url(../../resource/images/bpmoney/ico_history_icon_t98.png)
+}
+.bp_money .history_wrap .history_list .inner .icon.type_debit {
+    background-image: url(../../resource/images/bpmoney/ico_history_icon_t99.png)
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>상품권 구매</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-10-S">
+<form id="frm" name="frm">
+		<input type="hidden" name="BGC_NO" id="BGC_NO"/>
+		<input type="hidden" name="TRX_GB" id="TRX_GB"/>
+		<input type="hidden" name="BGC_ID" id="BGC_ID"/>
+		<input type="hidden" name="TOKEN" id="TOKEN" value="">
+	</form>
+	<div class="wrap">
+		<div class="container">
+			<div class="content">
+				<!-- 웹뷰 - 경남 -->
+				<div class="webView_bnk">
+					<!-- 경남_브랜드 메인 -->
+					<div class="brand_main_bnk bg_f9 addBtn-pb65 addUse_btn"><!-- 네비게이션 영역만 유지 시 addUse_btn 제거 -->
+						<!-- 2024-06-27 배너박스 -->
+						<div class="br_gift_rn" style="display: none;">
+							<div class="banner-container">
+								<div class="banner_bx" id="banner_rec" ><!-- sample:begin -->표본<!-- sample:end --></div>
+							</div>
+						</div>
+						<!-- // 2024-06-27 배너박스 -->
+						
+						<!-- 상단고정영역 -->
+						<div class="scroll_fix bg_f9">
+							<div class="top_bx" id="brnd_sch">
+								<h2 class="tit">상품권 구매</h2>
+								<p class="search_btn"><a href="#none" onclick="uf_brnd_sch();" >검색</a></p>
+							</div>
+							<div class="sort" id="cate_rec"><!-- sample:begin -->표본<!-- sample:end --></div>
+						</div>
+						<!-- 상품권 리스트 -->
+						<div class="gift_list_w add_flex" id="bgc_rec"><!-- sample:begin -->표본<!-- sample:end --></div>
+						
+						<!-- 2024-11-08 -> 브랜드 하단 사업자 고지 -->
+						<div class="brand-footer bg_f9"><!-- 상품권 상세의 경우 bg_f9 추가 -->
+							<div class="d_flex-column">
+								<div class="brand-footer--text">상호: 비즈플레이㈜</div>
+								<div class="brand-footer--text">대표이사: 석창규</div>
+								<div class="brand-footer--text">주소: 서울시 영등포구 영신로 220 KnK디지털타워 12층</div>
+								<div class="brand-footer--text"><span>사업자등록번호: 107-88-36127</span><i>|</i><a id="buss_info" class="fc-666">사업자정보 확인<i class="icon arr_right-16"></i></a></div>
+								<div class="brand-footer--text">통신판매신고번호: 2015-서울영등포-0113호</div>
+								<div class="brand-footer--text">고객센터: 1670-0136</div>
+								<div class="brand-footer--text">이메일: <a href="bpay@bizplay.co.kr" target="_blank">bpay@bizplay.co.kr</a></div>
+								<div class="brand-footer--text">
+									비즈플레이㈜는 통신판매중개자이며, 통신판매의
+									당사자가 아닙니다. 상품, 상품정보, 거래에 관한 의무와
+									책임은 판매자에게 있습니다.
+								</div>
+							</div>
+						</div>
+						<!-- // 2024-11-08-->						
+					</div>
+					<!-- //경남_브랜드 메인 -->
+					<div class="btn_botFix_w">
+						<!-- 상품권 사용하기 버튼 버튼 제거 시 문서 상단의 addUse_btn 클래스 제거 -->
+						<div class="btn_use" >
+							<a href="#none" onclick="uf_move('use');">
+								<span>상품권 사용하기</span>
+							</a>
+						</div>
+						<!-- 하단 네비게이션 -->
+						<!-- <nav class="nav_w bg_white">
+							<div class="home on" id="home">선택 시 on
+								<a href="#none" onclick="uf_move('home');">
+									<span>홈</span>
+								</a>
+							</div>
+							<div class="history on" id="history">
+							<a href="#none" onclick="uf_move('history');">
+									<span>내역</span>
+								</a>
+							</div>
+							<div class="prev on" id="prev">
+								<a href="#none" onclick="uf_move('prev');">
+									<span>이전</span>
+								</a>
+							</div>
+							<div class="next on" id="next">
+								<a href="#none" onclick="uf_move('next');">
+									<span>다음</span>
+								</a>
+							</div>
+						</nav> -->
+						<!-- //하단 네비게이션 -->
+					</div>
+				</div>
+				<!-- //웹뷰 - 경남 -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

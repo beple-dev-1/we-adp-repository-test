@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>상품권 내역 메인</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-20-S">
+<form id="frm" name="frm">
+	<input type="hidden" name="TOKEN" id="TOKEN" value="">
+	<input type="hidden" name="BRND_ORG_APP_CD" id="BRND_ORG_APP_CD" value="">
+</form>
+<!-- wrap -->
+	<div class="wrap">
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="br_gift_rn">
+					<div class="detail_view addBtn-pb65 add-cs-btn">
+						<!-- 상품권,결제 내역 -->
+						<div class="view_list">
+							<a onclick="uf_move('pay');">사용 내역</a>
+							<a onclick="uf_move('purchase');">상품권 내역</a>
+							<!-- <a onclick="uf_move('mng');" id="mng_btn" style="display: none;">선물함</a> -->
+							<a onclick="uf_move('mng');" id="mng_btn">선물함</a>
+							<a onclick="uf_move('account');">계좌관리</a>
+							<a onclick="uf_move('cancel');">이용해지</a>
+						</div>
+					</div>
+				</div>
+				<!-- 하단 고정버튼 -->
+				<div class="btn_botFix_w">
+				
+					<div class="cs-container cs-tel">
+						<a href="tel:1670-0136" class="tel-inner" rel="external">
+							<p class="center-info">비플페이 고객센터<strong>1670-0136</strong></p>
+							<p class="work-info">평일 09:00 ~ 18:00 /<br> 토요일, 공휴일 휴무</p>
+						</a>
+					</div>
+					<!-- <nav class="nav_w bg_white">
+						<div class="home on">선택 시 on
+							<a onclick="uf_move('home');">
+								<span>홈</span>
+							</a>
+						</div>
+						<div class="history on">
+							<a onclick="uf_move('list');">
+								<span>내역</span>
+							</a>
+						</div>
+						<div class="prev on">
+							 <a onclick="uf_move('prev');"> 
+							<a onclick="#">
+								<span>이전</span>
+							</a>
+						</div>
+						<div class="next on">
+							<a onclick="uf_move('next');">
+								<span>다음</span>
+							</a>
+						</div>
+					</nav> -->
+				</div>
+				<!-- //하단 고정버튼 -->
+			</div>
+			<!-- // content -->
+			
+		</div>
+		<!-- // container -->
+	</div>
+<!-- // wrap -->
+</body>
+</html>

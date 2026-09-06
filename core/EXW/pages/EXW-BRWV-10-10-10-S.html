@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>구매대상 상품권 상세</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-10-10-10-S">
+<form id="frm" name="frm">
+	<input type="hidden" name="APP_CD" id="APP_CD" value=""/>
+	<input type="hidden" name="BGC_ID" id="BGC_ID"/>
+	<input type="hidden" name="KIND_CODE" id="KIND_CODE"/>
+	<input type="hidden" name="TOKEN" id="TOKEN" value="">
+	<input type="hidden" name="REF_URL" id="REF_URL"/>
+	<input type="hidden" name="KEYWORD" id="KEYWORD" value="" />
+	<input type="hidden" name="CATE_BGC_ID" id="CATE_BGC_ID" value=""/>
+	<input type="hidden" name="REF_GIFT_TYPE" id="REF_GIFT_TYPE" value=""/>
+	<input type="hidden" name="REF_MIN_AMT" id="REF_MIN_AMT" value=""/>
+	<input type="hidden" name="REF_MAX_AMT" id="REF_MAX_AMT" value=""/>
+	<input type="hidden" name="REF_SORTING" id="REF_SORTING" value=""/>
+	<input type="hidden" name="IP" id="IP" value=""/>
+	<!-- 계좌관리(brnd_webview_main_account) 복귀 지점.
+	     이 값이 없으면 계좌관리의 하단 이전·등록완료 확인이 history.back() 으로 떨어지고,
+	     앱 웹뷰는 뒤로가기를 캐시 복원으로 처리해 ACCT_YN 이 등록 전 값(N)으로 남는다.
+	     그 결과 계좌 등록을 마쳐도 구매하기에서 계좌등록 안내 팝업이 다시 뜬다.
+	     구매 화면(brnd_webview_gift_purchase)과 동일한 방식으로 복귀 지점을 넘긴다. -->
+	<input type="hidden" name="REF_PAGE" id="REF_PAGE" value=""/>
+</form>
+
+<form id="detail_frm" name="detail_frm">
+	<input type="hidden" name="KIND_CARD_IMG" id="KIND_CARD_IMG" value=""/>
+	<input type="hidden" name="KIND_FULL_NM" id="KIND_FULL_NM" value=""/>
+	<input type="hidden" name="BGC_ID" id="DETAIL_BGC_ID" value=""/>
+	<input type="hidden" name="BGC_NM" id="BGC_NM" value=""/>
+	<input type="hidden" name="STANDARD_AMT" id="STANDARD_AMT" value=""/>
+	<input type="hidden" name="SALES_AMT" id="SALES_AMT" value=""/>
+	<input type="hidden" name="SUPPORT_AMT" id="SUPPORT_AMT" value=""/>
+	<input type="hidden" name="DC_RATE" id="DC_RATE" value=""/>
+	<input type="hidden" name="OWN_LMT_AMT" id="OWN_LMT_AMT" value=""/>
+	<input type="hidden" name="OWN_AMT" id="OWN_AMT" value=""/>
+	<input type="hidden" name="OWN_REMAIN_LMT" id="OWN_REMAIN_LMT" value=""/>
+	<input type="hidden" name="TOTAL_CNT" id="TOTAL_CNT"/>
+	<input type="hidden" name="TOTAL_AMT" id="TOTAL_AMT"/>
+	<input type="hidden" name="BTN_TYPE" id="BTN_TYPE"/>
+	<input type="hidden" name="MEMB_CD" id="MEMB_CD" value=""/>
+	<input type="hidden" name="ACCT_YN" id="ACCT_YN" value=""/>
+	<input type="hidden" name="PROM_YN" id="PROM_YN" value=""/>
+	<input type="hidden" name="KIND_CODE" id="DETAIL_KIND_CODE" value=""/>
+	<input type="hidden" name="TRX_GB" id="TRX_GB" value="" >
+	<input type="hidden" name="MULTI_GIFT_ABL_YN" id="MULTI_GIFT_ABL_YN" value="" >
+	<input type="hidden" name="BUY_ABL_QTY" id="BUY_ABL_QTY" value="" >
+	<input type="hidden" name="KIND_TYPE" id="KIND_TYPE" value="" >
+	<input type="hidden" name="THRD_PRTY_AGREE_YN" id="THRD_PRTY_AGREE_YN" value="" >
+	<input type="hidden" name="THRD_PRTY_AGREE_INFO" id="THRD_PRTY_AGREE_INFO" value="" >
+	<input type="hidden" name="COMPANY_NM" id="COMPANY_NM" value="" >
+	<input type="hidden" name="TOKEN" id="TOKEN" value="">
+	<input type="hidden" name="TODAY_JOIN_YN" id="TODAY_JOIN_YN" value="">
+	<input type="hidden" name="TODAY_BUY_LMT_MSG" id="TODAY_BUY_LMT_MSG" value="">
+	<input type="hidden" name="WON_AUTH_TYPE" id="WON_AUTH_TYPE" value="">
+</form>
+	<!-- wrap -->
+	<div class="wrap">
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="br_gift_rn add_flex_column addBtn-pb58 addNav">
+					<div class="product"><!-- 하단 네비영역 제거 시 addNav 삭제 -->
+						<!-- 상품 이미지박스 -->
+						<div class="img_bx"><img src="" alt=""></div>
+						<!-- 브랜드 명, 상품명, 가격, 공유하기 -->
+						<div class="info_bx label_special"><!-- 특가상품의 경우 label_special 추가 -->
+							<!-- 브랜드 명 -->
+							<p class="brand">
+								비플머니
+								
+									<span class="label">특가상품</span>
+								
+							</p>
+							<!-- 상품 명 -->
+							<p class="name">비플머니</p>
+							<!-- 가격정보 -->
+							<p class="price">
+							
+							
+								<span class="discount">%</span>
+								<strong>4,500<span class="won">원</span></strong>
+								<span class="price_original">4,500원</span>
+							
+								<strong>4,500<span class="won">원</span></strong>
+							
+							</p>
+						</div>
+						<!-- 2023-03-27 -->
+						<!-- 기본정보, 안내사항 -->
+						<div class="detail_info_bx">
+							<div class="tab_menu">
+								<a href="#none" class="on"><span>기본정보</span></a>
+								<a href="#none"><span>안내사항</span></a>
+							</div>
+							<div class="tab_wrap">
+								<!-- 기본정보 -->
+								<div class="def_info on">
+									<dl>
+										<dt>상품권 소개</dt>
+										<dd></dd>
+									</dl>
+									<dl>
+										<dt>상품권 종류</dt>
+										<dd>비플머니</dd>
+									</dl>
+									<dl>
+										<dt>사용 유효기간</dt>
+										<dd>구매일로부터 일</dd>
+									</dl>
+									<dl>
+										<dt>사용가능 매장</dt>
+										<dd>
+											<ul>
+												<li></li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+								<!-- 안내사항 -->
+								<div class="noti">
+									<dl>
+										<dt>유의사항</dt>
+										<dd>
+											
+										</dd>
+									</dl>
+									<div class="toggle_wrap">
+										<p class="trigger"><a>상품 필수 표기 정보</a></p>
+										<div class="toggle_con">
+											<div class="inner">
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //2023-03-27 -->
+						<!-- 이런상품 어때요? - 추천상품 -->
+						
+						<div class="product_push">
+							<h2>이런 상품권 어때요</h2>
+							<!-- 상품리스트 -->
+							<div class="item_list">
+								
+								
+									<div class="push_item" code="" bgc="">
+										<p class="img"><img src="" alt=""></p>
+										<p class="brand" title="">비플머니</p>
+										<p class="name" title="">비플머니</p>
+										<p class="price">
+										
+											<span class="discount">%</span>
+										
+											<strong>4,500<span class="won">원</span></strong>
+										</p>
+									</div>
+									
+									</div>
+								</div>
+								
+					</div>
+					
+					<!-- 2024-11-08 -> 브랜드 하단 사업자 고지 -->
+					<div class="brand-footer bg_f9"><!-- 상품권 상세의 경우 bg_f9 추가 -->
+						<div class="d_flex-column">
+							<div class="brand-footer--text">상호: 비즈플레이㈜</div>
+							<div class="brand-footer--text">대표이사: 석창규</div>
+							<div class="brand-footer--text">주소: 서울시 영등포구 영신로 220 KnK디지털타워 12층</div>
+							<div class="brand-footer--text"><span>사업자등록번호: 107-88-36127</span><i>|</i><a id="buss_info" class="fc-666">사업자정보 확인<i class="icon arr_right-16"></i></a></div>
+							<div class="brand-footer--text">통신판매신고번호: 2015-서울영등포-0113호</div>
+							<div class="brand-footer--text">고객센터: 1670-0136</div>
+							<div class="brand-footer--text">이메일: <a href="bpay@bizplay.co.kr" target="_blank">bpay@bizplay.co.kr</a></div>
+							<div class="brand-footer--text">
+								비즈플레이㈜는 통신판매중개자이며, 통신판매의
+								당사자가 아닙니다. 상품, 상품정보, 거래에 관한 의무와
+								책임은 판매자에게 있습니다.
+							</div>
+						</div>
+					</div>
+					<!-- // 2024-11-08-->	
+										
+				</div>
+			</div>
+			<!-- // content -->
+			<!-- 하단 고정버튼 -->
+			<div id="btn_dim" class="btn_botFix_w brand_rn_btn">
+				<!-- 메인 버튼 -->
+				
+					<div class="inner half bg_white">
+						<a id="gift_btn" class="typeB round_r8 btn-style-h48">선물하기</a>
+						<a id="buy_btn" class="typeA round_r8 btn-style-h48 on">구매하기</a>
+					</div>
+				
+					<div class="inner bg_white">
+						<a id="buy_btn" class="btn_default round_r8 btn-style-h48 on">구매하기</a>
+					</div>
+				
+					<div class="inner bg_white">
+						<a class="btn_default round_r8 btn-style-h48">소진 완료</a>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- 구매하기/선물하기 버튼 클릭 시 아래태그에 class="on" 추가 -->
+	
+	<div class="btn_botFix_w brand_rn_buy bnk" >
+	<!-- <div id="btn_botFix_w" class="btn_botFix_w brand_rn_buy bnk" > -->
+		<div class="content_wrap">
+			<p class="h_bar"><a href="#none"><span class="blind">열기/닫기</span></a></p>
+			<div class="count">
+				<a id="btn_minus" class="minus"><span class="blind">수량빼기</span></a>
+				<span><input id="qty" type="tel" readonly value="1" ></span>
+				<a id="btn_plus" class="plus"><span class="blind">수량더하기</span></a>
+			</div>
+			<div class="total">
+				<p class="txt">총 결제금액</p>
+				<p class="bal"><strong id="tot_money" amt="">4,500</strong>원</p>
+			</div>
+			<div class="inner bg_white">
+				<a id="btn_buy" class="btn_default round_r8 btn-style-h48 on">구매하기</a>
+			</div>
+		</div>
+		
+	</div>
+	
+	<!-- 보이스피싱 방지 dim -->
+	
+	<div id="scam_layer" class="layer_overlay">
+		<div class="layer_bPop" style="display:;">
+			<div class="popup_con pd0">
+				<!-- 보이스 피싱 경고 -->
+				<div class="v_scam_warning">
+					<!-- 타이틀 -->
+					<div class="top_bx">
+						<h2>
+							<strong>금융사기 예방</strong>
+						</h2>
+					</div>
+					<!-- //타이틀 -->
+					<!-- 컨텐츠 -->
+					<div class="con_bx">
+						<p class="warning_msg">
+							최근 가족, 지인을 사칭한<br>
+							<strong>금융 사기가 발생</strong>하고 있습니다.
+						</p>
+						<div class="bg_bx">
+							<ul>
+								<li>가족, 지인이 문자메시지 또는 SNS로 고액의 상품권 구매를 요구한 경우</li>
+								<li>상품권 구매를 통해 대출 등을 권유한 경우</li>
+							</ul>
+						</div>
+						<p>위 항목에 해당되는 경우 지인, 가족, 기관 등에 직접 확인 후 구매하시기 바랍니다.</p>
+					</div>
+					<!-- //컨텐츠 -->
+					<!-- 확인버튼 -->
+					<div class="btn_w">
+						<a id="scam_warning" class="btn-style-h48 btn_default round_r6 on"><span>확인</span></a>
+					</div>
+					<!-- //확인버튼 -->
+				</div>
+				<!-- //보이스 피싱 경고-->
+			</div>
+		</div>
+	</div>
+	
+	<!-- 보이스피싱 방지 dim -->
+	
+	<!-- 레이어팝업 - 대기열 -->
+	<div class="layer_overlay" id="tracer_layer" style="display: none;"><!-- 팝업 닫기동작용 js-popup-container 클래스 추가되어있음 불필요 시 해당 클래스 제거 -->
+		<div class="popup_w popup_waiting">
+			<div class="inner">
+				<div class="popup_header">
+					<h2 class="waiting-title">접속 대기 중입니다.</h2>
+					<p class="waiting-text">
+						현재 사용자가 많아 지연되고 있습니다.<br>
+						잠시 기다려 주세요.
+					</p>
+				</div>
+				<div class="popup_con">
+					<div class="item_wrap">
+						<dl class="item">
+							<dt class="head">현재 대기인원</dt>
+							<dd class="content">
+								<strong>
+									<span id="wait_cnt">35,000</span>명
+								</strong>
+							</dd>
+						</dl>
+						<dl class="item">
+							<dt class="head">예상 대기시간</dt>
+							<dd class="content">
+								<strong>
+									<span id="wait_min">10</span>분 
+									<span id="wait_sec">30</span>초
+								</strong>
+							</dd>
+						</dl>
+					</div>
+					<div class="loading_bar">
+						<img src="../..../assets/image/bank/laoding_bar.gif" alt="대기열 이미지">
+					</div>
+				</div>
+				<p class="notice">※ 다시 접속하시면 대기 시간이 길어질 수 있습니다.</p>
+	
+				<!-- 닫기버튼 -->
+				<!-- <p class="popup_close">
+					<button type="button" class="popup_close_btn icon close-14" id="tracer_close_btn"><span class="blind-i">닫기</span></button>팝업 닫기동작용 js-popup_close-btn 클래스 추가되어있음 불필요 시 해당 클래스 제거
+				</p> -->
+			</div>
+		</div>
+	</div>
+<!-- //layer_overlay -->
+	
+<link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</body>
+</html>

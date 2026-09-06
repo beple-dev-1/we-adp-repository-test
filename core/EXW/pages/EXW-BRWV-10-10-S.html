@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>구매가능 상품권목록</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-10-10-S">
+<form id="frm" name="frm">
+		<input type="hidden" name="BGC_ID" id="BGC_ID" value=""/>
+		<input type="hidden" name="KIND_CODE" id="KIND_CODE"/>
+		<input type="hidden" name="TRX_GB" id="TRX_GB" value="" >
+		<input type="hidden" name="TOKEN" id="TOKEN" value="">
+		<input type="hidden" name="APP_CD" id="APP_CD" value="">
+	</form>
+	<!-- wrap -->
+	<div class="wrap">
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="br_gift_rn">
+					<!-- 상품권 리스트 -->
+					<div class="gift_list">
+						<!-- 필터 -->
+						<div id="filter" class="filter">
+							<p class="sort"><a id="sort_type" data-type="0">혜택순</a></p>
+							<div id="gift_type" class="cate">
+								<a id="01" class="on">금액권</a><!-- 항목 선택 시 on 추가 -->
+								<a id="02" class="on">교환권</a>
+							</div>
+						</div>
+						<!-- 상품권 목록 -->
+						<div id="kindList" class="list_area addBtn-pb56"><!-- sample:begin -->표본<!-- sample:end --></div>
+					</div>
+					<!-- //상품권 리스트 -->
+				</div>
+				<!-- 하단 네비게이션 -->
+				<div class="btn_botFix_w">
+					<nav class="nav_w bg_white">
+						<div class="home on" id="home"><!-- 선택 시 on -->
+							<a href="#none" onclick="uf_move('home');">
+								<span>홈</span>
+							</a>
+						</div>
+						<div class="history on" id="history">
+							<a href="#none" onclick="uf_move('history');">
+								<span>내역</span>
+							</a>
+						</div>
+						<div class="prev on" id="prev">
+							<a href="#none" onclick="uf_move('prev');">
+								<span>이전</span>
+							</a>
+						</div>
+						<div class="next on" id="next">
+							<a href="#none" onclick="uf_move('next');">
+								<span>다음</span>
+							</a>
+						</div>
+					</nav>
+				</div>
+				<!-- // 하단 네비게이션 -->
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	
+	<!-- 레이어팝업 -->
+	<div id="sort_layer" class="layer_overlay" style="display:none;">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 정렬 필터 -->
+				<div class="br_n_sort">
+					<h2>정렬</h2>
+					<!-- 닫기버튼 -->
+					<p class="btn_close">
+						<a id="btn_close"><span class="blind">닫기</span></a>
+					</p>
+					<!-- //닫기버튼 -->
+					<!-- 필터 목록 -->
+					<ul class="list" id="sort_list" >
+						<li class="chk"><a id="0">혜택순</a></li><!-- 현재 선택된 항목 chk 클래스 추가 -->
+						<li><a id="1">판매량순</a></li>
+						<li><a id="2">신상품순</a></li>
+					</ul>
+					<!-- //필터 목록 -->
+				</div>
+				<!-- //정렬 필터 -->
+			</div>
+		</div>
+	</div>
+	<!-- //레이어팝업 -->
+</body>
+</html>

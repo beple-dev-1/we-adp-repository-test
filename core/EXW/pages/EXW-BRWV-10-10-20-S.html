@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>상품권 구매</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+</head>
+<body data-screen-id="EXW-BRWV-10-10-20-S">
+<form id="frm" name="frm">
+	<input type="hidden" name="BTN_TYPE"		   id="BTN_TYPE"		    value="" >
+	<input type="hidden" name="KIND_CARD_IMG"      id="KIND_CARD_IMG"       value="" >
+	<input type="hidden" name="KIND_FULL_NM"       id="KIND_FULL_NM"        value="" >
+	<input type="hidden" name="BGC_NM"  		   id="BGC_NM"  		    value="" >
+	<input type="hidden" name="BGC_ID"  		   id="BGC_ID"  		    value="" >
+	<input type="hidden" name="STANDARD_AMT"       id="STANDARD_AMT"        value="" >
+	<input type="hidden" name="SALES_AMT" 	       id="SALES_AMT" 	        value="" >
+	<input type="hidden" name="SUPPORT_AMT" 	   id="SUPPORT_AMT" 	    value="" >
+	<input type="hidden" name="DC_RATE"  	       id="DC_RATE"  	        value="" >
+	<input type="hidden" name="OWN_LMT_AMT" 	   id="OWN_LMT_AMT" 	    value="" >
+	<input type="hidden" name="OWN_AMT"  	       id="OWN_AMT"  	        value="" >
+	<input type="hidden" name="OWN_REMAIN_LMT"     id="OWN_REMAIN_LMT"      value="" >
+	<input type="hidden" name="TOTAL_CNT" 	       id="TOTAL_CNT" 	        value="" >
+	<input type="hidden" name="TOTAL_AMT"  	       id="TOTAL_AMT"  	        value="" >
+	<input type="hidden" name="PROM_YN"  	       id="PROM_YN"  	        value="" >
+	<input type="hidden" name="KIND_CODE"  	       id="KIND_CODE"  	        value="" >
+	<input type="hidden" name="KIND_CNT"  	       id="KIND_CNT"  	        value="" >
+	<input type="hidden" name="TRX_GB"             id="TRX_GB"              value="" >
+	<input type="hidden" name="MULTI_GIFT_ABL_YN"  id="MULTI_GIFT_ABL_YN"   value="" >
+	<input type="hidden" name="ACCOUNT_REC"        id="ACCOUNT_REC"         value="" >
+  	<input type="hidden" name="REF_PAGE" id="REF_PAGE" value=""/>	 	 
+  	<input type="hidden" name="TOKEN" id="TOKEN" value="">
+  	<input type="hidden" name="THRD_PRTY_AGREE_YN" id="THRD_PRTY_AGREE_YN" value=""/>
+</form>
+<form id="goBrandFrm" name="goBrandFrm">
+	<input type="hidden" name="BGC_ID" id="BGC_ID" value="" >
+	<input type="hidden" name="TOKEN" id="TOKEN" value="">
+</form>
+	<input type="hidden" id="mob_no" value="" >
+	<!-- wrap -->
+	<div id="STEP1" class="wrap" >
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="br_gift_rn webView_bnk">
+					<div class="product buy addBtn-pb58 addNav">
+						<!-- 상품 이미지박스 -->
+						<div class="img_bx"><img src="" alt=""></div>
+						<!-- 브랜드 명, 상품명, 가격, 공유하기 -->
+						<div class="info_bx label_special"><!-- 특가상품의 경우 label_special 추가 -->
+							<!-- 브랜드 명 -->
+							<p class="brand" id="bgc_info" bgc_id="" btn_type="">
+								비플머니
+								
+									<span class="label">특가상품</span>
+								
+							</p>
+							<!-- 상품 명 -->
+							<p class="name" id="kind_info" kind_code="" kind_full_nm="비플머니" >비플머니</p>
+							<!-- 가격정보 -->
+							<p class="price" id="price" std="" sales="4,500" supp="4,500">
+								<span class="discount" style="display:none;" >%</span>
+								<strong id="sales_amt">4,500<span class="won">원</span></strong>
+								<span class="price_original"  style="display:none;" >4,500원</span>
+							</p>
+						</div>
+						
+						<!-- 구매정보 -->
+						<div class="buy_info"  id="BRND_BUY" style="display:none;">
+							<!-- 결제 계좌 선택 -->
+							<div class="con_bx p_acc_sltbx" id="acct_list">
+								<p class="tit">결제 계좌 선택</p>
+								
+								<div class="bg_bx btn">
+									<a id="acct_info"><span id="acct" name="acct" sub_acct ="" bank_cd="" acct_no="" bank_nm="비플머니"" class="ic_b ic_b"></span>비플머니() 계좌
+									</a>
+								</div>
+								
+							</div>
+							<!-- 결제 정보 -->
+							<div class="con_bx">
+								<p class="tit">결제 정보</p>
+								
+								<p class="limit">잔여 보유한도 : <span>4,500</span>원</p>
+								
+								<!-- 123 -->
+								<div class="bg_bx pay_info" id="bx_bx pay_info" >
+									<dl>
+										<dt>상품 금액</dt>
+										<dd id="total_amt" amt="">4,500원</dd>
+									</dl>
+								<!-- 	<dl  style="display:none;" >									
+										<dt>상품권 할인 금액</dt>
+										<dd id="discount" class="discount">-4,500원</dd>
+									</dl>
+									 -->
+									<dl  style="display:none;" >									
+										<dt>상품권 할인 금액</dt>
+										<dd id="discount" class="discount">-4,500원</dd>
+									</dl>
+									
+									<dl>
+										<dt id=total_cnt value="">총 개수</dt>
+										<dd id="tot">1개</dd>
+									</dl>
+									<!-- 총 결제금액 -->
+									<dl class="total">
+										<dt>총 결제금액</dt>
+										<dd id="tot_pay" value="">4,500원</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="con_bx agree_chk"  style="display:none;">
+								<p class="tit">상품권 구매 안내사항</p>
+								<p>실물 상품권 교환 시 구매자 확인을 위한 개인 정보를 제공합니다.</p>
+								<div class="checkbox-new">
+									<label><input type="checkbox" id="chk_agree"></label>
+									<a id="agree_doc"><span class="arrow20 arr-right">[필수] 개인정보 3자 제공동의</span></a>
+								</div>
+							</div>
+							<p class="receipt-noti"><i>*</i>현금영수증은 사용하시는 분께서 물품 또는 서비스로 교환하실때 각 사용처의 매장에서 발행됩니다.</p>
+							
+						</div>
+						
+						<!-- 구매정보 -->
+						<div class="present_info" id="BRND_GIFT" style="display:none;">
+							<!-- 보내는 사람 -->
+							<div class="con_bx">
+								<p class="tit">보내는 사람</p>
+								<div class="bg_bx">
+									<input id="send_user_nm" type="text" value="" maxlength="40">
+								</div>
+							</div>
+							<!-- 받는 사람 -->
+							<div class="con_bx">
+								<p class="tit">받는 사람 
+								<span class="count" id="recv_cnt" max_num="1" style="display: inline-block;">
+									
+										<!-- 다건 선물 불가능한 경우 최대 1 -->
+										(1/1)
+									
+										<!-- 다건 선물 가능한 경우 최대 10 -->
+										(1/10)
+									
+									</span>
+								</p>
+								
+								<!-- <p class="call_load"><a id="a ddressBook">연락처 불러오기</a></p> -->
+								<!-- 선물 대상자 정보입력 -->
+								<div class="send_info">
+									<!-- 수신자 -->
+									<div class="send_list" id="send_list_1"><!-- 삭제버튼 추가 시 add_del 클래스 추가 -->
+										<div class="bg_bx">
+											<input type="text" maxlength="10" id="recv_nm_1" name="recv_nm" placeholder="받는 분 이름">
+										</div>
+										<div class="bg_bx">
+											<input type="tel" maxlength="13" id="recv_no_1" name="recv_no" placeholder="휴대폰 번호 입력" class="recv_no">
+										</div>
+										<p class="del">
+											<a name="btn_del" target="1" ><span class="blind">받는사람 목록에서 삭제</span></a>
+										</p>
+									</div>
+								</div>
+								<!-- 받는사람 추가하기 버튼 -->
+								
+								<p class="add_btn"><a id="btn_add">+&nbsp;받는 사람 추가하기</a></p>
+								
+								
+							</div>
+							<!-- 메시지 입력 -->
+							<div class="con_bx">
+								<p class="tit">메시지 입력 (선택)</p>
+								<p class="txt_count"><span id="msg_cnt">0/</span>100</p>
+								<div class="bg_bx autoresize">
+									<textarea id="msg_txt" rows="1" placeholder="전달 메시지 (최대 100자)" spellcheck="false"></textarea>
+								</div>
+							</div>
+						</div>
+						
+							<!-- 선물하기 안내 메세지 -->
+							<p class="present_message">결제가 완료되면 받는 분에게 알림톡이 전송됩니다.</p>							
+						
+					</div>
+				</div>
+				<!-- 하단 고정버튼 -->
+				<div class="btn_botFix_w brand_rn_btn">
+					<div class="inner bg_white">
+						<a id="btn_pay" class="btn_default round_r8 btn-style-h48 on">
+							
+								결제하기
+							
+								결제 후 선물보내기
+							
+						</a>
+					 </div>
+				</div>
+				<!-- //하단 고정버튼 -->	
+			</div>
+			<!-- // content -->
+			
+			<!-- 계좌선택 레이어 -->
+			<div id="p_lytit" class="layer_bPop" style="display:none;">
+				<div class="pop_box radius_16">
+					<div class="pop_content">
+						<div class="pop_b_cn type1">
+							<div class="p_lytit">
+								계좌선택
+								<div class="right"><a class="link" id="brnd_gift_acct">계좌관리</a></div>
+							</div>
+							<div class="p_acc_sltbx">
+								<ul>
+									
+									<li id="pay_info" bank_cd="" sub_acct ="" acct_no="" bank_nm="비플머니">
+										<a><span class="ic_b ic_b"></span>
+											비플머니()계좌
+										</a>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //레이어 -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	
+	<!-- wrap -->
+	<div id="STEP2" class="wrap">
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="br_gift_rn webView_bnk">
+					<!--
+						완료, 실패, 선물, 전달 시 아래 참고
+
+						전달중 = ing
+						선물 = present
+						완료 = comp
+						실패 = fail
+					-->
+					<div class="br_complete" id="return_msg"><!-- sample:begin -->표본<!-- sample:end --></div>
+				</div>
+			</div>
+			<!-- // content -->
+			
+			
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w bg_white">
+				<!-- <div class="inner padding0" id="btn_msg"><!-- sample:begin -->표본<!-- sample:end --></div> -->
+				<p class="txt_btn" id="btn_msg2"><!-- sample:begin -->표본<!-- sample:end --></p>
+				<div class="inner" id="btn_msg"></div>
+			</div>	
+			<!-- //하단 고정버튼 -->
+		</div>
+		<!-- // container -->
+	</div>
+	
+		<div class="wrap" id="docAgree" style="display:none;">
+		<div class="header floating-back-header floating-sticky">
+			<h1>개인정보 제3자 제공 동의서</h1>
+			<a id="goSTEP1" class="btn-history-back">뒤로가기</a>
+		</div><!-- // header -->
+		<div class="container">
+			<div class="content">
+				<!-- 개인정보 제3자 제공동의 -->
+				<div class="terms-ct_t2 addBtn-pb58">
+					<div class="con_w">
+						<div class="terms-section">
+							<p>비즈플레이㈜는 원활한 서비스 제공을 위해 최소한의 범위 내에서 아래와 같이 제3자에게 개인정보를 제공합니다.</p>
+							<div class="tbl_terms">
+								<table summary="">
+									<colgroup>
+									<col style="width: 25%;">
+									<col style="width: 25%;">
+									<col style="width: 25%;">
+									<col style="width: 25%;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">제공받는자</th>
+											<th scope="col">이용목적</th>
+											<th scope="col">제공항목</th>
+											<th scope="col">보유 및 이용기간</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>비플머니
+											</td>
+											<td>모바일상품권 구매 및 결제 서비스 이용,<br>구매자 본인 확인
+											</td>
+											<td>
+											</td>
+											<td>
+												모바일상품권 유효기간인구매일로부터 5년 후 파기
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<br>
+								<p>이용자는 개인정보 제공에 동의하지 않으실 수 있으며, 동의하지 않으실 경우 서비스 이용이 제한될 수 있습니다.</p>
+							</div>
+						</div>
+					</div>
+	
+					<div class="btn_botFix_w">
+						<div class="inner bg_white padding10">
+							<a id="go_page" class="btn_default btn-style-h48 round_r8 on"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+								<span>확인</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- //개인정보 제3자 제공동의 -->
+			</div>
+		</div>
+		<!-- // container -->
+	</div><!-- // wrap -->
+	
+	<!-- // wrap -->
+	 -->
+<div class="wrap" id="keypad_area" style="display: none;">
+	<div class="container">
+		<div class="content">
+			<!-- 웹뷰 경남 -->
+			<div class="webView_bnk">
+				<!-- 사용인증 -->
+				<div class="transaction addBtn-pb58 addNav"><!-- 하단 네이게이션 제거 시 addNav 클래스 제거 -->
+					<p class="txt_bold">
+						비플페이에서 사용하는<br>
+						거래승인번호 6자리를 입력하세요.
+					</p>
+					<!-- 정보입력 폼 -->
+					<div class="ipt_section">
+						<form action="">
+							<fieldset>
+								<input type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+								
+								<legend>승인번호 입력</legend>
+								<div class="tac_num" id="tac_num">
+									<div><input inputmode="none" type="password" title="결제비밀번호 첫 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 두 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 세 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 네 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 다섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+									<div><input inputmode="none" type="password" title="결제비밀번호 여섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+								</div>
+							</fieldset>
+						</form>
+						<!-- //정보입력 폼 -->
+					</div>
+					<div class="err_msg kn">
+						<p id="pwd_pop_text">
+							거래승인번호가 기억나지 않으세요?<br>
+							비플페이앱에서 재설정 가능합니다.
+						</p>
+					</div>
+					<div class="bppay-app" id="fail_btn" style="display: none;">
+						<a onclick="uf_call();" class="bppay__move-btn">비플페이 실행하기</a>
+					</div>
+					<!-- // 2023-05-19 -->
+				</div>
+				<!-- 사용인증 -->
+			</div>
+			<!-- //웹뷰 경남 -->
+			<!-- 하단 네비게이션 -->
+			<div class="btn_botFix_w">
+				<!-- 2023-05-19 -->
+				<div class="transaction__cs-center">
+					<a href="tel:1670-0136">
+						비플페이 고객센터(1670-0136) 
+					</a>
+				</div>
+				<!-- // 2023-05-19 -->
+				<div class="inner bg_white">
+					<a id="pwd_yes_btn" class="btn_default round_r8 btn-style-h48 on">거래승인번호 입력하기</a>
+				</div>
+				
+				<!-- 네비영역 제거 시 문서 상단의 "addNav" 클래스 제거 -->
+				<nav class="nav_w bg_white">
+					<div class="home on"><!-- 선택 시 on -->
+						<a href="/brnd_webview_main.act?TOKEN=">
+							<span>홈</span>
+						</a>
+					</div>
+					<div class="history on">
+						<a href="/brnd_webview_gift_hist_main.act?TOKEN=">
+							<span>내역</span>
+						</a>
+					</div>
+					<div class="prev on">
+						<a href="javascript:history.back()">
+							<span>이전</span>
+						</a>
+					</div>
+					<div class="next on">
+						<a>
+							<span>다음</span>
+						</a>
+					</div>
+				</nav>
+				<!-- //하단 네비게이션 -->
+			</div>
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<!--
+</body>
+</html>
