@@ -8442,7 +8442,7 @@
 - `zstore_list`
 <!-- classes:end -->
 
-## 목업이 쓰는데 소스 css 에 선택자가 없는 이름 (81종)
+## 목업이 쓰는데 소스 css 에 선택자가 없는 이름 (83종)
 
 > 사실만 적는다. 「쓰지 마라」인지 「아직 판정 전」인지는 사람이 정한다.
 
@@ -8465,6 +8465,7 @@
 - `history`
 - `history_back`
 - `ic_bkb`
+- `innerY`
 - `ipx_bx`
 - `js-all-check`
 - `js-amount-value`
@@ -8510,6 +8511,7 @@
 - `js-wrap`
 - `list--main`
 - `mainClass`
+- `mainY`
 - `marketing-terms`
 - `member-registration-message`
 - `move_back`
