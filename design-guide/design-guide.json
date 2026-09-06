@@ -12,11 +12,22 @@
         "colorRoles": {
           "roles": [
             {
-              "label": "주색 토큰 `--color-primary*` · 전체 9색 중 상위 6",
+              "label": "주색 토큰 `--color-primary*` · `style.css`",
               "entries": [
                 {
                   "value": "#1F1F1F"
                 },
+                {
+                  "value": "rgb(31, 31, 31, 15%)"
+                },
+                {
+                  "value": "rgb(31, 31, 31, 5%)"
+                }
+              ]
+            },
+            {
+              "label": "주색 토큰 `--color-primary*` · `welfare.css`",
+              "entries": [
                 {
                   "value": "#EBF6FF"
                 },
@@ -31,6 +42,9 @@
                 },
                 {
                   "value": "#4AA9FF"
+                },
+                {
+                  "value": "#0D84FF"
                 }
               ]
             },
@@ -58,7 +72,7 @@
               ]
             },
             {
-              "label": "보조색 토큰 `--color-second*` · 전체 8색 중 상위 6",
+              "label": "보조색 토큰 `--color-second*` · `style.css`",
               "entries": [
                 {
                   "value": "rgb(13, 132, 255, 3%)"
@@ -67,16 +81,36 @@
                   "value": "#01BCD5"
                 },
                 {
+                  "value": "#ffa210"
+                },
+                {
+                  "value": "#ff3d01"
+                },
+                {
+                  "value": "#e70000"
+                }
+              ]
+            },
+            {
+              "label": "보조색 토큰 `--color-second*` · `welfare.css` · 전체 7색 중 상위 6",
+              "entries": [
+                {
                   "value": "#80DEEA"
                 },
                 {
-                  "value": "#ffa210"
+                  "value": "#01BCD5"
                 },
                 {
                   "value": "#ff8a65"
                 },
                 {
                   "value": "#ff3d01"
+                },
+                {
+                  "value": "#e70000"
+                },
+                {
+                  "value": "#ffd73f"
                 }
               ]
             },
