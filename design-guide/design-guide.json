@@ -12,6 +12,14 @@
         "colorRoles": {
           "roles": [
             {
+              "label": "주색 토큰 `--color-primary*` · `bzp_resource/css/bzp_svp.css`",
+              "entries": [
+                {
+                  "value": "#0d84ff"
+                }
+              ]
+            },
+            {
               "label": "주색 토큰 `--color-primary*` · `webview_api/css/style.css`",
               "entries": [
                 {
@@ -115,7 +123,38 @@
               ]
             },
             {
-              "label": "그 밖의 색 토큰",
+              "label": "그 밖의 색 토큰 · `bzp_resource/css/bzp_svp.css`",
+              "entries": [
+                {
+                  "value": "#222222"
+                },
+                {
+                  "value": "#333333"
+                }
+              ]
+            },
+            {
+              "label": "그 밖의 색 토큰 · `webview_api/css/style.css`",
+              "entries": [
+                {
+                  "value": "#fafafa"
+                },
+                {
+                  "value": "#dbdbdb"
+                },
+                {
+                  "value": "#ededed"
+                },
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#fff"
+                }
+              ]
+            },
+            {
+              "label": "그 밖의 색 토큰 · `webview_resource/css/welfare.css`",
               "entries": [
                 {
                   "value": "#fafafa"
@@ -146,7 +185,7 @@
               ]
             },
             {
-              "label": "토큰 없이 직접 쓴 색 · 전체 517색 중 상위 6",
+              "label": "토큰 없이 직접 쓴 색 · 전체 518색 중 상위 6",
               "entries": [
                 {
                   "value": "#222"
@@ -303,10 +342,10 @@
               "value": "500"
             },
             {
-              "value": "300"
+              "value": "800"
             },
             {
-              "value": "800"
+              "value": "300"
             },
             {
               "value": "900"
@@ -321,22 +360,22 @@
             "value": "8px"
           },
           {
-            "value": "20px"
-          },
-          {
             "value": "10px"
           },
           {
-            "value": "12px"
-          },
-          {
-            "value": "0.4rem"
+            "value": "20px"
           },
           {
             "value": "2.4rem"
           },
           {
-            "value": "0.8rem"
+            "value": "1.6rem"
+          },
+          {
+            "value": "12px"
+          },
+          {
+            "value": "2rem"
           }
         ],
         "radius": [
@@ -391,11 +430,11 @@
           "max-width: 320px",
           "max-width: 319px",
           "max-width: 359px",
+          "max-height: 699px",
+          "min-height: 700px",
+          "max-height: 400px",
           "max-width:320px",
-          "max-width: 350px",
-          "max-width: 321px",
-          "min-width: 961px",
-          "max-height: 699px"
+          "max-width: 350px"
         ]
       },
       "components": [
