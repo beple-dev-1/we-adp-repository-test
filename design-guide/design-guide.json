@@ -1154,7 +1154,7 @@
           "kind": "shell",
           "description": "상단 고정 헤더 + 본문. 사이드바가 없는 모바일 웹뷰 골격이다.",
           "usage": {
-            "count": 77
+            "count": 71
           },
           "regions": [
             {
