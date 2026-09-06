@@ -324,10 +324,924 @@
           "max-width: 320px"
         ]
       },
-      "components": [],
-      "compositions": [],
-      "layouts": [],
-      "templates": []
+      "components": [
+        {
+          "id": "button",
+          "label": "버튼",
+          "category": "button",
+          "variants": [
+            {
+              "id": "button-xl-button--lv1-dis",
+              "label": "button-xl button--lv1 dis",
+              "class": "button button-xl button--lv1 dis",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "button-xl-button--lv1",
+              "label": "button-xl button--lv1",
+              "class": "button button-xl button--lv1",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "button-small-button--lv5_line",
+              "label": "button-small button--lv5_line",
+              "class": "button button-small button--lv5_line",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "a_bank_list",
+              "label": "a_bank_list",
+              "class": "button a_bank_list",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "button-xl-button--lv1-col--block",
+              "label": "button-xl button--lv1 col--block",
+              "class": "button button-xl button--lv1 col--block",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "button",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "button-small-button--lv5",
+              "label": "button-small button--lv5",
+              "class": "button button-small button--lv5",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "button--narrow-button-large-button--lv5_line",
+              "label": "button--narrow button-large button--lv5_line",
+              "class": "button button--narrow button-large button--lv5_line",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 77
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "from": 1,
+              "to": 3
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--button.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 120
+          }
+        },
+        {
+          "id": "icon",
+          "label": "아이콘",
+          "category": "etc",
+          "variants": [
+            {
+              "id": "icon--arrow-24-pointer-bottom",
+              "label": "icon--arrow-24 pointer-bottom",
+              "class": "icon icon--arrow-24 pointer-bottom",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "icon--arrow-16",
+              "label": "icon--arrow-16",
+              "class": "icon icon--arrow-16",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "icon--info-16",
+              "label": "icon--info-16",
+              "class": "icon icon--info-16",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "icon--state_check-64",
+              "label": "icon--state_check-64",
+              "class": "icon icon--state_check-64",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "icon--check-24_primary",
+              "label": "icon--check-24_primary",
+              "class": "icon icon--check-24_primary",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "icon--more-24",
+              "label": "icon--more-24",
+              "class": "icon icon--more-24",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "icon--document2-64",
+              "label": "icon--document2-64",
+              "class": "icon icon--document2-64",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "icon--close-32",
+              "label": "icon--close-32",
+              "class": "icon icon--close-32",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 119
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "from": 1,
+              "to": 1
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--icon.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 80
+          }
+        },
+        {
+          "id": "checkbox",
+          "label": "체크박스",
+          "category": "checkbox",
+          "variants": [
+            {
+              "id": "flex-row",
+              "label": "flex-row",
+              "class": "input-type--check flex-row",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 7
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "from": 1,
+              "to": 3
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--checkbox.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 120
+          }
+        },
+        {
+          "id": "form-box",
+          "label": "입력 상자",
+          "category": "text-field",
+          "variants": [
+            {
+              "id": "gap-32",
+              "label": "gap-32",
+              "class": "form-box gap-32",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "grow-y",
+              "label": "grow-y",
+              "class": "form-box grow-y",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "justify-spacing-def",
+              "label": "justify-spacing-def",
+              "class": "form-box justify-spacing-def",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "form-box",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "scroll-box",
+              "label": "scroll-box",
+              "class": "form-box scroll-box",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 20
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "from": 1,
+              "to": 109
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--form-box.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 160
+          }
+        },
+        {
+          "id": "list-bullet",
+          "label": "점 목록",
+          "category": "etc",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "list-bullet",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 10
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-40-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-40-10-S.html",
+              "from": 1,
+              "to": 4
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--list-bullet.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 160
+          }
+        },
+        {
+          "id": "loading",
+          "label": "로딩 표시",
+          "category": "status",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "loading",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 6
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-30-20-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-30-20-S.html",
+              "from": 1,
+              "to": 9
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--loading.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 120
+          }
+        }
+      ],
+      "compositions": [
+        {
+          "id": "popup-container",
+          "label": "팝업",
+          "category": "composition",
+          "variants": [
+            {
+              "id": "popup--full-popup-terms",
+              "label": "popup--full popup-terms",
+              "class": "popup-container popup--full popup-terms",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "popup--bottom",
+              "label": "popup--bottom",
+              "class": "popup-container popup--bottom",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "popup--bottom-bank-select",
+              "label": "popup--bottom bank-select",
+              "class": "popup-container popup--bottom bank-select",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "popup--bottom-popup-cert--agree",
+              "label": "popup--bottom popup-cert--agree",
+              "class": "popup-container popup--bottom popup-cert--agree",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "popup--bottom-phone--info",
+              "label": "popup--bottom phone--info",
+              "class": "popup-container popup--bottom phone--info",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "popup--bottom-popup--filter",
+              "label": "popup--bottom popup--filter",
+              "class": "popup-container popup--bottom popup--filter",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "popup--full-popup-beple-money-detail",
+              "label": "popup--full popup-beple-money-detail",
+              "class": "popup-container popup--full popup-beple-money-detail",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "popup--bottom-popup-payment--confirm",
+              "label": "popup--bottom popup-payment--confirm",
+              "class": "popup-container popup--bottom popup-payment--confirm",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 33
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "from": 1,
+              "to": 28
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--popup-container.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 480
+          }
+        },
+        {
+          "id": "popup-header",
+          "label": "팝업 머리",
+          "category": "composition",
+          "variants": [
+            {
+              "id": "header",
+              "label": "header",
+              "class": "popup-container__header header",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "popup-container__header",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "header-position-sticky",
+              "label": "header position-sticky",
+              "class": "popup-container__header header position-sticky",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 27
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "from": 1,
+              "to": 12
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--popup-header.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 100
+          }
+        },
+        {
+          "id": "button-box",
+          "label": "하단 버튼 영역",
+          "category": "composition",
+          "variants": [
+            {
+              "id": "button-box-spacing",
+              "label": "button-box-spacing",
+              "class": "body__button--box button-box-spacing",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 7
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-40-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-40-10-S.html",
+              "from": 1,
+              "to": 5
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--button-box.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 140
+          }
+        },
+        {
+          "id": "column-head",
+          "label": "항목 머리",
+          "category": "composition",
+          "variants": [
+            {
+              "id": "agree-head",
+              "label": "agree-head",
+              "class": "column__head agree-head",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "column__head",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 21
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "from": 1,
+              "to": 5
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--column-head.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 100
+          }
+        }
+      ],
+      "layouts": [
+        {
+          "id": "webview-shell",
+          "label": "웹뷰 공통 골격",
+          "kind": "shell",
+          "description": "상단 고정 헤더 + 본문. 사이드바가 없는 모바일 웹뷰 골격이다.",
+          "usage": {
+            "count": 22
+          },
+          "regions": [
+            {
+              "id": "header",
+              "label": "상단 헤더",
+              "required": true
+            },
+            {
+              "id": "content",
+              "label": "본문",
+              "required": true
+            }
+          ],
+          "variants": [
+            {
+              "id": "EXW",
+              "label": "EXW",
+              "specimen": {
+                "status": "visible",
+                "html": "fragments/EXW--l-webview-shell.html",
+                "systemStyleId": "EXW",
+                "width": 375,
+                "height": 640
+              }
+            }
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "id": "terms-agree",
+          "label": "약관 동의",
+          "category": "template",
+          "variants": [
+            {
+              "id": "popup-container-popup--full",
+              "label": "popup-container popup--full",
+              "class": "popup-terms popup-container popup--full",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 8
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "from": 1,
+              "to": 28
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--terms-agree.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 560
+          },
+          "purpose": "약관을 보여 주고 동의를 받아 다음으로 넘긴다.",
+          "layoutId": "webview-shell",
+          "componentIds": [
+            "checkbox",
+            "button",
+            "button-box"
+          ],
+          "regions": [
+            {
+              "id": "content.terms",
+              "label": "약관 본문",
+              "required": true
+            },
+            {
+              "id": "content.agree",
+              "label": "동의 줄",
+              "required": true
+            }
+          ],
+          "representativeScreens": [
+            {
+              "id": "EXW-UWV-10-S",
+              "path": "core/EXW/pages/EXW-UWV-10-S.html",
+              "purpose": "약관을 보여 주고 동의를 받아 다음으로 넘긴다."
+            },
+            {
+              "id": "EXW-UWV-30-30-S",
+              "path": "core/EXW/pages/EXW-UWV-30-30-S.html",
+              "purpose": "약관을 보여 주고 동의를 받아 다음으로 넘긴다."
+            },
+            {
+              "id": "EXW-UWV-40-10-S",
+              "path": "core/EXW/pages/EXW-UWV-40-10-S.html",
+              "purpose": "약관을 보여 주고 동의를 받아 다음으로 넘긴다."
+            }
+          ]
+        },
+        {
+          "id": "form-input",
+          "label": "입력 폼",
+          "category": "template",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "container__body",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "cert--agree__body",
+              "label": "cert--agree__body",
+              "class": "container__body cert--agree__body",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "justify-spacing-def",
+              "label": "justify-spacing-def",
+              "class": "container__body justify-spacing-def",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 17
+          },
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "from": 1,
+              "to": 144
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/EXW--form-input.html",
+            "systemStyleId": "EXW",
+            "width": 375,
+            "height": 520
+          },
+          "purpose": "값을 입력받아 하단 버튼으로 보낸다.",
+          "layoutId": "webview-shell",
+          "componentIds": [
+            "form-box",
+            "button",
+            "button-box"
+          ],
+          "regions": [
+            {
+              "id": "content.form",
+              "label": "입력 영역",
+              "required": true
+            },
+            {
+              "id": "content.action",
+              "label": "실행 버튼",
+              "required": true
+            }
+          ],
+          "representativeScreens": [
+            {
+              "id": "EXW-UWV-10-S",
+              "path": "core/EXW/pages/EXW-UWV-10-S.html",
+              "purpose": "값을 입력받아 하단 버튼으로 보낸다."
+            },
+            {
+              "id": "EXW-UWV-10-S",
+              "path": "core/EXW/pages/EXW-UWV-10-S.html",
+              "purpose": "값을 입력받아 하단 버튼으로 보낸다."
+            },
+            {
+              "id": "EXW-UWV-10-S",
+              "path": "core/EXW/pages/EXW-UWV-10-S.html",
+              "purpose": "값을 입력받아 하단 버튼으로 보낸다."
+            }
+          ]
+        }
+      ]
     }
   }
 }

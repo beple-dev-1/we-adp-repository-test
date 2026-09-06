@@ -1,0 +1,28 @@
+<div class="dg-body"><section class="popup-container popup--full popup-terms">
+			<header class="header popup-container__header">
+				<div class="header__title-wrap">
+					<h1 class="page-name">
+						<span class="ellipsis-line--1">약관상세</span>
+					</h1>
+				</div>
+				<nav class="header__navi">
+					<a id="btn_close_clause" href="#none" class="header__btn btn-close js-popup-close">
+						<span class="blind">페이지 닫기</span>
+					</a>
+				</nav>
+			</header>
+
+			<!-- 약관 본문 자리 — 과업 zeroWebviewJoin002 (2026-09-01)
+
+			     ★ 제목 영역을 두지 않는다. DB 약관 본문이 `div.terms` 안에
+			       terms-header + page-title 로 제목을 이미 들고 온다. 여기에 또 두면
+			       제목이 두 번 나오고, 그중 하나는 스타일 없이 뜬다.
+
+			     ★ 래퍼를 page-terms 로 감싸지 않는다. 그 클래스는 CSS 에 규칙이 0건이라
+			       안쪽 terms-header 의 여백도 함께 죽는다(terms-header 자체도 0건이고,
+			       퍼블리싱에서는 부모 `.terms`(16건)가 잡아 준다).
+			       CTNT 를 그대로 꽂으면 `div.terms` 가 통째로 들어와 부모 역할을 한다. -->
+			<section class="popup-container__body overflow-hidden">
+				<!-- CLS_000002 응답(CTNT)이 이 안으로 들어온다 -->
+			</section>
+		</section></div>
