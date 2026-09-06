@@ -1,5 +1,6 @@
 {
   "toolchain": "we-adk-toolchain/1",
+  "design-guide": "design-guide",
   "systems": [
     {
       "id": "BPY",

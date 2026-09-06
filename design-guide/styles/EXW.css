@@ -1,0 +1,13 @@
+/* EXW — 소스 css 의 @font-face 만 옮긴 것이다. 선택자가 없어 빌더 화면에
+   영향을 주지 않는다. 실물이 있는 url 만 남겼다. */
+@font-face{font-family:"Pretendard";font-style:normal;font-weight:400;src:url("../../core/EXW/assets/font/pretendard/Pretendard-Regular.woff2") format("woff2")}
+@font-face{font-family:"Pretendard";font-style:normal;font-weight:500;src:url("../../core/EXW/assets/font/pretendard/Pretendard-Medium.woff2") format("woff2")}
+@font-face{font-family:"Pretendard";font-style:normal;font-weight:600;src:url("../../core/EXW/assets/font/pretendard/Pretendard-SemiBold.woff2") format("woff2")}
+@font-face{font-family:"Pretendard";font-style:normal;font-weight:700;src:url("../../core/EXW/assets/font/pretendard/Pretendard-Bold.woff2") format("woff2")}
+@font-face{font-family:"Pretendard";font-style:normal;font-weight:800;src:url("../../core/EXW/assets/font/pretendard/Pretendard-ExtraBold.woff2") format("woff2")}
+@font-face{font-family:"NanumSquare";font-style:normal;font-weight:400;src:url("../../core/EXW/assets/font/NanumSquareR.woff") format("woff")}
+@font-face{font-family:"NanumSquare";font-style:normal;font-weight:700;src:url("../../core/EXW/assets/font/NanumSquareB.woff") format("woff")}
+@font-face{font-family:"NanumSquare";font-style:normal;font-weight:800;src:url("../../core/EXW/assets/font/NanumSquareEB.woff") format("woff")}
+@font-face{font-family:"NanumSquareAc";font-style:normal;font-weight:400;src:url("../../core/EXW/assets/font/NanumSquare_acR.woff") format("woff")}
+@font-face{font-family:"NanumSquareAc";font-style:normal;font-weight:700;src:url("../../core/EXW/assets/font/NanumSquare_acB.woff") format("woff")}
+@font-face{font-family:"NanumSquareAc";font-style:normal;font-weight:800;src:url("../../core/EXW/assets/font/NanumSquare_acEB.woff") format("woff")}
