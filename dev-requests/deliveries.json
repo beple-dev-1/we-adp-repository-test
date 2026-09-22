@@ -1,0 +1,13 @@
+{
+  "deliveries" : [ {
+    "dr" : "DR-009",
+    "branch" : "dr/DR-009",
+    "commit" : "e8b0d69f4bc251688733df1d381cba999531abc6",
+    "base" : "370cd63e098d2984cb88ef2451ce7d7a8e467000",
+    "system" : "EXW",
+    "screens" : [ "EXW-UWV-70-30-10-C" ],
+    "sentAt" : "2026-09-22T09:33:28.140126364Z",
+    "sendKey" : "efdd2f8f-2531-43a9-88c3-8f64f932ade8"
+  } ],
+  "specVersion" : 1
+}
