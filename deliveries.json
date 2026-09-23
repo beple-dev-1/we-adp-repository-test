@@ -8,6 +8,15 @@
     "screens" : [ "EXW-UWV-70-30-10-C" ],
     "sentAt" : "2026-09-23T01:43:38.925207850Z",
     "sendKey" : "efdd2f8f-2531-43a9-88c3-8f64f932ade8"
+  }, {
+    "dr" : "DR-010",
+    "branch" : "dr/DR-010",
+    "commit" : "62d26e7d4fa1e58aff41d15f346db59cb4ee1033",
+    "base" : "896b7e6de18fa8feb8cb4e247ddd3c51bdb2e236",
+    "system" : "EXW",
+    "screens" : [ "EXW-UWV-70-30-10-C" ],
+    "sentAt" : "2026-09-23T04:38:10.657562788Z",
+    "sendKey" : "d5a09dba-f573-4ffd-84a2-3b551c5a2a27"
   } ],
   "specVersion" : 1
 }
