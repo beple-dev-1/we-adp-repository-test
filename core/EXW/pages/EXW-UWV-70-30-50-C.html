@@ -545,5 +545,19 @@
 			</div>
 		</section>
 	</div>
+
+	<script>
+	(function () {
+		var nameInput = document.getElementById('name');
+		if (!nameInput) return;
+		nameInput.addEventListener('input', function (e) {
+			var el = e.target;
+			var start = el.selectionStart;
+			var end = el.selectionEnd;
+			el.value = el.value.replace(/[a-z]/g, function (c) { return c.toUpperCase(); });
+			if (start !== null && end !== null) el.setSelectionRange(start, end);
+		});
+	})();
+	</script>
 </body>
 </html>
