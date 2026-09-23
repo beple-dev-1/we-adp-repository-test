@@ -17,6 +17,16 @@
     "screens" : [ "EXW-UWV-70-30-10-C" ],
     "sentAt" : "2026-09-23T04:38:10.657562788Z",
     "sendKey" : "d5a09dba-f573-4ffd-84a2-3b551c5a2a27"
+  }, {
+    "project" : "0000001",
+    "dr" : "DR-011",
+    "branch" : "dr/0000001/DR-011",
+    "commit" : "c4403416bb4c73a549c4bf1ca4079950b5c65e24",
+    "base" : "02924c13ed10dabdaa3a192d0fe3121c4589bfd5",
+    "system" : "EXW",
+    "screens" : [ "EXW-UWV-70-30-10-C", "EXW-UWV-70-30-50-C" ],
+    "sentAt" : "2026-09-23T06:49:32.211745217Z",
+    "sendKey" : "e8294233-0334-44fe-8d63-cd1cddc32bc7"
   } ],
-  "specVersion" : 1
+  "specVersion" : 2
 }
