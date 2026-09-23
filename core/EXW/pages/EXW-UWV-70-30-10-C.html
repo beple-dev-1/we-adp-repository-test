@@ -40,21 +40,15 @@
 				<article class="page-header__content flex-column gap-16">
 					<div class="page-header__headline-wrap">
 						<h2 class="flex-row">
+							<!-- 이름·휴대폰번호는 에이블리가 넘긴 값으로 프리필·잠금되어 더 이상 단계로 열지 않는다.
+							     남은 단계는 주민등록번호 뒷자리(1)·통신사(2) 뿐이다. -->
 							<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="1">
-								이름을<br>
-								입력해 주세요
-							</p>
-							<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="2" style="display:none;">
 								주민등록번호를<br>
 								입력해 주세요
 							</p>
-							<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="3" style="display:none;">
+							<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="2" style="display:none;">
 								통신사를<br>
 								선택해 주세요
-							</p>
-							<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="4" style="display:none;">
-								휴대폰번호를<br>
-								입력해 주세요
 							</p>
 						</h2>
 					</div>
@@ -78,14 +72,15 @@
 							       js-step-submit(「인증하기」)의 dis 를 푼다.
 							       화면 JS 는 이 판정에 관여하지 않는다 — 두 벌이 dis 를 다투면 안 된다.
 
-							     ★ 노출 순서와 DOM 순서가 다르다. DOM 은 휴대폰→통신사→주민번호→이름,
-							       노출은 이름(1)→주민번호(2)→통신사(3)→휴대폰(4)이다.
-							       퍼블리싱 그대로이며 임의로 맞추지 않는다.
+							     ★ 이름·생년월일·휴대폰번호는 에이블리가 진입 시 넘긴 값으로 프리필·잠금된다
+							       (item--disabled 또는 readonly). 실제로 입력받을 칸은 주민등록번호
+							       뒷자리(#gender, js-step-1)와 통신사(#tel_corp, js-step-2) 뿐이다.
+							       js-require 는 프리필 칸에도 남겨 둔다 — 값이 이미 채워져 있으므로
+							       판정에는 그대로 들어가고, 남은 두 칸만 채우면 dis 가 풀린다.
 
 							     ★ maxlength — 공통의 완료 판정이 "maxlength 가 있으면 그 자릿수를
 							       **정확히** 채워야 완료"다(common-ui.js isFilled). 그래서 자유입력 칸에
 							       길이를 걸면 그 단계에서 못 넘어간다.
-							       · 이름   : 뺀다. 첫 단계(js-step-1)라 막히면 가입 자체가 안 된다
 							       · 휴대폰 13(하이픈 2개 포함) · 생년월일 6 · 뒷자리 1 — 자릿수형 그대로
 
 							     ★ 입력 id 는 v1 것을 계승한다 — JS 전반이 id 로 읽는다. -->
@@ -95,7 +90,11 @@
 								     ★ js-phone-number — 공통 스크립트가 이 래퍼 안의 input 에 타이핑 즉시
 								       숫자만 남기고 하이픈을 다시 꽂는다. 사용자는 숫자만 넣는다.
 								     ★ maxlength 13 은 하이픈 2개가 값에 포함되기 때문이다. -->
-								<div class="form__item js-form-item js-step-4 js-require">
+								<!-- 휴대폰번호 — 에이블리가 넘긴 값으로 프리필·잠금한다 (item--disabled 는
+								     .input-type--line 안 input 전부를 pointer-events:none + readonly 색으로
+								     잠그는 기존 스타일). js-step-N 은 뺐다 — 더 이상 단계로 열지 않고 처음부터
+								     보여준다. js-require 는 남겨 값이 채워진 것으로 잡혀야 하기 때문이다. -->
+								<div class="form__item js-form-item js-require item--disabled">
 									<div class="form__item-header input-line--header">
 										<h3 class="form__label container__headline container__headline--lv1">
 											<label>휴대폰번호</label>
@@ -104,14 +103,17 @@
 
 									<div class="form__item-wrap">
 										<div class="input-type--line js-phone-number">
-											<input id="mob_no" type="tel" value="" placeholder="휴대폰번호" maxlength="13" inputmode="numeric">
+											<input id="mob_no" type="tel" value="010-1234-5678" placeholder="휴대폰번호" maxlength="13" inputmode="numeric" readonly>
 										</div>
+										<p class="fs-13" style="margin-top:8px;color:var(--color-gray--lv6);">에이블리에서 전달받은 번호라 수정할 수 없어요</p>
 									</div>
 								</div>
 
 								<!-- 통신사 — v1.3 에서 휴대폰번호와 분리된 독립 칸이 됐다.
-								     공통 스크립트가 이 칸을 열면서 선택 팝업까지 자동으로 띄운다. -->
-								<div class="form__item js-form-item js-step-3 js-require">
+								     공통 스크립트가 이 칸을 열면서 선택 팝업까지 자동으로 띄운다.
+								     이름·휴대폰번호가 프리필로 빠지면서 남은 단계 중 첫 번째(js-step-1)는
+								     주민등록번호, 두 번째(js-step-2)가 통신사다. -->
+								<div class="form__item js-form-item js-step-2 js-require">
 									<div class="form__item-header input-line--header">
 										<h3 class="form__label container__headline container__headline--lv1">
 											<label>통신사</label>
@@ -127,8 +129,11 @@
 									</div>
 								</div>
 
-								<!-- 주민등록번호 -->
-								<div class="form__item regist-code js-form-item js-step-2 js-require">
+								<!-- 주민등록번호 — 생년월일(#birth)은 에이블리가 넘긴 값으로 프리필·잠금하고,
+								     뒷자리(#gender)만 실제로 입력을 받는다. 둘이 같은 input-type--line 을
+								     써서 item--disabled 를 item 전체에 걸면 gender 까지 잠기므로, birth 에만
+								     readonly + 잠금 색을 직접 준다. -->
+								<div class="form__item regist-code js-form-item js-step-1 js-require">
 									<div class="form__item-header input-line--header">
 										<h3 class="form__label container__headline container__headline--lv1">
 											<label>주민등록번호</label>
@@ -137,7 +142,7 @@
 
 									<div class="form__item-wrap">
 										<div class="input-type--line">
-											<input id="birth" type="text" value="" placeholder="생년월일 6자리" maxlength="6" inputmode="numeric">
+											<input id="birth" type="text" value="900101" placeholder="생년월일 6자리" maxlength="6" inputmode="numeric" readonly style="color:var(--color-gray--lv6);pointer-events:none;">
 											<span class="between-bar">-</span>
 											<input id="gender" type="text" value="" placeholder="0" maxlength="1" inputmode="numeric">
 											<div class="currency-box">
@@ -149,11 +154,13 @@
 												<p class="currency-bullet"></p>
 											</div>
 										</div>
+										<p class="fs-13" style="margin-top:8px;color:var(--color-gray--lv6);">생년월일은 에이블리에서 전달받아 수정할 수 없어요</p>
 									</div>
 								</div>
 
-								<!-- 이름 -->
-								<div class="form__item js-form-item js-step-1 js-require">
+								<!-- 이름 — 에이블리가 넘긴 값으로 프리필·잠금한다. js-step-N 은 뺐다 —
+								     더 이상 단계로 열지 않고 처음부터 보여준다. -->
+								<div class="form__item js-form-item js-require item--disabled">
 									<div class="form__item-header input-line--header">
 										<h3 class="form__label container__headline container__headline--lv1">
 											<label>이름</label>
@@ -162,10 +169,9 @@
 
 									<div class="form__item-wrap">
 										<div class="input-type--line">
-											<!-- enterkeyhint — 이 칸은 자유입력이라 공통이 Enter 로만 다음 단계를 연다
-											     (자릿수형·셀렉트형은 자동). 키패드 액션키의 뜻을 분명히 해 둔다. -->
-											<input id="name" type="text" value="" placeholder="이름" enterkeyhint="next">
+											<input id="name" type="text" value="홍길동" placeholder="이름" enterkeyhint="next" readonly>
 										</div>
+										<p class="fs-13" style="margin-top:8px;color:var(--color-gray--lv6);">에이블리에서 전달받은 이름이라 수정할 수 없어요</p>
 									</div>
 								</div>
 							</div>
