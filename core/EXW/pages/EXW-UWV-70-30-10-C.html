@@ -179,6 +179,22 @@
 									</div>
 								</div>
 
+								<!-- 메모(선택) — 이메일과 같이 js-require 를 붙이지 않는다.
+								     비워도 「인증하기」가 잠기지 않는다. -->
+								<div class="form__item js-form-item">
+									<div class="form__item-header input-line--header">
+										<h3 class="form__label container__headline container__headline--lv1">
+											<label>메모(선택)</label>
+										</h3>
+									</div>
+
+									<div class="form__item-wrap">
+										<div class="input-type--line">
+											<input id="memo" type="text" value="" placeholder="메모를 입력해 주세요" maxlength="100">
+										</div>
+									</div>
+								</div>
+
 								<!-- 이메일(선택) — 마지막 단계(js-step-5). 선택 입력이라 js-require 를
 								     붙이지 않는다 — 비워도 「인증하기」가 잠기지 않는다.
 								     아이디는 자유입력 + 도메인은 통신사와 같은 하단 팝업 선택이다.
