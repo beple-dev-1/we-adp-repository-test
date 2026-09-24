@@ -1,0 +1,29 @@
+{
+  "specVersion": 2,
+  "request": {
+    "label": "DR-014",
+    "asIsCommit": "cc0c45dab08ea18c73d023bd0307b1ba9052a5c0",
+    "toBeCommit": null
+  },
+  "screens": [
+    {
+      "systemCode": "EXW",
+      "screenId": "EXW-UWV-70-30-10-C",
+      "displayName": "에이블리 회원가입",
+      "newScreen": false,
+      "files": [
+        {"path": "screens/EXW/EXW-UWV-70-30-10-C/as-is.html", "kind": "as-is-html", "sha256": "4dc0e2d9e29ae8e7e7570cac40a12b76cc49f3ca217a0d2df1bec3147fba8a41"},
+        {"path": "screens/EXW/EXW-UWV-70-30-10-C/as-is.md", "kind": "as-is-md", "sha256": "8154ec4449c9c9724c07c60b82368384cf2b6237eb4e3011d7ee823e8149a1ed"},
+        {"path": "screens/EXW/EXW-UWV-70-30-10-C/changes.md", "kind": "changes", "sha256": "a4068c15dffc84eea9b247e53e05df53ce44be1b80e0b92d0e8aae600c1c95e4"}
+      ]
+    }
+  ],
+  "assetRoots": [{"systemCode": "EXW", "from": "core/EXW/assets"}],
+  "expectedBack": {
+    "returnBranch": "feedback/SRT/DR-014",
+    "base": "cc0c45dab08ea18c73d023bd0307b1ba9052a5c0",
+    "screens": [{"screenId": "EXW-UWV-70-30-10-C", "system": "EXW", "required": ["pages", "screen-md", "index"]}],
+    "domains": [],
+    "tests": {"unit": [], "integration": ["TC-001", "TC-002", "TC-003", "TC-004", "TC-005"]}
+  }
+}
