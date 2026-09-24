@@ -1,4 +1,13 @@
 {
-  "deliveries": [],
-  "specVersion": 2
+  "deliveries" : [ {
+    "dr" : "DR-014",
+    "branch" : "dr/SRT/DR-014",
+    "commit" : "37168b359f39bf50ab1f77d4be6202399d7b46a9",
+    "base" : "cc0c45dab08ea18c73d023bd0307b1ba9052a5c0",
+    "system" : null,
+    "screens" : [ "EXW-UWV-70-30-10-C" ],
+    "sentAt" : "2026-09-24T06:33:01.751886872Z",
+    "sendKey" : "093d98f9-0ea4-4a56-9e31-b6c4a9c7be96"
+  } ],
+  "specVersion" : 2
 }
