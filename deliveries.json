@@ -17,6 +17,16 @@
     "screens" : [ "EXW-UWV-70-30-10-C" ],
     "sentAt" : "2026-09-24T06:37:12.959212541Z",
     "sendKey" : "dde7acde-698e-4455-82ff-cb41f1caae98"
+  }, {
+    "specVersion" : 3,
+    "dr" : "BP-D900001",
+    "groupCode" : "BP",
+    "revision" : 1,
+    "type" : "FRD",
+    "status" : "sent",
+    "branch" : "dr/EXW/BP-D900001",
+    "commit" : "95c2000e01fd06a380393ccfdf18188d01c9e894",
+    "sentAt" : "2026-09-25T05:20:45.825Z"
   } ],
   "specVersion" : 2
 }
