@@ -1,0 +1,29 @@
+{
+  "specVersion": 3,
+  "request": {
+    "label": "BP-D900002",
+    "groupCode": "BP",
+    "revision": 1,
+    "asIsCommit": "cc0c45dab08ea18c73d023bd0307b1ba9052a5c0",
+    "toBeCommit": null
+  },
+  "screens": [],
+  "assetRoots": [
+    {
+      "systemCode": "EXW",
+      "from": "core/EXW/assets"
+    }
+  ],
+  "expectedBack": {
+    "returnBranch": "feedback/BP-D900002",
+    "base": "cc0c45dab08ea18c73d023bd0307b1ba9052a5c0",
+    "screens": [],
+    "tests": {
+      "unit": [],
+      "integration": [
+        "TC-001",
+        "TC-002"
+      ]
+    }
+  }
+}
