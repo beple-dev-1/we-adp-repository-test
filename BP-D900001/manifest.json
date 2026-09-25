@@ -3,7 +3,7 @@
   "request": {
     "label": "BP-D900001",
     "groupCode": "BP",
-    "revision": 1,
+    "revision": 2,
     "asIsCommit": "cc0c45dab08ea18c73d023bd0307b1ba9052a5c0",
     "toBeCommit": null
   },
@@ -27,7 +27,7 @@
         {
           "path": "screens/EXW/EXW-TEST-10-S/to-be.html",
           "kind": "to-be-html",
-          "sha256": "3184e2ced489ff2a743ce3646486a7420836f251838b562bdd85d1794817c2c5"
+          "sha256": "09ef501ab72df88ba2e71c893276e90e9cf50002739b14c15bab35495625215c"
         },
         {
           "path": "screens/EXW/EXW-TEST-10-S/to-be.md",
