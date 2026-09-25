@@ -33,7 +33,7 @@
     "groupCode" : "BP",
     "revision" : 1,
     "type" : "SRT",
-    "status" : "sent",
+    "status" : "withdrawn",
     "branch" : "dr/SRT/BP-D900002",
     "commit" : "e07aa8db0cff630ee78086d4363bd728f362fcd6",
     "sentAt" : "2026-09-25T05:20:52.503Z"
