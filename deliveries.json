@@ -21,12 +21,12 @@
     "specVersion" : 3,
     "dr" : "BP-D900001",
     "groupCode" : "BP",
-    "revision" : 1,
+    "revision" : 2,
     "type" : "FRD",
     "status" : "sent",
     "branch" : "dr/EXW/BP-D900001",
-    "commit" : "95c2000e01fd06a380393ccfdf18188d01c9e894",
-    "sentAt" : "2026-09-25T05:20:45.825Z"
+    "commit" : "f8aab38cb2d6efab893be66619d4a8476ab4e45d",
+    "sentAt" : "2026-09-25T05:21:06.144Z"
   }, {
     "specVersion" : 3,
     "dr" : "BP-D900002",
