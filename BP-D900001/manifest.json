@@ -1,0 +1,73 @@
+{
+  "specVersion": 3,
+  "request": {
+    "label": "BP-D900001",
+    "groupCode": "BP",
+    "revision": 1,
+    "asIsCommit": "cc0c45dab08ea18c73d023bd0307b1ba9052a5c0",
+    "toBeCommit": null
+  },
+  "screens": [
+    {
+      "systemCode": "EXW",
+      "screenId": "EXW-TEST-10-S",
+      "displayName": "시험 회원가입",
+      "newScreen": false,
+      "files": [
+        {
+          "path": "screens/EXW/EXW-TEST-10-S/as-is.html",
+          "kind": "as-is-html",
+          "sha256": "a19e535f7578d4a038062e4be3d312cb0290f69bb7e2557409925413ee37109f"
+        },
+        {
+          "path": "screens/EXW/EXW-TEST-10-S/as-is.md",
+          "kind": "as-is-md",
+          "sha256": "89400f6e765a320fb79344546db9db8ca3fe6aa2b0531b1c164a17ecf5257be1"
+        },
+        {
+          "path": "screens/EXW/EXW-TEST-10-S/to-be.html",
+          "kind": "to-be-html",
+          "sha256": "3184e2ced489ff2a743ce3646486a7420836f251838b562bdd85d1794817c2c5"
+        },
+        {
+          "path": "screens/EXW/EXW-TEST-10-S/to-be.md",
+          "kind": "to-be-md",
+          "sha256": "95d4d9f30cc79612ac5384736772e9edd72d87d9d771f4bcc23fc327c2999ddd"
+        },
+        {
+          "path": "screens/EXW/EXW-TEST-10-S/changes.md",
+          "kind": "changes",
+          "sha256": "73df82976f174fd67132b70be29b2fe4e4a488fbe3188557876de72c92125874"
+        }
+      ]
+    }
+  ],
+  "assetRoots": [
+    {
+      "systemCode": "EXW",
+      "from": "core/EXW/assets"
+    }
+  ],
+  "expectedBack": {
+    "returnBranch": "feedback/BP-D900001",
+    "base": "cc0c45dab08ea18c73d023bd0307b1ba9052a5c0",
+    "screens": [
+      {
+        "screenId": "EXW-TEST-10-S",
+        "system": "EXW",
+        "required": [
+          "pages",
+          "screen-md",
+          "index"
+        ]
+      }
+    ],
+    "tests": {
+      "unit": [],
+      "integration": [
+        "TC-001",
+        "TC-002"
+      ]
+    }
+  }
+}
