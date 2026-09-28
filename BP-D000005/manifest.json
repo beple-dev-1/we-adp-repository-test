@@ -1,0 +1,31 @@
+{
+  "specVersion": 3,
+  "request": {
+    "label": "BP-D000005",
+    "groupCode": "BP",
+    "revision": 1,
+    "asIsCommit": "986f8ab7874f878f8db0ed525a50e063c82a683f",
+    "toBeCommit": null
+  },
+  "screens": [
+    {
+      "systemCode": "BPY",
+      "screenId": "BPY-MYAF-30-S",
+      "displayName": "BPY-MYAF-30-S",
+      "newScreen": false,
+      "files": [
+        {"path": "screens/BPY/BPY-MYAF-30-S/as-is.html", "kind": "as-is-html", "sha256": "613458ad8f271b664ae0af299455414914de7a69f991ee0e06cf339b928903b0"},
+        {"path": "screens/BPY/BPY-MYAF-30-S/as-is.md", "kind": "as-is-md", "sha256": "004e32dcf4e57c811d2253846f2086981b6afcf1e6da1e1310923ae377f35121"},
+        {"path": "screens/BPY/BPY-MYAF-30-S/changes.md", "kind": "changes", "sha256": "22107fb813d085485390d5a19bdcde7ad3c2a41a627483a0b9cff63510057a75"}
+      ]
+    }
+  ],
+  "assetRoots": [{"systemCode": "BPY", "from": "core/BPY/assets"}],
+  "expectedBack": {
+    "returnBranch": "feedback/SRT/BP-D000005",
+    "base": "986f8ab7874f878f8db0ed525a50e063c82a683f",
+    "screens": [{"screenId": "BPY-MYAF-30-S", "system": "BPY", "required": ["pages", "screen-md", "index"]}],
+    "domains": [],
+    "tests": {"unit": [], "integration": ["TC-001", "TC-002", "TC-003", "TC-004"]}
+  }
+}
