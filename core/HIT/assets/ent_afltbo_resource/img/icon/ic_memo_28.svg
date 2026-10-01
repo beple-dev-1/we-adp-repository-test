@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+    <g data-name="그룹 25248">
+        <g data-name="사각형 201" style="fill:#fff;stroke:#ccc">
+            <rect width="28" height="28" rx="4" style="stroke:none"/>
+            <rect x=".5" y=".5" width="27" height="27" rx="3.5" style="fill:none"/>
+        </g>
+    </g>
+    <path d="M102.369 203.09h7.263v-1.01h-7.263zm0-1.863h7.263v-1.01h-7.263zm0-1.863h7.263v-1.01h-7.263zm9.631 8.345-2.235-2.235h-8.56a1.2 1.2 0 0 1-1.2-1.2v-7.064a1.2 1.2 0 0 1 1.2-1.2h9.59a1.2 1.2 0 0 1 1.2 1.2zm-10.989-10.5v7.258h9.18l.8.8v-8.058a.187.187 0 0 0-.194-.194h-9.59a.187.187 0 0 0-.194.194zm0 0z" transform="translate(-92.002 -188.001)" style="fill:#333"/>
+</svg>

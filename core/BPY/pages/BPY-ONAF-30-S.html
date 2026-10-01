@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비대면결제 메인</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-ONAF-30-S">
+<form name="frm" id="frm" method="post">
+<input type="hidden" id="AFLT_ID"       name="AFLT_ID"  value="" />
+<input type="hidden" id="QR_CODE"       name="QR_CODE"  value="" />
+<input type="hidden" id="TGT_ORDER_DT"  name="TGT_ORDER_DT"  value="" />
+<input type="hidden" id="TGT_ORDER_ID"  name="TGT_ORDER_ID"  value="" />
+<input type="hidden" id="TGT_YN"        name="TGT_YN"  value="" />
+<input type="hidden" id="AMT"           name="AMT"  value="" />
+<input type="hidden" id="MNY_YN"        name="MNY_YN"  value="" />
+
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <a data-element-id="BPY-ONAF-30-S-e07" href="#" class="btn-history-back type2" id="go_back" role="button">상위 메뉴로 이동</a>
+        <h1 onclick="zero_onaf2.init();" role="none">비대면 결제</h1>
+        <div class="right">
+            <a data-element-id="BPY-ONAF-30-S-e08" href="#none" class="btn_outpage" id="go_home" role="button">비대면 결제 닫기</a>
+        </div>
+    </div><!-- // header -->
+    <div class="container">
+        <div class="content">
+                
+
+        <div class="gift_accbx">
+            <div class="inner">
+                
+                        <!--<a class="link ico" id="selectedAcct">비플머니에서 결제됩니다.</a>-->
+                        <div class="tit ico" id="selectedAcct">비플머니에서 결제됩니다.</div>
+                        <input type="hidden" name="inc_mok_nm" id="inc_mok_nm" value=""/>
+                        <input type="hidden" name="inc_lmt_amt" id="inc_lmt_amt" value=""/>
+                        <input type="hidden" name="inc_card_no" id="inc_card_no" value=""/>
+                        <input type="hidden" name="inc_org_nm" id="inc_org_nm" value=""/>
+                        <input type="hidden" name="inc_cls_dsp_nm" id="inc_cls_dsp_nm" value=""/>
+
+                    
+
+            </div>
+        </div>
+
+        
+            <!-- 레이어 -->
+            <div class="layer_bPop" id="layer_acct_onaf" style="display:none;">
+                <div class="pop_box">
+                    <div class="pop_content">
+                        <div class="pop_b_cn type1">
+                            <div class="p_lytit">
+                                계좌선택
+                                <!--<div class="right" id="manage_acct"><a class="link">계좌관리</a></div>-->
+                            </div>
+                            <div class="p_acc_sltbx">
+                                <ul>
+
+                                    <li onClick="fn_selectedCp('', '비플머니', '', '')"><span class="ic_b ic_b1"></span>비플머니 계좌</li>
+                                    
+                                            <li onClick="fn_selectedCp('', '비플머니', '', '')"><span class="ic_b ic_b"></span>비플머니 계좌</li>
+                                            
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //레이어 -->
+
+        
+
+    <script type="text/javascript">
+        var path = window.location.pathname;
+        var pageName = path.split("/").pop(); //현재 페이지명
+
+        if(pageName.indexOf("zero_onaf2_approve.act") == -1){
+            $("#selectedAcct").removeClass("ico");
+        }
+
+        $("body").click(function(e){
+            //결제계좌선택 레이어 영역이 아닌 경우, hide
+            if($("#layer_acct_onaf").is(":visible")){
+                if( !$(e.target).parents().is($("#layer_acct_onaf")) && !$(e.target).parents().is($(".gift_accbx")) ){
+                    $("#layer_acct_onaf").hide();
+                }
+            }
+        });
+
+        $(".gift_accbx").click(function(){
+            //결제하기 페이지에서만 결제계좌 선택 가능하도록
+            if(pageName.indexOf("zero_onaf2_approve.act") > -1){
+                //결제계좌선택 레이어 show
+                $("#layer_acct_onaf").show();
+            }
+        });
+
+        $("#manage_acct").click(function(){
+            location.href="main_account.act";
+        });
+
+        //개인 계좌선택한 경우
+        function fn_selected(bank_nm, acct_no, acct_no_enc, bank_cd, seq){
+            $("#selectedAcct").text(bank_nm+"("+acct_no.substring(acct_no.length-4)+")계좌에서 결제됩니다." );
+            $("#inc_bank_nm").val(bank_nm);
+            $("#inc_acct_no").val(acct_no);
+            $("#inc_acct_no_enc").val(acct_no_enc);
+            $("#inc_bank_cd").val(bank_cd);
+            $("#inc_seq").val(seq);
+            $("#layer_acct_onaf").hide();
+
+            fn_init_qr_confirm();
+        }
+
+        //법인 계좌선택한 경우
+        function fn_selectedCp(org_nm, inc_cls_dsp_nm, card_no, nftf_pay_rest){
+            if(nftf_pay_rest == "Y"){
+                return alert("기업제로페이 비대면결제가\n제한된 결제계좌 입니다.");
+            }
+            $("#selectedAcct").text(inc_cls_dsp_nm+"에서 결제됩니다." );
+            $("#inc_org_nm").val(org_nm);
+            $("#inc_cls_dsp_nm").val(inc_cls_dsp_nm);
+            $("#inc_card_no").val(card_no);
+            $("#layer_acct_onaf").hide();
+
+            fn_init_qr_confirm();
+        }
+
+        //세션 QR_CONFIRM 값 초기화
+        function fn_init_qr_confirm() {
+            var jexAjax = jexjs.createAjaxUtil("acct_onaf_zeropay_r001");
+            jexAjax.setting("async", false);
+            jexAjax.execute(function (response) {
+            });
+        }
+    </script>
+
+            <!-- 컨텐츠 영역 -->
+            <div class="row-bothpadding20-style btn">
+                <!-- 탭 영역 -->
+                <div class="un_tab_w">
+                    <div class="inner">
+                        <a data-element-id="BPY-ONAF-30-S-e09" id="top_tab_qr" role="tab"><span class="bg">바코드/QR</span></a>
+                        <a data-element-id="BPY-ONAF-30-S-e10" class="on" aria-selected="true" role="tab"><span class="bg">비대면 결제</span></a>
+                        <a data-element-id="BPY-ONAF-30-S-e11" id="top_tab_qr_img" role="tab"><span class="bg">QR이미지</span></a>
+                    </div>
+                </div>
+                <!-- //탭 영역 -->
+
+                <!-- 이미지 영역 -->
+                <div class="un_main_w">
+                    <div class="bg">
+                        <div role="menuitem" aria-label="매장을 가지 않아도 비대면으로 언제 어디서나 간편하게 결제합니다.(일부 POS 결제 가맹점 제외)">   <!-- 웹 접근성 관련 추가 -->
+                            <p class="txt" aria-hidden="true">매장을 가지 않아도</p>
+                            <p class="tit" aria-hidden="true"><em class="txtb">비대면</em>으로 <em class="txtb">언제 어디서나</em><br> 간편하게 결제합니다.</p>
+                            <p class="stxt" aria-hidden="true">(일부 POS 결제 가맹점 제외)</p>
+                        </div>   <!-- 웹 접근성 관련 추가 -->
+                    </div>
+                </div>
+                <!-- //이미지 영역 -->
+
+                <!-- 타이틀 영역 -->
+                <div class="un_tit_w">
+                    <h3>최근결제내역
+                        <!-- 툴팁 -->
+                        <dl class="mainTooltip">
+                            <dt role="button" aria-label="도움말 열기">
+                                <a href="#none">
+                                    <img src="../assets/resource/images/zero/tooltip.png" alt="">
+                                </a>
+                            </dt>
+                            <dd style="display:none;" id="dtlToolTip" role="menuitem" aria-hidden="true" aria-label="최근 결제된 가맹점 중 선택된 결제수단으로 결제가능한 가맹점 목록입니다.">
+                                최근 결제된 가맹점 중 선택된 결제수단으로<br>
+                                결제가능한 가맹점 목록입니다.
+                            </dd>
+                        </dl>
+                        <!-- 툴팁 -->
+                    </h3>
+                </div>
+                <!-- //타이틀 영역 -->
+
+                <!-- 검색리스트 -->
+                <div class="unpay_resultbx type2">
+                    <div class="result_list">
+                        <ul id="appendUl"><!-- sample:begin --><li class="dis"><div class="result_cn")"><p class="star " onClick="uf_chgBookmark(this, '', '')"><a href="#" role="button">즐겨찾기</a></p><p class="tit"><a role="button"></a></p><p class="txt">서울 강남구 테헤란로 1길 10 101동 1001호</p></div><div class="btn")"><a role="button">비대면<br>결제 제한</a></div></li><li><div class="result_cn"><p class="star " onClick="uf_chgBookmark(this, '', '')"><a href="#none" role="button" aria-label="안내 문구">즐겨찾기</a></p><div role="button" aria-label="안내 문구" onClick="uf_goAffInfo('')"><p class="tit"><a></a></p><p class="txt">서울 강남구 테헤란로 1길 10 101동 1001호</p></div></div><div class="btn" onClick="uf_goAppr('', '004')"><a role="button">결제</a></div></li><!-- sample:end --></ul>
+                    </div>
+                    <div class="result_none" style="display:none">
+                        <p>최근 3개월간<br> 결제내역이 없습니다.</p>
+                    </div>
+                </div>
+                <!-- //검색리스트 -->
+
+                <!-- 더보기 -->
+                <div class="btnMore" style="display:none">
+                    <a role="button"><em>더보기</em></a>
+                </div>
+                <!-- //더보기 -->
+
+                <!-- 하단 고정 프로팅 버튼 -->
+                <div class="btn_fix_float">
+                    <div class="inner">
+                        <a data-element-id="BPY-ONAF-30-S-e12" onClick="uf_goSrchList();" role="button"><!--<span class="ico">비대면 매장 검색</span>--><span>비대면 매장 검색</span></a>
+                    </div>
+                </div>
+                <!-- //하단 고정 프로팅 버튼 -->
+            </div>
+            <!-- //컨텐츠 영역 -->
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+</form>
+</body>
+</html>

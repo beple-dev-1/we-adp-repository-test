@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <clipPath id="p926o88mqa">
+            <path data-name="사각형 23106" style="fill:none" d="M0 0h16v16H0z"/>
+        </clipPath>
+    </defs>
+    <path data-name="사각형 23095" transform="translate(6 2.856)" style="fill:#fff" d="M0 0h9.049v9.81H0z"/>
+    <g data-name="그룹 19065">
+        <g data-name="그룹 19064" style="clip-path:url(#p926o88mqa)">
+            <path data-name="패스 8088" d="M17.048 13.715H9.81V2.667h7.238zm0-11.81H9.81a.761.761 0 0 0-.762.762v11.048a.761.761 0 0 0 .762.761h7.238a.761.761 0 0 0 .762-.761V2.667a.761.761 0 0 0-.762-.762" transform="translate(-1.81 -.381)" style="fill:#217346"/>
+            <path data-name="사각형 23096" transform="translate(11.429 3.429)" style="fill:#217346" d="M0 0h2.667v1.143H0z"/>
+            <path data-name="사각형 23097" transform="translate(11.429 5.333)" style="fill:#217346" d="M0 0h2.667v1.143H0z"/>
+            <path data-name="사각형 23098" transform="translate(11.429 7.238)" style="fill:#217346" d="M0 0h2.667v1.143H0z"/>
+            <path data-name="사각형 23099" transform="translate(11.429 9.143)" style="fill:#217346" d="M0 0h2.667v1.143H0z"/>
+            <path data-name="사각형 23100" transform="translate(11.429 11.048)" style="fill:#217346" d="M0 0h2.667v1.143H0z"/>
+            <path data-name="사각형 23101" transform="translate(8 3.429)" style="fill:#217346" d="M0 0h2.667v1.143H0z"/>
+            <path data-name="사각형 23102" transform="translate(8 5.333)" style="fill:#217346" d="M0 0h2.667v1.143H0z"/>
+            <path data-name="사각형 23103" transform="translate(8 7.238)" style="fill:#217346" d="M0 0h2.667v1.143H0z"/>
+            <path data-name="사각형 23104" transform="translate(8 9.143)" style="fill:#217346" d="M0 0h2.667v1.143H0z"/>
+            <path data-name="사각형 23105" transform="translate(8 11.048)" style="fill:#217346" d="M0 0h2.667v1.143H0z"/>
+            <path data-name="패스 8089" d="M9.524 0 0 1.669v12.662L9.524 16z" style="fill-rule:evenodd;fill:#217346"/>
+            <path data-name="패스 8090" d="m7.363 5.714-1.33.08L5.222 7.7l-.053.171L5.131 8l-.031.124-.026.1a.311.311 0 0 0-.035-.144L5 7.95l-.038-.126-.042-.114-.697-1.81-1.283.08 1.368 2.964L2.8 11.908l1.254.076.842-1.942.038-.134.03-.118.027-.1v-.08l.026.141.027.118.023.092.023.064.872 2.075 1.455.091-1.638-3.266z" transform="translate(-.559 -1.143)" style="fill:#fff"/>
+        </g>
+    </g>
+</svg>

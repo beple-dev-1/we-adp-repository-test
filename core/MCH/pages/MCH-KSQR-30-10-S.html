@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>KSQR온가신 신청자정보 입력</title>
+  <link rel="stylesheet" href="../assets/ksqr_resource/css/ksqr_style.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KSQR-30-10-S">
+<form name="form1" id="form1">
+    <input type="hidden" name="FILE_TYPE"   id="file_type"  value="doc" />
+    <input type="hidden" name="FILE_NAME"   id="file_name"  value="대리인위임장.docx" />
+    <input type="hidden" name="FILE_PATH"   id="file_path"  value=""/>
+</form>
+<iframe name="ifrm" width="0" height="0" style="display:none;"></iframe>
+
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="CI"  name="CI"  value="" />
+    <input type="hidden" id="AC"  name="AC"  value="" />
+    <input type="hidden" id="APY_SEQ"  name="APY_SEQ"  value="" />
+    <input type="hidden" id="biz_no"  name="biz_no"  value="" />
+    <div class="wrap">
+        <div class="header floating-back-header floating-sticky">
+            <h1>신규 가맹점 신청</h1>
+            <a data-element-id="MCH-KSQR-30-10-S-e05" href="#" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+        </div>
+        <!-- // header -->
+
+        <div class="container">
+            <div class="content">
+                <!-- 신규가맹점 신청 -->
+                <div class="new_store">
+                    <!-- 신청자 정보 확인 -->
+                    <div class="join_confirm addBtn-pb58">
+                        <h2 class="step_txt">신청자 정보를 확인해 주세요.</h2>
+
+                        <!-- 가맹점 정보 -->
+                        <div class="data-wrap bg-box">
+                            <ul class="data-list">
+                                <li class="data-item">
+                                    <span class="item-tit">이름</span>
+                                    <span class="item-con" id="apy_nm">비플머니</span>
+                                </li>
+                                <li class="data-item">
+                                    <span class="item-tit">생년월일</span>
+                                    <span class="item-con" id="brt_dt"><!-- sample:begin -->2026.09.02<!-- sample:end --></span>
+                                </li>
+                                <li class="data-item">
+                                    <span class="item-tit">휴대폰 번호</span>
+                                    <span class="item-con" id="mob_no"><!-- sample:begin -->1<!-- sample:end --></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sel_bx">
+                            <h3>위 신청자가 사업자의 대표자인가요?</h3>
+                            <ul>
+                                <li><label><input data-element-id="MCH-KSQR-30-10-S-e07" type="radio" name="apy_repr_yn" id="Y" value="Y">네</label></li>
+                                <li><label><input data-element-id="MCH-KSQR-30-10-S-e08" type="radio" name="apy_repr_yn" id="N" value="N">아니요, 대리인 입니다.</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 하단 플로팅 영역 -->
+                <div class="btn_botFix_w">
+                    <div class="inner bg_white">
+                        <a data-element-id="MCH-KSQR-30-10-S-e06" href="javascript:void(0);" class="btn_default round_r8 btn-style-h48" id="next_btn" onclick="next_btn(this)"><!-- 활성화 시 on 클래스 추가 -->
+                            다음
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+
+</form>
+    <script>
+        var radi_value = "";
+    </script>
+</body>
+</html>

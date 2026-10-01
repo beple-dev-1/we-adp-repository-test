@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비대면결제 매장검색</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-ONAF-30-30-S">
+<form name="frm" id="frm" method="post">
+	<input type="hidden" id="AFLT_ID" 		name="AFLT_ID" 		 value="" />
+	<input type="hidden" id="QR_CODE" 		name="QR_CODE" 		 value="" />
+	<input type="hidden" id="TGT_ORDER_DT"  name="TGT_ORDER_DT"  value="" />
+	<input type="hidden" id="TGT_ORDER_ID"  name="TGT_ORDER_ID"  value="" />
+	<input type="hidden" id="TGT_YN"  		name="TGT_YN"  		 value="" />
+	<input type="hidden" id="AMT"  			name="AMT"  		 value="" />
+	<input type="hidden" id="MNY_YN"  		name="MNY_YN"  		 value="" />
+</form>
+
+<div class="wrap">
+	<div class="header floating-back-header floating-sticky">
+		<!-- <a href="#" class="btn-history-back" role="button">상위 메뉴로 이동</a> -->
+		<h1 role="none">비대면 결제</h1>
+		<div class="right">
+			<a data-element-id="BPY-ONAF-30-30-S-e07" href="#none" id="go_home" class="btn_outpage" role="button">비대면 결제 매장 검색 닫기</a>
+		</div>
+	</div><!-- // header -->
+	<div class="container">
+		<div class="content">
+
+			<!-- 컨텐츠 영역 -->
+			<div class="row-bothpadding20-style">
+				<!-- 타이틀 영역 -->
+				<div class="un_top_tit">
+					<h2 role="none"></h2>
+					<div class="right">
+                        <a data-element-id="BPY-ONAF-30-30-S-e08" href="javascript:void(0);" id="coordinate" class="link" role="button" aria-label="현재위치로, 설정">현재위치로</a>
+					</div>
+				</div>
+				<!-- //타이틀 영역 -->
+
+				<!-- 검색 조건 선택영역 -->
+				<div class="un_sch_cnw">
+					<dl>
+						<dt>
+							<div class="unpay_select">
+								<div class="sel">
+									<select data-element-id="BPY-ONAF-30-30-S-e10" id="post_do" role="button">
+										<option value="option_do" selected>시/도</option>
+									</select>
+								</div>
+								<div class="sel">
+									<select data-element-id="BPY-ONAF-30-30-S-e11" id="post_si" role="button">
+										<option value="option_si" selected>시/구/군</option>
+									</select>
+								</div>
+							</div>
+						</dt>
+						<dd>
+							<div class="type_chk">
+								<ul id="category_ul"><!-- sample:begin --><li><em role='option'  aria-selected='true' aria-label='홍길동button'><a value='004' role="button"> 홍길동</a></em><em role='option'  aria-label='홍길동button'><a value='004' role="button"> 홍길동</a></em><em role='option'  aria-label='홍길동button'><a value='004' role="button"> 홍길동</a></em></li><!-- sample:end --></ul>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<!-- //검색 조건 선택영역 -->
+
+				<!-- 검색영역 -->
+				<div class="un_sch_gbxw">
+					<div class="bg">
+						<input data-element-id="BPY-ONAF-30-30-S-e12" id="sch_keyword" type="text"aria-label="" placeholder="매장명 또는 전화번호 검색" style="" maxlength="40" role="searchbox">
+                        <a data-element-id="BPY-ONAF-30-30-S-e09" id="sch_btn" class="btn" role="button" aria-label="검색"><span class="blind">검색</span></a>
+					</div>
+				</div>
+				<!-- //검색영역 -->
+
+				<!-- 검색리스트 -->
+				<div class="unpay_resultbx type2">
+					<div class="result_list gift">
+						<ul id="rec_list"><!-- sample:begin --><li><em role='option'  aria-selected='true' aria-label='홍길동button'><a value='004' role="button"> 홍길동</a></em><em role='option'  aria-label='홍길동button'><a value='004' role="button"> 홍길동</a></em><em role='option'  aria-label='홍길동button'><a value='004' role="button"> 홍길동</a></em></li><!-- sample:end --></ul>
+					</div>
+					<div id="sch_none" class="result_none" style="display:block;">
+						<p>검색어를 입력해주세요.</p>
+					</div>
+					<div id="result_none" class="result_none" style="display:none;">
+						<p>조건에 맞는<br> 검색결과가 없습니다.</p>
+					</div>
+				</div>
+				<!-- //검색리스트 -->
+				<!-- 더보기 -->
+				<div class="btnMore" style="display:none" role="button">
+					<a><em>더보기</em></a>
+				</div>
+				<!-- //더보기 -->
+
+			</div>
+			<!-- //컨텐츠 영역 -->
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

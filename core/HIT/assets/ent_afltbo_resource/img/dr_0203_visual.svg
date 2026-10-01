@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="138" height="138" viewBox="0 0 138 138">
+    <defs>
+        <linearGradient id="z2khd8ydgb" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#8fbdfa"/>
+            <stop offset="1" stop-color="#74b0ff"/>
+        </linearGradient>
+        <linearGradient id="ebaf8trwjc" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#67aafc"/>
+            <stop offset="1" stop-color="#3e84f7"/>
+        </linearGradient>
+        <linearGradient id="pdfe8w5bra" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#e6e9ed"/>
+            <stop offset="1" stop-color="#d9dde2"/>
+        </linearGradient>
+        <linearGradient id="yzryj2l08d" x1=".379" y1=".157" x2=".708" xlink:href="#pdfe8w5bra"/>
+    </defs>
+    <g data-name="그룹 25551">
+        <g data-name="그룹 25549">
+            <path data-name="사각형 31019" d="M6 0a6 6 0 0 1 6 6v10H0V6a6 6 0 0 1 6-6z" transform="translate(28 29)" style="fill:url(#z2khd8ydgb)"/>
+            <path data-name="빼기 31" d="M14244-12386h-46a8.008 8.008 0 0 1-8-8v-66a6.007 6.007 0 0 0-6-6h60a8.007 8.007 0 0 1 8 8v64a8.008 8.008 0 0 1-8 8z" transform="translate(-14150 12495)" style="fill:url(#ebaf8trwjc)"/>
+            <path data-name="빼기 30" d="M14240-12450h-54a8.009 8.009 0 0 0 7.993-8v-4h54v4a8.007 8.007 0 0 1-7.993 8z" transform="translate(-14138 12559)" style="fill:url(#z2khd8ydgb)"/>
+        </g>
+        <g data-name="그룹 25550">
+            <path data-name="패스 22250" d="M32.8 48.98v3.537H15.148V48.98H12.63v4.8a1.257 1.257 0 0 0 1.259 1.259h20.17a1.257 1.257 0 0 0 1.259-1.259v-4.8z" transform="translate(48.767 27.964)" style="fill:url(#pdfe8w5bra)"/>
+            <path data-name="패스 22251" d="M31.567 14.747a5.911 5.911 0 0 0-8.059-5.511 7.552 7.552 0 0 0-13.95.2 4.845 4.845 0 0 0-1.523-.234A5.031 5.031 0 0 0 3 14.238a4.529 4.529 0 0 0 .152 1.2 5.912 5.912 0 0 0 2.77 11.139h25.645a5.915 5.915 0 1 0 0-11.83z" style="fill:#fff" transform="translate(54 46.32)"/>
+            <path data-name="패스 22252" d="M43.281 24.458a5.912 5.912 0 0 0-5.124-8.858 5.921 5.921 0 0 0-5.915-5.915 5.74 5.74 0 0 0-2.138.41A7.551 7.551 0 0 0 17.29 8.359a7.544 7.544 0 0 1 13.388.908 5.793 5.793 0 0 1 2.143-.41 5.911 5.911 0 0 1 5.909 5.909 5.914 5.914 0 0 1 4.551 9.693z" transform="translate(46.836 46.308)" style="fill:url(#pdfe8w5bra)"/>
+            <g data-name="그룹 25547">
+                <path data-name="패스 22253" d="m23.34 33.469 5.072-6.249 5.072 6.249H31.03v7.11h-5.236v-7.11z" transform="translate(44.329 36.981)" style="fill:url(#yzryj2l08d)"/>
+            </g>
+        </g>
+    </g>
+</svg>

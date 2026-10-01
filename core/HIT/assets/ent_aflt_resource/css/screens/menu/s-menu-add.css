@@ -1,0 +1,153 @@
+/* =============================================================================
+ * s-menu-add.css — S-MENU-ADD 화면 글루 (step1/step2-form/sheet-category/picker-date 공유)
+ * 스코프: .app--menu-add. 출처: 기존 screens/S-MENU-ADD/index.html 인라인 <style>.
+ * ========================================================================== */
+.app--menu-add .form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--app-gutter) 88px;
+}
+.app--menu-add .form__row2 { display: flex; gap: var(--space-2); }
+.app--menu-add .form__row2 > * { flex: 1; min-width: 0; }
+.app--menu-add .field-label { font-size: 14px; font-weight: 600; color: var(--text-secondary); margin-bottom: var(--space-2); }
+.app--menu-add .photo-actions { display: flex; gap: var(--space-2); margin-top: var(--space-2); }
+.app--menu-add .photo-actions .ds-button { height: 32px; font-size: 14px; padding: 0 12px; }
+/* 하단 고정 저장 바 */
+.app--menu-add .save-bar {
+    position: sticky; bottom: 0;
+    padding: var(--space-3) var(--app-gutter) var(--space-4);
+    background: var(--bg-surface); border-top: 1px solid var(--border-default);
+}
+/* step1 단독 페이지 본문 패딩 (제공형태 라디오) */
+.app--menu-add .step1-note { padding: var(--space-4) var(--app-gutter); }
+.app--menu-add .step1-note h2 { font-size: 14px; color: var(--text-tertiary); margin-bottom: var(--space-3); }
+
+/* -----------------------------------------------------------------------------
+ * 대표 이미지 — .app--menu-add 스코프 보정 (Figma 357:7047/7048, 88×88 r10 bg#f4f4f4)
+ *   전역 ds-menu-image는 150px(DETAIL PASS) — 이 스코프에서만 88px로 재정의.
+ * --------------------------------------------------------------------------- */
+.app--menu-add .ds-menu-image {
+    width: 88px;                             /* Figma 357:7047 88×88 */
+    border-radius: var(--radius-thumb);      /* Figma 357:7048 r10(--radius-thumb) */
+    background-color: var(--bg-muted-2);     /* Figma 357:7048 bg#f4f4f4(--bg-muted-2) */
+}
+
+/* -----------------------------------------------------------------------------
+ * step1 (제공형태 선택) 스코프 보정 — Figma 357:5201 정합
+ *   라벨 "제공 형태" 18/600 #111 @y104(appbar72+32) · 라벨→라디오 gap16 · 버튼 320@20 y724
+ * --------------------------------------------------------------------------- */
+.app--add-step1 .form { padding-top: 32px; }              /* Figma "제공 형태" 라벨 y104 */
+.app--add-step1 .field-label {
+    font-size: 18px;                                       /* Figma 357:5226 18/600 */
+    line-height: 1;                                        /* Figma leading-none(18) — 라디오 y138 정합 */
+    letter-spacing: -0.45px;                               /* Figma ls -0.45 (18×0.025) — body 상속 -0.4px 단절 */
+    color: var(--text-primary);                            /* #111 */
+    margin-bottom: var(--space-4);                         /* 라벨(y104,h18)→라디오(y138) gap16 */
+}
+.app--add-step1 .save-bar { padding: var(--space-3) 20px var(--space-6); }  /* Figma btn (20,724) 320×52 */
+
+/* -----------------------------------------------------------------------------
+ * step2 폼 스코프 보정 — Figma 357:7003 정합
+ *   row2 pill 칩(h32 r16) · save-bar pad(t24 x20 b24) · form 상단 여백
+ * --------------------------------------------------------------------------- */
+/* row2 제공형태/끼니 컨트롤 → pill 칩 형태 (Figma 357:7044/7041 h32 r16) */
+.app--add-step2 .form__row2 .ds-select__control {
+    height: 32px;                            /* Figma pill 칩 h32 */
+    border-radius: 16px;                     /* Figma pill r16 */
+    padding: 0 var(--space-3);
+}
+
+/* form 수직 리듬 — Figma 357:6886/7003 실측: 필드군 전환 간격 32px, row2 상단 y92.
+   statusbar24 + appbar48 = 72 → padding-top 20으로 row2 y92. 균일 gap 16 → 32로 정정(design-fidelity-qa 적발 FORM-VERTICAL-RHYTHM). */
+.app--add-step2 .form {
+    padding-top: 20px;                       /* Figma row2 y92 (72+20) */
+    padding-bottom: 32px;                    /* Figma 수량 control 하단→save-bar 32(다른 필드전환과 동일 리듬). sticky는 in-flow라 오클루전 없음 */
+    gap: 32px;                               /* Figma 필드군 전환 간격 32(균일 16 대체) */
+}
+/* 필드 내부 라벨↔컨트롤 간격 — Figma 라벨(h14)→컨트롤 top 26 = gap 12 (컴포넌트 기본 space-2=8 → 필드마다 -4px 누적 드리프트) */
+.app--add-step2 .ds-select,
+.app--add-step2 .ds-date-field,
+.app--add-step2 .ds-text-field,
+.app--add-step2 .ds-textarea { gap: 12px; }
+.app--add-step2 .field-label { margin-bottom: 12px; }   /* 메뉴정보/영양정보 라벨→카드 12 */
+.app--add-step2 .ds-repeat-card { gap: 16px; }          /* 카드 그룹→추가하기 버튼 16(Figma 카드하단→추가하기, 컴포넌트 12) */
+/* 라벨 line-height 1 — Figma 라벨 설계높이 14(기본 line-height ~17 박스가 필드마다 +3px 누적 드리프트 유발) */
+.app--add-step2 .ds-select__label,
+.app--add-step2 .ds-date-field__label,
+.app--add-step2 .ds-text-field__label,
+.app--add-step2 .ds-textarea__label,
+.app--add-step2 .field-label { line-height: 1; }
+/* 금액 숨김 체크박스는 금액 필드에 밀착(Figma 금액 control 하단→체크박스 14px). 폼 gap 32 → -18로 순 14 */
+.app--add-step2 .ds-checkbox { margin-top: -18px; }
+/* 날짜·분류명 등 풀폭 필드 컨트롤 좌우 패딩 16(Figma 아이콘 프레임 인셋 16 · design-fidelity-qa DATE-ICON-PAD).
+   컴팩트 pill(form__row2)은 아래 12px 규칙이 특이도로 우선 유지. */
+.app--menu-add .ds-select__control,
+.app--menu-add .ds-date-field__control { padding: 0 var(--space-4); }
+
+/* save-bar — Figma 357:7028 h100 pad(t24 x20 b24), 버튼 320@x20 */
+.app--add-step2 .save-bar {
+    padding: 24px 20px;                      /* Figma 357:7028 pad t24 x20 b24 */
+}
+
+/* -----------------------------------------------------------------------------
+ * step1 제공형태 확장(dinein/delivery) 스코프 — Figma 357:6593 / 357:6704 정합
+ *   3섹션(제공형태·날짜선택·[식사형태])을 18px 섹션 라벨 + ds-divider로 분리.
+ *   좌표: 라벨 y104(제공형태)/y291(날짜)/y430(식사) · 라디오 48행 · date field y325 · 다음 y724.
+ *   리듬: form padding-top 32(라벨 y104) · 라벨 mb16 · divider mt24/mb32(콘텐츠→구분선 24, 구분선→다음라벨 32).
+ * --------------------------------------------------------------------------- */
+.app--add-serve .form {
+    padding-top: 32px;                       /* statusbar24+appbar48=72 → 라벨 y104 */
+    gap: 0;                                  /* 섹션 간격은 divider margin으로 제어(균일 gap 대신) */
+}
+.app--add-serve .field-label {
+    font-size: 18px;                         /* Figma 357:6618/6619/6620 18/600 */
+    line-height: 1;                          /* leading-none(18) — 라디오 y138 정합 */
+    letter-spacing: -0.45px;                 /* Figma ls -0.45 (18×0.025) */
+    color: var(--text-primary);              /* #111 */
+    margin-bottom: var(--space-4);           /* 라벨→콘텐츠 gap16 (라벨 h18 → 라디오 y138) */
+}
+.app--add-serve .ds-divider {
+    margin: 24px 0 32px;                     /* 콘텐츠 끝→구분선 24(y234→258/y373→397), 구분선→다음 라벨 32(→291/430) */
+}
+.app--add-serve .save-bar {
+    padding: var(--space-3) 20px var(--space-6);  /* Figma btn (20,724) 320×52 */
+}
+
+/* -----------------------------------------------------------------------------
+ * step2 폼(입력 전 6886 · 입력 후 7003) 공통 스코프 — 두 폼 동일 구조.
+ *   row2 컴팩트 pill(라벨 없음·좌측정렬·gap10) · 대표이미지 중앙(88) + 사진버튼 중앙.
+ * --------------------------------------------------------------------------- */
+/* row2 pill 컴팩트: 반폭 stretch(기본) 해제 → 콘텐츠 폭 좌측정렬 (Figma 362:2565 매장식사84+gap10+조식60) */
+.app--add-step2 .form__row2 {
+    justify-content: flex-start;
+    gap: 10px;                               /* Figma 매장식사↔조식 gap10 */
+}
+.app--add-step2 .form__row2 > * {
+    flex: 0 0 auto;                          /* 기본 flex:1(반폭) 해제 → 콘텐츠 폭 */
+}
+/* 제공형태/끼니 pill 값 폰트 — Figma 362:2565 매장식사/조식 14/500 (강수민 260706, 구 16px 상속) */
+.app--add-step2 .form__row2 .ds-select__value {
+    font-size: 14px;
+    font-weight: 500;
+}
+/* 대표 이미지 중앙(88) + 사진 버튼 중앙 (Figma 7003: 이미지 y156 중앙, 첨부하기·기본이미지로변경 중앙 정렬) */
+.app--add-step2 .add-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;                      /* 사진버튼(y292)→분류명 라벨(y332) gap40 = form gap32 + 8 */
+}
+.app--add-step2 .add-photo .ds-menu-image {
+    margin-top: 0;                           /* base margin-top16 제거 — form gap32가 row2→이미지(y156) 간격 관장 */
+}
+.app--add-step2 .photo-actions {
+    justify-content: center;                 /* 사진 버튼 중앙 (Figma 6886 첨부하기 x144.5 / 7003 2버튼 중앙) */
+    margin-top: var(--space-4);              /* 이미지(끝 y244)→버튼(y260) gap16 */
+}
+/* 금액 숨김 체크박스: 입력 전(빈 상태)만 그레이 배경(Figma 357:6957 #dbdbdb, 화이트 체크 유지). 입력 후(7003)는 프라이머리 유지 */
+.app--add-empty .ds-checkbox__input:checked + .ds-checkbox__box {
+    background-color: var(--border-strong);  /* #dbdbdb */
+    border-color: var(--border-strong);
+}

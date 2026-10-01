@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플오더 메뉴관리 메뉴</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-50-S">
+<form name = "frm" id = "frm" method="post">
+		<input id="BP_AFLT_SEQ" name = "BP_AFLT_SEQ" type="hidden" value="">
+		<input id="BP_AFLT_CATG_SEQ" name = "BP_AFLT_CATG_SEQ" type="hidden" value="0">
+		<input id="BP_AFLT_CATG_NM" name = "BP_AFLT_CATG_NM" type="hidden" value="">
+		<input id="BP_AFLT_PDT_SEQ" name = "BP_AFLT_PDT_SEQ" type="hidden" value="0">
+	</form>
+	<input id="IMG_PATH_INFO" name = "IMG_PATH_INFO" type="hidden" value="">
+	<input id="THUMB_IMG_PATH_INFO" name = "THUMB_IMG_PATH_INF" type="hidden" value="">
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>메뉴 관리</h1>
+			<a data-element-id="BPG-OBO-50-S-e11" href="#" class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 비플오더 -->
+				<div class="flexWrap">
+					<div class="bpleOder add_flex_column addBtn-pb56">
+						<div class="tab_menu four">
+							<a data-element-id="BPG-OBO-50-S-e07" data-nav-target="BPG-OBO-20-S" href="#" onclick="Common.simpleSubmit('bo_my_catg.act', {BP_AFLT_SEQ:''});return false;"><span>카테고리</span></a>
+							<a data-element-id="BPG-OBO-50-S-e12" href="#" onclick="return false;" class="on"><span>메뉴</span></a><!-- 선택 시 on 클래스 추가 -->
+							<a data-element-id="BPG-OBO-50-S-e08" data-nav-target="BPG-OBO-30-S" href="#" onclick="Common.simpleSubmit('bo_my_opt.act', {BP_AFLT_SEQ:''});return false;"><span>옵션</span></a>
+							<a data-element-id="BPG-OBO-50-S-e09" data-nav-target="BPG-OBO-40-S" href="#" onclick="Common.simpleSubmit('bo_my_orgin.act', {BP_AFLT_SEQ:''});return false;"><span>원산지</span></a>
+						</div>
+						<!-- 메뉴관리 컨텐츠 -->
+						<div class="menu_admin item-move" id="catg_pdt_div"><!-- sample:begin --><div class='list_add'><h3 class='ellipsis_max'>	<span>카테고리</span>	<span id='catg_sapn1'>홍길동</span></h3><div class='menu_list'><ul  id='pdt_ul' >		<li id='pdt_li1' class='sold_out' dsp_seq='1' pdt_seq='1' img_info=''  thumb_info='' pdt_info='' >			<div class='inner' name='pdt_div'>			<p class='moveBtn'><a><span class='blind'>메뉴순서변경</span></a></p>			<p class='photo' onclick='goMenuDetail($(this));'><a></a></p>			<div class='info_w'><p class='name push'>홍길동</p>				<p class='info'></p>				<p class='won'>4,500원</p>			</div>			<p class='modify_btn'><a onclick='uf_catgPdtSet(`catg_sapn1`,1,1,`Y`,`Y`,``,``);'><span class='blind'>메뉴수정</span></a></p>		</div>		</li></ul></div><div class='btn_add'><a onclick='uf_catgPdtReg(1,"catg_sapn1",0)'><span>+ 메뉴 추가</span></a></div></div></div></div><!-- sample:end --></div>
+					</div>
+					<!-- 항목별 없음 안내 -->
+					<div class="empty" style="display:none">
+						<p>메뉴 등록을 위해 카테고리 먼저 설정해 주세요.</p>
+					</div>
+				</div>
+				<!-- //비플오더 -->
+			</div>
+			<!-- // content -->
+
+			<!-- 하단 고정버튼 영역 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_white">
+					<a data-element-id="BPG-OBO-50-S-e10" data-nav-target="BPG-OBO-10-S" href="#none" onclick="Common.simpleSubmit('bo_my_main.act', {BP_AFLT_SEQ:''});" class="btn_default btn-style-h46 round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+						확인
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 영역 -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	<!-- 레이어팝업 -->
+	<div class="layer_overlay" id="pdtlayer" style="display:none;">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 설정팝업 -->
+				<div class="edit_pop">
+					<p class="btn_close">
+						<a onclick="uf_hide('pdtlayer');"><span class="blind">닫기</span></a>
+					</p>
+					<!-- 메뉴 수정 -->
+					<ul>
+						<li><a id="btn_save">메뉴 수정</a></li>
+						<li><a id="btn_del">메뉴 삭제</a></li>
+						<li><a id="btn_setview">메뉴 품절 및 숨김</a></li>
+					</ul>
+					<!-- //메뉴 수정 -->
+				</div>
+				<!-- //설정팝업 -->
+			</div>
+		</div>
+	</div>
+	<!-- layer_overlay -->
+	<div class="layer_overlay" id="setlayer" style="display:none;">
+		<!-- layerpopup -->
+		<div class="popup_w">
+			<div class="popup_con pd30">
+				<!-- 안내팝업_type1 -->
+				<div class="temp option">
+					<h2 class="ly_pop_tit">메뉴 품절 및 숨김</h2>
+					<p class="btn_close">
+						<a onclick="uf_hide('setlayer');"><span class="blind">닫기</span></a>
+					</p>
+					<!-- 텍스트 입력 -->
+					<div class="inner">
+						<div class="con">
+							<div class="opt_tit">
+								<h3>품절</h3>
+								<p>메뉴정보에서 품절로 표시돼요.</p>
+							</div>
+							<div class="active_ball">
+								<a id="btn_soldout">
+									<span class="ball">품절해제</span>
+								</a>
+							</div>
+						</div>
+						<div class="con">
+							<div class="opt_tit">
+								<h3>숨김</h3>
+								<p>메뉴정보에서 사라져요</p>
+							</div>
+							<div class="opt_ball">
+								<div class="active_ball">
+									<a id="btn_hide" class="on">
+										<span class="ball">숨김</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //텍스트 입력 -->
+					<!-- 버튼영역 -->
+					<div class="ly_pop_btw btn_full">
+						<a href="#none" class="typeA" id="btn_setsave">적용</a>
+					</div>
+					<!-- //버튼영역 -->
+				</div>
+				<!-- //안내팝업_type1 -->
+			</div>
+		</div>
+		<!-- //layerpopup -->
+	</div>
+	<!-- //layer_overlay -->
+	<!-- 사진상세보기 레이어팝업 -->
+	<div class="layer_overlay" id="img_detail" style="display:none;">
+		<div class="popup_w">
+			<div class="profile_photo_view">
+				<!-- 닫기버튼 -->
+				<div class="btn_photo_close">
+					<a id="close_img"><span class="blind">닫기</span></a>
+				</div>
+				<!-- //닫기버튼 -->
+				<!-- 이미지 영역 -->
+				<div class="photo_w">
+					<img id="img_area" src="../assets/resource/images/profile/photo_view_dummyImg.png" alt="이미지">
+				</div>
+				<!-- //이미지 영역 -->
+				<!-- 메세지 영역 - 텍스트 불필요 시 div class="inner" 내부 태그 삭제 -->
+				<div class="intro_msg">
+					<div class="inner">
+						<p id="info_area">
+							우리 가맹점 사진입니다. 다섯 테이블 정도 있어요.<br>
+							모두들 놀러 오세요~
+						</p>
+					</div>
+				</div>
+				<!-- //메세지 영역 -->
+			</div>
+		</div>
+	</div>
+	<!-- //사진상세보기 레이어팝업 -->
+</body>
+</html>

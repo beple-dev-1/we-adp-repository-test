@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../assets/webview_api/css/style.css">
   <link rel="stylesheet" href="../assets/webview_api/css/header.css">
   <link rel="stylesheet" href="../assets/webview_api/css/popup.css">
+  <link rel="stylesheet" href="../assets/raon/transkey_mobile/transkey.css">
 </head>
 <body data-screen-id="EXW-UWV-70-30-40-C">
 <!-- [D] 보안키패드 사용 시 "custom-transkey" 추가 -->
@@ -15,7 +16,7 @@
 		<!-- 헤더 -->
 		<header class="header position-sticky">
 			<nav class="header__navi">
-				<a id="btn_close" class="header__btn btn-back">
+				<a data-element-id="EXW-UWV-70-30-40-C-e01" id="btn_close" class="header__btn btn-back">
 					<span class="blind">페이지 닫기</span>
 				</a>
 			</nav>
@@ -59,8 +60,8 @@
 				</section>
 
 				<section class="container" style="display: ;">
-					<article class="button-box-spacing pdt12" style="display: none;">
-						<a href="#none" class="button button-xl button--lv1 dis"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+					<article class="button-box-spacing pdt12">
+						<a data-element-id="EXW-UWV-70-30-40-C-e02" href="#none" class="button button-xl button--lv1 dis"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
 							<span>확인</span>
 						</a>
 					</article>
@@ -69,7 +70,7 @@
 		</main>
 	</div>
     <!-- 로딩 -->
-    <div class="loading">
+    <div class="loading" style="display:none;">
         <div class="loading_inner">
             <div class="ui-loader loader-blk">
                 <svg viewBox="22 22 44 44" class="multiColor-loader">

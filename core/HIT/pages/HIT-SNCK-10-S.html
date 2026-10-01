@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>다과 신청 내역 (list)</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-SNCK-10-S">
+<div class="wrap js-wrap" >
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-SNCK-10-S-e03" class="hd-btn back" id='btnBack'><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title" >
+            <h1 class="header-title" >다과 신청 내역</h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <div class="noti-container" id='openFrshInfo' >
+            <div class="noti-wrap" >
+                <p class="noti-text icon noti-24" >다과 안내</p>
+            </div>
+        </div>
+
+        <div class="orderling_list-container" id='listArea'>
+            <div class="list-box" id="frshList"><!-- sample:begin --><div class="list-item"><div class="item-hd"><p class="item-hd-text date">2026.09.02 14:22</p><p class="item-hd-text state"><span>접수대기</span></p></div><div class="item-content"><div class="content-hd"><p class="name"><a onclick="frshDetail('1');"><span class="tx_ellipsis line2 icon arr_right-20">안내</span></a><a onclick="frshDetail('1');"><span class="tx_ellipsis line2 icon arr_right-20">안내</span></a></p></div><div class="content-dtl"><div class="content__text-wrap"><p class="content-text head">행사 일자</p><p class="content-text tx_ellipsis">2026.09.02 14:22</p></div><div class="content__text-wrap"><p class="content-text head">신청 업체</p><p class="content-text tx_ellipsis">홍길동</p></div></div></div></div><!-- sample:end --></div>
+        </div>
+        <section class="end-container content-none" id='noneListArea' style="display:none;">
+            <article class="end__item-wrap">
+                <div class="end-box">
+                    <div class="end-item flex-row">
+                        <p class="icon content_none-58"><span class="blind-i">내역없음</span></p>
+                    </div>
+                    <div class="end-item mgt12">
+                        <p class="end-text">다과 신청 내역이 없습니다.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <!-- 플로팅 박스 -->
+        <section class="floating-container bottom js-floating-wrap" style="display:;"><!-- 미사용 시 style="displaty:none" -->
+            <article class="main_btn-box bg-white">
+                <div class="btn-main">
+                    <a data-element-id="HIT-SNCK-10-S-e04" onclick='frshApplication()' class="btn-default radius-mid btn-style-h48 on">다과 신청</a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+                </div>
+            </article>
+        </section>
+    </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>제로페이 결제 메인 > 계좌 목록</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-PAY-20-S">
+<script>
+    var _app_os = "";
+</script>
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="CORP_NM" name="CORP_NM" value="" />
+    <input type="hidden" id="CARD_NO" name="CARD_NO" value="" />
+    <input type="hidden" id="REC_INDEX" name="REC_INDEX" value="" />
+    <input type="hidden" id="PROD_DV" name="PROD_DV" value="" />
+    <input type="hidden" id="ACCT_NO_MULTI" name="ACCT_NO_MULTI" value="" />
+    <input type="hidden" id="BANK_NM_MULTI" name="BANK_NM_MULTI" value="" />
+    <input type="hidden" id="BANK_CD_MULTI" name="BANK_CD_MULTI" value="" />
+    <input type="hidden" id="MNY_YN"        name="MNY_YN"        value="" />
+    <input type="hidden" id="MEAL_YN" name="MEAL_YN" value="" />
+    <input type="hidden" id="MNY_CUR_PRICE" name="MNY_CUR_PRICE" value="" />
+</form>
+<input type="hidden" id="APP_CD" name="APP_CD" value=""/>
+<input type="hidden" id="MEMB_CD" value="">
+<div class="wrap bg_grey">
+    <div class="header floating-back-header floating-sticky">
+        <a data-element-id="BPY-PAY-20-S-e03" id="go_back" href="#" class="btn-history-back" role="button">상위 메뉴로 이동</a>
+        <h1 style="position: relative"></h1>
+        <!-- <div class="right">
+            <a href="#none" class="btn_outpage">페이지나가기</a>
+        </div> -->
+    </div><!-- // header -->
+    <div class="container">
+        <div class="content">
+            <div class="biz_acc_w">
+                <!-- 컨텐츠 영역 -->
+                <div class="acc_select">
+                    <h2 class="tit">결제 계좌</h2>
+                    <ul class="acc_list">
+                        <!-- 2022-05-19 -->
+                        
+                            <li>
+                                <div class="inner">
+                                    <p class="img">
+                                        <img src="../assets/resource/images/bpmoney/icon_money_56.png" alt="비플머니">
+                                    </p>
+                                    <p class="name" name="bpmnyDetail">비플머니</p>
+                                    <p class="won" name="bpmnyDetail"><span>4,500</span>원</p>
+                                    <p class="payBtn"><a data-element-id="BPY-PAY-20-S-e04" name="apprPrvt"  class="btn_pay" role="button" mny_yn="Y">결제</a></p>
+                                </div>
+                            </li>
+                        
+                        <!-- //2022-05-19 -->
+                    
+                        
+                            <!-- 기업계좌 -->
+                            
+                                
+                                        
+                                            <!-- 식권인경우 -->
+                                            
+                                                <li class="siggwon">
+                                            
+                                            <div class="inner">
+                                                <p class="img">
+                                            <!-- 식권인경우 -->
+                                                
+                                                    <img alt="비플머니" src="../assets/_sample/card.svg">
+<!--
+                                                    <span class="ico_accp" name="corpDetail" recIndex="" style="background: url('../assets/_sample/card.svg') no-repeat 50% 50%;"> -->
+
+                                                
+                                                </p>
+                                                            <!--<span class="blind">비플머니
+                                                            </span>
+                                                    </span> -->
+                                                        <div name="corpDetail" class="acc_paycn" recIndex="" >
+                                                            <!-- 민간기업 -->
+                                                            
+                                                                    
+                                                                
+                                                                                                                                            
+                                                                        
+                                                                        <p class="name tx_ellipsis" title="비플머니" style="white-space:nowrap;">비플머니</p>
+                                                                        
+                                                                        <p class="acc" style="white-space:nowrap;"></p>
+                                                                    
+
+                                                                
+                                                            <!-- 민간기업 -->
+
+                                                            <!-- 지방정부 -->
+                                                            
+                                                            <!-- 중앙정부 -->
+                                                        </div>
+                                                <p class="payBtn"><a name="apprCorp" class="btn_pay" setl_imps_rsn_dtl="" prod_dv="" corp_nm="비플머니" card_no="" tg_sttl_yn="" role="button">결제</a></p>
+                                                    <!--지방정부, 일반기업-->
+                                                <!--
+                                                
+
+                                                    
+                                                    
+                                                        <li class="txt_btm">
+                                                            <p class="txt_v">비플머니</p>
+                                                        </li>
+                                                    
+                                                    
+                                                
+                                                
+                                                -->
+                                                <!--중앙 정부-->
+                                                
+                                            </div>
+                                            </li>
+                                        
+                            
+                            <!-- //기업계좌 -->
+                        
+                    
+                    
+                        
+                           
+                            <!-- 개인계좌 -->
+                            
+                                
+                                            <li>
+                                                <!--<div class="acc_paycn appr_account">-->
+                                                <div class="inner">
+                                                    <p class="img">
+                                                    <img tabindex="1" src='../assets/image/bank/ico_account_kb.png' alt='국민은행'>
+                                                    <!--<span role="img" tabindex="1" aria-label="" class="ico_accp ico_accpkb"><span class="blind">국민은행</span></span>-->
+                                                    </p>
+                                                    <p class="name">내 계좌</p>
+                                                    <p class="acc">국민은행()</p>
+                                                    <p class="payBtn"><a name="apprPrvt" acct_no="" bank_nm="국민은행" bank_cd="kb" class="btn_pay" role="button">결제</a></p>
+                                                </div>
+                                            </li>
+
+                                            <!--비플 코인-->
+    <!--                                        -->
+    <!--                                            <li>-->
+    <!--                                                <span class="ico_accp ico_accpb"><span class="blind">비플코인</span></span>-->
+    <!--                                                <div class="acc_paycn">-->
+    <!--                                                    <p class="tit">비플코인</p>-->
+    <!--                                                    <p class="txt">잔액 2,000원</p>-->
+    <!--                                                </div>-->
+    <!--                                                <a class="btn_pay"><span>결제하기</span></a>-->
+    <!--                                            </li>-->
+    <!--                                        -->
+                                            <!--비플 코인-->
+
+                            
+                            <!-- //개인계좌 -->
+                        
+                    
+                    
+                    	<li>
+                    		<div class="inner">
+	                    		<p class="img">
+	                    			<img src="../assets/image/bank/ico_account_taxi.png" alt='비플 택시 결제'>
+	                    		</p>
+	                    		<p class="name">비플 택시 결제</p>
+	                    		<p class="acc tx_ellipsis">택시 요금 결제</p>
+	                    		<p class="payBtn">
+	            					<a name="apprTaxi" class="btn_pay" role="button">결제</a>
+	        					</p>
+                    		</div>
+                    	</li>
+					
+                    </ul>
+
+                </div>
+            </div>
+        </div><!-- //컨텐츠 영역 -->
+    </div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

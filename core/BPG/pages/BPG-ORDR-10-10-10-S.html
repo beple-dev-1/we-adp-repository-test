@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>결제완료</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-ORDR-10-10-10-S">
+<form method="post" name="frm" id="frm">
+    <input type="hidden" id="TRX_DT"        name="TRX_DT"   value=""/>
+    <input type="hidden" id="TRX_SEQ"       name="TRX_SEQ"  value=""/>
+    <input type="hidden" id="AFLT_NM"       name="AFLT_NM"  value=""/>
+    <input type="hidden" id="ORDER_ID"      name="ORDER_ID" value=""/>
+    <input type="hidden" id="RECV_TYPE"      name="RECV_TYPE" value=""/>
+    <input type="hidden" id="ORDER_TYPE"    name="ORDER_TYPE" value="O"/>
+    <input type="hidden" id="BIZ_CD_NM"     name="BIZ_CD_NM" value="SMT"/>
+</form>
+
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        
+        <h1>결제완료</h1>
+        
+        <a data-element-id="BPG-ORDR-10-10-10-S-e04" id="go_main" href="#" class="btn_outpage">뒤로가기</a>
+    </div><!-- // header -->
+    
+    <!-- container -->
+    <div class="container">
+    
+        <div class="contents">
+            <!-- 결제완료 -->
+            <!-- 
+                결제완료 = ''
+                결제실패 = ' complete_box fail' 'fail'클래스 추가
+            -->
+            <div class="complete_box">
+                <div class="inner">
+                    <p class="ico"></p>
+                    <h2>
+                        비플카페 역삼점<br>
+                        <strong>4,500원</strong>
+                    </h2>
+                    <p>
+                        결제가 정상적으로 완료되었습니다.
+                    </p>
+                    <!-- 전자영수증 보기 -->
+                    <div class="btn">
+                        <a>
+                            <span id="odr_receipt">전자 영수증 보기</span>
+                        </a>
+                    </div>
+                    <!-- //전자영수증 보기 -->
+                </div>
+            </div>
+            <!-- //결제완료 -->
+
+            <!-- 하단 고정버튼 -->
+            <div class="btn_botFix_w">
+                <div class="inner">
+                    <a data-element-id="BPG-ORDR-10-10-10-S-e05" id="odr_purchase_info" class="btn_default btn-style-h46 round_r8 on"><!-- 활성화클래스 on -->
+                        주문내역 보기
+                    </a>
+                </div>
+            </div>
+            <!-- //하단 고정버튼 -->
+        </div>
+        
+    
+    
+    </div>
+    <!-- //container -->
+</div><!-- // wrap -->
+</body>
+</html>

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../assets/webview_api/css/style.css">
   <link rel="stylesheet" href="../assets/webview_api/css/header.css">
   <link rel="stylesheet" href="../assets/webview_api/css/popup.css">
+  <link rel="stylesheet" href="../assets/raon/transkey_mobile/transkey.css">
 </head>
 <body data-screen-id="EXW-UWV-30-30-S">
 <!-- ============================================================
@@ -43,18 +44,13 @@
 	<div class="wrap" com-step-id="step1">
 		<!-- 헤더 -->
 		<header class="header position-sticky">
-			<nav class="header__navi">
-				<a id="btn_info_back" href="#none" class="header__btn btn-back">
-					<span class="blind">이전페이지로</span>
-				</a>
-			</nav>
-
+			<!-- 첫 단계라 되돌릴 곳이 없다. 뒤로가기를 두지 않고 닫기만 남긴다. -->
 			<div class="header__title-wrap">
 				<h1 class="page-name"><span>본인인증</span></h1>
 			</div>
 
 			<nav class="header__navi">
-				<a id="btn_cancel" href="#none" class="header__btn btn-close">
+				<a data-element-id="EXW-UWV-30-30-S-e03" id="btn_cancel" href="#none" class="header__btn btn-close">
 					<span class="blind">닫기</span>
 				</a>
 			</nav>
@@ -109,7 +105,7 @@
 											<!-- js-phone-number — common-ui.js 가 하이픈을 넣어 13자로 맞춘다.
 											     단계 완료 판정이 maxlength 13 을 그대로 보므로 하이픈을 벗기면 안 된다. -->
 											<div class="input-type--line js-phone-number">
-												<input id="mob_no" type="tel" value="" placeholder="휴대폰번호" maxlength="13" inputmode="numeric">
+												<input data-element-id="EXW-UWV-30-30-S-e05" id="mob_no" type="tel" value="" placeholder="휴대폰번호" maxlength="13" inputmode="numeric">
 											</div>
 										</div>
 									</div>
@@ -124,7 +120,7 @@
 
 										<div class="form__item-wrap">
 											<div class="input-type--line">
-												<button type="button" class="input-unit fc-placeholder js-select--result js-popup-open" data-modal="popup-select--telecom">
+												<button data-element-id="EXW-UWV-30-30-S-e01" type="button" class="input-unit fc-placeholder js-select--result js-popup-open" data-modal="popup-select--telecom">
 													<span id="tel_corp" class="target">통신사 선택</span><i class="icon icon--arrow-24 pointer-bottom"></i>
 												</button>
 											</div>
@@ -141,7 +137,7 @@
 
 										<div class="form__item-wrap">
 											<div class="input-type--line">
-												<input id="birth" type="text" inputmode="numeric" value="" placeholder="생년월일 6자리" maxlength="6">
+												<input data-element-id="EXW-UWV-30-30-S-e06" id="birth" type="text" inputmode="numeric" value="" placeholder="생년월일 6자리" maxlength="6">
 												<span class="between-bar">-</span>
 												<input id="gender" type="text" inputmode="numeric" value="" placeholder="0" maxlength="1">
 												<div class="currency-box">
@@ -166,7 +162,7 @@
 
 										<div class="form__item-wrap">
 											<div class="input-type--line">
-												<input id="name" type="text" value="" placeholder="이름" enterkeyhint="next">
+												<input data-element-id="EXW-UWV-30-30-S-e08" id="name" type="text" value="" placeholder="이름" enterkeyhint="next">
 											</div>
 										</div>
 									</div>
@@ -181,7 +177,7 @@
 				     `.button.button.dis{pointer-events:none !important}` 라 한 번 어긋나면 되살릴 수 없다. -->
 				<section class="container-floating js-floating-container">
 					<div class="floating__box button-box-spacing">
-						<a id="btn_info_next" href="#none" class="button button-xl button--lv1 dis js-step-submit">
+						<a data-element-id="EXW-UWV-30-30-S-e04" id="btn_info_next" href="#none" class="button button-xl button--lv1 dis js-step-submit">
 							<span>인증번호 전송</span>
 						</a>
 					</div>
@@ -460,6 +456,14 @@
 	<div class="wrap" com-step-id="step4" style="display:none;">
 		<!-- 헤더 -->
 		<header class="header position-sticky">
+			<!-- 눌린 시점의 _phase 로 갈린다 — 재입력 중이면 첫 입력으로, 첫 입력 중이면 step1 로.
+			     href 를 두지 않는다. #btn_close 와 같은 이유로 기본 이동이 없어야 한다. -->
+			<nav class="header__navi">
+				<a id="btn_pwd_back" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav>
+
 			<div class="header__title-wrap">
 				<h1 class="page-name"><span></span></h1>
 			</div>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점프로필 > 메뉴 수정</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-MYAF-10-40-S">
+<style>
+	body{
+		overflow-x:hidden;
+	}
+</style>
+<input type="hidden" id="AFLT_ID" name="AFLT_ID" value=""/>
+<input type="hidden" id="MENU_CNT" name="MENU_CNT" value=""/>
+<input type="hidden" id="ENTER_FLAG" name="ENTER_FLAG" value=""/>
+<input type="hidden" id="MEMB_CD" name="MEMB_CD" value=""/>
+<input type="hidden" id="APP_CD" name="APP_CD" value=""/>
+
+<form id="frm">
+</form>
+<div class="wrap bg_f7">
+	<div class="header floating-back-header floating-sticky">
+		<h1>메뉴 등록</h1>
+		<a data-element-id="BPY-MYAF-10-40-S-e07" id="btn_back" href="#" class="btn-history-back">뒤로가기</a>
+	</div>
+	<!-- // header -->
+
+	<div class="container" id="step1">
+		<div class="content">
+			<!-- 메뉴 등록 -->
+			<div class="store_profile addBtn-pb56">
+				<div class="tit_bx">
+					<h2>
+						<strong>메뉴를 추가해 주세요.</strong>
+					</h2>
+					<p>한 장당 10MB 이하, 최대 10개 메뉴 추가 가능</p>
+				</div>
+
+				<div class="list_add">
+				<!-- 메뉴목록 -->
+					<div class="menu_list">
+						<ul id="menu_ul">
+						
+							 
+								<li pdt_seq=""
+								    img_info="" thumb_info="" amt_fix_yn="4,500" 
+								    pdt_info="" rcmd_yn="" pdt_price="4,500" dsp_seq=""
+								    adult_lvl="" violence_lvl="" racy_lvl="" medical_lvl="" spoof_lvl="">
+									<div class="inner" name="menu_div">
+										<p class="moveBtn"><a data-element-id="BPY-MYAF-10-40-S-e08" href="#none"><span class="blind">메뉴순서변경</span></a></p>
+										<p class="photo"><a data-element-id="BPY-MYAF-10-40-S-e09" href="#none" name="menu_thumb">
+											
+												<img src="../assets/resource/images/profile/img_info_thumbnail.png" alt="메뉴사진">
+											
+										</a></p>
+										<div class="info_w">
+											<p class="name push" name="pdt_nm" pdt_nm="비플머니">비플머니
+											<p class="info"></p>
+											<p class="won">4,500 </p>
+										</div>
+										<p class="modify_btn"><a data-element-id="BPY-MYAF-10-40-S-e10" href="#none"><span class="blind">메뉴수정</span></a></p>
+									</div>
+								</li>
+							
+						
+						<!-- 
+							<li>
+								<div class="inner">
+									<p class="moveBtn"><a href="#none"><span class="blind">메뉴순서변경</span></a></p>
+									<p class="photo"><a href="#none"><img src="../assets/resource/images/profile/menu_dummy_1.png" alt="메뉴사진"></a></p>
+									<div class="info_w">
+										<p class="name">아메리카노 <span class="push"><img src="../assets/resource/images/profile/ico_push.png" alt="추천메뉴"></span></p>
+										<p class="info">맛있는 카페 아메리카노</p>
+										<p class="won">5,000원</p>
+									</div>
+									<p class="modify_btn"><a href="#none"><span class="blind">메뉴수정</span></a></p>
+								</div>
+							</li>
+							 -->
+						</ul>
+					</div>
+					<!-- //메뉴목록 -->
+					<!-- 메뉴 추가 버튼 -->
+					<div class="btn_add">
+						<a data-element-id="BPY-MYAF-10-40-S-e11" href="#none" id="btn_add_menu">
+							<span>+ 메뉴 추가</span>
+						</a>
+					</div>
+					<!-- //메뉴 추가 버튼 -->
+				</div>
+			</div>
+			<!--//메뉴 등록 -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_grey">
+					<a data-element-id="BPY-MYAF-10-40-S-e12" id="btn_save" href="#" class="btn_default btn-style-h46 round_r8 on"><span>저장</span></a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+	</div><!-- // container -->
+	
+	<div class="container" id="step2" style="display:none !important;">
+		<div class="content">
+			<!-- 메뉴 등록 -->
+			<div class="store_profile addBtn-pb56">
+				<!-- 메뉴사진 -->
+				<div class="thumb_bx">
+					<div class="inner" id="btn_photo">
+						<p class="thumbNail"><a href="#none" title="사진상세보기"><img id="menu_img_u" src="../assets/resource/images/profile/img_info_thumbnail.png" alt="메뉴사진"></a></p>
+						<p class="thumb_modify"><a href="#none"><span class="blind">사진수정</span></a></p>
+					</div>
+				</div>
+				<!-- //메뉴사진 -->
+				
+                <!-- 상품정보 -->
+				<div class="store_info_box">
+					<div class="inner">
+						<h3 class="info_tit"><strong>상품명(필수)</strong></h3>
+                        <div class="iptbx">
+                            <div class="inner">
+                                <input id="pdt_nm" type="text" placeholder="상품명을 입력해 주세요. (ex. 아메리카노, PT1회권)"/>
+                            </div>
+                        </div>
+                        <div class="chk_bx"><label><input id="rcmd_chk" type="checkbox">추천 메뉴로 등록하기</label></div>
+
+                        <h3 class="info_tit"><strong>상품소개(선택)</strong></h3>
+                        <div class="iptbx">
+                            <div class="inner">
+                                <input  id="pdt_info" type="text" placeholder="상품소개를 입력해 주세요."/>
+                            </div>
+                        </div>
+
+                        <h3 class="info_tit"><strong>가격(필수)</strong></h3>
+                        <div id="price_div" class="iptbx"><!-- 변동가격 체크 시 dis 클래스 추가 -->
+                            <div class="inner">
+                                <input id="pdt_price" maxlength="11" type="tel" placeholder="금액을 입력해 주세요."><!-- 변동가격 체크 시 disabled -->
+                                <span class="won">원</span>
+                            </div>
+                        </div>
+                        <div class="chk_bx"><label><input id="price_chg" type="checkbox">변동가격</label></div>                        
+					</div>
+				</div>
+                <!-- // 상품정보 -->
+			</div>
+			<!--//메뉴 등록 -->
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_grey">
+					<a href="#" class="btn_default btn-style-h46 round_r8 on" id="btn_edit"><span>확인</span></a><!-- 활성/비활성화 시 클래스 on 추가/제거 -->
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+	</div><!-- // container -->
+	
+</div><!-- // wrap -->
+<!-- 레이어팝업 -->
+<div class="layer_overlay" id="dim_menu" style="display:none;">
+	<div class="layer_bPop">
+		<div class="popup_con pd0">
+			<!-- 사진 추가/수정 시 dim 팝업 -->
+			<div class="st_profile_pop">
+				<!-- 메뉴선택 -->
+				<ul>
+					<li><a id="btn_upd" href="#none">수정하기</a></li>
+					<li><a id="btn_del" href="#none">삭제하기</a></li>
+				</ul>
+				<!-- //메뉴선택 -->
+			</div>
+			<!-- //사진 추가/수정 시 dim 팝업 -->
+		</div>
+	</div>
+</div>
+<!-- //레이어팝업 -->
+
+<!-- 사진상세보기 레이어팝업 -->
+<div class="layer_overlay" id="img_detail" style="display:none;">
+	<div class="popup_w">
+		<div class="profile_photo_view">
+			<!-- 닫기버튼 -->
+			<div class="btn_photo_close">
+				<a href="#none" id="close_img"><span class="blind">닫기</span></a>
+			</div>
+			<!-- //닫기버튼 -->
+			<!-- 이미지 영역 -->
+			<div class="photo_w">
+				<img id="img_area" src="../assets/resource/images/profile/photo_view_dummyImg.png" alt="이미지">
+			</div>
+			<!-- //이미지 영역 -->
+			<!-- 메세지 영역 - 텍스트 불필요 시 div class="inner" 내부 태그 삭제 -->
+			<div class="intro_msg">
+				<div class="inner">
+					<p id="info_area">
+						우리 가맹점 사진입니다. 다섯 테이블 정도 있어요.<br>
+						모두들 놀러 오세요~
+					</p>
+				</div>
+			</div>
+			<!-- //메세지 영역 -->
+		</div>
+	</div>
+</div>
+<!-- //사진상세보기 레이어팝업 -->
+
+<!-- 사진 수정 레이어팝업 -->
+<div class="layer_overlay" id="edit_dim" style="display:none;">
+	<div class="layer_bPop">
+		<div class="popup_con pd0">
+			<!-- 사진 추가/수정 시 dim 팝업 -->
+			<div class="st_profile_pop">
+				<!-- 메뉴선택 -->
+				<ul id="btn_menu">
+					<li><a href="#none">기본 이미지로 변경</a></li>
+					<li><a href="#none">사진 촬영</a></li>
+					<li><a href="#none">앨범에서 가져오기</a></li>
+				</ul>
+				<!-- //메뉴선택 -->
+			</div>
+			<!-- //사진 추가/수정 시 dim 팝업 -->
+		</div>
+	</div>
+</div>
+<!-- //레이어팝업 -->
+</body>
+</html>

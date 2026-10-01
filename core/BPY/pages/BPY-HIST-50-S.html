@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>거래내역화면 v2</title>
+  <link rel="stylesheet" href="../assets/resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_reset.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+</head>
+<body data-screen-id="BPY-HIST-50-S">
+<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<nav class="header__navi">
+				<a data-element-id="BPY-HIST-50-S-e10" id="go_main" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav>
+
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span>결제 내역</span></h1>
+			</div>
+		</header>
+
+		<main class="container-wrap js-container-wrap">
+			<!-- 컨테이너 -->
+			<div class="container js-container">
+				<div class="pay-history">
+					<!-- 컨테이너 헤더 -->
+					<header class="pay-history__header filter-container justify-spacing-def">
+						<div class="filter__body">
+							<button data-element-id="BPY-HIST-50-S-e07" class="button button-small button--lv5 radius-lv5 active" id="period_tx"><!-- [D] 설정되면 active 클래스 추가. -->
+								<span>3개월</span>
+								<i class="icon	icon--arrow-16 pointer-bottom"></i>
+							</button>
+							<!-- 2차 개발 -->
+							<!-- <button class="button button-small button--lv5 radius-lv5" id="trx_kind_tx">
+								<span>결제종류</span>
+								<i class="icon	icon--arrow-16 pointer-bottom"></i>
+							</button> -->
+							<button data-element-id="BPY-HIST-50-S-e08" class="button button-small button--lv5 radius-lv5" id="pay_tp_tx">
+								<span>결제수단</span>
+								<i class="icon	icon--arrow-16 pointer-bottom"></i>
+							</button>
+							<button data-element-id="BPY-HIST-50-S-e09" class="button button-small button--lv5 radius-lv5" id="trx_st_tx">
+								<span>결제상태</span>
+								<i class="icon	icon--arrow-16 pointer-bottom"></i>
+							</button>
+						</div>
+					</header>
+
+					<!-- 컨테이너 바디 -->
+					<section class="pay-history__body" id="tran_list_content"><!-- [D] 목록 없을 시 display: none; -->
+                        <!-- 결제내역 -->
+                        <div class="pay-history__wrap" id="tran_list">
+
+                            <!-- 연도별 -->
+                            <section class="pay-history__year" id="sample_section_1">
+                                <!-- 바디 헤더 -->
+                                <div class="body__header justify-spacing-def">
+                                    <h4 class="container__headline container__headline--lv1" id="trx_yyyy" data-value=""></h4><!-- 2025 -->
+                                </div>
+    
+                                <!-- 바디 컨텐츠 -->
+                                <div class="body__content justify-spacing-def">
+                                    <section class="flex-column" id="sample_section_2">
+                                        <!-- 월, 일 -->
+                                        <div class="column__head">
+                                            <h5 class="container__headline container__headline--lv1 fw-600" id="trx_date" data-value=""></h5><!-- 01.02(목) -->
+                                        </div>
+
+                                        <!-- 결제내역 -->
+                                        <div class="column__item" id="sample_item"><!-- [D] 결제 취소 시 item--cancel 클래스 추가. -->
+                                            <a data-element-id="BPY-HIST-50-S-e11" class="flex-column">
+                                                <div class="item__header">
+                                                    <p class="info__text--lv2 item__title ellipsis-line--1" id="aflt_nm"></p>
+                                                    <p class="info__text--lv2 item__price"><strong id="price"></strong>원</p>
+                                                </div>
+                                                <div class="item__details">
+                                                    <div class="status">
+                                                        <p class="info__text--lv1 status__item" id="trx_tm"></p><!-- 22:00 -->
+                                                        <p class="info__text--lv1 status__item status__cancel" id="trx_st1"></p><!-- 취소 -->
+                                                    </div>
+                                                    <p class="info__text--lv1" id="pay_tp_info"></p><!-- 복지포인트+비플머니 -->
+                                                </div>
+                                                <input id="tr_idx" type="hidden" />
+                                            </a>
+                                        </div>
+                                    </section>
+    
+                                </div>
+                            </section>
+                            
+                        </div>
+
+                        <!-- 더보기 버튼 -->
+                        <div class="mgt16 justify-spacing-def" id="btn_more">
+                            <a data-element-id="BPY-HIST-50-S-e12" href="#none" class="button button-mid button--more">
+                                <span>더보기</span><i class="icon icon--arrow-16 pointer-bottom"></i>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- 결제내역 없음. -->
+                <div class="container end-container js-container" id="no_tran_list" style="display: none;"><!-- [D] 목록 없을 시 display: none; 제거 -->
+                    <!-- 컨테이너 바디 -->
+                    <article class="container__body justify-spacing-def">
+                        <div class="body__content">
+                            <i class="icon icon--noti_fail-64" aria-hidden="true">조회 결과가 없습니다</i>
+                            <div class="desc-box">
+                                <p class="info__text--lv2">
+                                    조회 결과가 없습니다
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+			</div>
+		</main>
+		
+		<!-- 컨테이너 -->
+		<div class="popup-wrap js-popup-wrap" id="filter_popup" style="display:none;">
+			<section class="popup-container popup--bottom popup--filter">
+				<header class="popup-container__header">
+					<div class="popup-button">
+						<button type="button" class="popup-button--close js-popup-close" role="button" aria-label="팝업 창 닫기 버튼"  id="btn_popup_close">
+							<i class="icon icon--close-32">팝업 창 닫기</i>
+						</button>
+					</div>
+				</header>
+
+				<div class="popup-container__body justify-spacing-def">
+					<section class="body__content">
+						<div class="flex-column">
+							<div class="column__head">
+								<h4 class="container__headline container__headline--lv2">기간</h4>
+							</div>
+
+							<!-- 필터 -->
+							<div class="column__item filter-container">
+								<div class="filter__body" id="filter_period">
+									<button class="button button-small button--lv5 radius-lv5" data-value="1M">
+										<span>1개월</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5 active" data-value="3M">
+										<span>3개월</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5" data-value="M">
+										<span>월별</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5" data-value="">
+										<span>기간설정</span>
+									</button>
+								</div>
+							</div>
+							<!-- 데이트 피커 -->
+							<!-- 
+								[D] 월별 캘릭더 선택 시 date-picker--month 추가
+								[D] 기간설정 선택 시 date-picker--month 제거
+								------------------------------------------------
+								[D] 활성화 시 date-picker--disabled 제거
+								[D] 오류 시 date-picker--error 추가 
+								[D] 오류 시 date-picker--error 추가 
+							-->
+							<div class="column__item date-picker date-picker--disabled"><!-- [D] 활성화 시 date-picker--disabled 제거, [D] 오류 시 date-picker--error -->
+								<div class="date-picker__wrap">
+									<div class="date date--before">
+										<button type="button" class="date-button" id="from_btn">
+											<input type="tel" value="" readonly id="from_dt" name="from_dt" data-value="">
+											<i class="icon icon--calendar-24"></i>
+										</button>
+									</div>
+									<span class="dash"></span>
+									<div class="date date--after">
+										<button type="button" class="date-button" id="to_btn">
+											<input type="tel" value="" readonly id="to_dt" name="to_dt" data-value="">
+											<i class="icon icon--calendar-24"></i>
+										</button>
+									</div>
+								</div>
+								<p class="message fc-red" id="red_msg">최대 1년 단위로 선택할 수 있습니다.</p>
+								<input type="hidden" id="totD" name="totD">
+							</div>
+						</div>
+
+						<!-- 2차 개발 -->
+						<!-- <div class="flex-column">
+							<div class="column__head">
+								<h4 class="container__headline container__headline--lv2">결제종류</h4>
+							</div>
+							필터
+							<div class="column__item filter-container">
+								<div class="filter__body">
+									<button class="button button-small button--lv5 radius-lv5 active">
+										<span>전체</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5">
+										<span>온라인</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5">
+										<span>오프라인</span>
+									</button>
+								</div>
+							</div>
+						</div> -->
+
+						<div class="flex-column">
+							<div class="column__head">
+								<h4 class="container__headline container__headline--lv2">결제수단</h4>
+							</div>
+							<!-- 필터 -->
+							<div class="column__item filter-container" id="filter_pay_tp">
+								<div class="filter__body flex-wrap">
+									<button class="button button-small button--lv5 radius-lv5 active" data-value="">
+										<span>전체</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5" data-value="MNY">
+										<span>비플머니</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5" data-value="ACCT">
+										<span>계좌</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5" data-value="C">
+										<span>법인</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5" data-value="ETC">
+										<span>기타</span>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="flex-column">
+							<div class="column__head">
+								<h4 class="container__headline container__headline--lv2">결제 상태</h4>
+							</div>
+							<!-- 필터 -->
+							<div class="column__item filter-container" id="filter_trx_st">
+								<div class="filter__body">
+									<button class="button button-small button--lv5 radius-lv5 active" data-value="">
+										<span>전체</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5" data-value="PA">
+										<span>승인</span>
+									</button>
+									<button class="button button-small button--lv5 radius-lv5" data-value="PC">
+										<span>취소</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<section class="body__button--box button-box-spacing">
+					<button class="button button-xl button--lv1 col--block js-popup-close" id="btn_srch"><!-- [D] 비활성화 시 dis 클래스 추가 -->
+						<span>조회</span>
+					</button>
+				</section>
+			</section>
+		</div>
+	</div>
+</body>
+</html>

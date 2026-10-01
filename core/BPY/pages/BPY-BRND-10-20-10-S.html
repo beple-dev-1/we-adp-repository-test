@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>브랜드상품권 구매가능 상품권 목록조회</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-BRND-10-20-10-S">
+<form id="frm" name="frm">
+	<input type="hidden" name="BGC_ID" id="BGC_ID" value=""/>
+	<input type="hidden" name="MAIN_YN" id="MAIN_YN" value=""/>
+	<input type="hidden" name="KIND_CODE" id="KIND_CODE"/>
+	<input type="hidden" name="TRX_GB" id="TRX_GB" value="" >
+</form>
+
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1 class="ellipsis" id="bgc_nm"></h1><!-- 상품권 명 -->
+			<a data-element-id="BPY-BRND-10-20-10-S-e07" onclick="uf_back();" class="btn-history-back">뒤로가기</a>
+			<p class="search_btn"><a data-element-id="BPY-BRND-10-20-10-S-e08" id="btn_srch">상품권 검색</a></p>
+			<a data-element-id="BPY-BRND-10-20-10-S-e09" id="btn_outpage" class="btn_outpage">페이지나가기</a>
+		</div><!-- // header -->
+
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="br_gift_rn">
+					<!-- 상품권 리스트 -->
+					<div class="gift_list">
+						<!-- 상단 배너 -->
+						<div id="banner_bx" class="banner_bx" style="display:none;"><!-- sample:begin -->표본<!-- sample:end --></div>
+						<!-- 필터 -->
+						<div id="filter" class="filter">
+							<p class="sort"><a data-element-id="BPY-BRND-10-20-10-S-e10" id="sort_type" data-type="0">혜택순</a></p>
+							<div id="gift_type" class="cate">
+								<a data-element-id="BPY-BRND-10-20-10-S-e11" id="01" class="on">금액권</a><!-- 항목 선택 시 on 추가 -->
+								<a data-element-id="BPY-BRND-10-20-10-S-e12" id="02" class="on">교환권</a>
+							</div>
+						</div>
+						<!-- 상품권 목록 -->
+						<div id="kindList" class="list_area"><!-- sample:begin --><div class="item" pub="" code="004" bgc=""><a id="홍길동"><div class="item_img"><p class="img"></p><p class="special_price"><span>특가상품</span></p><p class="remainder"><span></span></p><p class="out"><span>소진 완료</span></p></div><div class="item_info"><p class="brand" title="홍길동">홍길동</p><p class="name" title="홍길동">홍길동</p></div><div class="item_price"><span class="discount">% </span><strong>4,500</strong>원</div></a></div><!-- sample:end --></div>
+					</div>
+					<!-- //상품권 리스트 -->
+				</div>
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	
+
+<!-- 레이어팝업 -->
+<div id="sort_layer" class="layer_overlay" style="display:none;">
+	<div class="layer_bPop">
+		<div class="popup_con pd0">
+			<!-- 정렬 필터 -->
+			<div class="br_n_sort">
+				<h2>정렬</h2>
+				<!-- 닫기버튼 -->
+				<p class="btn_close">
+					<a id="btn_close"><span class="blind">닫기</span></a>
+				</p>
+				<!-- //닫기버튼 -->
+				<!-- 필터 목록 -->
+				<ul class="list" id="sort_list" >
+					<li class="chk"><a id="0">혜택순</a></li><!-- 현재 선택된 항목 chk 클래스 추가 -->
+					<li><a id="1">판매량순</a></li>
+					<li><a id="2">신상품순</a></li>
+				</ul>
+				<!-- //필터 목록 -->
+			</div>
+			<!-- //정렬 필터 -->
+		</div>
+	</div>
+</div>
+<!-- //레이어팝업 -->
+
+<!-- layer_overlay -->
+<div class="layer_overlay" id="notice_layer" style="display:none;">
+	<!-- layerpopup -->
+	<div class="popup_w">
+		<div class="popup_con">
+			<!-- 안내팝업_type3 -->
+			<div class="temp info_pop">
+				<h2 class="ly_pop_tit fcRed" style="font-size:17px;">경찰, 검찰 사칭 보이스피싱 주의</h2>
+				<!-- 텍스트 입력 -->
+				<div class="inner">
+					<p class="msg_warning" style="font-size: 14px;">
+						최근 경찰, 검찰을 사칭한 보이스피싱 피해가 자주 발생하여,
+						<strong style="font-size: 14px;">고객님의 각별한 주의가 필요합니다.</strong>
+					</p>
+					<ol class="list_num mgb15" style="margin-top:15px !important;">
+						<li style="list-style:none !important;">
+							<p class="fcRed" style="font-size: 14px;">1. 앱 설치 후 상품권 구입을 요구 받은 경우</p>
+						</li>
+						<li style="list-style:none !important;">
+							<p class="fcRed" style="font-size: 14px;">2. 경찰 검찰을 사칭하여 범죄 연루 의심을 한다는 경우</p>
+						</li>
+					</ol>
+					<p class="msg_warning" style="font-size: 14px;">
+						보이스피싱 의심될 경우 <strong class="tx_underline" style="font-size: 14px; text-decoration: underline;">개인정보 및 상품권 정보를 절대 전달하지 말고 전화를 끊어주세요!</strong>
+					</p>
+				</div>
+				<!-- //텍스트 입력 -->
+				<!-- 버튼영역 -->
+				<div class="ly_pop_btw btns_half">
+					<a id="set_cookie" class="typeA long">오늘 하루 보지않기</a>
+					<a id="skip_cookie" class="typeC short">닫기</a>
+				</div>
+				<!-- //버튼영역 -->
+			</div>
+			<!-- //안내팝업_type3 -->
+		</div>
+	</div>
+	<!-- //layerpopup -->
+</div>
+<!-- //layer_overlay -->
+</body>
+</html>

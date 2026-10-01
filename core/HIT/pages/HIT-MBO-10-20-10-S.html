@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>장소 카테고리</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-10-20-10-S">
+<script>
+  	let onloadData = ``;
+  </script>
+  <div class="bp-root">
+    
+        
+    
+
+    <div class="bp-main">
+      <div class="layout">
+        <div class="row">
+          <div class="col col-10">
+            <div class="con-wrap">
+              
+              <div class="page-header">
+                <p class="tit-01 with-desc">
+                  장소 카테고리
+                  <span>
+                    딜리버리 장소의 상위 카테고리를 등록 할 수 있습니다.
+                  </span>
+                </p>
+              </div>
+
+              <div class="td-item-group mb12">
+                <div class="td-item">
+                  <div class="sel w120 td-item">
+                    <select data-element-id="HIT-MBO-10-20-10-S-e08" name="filter_status" id="filter-status" class="">
+                      <option value="">전체</option>
+                      <option value="A" selected>활성화</option>
+                      <option value="H">숨김</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div id="group-list"> <!--[D]근무지 그룹별 카드 리스트 — ent_afltbo_aff_delv.js buildGroupList() 가 그룹 섹션(헤더+카드+그룹별 "+추가하기")을 주입-->
+
+              </div>
+              <!--//[D]수정:20260902 — 단일 #sortable 목록을 근무지(WORK_CD) 그룹 섹션 컨테이너로 재구성. 그룹별 "+추가하기"는 그룹 섹션 안에 JS 가 렌더하므로 전역 버튼 블록 제거-->
+
+            </div><!--con-wrap-->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ===================================Modal===================================== -->
+<!-- new category modal -->
+  <div class="modal w370" id="new-catg-pop" style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type01">
+          <p class="tit">장소 카테고리 추가</p>
+          <div class="desc">카테고리를 추가해 주세요</div>
+        </div>
+        <button class="btn-close" type="button" onclick="pop.newCatgPop.close()">닫기</button>
+      </div>
+      <div class="modal-con">
+        <table class="data-table form-table no-bd">
+          <colgroup>
+            <col width="90px">
+            <col width="">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left pl0">카테고리명</th>
+              <td class="ta-right pr0">
+                <input name="" maxlength="20" id="new-catg-name" class="ip-txt w100p" type="text" value="" placeholder="카테고리명을 입력해 주세요">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn btn-md-a btn-primary" type="button" id="btn-save-catg">저장</button>
+        </div>        
+      </div>
+    </div>
+  </div>  
+  <div class="dim" id="new-catg-pop-dim" style="display:none;"></div>
+  
+  <!-- ---------------Update category Modal----------------------------------------- -->
+  <div class="modal w370" id="update-catg-pop" style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type01">
+          <p class="tit">카테고리 수정</p>
+          <div class="desc">카테고리를 수정해 주세요</div>
+        </div>
+        <button class="btn-close" type="button" onclick="pop.updateCatgPop.close()">닫기</button>
+      </div>
+      <div class="modal-con">
+        <table class="data-table form-table no-bd">
+          <colgroup>
+            <col width="90px">
+            <col width="">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left pl0">카테고리명</th>
+              <td class="ta-right pr0">
+                <input name="" maxlength="20" id="update-catg-name" class="ip-txt w100p" type="text" value="" placeholder="카테고리명을 입력해 주세요">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn btn-md-a btn-primary" type="button" id="btn-update-catg">저장</button>
+        </div>        
+      </div>
+    </div>
+  </div>  
+  <div class="dim" id="update-catg-pop-dim" style="display:none;"></div>
+  
+  <!-- modal ask for delete category -->
+  <div class="alert type02 w360" id="delete-catg-pop"><!--[D]active-->
+		<div class="inner">
+			<div class="alert-con">
+				<p class="txt-01 fc-111 fs-16 ta-center">
+					카테고리를 삭제하시겠습니까?
+				</p>
+			</div>
+			<div class="alert-footer">
+				<div class="btn-group">
+					<button data-element-id="HIT-MBO-10-20-10-S-e05" class="btn btn-md-a btn-primary-outline" type="button" onclick="pop.deletCatgPop.close()">아니오</button>
+					<button data-element-id="HIT-MBO-10-20-10-S-e06" class="btn btn-md-a btn-primary" type="button" id="btn-delete-catg">예</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dim" id='delete-catg-pop-dim' style="display:none;"></div><!--[D]active-->
+	
+	<!-- alert modal -->
+	<div class="alert type02 w360" id="empty-catg-nm-pop"><!--[D]active-->
+		<div class="inner">
+			<div class="alert-con">
+				<p class="txt-01 fc-111 fs-16 ta-center" id="alert-msg">
+					카테고리명을 입력해 주세요.
+				</p>
+			</div>
+			<div class="alert-footer">
+				<div class="btn-group">
+					<button data-element-id="HIT-MBO-10-20-10-S-e07" class="btn btn-md-a btn-primary" type="button" id="btn-reopen-pop">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dim" id="empty-catg-nm-pop-dim" style="display:none;"></div><!--[D]active-->
+	
+	<!-- alert can't delete category -->
+	<div class="alert type02 w360" id="cannot-delete-pop"><!--[D]active-->
+		<div class="inner">
+			<div class="alert-con">
+				<p class="txt-01 fc-111 fs-16 ta-center">
+					카테고리에 속한 메뉴가 있어 삭제가 불가능합니다.
+				</p>
+			</div>
+			<div class="alert-footer">
+				<div class="btn-group">
+					<button class="btn btn-md-a btn-primary" type="button" onclick="pop.cannotDeleteCatgPop.close()">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dim" id="cannot-delete-pop-dim" style="display:none;"></div><!--[D]active-->
+</body>
+</html>

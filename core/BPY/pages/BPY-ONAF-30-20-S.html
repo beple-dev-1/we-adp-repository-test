@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비대면결제 약관동의</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-ONAF-30-20-S">
+<!--<input type="hidden" id="ONAF_AGR_YN" value="표본" />-->
+
+<div class="wrap">
+	<div class="header floating-back-header floating-sticky">
+		<h1>비대면 결제</h1>
+		<a data-element-id="BPY-ONAF-30-20-S-e08" id="go_back" href="#" class="btn-history-back">뒤로가기</a>
+		<div class="right">
+			<a data-element-id="BPY-ONAF-30-20-S-e09" id="go_home" href="#none" class="btn_outpage">페이지나가기</a>
+		</div>
+	</div><!-- // header -->
+	<div class="container">
+		<div class="content">
+			
+
+        <div class="gift_accbx">
+            <div class="inner">
+                
+                        <!--<a class="link ico" id="selectedAcct">비플머니에서 결제됩니다.</a>-->
+                        <div class="tit ico" id="selectedAcct">비플머니에서 결제됩니다.</div>
+                        <input type="hidden" name="inc_mok_nm" id="inc_mok_nm" value=""/>
+                        <input type="hidden" name="inc_lmt_amt" id="inc_lmt_amt" value=""/>
+                        <input type="hidden" name="inc_card_no" id="inc_card_no" value=""/>
+                        <input type="hidden" name="inc_org_nm" id="inc_org_nm" value=""/>
+                        <input type="hidden" name="inc_cls_dsp_nm" id="inc_cls_dsp_nm" value=""/>
+
+                    
+
+            </div>
+        </div>
+
+        
+            <!-- 레이어 -->
+            <div class="layer_bPop" id="layer_acct_onaf" style="display:none;">
+                <div class="pop_box">
+                    <div class="pop_content">
+                        <div class="pop_b_cn type1">
+                            <div class="p_lytit">
+                                계좌선택
+                                <!--<div class="right" id="manage_acct"><a class="link">계좌관리</a></div>-->
+                            </div>
+                            <div class="p_acc_sltbx">
+                                <ul>
+
+                                    <li onClick="fn_selectedCp('', '비플머니', '', '')"><span class="ic_b ic_b1"></span>비플머니 계좌</li>
+                                    
+                                            <li onClick="fn_selectedCp('', '비플머니', '', '')"><span class="ic_b ic_b"></span>비플머니 계좌</li>
+                                            
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //레이어 -->
+
+        
+
+    <script type="text/javascript">
+        var path = window.location.pathname;
+        var pageName = path.split("/").pop(); //현재 페이지명
+
+        if(pageName.indexOf("zero_onaf2_approve.act") == -1){
+            $("#selectedAcct").removeClass("ico");
+        }
+
+        $("body").click(function(e){
+            //결제계좌선택 레이어 영역이 아닌 경우, hide
+            if($("#layer_acct_onaf").is(":visible")){
+                if( !$(e.target).parents().is($("#layer_acct_onaf")) && !$(e.target).parents().is($(".gift_accbx")) ){
+                    $("#layer_acct_onaf").hide();
+                }
+            }
+        });
+
+        $(".gift_accbx").click(function(){
+            //결제하기 페이지에서만 결제계좌 선택 가능하도록
+            if(pageName.indexOf("zero_onaf2_approve.act") > -1){
+                //결제계좌선택 레이어 show
+                $("#layer_acct_onaf").show();
+            }
+        });
+
+        $("#manage_acct").click(function(){
+            location.href="main_account.act";
+        });
+
+        //개인 계좌선택한 경우
+        function fn_selected(bank_nm, acct_no, acct_no_enc, bank_cd, seq){
+            $("#selectedAcct").text(bank_nm+"("+acct_no.substring(acct_no.length-4)+")계좌에서 결제됩니다." );
+            $("#inc_bank_nm").val(bank_nm);
+            $("#inc_acct_no").val(acct_no);
+            $("#inc_acct_no_enc").val(acct_no_enc);
+            $("#inc_bank_cd").val(bank_cd);
+            $("#inc_seq").val(seq);
+            $("#layer_acct_onaf").hide();
+
+            fn_init_qr_confirm();
+        }
+
+        //법인 계좌선택한 경우
+        function fn_selectedCp(org_nm, inc_cls_dsp_nm, card_no, nftf_pay_rest){
+            if(nftf_pay_rest == "Y"){
+                return alert("기업제로페이 비대면결제가\n제한된 결제계좌 입니다.");
+            }
+            $("#selectedAcct").text(inc_cls_dsp_nm+"에서 결제됩니다." );
+            $("#inc_org_nm").val(org_nm);
+            $("#inc_cls_dsp_nm").val(inc_cls_dsp_nm);
+            $("#inc_card_no").val(card_no);
+            $("#layer_acct_onaf").hide();
+
+            fn_init_qr_confirm();
+        }
+
+        //세션 QR_CONFIRM 값 초기화
+        function fn_init_qr_confirm() {
+            var jexAjax = jexjs.createAjaxUtil("acct_onaf_zeropay_r001");
+            jexAjax.setting("async", false);
+            jexAjax.execute(function (response) {
+            });
+        }
+    </script>
+
+			
+			<!-- 컨텐츠 영역 -->
+			<div class="row-bothpadding20-style btn">
+				<!-- 탭 영역 -->
+				<div class="un_tab_w">
+					<div class="inner">
+						<a data-element-id="BPY-ONAF-30-20-S-e10" id="top_tab_qr" href="#none"><span class="bg">바코드/QR</span></a>
+						<a data-element-id="BPY-ONAF-30-20-S-e11" href="#none" class="on"><span class="bg">비대면 결제</span></a>
+						<a data-element-id="BPY-ONAF-30-20-S-e12" id="top_tab_qr_img" href="#none"><span class="bg">QR이미지</span></a>
+					</div>
+				</div>
+				<!-- //탭 영역 -->
+
+				<!-- 이미지 영역 -->
+				<div class="un_main_w">
+					<div class="bg">
+						<p class="txt">매장을 가지 않아도</p>
+						<p class="tit"><em class="txtb">비대면</em>으로 <em class="txtb">언제 어디서나</em><br> 간편하게 결제합니다.</p>
+						<p class="stxt">(일부 POS 결제 가맹점 제외)</p>
+					</div>
+				</div>
+				<!-- //이미지 영역 -->
+			</div>
+			<!-- 컨텐츠 영역 -->
+			
+			
+			<!-- 레이어 -->
+			<div id="clause_slider" class="layer_bPop" style="display: block;">
+				<div class="pop_box">
+					<div class="pop_content">
+						<div class="pop_b_cn type1">
+							<div class="p_lytit">
+								약관동의
+							</div>
+							<div class="p_lytxt">
+								<p>비대면결제 서비스를 이용하기 위해<br> <span class="b_line">아래 약관에 동의</span>해 주세요.</p>
+								<p class="link" onclick="showClause('063002')"><a><span class="ico">[필수] 개인 정보 제3자 제공 이용 동의</span></a></p>
+							</div>
+						</div>
+					</div>
+					<!--<div id="upd_onafyn" class="pop_button">
+						<a onclick="$('#clause_slider').hide();" class="typeA">동의하기</a>
+					</div>-->
+					<!-- 2021-03-30 -->
+					<div class="pop_button" style="display:none;">
+						<a href="#" class="typeA">동의하기</a>
+					</div>
+					<div class="pop_button btns">
+						<a data-element-id="BPY-ONAF-30-20-S-e13" onclick="uf_back();"	href="#" class="typeB">동의하지않음</a>
+						<a data-element-id="BPY-ONAF-30-20-S-e14" onclick="$('#clause_slider').hide();" id="upd_onafyn" href="#" class="typeA">동의함</a>
+					</div>
+					<!-- //2021-03-30 -->
+				</div>
+			</div>
+			<!-- //레이어 -->
+			
+			
+		<!-- modal overlay -->
+		<div id="clause_modal" class="modaloverlay type1" style="display:none;">
+			<div class="lytb"><div class="lytb_row"><div class="lytb_td">
+				<!-- layerpopup -->
+				<div class="layer_style1">
+					<div class="layer_po">
+						<a class="btn_r" onclick="$('#clause_modal').hide();"><span class="btn_close"><span class="blind">닫기</span></span></a>
+						<div class="cont2">
+							<div class="ly_st_tit">
+								<p></p>
+							</div>
+			
+							<div class="ly_st_clause">
+							</div>
+			
+							<div class="ly_st_btn" onclick="$('#clause_modal').hide()">
+								<a class="on">확인</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //layerpopup -->
+				</div></div></div>
+		</div>
+		<!-- //modal overlay -->
+			
+			
+			
+			
+			
+			
+			
+
+			
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

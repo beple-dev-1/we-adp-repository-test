@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>공지사항 관리</title>
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/bp_ent_pc.css">
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MLPC-30-S">
+<div class="ent-root">
+    <div class="ent-aside" style="display: none;">
+      <div class="bottom">
+        <div class="gnb gnb-type02"><!-- gnb-type02 -->
+          <ul class="d1">
+            <li class="item"><!-- [D]active -->
+              <i class="ic ic-gnb-bo-01 normal"></i>
+              <i class="ic ic-gnb-bo-01 active"></i>
+              <a href="">메뉴관리</a>
+              <ul class="d2">
+                <li class="item"><!-- [D]active -->
+                  <a href="">메뉴</a> 
+                </li>
+                <li class="item">
+                  <a href="">시간설정</a> 
+                </li>
+              </ul>
+            </li>
+            <li class="item active">
+              <i class="ic ic-gnb-bo-02 normal"></i>
+              <i class="ic ic-gnb-bo-02 active"></i>
+              <a href="">주문관리</a>
+              <ul class="d2">
+                <li class="item"> 
+                  <a href="">사전예약</a>
+                </li>
+                <li class="item"> 
+                  <a href="">딜리버리</a>
+                </li>
+                <li class="item active"> 
+                  <a href="">주문내역</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div class="ent-main">
+      <div class="layout">
+          <div class="row">
+              <div class="col col-10">
+                <div class="con-wrap">
+                  <!-- 페이지 헤더 -->
+                  <div class="page-header">
+                    <p class="tit tit-01">공지사항 관리</p>
+                  </div>
+
+                  <!-- 검색조건 박스 -->
+                  <div class="search-box fold"><!-- 상세보기 클릭 시 fold 클래스 추가/제거 -->
+                    <!-- 상세검색 열림 닫힘 버튼 -->
+                    <div class="td-item-group right search_dtl-button">
+                      <div class="td-item-group td-item">
+                        <button data-element-id="HIT-MLPC-30-S-e12" class="btn btn-txt underline_no " type="button" id='detailSearchBtn'>상세검색</button>
+                      </div>
+                    </div>
+                    <!-- div 구조여서 위에서 아래로 추가됩니다 - left 는 왼쪽 상단, right는 오른쪽 상단부터 추가됨. right박스 사용 안할시 해당영역 전체 삭제-->
+                    <form action="">
+                      <div class="search-form">
+                        <!-- 왼쪽박스 -->
+                        <div class="form-wrap left">
+                          <!-- col -->
+                          <!-- 검색어 -->
+                          <div class="search-item input">
+                            <div class="item-hd">
+                              <p class="item-text head">검색어</p>
+                            </div>
+                            <div class="item-con">
+                              <div class="ip-wrap with-icon ta-left">
+                                <input data-element-id="HIT-MLPC-30-S-e20" name="" onkeypress="if(event.keyCode == 13){selectList(1)}" id="searchWord" maxlength="30" class="ip-txt" type="text" value="" placeholder="검색어를 입력해주세요." onkeyup="checkCount('searchWord','30')">
+                                <a href="#none"><i class="ic ic-search-14"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- col -->
+                          <!-- 공지타입 -->
+                          <div class="search-item">
+                            <div class="item-hd">
+                              <p class="item-text head">공지타입</p>
+                            </div>
+                            <div class="item-con">
+                              <div class="ip-ch-group flex-row">
+                                <label class="ip-ch-label">
+                                  <input name="typeCheck" id="" class="ip-ch" type="checkbox" value="" checked onclick='checkSearch("typeCheck");'>
+                                  <span class="check"></span> 중요
+                                </label>
+                                <label class="ip-ch-label ml32">
+                                  <input name="typeCheck" id="" class="ip-ch" type="checkbox" value="" checked onclick='checkSearch("typeCheck");'>
+                                  <!--checked-->
+                                  <span class="check"></span> 일반
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- // col end -->
+                        </div>
+                        <!-- 오른쪽 박스 -->
+                        <div class="form-wrap right">
+                          <!-- col -->
+                          <!-- 날짜선택 -->
+                          <div class="search-item">
+                            <div class="item-hd">
+                              <p class="item-text head">날짜선택</p>
+                            </div>
+                            <div class="item-con">
+                              <div class="td-item-group left td-item">
+                                <div class="td-item drop-box w130 shrink_no"><!-- trigger 버튼 클릭 시 open 클래스 추가 -->
+                                  <!-- 드롭다운 버튼영역 -->
+                                  <p class="placeholder"><!-- 선택 시 placeholder 클래스 제거 -->
+                                    <button data-element-id="HIT-MLPC-30-S-e13" type="button" class="trigger drop-btn" onclick='searchDateSet()'><span id='searchBtnText'>등록일자</span></button>
+                                  </p>
+                                  <!-- 드롭다운 컨텐츠 -->
+                                  <div class="drop-content" style="display: none;" >
+                                    <p class="drop-item select" ><!-- 선택 시 select -->
+                                      <button type="button" class="drop-btn" onclick="selectSearchDate(this,'0')">등록일자</button>
+                                    </p>
+                                    <p class="drop-item ">
+                                      <button type="button" class="drop-btn" onclick="selectSearchDate(this,'1')">공지시작일자</button>
+                                    </p>
+                                  </div>
+                                </div>
+                                <div class="ip-wrap with-icon ta-left td-item">
+                                  <input data-element-id="HIT-MLPC-30-S-e21" data-toggle="datepicker" name="" id="sDate" class="ip-txt" type="text" value="2022-11-11" placeholder="" readonly><!-- 비활성화 시 disabled, 날짜 선택 시 readonly -->
+                                  <i class="ic ic-calendar"></i>
+                                </div>
+                                <div class="td-item space">~</div>
+                                <div class="ip-wrap with-icon ta-left td-item">
+                                  <input data-element-id="HIT-MLPC-30-S-e22" data-toggle="datepicker" name="" id="eDate" class="ip-txt" type="text" value="2022-11-11" placeholder="" readonly><!-- 비활성화 시 disabled, 날짜 선택 시 readonly -->
+                                  <i class="ic ic-calendar"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- col -->
+                          <!-- 공지상태 -->
+                          <div class="search-item">
+                            <div class="item-hd">
+                              <p class="item-text head">공지상태</p>
+                            </div>
+                            <div class="item-con">
+                              <div class="ip-ch-group flex-row">
+                                <label class="ip-ch-label">
+                                  <input name="typeOnOff" id="" class="ip-ch" type="checkbox" value="" checked onclick='checkSearch("typeOnOff");'>
+                                  <span class="check"></span> 게시중
+                                </label>
+                                <label class="ip-ch-label ml32">
+                                  <input name="typeOnOff" id="" class="ip-ch" type="checkbox" value="" checked onclick='checkSearch("typeOnOff");'>
+                                  <!--checked-->
+                                  <span class="check"></span> 게시중지
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- // col end -->
+                        </div>
+                      </div>
+                      <div class="btn-wrap ta-center">
+                        <button data-element-id="HIT-MLPC-30-S-e14" class="btn btn-md-b btn-primary-outline" type="button" onclick='selectList(1);'>검색하기</button>
+                      </div>  
+                    </form>
+                  </div>
+                  <!-- // 검색조건 박스 -->
+
+                  <div class="td-item-group mb12">
+                    <div class="td-item-group td-item left center">
+                      <p class="tit tit-02">공지사항 목록</p>
+                    </div>
+                    <div class="td-item-group td-item right">
+                      <button data-element-id="HIT-MLPC-30-S-e15" class="btn btn-md-b btn-primary ml0" type="button" onclick='detailPopupOpenS()'>공지등록</button>
+                    </div>
+                  </div>
+                  <!-- 테이블 영역 -->
+                  <div class="data-table-wrap h524">
+                    <table class="data-table form-table"  id="table">
+                      <!-- <caption>표 제목</caption> -->
+                      <colgroup>
+                        <col style="width: 80px;">
+                        <col style="width: 100px;">
+                        <col style="width: 510px;">
+                        <col style="width: 150px;">
+                        <col style="width: 100px;">
+                        <col style="width: 155px;">
+                        <col style="width: 170px;">
+                        <col  style="display: none">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col"><div class="ta-center">공지번호</div></th> 
+                          <th scope="col"><div class="ta-center">공지타입</div></th>
+                          <th scope="col"><div class="ta-center">공지제목</div></th>
+                          <th scope="col"><div class="ta-center">공지 시작일</div></th>
+                          <th scope="col"><div class="ta-center">공지상태</div></th>
+                          <th scope="col"><div class="ta-center">작성자</div></th>
+                          <th scope="col"><div class="ta-center">등록일시</div></th>
+                          <th scope="col" style="display: none"><div class="ta-center">등록일시</div></th>
+                        </tr>
+                      </thead>
+                      <tbody id="list_item">
+                        <tr style="display: none;">
+                          <td id='NOTICE_NUM' ><div class="ta-center"></div></td>
+                          <td id='NOTICE_TYPE' ><div class="ta-center"></div></td>
+                          
+                      	  <td class="button" id='NOTICE_TITLE' onclick='detailPopupOpen(this)'>
+                            <a href="#none" class="col-btn">
+                              <div class="tx-ellipsis fc-pri" title="">
+                              </div>
+                            </a>
+                          </td>
+                          <td id='NOTICE_DATE' ><div class="ta-center"></div></td>
+                          <td id='NOTICE_STATE' ><div class="ta-center"></div></td><!-- 게시중지 일 경우 fc-dis 추가 -->
+                          <td id='NOTICE_USER' ><div class="ta-center"></div></td>
+                          <td id='NOTICE_REGDATE' ><div class="ta-center"></div></td>
+                          <td id='SEQ' style="display: none"><div class="ta-center"></div></td>
+                        </tr>
+                      </tbody>
+                      <tfoot id='noList' style="display:none;">
+                        <tr class="no-data" > 
+                          <td colspan="7"> 
+                            <div class="no-data no-bd h473">
+                              <div class="box">
+                                <i class="ic ic-exc-40"></i>
+                                <p>등록된 공지사항이 없습니다</p>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+	                  </tfoot>
+                    </table>
+                  </div>
+				
+				  <div id="pagination">
+	                  <div class="pagi" id="pagi">
+	                    <div class="group">
+	                      	<button data-element-id="HIT-MLPC-30-S-e16" type="button" class="item first" onclick="javascript:void(0);">first</button><!-- 비활성화 시 disabled 클래스 추가 -->
+	                      	<button data-element-id="HIT-MLPC-30-S-e17" type="button" class="item prev" onclick="javascript:void(0);">prev</button>
+	                    </div>
+	                    <div class="group" id="page_num">
+		                      <button type="button" class="item" onclick="javascript:void(0);">1</button>
+		                      <button type="button" class="item" onclick="javascript:void(0);">2</button>
+		                      <button type="button" class="item" onclick="javascript:void(0);">3</button>
+		                      <button type="button" class="item" onclick="javascript:void(0);">4</button>
+		                      <button type="button" class="item" onclick="javascript:void(0);">5</button>
+		                      <button type="button" class="item" onclick="javascript:void(0);">6</button>
+		                      <button type="button" class="item" onclick="javascript:void(0);">7</button>
+		                      <button type="button" class="item" onclick="javascript:void(0);">8</button>
+		                      <button type="button" class="item" onclick="javascript:void(0);">9</button>
+		                      <button type="button" class="item" onclick="javascript:void(0);">10</button>
+	                    </div>
+	                    <div class="group">
+		                      <button data-element-id="HIT-MLPC-30-S-e18" type="button" class="item next" onclick="javascript:void(0);">next</button>
+		                      <button data-element-id="HIT-MLPC-30-S-e19" type="button" class="item last" onclick="javascript:void(0);">last</button>
+	                    </div>
+	                  </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+  <div class="modal w880" id='detailPopupArea' style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type02">
+          <p class="tit">공지등록</p>
+        </div>
+        <button class="btn-close" type="button" onclick='detailPopupClose()'>닫기</button>
+      </div>
+
+      <div class="modal-con">
+        <div class="table-wrap notice">
+          <table class="data-table">
+            <colgroup>
+              <col style="width: 100px;">
+              <col style="width: 290px;">
+              <col style="width: 100px;">
+              <col style="width: 290px;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>
+                  <div>공지타입</div>
+                </th>
+                <td>
+                  <div>
+                    <div class="ip-rd-group">
+                      <label for="saveTypeG" class="ip-rd-label">
+                        <input name="saveType" id="saveTypeG" class="ip-rd" type="radio" value="" checked="">
+                        <span class="check"></span> 일반
+                      </label>
+                      <label for="saveTypeS" class="ip-rd-label">
+                        <input name="saveType" id="saveTypeS" class="ip-rd" type="radio" value="" >
+                        <span class="check"></span> 중요
+                      </label>
+                    </div>
+                  </div>
+                </td>
+                <th>
+                  <div>공지 시작일</div>
+                </th>
+                <td>
+                  <div>
+                    <div class="td-item-group">
+                      <div class="ip-wrap with-icon ta-left w100p td-item">
+                        <input data-toggle="datepicker" readonly="readonly" name="saveDate" id="saveDate" class="ip-txt" type="text" value="" placeholder="날짜선택">
+                        <i class="ic ic-calendar"></i>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div>공지제목</div>
+                </th>
+                <td colspan="3">
+                  <div>
+                    <div class="ip-wrap">
+                      <input name="saveTitle" id="saveTitle" onkeyup="checkCount('saveTitle','50')" maxlength="50" class="ip-txt w100p" type="text" value="" placeholder="제목을 입력해주세요">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="vat">
+                  <div class="mt8">공지내용</div>
+                </th>
+                <td colspan="3">
+                  <div>
+                    <!-- 에디터 영역 -->
+                    <div class="edit-area bg-f7"><!-- 에디터 생성 시 bg-f7 클래스 제거 -->
+                     <div id="ctnt" name="ctnt"></div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr id='updateRow'>
+                <th>
+                  <div>공지상태</div>
+                </th>
+                <td>
+                  <div>
+                    <div class="td-item-group left">
+                        <div class="ip-rd-group td-item">
+                          <label for="notiY" class="ip-rd-label">
+                            <input name="notiData" id="notiY" class="ip-rd" type="radio" value="">
+                            <span class="check"></span> 게시중
+                          </label>
+                          <label for="notiN" class="ip-rd-label">
+                            <input name="notiData" id="notiN" class="ip-rd" type="radio" value="" checked="">
+                            <span class="check"></span> 게시중지
+                          </label>
+                        </div>
+                        <div class="btn-group td-item">
+                          <button class="btn btn-sm btn-gray-outline" type="button" id='stateUpdate' onclick='stateUpdate(this)' data-value=''>공지상태변경</button>
+                        </div>
+                      </div>
+                    </div>
+                </td>
+                <th>
+                  <div>등록정보</div>
+                </th>
+                <td>
+                  <div>
+                    <div class="td-item-group">
+                      <div class="ip-rd-group td-item">
+                        <p class="txt-01 lh-17 fc-333" id='userInfo'><!-- sample:begin -->표본<!-- sample:end --></p>
+                      </div>
+                      <div class="btn-group td-item">
+                        <button class="btn btn-sm btn-gray-outline" id='deleteBtn' data-value='' onclick='detailInfDelete()' type="button">삭제</button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="btn-group ta-center mt32">
+      		<button class="btn btn-md-a btn-primary-outline" type="button" onclick='detailPopupClose()'>취소</button>
+		<button class="btn btn-md-a btn-primary" type="button" id='insertBtn' onclick='insertInfo()'>등록</button>
+		<button class="btn btn-md-a btn-primary" date-value=''  type="button" id='updateBtn' onclick='detailInfoUpdate()'>수정</button>
+	</div>
+    </div>
+  </div>  
+  <div class="dim" id='dimArea' style="display:none;"></div>
+  </div>
+</body>
+</html>

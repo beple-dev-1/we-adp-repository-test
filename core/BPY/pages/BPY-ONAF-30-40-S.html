@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비대면결제 > 미성년자결제제한</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-ONAF-30-40-S">
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>비대면 결제</h1>
+        <a data-element-id="BPY-ONAF-30-40-S-e07" class="btn-history-back" id="go_back">뒤로가기</a>
+        <div class="right">
+            <a data-element-id="BPY-ONAF-30-40-S-e08" class="btn_outpage" id="go_home">페이지나가기</a>
+        </div>
+    </div><!-- // header -->
+    <div class="container">
+        <div class="content">
+            
+
+        <div class="gift_accbx">
+            <div class="inner">
+                
+                        <!--<a class="link ico" id="selectedAcct">비플머니에서 결제됩니다.</a>-->
+                        <div class="tit ico" id="selectedAcct">비플머니에서 결제됩니다.</div>
+                        <input type="hidden" name="inc_mok_nm" id="inc_mok_nm" value=""/>
+                        <input type="hidden" name="inc_lmt_amt" id="inc_lmt_amt" value=""/>
+                        <input type="hidden" name="inc_card_no" id="inc_card_no" value=""/>
+                        <input type="hidden" name="inc_org_nm" id="inc_org_nm" value=""/>
+                        <input type="hidden" name="inc_cls_dsp_nm" id="inc_cls_dsp_nm" value=""/>
+
+                    
+
+            </div>
+        </div>
+
+        
+            <!-- 레이어 -->
+            <div class="layer_bPop" id="layer_acct_onaf" style="display:none;">
+                <div class="pop_box">
+                    <div class="pop_content">
+                        <div class="pop_b_cn type1">
+                            <div class="p_lytit">
+                                계좌선택
+                                <!--<div class="right" id="manage_acct"><a class="link">계좌관리</a></div>-->
+                            </div>
+                            <div class="p_acc_sltbx">
+                                <ul>
+
+                                    <li onClick="fn_selectedCp('', '비플머니', '', '')"><span class="ic_b ic_b1"></span>비플머니 계좌</li>
+                                    
+                                            <li onClick="fn_selectedCp('', '비플머니', '', '')"><span class="ic_b ic_b"></span>비플머니 계좌</li>
+                                            
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //레이어 -->
+
+        
+
+    <script type="text/javascript">
+        var path = window.location.pathname;
+        var pageName = path.split("/").pop(); //현재 페이지명
+
+        if(pageName.indexOf("zero_onaf2_approve.act") == -1){
+            $("#selectedAcct").removeClass("ico");
+        }
+
+        $("body").click(function(e){
+            //결제계좌선택 레이어 영역이 아닌 경우, hide
+            if($("#layer_acct_onaf").is(":visible")){
+                if( !$(e.target).parents().is($("#layer_acct_onaf")) && !$(e.target).parents().is($(".gift_accbx")) ){
+                    $("#layer_acct_onaf").hide();
+                }
+            }
+        });
+
+        $(".gift_accbx").click(function(){
+            //결제하기 페이지에서만 결제계좌 선택 가능하도록
+            if(pageName.indexOf("zero_onaf2_approve.act") > -1){
+                //결제계좌선택 레이어 show
+                $("#layer_acct_onaf").show();
+            }
+        });
+
+        $("#manage_acct").click(function(){
+            location.href="main_account.act";
+        });
+
+        //개인 계좌선택한 경우
+        function fn_selected(bank_nm, acct_no, acct_no_enc, bank_cd, seq){
+            $("#selectedAcct").text(bank_nm+"("+acct_no.substring(acct_no.length-4)+")계좌에서 결제됩니다." );
+            $("#inc_bank_nm").val(bank_nm);
+            $("#inc_acct_no").val(acct_no);
+            $("#inc_acct_no_enc").val(acct_no_enc);
+            $("#inc_bank_cd").val(bank_cd);
+            $("#inc_seq").val(seq);
+            $("#layer_acct_onaf").hide();
+
+            fn_init_qr_confirm();
+        }
+
+        //법인 계좌선택한 경우
+        function fn_selectedCp(org_nm, inc_cls_dsp_nm, card_no, nftf_pay_rest){
+            if(nftf_pay_rest == "Y"){
+                return alert("기업제로페이 비대면결제가\n제한된 결제계좌 입니다.");
+            }
+            $("#selectedAcct").text(inc_cls_dsp_nm+"에서 결제됩니다." );
+            $("#inc_org_nm").val(org_nm);
+            $("#inc_cls_dsp_nm").val(inc_cls_dsp_nm);
+            $("#inc_card_no").val(card_no);
+            $("#layer_acct_onaf").hide();
+
+            fn_init_qr_confirm();
+        }
+
+        //세션 QR_CONFIRM 값 초기화
+        function fn_init_qr_confirm() {
+            var jexAjax = jexjs.createAjaxUtil("acct_onaf_zeropay_r001");
+            jexAjax.setting("async", false);
+            jexAjax.execute(function (response) {
+            });
+        }
+    </script>
+
+            <!-- 컨텐츠 영역 -->
+            <div class="row-bothpadding20-style btn">
+                <!-- 탭 영역 -->
+                <div class="un_tab_w">
+                    <div class="inner">
+                        <a data-element-id="BPY-ONAF-30-40-S-e09" id="top_tab_qr"><span class="bg">바코드/QR</span></a>
+                        <a data-element-id="BPY-ONAF-30-40-S-e10" class="on"><span class="bg">비대면 결제</span></a>
+                        <a data-element-id="BPY-ONAF-30-40-S-e11" id="top_tab_qr_img"><span class="bg">QR이미지</span></a>
+                    </div>
+                </div>
+                <!-- //탭 영역 -->
+
+                <!-- 이미지 영역 -->
+                <div class="un_pay_useno">
+                    <div class="bg">
+                        <p>앗! <span class="txt_b">미성년자</span>는 비대면 결제를<br> 이용할 수 없어요!</p>
+                    </div>
+                </div>
+                <!-- //이미지 영역 -->
+            </div>
+            <!-- //컨텐츠 영역 -->
+
+            <!-- 하단 고정버튼 -->
+            <div class="fixed-bottom-section">
+                <a data-element-id="BPY-ONAF-30-40-S-e12" href="#" onClick="uf_back()" class="btn-submit btn-dark-op90 on"><span>돌아가기</span></a><!-- 활성화클래스 on -->
+            </div>
+            <!-- //하단 고정버튼 -->
+        </div>
+    </div><!-- // container -->
+</div>
+<!-- // wrap -->
+</body>
+</html>

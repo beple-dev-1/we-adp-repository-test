@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>식수 신청내역(본인)</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-MEAL-10-S">
+<div class="wrap js-wrap"  id="form1" >
+    <form id="frm" name="frm">
+		<input type="hidden" id="HEADCNT_SEQ"	name="HEADCNT_SEQ"	value="" />
+		<input type="hidden" id="REFERER"  name="REFERER"  value="" />
+	</form>
+	
+        <!-- 헤더 영역 -->
+        <header class="header position-sticky">
+            <!-- 헤더 네비 -->
+            <nav class="header-nav">
+                <a data-element-id="HIT-MEAL-10-S-e03" href="javascript:uf_back();" class="hd-btn back"><span class="blind-i">뒤로가기</span></a>
+            </nav>
+            <!-- 헤더 타이틀 -->
+            <div class="page-title">
+                <h1 class="header-title">식수 신청 내역</h1>
+            </div>
+        </header>
+
+        <!-- 컨텐츠 영역 -->
+        <main class="container-wrap js-container-wrap">
+            <div class="noti-container" id="headcntGuide">
+                <div class="noti-wrap">
+                    <p class="noti-text icon noti-24">식수 안내</p>
+                </div>
+            </div>
+            <div class="orderling_list-container"  id="headcnt_list_info">
+                <div class="list-box type2"  id="list_item"><!-- sample:begin --><div class="list-item">                                          <a href="#none" onclick="javascript:goHeadCntDetRequest(`1`);">    <div class="item-content">                                           <div class="content-hd">                                             <p class="name">                                                     <span class="tx_ellipsis pdr0">홍길동</span>                       <span class="tx_ellipsis pdr0">지급대기</span>                   </p>                                                         </div>                                                           <div class="content-dtl">                                            <div class="content__text-wrap">                                     <p class="content-text head">신청 일시</p>                           <p class="content-text flex-row">                                    <span>2026.09.02</span>                               </p>                                                         </div>                                                           <div class="content__text-wrap">                                     <p class="content-text head">이용 일자</p>                           <p class="content-text flex-row">                                    <span>2026.09.02</span>                   </p>                                                         </div>                                                           <div class="content__text-wrap">                                     <p class="content-text head">신청 근무지</p>                          <p class="content-text flex-row">                                    <span>홍길동</span>                                            </p>                                                         </div>                                                       </div>                                                       </div>                                                       </a>                                                             </div>                                                           <!-- sample:end --></div>
+            </div>
+
+			<section class="end-container content-none" id="headcnt_list_not_info" style="display: none;">
+                <article class="end__item-wrap">
+                    <div class="end-box">
+                        <div class="end-item flex-row">
+                            <p class="icon content_none-58"><span class="blind-i">내역없음</span></p>
+                        </div>
+                        <div class="end-item mgt12">
+                            <p class="end-text">신청 내역이 없습니다.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- 플로팅 박스 -->
+            <section class="floating-container bottom js-floating-wrap" style="display:;"><!-- 미사용 시 style="displaty:none" -->
+                <!-- 메인 버튼영역 -->
+                <article class="main_btn-box bg-white">
+                    <div class="btn-main">
+                    	<a data-element-id="HIT-MEAL-10-S-e04" href="javascript:goHeadCntWriteRequest();" class="btn-default radius-mid btn-style-h48 on">식수 신청</a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+                	</div>
+                </article>
+            </section>
+        </main>
+    </div>
+    
+    <div class="wrap js-wrap"  id="form2" style="display: none;" >
+        <!-- 헤더 영역 -->
+        <header class="header position-sticky flex-end"><!-- 단일버튼 우측정렬 일 경우 flex-end 클래스 추가 -->
+            <!-- 헤더 타이틀 -->
+            <div class="page-title">
+                <h1 class="header-title">식수 안내</h1>
+            </div>
+            <!-- 헤더 네비 -->
+            <nav class="header-nav">
+                <a href="#none" class="hd-btn close" onclick="headcntGuideClose();"><span class="blind-i">닫기</span></a>
+            </nav>
+        </header>
+
+        <!-- 컨텐츠 영역 -->
+        <main class="container-wrap js-container-wrap">
+            <!-- 식수신청 -->
+            <section class="orderling-container">
+                <!-- 컨테이너 헤더 -->
+                <div class="container-hd">
+                    <h2 class="container__hd-title">안내 사항</h2>
+                    <div class="info-box">
+                        <p class="container__hd-text fc-main2 fw-bold">● 상태</p>
+                        <ul class="list-bar mgt8">
+                            <li>지급대기 : 이용 일자 전으로 마일리지가 지급되지 않은 상태</li>
+                            <li>지급완료 : 마일리지 지급이 완료됨</li>
+                            <li>지급실패 : 식수 처리가 실패되어 마일리지가 지급되지 않은 상태</li>
+                            <li>지급중지 : 지급이 완료된 식수를 취소하여 지급이 중단된 상태</li>
+                            <li>신청취소 : 마일리지 지급 전 사용자가 취소한 상태</li>
+                        </ul>
+                        <p class="container__hd-text fc-main2 mgt8">● 당일 신청 식수는 신청 즉시 지급됩니다.</p>
+                        <p class="container__hd-text fc-main2 mgt8">● 사전 식수 신청은 시작 이용 일자에 지급되며, H-eat+메인에서 확인하실 수 있습니다.</p>
+                        <p class="container__hd-text fc-main2 mgt8">● 지급 완료 후에는 신청 취소 불가합니다.</p>
+                        <p class="container__hd-text fc-main2 mgt8">● 지급이 실패될 경우 안내 PUSH가 전송됩니다.</p>
+                        <p class="container__hd-text fc-main2 mgt8">● 미 사용된 마일리지는 회수됩니다.</p>
+                        <p class="container__hd-text fc-main2 mgt8">● 식수 신청은 본인이 소속된 기관의 근무지에서만 가능하며, 신청 가능한 근무지가 없으면 식수 신청을 이용할 수 없습니다.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

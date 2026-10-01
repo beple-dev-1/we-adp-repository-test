@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>식수대용량신청내역</title>
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/bp_ent_pc.css">
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MLPC-10-S">
+<div class="ent-root">
+  	<form id="frm" name="frm">
+		<input type="hidden" id="HEADCNT_SEQ"	name="HEADCNT_SEQ"	value="" />
+		<input type="hidden" id="SAMPLE_YN"	name="SAMPLE_YN"	value="N" />
+		<input type="hidden" id="SITE_CD"	name="SITE_CD"	value="" />		
+	</form>
+	
+    <div class="ent-aside" style="display:;">
+      <div class="bottom">
+        <div class="gnb gnb-type02"> <!--[D]gnb-type01 || gnb-type02-->
+          <ul class="d1">
+            <li class="item active"> <!--[D]active-->
+              <i class="ic ic-gnb-bo-01 normal"></i>
+              <i class="ic ic-gnb-bo-01 active"></i>
+              <a data-element-id="HIT-MLPC-10-S-e24" href="">식수신청</a>
+              <ul class="d2">
+                <li class="item"> <!--[D]active-->
+                  <a data-element-id="HIT-MLPC-10-S-e25" href="javascript:Common.go_formsubmit($('#frm'), 'ent_bo_headcnt_list.act');">식수 신청내역 조회</a> 
+                </li>
+                <li class="item active">
+                  <a data-element-id="HIT-MLPC-10-S-e26" href="javascript:Common.go_formsubmit($('#frm'), 'ent_bo_headcnt_bulk_list.act');">식수 대량 신청</a>
+                </li>
+                <li class="item">
+                  <a data-element-id="HIT-MLPC-10-S-e27" href="javascript:Common.go_formsubmit($('#frm'), 'ent_bo_headcnt_time_management.act');">신청 시간 관리</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div class="ent-main">
+      <div class="layout">
+          <div class="row">
+              <div class="col col-10">
+                <div class="con-wrap">
+                  <!-- 페이지 헤더 -->
+                  <div class="page-header">
+                    <p class="tit tit-01">식수 대량 신청</p>
+                  </div>
+                  <!-- 테이블 영역 -->
+                  <div class="td-item-group mb12">
+                    <div class="td-item-group left td-item">
+                      <div class="btn-group">
+                        <button data-element-id="HIT-MLPC-10-S-e15" class="btn btn-md-b btn-gray-outline w200 ta-left select_bx-style" onclick="javascript:periodPopup();"  type="button"><span id="period_nm">1개월</span><i class="ic ic-calendar poa right0 top-center"></i></button>
+                      </div>
+                      <!-- 드롭박스 -->
+                      <div class="td-item drop-box"  id="td_item_drop_box"><!-- trigger 버튼 클릭 시 open 클래스 추가 -->
+                        <!-- 드롭다운 버튼영역 -->
+                        <p class=""><!-- 선택 시 placeholder 클래스 제거 -->
+                          <button data-element-id="HIT-MLPC-10-S-e16" type="button" class="trigger drop-btn" id="dropBox" ><span id="dropBox_nm" >전체상태</span></button>
+                          <input type="hidden" id="PROC_ST"	name="PROC_ST"	value="all" />
+                        </p>
+                        <!-- 드롭다운 컨텐츠 -->
+                        <div class="drop-content" style="display: none;" id="drop_content">
+                          <p class="drop-item select" id="drop_itemall" onclick="javascript:setState('all');"><!-- 선택 시 select -->
+                            <button type="button" class="drop-btn" >전체 상태</button>
+                          </p>
+                          <p class="drop-item" id="drop_item0" onclick="javascript:setState('0');">
+                            <button type="button" class="drop-btn" >승인 대기</button>
+                          </p>
+                          <p class="drop-item" id="drop_item1" onclick="javascript:setState('1');">
+                            <button type="button" class="drop-btn" >승인 완료</button>
+                          </p>
+                          <p class="drop-item" id="drop_item3" onclick="javascript:setState('3');">
+                            <button type="button" class="drop-btn" >승인 거절</button>
+                          </p>
+                          <p class="drop-item" id="drop_item2" onclick="javascript:setState('2');">
+                            <button type="button" class="drop-btn" >신청 취소</button>
+                          </p>
+                          <p class="drop-item" id="drop_item4" onclick="javascript:setState('4');">
+                            <button type="button" class="drop-btn" >발행 완료</button>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- 드롭박스 -->
+                      <div class="td-item drop-box" id="td_item_drop_box2"><!-- trigger 버튼 클릭 시 open 클래스 추가 -->
+                        <!-- 드롭다운 버튼영역 -->
+                        <p class=""><!-- 선택 시 placeholder 클래스 제거 -->
+                          <button data-element-id="HIT-MLPC-10-S-e17" type="button" class="trigger drop-btn" id="dropBox2"><span id="dropBox2_nm" >전체사업장</span></button>
+                        </p>
+                        <!-- 드롭다운 컨텐츠 -->
+                        <div class="drop-content" style="display: none;" id="drop_content2"><!-- sample:begin -->    <p class="drop-item" id="drop_item_bsun_all" onclick="javascript:setState2(`전체사업장`,``,`all`);">      <button type="button" class="drop-btn">전체사업장</button>    </p>    <p class="drop-item" id="drop_item_bsun_1" onclick="javascript:setState2(`홍길동` ,`004` ,`1` );">      <button type="button" class="drop-btn">홍길동</button>    </p><!-- sample:end --></div>
+                      </div>
+                      <div class="ip-wrap with-icon ta-left w220">
+                        <input data-element-id="HIT-MLPC-10-S-e28" name="headcnt_user_nm" id="headcnt_user_nm" class="ip-txt" type="text" value="" placeholder="신청자명을 입력해주세요" onkeypress='if(event.keyCode == 13){ent_bo_headcnt_list_r001("1");}'>
+                        <i class="ic ic-search-14" id="search"></i>
+                      </div>
+                    </div>
+                    <!-- 식수 신청하기 버튼 -->
+                    <div class="td-item-group right td-item">
+                      <button data-element-id="HIT-MLPC-10-S-e18" class="btn btn-md-b btn-gray-outline" type="button" onclick="javascript:excelDownload();">내려받기</button>
+                      <button data-element-id="HIT-MLPC-10-S-e19" class="btn btn-md-b btn-primary ml0" type="button" onclick="javascript:headcntInsertPopup();">신청하기</button>
+                    </div>
+                  </div>
+
+                   <div class="data-table-wrap h443 ovf-a">
+                    <table class="data-table form-table"  id="table">
+                      <!-- <caption>표 제목</caption> -->
+                      <colgroup>
+                        <!-- <col style="width: 50px;">  체크박스 -->
+                        <col style="width: 150px;"> <!-- 요청일시 -->
+                        <col style="width: 190px;"> <!-- 신청건명 -->
+                        <col style="width: 170px;"> <!-- 소속 -->
+                        <col style="width: 100px;"> <!-- 사용자 수 -->
+                        <col style="width: 200px;"> <!-- 이용기간 -->
+                        <col style="width: 150px;"> <!-- 정산방법 -->
+                        <col style="width: 180px;"> <!-- 신청자 정보 -->
+                        <col style="width: 145px;"> <!-- 사업장 -->
+                        <!-- <col style="width: 170px;"> 부서 -->
+                        <col style="width: 170px;"> <!-- 근무지 -->
+                        <col style="width: 120px;"> <!-- 상태 -->
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <!-- <th class="pd0">
+                            <div class="ip-ch-group ta-center">
+                              <label class="ip-ch-label">
+                                <input name="checkAll" id="checkAll" class="ip-ch" type="checkbox" value="">
+                              </label>
+                            </div>
+                          </th> -->
+                          <th class="ta-center" scope="col">요청일시</th>
+                          <th class="ta-center" scope="col">신청건명</th>
+                          <th class="ta-center" scope="col">소속</th>
+                          <th class="ta-center" scope="col">사용자 수</th>
+                          <th class="ta-center" scope="col">이용기간</th>
+                          <th class="ta-center" scope="col">정산방법</th>
+                          <th class="ta-center" scope="col">신청자 정보</th>
+                          <th class="ta-center" scope="col">신청자 사업장</th>
+                         <!--  <th class="ta-center" scope="col">부서</th> -->
+                          <th class="ta-center" scope="col">신청자 근무지</th>
+                          <th class="ta-center" scope="col">상태<a onclick="javascript:statePopup();" class="ic ic-exc-22 ml2 vab-6"></a></th>
+                        </tr>
+                      </thead>
+                       <tfoot>
+                        <tr class="no-data"  style="display:none;">
+                          <td colspan="10">
+                            <!--[D] 검색결과가 없습니다.-->
+                            <div class="no-data no-bd h375">
+                              <div class="box">
+                                <i class="ic ic-exc-40"></i>
+                                <p>신청내역이 없습니다.</p>
+                              </div>
+                            </div>
+                            <!--//검색결과가 없습니다.-->
+                          </td>
+                        </tr>
+                        </tfoot>
+                      <tbody id="list_item">
+                          <tr class="" style="display: none;" id="headcnt_det">
+                          	<!-- <td class="pd0"><div class="ip-ch-group ta-center"><label class="ip-ch-label"><input id="HEADCNTS_SEQ2" class="ip-ch" type="checkbox" value=""></label></div></td> -->
+                            <td id="DT" onclick="headcnt_det_click($(this));"><div class="ta-center"></div></td>
+                            <td id="HEADCNT_TITLE" onclick="headcnt_det_click($(this));"><div class="ta-center tx-ellipsis" title=""></div></td>
+                            <td id="CORP_NM" onclick="headcnt_det_click($(this));"><div class="ta-center"></div></td>
+                            <td id="USER_COUNT" onclick="headcnt_det_click($(this));"><div class="ta-center"></div></td>
+                            <td id="USE_DT" onclick="headcnt_det_click($(this));"><div class="ta-center"></div></td>
+                            <td id="SETTLE_TYPE" onclick="headcnt_det_click($(this));"><div class="ta-center"></div></td>
+                            <td id="USER_NM" onclick="headcnt_det_click($(this));"><div class="ta-center"></div></td>
+                            <td id="SITE_NM" onclick="headcnt_det_click($(this));"><div class="ta-center tx-ellipsis" title=""></div></td>
+                            <!-- <td id="DEPT"><div class="ta-center tx-ellipsis" title=""></div></td> -->
+                            <td id="WORK_NM" onclick="headcnt_det_click($(this));"><div class="ta-center tx-ellipsis" title=""></div></td>
+                            <td id="PROC_ST_NM" onclick="headcnt_det_click($(this));"><div class=""></div></td>
+                            <td id="HEADCNTS_SEQ" hidden><div></div></td>
+                            <td id="PROC_STS" hidden><div></div></td>                            
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+				<div id="pagination">
+                  <div class="pagi" id="pagi">
+                    <div class="group">
+                       <button data-element-id="HIT-MLPC-10-S-e20" type="button" class="item first" onclick="javascript:void(0);">first</button><!-- 비활성화 시 disabled 클래스 추가 -->
+                      <button data-element-id="HIT-MLPC-10-S-e21" type="button" class="item prev" onclick="javascript:void(0);">prev</button>
+                    </div>
+                    <div class="group" id="page_num">
+                      <button type="button" class="item" onclick="javascript:void(0);">1</button>
+                      <button type="button" class="item" onclick="javascript:void(0);">2</button>
+                      <button type="button" class="item" onclick="javascript:void(0);">3</button>
+                      <button type="button" class="item" onclick="javascript:void(0);">4</button>
+                      <button type="button" class="item" onclick="javascript:void(0);">5</button>
+                      <button type="button" class="item" onclick="javascript:void(0);">6</button>
+                      <button type="button" class="item" onclick="javascript:void(0);">7</button>
+                      <button type="button" class="item" onclick="javascript:void(0);">8</button>
+                      <button type="button" class="item" onclick="javascript:void(0);">9</button>
+                      <button type="button" class="item" onclick="javascript:void(0);">10</button>
+                    </div>
+                    <div class="group">
+                      <button data-element-id="HIT-MLPC-10-S-e22" type="button" class="item next" onclick="javascript:void(0);">next</button>
+                      <button data-element-id="HIT-MLPC-10-S-e23" type="button" class="item last" onclick="javascript:void(0);">last</button>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  
+  <div class="bp-root">
+    	<div class="bp-aside">...</div>
+    	<div class="bp-main">...</div>
+  	</div>
+   
+<!--=============================================================================================================== -->
+<!-- 기간팝업 -->
+<!--=============================================================================================================== -->
+   <div class="modal w410" id="modal_popup_period" style="display:none;">
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type02">
+          <p class="tit">필터</p>
+        </div>
+        <button class="btn-close" type="button" onclick="javascript:periodPopupClose();">닫기</button>
+      </div>
+      <div class="modal-con">
+        <p class="fs-16 lh-19 fw-600 fc-222">기간</p>
+        <div class="ip-chbt-group mt12">
+          <!--temp width-->
+          <label for="chbt-1-1" class="ip-chbt-label">
+            <input name="chbt-1" id="chbt-1-1" class="ip-chbt" type="checkbox" value="1" daykind="1">
+            <span class="check"></span>
+            <span class="txt">1개월</span>
+          </label>
+          <label for="chbt-1-2" class="ip-chbt-label">
+            <input name="chbt-1" id="chbt-1-2" class="ip-chbt" type="checkbox" value="2" daykind="2">
+            <!--checked-->
+            <span class="check"></span>
+            <span class="txt">6개월</span>
+          </label>
+          <label for="chbt-1-3" class="ip-chbt-label">
+            <input name="chbt-1" id="chbt-1-3" class="ip-chbt" type="checkbox" value="3" daykind="3">
+            <!--checked-->
+            <span class="check"></span>
+            <span class="txt">1년</span>
+          </label>
+          <label for="chbt-1-4" class="ip-chbt-label">
+            <input name="chbt-1" id="chbt-1-4" class="ip-chbt" type="checkbox" value="4" daykind="4">
+            <!--checked-->
+            <span class="check"></span>
+            <span class="txt">직접입력</span>
+          </label>
+        </div>
+        <div class="td-item-group mt16">
+          <div class="ip-wrap with-icon ta-left w100p td-item">
+            <input data-toggle="datepicker" name="start_headcnt_date" id="start_headcnt_date" class="ip-txt" type="text" placeholder="" readonly disabled>
+            <!-- <i class="ic ic-calendar"></i> -->
+          </div>
+          <span class="td-item"> ~ </span>
+          <div class="ip-wrap with-icon ta-left w100p td-item">
+            <input data-toggle="datepicker" name="end_headcnt_date" id="end_headcnt_date" class="ip-txt" type="text" placeholder="" readonly disabled>
+            <!-- <i class="ic ic-calendar"></i> -->
+          </div>
+          <p class="fc-err fs-12 fw-400 mt10" style="display: none;">조회기간은 6개월을 넘을 수 없습니다.</p>
+        </div>  
+        <div class="btn-group ta-center mt32">
+          <button class="btn btn-md-a btn-primary" type="button" onclick="javascript:setPeriod();" >적용</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+<!--=============================================================================================================== -->
+<!-- 상태팝업 -->
+<!--=============================================================================================================== -->
+  <div class="modal w450" id="modal_popup_state" style="display:none;">
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type02">
+          <p class="tit">식수상태</p>
+        </div>
+        <button class="btn-close" onclick="javascript:statePopupClose();" type="button">닫기</button>
+      </div>
+      <div class="modal-con">
+        <table class="data-table form-table">
+          <colgroup>
+            <col style="width:105px">
+            <col style="*;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left fw-400">승인 대기</th>
+              <td class="ta-left">
+                <p class="txt-01">관리자가 수락 전</p>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left fw-400">승인 완료</th>
+              <td class="ta-left">
+                <p class="txt-01">관리자가 수락 후(발행전)</p>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left fw-400">승인 거절</th>
+              <td class="ta-left">
+                <p class="txt-01">관리자가 거절</p>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left fw-400">신청 취소</th>
+              <td class="ta-left">
+                <p class="txt-01">신청자가 발행 완료전 취소 했을 경우</p>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left fw-400">발행 완료</th>
+              <td class="ta-left">
+                <p class="txt-01">신청하신 식수가 출입증에 부여가 완료됨(취소 불가)</p>
+              </td>
+            </tr>                                                
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal w635" id="modal_popup_headcnt_det" style="display:none;"><!--[D]active-->
+    <div class="inner content-scrolling">
+      <div class="modal-header">
+        <div class="tit-area type02">
+          <p class="tit">식수 대량 신청 상세</p>
+        </div>
+        <button class="btn-close" type="button" onclick="headcntDetPopupClose();">닫기</button>
+      </div>
+      <div class="modal-con h90vh-192 ovf-a">
+        <!-- 신청자 정보 -->
+        <p class="tit-02">신청자 정보</p>
+        <table class="data-table form-table mt8">
+          <colgroup>
+            <col style="width:20%">
+            <col style="width: auto;">
+            <col style="width:20%">
+            <col style="width: auto;">
+          </colgroup>
+          <tbody id="det_item0"><!-- sample:begin --><tr>                                                                                                                    	<th class="ta-left">신청일시</th>                                                                                         	<td class="ta-left">14:22</td>                                                                                   	<th class="ta-left">신청자</th>                                                                                          	<td class="ta-left">홍길동</td>                                                                           </tr>                                                                                                                   <tr>                                                                                                                    	<th class="ta-left">신청자 근무지</th>                                                                                      	<td class="ta-left" colspan="3">안내 문구</td>                                                             </tr>                                                                                                                   <tr>                                                                                                                    	<th class="ta-left">발행상태</th>                                                                                         <td class="ta-left" colspan="3">승인대기</td></tr>                                                                                                                   <!-- sample:end --></tbody>
+        </table>
+
+        <!-- 식수 정보 -->
+        <p class="tit-02 mb4 mt32">식수 정보</p>
+        <table class="data-table form-table mt8">
+          <colgroup>
+            <col style="width:20%">
+            <col style="width: auto;">
+          </colgroup>
+          <tbody id="det_item1"><!-- sample:begin --><tr>                                                                                                                                    <th class="ta-left">신청건명</th>                                                                                                           <td class="ta-left">1</td>                                                                                                         </tr>                                                                                                                                   <tr>                                                                                                                                      <th class="ta-left">소속</th>                                                                                                             <td class="ta-left">홍길동</td>                                                                                         </tr>                                                                                                                                   <tr>                                                                                                                                      <th class="ta-left">이용기간</th>                                                                                                           <td class="ta-left">홍길동~홍길동</td>                                                                                      </tr>                                                                                                                                   <tr>                                                                                                                                      <th>사용자 리스트</th>                                                                                                                        <td><a class="underline_no fc-333">홍길동</a><button class="btn-doc ml10" type="button" onclick="javascript:excel_download();">다운로드</button></td>   </tr><!-- sample:end --></tbody>
+        </table>
+
+        <!-- 정산 정보 -->
+        <p class="tit-02 mb4 mt32">정산 정보</p>
+        <table class="data-table form-table mt8">
+          <colgroup>
+            <col style="width:20%">
+            <col style="width: auto;">
+          </colgroup>
+          <tbody id="det_item2"><!-- sample:begin --><tr>                                                                   <th class="ta-left">정산방법</th>                                          <td class="ta-left"><p class="txt-03">하나은행 325-890003-38304 (주)현대그린푸드로 입금해 주세요</p></td></tr>                                                                  <tr>                                                                     <th class="ta-left">입금자명</th>                                          <td class="ta-left">홍길동</td>                                       </tr>                                                                <!-- sample:end --></tbody>
+        </table>
+      </div>
+      <!-- <div class="modal-footer"></div> -->
+    </div>
+  </div> 
+  
+  
+  
+  <!-- 식수대량신청 -->
+  <div class="modal w635 date-control" id="modal_popup_insert" style="display:none;"><!--[D]active-->
+    <div class="inner content-scrolling">
+      <div class="modal-header">
+        <div class="tit-area type02">
+          <p class="tit">식수 대량 신청</p>
+        </div>
+        <button class="btn-close" type="button" onclick="javascript:headcntInsertPopupClose();">닫기</button>
+        
+      </div>
+      <div class="modal-con h90vh-192 ovf-a">
+        <!-- 신청자 정보 -->
+        <p class="tit-02">식수 정보</p>
+        <table class="data-table form-table mt14">
+          <colgroup>
+            <col style="width:20%">
+            <col style="width: auto;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left">식수 신청건명</th>
+              <td class="ta-left">
+                <div class="ip-wrap with-icon w100p">
+                  <input name="headcnt_title" id="headcnt_title" class="ip-txt" type="text" maxlength="20" placeholder="식수 신청건 명을 작성해 주세요.">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left">소속</th>
+              <td class="ta-left">
+                <div class="ip-wrap with-icon w100p">
+                  <input name="headcnt_suppliers" id="headcnt_suppliers" class="ip-txt" type="text" maxlength="30" placeholder="식권를 사용할 협력사의 회사명을 입력해 주세요.">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left">이용기간</th>
+              <td class="ta-left">
+                <div class="td-item-group left">
+                  <div class="ip-wrap with-icon ta-left w160 td-item">
+                    <input data-toggle="datepicker" name="start_headcnt_insert_date" id="start_headcnt_insert_date" class="ip-txt" type="text" value="" placeholder="일자 선택" readonly>
+                    <!-- <i class="ic ic-calendar"></i> -->
+                  </div>
+                  <span class="td-item"> ~ </span>
+                  <div class="ip-wrap with-icon ta-left w160 td-item">
+                    <input data-toggle="datepicker" name="end_headcnt_insert_date" id="end_headcnt_insert_date" class="ip-txt" type="text" value="" placeholder="일자 선택" readonly>
+                    <!-- <i class="ic ic-calendar"></i> -->
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left">식수타입</th>
+              <td class="ta-left">
+                <div class="ip-ch-group flex-row">
+                  <label for="ch-1-1" class="ip-ch-label">
+                    <input name="breakfast_yn" id="breakfast_yn" class="ip-ch" type="checkbox" value="">
+                    <span class="check"></span> 조식 식권 </label>
+                  <label for="ch-1-2" class="ip-ch-label ml40">
+                    <input name="lunch_yn" id="lunch_yn" class="ip-ch" type="checkbox" value="" checked>
+                    <!--checked-->
+                    <span class="check"></span> 중식 식권
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left">사용자 리스트</th>
+              <td class="ta-left">
+                <div class="td-item-group"> 
+                    <div class="td-item ip-wrap with-icon grow">
+                      <input name="file_nm" id="file_nm" class="ip-txt w100p tx-ellipsis" type="text" value="" placeholder="파일을 등록해 주세요." readonly >
+                      <input name="file" id="file" class="ip-txt" type="file"  style="display: none;" >
+                    </div>
+                    <div class="btn-group">
+                      <button class="btn btn-md-b btn-primary-outline" type="button" id="file_upload">등록하기</button>
+                    </div>
+                </div>
+                <div class="td-item-group mt10">
+                  <div class="btn-group">
+                    <button class="btn-doc" type="button" id="simple_download">예시파일 다운로드</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 신청자 정보 -->
+        <p class="tit-02 mt32">정산 정보</p>
+        <p class="txt-01">정산 정보를 입력해 주세요.</p>
+        <table class="data-table form-table mt14">
+          <colgroup>
+            <col style="width:20%">
+            <col style="width: auto;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left">정산방법</th>
+              <td class="ta-left">
+                <div class="td-item-group">
+                  <div class="td-item-group left td-item">
+                    <!-- 드롭박스 -->
+                    <div class="td-item drop-box" id="td_item_drop_box3"><!-- trigger 버튼 클릭 시 open 클래스 추가 -->
+                      <!-- 드롭다운 버튼영역 -->
+                      <p class="placeholder"><!-- 선택 시 placeholder 클래스 제거 -->
+                        <button type="button" class="trigger drop-btn"  id="dropBox3"><span id="dropBox3_nm">선택해주세요.</span></button>
+                        <input type="hidden" id="headcnt_settle_type"	name="headcnt_settle_type"	value="" />
+                      </p>
+                      <!-- 드롭다운 컨텐츠 -->
+                      <div class="drop-content" style="display: none;" id="drop_content3"><!-- 사용 시 display: none 제거 -->
+                        <p class="drop-item" id="drop_item_settle_type_0"><!-- 선택 시 select -->
+                          <button type="button" class="drop-btn" onclick="javascript:setState3('0');">세금계산서</button>
+                        </p>
+                        <p class="drop-item" id="drop_item_settle_type_1">
+                          <button type="button" class="drop-btn" onclick="javascript:setState3('1');">계좌이체</button>
+                        </p>     
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 계좌번호 -->
+                <div class="td-item-group td-item" style="display: none;" id="transfer2"><!-- 미사용 시 display:none; -->
+                  <p class="txt-03 mt8">하나은행 325-890003-38304 (주)현대그린푸드로 입금해 주세요</p>
+                </div>
+              </td>
+            </tr>
+            <tr id="manager1" style="display: none;">
+              <th class="ta-left">정산 담당자</th>
+              <td class="ta-left">
+                <div class="ip-wrap with-icon w100p">
+                  <input name="headcnt_manager_nm" id="headcnt_manager_nm" class="ip-txt" type="text" maxlength="20" onkeyup="this.value=this.value.replace(/[^a-zA-Zㄱ-ㅎ가-힣]/g,'');" placeholder="정산 담당자 명을 작성해 주세요.">
+                  																									 
+                </div>
+              </td>
+            </tr>
+            <tr id="manager2" style="display: none;">
+              <th class="ta-left">정산 담당자 소속</th>
+              <td class="ta-left">
+                <div class="ip-wrap with-icon w100p">
+                  <input name="headcnt_manager_corp_nm" id="headcnt_manager_corp_nm" class="ip-txt" type="text" maxlength="20" placeholder="정산 담당자 소속을 입력해주세요..">
+                </div>
+              </td>
+            </tr>
+            <tr id="manager3" style="display: none;">
+              <th class="ta-left">정산 담당자 이메일</th>
+              <td class="ta-left">
+                <div class="ip-wrap with-icon w100p">
+                  <input name="headcnt_manager_email" id="headcnt_manager_email" class="ip-txt" type="text" value="" placeholder="정산 담당자 이메일을 입력해주세요.">
+                </div>
+              </td>
+            </tr>
+            <tr id="manager4" style="display: none;">
+              <th class="ta-left">정산 담당자 연락처</th>
+              <td class="ta-left">
+                <div class="ip-wrap with-icon w100p">
+                  <input name="headcnt_manager_tel_no" id="headcnt_manager_tel_no" class="ip-txt" type="text" oninput="autoHyphen(this)" maxlength="13"  placeholder="정산 담당자 연락처를 입력해주세요.">
+                </div>
+              </td>
+            </tr>
+            <tr id="transfer1" style="display: none;">
+              <th class="ta-left">입금자명</th>
+              <td class="ta-left">
+                <div class="ip-wrap with-icon w100p">
+                  <input name="headcnt_manager_nm2" id="headcnt_manager_nm2" class="ip-txt" type="text" value="" placeholder="입금하실때 기입하실 입금자명을 입력해 주세요.">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-group ta-center mt32">
+          <button class="btn btn-md-a btn-primary" type="button" onclick="javascript:goHeadCntRequest();" >신청하기</button>
+        </div>
+      </div>
+      <!-- <div class="modal-footer"></div> -->
+    </div>
+  </div>
+  
+  
+  <div class="dim" id="modal_popup" style="display:none;"></div>
+ </div>
+ <iframe name="ifrm" width="0" height="0" style="display:none;"></iframe>
+</body>
+</html>

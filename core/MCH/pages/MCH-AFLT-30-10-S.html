@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>신청자정보 입력</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="MCH-AFLT-30-10-S">
+<form name="form1" id="form1">
+    <input type="hidden" name="FILE_TYPE"   id="file_type"  value="doc" />
+    <input type="hidden" name="FILE_NAME"   id="file_name"  value="대리인위임장.docx" />
+    <input type="hidden" name="FILE_PATH"   id="file_path"  value="/WAS_DATA/webRoot/bls/data/down/"/>
+</form>
+<iframe name="ifrm" width="0" height="0" style="display:none;"></iframe>
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="CI"  name="CI"  value="" />
+    <input type="hidden" id="AC"  name="AC"  value="" />
+    <input type="hidden" id="APY_SEQ"  name="APY_SEQ"  value="" />
+    <input type="hidden" id="biz_no"  name="biz_no"  value="" />
+    <div class="wrap">
+        <div class="header floating-back-header floating-sticky">
+            <h1>신규 가맹점 신청</h1>
+            <a data-element-id="MCH-AFLT-30-10-S-e05" href="#" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+        </div>
+        <!-- // header -->
+        <div class="container">
+            <div class="content">
+                <!-- 신규가맹점 신청 -->
+                <div class="new_store">
+                    <!-- 신청자 정보 확인 -->
+                    <div class="join_confirm addBtn-pb68">
+                        <h2 class="step_txt">신청자 정보를 확인해 주세요.</h2>
+                        <!-- 입력영역 -->
+                        <div class="data-wrap bg-box">
+                            <ul class="data-list">
+                                <li class="data-item">
+                                    <span class="item-tit">이름</span>
+                                    <span class="item-con" id="apy_nm">비플머니</span>
+                                </li>
+                                <li class="data-item">
+                                    <span class="item-tit">생년월일</span>
+                                    <span class="item-con" id="brt_dt"><!-- sample:begin -->2026.09.02<!-- sample:end --></span>
+                                </li>
+                                <li class="data-item">
+                                    <span class="item-tit">휴대폰번호</span>
+                                    <span class="item-con" id="mob_no"><!-- sample:begin -->1<!-- sample:end --></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sel_bx">
+                            <h3>위 신청자가 사업자의 대표자인가요?</h3>
+                            <ul>
+                                <li><label><input data-element-id="MCH-AFLT-30-10-S-e07" type="radio" name="apy_repr_yn" id="Y" value="Y">네</label></li>
+                                <li><label><input data-element-id="MCH-AFLT-30-10-S-e08" type="radio" name="apy_repr_yn" id="N" value="N">아니요, 대리인 입니다.</label></li>
+                            </ul>
+                        </div>
+                        <!-- 대리인의 경우 노출 -->
+                        <!--<div class="substitute" id="substitute" style="display: none">
+                            <p>※ 대리인이 신청하는 경우 대표자의 위임장을 첨부하여야 합니다.</p>
+                            <p class="btn_download"><a &lt;%&ndash;download="" href="비플페이_가맹점신청위임장.docx"&ndash;%&gt;id="download" >위임장 양식 다운로드</a></p>
+                            &lt;%&ndash;                                        <p class="btn_download"><a id="download" >위임장 양식 다운로드</a></p>&ndash;%&gt;
+                        </div>-->
+
+                        <!--<div class="ipt_section">
+                            <form action="">
+                                <fieldset>
+                                    <legend>신청자 정보 확인</legend>
+&lt;%&ndash;                                    <div class="ipt_bx"><!-- 보호자 이름 입력 활성화 시 'ipt' 클래스 추가 ->&ndash;%&gt;
+&lt;%&ndash;                                        <h3>이름</h3>&ndash;%&gt;
+&lt;%&ndash;                                        <input type="text" id="apy_nm" readonly value="비플머니" data-fill="demo">&ndash;%&gt;
+&lt;%&ndash;                                    </div>&ndash;%&gt;
+&lt;%&ndash;                                    <div class="ipt_bx">&ndash;%&gt;
+&lt;%&ndash;                                        <h3>생년월일</h3>&ndash;%&gt;
+&lt;%&ndash;                                        <input type="tel" id="brt_dt" readonly value="2026.09.02" data-fill="demo">&ndash;%&gt;
+&lt;%&ndash;                                    </div>&ndash;%&gt;
+&lt;%&ndash;                                    <div class="ipt_bx">&ndash;%&gt;
+&lt;%&ndash;                                        <h3>휴대폰 번호</h3>&ndash;%&gt;
+&lt;%&ndash;                                        <input type="tel" id="mob_no" readonly value="1" data-fill="demo">&ndash;%&gt;
+&lt;%&ndash;                                    </div>&ndash;%&gt;
+
+                                    <!-- //대리인의 경우 노출 ->
+                                </fieldset>
+                            </form>
+                        </div>-->
+                        <!-- //입력영역 -->
+                    </div>
+                    <!-- //신청자 정보 확인 -->
+                </div>
+                <!-- //신규가맹점 신청 -->
+                <!-- 하단 고정버튼 -->
+                <div class="btn_botFix_w">
+                    <div class="inner bg_white">
+                        <a data-element-id="MCH-AFLT-30-10-S-e06" href="#none" class="btn_default round_r8 btn-style-h48" id="next_btn" onclick="next_btn(this)">
+                            <!-- 활성화 시 on 클래스 추가 -->
+                            다음
+                        </a>
+                    </div>
+                </div>
+                <!-- //하단 고정버튼 -->
+            </div>
+            <!-- content -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+</form>
+
+    <script>
+        var radi_value = "";
+        <!--let error = "";-->
+    </script>
+</body>
+</html>

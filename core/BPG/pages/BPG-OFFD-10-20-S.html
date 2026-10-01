@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>오피스푸드 메뉴 상세</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OFFD-10-20-S">
+<input type="hidden" id="bpAfltSeq" name="bpAfltSeq" value=""/>
+	<input type="hidden" id="menuScheduleId" name="menuScheduleId" value=""/>
+	<input type="hidden" id="trxDt" name="trxDt" value=""/>
+	<input type="hidden" id="displayName" name="displayName" value=""/>
+	<input type="hidden" id="serviceTime" name="serviceTime" value=""/>
+	<input type="hidden" id="menuId" name="menuId" value=""/>
+	<input type="hidden" id="menuName" name="menuName" value=""/>
+	<input type="hidden" id="price" name="price" value=""/>
+	<input type="hidden" id="maxOrderQty" name="maxOrderQty" value=""/>
+	<input type="hidden" id="amountQty" name="amountQty" value=""/>
+	<input type="hidden" id="deadline" name="deadline" value=""/>
+
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>메뉴 상세</h1>
+			<a data-element-id="BPG-OFFD-10-20-S-e06" href="#" class="btn-history-back" id="back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 비플오더 -->
+				<div class="flexWrap">
+					<div class="bpleOder addBtn-pb58"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+						<!-- 메뉴상세 -->
+						<div class="menu_detail">
+							<!-- 사진 -->
+							<div class="m_photo">
+								<p><img alt="메뉴 이미지" src="../assets/_sample/card.svg"></p>
+							</div>
+							<!-- 메뉴명 / 설명 -->
+							<div class="m_info">
+								<div class="label">
+									
+										<p class="ico type1">조식</p>
+									
+								</div>
+								<p class="name">비플머니</p>
+								<p class="description"></p>
+							</div>
+							<!-- 가격정보 -->
+							<div class="price_w">
+								<h2 class="tit">가격</h2>
+								<p class="price">+<span>4,500</span>원</p>
+							</div>
+							<!-- 선택영역(옵션 등) -->
+							<div class="option_bx">
+								<!-- 옵션 목록 -->
+								<div class="opt_list type-txt">
+									<h3 class="opt_tit">원산지</h3>
+									<div class="txt_bx">
+										<p></p>
+									</div>
+								</div>
+								<!-- 수량 -->
+								
+								<div class="count">
+									<div class="title_box column pd0">
+										<h2 class="tit">수량</h2>
+										<p class="limit">(주문가능 수량: 1개)</p>
+									</div>
+
+									<div class="spiner_btn">
+										<p><a data-element-id="BPG-OFFD-10-20-S-e07" href="javascript:doCalculate(-1);" class="minus">수량빼기</a></p>
+										<p><span id="spanAmountQty">1</span>개</p>
+										<p><a data-element-id="BPG-OFFD-10-20-S-e08" href="javascript:doCalculate(1);" class="plus">수량추가</a></p>
+									</div>
+								</div>
+								
+							</div>
+							<!-- //선택영역(옵션 등) -->
+						</div>
+						<!-- //메뉴상세 -->
+					</div>
+				</div>
+				<!-- //비플오더 -->
+			</div>
+			<!-- // content -->
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w" id="divSumPrice" style=''>
+				<div class="inner bg_white">
+					<a data-element-id="BPG-OFFD-10-20-S-e09" href="javascript:doAddMyBag();" class="btn_defaul tbtn-style-h48 round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+						<strong id="sumPrice"><!-- sample:begin -->4,500<!-- sample:end --></strong>원 담기
+					</a>
+				</div>
+			</div>
+			
+			<div class="btn_botFix_w bpOder" id="divDeadLine" style=''><!-- 장바구에 상품 있을경우 or 가맹점 영업 준비중 일 경우 style="display:block;" -->
+				<div class="inner">
+					<a data-element-id="BPG-OFFD-10-20-S-e10" href="#none" class="round_r8"><!-- 활성화 시 on 클래스 추가 -->
+						<span>주문이 마감되었습니다</span>
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

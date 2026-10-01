@@ -1,0 +1,117 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플pg 사용자 인증</title>
+  <link rel="stylesheet" href="../assets/resource/css/beple_reset.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple.css">
+</head>
+<body data-screen-id="BPG-PGM-20-S">
+<form method="post" id="frm" name="frm">
+    <input type="hidden" name="INQ_TYPE" value=""/>
+    <input type="hidden" name="CALLBACK_URL" value=""/>
+    <input type="hidden" name="FAIL_URL" value=""/>
+    <input type="hidden" name="CANCEL_URL" value=""/>
+
+    <input type="hidden" name="MID" value=""/>
+    <input type="hidden" name="RQ_DTIME" value=""/>
+    <input type="hidden" name="TNO" value=""/>
+    <input type="hidden" name="EV" value=""/>
+    <input type="hidden" name="VV" value=""/>
+    <input type="hidden" name="ALG" value=""/>
+    <input type="hidden" name="PG_FLAG" value="" id="pgFlag"/>
+    <input type="hidden" name="APP_CD" value=""/>
+
+    <div class="wrap">
+        <!-- 헤더 -->
+        <header class="header position-sticky">
+            <div class="header__title-wrap">
+                <h1 class="page-name"><span>비플페이 온라인결제</span></h1>
+            </div>
+
+            <nav class="header__navi">
+                <a data-element-id="BPG-PGM-20-S-e05" href="#none" class="header__btn btn-close" id="backBtn">
+                    <span class="blind">페이지 닫기</span>
+                </a>
+            </nav>
+        </header>
+
+        <main class="container-wrap js-container-wrap">
+            <section class="page-header justify-spacing-def pdt24">
+                <article class="page-header__content flex-column gap-16">
+                    <div class="page-header__headline-wrap">
+                        <h2 class="flex-row">
+                            <p class="page__headline page__headline--lv1">
+                                비플페이 온라인결제를<br>
+                                진행합니다
+                            </p>
+                        </h2>
+                    </div>
+                    <div class="flex-column">
+                        <p class="page__description page__description--lv1">비플페이 회원 확인을 위해 아래 정보로 인증을 진행합니다.</p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 컨테이너 -->
+            <section class="container js-container justify-spacing-def pdt32">
+                <article class="container__body">
+                    <div class="body__content">
+                        <div class="flex-column gap-32">
+                            <div class="form-box js-form-box">
+                                <div class="form__item js-form-item" id="mobItem">
+                                    <!-- 활성화 시 'item--on', 읽기전용, 비활성화 시 item--disabled, 오류 시 item--error -->
+                                    <div class="form__item-header input-line--header">
+                                        <h3 class="form__label container__headline container__headline--lv1">
+                                            <label>휴대폰번호</label>
+                                        </h3>
+                                    </div>
+
+                                    <div class="form__item-wrap">
+                                        <div class="input-type--line">
+                                            <input data-element-id="BPG-PGM-20-S-e07" type="tel" value="" id="mobNo" name="MOB_NO" placeholder="휴대폰번호 입력">
+                                            <button type="button" class="input__unit" style="display: none;"><i class="icon icon--close_cr-16"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- 힌트 메세지 -->
+                                    <p class="form__hint info__text--lv1" id="mobTxt"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                                </div>
+                            </div>
+
+                            <div class="form-box js-form-box">
+                                <div class="form__item js-form-item" id="nmItem">
+                                    <!-- 활성화 시 'item--on', 읽기전용, 비활성화 시 item--disabled, 오류 시 item--error -->
+                                    <div class="form__item-header input-line--header">
+                                        <h3 class="form__label container__headline container__headline--lv1">
+                                            <label>이름</label>
+                                        </h3>
+                                    </div>
+
+                                    <div class="form__item-wrap">
+                                        <div class="input-type--line">
+                                            <input data-element-id="BPG-PGM-20-S-e08" type="text" value="" id="membNm" name="MEMB_NM" placeholder="이름(실명) 입력">
+                                        </div>
+                                    </div>
+                                    <!-- 힌트 메세지 -->
+                                    <p class="form__hint info__text--lv1" id="nmTxt"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+            </section>
+
+            <!-- 플로팅 컨테이너 -->
+            <section class="container-floating">
+                <article class="floating__box button-box-spacing">
+                    <a data-element-id="BPG-PGM-20-S-e06" href="#none" class="button button-xl button--lv1" id="auth"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+                        <span>인증하기</span>
+                    </a>
+                </article>
+            </section>
+        </main>
+    </div>
+</form>
+</body>
+</html>

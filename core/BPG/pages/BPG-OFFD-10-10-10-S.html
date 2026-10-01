@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>배송지 등록(SPOT)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OFFD-10-10-10-S">
+<form name = "frm" id = "frm" method="post">
+		<input id="BP_AFLT_SEQ"  name = "BP_AFLT_SEQ" type="hidden" value="">
+		<input id="REQ_URL" 	 name = "REQ_URL" 	  type="hidden" value="">
+		<input id="MORE" 	 	 name = "MORE" 	  	  type="hidden" value="">
+	</form>
+	<input id="LOC_ID"     name = "LOC_ID" 	  type="hidden" value="">
+	<input id="LOC_TITLE"  name = "LOC_TITLE" type="hidden" value="">
+	<input id="ADDR1"  	   name = "ADDR1" 	  type="hidden" value="">
+	<input id="ADDR2"  	   name = "ADDR2" 	  type="hidden" value="">
+	<input id="MYBAG_YN"   name = "MYBAG_YN" 	  type="hidden" value="">
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>배송지 등록</h1>
+			<a data-element-id="BPG-OFFD-10-10-10-S-e03" href="#" class="btn-history-back">뒤로가기</a>
+		</div><!-- // header -->
+
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 컨텐츠 영역 -->
+				<div class="flexWrap line_height-normal">
+					<div class="fooding">
+						<!-- 배송지 등록 - step1-->
+						<div class="fooding_delivery step1">
+							<!-- 타이틀영역 박스 -->
+							<div class="top_bx">
+								<h3 class="sub_title bold_01"></h3>
+								<p class="caption_txt reg_02">서울 강남구 테헤란로 1길 10</p>
+							</div>
+							<!-- 주소목록 박스 -->
+							<div class="bx_container">
+								<!-- 스팟1 -->
+								<div class="con">
+									<a id="spot1" spot_id_1="">
+										<div class="border_bx small_bx arrow20 arr-bottom">
+											<p id="spot1_p" class="caption_txt reg_02"><!-- sample:begin -->표본<!-- sample:end --></p><!-- 장소 선택 시 ipt 클래스 추가 -->
+										</div>
+									</a>
+								</div>
+								<!-- 스팟2 사용안함  -->
+								<div class="con" id="spot2_dv" style="display:none">
+									<a id="spot2" spot_id_2="">
+										<div class="border_bx small_bx arrow20 arr-bottom">
+											<p id="spot2_p" class="caption_txt reg_02"><!-- sample:begin -->표본<!-- sample:end --></p><!-- 장소 선택 시 ipt 클래스 추가 -->
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 컨텐츠 영역 -->
+				<!-- 하단 고정버튼 -->
+				<div class="btn_botFix_w">
+					<div class="inner bg_white">
+						<a data-element-id="BPG-OFFD-10-10-10-S-e04" id="btn_save" class="btn_default round_r8 btn-style-h46">배송지 등록</a><!-- 활성/비활성화 시 on 클래스 추가/제거 -->
+					</div>
+				</div>
+				<!-- //하단 고정버튼 -->
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	<!-- 레이어팝업 -->
+	<div class="layer_overlay" id="spot1Layer" style="display:none;">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 설정팝업 -->
+				<div class="edit_pop add_tit_t2">
+					<h2 class="ly_pop_tit">상세 수령장소</h2>
+					<p class="btn_close">
+						<a onclick="spotClose('spot1Layer');"><span class="blind">닫기</span></a>
+					</p>
+					<ul id="spot1_ul"><!-- sample:begin -->표본<!-- sample:end --></ul>
+				</div>
+				<!-- //설정팝업 -->
+			</div>
+		</div>
+	</div>
+	<!-- //레이어팝업 -->
+	<!-- 레이어팝업  1개의 스팟만 있어서 사용 안함 -->
+	<div class="layer_overlay" id="spot2Layer" style="display:none;">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 설정팝업 -->
+				<div class="edit_pop add_tit_t2">
+					<h2 class="ly_pop_tit">상세 수령장소</h2>
+					<p class="btn_close">
+						<a onclick="spotClose('spot2Layer');"><span class="blind">닫기</span></a>
+					</p>
+					<ul id="spot2_ul">
+						
+					</ul>
+				</div>
+				<!-- //설정팝업 -->
+			</div>
+		</div>
+	</div>
+	<!-- //레이어팝업 -->
+</body>
+</html>

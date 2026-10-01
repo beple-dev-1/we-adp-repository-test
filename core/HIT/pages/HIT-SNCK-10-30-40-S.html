@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>다과 예약 신청 (settle)</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-SNCK-10-30-40-S">
+<div class="wrap js-wrap" >
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-SNCK-10-30-40-S-e10" class="hd-btn back" id='btnBack'><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">다과 예약 신청</h1>
+        </div>
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <!-- <a href="#none" class="hd-btn close"><span class="blind-i">닫기</span></a> -->
+        </nav>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 식수신청 -->
+            <section class="orderling-container flex-column grow-y"><!-- 2024-03-29 'flex-column' 'grow-y' 클래스 추가 -->
+            <!-- 컨테이너 헤더 -->
+            <div class="container-hd">
+                <h2 class="container__hd-title">예산 정보</h2>
+                <p class="container__hd-text">사용하실 예산정보 및 정산 담당자 정보를 입력해 주세요.</p>
+            </div>
+            <!-- 컨테이너 컨텐츠 -->
+            <article class="orderling__item-wrap">
+                <!-- 예산 금액 -->
+                <div class="form-box">
+                    <!-- 헤더 -->
+                    <div class="box-hd">
+                        <p class="form-label">예산 금액(1인 기준)</p>
+                    </div>
+                    <!-- 컨텐츠 -->
+                    <div class="form-item form-input">
+                        <input data-element-id="HIT-SNCK-10-30-40-S-e12" type="tel" maxlength="12" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');checkZero();btnCheck()"  id='estAmtInput' placeholder="최대 예산 금액을 입력해 주세요.">
+                    </div>
+                </div>               
+                <!-- 정산 담당자 명 -->
+                <div class="form-box">
+                    <!-- 헤더 -->
+                    <div class="box-hd">
+                        <p class="form-label">정산 담당자명</p>
+                    </div>
+                    <!-- 컨텐츠 -->
+                    <div class="form-item form-input">
+                        <input data-element-id="HIT-SNCK-10-30-40-S-e13" type="text" onkeyup="btnCheck();textCheck(this);" maxlength="30" id='managerNmInput' placeholder="정산 담당자명을 입력해 주세요.">
+                    </div>
+                </div>
+                <!-- 정산 담당자 부서 -->
+                <div class="form-box">
+                    <!-- 헤더 -->
+                    <div class="box-hd">
+                        <p class="form-label">정산 담당자 이메일</p>
+                    </div>
+                    <!-- 컨텐츠 -->
+                    <div class="form-item form-input">
+                        <input data-element-id="HIT-SNCK-10-30-40-S-e14" type="text" onkeyup="btnCheck();" id='managerEmailInput'  placeholder="정산 담당자 이메일 정보를 입력해주세요.">
+                    </div>
+                </div>
+                <!-- 정산 담당자 연락처 -->
+                <div class="form-box">
+                    <!-- 헤더 -->
+                    <div class="box-hd">
+                        <p class="form-label">정산 담당자 연락처</p>
+                    </div>
+                    <!-- 컨텐츠 -->
+                    <div class="form-item form-input">
+                        <input data-element-id="HIT-SNCK-10-30-40-S-e15" type="tel" maxlength="13" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');checkPhone();btnCheck()"  id='managerTelNoInput' placeholder="정산 담당자 연락처를 입력해 주세요.">
+                    </div>
+                </div>
+            </article> 
+                <!-- 2024-03-29 -->
+                <div class="terms-agree js-drop_box">
+                    <p class="trigger">
+                        <label class="agree-label"><input data-element-id="HIT-SNCK-10-30-40-S-e16" type="checkbox" id="agreeCheck" onchange="btnCheck();"><span>[필수] 개인정보 제 3자 제공 동의</span></label>
+                        <button data-element-id="HIT-SNCK-10-30-40-S-e09" class="trigger-btn js-drop_trigger"><span class="blind-i">상세내용 보기</span></button>
+                    </p>
+                    <div class="terms-content js-drop_con" style="display: none;">
+                        <ol class="list-num">
+                            <li>제공받는자 : 현대그린푸드</li>
+                            <li>제공받는자의 개인정보 이용 목적 : 다과 신청자, 정산 담당자 정보 확인</li>
+                            <li>제공하는 개인정보 항목 : 사원번호, 성명, 사업장, 부서, 내선 번호, 이메일</li>
+                            <li>제공받는 자의 정보 이용 기간 : 서비스 제공 완료 후 파기</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- // 2024-03-29 -->
+        </section>
+
+        <!-- 플로팅 박스 -->
+        <section class="floating-container bottom  js-floating-wrap">
+                <!-- 메인 버튼영역 -->
+            <article class="main_btn-box bg-white">
+                <div class="btn-main">
+                    <a data-element-id="HIT-SNCK-10-30-40-S-e11" onclick='nextStep()' id='nextBtn' class="btn-default radius-mid btn-style-h48">신청하기</a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+                </div>
+            </article>
+        </section>
+    </main>
+</div>
+</body>
+</html>

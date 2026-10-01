@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점찾기 > 상품권 사용처별 가맹점 검색</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-SRCH-20-10-S">
+<input type="hidden" id="ZPP_ID" value="" />
+<input type="hidden" id="ZPP_POST_DO" value="" />
+<input type="hidden" id="ZPP_POST_SI" value="" />
+<input type="hidden" id="LOCAL_GOV_LAT" value="" />
+<input type="hidden" id="LOCAL_GOV_LNG" value="" />
+<input type="hidden" id="ZPP_NM" value="" />
+
+<input type="hidden" id="MEMB_CD" value="" />
+
+<div class="wrap flex-layout">
+    <div class="header floating-back-header floating-sticky">
+        <a data-element-id="BPY-SRCH-20-10-S-e08" href="#" class="btn-history-back type2" id="go_back">뒤로가기</a>
+        <h1 id="title" style="position: relative;" curr_page="1">비플머니 사용처</h1>
+    </div><!-- // header -->
+    <div class="container">
+        <div class="content">
+            <!-- 컨텐츠 영역 -->
+
+            <!-- page1. 리스트영역 -->
+            <div id="page1_top" class="store-find_page_content">
+                <div class="row-bothpadding20-style shrink-n">
+                    <div class="local_select">
+                        <a href="#none" id="page1_post_do_si"><!-- sample:begin -->표본<!-- sample:end --></a>
+                    </div>
+
+                    <!-- 검색영역 -->
+                    <div class="local_sch" >
+                        <div class="bg" id="bg_sch_keyword">
+                            <a data-element-id="BPY-SRCH-20-10-S-e09" class="btn" role="button" title="검색"><span class="blind">검색</span></a>
+                            <input data-element-id="BPY-SRCH-20-10-S-e14" type="text" role="searchbox" placeholder="매장명 또는 전화번호를 입력해 주세요." readonly maxlength="40">
+                            <a data-element-id="BPY-SRCH-20-10-S-e10" class="btn del" style="display:none;"><span class="blind">검색어삭제</span></a>
+                        </div>
+                    </div>
+                    <!-- //검색영역 -->
+                </div>
+
+                <!-- 카테고리 -->
+                <div class="category_w shrink-n">
+                    <div class="inner scroll_w"> <!-- 더보기버튼 클릭 시 scroll_w 클래스 삽입/삭제 -->
+                        <ul class="cate_list" id="category_ul"><!-- sample:begin --><li><a href="#none"><div class='category_li_div' role='option' aria-selected='true' aria-label='홍길동button'><div class='category_li_div' role='option' aria-label='홍길동button'><p class="cate_img_w"><img alt="전체선택" src="../assets/_sample/card.svg"></p><p class="name" value='004'> 홍길동</p></div></a></li><!-- sample:end --></ul>
+                    </div>
+
+                    <p class="btn_category_all">
+                        <a data-element-id="BPY-SRCH-20-10-S-e11" href="#none">
+                            <span>카테고리 더보기</span> <!-- 해당버튼 클릭 시 38line 클래스 scroll_w 추가 및 삭제 -->
+                        </a>
+                    </p>
+                </div>
+
+                <div class="round_tab_box shrink-n">
+                    <input type="hidden" id="selected_order_tab" value="D">
+                    <ul id="order_tab_ul">
+                        <li class="on" value="D" role="option" aria-selected="true"> <!-- 선택 및 선택 해제 시 on 클래스 추가/삭제 -->
+                            <a data-element-id="BPY-SRCH-20-10-S-e12" href="#none">
+                                <span>거리</span>
+                            </a>
+                        </li>
+                        <li value="P"> <!-- 선택 및 선택 해제 시 on 클래스 추가/삭제 -->
+                            <a data-element-id="BPY-SRCH-20-10-S-e13" href="#none">
+                                <span>인기</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 검색리스트 -->
+                <div class="local_stroe_search addBtn-pb58" id="list_result" style="display:none">
+                    <div class="result_list">
+                        <ul id="rec_list">
+                        </ul>
+                    </div>
+
+                    <div id="result_none" class="result_none" style="display:none;">
+                        <p>이용 가능한 매장이 없습니다.</p>
+                    </div>
+                </div>
+
+                <!-- 플로팅버튼 -->
+                <div class="btn_fix_float fixed-bottom-section" id="btn_map">
+                    <div class="inner">
+                        <a><span>지도로 찾기</span></a>
+                    </div>
+                </div>
+                <!-- //플로팅버튼 -->
+            </div>
+            <!-- //page1. 리스트영역 -->
+
+            <!-- page2. 위치검색영역 -->
+            <div id="page2_top" class="store-find_page_content" style="display:none;">
+                <div class="row-bothpadding20-style" style="display:none;">
+                    <!-- 검색영역 -->
+                    <div class="local_sch mgt16">
+                        <div class="bg">
+                            <a class="btn" id="page2_sch_btn_img" role="button" title="검색"><span class="blind">검색</span></a>
+                            <input type="text" id="page2_sch_keyword" placeholder="시/도/구로 검색해 주세요." maxlength="20">
+                            <a class="btn del" style="display:none;" id="page2_sch_del" style="display:none;"><span class="blind">검색어삭제</span></a>
+                        </div>
+                    </div>
+                    <!-- //검색영역 -->
+
+                    <div class="setting_map_btn">
+                        <a href="#none" id="setting_curr_locat">
+                            <span>현재 위치로 설정</span>
+                        </a>
+                    </div>
+
+                    <!-- 검색리스트 -->
+                    <div class="local_stroe_search top_bd_grey" style="display:none;">
+
+                        <div class="local_tit_w" style="display:none;">
+                            <div class="left">
+                                <span>최근 검색 위치</span>
+                            </div>
+
+                            <div class="right">
+                                <a href="#none" class="btn_del_all" id="page2_rcnt_del_all" title="최근 검색 위치 전체 삭제">전체삭제</a>
+                            </div>
+                        </div>
+
+                        <!-- 최근검색어 리스트 -->
+                        <div class="recent_sch_list" style="display:none;">
+                            <ul>
+                            </ul>
+                        </div>
+                        <!-- 최근검색어 리스트 -->
+
+                        <!-- 검색결과 -->
+                        <div class="result_list">
+                            <ul id="rec_list">
+                            </ul>
+                        </div>
+                        <!-- 검색결과 -->
+
+                        <!-- 결과없음 -->
+                        <div class="result_none" style="display:none;">
+                            <p>검색 결과가 없습니다.</p>
+                        </div>
+                        <!-- 결과없음 -->
+                    </div>
+                    <!-- //검색리스트 -->
+                </div>
+            </div>
+            <!-- //page2. 위치검색영역 -->
+
+            <!-- page3. 매장검색영역 -->
+            <div id="page3_top" class="store-find_page_content">
+                <div class="row-bothpadding20-style shrink-n" style="display:none;">
+                    <!-- 검색영역 -->
+                    <div class="local_sch mgt16">
+                        <div class="bg">
+                            <a class="btn" id="page3_sch_btn_img" role="button" title="검색"><span class="blind">검색</span></a>
+                            <input type="text" id="page3_sch_keyword" placeholder="매장명 또는 전화번호를 입력해 주세요." value="" maxlength="20">
+                            <a class="btn del" id="page3_sch_del" style="display:none;"><span class="blind">검색어삭제</span></a> <!-- 2021-12-06 -->
+                        </div>
+                    </div>
+                    <!-- //검색영역 -->
+                </div>
+                
+				<!-- 검색리스트 -->
+				<div class="local_stroe_search">
+				
+				    <!-- 최근검색어 -->
+				    <div class="local_tit_w" style="display:none;">
+				        <div class="left">
+				            <span id="page3_post_do_si"><!-- sample:begin -->표본<!-- sample:end --></span>
+				            <span id="span_word">최근 검색어</span>
+				        </div>
+				
+				        <div class="right">
+				            <a href="#none" class="btn_del_all" id="page3_rcnt_del_all" title="최근 검색어 전체삭제">전체삭제</a>
+				        </div>
+				    </div>
+				
+				    <!-- 최근검색어 리스트 -->
+				    <div class="recent_sch_list" style="display:none;">
+				        <ul>
+				        </ul>
+				    </div>
+				    <!-- //최근검색어 리스트 -->
+				
+				    <!-- 검색완료 -->
+				    <div class="result_list"> <!-- 2021-11-23 검색 완료 page "sch_comp"추가-->
+				        <ul id="rec_list">
+				        </ul>
+				    </div>
+				
+				    <!-- 결과없음 -->
+				    <div class="result_none" style="display:none;">
+				        <p>검색된 가맹점이 없습니다.</p>
+				    </div>
+				    <!-- 결과없음 -->
+				</div>
+                    <!-- //검색리스트 -->                
+            </div>
+            <!-- page3. 매장검색영역 -->
+
+            <!-- //컨텐츠 영역 -->
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

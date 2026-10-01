@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>사업자 번호 확인</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KYC-50-10-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="CI"  name="CI"  value="" />
+    <input type="hidden" id="AC"  name="AC"  value=""/>
+    <input type="hidden" id="MOB_NO"  name="MOB_NO"  value=""/>
+    <input type="hidden" id="MEMB_NM"  name="MEMB_NM"  value=""/>
+    <input type="hidden" id="BRT_DT"  name="BRT_DT"  value=""/>
+    <input type="hidden" id="GNDR"  name="GNDR"  value=""/>
+    <input type="hidden" id="SEOUL_PAY_YN"  name="SEOUL_PAY_YN"  value=""/>
+</form>
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>가맹점 고객확인서</h1>
+        <a data-element-id="MCH-KYC-50-10-S-e04" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+    </div>
+    <!-- // header -->
+
+    <div class="container">
+        <div class="content">
+            <!-- 고객확인서 -->
+            <section class="customer-verification js-cv-container"><!-- 2024-11-19 'js-cv-container' 클래스 추가 -->
+                <article class="verification__header">
+                    <h2 class="header__title">
+                        작성하실 가맹점의<br>
+                        사업자 정보를 입력해 주세요.
+                    </h2>
+                </article>
+
+                <!-- 정보 form -->
+                <article class="verification__content mgt32">
+                    <div class="form-box">
+                        <div class="form__item"><!-- 입력 시 ipt 클래스 추가 -->
+                            <div class="form__item-header">
+                                <h3 class="form__label">사업자등록번호</h3>
+                            </div>
+
+                            <div class="form__item-wrap">
+                                <div class="type-box">
+                                    <input data-element-id="MCH-KYC-50-10-S-e06" type="text" placeholder="사업자등록번호 숫자 10자리 입력" id="biz_no" maxlength="12" onkeyup="checkInput();" value="123-45-67890" data-fill="demo">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__item item-accent">
+                            <div class="form__item-header">
+                                <h3 class="form__label">종사업장 번호를 가진 프랜차이즈 직영점인가요?</h3>
+                            </div>
+
+                            <div class="form__item-wrap">
+                                <div class="type-radio">
+                                    <label class="radio__label"><input type="radio" name="biz-num" value="Y" onclick="checkInput();"><span>네</span></label>
+                                    <label class="radio__label"><input type="radio" name="biz-num" value="N" onclick="checkInput();" checked><span>아니요</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 고객 확인서 안내 -->
+                <article class="verification__content mgt32">
+                    <div class="info-tip">
+                        <h3 class="tip__tit">고객확인서 작성 안내</h3>
+                        <div class="tip__con">
+                            <ul class="list_bar">
+                                <li>개인사업자는 대표자 본인만 「가맹점 고객확인서」를 작성할 수 있습니다.</li>
+                                <li>종된 사업장(프랜차이즈 직영점)을 보유한 법인은 본사(본점)만 「가맹점 고객확인서」를 작성할 수 있습니다. 재이행 시점 도래 시에도 본사가 고객확인제도 이행을 완료하면 종된 사업장에 자동 적용됩니다.</li>
+                                <li>단, 본사와 다른 사업자등록번호로 운영되는 사업자인 경우 「가맹점 고객확인서」를 별도 작성 및 제출해야 합니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 하단 고정버튼 -->
+            <div class="btn_botFix_w js-floating-box"><!-- 2024-11-19 js-floating-box 클래스 추가 -->
+                <div class="inner bg_white">
+                    <a data-element-id="MCH-KYC-50-10-S-e05" class="btn_default btn-style-h48 round_r8" id="btn_next"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                        <span>다음</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

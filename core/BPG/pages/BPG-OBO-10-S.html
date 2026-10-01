@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플오더 관리 메인</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-10-S">
+<input type="hidden" name="afltId" id="afltId" value=""/>
+    <input type="hidden" name="bpAfltSeq" id="bpAfltSeq" value=""/>
+	<input type="hidden" name="preUrl" id="preUrl" value=""/>
+	<input type="hidden" name="myUrl" id="myUrl" value=""/>
+	<input type="hidden" name="serviceChnl" id="serviceChnl" value=""/>
+	<input type="hidden" name="robotAfltYn" id="robotAfltYn" value=""/>
+
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>비플 오더 관리</h1>
+			<a data-element-id="BPG-OBO-10-S-e07" href="#" class="btn-history-back" id="back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 비플오더 -->
+				<div class="flexWrap">
+					<div class="bpleOder">
+						<div class="store_info">
+							<div class="store_name">
+								<!--
+									가맹점 별 아이콘 클래스 명
+									A	학원/교육		= edu
+									B	음식점/카페		= restr
+									C	의료/보건		= medi
+									D	농산물/청과		= agri
+									E	수산물/횟집		= seafood
+									F	축산물/정육		= meat
+									I	미용/패션		= beauty
+									G	식료품/반찬		= grocery
+									H	가구/가전		= interior
+									J	서비스업		= service
+									Z	기타 도소매		= retail
+								-->
+								<div class="ico"><img src="../assets/_sample/card.svg"></div>
+								<h2 class="name">
+									<strong></strong>
+								</h2>
+								<p class="cate"></p>
+							</div>
+							<!-- 가맹점 정보 - 주소, 대표번호 -->
+							<div class="info_detail">
+								<div class="info_bx">
+									<div class="detail_w">
+										<p class="tit">주소</p>
+										<div class="con">
+											<p>서울 강남구 테헤란로 1길 10</p>
+										</div>
+									</div>
+									<div class="detail_w">
+										<p class="tit">대표전화</p>
+										<div class="con">
+											<p>
+												<a href="tel:">010-1234-5678</a><br/>
+												<a href="tel:">010-1234-5678</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<!-- 가맹점 프로필 관리 버튼 -->
+								<p class="btn_profile_modify">
+									<a data-element-id="BPG-OBO-10-S-e08" href="#none" id="profileManager">
+										<span>가맹점 프로필 관리</span>
+									</a>
+								</p>
+							</div>
+						</div>
+						
+						
+						<!-- 비플오더 상황판(대기/완료) -->
+						<div class="admin_oder_state">
+							<div class="top_box">
+								<h3 class="oder_admin_tit"> 비플 오더 상황</h3>
+								<p class="sync_btn">
+									<a data-element-id="BPG-OBO-10-S-e09" href="#none" id="refresh">
+										<img src="../assets/resource/images/oder/ico_o_refresh.png" alt="동기화">
+									</a>
+								</p>
+							</div>
+							<div class="cnt_w">
+								<dl id="ingDl">
+									<dt>진행중</dt>
+									<dd>
+										<strong class="txt_key_color">1</strong>건
+									</dd>
+								</dl>
+								<dl id="completedDl">
+									<dt>완료</dt>
+									<dd>
+										<strong>1</strong>건
+									</dd>
+								</dl>
+							</div>
+						</div>
+						
+
+						<!-- 전체 메뉴 -->
+						<div class="oder_menu_all">
+							<h3 class="oder_admin_tit">전체 메뉴</h3>
+							<div class="menu_w">
+								
+								<a data-element-id="BPG-OBO-10-S-e10" href="#none" class="btn_admin" id="menuManager"><span>메뉴 관리</span></a>
+								
+								<a data-element-id="BPG-OBO-10-S-e11" href="#none" class="btn_list" id="orderDetail"><span>주문 내역</span></a>
+								<a data-element-id="BPG-OBO-10-S-e12" href="#none" class="btn_set" id="orderSetting"><span>주문 설정</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //스마트오더 -->
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

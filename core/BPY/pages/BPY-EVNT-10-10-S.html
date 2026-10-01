@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>이벤트 참여를 통해 적립받은 비플머니에 대한 적립 내역을 노출</title>
+  <link rel="stylesheet" href="../assets/resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_reset.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+</head>
+<body data-screen-id="BPY-EVNT-10-10-S">
+<div class="wrap">
+        <!-- 헤더 -->
+        <header class="header position-sticky">
+            <div class="header__title-wrap">
+                <h1 class="page-name"><span>적립내역</span></h1>
+            </div>
+            <nav class="header__navi">
+                <a id="btn_close" href="#none" class="header__btn btn-close">
+                    <span class="blind">닫기</span>
+                </a>
+            </nav>
+        </header>
+
+        <main class="container-wrap js-container-wrap">
+            <section class="container beple-point_history">
+                <article class="container__header justify-spacing-def">
+                    <a data-element-id="BPY-EVNT-10-10-S-e13" href="#none" class="point-summary" style="display: none;"><!-- [D] 미사용 시 style="display: none;" -->
+                        <p class="img">
+                            <img src="../assets/resource/images/beple_icon/point-summary__noti.svg" alt="알림 아이콘">
+                        </p>
+                        <div class="point-summary__content grow-y">
+                            <p class="info__text--lv1">
+                                <span class="point-amount">10,000원</span> 소멸예정 포인트를 확인하세요.
+                            </p>
+                        </div>
+                        <i class="icon icon--arrow-16 shrink-n"></i>
+                    </a>
+
+					<div class="container__header-content">
+                        <p id="tot_reward" class="container__headline container__headline--lv4">
+                            최근 3개월 동안<br>
+                            <strong>아직 받은 혜택</strong>이 없어요
+                        </p>
+
+                        <button data-element-id="BPY-EVNT-10-10-S-e08" id="btn_all_hist" class="button button-text button--text_1">
+                            <span class="fw-400">비플머니 전체내역</span>
+                            <i class="icon icon--arrow-16"></i>
+                        </button>
+					</div>
+                </article>
+
+                <!-- 월 선택 -->
+                <div class="month-selector">
+                    <button data-element-id="BPY-EVNT-10-10-S-e09" id="btn_prev" class="btn-arrow prev"><!-- [D] 비활성화 시 'dis' 클래스 추가 -->
+                        <span class="blind">이전달</span>
+                    </button>
+                    <button id="default_date" class="month"><!-- sample:begin -->2026.09.02<!-- sample:end --></button>
+                    <button data-element-id="BPY-EVNT-10-10-S-e10" id="btn_next" class="btn-arrow next"><!-- [D] 비활성화 시 'dis' 클래스 추가 -->
+                        <span class="blind">다음달</span>
+                    </button>
+                </div>
+
+                <div class="pay-history">
+                    <!-- 컨테이너 바디 -->
+                    <section id="history_body" class="pay-history__body"><!-- [D] 목록 없을 시 display: none; -->
+                        <!-- 적립내역 -->
+                        <div id="history-wrap" class="pay-history__wrap">
+                            <!-- 연도별 - 2025 (당 해 연도는 내역에 표시되지 않음.) -->
+                            <section class="pay-history__year">
+	                            <section class="pay-history__year">
+	                                <div class="body__header justify-spacing-def">
+	                                    <h4 class="container__headline container__headline--lv1"></h4>
+	                                </div>
+				            	    <div class="body__content justify-spacing-def">
+				                    </div>
+				                </section>
+				            </section>
+                            <!-- 연도별 - 2024 -->
+                        </div>
+
+                        <!-- 더보기 버튼 -->
+                        <div class="mgt16 justify-spacing-def">
+                            <a data-element-id="BPY-EVNT-10-10-S-e14" id="btn_more" href="#none" class="button button-mid button--more">
+                                <span>더보기</span><i class="icon icon--arrow-16 pointer-bottom"></i>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- 적립내역 없음. -->
+                    <div id="div_none" class="container end-container" style="display: ;"><!-- [D] 목록 없을 시 display: none; 제거 -->
+                        <!-- 컨테이너 바디 -->
+                        <article class="container__body justify-spacing-def">
+                            <div class="body__content">
+                                <i class="icon" aria-hidden="true">조회 결과가 없습니다</i>
+                                <div class="desc-box">
+                                    <p class="info__text--lv2">
+                                        적립 내역이 없습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+                <!-- 채팅 버튼 -->
+                <div class="chat-container">
+                    <button data-element-id="BPY-EVNT-10-10-S-e11" id="btn_cs" type="button" class="chat-button">
+                        <div class="chat-button__flip">
+                            <i class="img--chat-28 face--front"></i>
+                            <span class="chat__text face--back">상담</span>
+                        </div>
+                    </button>
+                    <button data-element-id="BPY-EVNT-10-10-S-e12" class="close-button">
+                        <i id="btn_close_cs" class="icon icon--close_cr-16"></i>
+                        <span class="blind">닫기</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

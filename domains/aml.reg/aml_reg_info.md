@@ -1,0 +1,123 @@
+# 고객확인서등록_기본정보등록 (aml_reg_info)
+
+- 처리: 읽기
+- 화면 겸함: 예
+- 상태: 따라감
+
+## 부르는 화면
+
+| 화면ID | 화면 이름 | 요소 |
+|---|---|---|
+| MCH-KYC-20-S | 고객확인서등록_사장님정보등록 | 화면 |
+| MCH-KYC-50-10-S | 사업자 번호 확인 | MCH-KYC-50-10-S-e05 |
+| MCH-KYC-50-S | 고객확인서등록_1원계좌인증 | 화면 |
+| MCH-KYC-60-S | 고객확인서등록_대리인정보입력 | 화면 |
+
+## 입력
+
+- AML_SEQ
+- AC
+- CI
+- 수정 여부 (MODIFY_YN)
+
+## 출력
+
+- AFLT_REG_INFO
+- CI
+- 가맹점 고객확인서 채번 (AML_SEQ)
+- CORP_NO
+- SHOP_NM
+- SHOP_ENG_NM
+- CORP_ESTA_DT
+- BIZ_TYPE
+- AFLT_NATION
+- AFLT_ADDR
+- AFLT_ADDR2
+- AFLT_ZIP_CD
+- AFLT_PHONE_NO
+- AFLT_EMAIL
+- HQ_ZIP_CD
+- HQ_ADDR
+- HQ_ADDR2
+- HQ_PHONE_NO
+- CORP_TP
+- OBJECTIVES
+- OBJECTIVES_TX
+- COPR_HYUNGTEA
+- IPO_YN
+- REG_DTTM
+- 작성상태 (PAGE_STEP)
+- 사업자번호 (BIZ_NO)
+- AC
+- 응답코드 (RES_CD)
+- 응답메시지 (RES_MSG)
+- 처리상태 (PROC_ST)
+- EXPIRED_DT
+- REG_USR_TP
+- REG_USR_NM
+- REG_USR_BRT_DT
+- REG_USR_MOB_NO
+- REG_USR_BANK_CD
+- REG_USR_ACCT_NO
+- DEPUTY_NM
+- DEPUTY_ENG_NM
+- DEPUTY_NATION
+- DEPUTY_DOMEST_YN
+- DEPUTY_FORGN_NATION
+- DEPUTY_ADDR
+- DEPUTY_ADDR2
+- DEPUTY_ZIP_CD
+- DEPUTY_JOB
+- DEPUTY_RELATION
+- DEPUTY_RELATION_TX
+- STOCK_EXCHANGE_TX
+- CRYPTO_CHK_YN
+- OWNER_SKIP_TP
+- CRYPTO_TRAN_PURP
+- CRYPTO_TRAN_PURP_TX
+- CRYPTO_MNY_ORGIN
+- CRYPTO_MNY_ORGIN_TX
+- REAL_ACCT_USE_YN
+- REAL_ACCT_USE_PLN_YN
+- CRYPTO_USR_CHK_YN
+- CRYPTO_DEPOSIT_SPER_YN
+- CRYPTO_TRAN_SPER_YN
+- CRYPTO_RISK_NOTI_YN
+- CRYPTO_BALN_SPER_YN
+- CRYPTO_COMPLY_YN
+- SUBMIT_DT
+- SUBMIT_TM
+- KYC_SEQ
+- KYC_DTTM
+- MOD_DTTM
+- ADM_MOD_DTTM
+- ADM_MOD_ID
+- REG_USR_GNDR
+- REG_USR_CI
+- SVC_PROVIDE_TX
+- OWNER_HOLDER_25PCT_YN
+- OWNER_HOLDER_TP
+- 상장거래소 (STOCK_EXCHANGE)
+- 업종 이름 (BIZ_TYPE_NM)
+- 가맹점 설립일자 (AFLT_ESTA_DT)
+- 기업형태 기타내용 (COPR_HYUNGTEA_TX)
+
+## 데이터 처리
+
+### 직가맹점정보 조회(biz_no, dynamic) (TB_BP_AFLT_MNG_R029)
+
+- 종류: SELECT
+- 테이블: TB_CTGRY_CODE, TB_BP_AFLT_MNG
+- 입력: 사업자번호 (BIZ_NO), DYNAMIC_0
+
+- 공통 헤더 처리(이 업무 아님): TB_BP_AFLT_AML_TOKEN_R001, TB_BP_AFLT_AML_TOKEN_U001, TB_BP_AFLT_AML_R001
+
+## 실패
+
+- (없음)
+
+## 근거
+
+- BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.aml_reg_info.xml:6
+- BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/aml/reg/aml_reg_info_act.jsp:23
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MNG_R029.xml:10

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈 가맹점pc_가맹점 선택</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-30-60-S">
+<div class="bm-root">
+    <div class="bm-header">
+        <div class="inner">
+            <div class="left">
+                <a data-element-id="HIT-MBO-30-60-S-e06" class="logo" href="">
+                    <img src="../assets/ent_afltbo_resource/img/logo/bzp_ci_resize.png" alt="BePle">
+                    <span>가맹점 관리</span>
+                </a>
+            </div>
+            <div class="right">
+                <div class="bm-header-name">
+                    <span class="name"></span>
+                    <span class="nim">님</span>
+                    <span class="position">()</span>
+                </div>
+                <button data-element-id="HIT-MBO-30-60-S-e04" id="logout" class="btn btn-sm btn-gray-outline bm-header-logout" type="button">로그아웃</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bm-con">
+        <div class="form-box">
+            <p class="tit-01 with-desc ta-center mb32 mt64">
+                가맹점 선택
+            </p>
+
+            <!--가맹점 선택 UI-->
+            <div class="ip-storesel-group">
+                <div class="storesel__info">
+                    <p class="storesel__info-text">관리하실 가맹점을 선택해 주세요.</p>
+                </div>
+
+                <div class="store-item-wrap type-2 pb22 mt32 ovf-a scrollbar-none"><!--  default : 종사업장 등록 type-2 : 가맹점 선택 -->
+                    
+                    <label class="ip-stsl-label" aflt_seq="" name="afltSeq">
+                        <input name="aflt" class="ip-stsl" type="radio" value=""><!--check-->
+                        <span class="check"></span>
+                        <img class="pic" alt="" src="../assets/_sample/card.svg">
+                        <span class="txt"></span>
+                        <span class="desc">서울 강남구 테헤란로 1길 10</span>
+                    </label>
+                    
+                </div>
+            </div>
+
+            <button data-element-id="HIT-MBO-30-60-S-e05" id="confirm" class="btn-bm mt10 mb64" type="button" disabled>확인</button><!-- 비활성화 시 disabled -->
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

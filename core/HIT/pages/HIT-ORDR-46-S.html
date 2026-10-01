@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>스마트오더 임직원 DID 인증</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-ORDR-46-S">
+<input type="hidden" name="QR_CODE" id="QR_CODE" value=""/>
+
+<!-- wrap -->
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>직원할인 QR</h1>
+        <a data-element-id="HIT-ORDR-46-S-e03" id="go_back" href="#" class="btn-history-back">뒤로가기</a>
+    </div>
+    <!-- // header -->
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <div class="content">
+            <!-- 비플오더 -->
+            <div class="flexWrap">
+                <div class="bpleOder addBtn-pb56"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+                    <div class="did_service">
+                        <div class="user">
+                            <div class="bg_box">
+                                <dl>
+                                    <dt>성명</dt>
+                                    <dd></dd>
+                                </dl>
+                                <dl>
+                                    <dt>회사명</dt>
+                                    <dd></dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <h3>임직원 확인을 위해 QR코드를 스캔해 주세요.</h3>
+                        <div class="qr_area">
+                            <div id="qr_area" class="qr_code">
+<!--                                <img src="../assets/resource/images/oder/qrcode.png" alt="">-->
+                            </div>
+                            <div class="time">남은 시간<span class="txt_key_color" id="timer"><!-- sample:begin -->14:22<!-- sample:end --></span><a data-element-id="HIT-ORDR-46-S-e04" href="#none" class="reset_btn" id="reset_btn">새로고침</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //비플오더 -->
+        </div>
+        <!-- // content -->
+    </div>
+    <!-- // container -->
+</div>
+<!-- // wrap -->
+</body>
+</html>

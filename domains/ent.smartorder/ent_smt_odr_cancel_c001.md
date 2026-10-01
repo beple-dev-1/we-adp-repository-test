@@ -1,0 +1,162 @@
+# 주문취소처리 (ent_smt_odr_cancel_c001)
+
+- 처리: 읽기·쓰기
+- 화면 겸함: 아니오
+- 상태: 따라감
+
+## 부르는 화면
+
+| 화면ID | 화면 이름 | 요소 |
+|---|---|---|
+| HIT-MBO-10-40-20-S | 주문내역 | 화면 |
+| HIT-ORDR-52-S | 주문취소처리 | 화면 |
+
+## 입력
+
+- ORDER_DT
+- DEAL_NO
+- BP_AFLT_SEQ
+- EMPL_NO
+- PASSWD
+
+## 출력
+
+- 코드 (CODE)
+- MSG
+
+## 데이터 처리
+
+### 엔터프라이즈 회원 pc버전 부가정보 (TB_MEMBER_ENT_APP_R002)
+
+- 종류: SELECT
+- 테이블: TB_WORK_CD_MNG, TB_MEMBER, TB_MEMBER_APP, TB_MEMBER_ENT_APP
+- 입력: SITE_CD, EMPL_NO, 앱코드 (APP_CD)
+
+### 주문내역 조회 (TB_BPPAY_TRAN_R012)
+
+- 종류: SELECT
+- 테이블: TB_BPPAY_TRAN, TB_BP_AFLT_ODR
+- 입력: ORDER_DT, DEAL_NO, 회원코드 (MEMB_CD), 비플가맹점순번 (BP_AFLT_SEQ)
+
+### 비플페이 거래내역 조회(ORDER_DT, ORDER_ID) (TB_BPPAY_TRAN_R002)
+
+- 종류: SELECT
+- 테이블: TB_MNY_CHRG_WDRW_DTL, TB_YGYO_ODR, TB_MEMBER, TB_CAFETERIA_MENU, TB_BPPAY_TRAN, TB_CAFETERIA_ODR, TB_CAFETERIA_OPEN_HOUR
+- 입력: ORDER_ID, ORDER_DT, 거래구분 (TRX_TP)
+
+### 비플 QR 원장 조회 (TB_BP_QR_MNG_R006)
+
+- 종류: SELECT
+- 테이블: TB_BP_QR_MNG
+- 입력: 거래일자 (TRX_DT), 회원코드 (MEMB_CD), 거래구분 (TRX_TP), 거래번호 (TRX_SEQ)
+
+### 비플페이 가맹점정보 조회(BP_AFLT_ID) (TB_BP_AFLT_MNG_R003)
+
+- 종류: SELECT
+- 테이블: TB_CTGR_CATG, TB_BP_AFLT_MY, TB_BP_AFLT_QR, TB_BP_AFLT_MNG, TB_BP_AFLT_UPJONG
+- 입력: 가맹점아이디 (BP_AFLT_ID)
+
+### 비플페이 복합결제 거래내역 조회(TRX_DT,TRX_SEQ,TRX_TP) (TB_BPPAY_COMPLEX_TRAN_R001)
+
+- 종류: SELECT
+- 테이블: TB_BPPAY_COMPLEX_TRAN
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 거래구분 (TRX_TP), DYNAMIC_0
+
+### 회원정보조회(MEMB_CD, APP_CD) (TB_MEMBER_R001)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER, TB_MEMBER_APP
+- 입력: 앱코드 (APP_CD), 회원코드 (MEMB_CD)
+
+### 주문 원장 (취소내역) insert (TB_BP_AFLT_ODR_C001)
+
+- 종류: INSERT
+- 테이블: TB_BP_AFLT_ODR
+- 입력: 결제금액 (AMT), 결제금액 (AMT), ORDER_ID, ORDER_ID, CAN_ST, 회원코드 (MEMB_CD), ORDER_ID, ORDER_TYPE
+
+### 구내식당 주문 취소내역 등록 (TB_CAFETERIA_ODR_C002)
+
+- 종류: INSERT
+- 테이블: TB_CAFETERIA_ODR
+- 입력: CANCEL_TRX_DT, CANCEL_TRX_SEQ, ORDER_DT, ORDER_ID
+
+### 비플페이 거래내역 등록 (TB_BPPAY_TRAN_C001)
+
+- 종류: INSERT
+- 테이블: TB_BPPAY_TRAN
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 거래시간 (TRX_TM), 거래구분 (TRX_TP), 결제금액 (AMT), VAT, FEE_TOT, FEE_VAT, MSG, ORG_TRX_DT, ORG_TRX_SEQ, 가맹점아이디 (BP_AFLT_ID), PG_MID, 회원코드 (MEMB_CD), CI, 은행코드 (BANK_CD), 계좌번호 (ACCT_NO), FIRM_TRX_DT, 펌거래 일련번호 (FIRM_TRX_SEQ), 응답코드 (RES_CD), 응답메시지 (RES_MSG), 처리상태 (PROC_ST), REFD_PROC_ST, HUB_NOTI_YN, HUB_NOTI_CNT, HUB_NOTI_DTTM, UPD_DTTM, 거래구분 (CP_TP), 앱코드 (APP_CD), TGT_YN, CLS_DSP_SEQ, 한도일련번호 (LMT_SEQ), MNY_UCD_TRX_SEQ, MNY_UCD_TRX_DT, MNY_TRAN_YN, COMPLEX_YN, MNY_CHRG_TRX_SEQ, MNY_CHRG_TRX_DT, MNY_AUTO_CHRG_YN, CNCL_FIRM_TRX_DT, CNCL_FIRM_TRX_SEQ, QR거래일자 (QR_TRX_DT), QR거래번호 (QR_TRX_SEQ), PAY_MEASURE_TP, ORDER_ID, ORDER_DT, 할인금액 (SALE_AMT), PG_EVENT_SEQ, 결제금액 (PAY_AMT), SALE_YN, 후불결제여부 (POSTPAID_YN), 구내식당 복합결제 고정차감금액 (CAFE_COMPLEX_FIX_AMT), 구내식당 복합결제 고정차감 결제수단구분 (CAFE_COMPLEX_FIX_PAY_MSR_TP), 구내식당 복합결제여부 (CAFE_COMPLEX_YN), MNY_CHRG_ACCT_NO, MNY_CHRG_BANK_CD, SALE_TP
+
+### 비플페이 복합결제 거래내역 등록 (TB_BPPAY_COMPLEX_TRAN_C001)
+
+- 종류: INSERT
+- 테이블: TB_BPPAY_COMPLEX_TRAN
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 거래구분 (TRX_TP), PAY_MEASURE_TP, 거래시간 (TRX_TM), MNY_MEMB_CD, 회원코드 (MEMB_CD), 결제금액 (AMT), 수수료 (FEE), VAT, 처리상태 (PROC_ST), UPD_DTTM
+
+### 오피스푸드 부분취소시 상태값 업데이트(CAN_ST) (TB_BPPAY_TRAN_U006)
+
+- 종류: UPDATE
+- 테이블: TB_BPPAY_TRAN
+- 입력: CAN_ST, 거래일자 (TRX_DT), 거래번호 (TRX_SEQ)
+
+### 주문원장(취소내역) update (TB_BP_AFLT_ODR_U001)
+
+- 종류: UPDATE
+- 테이블: TB_BP_AFLT_ODR, TB_BPPAY_TRAN
+- 입력: 처리상태 (PROC_ST), ORDER_ID, ORDER_DT, ORDER_ID, ORDER_DT, ORDER_ID, ORDER_DT, CAN_DEVICE, CAN_RJCT_CD, CAN_RJCT_TX, 주문처리상태 (ORDER_PROC_ST), 취소상태 (CAN_ST), ORDER_ID, ORDER_DT, 회원코드 (MEMB_CD)
+
+### 구내식당 주문내역 업데이트 (TB_CAFETERIA_ODR_U001)
+
+- 종류: UPDATE
+- 테이블: TB_CAFETERIA_ODR
+- 입력: PAY_TRX_DT, PAY_TRX_SEQ, CANCEL_TRX_DT, CANCEL_TRX_SEQ, CANCEL_CHNL, PRE_ORDER_PROC_ST, THEFT_YN, 픽업용바코드열람횟수 (PICK_BARCODE_SHOW_CNT), ODR_SEQ, ORDER_DT, ORDER_ID, 주문유형 (ORDER_TYPE)
+
+### 구내식당 주문내역 조회 (TB_CAFETERIA_ODR_R002)
+
+- 종류: SELECT
+- 테이블: TB_CAFETERIA_MENU, TB_BP_AFLT_ODR, TB_CAFETERIA_ODR, TB_CAFETERIA_ODR_MENU, TB_BP_AFLT_MY
+- 입력: ORDER_DT, ORDER_ID
+
+### 비플페이 거래내역 수정(TRX_DT, TRX_SEQ, TRX_TP) (TB_BPPAY_TRAN_U002)
+
+- 종류: UPDATE
+- 테이블: TB_BPPAY_TRAN
+- 입력: FIRM_TRX_DT, 펌거래 일련번호 (FIRM_TRX_SEQ), 응답코드 (RES_CD), 응답메시지 (RES_MSG), 처리상태 (PROC_ST), REFD_PROC_ST, HUB_NOTI_YN, HUB_NOTI_CNT, HUB_NOTI_DTTM, MNY_UCD_TRX_SEQ, MNY_UCD_TRX_DT, MNY_TRAN_YN, COMPLEX_YN, MNY_CHRG_TRX_SEQ, MNY_CHRG_TRX_DT, MNY_AUTO_CHRG_YN, CNCL_FIRM_TRX_DT, CNCL_FIRM_TRX_SEQ, QR거래일자 (QR_TRX_DT), QR거래번호 (QR_TRX_SEQ), PAY_MEASURE_TP, 취소상태 (CAN_ST), 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 거래구분 (TRX_TP)
+
+### 비플페이 복합결제 거래내역 수정(TRX_DT, TRX_SEQ, TRX_TP) (TB_BPPAY_COMPLEX_TRAN_U001)
+
+- 종류: UPDATE
+- 테이블: TB_BPPAY_COMPLEX_TRAN
+- 입력: 처리상태 (PROC_ST), 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 거래구분 (TRX_TP), PAY_MEASURE_TP
+
+### 알림 템플릿 조회 (TB_ALARM_INFO_R001)
+
+- 종류: SELECT
+- 테이블: TB_ALARM_INFO
+- 입력: ALARM_CTGR_TYPE_CD, ALARM_TYPE_CD, ALARM_TMPL_CD
+
+## 실패
+
+- (없음)
+
+## 근거
+
+- BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ent_smt_odr_cancel_c001.xml:6
+- BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/smartorder/ent_smt_odr_cancel_c001_act.jsp:39
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_ENT_APP_R002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_R012.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_R002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_QR_MNG_R006.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MNG_R003.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_COMPLEX_TRAN_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_ODR_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CAFETERIA_ODR_C002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_COMPLEX_TRAN_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_U006.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_ODR_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CAFETERIA_ODR_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CAFETERIA_ODR_R002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_U002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_COMPLEX_TRAN_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ALARM_INFO_R001.xml:10

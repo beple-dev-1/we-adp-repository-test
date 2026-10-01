@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈 가맹점pc_가맹점주 로그인</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-30-10-S">
+<div class="bm-root">
+    <div class="bm-header">
+        <div class="inner">
+            <div class="left">
+                <a data-element-id="HIT-MBO-30-10-S-e09" class="logo" >
+                    <img src="../assets/ent_afltbo_resource/img/logo/bzp_ci_resize.png" alt="BePle">
+                    <span>가맹점 관리</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="bm-con">
+        <div class="form-box">
+            <p class="tit-01 with-desc ta-center mb32 mt64">
+                가맹점주 로그인
+            </p>
+
+            <div class="form-bm">
+                <div class="form-item">
+                    <span class="form-label">아이디</span>
+                    <input data-element-id="HIT-MBO-30-10-S-e13" maxlength="20" name="" id="user_id" class="ip-txt type-bm w100p" type="text" value="" placeholder="아이디를 입력해 주세요.">
+                </div>
+                <div class="form-item">
+                    <span class="form-label">비밀번호</span>
+                    <input data-element-id="HIT-MBO-30-10-S-e14" maxlength="20" name="" id="user_pw" class="ip-txt type-bm w100p" type="password" value="" placeholder="비밀번호를 입력해 주세요.">
+                </div>
+            </div>
+
+            <button data-element-id="HIT-MBO-30-10-S-e08" disabled id="sign_in" class="btn-bm" type="button">로그인</button>
+            <div class="bm-bottom-link-list">
+                <div class="left">
+                    <a data-element-id="HIT-MBO-30-10-S-e10" href="#none" id="find_account" class="link-gray">아이디 · 비밀번호 찾기</a>
+                    <a data-element-id="HIT-MBO-30-10-S-e11" href="#none" id="sign_up" class="link-gray">회원가입</a>
+                </div>
+                <div class="right">
+                    <a data-element-id="HIT-MBO-30-10-S-e12" href="#none" id="manager_sign_in" class="link-blue" >매니저 로그인</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div name="pwd_dim" class="modal w500" style="display: none;">
+    <!--[D]active-->
+    <div class="inner">
+        <div class="modal-header">
+            <div class="tit-area">
+                <p class="tit">비밀번호 변경</p>
+            </div>
+            <button id="close_change_pw" class="btn-close" type="button">닫기</button>
+        </div>
+
+        <div class="modal-con mt32">
+            <div class="info-container bg-primary">
+                <div class="info-header">
+                    <p class="info-text fw-600 fc-pri icon noti_primary-16">비밀번호를 변경해주세요!</p>
+                </div>
+                <div class="info-content mt12">
+                    <p class="info-text fc-7e">개인정보 보호를 위해 90일 주기로 비밀번호 변경을 안내하고 있습니다.</p>
+                </div>
+            </div>
+
+            <div class="form-bm mt32">
+                <div class="form-item">
+                    <span class="form-label">현재 비밀번호</span>
+                    <input maxlength="20" name="" id="cur_pw" class="ip-txt type-bm w100p" type="password" value="" placeholder="사용중인 비밀번호를 입력해 주세요.">
+                </div>
+                <div class="form-item">
+                    <span class="form-label">신규 비밀번호</span>
+                    <input maxlength="20" name="" id="change_pw1" class="ip-txt type-bm w100p" type="password" value="" placeholder="영어, 숫자, 특수문자 중 2가지 이상 조합(10~20자)">
+                    <span style="display: none;" id="change_err_1_1" class="warning">영문/숫자/특수문자를 2가지 이상 조합해 주세요. (공백 제외, 10~20자)</span><!-- 입력 시작 시 style="display:none;" 제거 -->
+                    <span style="display: none;" id="change_err_1_2" class="warning">3글자 이상 연속되는 문자열, 일련번호, 생일, 전화번호 등 추측하기 쉬운 비밀번호는 사용할 수 없어요.</span><!-- 입력 시작 시 style="display:none;" 제거 -->
+                </div>
+                <div class="form-item">
+                    <span class="form-label">신규 비밀번호 확인</span>
+                    <input maxlength="20" name="" id="change_pw2" class="ip-txt type-bm w100p" type="password" value="" placeholder="새로운 비밀번호를 한번 더 입력해 주세요.">
+                    <span style="display: none;" id="change_err_2" class="warning">동일한 비밀번호를 입력해 주세요.</span><!-- 입력 시작 시 style="display:none;" 제거 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="btn-group">
+                <button class="btn btn-md-a btn-primary" id="change_pw" type="button" disabled>변경하기</button><!-- 비활성화 시 disabled -->
+            </div>
+        </div>
+    </div>
+</div>
+<div name="pwd_dim" class="dim" style="display:none;"></div>
+</body>
+</html>

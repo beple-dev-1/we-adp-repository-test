@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>본인인증</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KYC-10-10-S">
+<div class="wrap">
+<input type="hidden" id="str_now" value=""  />
+<input type="hidden" id="str_19y_ago" value=""  />
+<input data-element-id="MCH-KYC-10-10-S-e26" id="biz_no" hidden="hidden" value="123-45-67890">
+<input data-element-id="MCH-KYC-10-10-S-e27" id="from_pg" hidden="hidden" value="표본">
+<input data-element-id="MCH-KYC-10-10-S-e28" id="brt_dt_full" hidden="hidden" value="">
+
+<input type="hidden" id="rsng_yn" value="N" />
+<input type="hidden" id="trx_dt"  value=""  />
+<input type="hidden" id="trx_seq" value=""  />
+	<div class="header floating-back-header floating-sticky">
+		<h1>본인인증</h1>
+		<a data-element-id="MCH-KYC-10-10-S-e20" onClick="uf_back();" class="btn-history-back">뒤로가기</a>
+	</div><!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 신규가맹점 신청 -->
+			<div class="new_store">
+				<!-- 본인인증 -->
+				<div class="authentication addBtn-pb48">
+					<h2 class="step_txt">작성자의 본인인증을 진행해 주세요.</h2>
+					<form action="">
+						<fieldset>
+							<legend>본인인증 정보 입력</legend>
+							<!-- 인증관련 동의 -->
+							<div class="agree_w toggleWrap">
+								<dl>
+									<!-- 전체동의 -->
+									<dt class="agree_all">
+										<div class="inner">
+											<label for="">
+												<input data-element-id="MCH-KYC-10-10-S-e29" type="checkbox" class="checkAll" id="check_all">
+												<a data-element-id="MCH-KYC-10-10-S-e21" class="trigger"><strong>본인인증 필수항목 모두 동의</strong></a>
+											</label>
+										</div>
+									</dt>
+									<!-- //전체동의 -->
+									<!-- 약관목록 -->
+									<dd class="agree_con toggleCon">
+										<ul>
+											<li>
+												<div class="inner">
+													<label for="">
+														<input data-element-id="MCH-KYC-10-10-S-e30" type="checkbox" class="checkSingle" id="agree-chk1">
+														<strong>통신사 이용약관</strong>
+														<a data-element-id="MCH-KYC-10-10-S-e22" class="btn_view" onClick="uf_showAgreement('1'); return false;">보기</a>
+													</label>
+												</div>
+											</li>
+											<li>
+												<div class="inner">
+													<label for="">
+														<input data-element-id="MCH-KYC-10-10-S-e31" type="checkbox" class="checkSingle" id="agree-chk2">
+														<strong>본인확인 서비스 이용약관</strong>
+														<a class="btn_view" onClick="uf_showAgreement('2'); return false;">보기</a>
+													</label>
+												</div>
+											</li>
+											<li>
+												<div class="inner">
+													<label for="">
+														<input data-element-id="MCH-KYC-10-10-S-e32" type="checkbox" class="checkSingle" id="agree-chk3">
+														<strong>개인 정보 수집·이용·취급·위탁 동의</strong>
+														<a class="btn_view" onClick="uf_showAgreement('3'); return false;">보기</a>
+													</label>
+												</div>
+											</li>
+											<li>
+												<div class="inner">
+													<label for="">
+														<input data-element-id="MCH-KYC-10-10-S-e33" type="checkbox" class="checkSingle" id="agree-chk4">
+														<strong>고유식별 정보 처리 동의</strong>
+														<a class="btn_view" onClick="uf_showAgreement('4'); return false;">보기</a>
+													</label>
+												</div>
+											</li>
+											<!-- <li style="display:none;">
+												<div class="inner">
+													<label for="">
+														<input type="checkbox" class="checkSingle" id="agree-chk5">
+														<strong>알뜰폰 개인정보 제3자 제공동의</strong>
+														<a class="btn_view" onClick="uf_showAgreement('5'); return false;">보기</a>
+													</label>
+												</div>
+											</li> -->
+										</ul>
+									</dd>
+									<!-- //약관목록 -->
+								</dl>
+							</div>
+							<!-- //인증관련 동의 -->
+							<!-- 정보입력 -->
+							<div class="ipt_section">
+								<!-- 이름 -->
+								<div class="name">
+									<input data-element-id="MCH-KYC-10-10-S-e34" type="text" placeholder="이름(실명)" id="memb_nm" maxlength="40">
+								</div>
+								<!-- //이름 -->
+								<!-- 주민등록번호 -->
+								<div class="citizen_code">
+									<div class="code_1">
+										<input data-element-id="MCH-KYC-10-10-S-e35" type="tel" id="brt_dt" jex-input="onlyNumber" maxlength="6" placeholder="주민번호 앞자리">
+									</div>
+									<div>
+										<span>-</span>
+									</div>
+									<div class="code_2">
+										<div class="ipt_bx">
+											<input data-element-id="MCH-KYC-10-10-S-e36" type="tel" placeholder="" jex-input="onlyNumber" maxlength="1" id="brt_gndr">
+										</div>
+										<div class="code_after">
+											<i></i>
+											<i></i>
+											<i></i>
+											<i></i>
+											<i></i>
+											<i></i>
+										</div><input type="hidden" class="sds-value" id="gender" value="1" />
+									</div>
+								</div>
+								<!-- //주민등록번호 -->
+								<!-- 전화번호 -->
+								<div class="phone">
+									<div class="tel_select">
+										<a data-element-id="MCH-KYC-10-10-S-e23" id="sel_tel_corp" >통신사</a><!-- 통신사 선택 시 클래스 "on" 추가 -->
+									</div>
+									<div class="ipt_bx">
+										<input data-element-id="MCH-KYC-10-10-S-e37" type="tel" id="tel_no" placeholder="휴대폰번호" maxlength="11" jex-input="onlyNumber">
+									</div>
+								</div>
+								<!-- //전화번호 -->
+								<!-- 인증번호 -->
+								<div class="ipt_code">
+									<div class="ipt_bx">
+										<input data-element-id="MCH-KYC-10-10-S-e38" type="tel" id="aprv_no" placeholder="인증번호 6자리" maxlength="6" jex-input="onlyNumber"><!-- 2022-04-20 -->
+										<span class="time" id="time_check">0:00</span><!-- 인증번호 전송 시 클래스 "on" 추가 -->
+									</div>
+									<div class="btn_request">
+										<a data-element-id="MCH-KYC-10-10-S-e24" id="aprv_send">인증번호 요청</a>
+									</div>
+								</div>
+								<!-- //인증번호 -->
+							</div>
+							<!-- //정보입력 -->
+						</fieldset>
+					</form>
+				</div>
+				<!-- 본인인증 -->
+			</div>
+			<!-- //신규가맹점 신청 -->
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_white">
+					<a data-element-id="MCH-KYC-10-10-S-e25" id="btn_next" class="btn_default round_r8 btn-style-h48"><!-- 활성화 시 on 클래스 추가 -->
+						다음
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+		<!-- content -->
+	</div>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- 레이어 -->
+<div class="layer_overlay" id="tel_corp_layer" style="display:none;">
+	<div class="layer_bPop" >
+		<div class="popup_con pd0">
+			<!-- 통신사 선택 -->
+			<div class="tel_select">
+				<h2>
+					<strong>통신사 선택</strong>
+				</h2>
+				<!-- 닫기버튼 -->
+				<p class="btn_close">
+					<a id="close_tel_corp_layer">
+						<span class="blind">닫기</span>
+					</a>
+				</p>
+				<!-- //닫기버튼 -->
+				<!-- 통신사 목록 -->
+				<ul class="tel_list">
+					<li>
+						<a value="01">SKT</a><!-- 선택 시 클래스 "on" 추가 -->
+					</li>
+					<li>
+						<a value="02">KT</a>
+					</li>
+					<li>
+						<a value="03">LG U+</a>
+					</li>
+					<li>
+						<a value="04">SKT 알뜰폰</a>
+					</li>
+					<li>
+						<a value="05">KT 알뜰폰</a>
+					</li>
+					<li>
+						<a value="06">LG U+ 알뜰폰</a>
+					</li>
+				</ul>
+				<!-- //통신사 목록 -->
+				<input type="hidden" class="sds-value" id="tele_corp" />
+			</div>
+			<!-- //통신사 선택 -->
+		</div>
+	</div>
+</div>
+<!-- //레이어 -->
+</body>
+</html>

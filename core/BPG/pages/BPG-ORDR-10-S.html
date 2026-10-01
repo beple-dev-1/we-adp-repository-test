@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플오더 장바구니</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-ORDR-10-S">
+<form name="frm" id="frm" type="POST">
+    <input id="LAT" name="LAT" type="hidden" value="">
+    <input id="LNG" name="LNG" type="hidden" value="">
+</form>
+<form name="frmOpt" id="frmOpt" type="POST">
+    <input id="OPT_BP_AFLT_SEQ" name="BP_AFLT_SEQ" type="hidden" value="">
+    <input id="MYBAG_SEQ" name="MYBAG_SEQ" type="hidden" value="">
+    <input id="MYBAG_PDT_SEQ" name="MYBAG_PDT_SEQ" type="hidden">
+    <input id="BP_AFLT_PDT_SEQ" name="BP_AFLT_PDT_SEQ" type="hidden">
+    <input id="PDT_CNT" name="PDT_CNT" type="hidden">
+    <input id="OPT_LIST" name="OPT_LIST" type="hidden">
+</form>
+<input id="hideAmt" type="hidden">
+<input id="BP_AFLT_SEQ" name="BP_AFLT_SEQ" type="hidden" value="">
+<input id="BEFORE_BP_AFLT_SEQ" type="hidden" value="">
+<!-- wrap -->
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>장바구니</h1>
+        <a data-element-id="BPG-ORDR-10-S-e05" href="#" id="go_back" class="btn-history-back">뒤로가기</a>
+    </div>
+    <!-- // header -->
+
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <div class="content">
+            <!-- 비플오더 -->
+            <div class="flexWrap">
+                <!-- 장바구니 있을 때-->
+                <div class="bpleOder bg_f7 addBtn-pb58" id="menu_area"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+                    <div class="top_bx">
+                        <h2 class="store_name"></h2>
+                    </div>
+                    <!-- 장바구니 -->
+                    <div class="oder_cart">
+                        <!-- 주문목록 -->
+                        <div class="cart_w" id="menu_list"><!-- sample:begin --><div class ="list"><h3 class ="name">홍길동</h3><div class ="detail"><ul class = "list_bar"><li>가격(기본) : 4,500원</li><li data-opt-catg-seq ="1"  data-opt-seq ="1">홍길동 : 홍길동(+4,500원)</li></ul></div><p class ="price"><span>4,500</span>원</p><div class="etc" data-mybag-pdt-seq ="1" data-aflt-pdt-seq ="1" data-robot-menu-cd = "004"><p class="opt_change"><a href="#none" onclick='changeOpt($(this))'>옵션변경</a></p><div class ="spiner_btn2"><p><a href="#none" id="minus" onclick="count($(this));" class="minus on">수량빼기</a></p><p><span data-pdt-amt ="4,500">1</span></p><p><a href="#none" id="plus" onclick="count($(this));" class="plus">수량추가</a></p></div></div><p class="delete"><a href="#none" onclick='deleteMenu($(this));'>메뉴 빼기</a></p></div><!-- sample:end --></div>
+                        <!-- 메뉴 추가 -->
+                        <p class="oder_add"><a data-element-id="BPG-ORDR-10-S-e06" href="#none" id="more">+ 더 담으러 가기</a></p>
+                        <!-- 수령방법 -->
+                        <div class="oder_case">
+                            <!--추후 주문 유형에 따라 분리 필요.-->
+                            <p><strong id="recv_type"><!-- sample:begin -->표본<!-- sample:end --></strong> (담은 메뉴 : <span id="total_cnt"><!-- sample:begin -->1<!-- sample:end --></span>개)</p>
+                        </div>
+                        <!-- 주문/결제금액 -->
+                        <div class="pay_info">
+                            <div class="con">
+                                <h4>주문금액</h4>
+                                <p><span id="orderAmt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>
+                            </div>
+                            <div class="payment">
+                                <h4>결제예정금액</h4>
+                                <p><span id="payAmt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>
+                            </div>
+                        </div>
+                        <div class="noti_txt">
+                            비플페이(주)는 통신판매중개자이며, 통신판매의 당사자가 아닙니다. 따라서 비플페이(주)는 상품, 거래정보 및 거래에 대하여 책임을 지지 않습니다.
+                        </div>
+                    </div>
+                    <!-- //장바구니 -->
+                </div>
+                <!--// 장바구니 있을 때-->
+
+                <!--장바구니 없을 때-->
+                <div class="bpleOder addBtn-pb58" id="no_menu_area" style="display: none">
+                    <!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+                    <div class="oder_cart">
+                        <div class="oder_item_none">
+                            <p>장바구니에 담은 메뉴가 없습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--//장바구니 없을 때-->
+            </div>
+            <!-- //비플오더 -->
+        </div>
+        <!-- // content -->
+
+        <!-- 하단 고정버튼 -->
+        <div class="btn_botFix_w">
+            <div class="inner bg_f7">
+                <a data-element-id="BPG-ORDR-10-S-e07" href="#none" id="menu_btn" class="btn_default btn-style-h48 round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+                    <strong id="menu_btn_amt"><!-- sample:begin --><!-- sample:end --></strong>원 주문하기
+                </a>
+                <a data-element-id="BPG-ORDR-10-S-e08" href="#none" id="no_menu_btn" style="display: none" class="btn_default btn-style-h48 round_r8 on">
+                    <!-- 활성화 시 on 클래스 추가 -->
+                    메뉴 담으러 가기
+                </a>
+            </div>
+        </div>
+        <!-- //하단 고정버튼 -->
+    </div>
+    <!-- // container -->
+</div>
+</body>
+</html>

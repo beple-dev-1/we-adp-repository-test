@@ -1,21 +1,29 @@
-화면명: 롯데 복지몰
-목적: 롯데 복지몰 화면이다. 원본은 `webview_mny_v2_view.jsp` 다.
+--- 꼬리표 ---
 id: EXW-UWV-70-10-C / system: EXW / 기능: 외부제공 웹뷰 > 통합웹뷰API > 제휴기관 파생 화면 > 롯데 복지몰 / 과업: []
 
 --- 화면명세 ---
+화면명: 롯데 복지몰
+목적: 롯데 복지몰 화면이다.
 
-- 구분: 기능 / 좌표: - / 라벨: 이전페이지로 / 해설: 이전페이지로 / 앵커: EXW-UWV-70-10-C#e01
-- 구분: 기능 / 좌표: - / 라벨: 내역보기 / 해설: 내역보기 / 앵커: EXW-UWV-70-10-C#e02
-- 구분: 기능 / 좌표: - / 라벨: 만료예정내역보기 / 해설: 만료예정내역보기 / 앵커: EXW-UWV-70-10-C#e03
-- 구분: 기능 / 좌표: - / 라벨: 출금신청하기 바로가기 / 해설: 출금신청하기 바로가기 / 앵커: EXW-UWV-70-10-C#e04
-- 구분: 기능 / 좌표: - / 라벨: 전체 · 3개월 유효기간 선택 / 해설: 전체 · 3개월 유효기간 선택 / 앵커: EXW-UWV-70-10-C#e05
-- 구분: 기능 / 좌표: - / 라벨: 비플머니 충전하기 / 해설: 비플머니 충전하기 / 앵커: EXW-UWV-70-10-C#e06
+--- IA ---
+- 종류: 화면 / 상위화면:
+
+--- 업무 ---
+- 요소: EXW-UWV-70-10-C-e06 / 업무: 웹뷰 API - 비플머니 충전 / 처리: 읽기·쓰기 / 테이블: TB_WEBVIEW_API_MNG, TB_WEBVIEW_API_ORG, TB_MEMBER, TB_MEMBER_APP, TB_WEBVIEW_API_TRAN, TB_MEMBER_MNY … / 입력: 수수료, REQ_DATA, 이용기관ID, PWD_RES_CD, 결제후호출한앱으로복귀할때사용 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.webview_mny_chrg_v2.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/webview/pay/webview_mny_chrg_v2_act.jsp:32 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_WEBVIEW_API_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R008.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_WEBVIEW_API_TRAN_U001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R014.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_R002.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_R009.xml:10
+- 요소: 화면 / 업무: 웹뷰 API - 소멸예정 머니 목록조회 / 처리: 읽기·쓰기 / 테이블: TB_WEBVIEW_API_MNG, TB_WEBVIEW_API_ORG, TB_MEMBER, TB_MEMBER_APP, TB_WEBVIEW_API_TRAN / 입력: 수수료, 이용기관ID, REQ_DATA / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.webview_mny_expr_list.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/webview/pay/webview_mny_expr_list_act.jsp:43 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_WEBVIEW_API_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R008.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_WEBVIEW_API_TRAN_U001.xml:10
+- 요소: 화면 / 업무: 롯데_복지몰 서비스 > 비플머니 웹뷰 > 기본정보 (화면) / 처리: 읽기·쓰기 / 테이블: TB_WEBVIEW_API_MNG, TB_WEBVIEW_API_ORG, TB_MEMBER_APP, TB_MEMBER, TB_WEBVIEW_API_TRAN / 입력: 요청공통부, 기관코드, 요청개별부 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.webview_mny_v2.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/webview/pay/webview_mny_v2_act.jsp:30 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_WEBVIEW_API_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R038.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R008.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_WEBVIEW_API_TRAN_U001.xml:10
+- 요소: 화면 / 업무: 롯데_복지몰 서비스 > 비플머니 웹뷰 > 머니 사용 재역 조회 / 처리: 읽기 / 테이블: TB_MEMBER, TB_MEMBER_APP, TB_MEMBER_MNY, TB_MNY_TRAN_MST, TB_MNY_ACU_DTL, TB_ZEROPAY_TRAN … / 입력: CI, START_DT, END_DT, 카테고리, 페이지번호, PAGE_SIZE, 회원코드, 앱코드 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.webview_mny_v2_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/webview/pay/webview_mny_v2_r001_act.jsp:28 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R002.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_R012.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_R017.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_R016.xml:10
+- 요소: EXW-UWV-70-10-C-e04 / 업무: 롯데_복지몰 서비스 > 비플머니 > 출금요청 웹뷰 / 처리: 읽기·쓰기 / 테이블: TB_WEBVIEW_API_MNG, TB_WEBVIEW_API_ORG, TB_MEMBER, TB_MEMBER_APP, TB_WEBVIEW_API_TRAN / 입력: 수수료, 이용기관ID, REQ_DATA, PWD_RES_CD, 결제후호출한앱으로복귀할때사용 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.webview_mny_wdrw_v2.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/webview/pay/webview_mny_wdrw_v2_act.jsp:42 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_WEBVIEW_API_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R008.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_WEBVIEW_API_TRAN_U001.xml:10
+- 요소: 화면 / 업무: 롯데_복지몰 서비스 > 비플머니 웹뷰 > 머니 사용 내역 상세조회(영수증) / 처리: 읽기·쓰기 / 테이블: TB_WEBVIEW_API_MNG, TB_WEBVIEW_API_ORG, TB_MEMBER, TB_MEMBER_APP, TB_WEBVIEW_API_TRAN, TB_BPPAY_COMPLEX_TRAN … / 입력: COMM, 이용기관ID, REQ_DATA, 서비스구분, 업무코드, 거래코드, 거래번호, 거래일자, 결제후호출한앱으로복귀할때사용 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.webview_receipt_v2.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/webview/pay/webview_receipt_v2_act.jsp:36 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_WEBVIEW_API_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R008.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_WEBVIEW_API_TRAN_U001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_CARD_TRAN_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_R005.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MNG_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R005.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_COMPLEX_TRAN_R004.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_BPPG_TRAN_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_PG_TRAN_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_STORE_MNG_R002.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_QR_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_BPPG_COMPLEX_TRAN_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R007.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_COMPLEX_TRAN_R001.xml:10
+
+--- 정의 ---
+- 구분: 기능 / 좌표: id=btnBack / 라벨: 이전페이지로 / 앵커: EXW-UWV-70-10-C-e01 / 해설: 이전페이지로
+- 구분: 기능 / 좌표: id=btn_more / 라벨: 내역보기 / 앵커: EXW-UWV-70-10-C-e02 / 해설: 내역보기
+- 구분: 기능 / 좌표: id=tot_expr_amt / 라벨: 만료예정내역보기 / 앵커: EXW-UWV-70-10-C-e03 / 해설: 만료예정내역보기
+- 구분: 기능 / 좌표: id=btn_request / 라벨: 출금신청하기 바로가기 / 앵커: EXW-UWV-70-10-C-e04 / 해설: 출금신청하기 바로가기
+- 구분: 기능 / 좌표: id=srch_btn / 라벨: 전체 · 3개월 유효기간 선택 / 앵커: EXW-UWV-70-10-C-e05 / 해설: 전체 · 3개월 유효기간 선택
+- 구분: 기능 / 좌표: id=btn_chrg / 라벨: 비플머니 충전하기 / 앵커: EXW-UWV-70-10-C-e06 / 해설: 비플머니 충전하기
 
 --- 원본 글 ---
-
-`04_도구/page2md.py` 가 html 에서 기계로 뽑았다. **정본은 운영 소스다.**
-
-- 소스 — `webview_mny_v2_view.jsp`
-- 라벨은 html 에서 뗀 것이라 지어낸 값이 없다.
-- ⛔ `좌표` 와 `해설` 은 사람이 채운다 — 기계는 `-` 와 라벨 복사로 둔다.
-- 숨어 있는 단계·모달은 명세에서 뺐다. 그 화면은 별도로 뽑을 일이다.
+> 역추출 소스: BIZ_ZEROPAY/web/view/jex/biz_zeropay/webview/pay/webview_mny_v2_view.jsp
+> page2md 가 html 에서 기계로 뽑음 — 좌표 · 해설은 사람이 고치면 다음 추출에도 남는다.

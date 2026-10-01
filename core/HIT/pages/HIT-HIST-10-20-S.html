@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>스마트오더 주문 상세내역 v2</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_beple.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_beple_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+</head>
+<body data-screen-id="HIT-HIST-10-20-S">
+<div class="wrap js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky js-heder">
+        <nav class="header__navi">
+            <a data-element-id="HIT-HIST-10-20-S-e16" href="#none" class="header__btn btn-back"><span class="blind">이전 페이지로</span></a>
+        </nav>
+
+        <!-- 헤더 타이틀 -->
+        <div class="header__title-wrap">
+            <!-- 페이지 명 미사용 시 page-name 태그 내용 빈값 or 주석 or 삭제 -->
+            <h1 class="page-name"><span>상세내역</span></h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 컨테이너 -->
+        <section class="smart_oder-container">
+            <!-- 2025-09-25 [D] 구조변경 -->
+            <div class="container-header order-detail">
+                <div class="flex-column">
+                    <h2 class="container__headline container__headline--lv4">홍길동</h2>
+                </div>
+
+                <!-- 주문정보 -->
+                <div class="flex-column">
+                    <!-- data-table -->
+                    <div class="table-wrap">
+                        <!-- 테이블 body -->
+                        <article class="table--body">
+                            <table class="table table--data">
+                                <colgroup>
+                                    <col style="width: 102px;">
+                                    <col style="width: 210px;">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>
+                                        <p>주문일시</p>
+                                    </th>
+                                    <th>
+                                        <p>14:22</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p>주문번호</p>
+                                    </th>
+                                    <th>
+                                        <p class="fc-primary">1</p>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p>주문형태</p>
+                                    </th>
+                                    <th>
+                                        <p></p>
+                                    </th>
+                                </tr>
+                                
+                                    <tr>
+                                        <th>
+                                            <p>배송지</p>
+                                        </th>
+                                        <th>
+                                            <p id="robotAddrDtl">
+                                                <a data-element-id="HIT-HIST-10-20-S-e17" href="#none" class="flex-row align-center">서울 강남구 테헤란로 1길 10
+                                                    
+                                                        <i class="icon icon--arrow-16"></i>
+                                                    
+                                                </a>
+                                            </p>
+                                        </th>
+                                    </tr>
+                                
+                                
+                                <tr>
+                                    <th>
+                                        <p>주문상태</p>
+                                    </th>
+                                    <td>
+                                        <p class="status-msg  fc-red ">
+                                            
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+                                </thead>
+                            </table>
+                        </article>
+                    </div>
+
+                    <!-- help 버튼 -->
+                    <!--<div class="btn-help">
+                        <button class="button button-small button--lv5_line">
+                            <span>도움이 필요하신가요?</span>
+                        </button>
+                    </div> ->-->
+                    
+                        <div class="btn-call">
+                            <a data-element-id="HIT-HIST-10-20-S-e10" href="tel:${odrInfo.afltTelNo}" class="button button-small button--lv5_line">
+                                <span>매장에 전화하기</span>
+                            </a>
+                        </div>
+                    
+                </div>
+            </div>
+            <!-- // 2025-09-25 -->
+
+            <!-- 컨테이너 컨텐츠 -->
+            <!--
+                        2025-09-25 구조 변경 및 step 케이스 추가 클래스 추가 위치 변경 등.
+
+                        [D] 구조변경(2타입) 주문상태
+                        [D] 각 스탭별 클래스 추가 시간 로딩 후 1초 후 추가
+
+                        도난 신고 = theft
+
+                        포장 = pickup
+                        포장(3스탭) = step1, step2, step3
+                        주문취소 = cancel
+
+                        로봇배송 = delivery-robot
+                        로봇배송(4스탭) = step1, step2, step3, step4
+                        로봇배송(배송실패) = fail
+                        주문취소 = cancel
+
+                        사전예약, 딜리버리 = reservation, delivery
+                        주문완료 = complete
+                        주문취소 = fail
+
+                        각 버튼은 유형 및 step 상황에 맞게 display 처리 되어있음.
+                    -->
+                <article class="oder_state_dtl ${odrInfo.orderTypeClass} ${odrInfo.orderStepClass}">
+                    <div class="oder_state__header">
+                        <div class="info-head">
+                            <p class="oder_info__message fc-red">
+                                
+                            </p>
+                            <div class="btn-box">
+                                <!-- 새로고침 -->
+                                
+                                <button data-element-id="HIT-HIST-10-20-S-e11" type="button" class="refresh_btn">새로고침</button>
+                                
+
+                                <!-- 도난신고 라벨 -->
+                                <p class="theft-label"><span href="#none">도난신고</span></p>
+                            </div>
+                        </div>
+                        <!-- 서브메세지 -->
+                        
+                            <p class="oder_info__message-sub"></p>
+                        
+                        <!-- 픽업 qr -->
+                        
+                            <button data-element-id="HIT-HIST-10-20-S-e12" type="button" class="qr_btn button button-small button--lv4 mgt12" id="qrInfo" data-txt-tit="${odrInfo.qrText}" data-qr-code="${odrInfo.qrInfo}"><span>안내 문구 QR</span></button>
+                        
+                    </div>
+                    
+                    <!-- 포장 -->
+                    <div class="progress_bar progress_bar-pickup"><!-- [D] 포장 -->
+                        <div class="anchor fc-red">
+                            <span>
+                                
+                            </span>
+                        </div>
+                        <div class="anchor"><span>접수완료</span></div>
+                        <div class="anchor"><span>제조완료</span></div>
+                    </div>
+
+                    <!-- 배달 -->
+                    <div class="progress_bar progress_bar-delivery"><!-- [D] 로봇배송 -->
+                        <div class="anchor fc-red">
+                            <span>
+                                
+                            </span>
+                        </div>
+                        <div class="anchor">
+                            <span>
+                                
+                            </span>
+                        </div>
+                        <div class="anchor"><span>배송중</span></div>
+                        <div class="anchor">
+                            
+                                <span>배송완료</span>
+                            
+                            
+                                <span>배송실패</span>
+                            
+                        </div>
+                    </div>
+                    
+
+                    <div class="util-container">
+                        
+                        <div class="btn-box" id="smartOrderCancelBtn"><!-- [D] 미사용 시 style="display: none;"-->
+                            <button data-element-id="HIT-HIST-10-20-S-e13" class="button button-mid button--lv5_line col--block">
+                                <span>주문취소</span>
+                            </button>
+                        </div>
+                        
+
+                        <div class="infomation-box">
+                            <div class="flex-row">
+                                <!-- 안내 헤더 -->
+                                <div class="column__head">
+                                    <i class="icon icon--info-16"><span class="blind">안내</span></i>
+                                </div>
+                                <!-- 안내 내용 -->
+                                <div class="column__item">
+                                    
+                                        <p class="info__text--lv1">
+                                            배송 수령시 얼굴인식 또는 <span class="fc-primary">004</span> 인증번호를 입력해 주세요.
+                                        </p>
+                                    
+                                    
+                                        <p class="info__text--lv1">
+                                            로봇 배송으로 주문한 메뉴를 수령하지 못한 경우, <span class="fw-600">카페로 방문하여</span> 수령 부탁드립니다.
+                                        </p>
+                                    
+                                    <!-- 로봇배달 이용안내 -->
+                                    <button data-element-id="HIT-HIST-10-20-S-e14" type="button" class="text-button" id="robotGuide">
+                                        <span>로봇배송 이용안내</span>
+                                        <i class="icon icon--arrow-16"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            <!---->
+            <!-- 2025-09-25 -->
+
+            <!-- 2025-09-25 [D] 구조변경 - 리스트 내부 구조는 장바구니와 유사함. -->
+            <article class="oder_cart">
+                <div class="container-header flex-row align-center">
+                    <div class="flex-column">
+                        <h2 class="container__headline container__headline--lv4">주문내역</h2>
+                    </div>
+                    
+                        <div class="shrink-n" id="receiptInfo">
+                            <a data-element-id="HIT-HIST-10-20-S-e18" href="#none" class="link-text">
+                                <span>영수증 상세내역</span>
+                                <i class="icon icon--arrow-16"></i>
+                            </a>
+                        </div>
+                    
+                </div>
+
+                <!-- 주문상세 -->
+
+                    <!-- [D] 여기서부터는 장바구니와 동일 -->
+                        <!-- 주문메뉴 -->
+                        <div class="cart_w">
+                            
+                                <div class="list">
+                                    <div class="list-hd">
+                                        <!-- 2025-09-25 [D] 내부 구조 일부 변경 -->
+                                        <h3 class="name">
+                                            <span>홍길동 1개</span>
+                                        </h3>
+                                        <!-- 2025-09-25 [D] 내부 구조 일부 변경 -->
+                                    </div>
+                                    <!--사내카페 일때만-->
+                                    
+                                        <div class="detail">
+                                            <ul class="list-bl"><!-- 2025-09-25 [D] 클래스 명 변경 "list-bar -> list-bl" -->
+                                                <li>가격(기본):원</li>
+                                                
+                                                    
+                                                            <li>홍길동 : 홍길동 (
+                                                                
+                                                                    
+                                                                        원
+                                                                    
+                                                                    
+                                                                        0원
+                                                                    
+                                                                )
+                                                            </li>
+                                                    
+                                                
+                                            </ul>
+                                        </div>
+                                        <p class="price"><span></span>원</p>
+                                    
+                                </div>
+                            
+                        </div>
+
+                <!-- // [D] 여기서부터는 장바구니와 동일 -->
+            </article>
+            <!-- 2025-09-25 -->
+
+            <!-- 2025-09-25 [D] 구조변경 - 타이틀 제외한 상세내역 부분은 결제하기 -> 결제상세 와 동일함 -->
+            
+                <article class="oder_payment">
+                    <div class="container-header flex-row align-center">
+                        <div class="flex-column">
+                            <h2 class="container__headline container__headline--lv4">결제내역</h2>
+                        </div>
+                    </div>
+
+                    <div class="payment_w">
+                        <!-- 결제하기 -> 결제상세 와 동일함 -->
+                        <div class="payment_con">
+                            <div class="payment-detail">
+                                <!-- 상세항목 -->
+                                
+                                    <div class="detail-con">
+                                        <p class="detail-text fw-600">주문 금액</p>
+                                        <p class="detail-text fw-600"><span></span>M</p>
+                                    </div>
+                                
+                                <!-- 상세항목 -->
+                                <div class="detail-con">
+                                    <p class="detail-text">홍길동</p>
+                                    
+                                    <p class="detail-text">-<span></span>M</p>
+                                    
+                                </div>
+                                <!-- 총 결제금액 -->
+                                
+                                    <div class="detail-con total">
+                                        <p class="detail-text fw-600">총 결제 금액</p>
+                                        <p class="detail-text fw-800 fc-primary
+                                                fw-600"
+                                        >
+                                            <span></span>M</p>
+                                    </div>
+                                    
+                                        <div class="detail-con total">
+                                            <p class="detail-text fw-600">최종 환불 금액</p>
+                                            <p class="detail-text fw-800 fc-red"><span></span>M</p>
+                                        </div>
+                                    
+                                
+                            </div>
+                        </div>
+                        <!-- // 결제하기 -> 결제상세 와 동일함 -->
+                    </div>
+                </article>
+            
+            <!-- 2025-08-28 [D] 결제내역 - 구조 변경됨 -->
+
+            <!-- 2025-08-28 기타 안내사항 [D] 불필요 시 제거 또는 style="display: none;" -->
+            <div class="mgt32 pdt32 pdb32 justify-spacing-def bg-f7" style="display: none;">
+
+                <div class="flex-column">
+                    <p class="info__text info__text--lv1 fc-666">
+                        주문하신 상품은 꼭 1시간 이내(단, 로봇커피의 경우 10분 이내) 픽업하셔야 합니다.
+                        가맹점에 따라 상품을 별도로 보관하기 어려울 수 있습니다.
+                        미수령으로 인한 주문 취소 및 환불은 불가능합니다.
+                    </p>
+                </div>
+            </div>
+            <!-- 2025-08-28 기타 안내사항 -->
+
+            <!-- 2025-09-25 [D] 구조변경 - 타이틀 제외한 상세내역 부분은 결제하기 -> 결제상세 와 동일함 -->
+            
+                <article class="oder_payment">
+                    <div class="container-header flex-row align-center">
+                        <div class="flex-column">
+                            <h2 class="container__headline container__headline--lv4">주문취소 및 환불</h2>
+                        </div>
+                    </div>
+
+                    <div class="payment_w">
+                        <!-- 기타 안내사항 -->
+                        <div class="payment_con">
+                            <div class="con-wrap">
+                                <p class="info__text--lv2 fc-333">
+                                    주문취소는 14:22까지 가능합니다.<br>
+                                    매장으로 전화주시거나 하단 ‘주문취소’버튼을 클릭하여
+                                    주문을 취소할 수 있습니다.
+                                </p>
+                            </div>
+                            <div class="con-wrap pdt24" id="cancel">
+                                <button type="button" class="button button-mid button--lv5_line fw-400 col--block"><span>주문취소</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            
+            
+                <article class="oder_payment">
+                    <div class="payment_w">
+                        <!-- 기타 안내사항 -->
+                        <div class="payment_con pdt32">
+                            <div class="con-hd">
+                                <p class="info__text--lv2 fw-600 fc-333">주문하신 음식이 지정된 장소에 없나요?</p>
+                            </div>
+                            <div class="con-wrap" id="reportTheftBtn">
+                                <button data-element-id="HIT-HIST-10-20-S-e15" type="button" class="button button-mid button--lv5_line fw-400 col--block"><span>도난 신고하기</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            
+
+            
+                <article class="oder_payment">
+                    <div class="payment_w">
+                        <!-- 기타 안내사항 -->
+                        <div class="payment_con pdt32">
+                            <div class="con-hd">
+                                <!--<p class="info__text--lv2 fw-600 fc-333">주문하신 음식이 지정된 장소에 없나요?</p>-->
+                            </div>
+                            <div class="con-wrap" id="theftCheckBtn">
+                                <button type="button" class="button button-mid button--lv5_line fw-400 col--block"><span>도난 신고하기</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            
+
+            <!-- 2025-09-25 기타 안내사항 [D] 불필요 시 제거 또는 style="display: none;" -->
+
+        <div id="etc_info_msg_div" class="mgt32 pdt32 pdb32 justify-spacing-def bg-f7"
+            
+                style="display: none;"
+            
+        >
+            <div class="flex-column">
+                <p class="info__text info__text--lv1 fc-666 etc_info_msg">
+                    
+                </p>
+            </div>
+        </div>
+
+        </section>
+
+        <!--QR 레이어팝업 -->
+        <section class="popup-container overlay" id="qrCodeLayer" style="display:none;">
+            <div class="popup-box center"><!-- 가운데 정렬일 시 center 클래스 추가 -->
+                <!-- 사전예약 안내 - 바코드 -->
+                <div class="inner-box reservation-info">
+                    <!-- 컨테이너 헤더 -->
+                    <div class="box-hd">
+                        <p class="box__hd-text" id="textTit"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                    </div>
+                    <div class="box-con">
+                        <div class="info-msg">
+                            <ol id="qrText">
+                                <li>리더기에 QR 코드를 스캔해주세요</li>
+                                <li>주문한 메뉴를 수령해주세요.</li>
+                            </ol>
+                        </div>
+                        <div class="barcode-box" style="display:none">
+                            <p class="barcode">
+                                <img alt="" src="../assets/_sample/card.svg">
+                            </p>
+                        </div>
+                        <div class="qrcode-box">
+                            <p class="qrcode" id="qrArea">
+                                <img alt="" src="../assets/_sample/card.svg">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--//QR 레이어팝업 -->
+    </main>
+</div>
+</body>
+</html>

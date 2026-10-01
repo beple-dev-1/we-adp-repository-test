@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈_가맹점 어드민_메인(앱 버전)</title>
+  <link rel="stylesheet" href="../assets/ent_aflt_resource/css/heat_admin-mobile.css">
+</head>
+<body data-screen-id="HIT-MBOA-10-S">
+<div class="app app--store-main">
+    <header class="ds-appbar"><span class="ds-appbar__action"></span><h1 class="ds-appbar__title"><!-- copy: store.title -->가맹점 관리</h1><span class="ds-appbar__action"></span></header>
+
+    <main class="screen-content">
+      <!-- 가맹점 프로필 섹션 (Figma 플랫 레이아웃) -->
+      <div class="store-profile">
+        <!-- 사용자명 + 매니저 배지 (Figma T89~T115, 좌측정렬) -->
+        <div class="store-profile__user">
+          <span class="store-profile__username"><!-- data: User.name --> 님</span>
+          <span class="store-profile__badge ds-badge"><!-- data: User.role --></span>
+        </div>
+        <!-- 대표 이미지 (Figma 98x98 r16, 중앙 T139) -->
+        <img class="store-profile__thumb" alt="가맹점 대표 이미지" src="../assets/_sample/profile.svg"/>
+        <!-- 가맹점명 (Figma 20px/700 #333 T253) -->
+        <div class="store-profile__name"><!-- data: Store.name --></div>
+        <!-- 주소 (Figma 14px/400 #999 T281) -->
+        <div class="store-profile__addr"><!-- data: Store.address -->서울 강남구 테헤란로 1길 10</div>
+        <!-- 가맹점 전환 칩 (Figma h32 r16, 중앙 T311) -->
+        <div class="store-switch-btn">
+          <button data-element-id="HIT-MBOA-10-S-e03" class="store-switch-btn__ctrl" type="button" data-ds-sheet="sheet-store">
+            <span class="store-switch-btn__label">가맹점</span>
+            <span class="store-switch-btn__chevron" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-chevron-down.svg" width="16" height="16" alt="" aria-hidden="true" /></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 회색 구분 띠 (Figma Rectangle 9665 360x10 #f7f7f7, T375) -->
+      <div class="store-divider-band"></div>
+
+      <!-- 가맹점 서비스 -->
+      <section class="svc-section">
+        <div class="svc__title"><!-- copy: store.service -->가맹점 서비스</div>
+        <div id="menu_mng" class="svc__item"><!-- copy: store.menu -->메뉴 관리<span class="chev" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-arrow-right.svg" width="24" height="24" alt="" aria-hidden="true" /></span></div>
+      </section>
+
+      <button data-element-id="HIT-MBOA-10-S-e04" class="logout" id="logout"><!-- copy: cm.logout -->로그아웃<span class="logout__arrow" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-arrow-right.svg" width="16" height="16" alt="" aria-hidden="true" /></span></button>
+    </main>
+
+    <!-- 가맹점 전환 시트 (C-OVL-SHEET, 357:5642) -->
+    <div class="ds-bottom-sheet" id="sheet-store" hidden>
+      <div class="ds-bottom-sheet__dim" data-ds-close></div>
+      <div class="ds-bottom-sheet__panel" role="dialog" aria-modal="true">
+        <div class="ds-bottom-sheet__header">
+            <h2 class="ds-bottom-sheet__title"><!-- copy: store.select.title -->
+                가맹점 선택
+            </h2>
+            <button class="ds-bottom-sheet__close" data-ds-close aria-label="닫기">
+                <img src="../assets/ent_aflt_resource/img/icons/ico-close-32.svg" width="32" height="32" alt="" aria-hidden="true" />
+            </button>
+        </div>
+        <ul class="ds-bottom-sheet__list" id="aflt_list">
+            
+          <!--
+          <li class="ds-bottom-sheet__item">양재동 사옥 구내식당</li>
+          <li class="ds-bottom-sheet__item ds-bottom-sheet__item--selected">
+            비플페이 구내식당
+            <span class="ds-bottom-sheet__check" aria-hidden="true">
+                <img src="../assets/ent_aflt_resource/img/icons/ico-check.svg" width="20" height="20" alt="" aria-hidden="true" />
+            </span>
+          </li>
+          -->
+        </ul>
+      </div>
+    </div>
+  </div>
+<!--   -->
+</body>
+</html>

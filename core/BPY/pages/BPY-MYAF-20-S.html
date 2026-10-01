@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>MY 가맹점 기본 프로필 정보 수정 화면</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-MYAF-20-S">
+<form name="frm" id="frm" method="post">
+<input type="hidden" name="AFLT_ID" id="AFLT_ID" value=""/>
+<input type="hidden" name="APP_CD" id="APP_CD" value=""/>
+<input type="hidden" name="FLAG" id="FLAG" value=""/>	<!-- 0:등록, 1:수정 -->
+<input type="hidden" name="CTGR_CATG_CD" id="CTGR_CATG_CD" value=""/>
+<input type="hidden" name="CTGR_CATG_NM" id="CTGR_CATG_NM" value=""/>
+<input type="hidden" name="CTGR_NM" id="CTGR_NM" value=""/>
+</form>
+
+<div class="wrap bg_br"> 
+	<div class="header floating-back-header floating-sticky">
+		<h1>가맹점 정보 관리</h1>
+		<a data-element-id="BPY-MYAF-20-S-e07" href="#" class="btn-history-back" id="btn_back">뒤로가기</a>
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 가맹점 정보 관리 -->
+			<div class="store_profile addBtn-pb56">
+				<!-- 매장사진 -->
+				<div class="thumb_bx">
+					<div class="inner" id="prf_div">
+						
+							<p id="thumb_p" class="thumbNail" img_info=""><a id="thumb_a" href="#none" title="사진등록"><!-- sample:begin -->표본<!-- sample:end --></a></p>
+						<p class="thumb_modify"><a data-element-id="BPY-MYAF-20-S-e08" href="#none"><span class="blind">사진수정</span></a></p>
+					</div>
+				</div>
+				<!-- //매장사진 -->
+
+				<div class="store_info_box">
+					<div class="inner">
+						<!-- 기본정보 -->
+						<h3 class="info_tit tooltip_w">
+							<strong>기본정보</strong>
+							<div class="tooltip">
+								<a href="#none" id="info_tooltip">
+									<img src="../assets/resource/images/zero/ico_vouchers_tooltip.png" alt="">
+								</a>
+								<p class="tooltip_message" id="tip_box"><!-- 활성화(클릭) 시 "view" 클래스 추가 -->
+									가맹점 기본정보 수정이 필요하신 경우, <br>
+									제로페이 고객센터 <a href="tel:1670-0582">(1670-0582)</a>로 문의해 주세요.
+								</p>
+							</div>
+						</h3>
+						<dl class="info_con">
+							<dt>가맹점명</dt>
+							<dd>비플카페 역삼점</dd>
+						</dl>
+						<dl class="info_con">
+							<dt>주소</dt>
+							<dd>서울 강남구 테헤란로 1길 10 101동 1001호</dd>
+						</dl>
+						<dl class="info_con">
+							<dt>대표자명</dt>
+							<dd>김대표</dd>
+						</dl>
+						<!-- // 기본정보 -->
+						<h3 class="info_tit"><strong>업종</strong></h3>
+						<div class="info_con btn" id="ctgr_box"><!-- 버튼영역 = btn 클래스 추가, 업종/대표번호 추가이전 = dis 클래스 추가-->
+							<a data-element-id="BPY-MYAF-20-S-e09" href="#none">비플머니</a>
+						</div>
+
+						<h3 class="info_tit"><strong>대표번호</strong></h3>
+						<div id="repr_no_box">
+							
+							<div class="info_con btn dis">
+								<a data-element-id="BPY-MYAF-20-S-e10" href="#none">대표번호를 추가해 주세요.</a>
+							</div>
+							
+						</div>
+						<h3 class="info_tit"><strong>영업시간</strong></h3>
+						<div  id="wt_box">
+							<a href="#none">
+							
+                                <div class="work_hours">
+                                    <ul>
+                                    	
+                                        <li>
+                                           	 
+                                        </li>
+                                        
+                                        <li>
+                                           	 
+                                        </li>
+                                        <li>
+                                           	  
+                                        </li>
+                                        <li>
+                                           	 
+                                        </li>
+                                        <li>
+                                           	 
+                                        </li>
+                                        
+                                        <li>
+                                           	  
+                                        </li>
+                                        
+                                        <li>
+                                           	 
+                                        </li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                    	<p class="noti"></p>
+                                    
+                                </div>
+                                
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--//가맹점 정보 관리 -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_grey">
+					<a data-element-id="BPY-MYAF-20-S-e11" href="#" id="btn_ok" class="btn_default btn-style-h46 round_r8 on"><span>확인</span></a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<!-- 사진 수정 레이어팝업 -->
+<div class="layer_overlay" id="edit_dim" style="display:none;">
+	<div class="layer_bPop">
+		<div class="popup_con pd0">
+			<!-- 사진 추가/수정 시 dim 팝업 -->
+			<div class="st_profile_pop">
+				<!-- 메뉴선택 -->
+				<ul id="btn_menu">
+					<li><a href="#none">기본 이미지로 변경</a></li>
+					<li><a href="#none">사진 촬영</a></li>
+					<li><a href="#none">앨범에서 가져오기</a></li>
+				</ul>
+				<!-- //메뉴선택 -->
+			</div>
+			<!-- //사진 추가/수정 시 dim 팝업 -->
+		</div>
+	</div>
+</div>
+<!-- //레이어팝업 -->
+</body>
+</html>

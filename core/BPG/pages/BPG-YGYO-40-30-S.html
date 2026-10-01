@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>주소 관리 (native)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-YGYO-40-30-S">
+<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>주소 관리</h1>
+			<a data-element-id="BPG-YGYO-40-30-S-e14" href="#" class="btn-history-back" id='btnBack'>뒤로가기</a>
+			<!-- <a href="#" class="btn-out-page">닫기</a> -->
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="bp-ygy flexWrap">
+					<!-- 
+						각 화면별 페이지에 맞게 클래스 넣어주세요.
+
+						Y130주소편집, Y132주소선택 	= address
+						Y130주소관리, Y131주소검색 	= address sch (페이지 타이틀 직후에 검색창으로 시작할 때)
+						Y133현재위치확인 = location
+					-->
+
+					<div class="address addBtn-pb58" id='step2' style="display: "><!-- 하단 버튼 추가 시 addBtn-pb58 클래스 추가 -->
+						<div class="address__detail">
+							<div class="address__content">
+								<p class="address__content-btxt" id="roadAddrNameTxt"><!-- sample:begin -->서울 강남구 테헤란로 1길 10<!-- sample:end --></p>
+								<p class="address__content-txt" id="AddrNameTxt"><!-- sample:begin -->서울 강남구 테헤란로 1길 10<!-- sample:end --></p>
+							</div>
+							<div class="address__detail-ipt"><!-- 입력 시작 시 input 추가 -->
+								<span class="address__detail-input"><input data-element-id="BPG-YGYO-40-30-S-e17" type="text" placeholder="상세주소를 입력해 주세요" id="addrDtl"></span>
+								<button data-element-id="BPG-YGYO-40-30-S-e10" class="address__detail-btn icon del-16" onclick="removeAlias();"><span class="blind">내용삭제</span></button>
+							</div>
+						</div>
+						<!-- 주소목록 -->
+						<div class="address__content">
+							<div class="address__nick border-t10" id='iconText'><!-- 직접입력 선택 시 self 클래스 추가 -->
+								<ul id='selectTP'>
+									<li class=""><!-- 선택 시 select 클래스 추가 -->
+										<div class="address__nick-con home">
+											<button data-element-id="BPG-YGYO-40-30-S-e11" onclick="selectIcon(this,1);"  id='btn1'>
+												<p class="address__nick-name">우리집</p>
+											</button>
+										</div>
+									</li>
+									<li>
+										<div class="address__nick-con comp">
+											<button data-element-id="BPG-YGYO-40-30-S-e12" onclick="selectIcon(this,2);" id='btn2'>
+												<p class="address__nick-name">회사</p>
+											</button>
+										</div>
+									</li>
+									<li>
+										<div class="address__nick-con">
+											<button data-element-id="BPG-YGYO-40-30-S-e13" onclick="selectIcon(this,9);" id='btn9'>
+												<p class="address__nick-name">직접입력</p>
+											</button>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- 기본값 = 숨김, 상단 박스에서 self 클래스 추가 시 입력창 생성 및 간격 조절됨  -->
+							<div class="address__self-bx">
+								<div class="address__detail-ipt">
+									<span class="address__detail-input"><input data-element-id="BPG-YGYO-40-30-S-e18" type="text" placeholder="주소 별칭을 입력해 주세요" id="type_aliTxt"></span>
+									<button class="address__detail-btn icon del-16"><span class="blind">내용삭제</span></button>
+								</div>
+								<p class="address__txt-btn"><a data-element-id="BPG-YGYO-40-30-S-e15" onclick="nativeCall('5011')"><span class="icon arr_right-14">지도에서 위치 확인하기</span></a></p>
+							</div>
+						</div>
+						<!-- // 주소목록 -->
+					</div>
+				</div>
+				<!-- 하단 고정버튼 -->
+				<div class="btn_botFix_w">
+					<div class="inner bg_white">
+						<a data-element-id="BPG-YGYO-40-30-S-e16" onclick="goNext()" class="btn_default round_r8 btn-style-h48 on" style="display: " id="saveBtn">완료</a>
+					</div>
+				</div>
+				<!-- //하단 고정버튼 -->
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

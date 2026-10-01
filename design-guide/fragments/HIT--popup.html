@@ -1,0 +1,301 @@
+<div class="dg-body"><div class="dg-sp-cell" data-dg-variant="popup--bottom-popup-payment--cancel" style="position:relative;min-height:480px"><section class="popup-container popup--bottom popup-payment--cancel">
+			<header class="popup-container__header">
+				<h3 class="container__headline container__headline--lv4">결제취소</h3>
+				<div class="popup-button">
+					<button type="button" class="popup-button--close js-popup-close" role="button" aria-label="팝업 창 닫기 버튼">
+						<i class="icon icon--close-32">팝업 창 닫기</i>
+					</button>
+				</div>
+			</header>
+
+			<article class="popup-container__body justify-spacing-def">
+				
+				<section class="tab-container js-tab-container">
+					<header class="tab-container__header border--no js-tab-header">
+						<div class="tab-container__header--content tab-button-style--lv3">
+							<div class="tab-button-wrap" aria-label="결제 취소 수단 선택">
+								
+								<button class="tab-button col--2 js-tab-button active" role="button" aria-selected="true" aria-label="바코드 선택 탭">
+									<span>바코드</span>
+								</button>
+								
+								<button class="tab-button col--2 js-tab-button" role="button" aria-selected="false" aria-label="QR코드 선택 탭">
+									<span>QR코드</span>
+								</button>
+								
+								<div class="tab-selector js-tab-selector">
+									<span class="blind" aria-hidden="true">탭 버튼 셀렉터</span>
+								</div>
+							</div>
+						</div>
+					</header>
+
+					<article class="tab__content js-tab-content" aria-label="바코드 탭">
+						<div class="flex-column">
+							<div class="image--barcode">
+								<div id="barcode_area" class="barcode">
+								</div>
+							</div>
+							<p id="barcode_no" class="info__text info__text--lv1 ta-center" aria-label="바코드 넘버">1</p>
+						</div>
+
+						<p class="info__text info__text--lv2 ta-center fc-333 pdt32">
+							거래를 취소하려면 상단의 바코드를<br>
+							가맹점에 제시해 주세요.
+						</p>
+					</article>
+
+					<article class="tab__content js-tab-content" aria-label="QR코드 탭" style="display: none;">
+						<div class="flex-column">
+							<div id="qr_area" class="image--qrcode">
+								
+								
+							</div>
+						</div>
+
+						<p class="info__text info__text--lv2 ta-center fc-333 pdt32">
+							거래를 취소하려면 상단의 QR코드를<br>
+							가맹점에 제시해 주세요.
+						</p>
+					</article>
+				</section>
+			</article>
+		</section><span class="dg-sp-tag">popup--bottom popup-payment--cancel</span></div><div class="dg-sp-cell" data-dg-variant="popup--bottom-popup-receipt--send" style="position:relative;min-height:480px"><section class="popup-container popup--bottom popup-receipt--send">
+			<header class="popup-container__header">
+				<h3 class="container__headline container__headline--lv4">전자영수증 보내기</h3>
+				<div class="popup-button">
+					<button type="button" class="popup-button--close js-popup-close" role="button" aria-label="팝업 창 닫기 버튼">
+						<i class="icon icon--close-32">팝업 창 닫기</i>
+					</button>
+				</div>
+			</header>
+
+			<article class="popup-container__body">
+				<div class="form-box justify-spacing-def js-form-box">
+					
+					<div class="form__item">
+						<div class="form__item-wrap">
+							<div class="flex-column gap-8">
+								<div class="input-type--box">
+									<input id="email1" type="text" value="" placeholder="이메일 입력">
+								</div>
+
+								<div class="drop-box drop-reverse col--block js-drop-box">
+									
+									<div class="drop--trigger js-drop-trigger" aria-label="현재 설정된 이메일 제공자">
+										<button type="button" class="input-type--button">
+											<p id="select_email" class="ellipsis-line--1">@outlook.com</p>
+											<i class="icon icon--arrow-24"><span class="blind">이메일  목록 보기</span></i>
+										</button>
+									</div>
+
+									
+									<ul class="doamin-list drop--content js-drop-content js-select-content" aria-label="이메일 제공자 목록">
+										<li class="domain__item select">
+											<button type="button"><span>직접입력</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>bizplay.co.kr</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>hyundai.com</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>kia.com</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>genesis.com</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>mobis.co.kr</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>hmsec.com</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>hec.co.kr</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>hyundai-autoever.com</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>gmail.com</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>naver.com</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>daum.net</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>outlook.com</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>nate.com</span></button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="input-type--check">
+								<label class="flex-row">
+									<input id="agree-chk" type="checkbox"><span>이메일 정보 기억</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="flex-row pdt32 justify-spacing-btn">
+					<button id="send_btn" class="button button-xl button--lv1 js-popup-close">
+						<span>발송하기</span>
+					</button>
+				</div>
+			</article>
+		</section><span class="dg-sp-tag">popup--bottom popup-receipt--send</span></div><div class="dg-sp-cell" data-dg-variant="popup--full" style="position:relative;min-height:480px"><div class="active"><section class="popup-container popup--full">
+            
+            <header class="header position-sticky">
+                <div class="header__title-wrap">
+                    <h1 class="page-name"><span>이용안내</span></h1>
+                </div>
+
+                <nav class="header__navi">
+                    <a href="#none" class="header__btn btn-close js-popup-close">
+                        <span class="blind">페이지 닫기</span>
+                    </a>
+                </nav>
+            </header>
+
+            <div class="popup-container__body smart_oder-container">
+                <section class="body__header justify-spacing-def pdt24">
+                    <h2 class="headline headline--lv4">
+                        로봇 배송을 받을 수 있는 장소 중 <br>
+                        배송 받으실 장소를 확인해 주세요.
+                    </h2>
+                </section>
+
+                <section class="body__content oder_payment">
+                    <div class="payment_w">
+                        
+                            
+
+                                <div class="payment_con">
+                                    <div class="con-hd">
+                                        <div class="flex-row">
+                                            <h3 class="pay_tit">홍길동</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="delivery-place">
+                                        <div class="delivery-place__view">
+                                            <img class="${item.areaImgClass}" src="../assets/_sample/menu.svg">
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                        
+                        
+                            <div class="payment_con">
+                                <div class="con-hd">
+                                    <div class="flex-row">
+                                        <h3 class="pay_tit">조회된 장소가 없습니다.</h3>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        
+                    </div>
+                </section>
+            </div>
+        </section></div><span class="dg-sp-tag">popup--full</span></div><div class="dg-sp-cell" data-dg-variant="popup--full-delivery_use-guide" style="position:relative;min-height:480px"><section class="popup-container popup--full delivery_use-guide">
+        
+        <header class="header position-sticky">
+            <div class="header__title-wrap">
+                <h1 class="page-name"><span>로봇배송 이용안내</span></h1>
+            </div>
+
+            <nav class="header__navi">
+                <a id="aflt_detail_robot_info_close" href="#none" class="header__btn btn-close js-popup-close">
+                    <span class="blind">페이지 닫기</span>
+                </a>
+            </nav>
+        </header>
+
+        <div class="popup-container__body justify-spacing-def">
+            <section class="body__header flex-column">
+                <div class="column__head">
+                    <h2 class="headline headline--lv4">
+                        로봇배송<br>
+                        어떻게 사용하나요?
+                    </h2>
+                </div>
+
+                <div class="column__item">
+                    <p class="info__text--lv2">
+                        로봇배송은 지정된 장소로 직접 로봇이<br>
+                        찾아오는 비대면 배송 서비스입니다.
+                    </p>
+                </div>
+            </section>
+
+            <section class="body__content">
+                
+                <div class="flex-column">
+                    <div class="column__head">
+                        <h3 class="headline headline--lv3">로봇배송 프로세스</h3>
+                    </div>
+                    <div class="column__item">
+                        <ol class="process-step">
+                            <li><span>스마트오더에서 로봇배송 주문</span></li>
+                            <li><span>매장 조리 완료 후 로봇이 출발</span></li>
+                            <li><span>인증번호 입력 또는 얼굴 인식으로 수령</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                
+                <div class="flex-column">
+                    <div class="column__head">
+                        <h3 class="headline headline--lv3">로봇배송 수령</h3>
+                    </div>
+                    
+                    <div class="column__item">
+                        <h4 class="headline headline--lv2">얼굴 인식</h4>
+                        <ul class="list-bl">
+                            <li>배송 로봇의 카메라에 얼굴을 인식시키면 물품을 편리하게 수령할 수 있습니다.</li>
+                            <li>얼굴 인식 정보 등록 : 메인 > 더보기 > 설정 > 로봇배송 얼굴 인증</li>
+                        </ul>
+                        <div class="mgt24"><img src="../assets/ent_resource/img/hdc/use-guide_1.png" alt=""></div>
+                        <div class="mgt16">
+                            <button type="button" class="button button-mid col--block button--lv1" id="register_face"><span>얼굴 인식 정보 등록하기</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="column__item">
+                        <h4 class="headline headline--lv2">인증번호 인증</h4>
+                        <ul class="list-bl">
+                            <li>배송 로봇에 4자리 인증번호를 입력해 물품을 수령합니다.</li>
+                            <li>인증번호는 배송 출발 후 주문내역에서 확인할 수 있습니다.</li>
+                        </ul>
+                        <p class="mgt24"><img src="../assets/ent_resource/img/hdc/use-guide_2.png" alt=""></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section><span class="dg-sp-tag">popup--full delivery_use-guide</span></div><div class="dg-sp-cell" data-dg-variant="overlay" style="position:relative;min-height:480px"><main class="container-wrap"><section class="popup-container overlay">
+	            <div class="popup-box bottom">
+	                <div class="inner-box">
+	                    
+	                    <div class="box-hd pd-lr20 pdt24">
+	                        <p class="box__hd-text">알림 유형</p>
+	                    </div>
+	                    
+	                    <article class="box-content pd-lr20 mgt16" id="alarm_type_pop"> 
+	                        
+	                    </article>
+	                    
+	                    <p id="pop_close" class="close_btn-box"><button data-element-id="HIT-COMN-20-10-S-e05" type="button" class="close-btn icon close-14"><span class="blind-i">팝업닫기</span></button></p>
+	                </div>
+	            </div>
+	        </section></main><span class="dg-sp-tag">overlay</span></div></div>

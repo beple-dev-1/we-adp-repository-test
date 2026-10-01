@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>공지사항 목록</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-COMN-20-20-S">
+<div class="wrap js-wrap" id="notice_list_area">
+        <!-- 헤더 영역 -->
+        <header class="header position-sticky">
+            <!-- 헤더 네비 -->
+            <nav class="header-nav">
+                <a data-element-id="HIT-COMN-20-20-S-e06"  id="back_btn" class="hd-btn back"><span class="blind-i">뒤로가기</span></a>
+            </nav>
+            <!-- 헤더 타이틀 -->
+            <div class="page-title">
+            	<h1 class="header-title"></h1>
+            </div>
+        </header>
+
+        <!-- 컨텐츠 영역 -->
+        <main class="container-wrap">
+            <section class="notice_list" id="notice_area">
+                <ul id="notice_list"><!-- sample:begin -->표본<!-- sample:end --></ul>
+            </section>
+            <section class="end-container content-none" id="no_list" style="display: none;">
+				<article class="end__item-wrap">
+					<div class="end-box">
+						<div class="end-item flex-row">
+							<p class="icon content_none-58"><span class="blind-i">내역없음</span></p>
+						</div>
+						<div class="end-item mgt12">
+							<p class="end-text">등록된 내역이 없습니다.</p>
+						</div>
+					</div>
+				</article>
+			</section>
+        </main>      
+    </div>
+    
+    <div class="wrap js-wrap" id="notice_detail_area">
+        <!-- 헤더 영역 -->
+        <header class="header position-sticky">
+            <!-- 헤더 네비 -->
+            <nav class="header-nav">
+                <a id="close_btn" class="hd-btn back"><span class="blind-i">뒤로가기</span></a>
+            </nav>
+            <!-- 헤더 타이틀 -->
+            <div class="page-title">
+                <h1 class="header-title"></h1>
+            </div>
+            <!-- 헤더 네비 -->
+            <nav class="header-nav">
+                <a data-element-id="HIT-COMN-20-20-S-e07" id="share_btn" class="hd-btn share"><span class="blind-i">공유하기</span></a>
+            </nav> 
+        </header>
+
+        <!-- 컨텐츠 영역 -->
+        <!-- 컨텐츠 영역 -->
+        <main class="container-wrap js-container-wrap">
+            <section class="alarm_detail">
+                <!-- 공지사항 타이틀 -->
+                <div class="tit_area">
+                	<input type="hidden" id="title">
+                    <input type="hidden" id="detail_noti_seq">
+                    <p id="detail_title"><!-- sample:begin -->안내<!-- sample:end --></p>
+                    <span id="detail_reg_dt" aria-hidden="true"><!-- sample:begin -->2026.09.02<!-- sample:end --></span>
+                </div>
+                <article class="cont" id="detail_ctnt"><!-- sample:begin -->안내 문구<!-- sample:end --></article>
+            </section>
+            
+            <!-- 플로팅 박스 -->
+            <section class="floating-container bottom js-floating-wrap" id="toastBox" style="display:none;">
+                <!-- 토스트 박스 -->
+                <article class="toast-box view pd-lr60"><!-- 노출 시 view 클래스 추가 / view 클래스 삭제 시 숨김 : 설정시간 = 1.5초 노출 후 사라짐 -->
+                    <div class="message-wrap justify-center height-40 pd-lr0">
+                        <p class="toast-text" id="copyOk"><span>URL 복사가 완료되었습니다.</span></p>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>       
+       
+    <div class="wrap js-wrap" id="share_div">
+        <!-- 컨텐츠 영역 -->
+        <main class="container-wrap js-container-wrap">
+        <!-- 레이어팝업 -->
+        <section class="popup-container overlay" style="display:none;">
+            <div class="popup-box bottom">
+                <div class="inner-box">
+                    <!-- 컨테이너 헤더 -->
+                    <div class="box-hd pd-lr20 pdt24">
+                        <p class="box__hd-text">공유하기</p>
+                    </div>
+                    <!-- 컨테이너 컨텐츠 -->
+                    <!-- 공유하기 선택 -->
+                    <article class="share">
+                        <!-- 공유하기 목록 -->
+                        <ul class="share_list">
+                            <li  id="shareLink"><a data-element-id="HIT-COMN-20-20-S-e08" href="#none" class="on"><img src="../assets/ent_resource/img/icon/ico_copy.png" alt="">URL복사</a></li><!-- 선택 시 클래스 on -->
+                        </ul>
+                    </article>
+                    <!-- 닫기버튼 -->
+                    <p class="close_btn-box"><button data-element-id="HIT-COMN-20-20-S-e05" id="share_close" type="button" class="close-btn icon close-14"><span class="blind-i">팝업닫기</span></button></p>
+                </div>
+            </div>
+        </section>
+        <!-- // 레이어팝업 -->        
+        </main>
+    </div>
+</body>
+</html>

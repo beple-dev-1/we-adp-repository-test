@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플오더 메뉴관리 옵션 상세</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-30-10-S">
+<form name = "frm" id = "frm" method="post">
+		<input id="BP_AFLT_SEQ" 		 name = "BP_AFLT_SEQ" type="hidden" value="">
+		<input id="BP_AFLT_OPT_CATG_SEQ" name = "BP_AFLT_OPT_CATG_SEQ" type="hidden" value="">
+	</form>
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>옵션</h1>
+			<a data-element-id="BPG-OBO-30-10-S-e09" href="#" class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<div class="container">
+			<div class="content">
+				<div class="flexWrap">
+					<div class="bpleOder addBtn-pb56 bg_f7">
+						<!-- 옵션추가 -->
+						<div class="store_profile">
+							<!-- 옵션정보 -->
+							<div class="store_info_box pdt32">
+								<div class="inner">
+									<!-- 옵션 카테고리 -->
+									<h3 class="info_tit"><strong>옵션 명</strong></h3>
+									<div class="iptbx">
+										<div class="inner">
+											<input data-element-id="BPG-OBO-30-10-S-e14" type="text" id="optCatgNm" maxlength="20" placeholder="ex) HOT/ICE ,시럽, 당도" value="홍길동" data-fill="demo">
+										</div>
+									</div>
+									<!-- 옵션 항목 -->
+									<h3 class="info_tit"><strong>옵션 항목</strong></h3>
+									<!-- 
+										항목 1개일경우 : 		iptbx에 del클래스 없음&제거
+										항목 2개 이상일 경우 : 	iptbx에 del클래스 추가
+									-->
+									
+									
+										<!-- 옵션없을때 -->
+										<!-- 항목 1 -->
+										<div class="iptbx dual del" >
+											<div class="inner">
+												<input data-element-id="BPG-OBO-30-10-S-e15" type="text" id="optNm0" onkeyup="uf_btnSet();"   maxlength="15" placeholder="옵션종류">
+											</div>
+											<div class="inner">
+												 <input data-element-id="BPG-OBO-30-10-S-e16" type="tel" id="optPrice0" onkeyup="optPricekeyup(this);" maxlength="7" placeholder="옵션가격">
+												 <span class="won">원</span>
+											</div>
+											<div class="inner del_btn" >
+												<a data-element-id="BPG-OBO-30-10-S-e10" onclick="optDelete(this,0);" opt_seq="0"><span class="blind">옵션 삭제</span></a>
+											</div>
+										</div>
+										
+									<!-- 추가버튼 -->
+									<div class="btn_add pd0" id="btn_optAdd" style="display:block">
+										<a>+ 옵션 항목 추가</a>
+									</div>
+									<!-- 연결 메뉴(선택) -->
+									<h3 class="info_tit mgb7"><strong>연결 메뉴(선택)</strong></h3>
+									<p class="info_txt">연결된 메뉴에 동시 적용됩니다.</p>
+									<div class="option_add chain">
+										<div class="list" id="pdt_list" ><!-- 사용 안할 시 style="display:none;" 추가 -->
+											
+												
+												<!-- 메뉴 상세 -->
+												<div id="pdt_div">
+													<div class="cont">
+														<p class="sub"></p>
+													</div>
+													<p class="del"><a data-element-id="BPG-OBO-30-10-S-e11" href="#none" onclick="pdtDelete(this,)" pdt_mode="R" pdt_seq=""><span>옵션삭제</span></a></p>
+												</div>	
+											
+										</div>
+										<!-- 추가버튼 -->
+										<div class="btn_add">
+											<a data-element-id="BPG-OBO-30-10-S-e12" href="#none" id="btn_pdtView">+ 연결 메뉴 추가</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- // 옵션정보 -->
+						</div>
+						<!--//옵션추가 -->
+					</div>
+				</div>
+				<!-- 하단 고정버튼 -->
+				<div class="btn_botFix_w">
+					<div class="inner bg_grey">
+						<a data-element-id="BPG-OBO-30-10-S-e13" href="#none" id="btn_save" class="btn_default btn-style-h46 round_r8 on"><span>저장</span></a><!-- 활성/비활성화 시 클래스 on 추가/제거 -->
+					</div>
+				</div>
+				<!-- //하단 고정버튼 -->
+			</div>
+		</div><!-- // container -->
+	</div><!-- // wrap -->
+	<!-- 레이어팝업 -->
+	<div class="layer_overlay topSlide" id="pdtlayer" style="display:none;">
+		<div class="oder_flat_pop">
+			<div class="flat_top_bx">
+				<p class="bar"><a id="btn_pdtClose"></a></p>
+				<h2 class="tit fz18">연결 메뉴 추가</h2>	
+				<p class="info_msg">해당 옵션을 연결할 메뉴를 선택해 주세요.</p>
+			</div>
+			<div class="inner" style="display:none;">
+				<p class="item_none">
+					등록된 메뉴가 없습니다.
+				</p>
+			</div>
+			
+				<div class="inner addBtn-pb46">
+					<!-- 메뉴관리 컨텐츠 -->
+					<div class="menu_admin">
+						<!-- 리스트 -->
+						<div class="list_add">
+							<!-- 메뉴목록 -->
+							<div class="menu_list">
+								<ul>
+									
+										
+										<li><!-- 품절 시 sold_out 클래스 추가, 숨김 시 hide 클래스 추가 -->
+											<a onclick="pdtSelect(this);" class="" pdt_seq="" ><!-- 선택 시 클래스 select 추가 -->
+												<div class="inner">
+													<p class="photo">
+														<img alt="메뉴사진" src="../assets/_sample/card.svg">
+													</p>
+													<div class="info_w">
+														<p class="name"></p>
+														
+															<p class="info"></p>
+															
+														<p class="won">4,500원</p>
+													</div>
+												</div>
+											</a>
+										</li>		
+										
+								</ul>
+							</div>
+							<!-- //끝 -->
+						</div>
+					</div>
+				</div>
+			
+		</div>
+		<!-- 하단 고정버튼 -->
+		<div class="btn_botFix_w">
+			<div class="inner bg_white">
+				<a href="#none" id="btn_pdtAdd" class="btn_default btn-style-h46 round_r8 on"><span>확인</span></a><!-- 활성/비활성화 시 클래스 on 추가/제거 -->
+			</div>
+		</div>
+		<!-- //하단 고정버튼 -->
+</body>
+</html>

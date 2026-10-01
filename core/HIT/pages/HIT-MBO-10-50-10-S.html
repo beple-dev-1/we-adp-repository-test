@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>거래내역</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-10-50-10-S">
+<div class="bp-root">
+    <!-- //lnb box -->
+    
+        
+    
+
+    <!-- 메인 컨텐츠 -->
+    <div class="bp-main">
+        <div class="layout">
+            <div class="row">
+                <div class="col col-10">
+                    <div class="con-wrap">
+                        <!-- 페이지 헤더 -->
+                        <div class="page-header">
+                            <p class="tit tit-01 with-desc">
+                                거래내역
+                                <span>
+                        - 거래내역의 상세 현황을 확인할 수 있습니다.
+                      </span>
+                            </p>
+                        </div>
+
+                        <div class="search-box">
+                            <!-- div 구조여서 위에서 아래로 추가됩니다 - left 는 왼쪽 상단, right는 오른쪽 상단부터 추가됨. right박스 사용 안할시 해당영역 전체 삭제-->
+                            <form action="">
+                                <div class="search-form type2">
+                                    <!-- 왼쪽박스 -->
+                                    <div class="form-wrap left col col-7">
+                                        <!-- col -->
+                                        <!-- 날짜선택 -->
+                                        <div class="search-item">
+                                            <div class="item-hd">
+                                                <p class="item-text head">거래일시</p>
+                                            </div>
+                                            <div class="item-con">
+                                                <div class="td-item-group left td-item">
+                                                    <div class="ip-wrap with-icon ta-left td-item w-auto">
+                                                        <input data-element-id="HIT-MBO-10-50-10-S-e17" data-toggle="datepicker" name="" id="start_date" class="ip-txt" type="text" value="" placeholder="" style="background-color: #ffffff; color: #000000" readonly><!-- 비활성화 시 readonly -->
+                                                        <i class="ic ic-calendar"></i>
+                                                    </div>
+                                                    <div class="sel td-item" style="min-width: 65px;">
+                                                        <select data-element-id="HIT-MBO-10-50-10-S-e18" name="" id="start_hour" class="" required="" onclick="clk_time();">
+                                                            
+                                                                
+                                                                    <option value="">시</option>
+                                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="sel td-item" style="min-width: 65px;">
+                                                        <select data-element-id="HIT-MBO-10-50-10-S-e19" name="" id="start_min" class="" required="" onclick="clk_time();">
+                                                            
+                                                                
+                                                                    <option value="">분</option>
+                                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="td-item space">~</div>
+                                                    <div class="ip-wrap with-icon ta-left td-item w-auto">
+                                                        <input data-element-id="HIT-MBO-10-50-10-S-e20" data-toggle="datepicker" name="" id="end_date" class="ip-txt" type="text" value="" placeholder="" style="background-color: #ffffff; color: #000000" readonly><!-- 비활성화 시 readonly -->
+                                                        <i class="ic ic-calendar"></i>
+                                                    </div>
+                                                    <div class="sel td-item" style="min-width: 65px;">
+                                                        <select data-element-id="HIT-MBO-10-50-10-S-e21" name="" id="end_hour" class="" required="" onclick="clk_time();">
+                                                            
+                                                                
+                                                                    <option value="">시</option>
+                                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="sel td-item" style="min-width: 65px;">
+                                                        <select data-element-id="HIT-MBO-10-50-10-S-e22" name="" id="end_min" class="" required="" onclick="clk_time();">
+                                                            
+                                                                
+                                                                    <option value="">분</option>
+                                                                
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <!-- 검색어 -->
+                                        <div class="search-item">
+                                            <div class="item-hd">
+                                                <p class="item-text head">거래구분</p>
+                                            </div>
+                                            <div class="item-con">
+                                                <div class="td-item-group left">
+                                                    <div class="td-item drop-box w130 shrink_no" onclick="btn_drop_kw($(this))" id="btn_kw">
+                                                        <p>
+                                                            <button data-element-id="HIT-MBO-10-50-10-S-e12" type="button" class="trigger drop-btn" id="tran_type" value=""><span>전체</span></button>
+                                                        </p>
+                                                        <div class="drop-content">
+                                                            <p class="drop-item select" name="tran_type">
+                                                                <button type="button" class="drop-btn" value="" onclick="clk_keyword($(this))">전체</button>
+                                                            </p>
+                                                            <p class="drop-item" name="tran_type">
+                                                                <button data-element-id="HIT-MBO-10-50-10-S-e13" type="button" class="drop-btn" value="P" onclick="clk_keyword($(this))">결제</button>
+                                                            </p>
+                                                            <p class="drop-item" name="tran_type">
+                                                                <button data-element-id="HIT-MBO-10-50-10-S-e14" type="button" class="drop-btn" value="PC" onclick="clk_keyword($(this))">결제취소</button>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // col end -->
+                                    </div>
+                                </div>
+                                <div class="btn-wrap ta-center">
+                                    <button data-element-id="HIT-MBO-10-50-10-S-e15" class="btn btn-md-b btn-primary-outline" type="button" id="btn_search">조회</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- 테이블 영역 -->
+                        <div class="td-item-group mb12 right">
+                            <div class="td-item-group right">
+                                <div class="td-item-group td-item right">
+                                    <p class="lh-32">검색결과: 총 <span class="fc-pri fw-600" id="tot_cnt"><!-- sample:begin -->1<!-- sample:end --></span>건</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="td-item-group mb12 right">
+                            <div class="td-item-group right">
+                                <div class="td-item-group td-item right"><!-- [D] 검색결과 없을 시 버튼 숨김 : style="display:none;" -->
+                                    <button data-element-id="HIT-MBO-10-50-10-S-e16" class="btn btn-md-b btn-gray-outline" type="button" id="btn_excel"><i class="ic ic-excel"></i>엑셀 저장</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dim active" id="dim" style="display: none"></div>
+</body>
+</html>

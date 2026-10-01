@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>요기요 결제</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-YGYO-20-10-S">
+<script>
+    $(function(){
+        //툴팁
+        const winW = $(window).width();						// 문서 넓이
+        const toolTipBtn = $('.tooltip_w .tooltip-btn');	// 버튼
+        const toolTipCon = $('.tooltip_w .tooltip');		// 툴팁 컨텐츠
+
+        if($('.tooltip_w').length > 0){
+            for(let i = 0; i < $('.tooltip_w').length; i++){
+                // 버튼 위치
+                btnPo = toolTipBtn.eq(i).position().left;					// 버튼 left 위치
+                btnW = toolTipBtn.eq(i).innerWidth();						// 버튼 넓이
+                // 툴 팁 컨텐츠 위치
+                tooltipPo = toolTipCon.eq(i).offset().left;				// 툴 팁 컨텐츠 left 위치
+                toolTipW = toolTipCon.eq(i).innerWidth();					// 툴 팁 컨텐츠 넓이
+
+                // 정렬 계산
+                toolTipCnterPo = btnPo - toolTipW / 2 + btnW / 2	// 툴 팁 컨텐츠 가운데정렬
+                tooltipRightPo = Math.floor(tooltipPo + toolTipW + toolTipCnterPo);	// 툴 팁 오른쪽 끝 위치값
+
+                //문서 우측 끝 과 툴 팁 컨텐츠 우측 끝 거리 계산
+                docSpace = winW - tooltipRightPo;
+
+                // 툴 팁 위치 조정
+                if(docSpace >= 20){
+                    toolTipCon.eq(i).css('left', toolTipCnterPo);
+                }else{
+                    toolTipCon.eq(i).css('left', winW - (toolTipW + tooltipPo) - 20);
+                }
+            }
+        }
+    })
+</script>
+<!-- iframe -->
+<form name="ifrmFrm" id="ifrmFrm" method="post" action="">
+    <input type="hidden" name="VV"          id="VV"       value="">
+    <input type="hidden" name="ID"          id="ID"       value="">
+    <input type="hidden" name="RQ_DTIME"    id="RQ_DTIME" value="">
+    <input type="hidden" name="TNO"         id="TNO"      value="">
+    <input type="hidden" name="EV"          id="EV"       value="">
+
+    <div id="ifrmDiv" style="display:none;">
+        <div class="header floating-back-header floating-sticky">
+            <a href="#" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+        </div>
+
+        <iframe name="ifrm" style="width:100%;height:100%;position:fixed;border:none;">
+
+        </iframe>
+    </div>
+</form>
+
+<form name="frm" id="frm" method="post">
+    <!--공통 정보-->
+    <input type="hidden" name="BP_AFLT_SEQ"                 id="BP_AFLT_SEQ"                value="">
+    <input type="hidden" name="MNY_CUR_PRICE"               id="MNY_CUR_PRICE"              value="">
+    <input type="hidden" name="TRX_TP"                      id="TRX_TP"                     value="M"> <!--거래구분식권(zero_tgt_list 사용)-->
+    <input type="hidden" name="CHNL_CD"                     id="CHNL_CD"                    value="05"><!--채널코드(zero_tgt_list 사용)-->
+    <input type="hidden" name="BP_AFLT_ID"                  id="BP_AFLT_ID"                 value="">
+    <input type="hidden" name="PG_AFLT_ID"                  id="PG_AFLT_ID"                 value="">
+    <input type="hidden" name="ORDER_DT"                    id="ORDER_DT"                   value="">
+    <input type="hidden" name="ORDER_ID"                    id="ORDER_ID"                   value="">
+    <input type="hidden" name="APP_CD"                      id="APP_CD"                     value="">
+    <input type="hidden" name="MEMB_CD"                     id="MEMB_CD"                    value="">
+    <input type="hidden" name="QR_TRX_DT"                   id="QR_TRX_DT"                  value="">
+    <input type="hidden" name="QR_TRX_SEQ"                  id="QR_TRX_SEQ"                 value="">
+    <input type="hidden" name="DELIVERY_LAT"                id="DELIVERY_LAT"               value=""> <!-- 주문자가 선택한 주소 정보의 위도 -->
+    <input type="hidden" name="DELIVERY_LNG"                id="DELIVERY_LNG"               value=""> <!-- 주문자가 선택한 주소 정보의 경도 -->
+    <!-- <input type="hidden" name="DELIVERY_ROAD_ADDR"          id="DELIVERY_ROAD_ADDR"         value=""> --> <!-- 주문자가 선택한 도로명 주소 -->
+    <!-- <input type="hidden" name="DELIVERY_BUN_ADDR"           id="DELIVERY_BUN_ADDR"          value=""> -->  <!-- 주문자가 선택한 지번 주소  -->
+
+    <input type="hidden" name="LEGAL_ADDRESS_SIDO" id="LEGAL_ADDRESS_SIDO" value="" >
+    <input type="hidden" name="LEGAL_ADDRESS_SIGUGUN" id="LEGAL_ADDRESS_SIGUGUN" value="" >
+    <input type="hidden" name="LEGAL_ADDRESS_DONGMYUN" id="LEGAL_ADDRESS_DONGMYUN" value="" >
+    <input type="hidden" name="LEGAL_ADDRESS_EUPRI" id="LEGAL_ADDRESS_EUPRI" value="" >
+    <input type="hidden" name="LEGAL_ADDRESS_JIBEON" id="LEGAL_ADDRESS_JIBEON" value="" >
+    <input type="hidden" name="LEGAL_ADDRESS_BUILDING_NAME" id="LEGAL_ADDRESS_BUILDING_NAME" value="" >
+    
+    <input type="hidden" name="ADMINISTRATIVE_ADDRESS_SIDO" id="ADMINISTRATIVE_ADDRESS_SIDO" value="" >
+    <input type="hidden" name="ADMINISTRATIVE_ADDRESS_SIGUGUN" id="ADMINISTRATIVE_ADDRESS_SIGUGUN" value="" >
+    <input type="hidden" name="ADMINISTRATIVE_ADDRESS_DONGMYUN" id="ADMINISTRATIVE_ADDRESS_DONGMYUN" value="" >
+    <input type="hidden" name="ADMINISTRATIVE_ADDRESS_JIBEON" id="ADMINISTRATIVE_ADDRESS_JIBEON" value="" >
+    <input type="hidden" name="ADMINISTRATIVE_ADDRESS_BUILDING_NAME" id="ADMINISTRATIVE_ADDRESS_BUILDING_NAME" value="" >
+    
+    <input type="hidden" name="ROAD_ADDRESS_SIDO" id="ROAD_ADDRESS_SIDO" value="" >
+    <input type="hidden" name="ROAD_ADDRESS_SIGUGUN" id="ROAD_ADDRESS_SIGUGUN" value="" >
+    <input type="hidden" name="ROAD_ADDRESS_ROAD_NAME" id="ROAD_ADDRESS_ROAD_NAME" value="" >
+    <input type="hidden" name="ROAD_ADDRESS_BUILDING_NUMBER" id="ROAD_ADDRESS_BUILDING_NUMBER" value="" >
+    <input type="hidden" name="ROAD_ADDRESS_BUILDING_NAME" id="ROAD_ADDRESS_BUILDING_NAME" value="" >
+
+    <!--비플머니 정보-->
+    <input type="hidden" name="MNY_CHRG_ACCT_NO"            id="MNY_CHRG_ACCT_NO"           value="">
+    <input type="hidden" name="MNY_CHRG_BANK_CD"            id="MNY_CHRG_BANK_CD"           value="">
+    <input type="hidden" name="MNY_CHRG_DEC_ACCT_NO"        id="MNY_CHRG_DEC_ACCT_NO"       value="">
+    <input type="hidden" name="MNY_CHRG_BANK_NM"            id="MNY_CHRG_BANK_NM"           value="">
+    <input type="hidden" name="MNY_AUTO_CHRG_AMT"           id="MNY_AUTO_CHRG_AMT"          value="0">
+    <input type="hidden" name="MNY_TRX_AMT"                 id="MNY_TRX_AMT"                value="0">
+
+    <!--식권 정보 -->
+    <input type="hidden" name="CARD_NO"                     id="CARD_NO"                    value="">
+    <input type="hidden" name="REC_INDEX"                   id="REC_INDEX"                  value="">
+    <input type="hidden" name="MEAL_TRX_AMT"                id="MEAL_TRX_AMT"               value="0">
+    <input type="hidden" name="TGT_ORDER_ID"                id="TGT_ORDER_ID"               value="">
+    <input type="hidden" name="TGT_ORDER_DT"                id="TGT_ORDER_DT"               value="">
+    <input type="hidden" name="TGT_YN"                      id="TGT_YN"                     value="">
+
+    <!--카드 정보-->
+    <input type="hidden" name="CARD_TRX_AMT"                id="CARD_TRX_AMT"               value="0">
+
+    <!--결제 정보-->
+    <input type="hidden" name="TRX_DT"                      id="TRX_DT"                     value="">
+    <input type="hidden" name="TRX_SEQ"                     id="TRX_SEQ"                    value="">
+
+    <!-- iframe(KSNET 카드결제 페이지) 관련 정보 -->
+    <input type="hidden" name="IFRAME_CALL_YN"              id="IFRAME_CALL_YN"             value="N">
+    
+    <!-- 비대면 배달 여부 -->
+    <input type="hidden" name="USE_CONTACTLESS_DELIVERY_YN" id= "USE_CONTACTLESS_DELIVERY_YN" value="">
+
+    <!-- 바우처 정보-->
+    <input type="hidden" name="VOUCHER_TRX_AMT"             id="VOUCHER_TRX_AMT"            value="0">
+</form>
+
+<div id="topDiv">
+    <!-- wrap -->
+    <div class="wrap">
+        <div class="header floating-back-header floating-sticky">
+            <h1>결제하기</h1>
+            <a data-element-id="BPG-YGYO-20-10-S-e24" id="go_back" href="#" class="btn-history-back">뒤로가기</a>
+        </div>
+        <!-- // header -->
+
+        <!-- container -->
+        <div class="container" id="div_default">
+            <!-- content -->
+            <div class="content">
+                <!-- 요기요 -->
+                <div class="bp-ygy add_flex_column no_vh">
+                    <!-- top box -->
+                    <div class="top_bx">
+                        <!--
+                            기본 = state
+                            주문취소 = state cancel
+                        -->
+                        <div class="state" id="state"><!--배달--> <!--<p class="time" id="time">--<span>20</span>~<span>30</span>분</p> 후 도착--></div>
+                        <h2 class="store_name" id="aflt_nm"><!--일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십--></h2>
+                        <!-- 매장방문 주소 - 포장주문의 경우 노출됨 -->
+                        <div class="store-address" id="pickup_shop_addr"><!-- 배달주문의 경우 display:none; -->
+                            <p class="store-address-txt" id="pickup_shop_addr_txt"><!-- sample:begin -->서울 강남구 테헤란로 1길 10<!-- sample:end --></p>
+                            <!-- 지도보기 / 주소복사 -->
+                            <div class="oder_util">
+                                <button data-element-id="BPG-YGYO-20-10-S-e19" href="#none" class="round-btn" id="map"><span class="icon map-12">지도보기</span></button>
+                                <button data-element-id="BPG-YGYO-20-10-S-e20" href="#none" class="round-btn" id="copy_addr"><span class="icon copy-12">주소복사</span></button>
+                                <div class="ygy__top-tooltip"><!-- [D] 툴팁 노출 시 view 클래스 추가 -->
+                                    <p class="icon round_chk-18"><span>주소가 복사되었습니다.</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //top box -->
+                    <div class="oder_payment">
+                        <!-- 주문자 정보 -->
+                        <div class="etcbox">
+                            <h3 class="pay_tit">주문자 정보</h3>
+                            <!-- 주문자정보 입력 - 배달 -->
+                            <div class="address__detail" id="deliv_orderer_info"><!-- 포장의 경우 display:none -->
+                                <div class="address__content">
+                                    <p class="address__content-txt" id="deliv_memb_addr">서울 강남구 테헤란로 1길 10</p>
+                                </div>
+                                <!-- 상세주소 -->
+                                <div class="address__detail-ipt">
+                                    <span class="address__detail-input"><input data-element-id="BPG-YGYO-20-10-S-e28" type="text" id="deliv_memb_addr_dtl" placeholder="상세주소를 입력해 주세요." value="101동 1001호" data-fill="demo"></span>
+                                </div>
+                                <!-- 휴대폰번호 입력 -->
+                                <div class="address__detail-ipt">
+                                    <span class="address__detail-input"><input data-element-id="BPG-YGYO-20-10-S-e29" type="tel" id="deliv_memb_mob_no" placeholder="휴대폰번호를 입력해 주세요." maxlength="13" value="1" data-fill="demo"></span>
+                                </div>
+                                <!-- 안심번호 사용 -->
+                                <div class="checkbox">
+                                    <div class="inner">
+                                        <label>
+                                            <input data-element-id="BPG-YGYO-20-10-S-e30" type="checkbox" id="use_safety_number"><span>안심번호 사용</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 주문자정보 입력 - 포장 -->
+                            <div class="address__detail" id="pickup_orderer_info"><!-- 배달의 경우 display:none -->
+                                <!-- 휴대폰번호 입력 -->
+                                <div class="address__detail-ipt">
+                                    <span class="address__detail-input"><input type="tel" id="pickup_memb_mob_no" placeholder="휴대폰번호를 입력해 주세요." maxlength="13" value="1" data-fill="demo"></span>
+                                </div>
+                                <div class="address__detail-visit">
+                                    <div class="address__visit-chk">
+                                        <div class="inner">
+                                            <label>
+                                                <input data-element-id="BPG-YGYO-20-10-S-e31" type="radio" name="radio_visit" id="radio_visit_direct" checked>
+                                                <strong>바로방문</strong>
+                                            </label>
+                                        </div>
+                                        <div class="sub_bx" id="div_visit_direct">
+                                            <p class="sub_bx-txt">
+                                                이 매장의 최소 준비시간은 <span id="min_preparation_time"><!-- sample:begin -->14:22<!-- sample:end --></span>분이에요.
+                                                바로 방문하더라도 대기할 수 있으니 참고해주세요.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="address__visit-chk">
+                                        <div class="inner">
+                                            <label>
+                                                <input data-element-id="BPG-YGYO-20-10-S-e32" type="radio" name="radio_visit" id="radio_visit_reserve">
+                                                <strong>방문시간 예약</strong>
+                                            </label>
+                                        </div>
+                                        <!-- 서브박스 -->
+                                        <div class="sub_bx request" id="div_end_time_picker">
+                                            <button href="#none" class="request-btn" id="btn_end_time_picker"><!-- sample:begin --><!-- sample:end --></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 요청사항 2024-07-15 -->
+                        
+                            <div class="etcbox">
+                                <!-- 가게 요청사항 -->
+                                <div class="etcbox_col" id="request_to_shop">
+                                    <h3 class="pay_tit">가게 요청사항</h3>
+                                    <div class="input-box default">
+                                        <input data-element-id="BPG-YGYO-20-10-S-e33" type="text" placeholder="예) 견과류 빼주세요" id="comment_to_shop" maxlength="50">
+                                    </div>
+                                    <div class="checkbox" id="request_checkbox">
+                                        
+                                            <div class="inner" id="">
+                                                <label>
+                                                    <input type="checkbox"><span name="reqTx"></span>
+                                                </label>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                                <!-- 라이더 요청사항 -->
+                                <div class="etcbox_col" id="request_to_rider" style="display:none;">
+                                    <h3 class="pay_tit">라이더 요청사항</h3>
+                                    <!-- 요청사항 -->
+                                    <div class="request">
+                                        <button href="#none" class="request-btn" id="request_btn">요청사항을 선택해주세요</button>
+                                        <div class="request-self" style="display:none"><!-- 직접입력 선택 시 display: none 제거-->
+                                            <textarea id="request_self" placeholder="요청사항을 입력해 주세요." maxlength="60"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <!-- // 요청사항 2024-07-15 -->
+
+                        <!-- 결제하기 -->
+                        <div class="payment_w">
+                            
+                                <div class="sub_bx" id="amt_area" style="display:none;">
+                                    <div class="ipt">
+                                        <input type="tel" id="meal_tr_amt" value="0" placeholder="금액을 입력하세요" maxlength="10" jex-input="commaFormat" placeholder="0" data-input="commaFormat">
+                                        <a id="meal_btn_del" href="#none" class="btn_del">입력내용 삭제</a>
+                                    </div>
+                                    <p id="meal_use_all" class="use_all"><a href="#none">전액 사용</a></p>
+                                </div>
+
+                                <div class="payment_con" id="div_meal_payment_con">
+                                    <h3 class="pay_tit">포인트 사용</h3>
+
+                                    
+
+                                            <!-- 결제수단 목록 -->
+                                            
+                                                <div class="pay_method on">
+                                            
+
+                                            <div class="inner tooltip_w" > <!-- 2023-07-12 툴팁 오픈 시 view 클래스 추가 -->
+                                                <label>
+                                                    <input value="" apv_auth_dv="" tg_sttl_yn="" card_no="" setl_imps_rsn_dtl="" name="meal_check" type="radio" checked="checked">
+                                                    <strong id="lmt_nm"></strong>
+                                                    <!--(보유 <span>4,500원, </span>)-->
+                                                    (보유 <span>4,500원</span>)
+                                                    <button data-element-id="BPG-YGYO-20-10-S-e21" type="button" class="tooltip-btn" name="tooltip"><span class="icon info-15">툴팁</span></button>
+                                                </label>
+                                                <div class="tooltip" style="display:none;">
+                                                    <p>
+                                                        
+                                                            
+                                                                <br>
+                                                            
+                                                        
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <!--함께결제가 가능한 식권인 경우-->
+                                            
+                                                <!-- 혼자결제, 함께결제 선택 -->
+                                                <div class="sub_bx use-type_wrap" name="div_meal_type"  style="display:flex;"> 
+                                                    <button data-element-id="BPG-YGYO-20-10-S-e22" class="use-btn on" name="single" id="single">혼자결제</button>
+                                                    <button data-element-id="BPG-YGYO-20-10-S-e23" class="use-btn" name="together" id="together">함께결제</button>
+                                                </div>
+                                                <!-- 함께결제 시 선택버튼 -->
+                                                <div class="sub_bx multi pay-type" name="select_together_payment" style="display:none;">
+                                                    <a href="#none" class="multi-btn" name="previous_select_together">함께 결제 사용자 선택</a>
+                                                    <a href="#none" class="multi-btn" name="after_select_together" style="display:none;"></a>
+                                                </div>
+                                            
+                                            </div> <!-- end pay_method-->
+                                        
+                                    
+                                    <div class="pay_method"  style="display: none" >
+                                            <div class="inner">
+                                                <label>
+                                                    <input type="radio" name="meal_check" id="dontuse">
+                                                    <strong>포인트 사용안함</strong>
+                                                </label>
+                                            </div>
+                                    </div>
+                                </div> <!--end payment_con-->
+                            
+
+                            <!-- 결제수단 2 -->
+                            
+                                <div class="payment_con" id="div_etc_payment_con">
+                                    <h3 class="pay_tit">결제수단</h3>
+                                    <div class="pay_method on"><!-- 해당 결제수단은 on 상시 노출적용으로 클래스 삭제 x -->
+                                        <div class="inner">
+                                            <label>
+                                                <input data-element-id="BPG-YGYO-20-10-S-e34" name="sub_check" id="mny_select" type="radio" checked="checked">
+                                                <strong>비플머니</strong>
+                                                (보유 <span>4,500원</span>)
+                                            </label>
+                                        </div>
+                                        <!-- 서브박스 - 인풋 및 버튼 -->
+                                        <p class="message">부족한 금액은 자동으로 충전됩니다.</p>
+                                        <div class="sub_bx">
+                                            <div>
+                                                
+                                                <div id="selected_acct">
+                                                    <a data-element-id="BPG-YGYO-20-10-S-e25" id="acct_info" name="acct" bank_cd="" acct_no="" bank_nm="국민은행" firm_join_yn="" obank_join_yn="" href="#none"><span>자동 충전 계좌</span></a>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--아동급식 바우처-->
+                                    
+                                    <div class="pay_method tooltip_w"><!-- 툴팁 오픈 시 view 클래스 추가, 결제수단 선택 시 on 클래스 추가 -->
+                                        <div class="inner">
+                                            <label>
+                                                <input data-element-id="BPG-YGYO-20-10-S-e35" type="radio" name="sub_check" id="voucherCheck"><strong>비플 바우처카드</strong><button type="button" id="voucherTooltip" class="tooltip-btn"><span class="icon info-15">툴팁</span></button>
+                                            </label>
+                                            <div class="tooltip">
+                                                <p>비플 바우처카드는 복합결제가 불가합니다.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sub_bx" id="voucherList">
+                                            <div>
+                                                <a data-element-id="BPG-YGYO-20-10-S-e26" href="#none" id="voucherSelected">
+                                                    <span id="voucherInfo" data-card-no="" data-balance="" data-cust-nm="" data-dlvr-yn="" data-rem-cnt="1" data-total-cnt="1" >비플 바우처카드()</span> 4,500원
+                                                </a>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- 2025-09-22 추가 -->
+                                        <div class="ygy-infomation_box" style="display:none;">
+                                            <p class="infomation_text">비플 바우처 카드로 결제하신 경우, 지자체 정책에 따라 주문은 당일에만 취소가 가능합니다.</p>
+                                        </div>
+                                        <!-- // 2025-09-22 -->
+                                    </div>
+                                    
+
+                                </div>
+                            
+
+                        </div> <!-- end payment_w -->
+
+                        <div class="etcbox ygy_promotion" id="event_231005" style="display:none;">
+                            <h3 class="pay_tit" id="event_name"><!--요기요 할인 프로모션--></h3>
+                            <div class="promotion-content">
+                                <p class="promotion-text">해당 이벤트는 요기요X비플페이 제휴를 기념하여 일시적으로 진행하는 이벤트로, 주문 금액에 따라 구간별  차등 적용됩니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- 결제상세 -->
+                        <div class="payment_dtl">
+                            <h3 class="pay_tit">결제 상세</h3>
+                            <div class="dtl_w">
+                                <!-- 상세항목 -->
+                                <div class="dtl_con oder">
+                                    <p>주문금액</p>
+                                    <p><span id="span_order_amt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>
+                                </div>
+                                <!-- 상세항목 -->
+                                <div class="dtl_con" id="div_delivery_fee">
+                                    <p>배달비</p>
+                                    <p><span id="span_delivery_fee"><!-- sample:begin -->표본<!-- sample:end --></span>원</p>
+                                </div>
+                                <!-- 상세항목 -->
+                                <div class="dtl_con" id="div_additional_amount">
+                                    <p>추가요금</p>
+                                    <p><span id="span_additional_amount"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>
+                                </div>
+                                <!-- 상세항목 -->
+                                <div class="dtl_con" id="div_event_amount">
+                                    <p>할인금액</p>
+                                    <p class="txt_key_color txt_bold"><span id="span_event_amount"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>
+                                </div>
+                                <!-- 상세항목 -->
+                                <div class="dtl_con" id="div_delivery_free">
+                                    <p>배달비 할인</p>
+                                    <p class="txt_key_color txt_bold">-<span id="span_delivery_free"><!-- sample:begin -->표본<!-- sample:end --></span>원</p>
+                                </div>
+                                <!-- 총 결제금액 -->
+                                <div class="pay_total">
+                                    <div>
+                                        <p>총 결제 금액</p>
+                                        <p class="won"><span id="span_total_amt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>
+                                        <p class="won" id="p_delivery_free_amt"><span id="span_delivery_free_amt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p> <!-- 할인된 최종 금액 -->
+                                    </div>
+                                </div>
+                                <!--바우처 배달 무료 알림 -->
+                                <div class="pay-info" id="voucher_delivery_free">
+                                    <p class="info-message">
+                                        비플 바우처카드 <span class="txt_key_color">배달비 혜택</span>이 적용됐어요! <br>
+                                        <!--배달비 할인은 총 <span>5</span>회 중 <strong class="txt_key_color"><span>3</span>회</strong>남았어요.-->
+                                    </p>
+                                    <!--<p class="info-message" id="limit" style="display: none">
+                                        비플 바우처카드 <span class="txt_key_color">배달비 혜택</span>이 적용됐어요! <br>
+                                        배달비 할인은 총 <span id="totalCnt"></span>회 중 <strong class="txt_key_color"><span id="remCnt"></span>회</strong>남았어요.
+                                    </p>-->
+                                </div>
+                                <!--바우처 배달 무료 알림 -->
+                                <div class="pay-info" id="voucher_delivery_free_limit">
+                                    <p class="info-message">
+                                        비플 바우처카드 <span class="txt_key_color">배달비 혜택</span>이 적용됐어요! <br>
+                                        배달비 할인은 총 <span id="totalCnt"><!-- sample:begin -->1<!-- sample:end --></span>회 중 <strong class="txt_key_color"><span id="remCnt"><!-- sample:begin -->1<!-- sample:end --></span>회 </strong>남았어요.
+                                    </p>
+                                </div>
+                                <div class="pay-info" id="voucher_delivery_free_noLimit">
+                                    <p class="info-message">
+                                        비플 바우처카드 <span class="txt_key_color">배달비 혜택</span>이 모두 소진됐어요! <br>
+                                        배달비 할인은 총 <span id="noTotalCnt"><!-- sample:begin -->1<!-- sample:end --></span>회 중 <strong class="txt_key_color"><span id="noRemCnt"><!-- sample:begin -->1<!-- sample:end --></span>회 </strong>남았어요.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- 결제하기 버튼 -->
+                        <div class="btn_botArea">
+                            <div class="inner bg_white">
+                                <a data-element-id="BPG-YGYO-20-10-S-e27" id="approve_btn" href="#none" class="btn_default btn-style-h48 round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+                                    결제하기
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //요기요 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // content -->
+        </div>
+        <!-- // container -->
+
+    <!-- container -->
+    <div class="container" id="div_fail" style="display:none">
+        <div class="contents">
+            <!-- 결제실패 -->
+            <!--
+                결제완료 = ''
+                결제실패 = ' complete_box fail' 'fail'클래스 추가
+            -->
+            <div class="complete_box fail">
+                <div class="inner">
+                    <p class="ico"></p>
+                    <h2 id="pay_info">
+                        <!--샐러디 영등포점일이삼사오육칠팔구십샐러디 영등포점일이삼사오육칠팔구십<br>
+                        <strong>15,000원</strong>-->
+                    </h2>
+                    <p>
+                        결제 실패하였습니다.
+                    </p>
+                    <p class="error_msg" id="err_msg">
+                        <!--531 : 고객 거래은행 처리 이상<br>
+                        (NH농협은행-기관지정 에러메시지)-->
+                    </p>
+                </div>
+            </div>
+            <!-- //결제실패 -->
+            <!-- 다시 시도하기 버튼 -->
+            <div class="txt_btn" id="fail_retry">
+                <a href="#none">다시 시도하기</a>
+            </div>
+            <!-- 하단 고정버튼 -->
+            <div class="btn_botFix_w bg_white" id="go_mybag">
+                <div class="inner">
+                    <a href="#" class="btn_default btn-style-h46 round_r8 on"><!-- 활성화클래스 on -->
+                        장바구니 가기
+                    </a>
+                </div>
+            </div>
+            <!-- //하단 고정버튼 -->
+        </div>
+    </div>
+    <!-- //container -->
+
+    <!-- 요청사항 레이어팝업 -->
+    <div class="layer_overlay" id="layer_request" style="display:none;">
+        <div class="layer_bPop">
+            <div class="popup_con pd0">
+                <!-- 설정팝업 -->
+                <div class="edit_pop add_tit_t2">
+                    <h2 class="ly_pop_tit">요청사항 선택</h2>
+                    <p class="btn_close" onClick="req_layer_close()">
+                        <a href="#none"><span class="blind">닫기</span></a>
+                    </p>
+                    <!-- 카테고리 선택 -->
+                    <ul id="request_ul">
+                        <!--<li class="select"><a href="#none">서두르지 않고 안전하게 와주세요.</a></li><!-- 선택 시 select 클래스 추가 ->
+                        <li><a href="#none">단무지/치킨무/반찬류 안 주셔도 돼요.</a></li>
+                        <li><a href="#none">벨을 누르지 말아 주세요!</a></li>
+                        <li><a href="#none">도착 후 전화주시면 직접 받으로 갈께요.</a></li>
+                        <li><a href="#none">그냥 문 앞에 높아 주시면 돼요</a></li>
+                        <li><a href="#none">직접 입력</a></li>-->
+                        
+                        <!-- <li  class="select"  id=""><a href="#none"></a></li> -->
+                        <li id=""><a href="#none"></a></li>
+
+                        
+                        <li id="li_request_direct"><a href="#none">직접 입력</a></li>
+                    </ul>
+                    <!-- //카테고리 선택 -->
+                </div>
+                <!-- //설정팝업 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 계좌 선택 -->
+    <div id="acct_list" class="layer_bPop" style="display:none;">
+        <div class="pop_box radius_16">
+            <div class="pop_content">
+                <div class="pop_b_cn type1">
+                    <div class="p_lytit">
+                        계좌선택
+                        <div class="right"><a onclick="Common.go_loc('main_account.act?REF_URL=bp_ygyo_pay.act');" class="link">계좌관리</a></div>
+                    </div>
+                    <div class="p_acc_sltbx">
+                        <ul>
+                            
+                            <li name="acct" bank_cd="" acct_no="" bank_nm="국민은행" firm_join_yn="" obank_join_yn=""><span class="ic_b ic_b"></span>비플머니</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 아동급식 바우처 레이어팝업 -->
+<div class="layer_overlay" id="voucherLayer" style="display: none">
+    <div class="layer_bPop">
+        <div class="popup_con pd0">
+            <!-- 설정팝업 -->
+            <div class="edit_pop add_tit_t3 pdb24">
+                <h2 class="ly_pop_tit">카드선택</h2>
+                <ul>
+                    
+                    <li class="voucherLi " data-card-no="" data-balance="" data-cust-nm="" data-dlvr-yn="" data-rem-cnt="1" data-total-cnt="1">
+                        <a href="#none">비플 바우처카드() : 4,500원</a>
+                    </li><!-- 선택 시 select 클래스 추가 -->
+                    
+                </ul>
+                <!-- //카테고리 선택 -->
+            </div>
+            <!-- //설정팝업 -->
+        </div>
+    </div>
+</div>
+<!-- //레이어팝업 -->
+
+</div>
+</div>
+</body>
+</html>

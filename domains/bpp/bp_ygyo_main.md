@@ -1,0 +1,69 @@
+# 요기요_메인화면 (bp_ygyo_main)
+
+- 처리: 읽기
+- 화면 겸함: 예
+- 상태: 따라감
+
+## 부르는 화면
+
+| 화면ID | 화면 이름 | 요소 |
+|---|---|---|
+| BPG-YGYO-30-S | 요기요_메인화면 | 화면 |
+
+## 입력
+
+- 회원코드 (MEMB_CD)
+- 앱코드 (APP_CD)
+
+## 출력
+
+- 회원코드 (MEMB_CD)
+- 앱코드 (APP_CD)
+- ADDR_SEQ
+- TYPE_TP
+- TYPE_ALI
+- POST_NO
+- ROAD_BUILDING
+- ADDR_DTL
+- REG_DTTM
+- UPD_DTTM
+- 기본배송지 여부 (DEFAULT_YN)
+- LAT
+- LNG
+- ROAD_ADDR_ALIAS
+- LEGAL_ADDRESS_SIDO
+- LEGAL_ADDRESS_SIGUGUN
+- LEGAL_ADDRESS_DONGMYUN
+- LEGAL_ADDRESS_EUPRI
+- LEGAL_ADDRESS_JIBEON
+- LEGAL_ADDRESS_BUILDING_NAME
+- ADMINISTRATIVE_ADDRESS_SIDO
+- ADMINISTRATIVE_ADDRESS_SIGUGUN
+- ADMINISTRATIVE_ADDRESS_DONGMYUN
+- ADMINISTRATIVE_ADDRESS_JIBEON
+- ADMINISTRATIVE_ADDRESS_BUILDING_NAME
+- ROAD_ADDRESS_SIDO
+- ROAD_ADDRESS_SIGUGUN
+- ROAD_ADDRESS_ROAD_NAME
+- ROAD_ADDRESS_BUILDING_NUMBER
+- ROAD_ADDRESS_BUILDING_NAME
+
+## 데이터 처리
+
+### 요기요_배송주소조회 (TB_MEMBER_APP_YGYO_R001)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER_APP_YGYO
+- 입력: 회원코드 (MEMB_CD), 앱코드 (APP_CD)
+
+- 공통 헤더 처리(이 업무 아님): TB_APP_MNG_R001, TB_MEMBER_APP_R001
+
+## 실패
+
+- (없음)
+
+## 근거
+
+- BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.bp_ygyo_main.xml:6
+- BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/bpp/bp_ygyo_main_act.jsp:14
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_APP_YGYO_R001.xml:10

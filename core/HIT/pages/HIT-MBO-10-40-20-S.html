@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>주문내역</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-10-40-20-S">
+<input type="hidden" id="BP_AFLT_SEQ"	name="BP_AFLT_SEQ"	value="" />
+<input type="hidden" id="ENV_MODE"	name="ENV_MODE"	value="" />
+<div class="bp-root">
+    <!-- //lnb box -->
+    
+        
+    
+
+    <!-- 메인 컨텐츠 -->
+    <div class="bp-main">
+        <div class="layout">
+            <div class="row">
+                <div class="col col-10">
+                    <div class="con-wrap">
+                        <!-- 페이지 헤더 -->
+                        <div class="page-header">
+                            <p class="tit tit-01 with-desc">
+                                주문내역
+                                <span>
+                        - 주문 내역의 상세 현황을 확인할 수 있습니다<span onclick="d2();">.</span>
+                      </span>
+                            </p>
+                        </div>
+
+                        <div class="search-box">
+                            <!-- div 구조여서 위에서 아래로 추가됩니다 - left 는 왼쪽 상단, right는 오른쪽 상단부터 추가됨. right박스 사용 안할시 해당영역 전체 삭제-->
+                            <form action="">
+                                <div class="search-form type2">
+                                    <!-- 왼쪽박스 -->
+                                    <div class="form-wrap left col col-7">
+                                        <!-- col -->
+                                        <!-- 날짜선택 -->
+                                        <div class="search-item">
+                                            <div class="item-hd">
+                                                <p class="item-text head">주문일시</p>
+                                            </div>
+                                            <div class="item-con">
+                                                <div class="td-item-group left td-item">
+                                                    <div class="ip-wrap with-icon ta-left td-item w-auto">
+                                                        <input data-element-id="HIT-MBO-10-40-20-S-e41" data-toggle="datepicker" name="" id="start_date" class="ip-txt" type="text" value="" placeholder="" style="background-color: #ffffff; color: #000000" readonly><!-- 비활성화 시 readonly -->
+                                                        <i class="ic ic-calendar"></i>
+                                                    </div>
+                                                    <div class="sel td-item" style="min-width: 65px;">
+                                                        <select data-element-id="HIT-MBO-10-40-20-S-e42" name="" id="start_hour" class="" required="" onclick="clk_time();">
+                                                            
+                                                                
+                                                                    <option value="">시</option>
+                                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="sel td-item" style="min-width: 65px;">
+                                                        <select data-element-id="HIT-MBO-10-40-20-S-e43" name="" id="start_min" class="" required="" onclick="clk_time();">
+                                                            
+                                                                
+                                                                    <option value="">분</option>
+                                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="td-item space">~</div>
+                                                    <div class="ip-wrap with-icon ta-left td-item w-auto">
+                                                        <input data-element-id="HIT-MBO-10-40-20-S-e44" data-toggle="datepicker" name="" id="end_date" class="ip-txt" type="text" value="" placeholder="" style="background-color: #ffffff; color: #000000" readonly><!-- 비활성화 시 readonly -->
+                                                        <i class="ic ic-calendar"></i>
+                                                    </div>
+                                                    <div class="sel td-item" style="min-width: 65px;">
+                                                        <select data-element-id="HIT-MBO-10-40-20-S-e45" name="" id="end_hour" class="" required="" onclick="clk_time();">
+                                                            
+                                                                
+                                                                    <option value="">시</option>
+                                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="sel td-item" style="min-width: 65px;">
+                                                        <select data-element-id="HIT-MBO-10-40-20-S-e46" name="" id="end_min" class="" required="" onclick="clk_time();">
+                                                            
+                                                                
+                                                                    <option value="">분</option>
+                                                                
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <!-- 검색어 -->
+                                        <div class="search-item">
+                                            <div class="item-hd">
+                                                <p class="item-text head">검색어</p>
+                                            </div>
+                                            <div class="item-con">
+                                                <div class="td-item-group left">
+                                                    <div class="td-item drop-box w130 shrink_no" onclick="btn_drop_kw($(this))" id="btn_kw">
+                                                        <p>
+                                                            <button data-element-id="HIT-MBO-10-40-20-S-e25" type="button" class="trigger drop-btn" id="sel_keyword" value="all"><span>전체</span></button>
+                                                        </p>
+                                                        <div class="drop-content">
+                                                            <p class="drop-item select" name="sel_keyword">
+                                                                <button type="button" class="drop-btn" value="all" onclick="clk_keyword($(this))">전체</button>
+                                                            </p>
+                                                            <p class="drop-item" name="sel_keyword">
+                                                                <button data-element-id="HIT-MBO-10-40-20-S-e26" type="button" class="drop-btn" value="odr_no" onclick="clk_keyword($(this))">주문번호</button>
+                                                            </p>
+                                                            <p class="drop-item" name="sel_keyword">
+                                                                <button data-element-id="HIT-MBO-10-40-20-S-e27" type="button" class="drop-btn" value="empl_no" onclick="clk_keyword($(this))">사원번호</button>
+                                                            </p>
+                                                            <p class="drop-item" name="sel_keyword">
+                                                                <button data-element-id="HIT-MBO-10-40-20-S-e28" type="button" class="drop-btn" value="order_nm" onclick="clk_keyword($(this))">주문자명</button>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ip-wrap with-icon ta-left td-item" style="max-width:620px;">
+                                                        <input data-element-id="HIT-MBO-10-40-20-S-e47" name="" id="keyword" class="ip-txt" type="text" value="" placeholder="검색어를 입력해 주세요." maxlength="50">
+                                                        <a><i class="ic ic-search-14"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // col end -->
+                                    </div>
+                                    <!-- 왼쪽박스 -->
+                                    <div class="form-wrap right col col-3">
+                                        <!-- col -->
+                                        <!-- 주문형태 -->
+                                        <div class="search-item">
+                                            <div class="item-hd">
+                                                <p class="item-text head">제공형태</p>
+                                            </div>
+                                            <div class="item-con">
+                                                <div class="td-item drop-box w190" onclick="btn_drop_tp($(this))" id="btn_tp"><!-- trigger 버튼 클릭 시 open 클래스 추가 -->
+                                                    <!-- 드롭다운 버튼영역 -->
+                                                    <p class="placeholder" id="sel_tp_phd"><!-- 선택 시 placeholder 클래스 제거 -->
+                                                        <button type="button" class="trigger drop-btn" id="sel_odr_type" value="A"><span>전체</span></button>
+                                                    </p>
+                                                    <!-- 드롭다운 컨텐츠 -->
+                                                    <div class="drop-content">
+                                                        <p class="drop-item select" name="sel_odr_tp">
+                                                            <button type="button" class="drop-btn" value="A" onclick="order_type($(this))">전체</button>
+                                                        </p>
+                                                        <p class="drop-item" name="sel_odr_tp">
+                                                            <button data-element-id="HIT-MBO-10-40-20-S-e29" type="button" class="drop-btn" value="R" onclick="order_type($(this))">사전예약</button>
+                                                        </p>
+                                                        <p class="drop-item" name="sel_odr_tp"><!-- 선택 시 select -->
+                                                            <button data-element-id="HIT-MBO-10-40-20-S-e30" type="button" class="drop-btn" value="D" onclick="order_type($(this))">딜리버리/픽업</button>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <!-- 주문상태 -->
+                                        <div class="search-item">
+                                            <div class="item-hd">
+                                                <p class="item-text head">주문상태</p>
+                                            </div>
+                                            <div class="item-con">
+                                                <div class="td-item drop-box w190" onclick="btn_drop_st($(this))" id="btn_st"><!-- trigger 버튼 클릭 시 open 클래스 추가 -->
+                                                    <!-- 드롭다운 버튼영역 -->
+                                                    <p class="placeholder" id="sel_st_phd"><!-- 선택 시 placeholder 클래스 제거 -->
+                                                        <button type="button" class="trigger drop-btn" id="sel_odr_st" value="A"><span>전체</span></button>
+                                                    </p>
+                                                    <!-- 드롭다운 컨텐츠 -->
+                                                    <div class="drop-content">
+                                                        <p class="drop-item select" name="sel_odr_st"><!-- 선택 시 select -->
+                                                            <button type="button" class="drop-btn" value="A" onclick="order_status($(this))">전체</button>
+                                                        </p>
+                                                        <p class="drop-item" name="sel_odr_st"><!-- 선택 시 select -->
+                                                            <button data-element-id="HIT-MBO-10-40-20-S-e31" type="button" class="drop-btn" value="W" onclick="order_status($(this))">접수대기</button>
+                                                        </p>
+                                                        <p class="drop-item" name="sel_odr_st">
+                                                            <button data-element-id="HIT-MBO-10-40-20-S-e32" type="button" class="drop-btn" value="P" onclick="order_status($(this))">접수완료</button>
+                                                        </p>
+                                                        <p class="drop-item" name="sel_odr_st"><!-- 선택 시 select -->
+                                                            <button data-element-id="HIT-MBO-10-40-20-S-e33" type="button" class="drop-btn" value="C" onclick="order_status($(this))">주문취소</button>
+                                                        </p>
+                                                        <p class="drop-item" name="sel_odr_st"><!-- 선택 시 select -->
+                                                            <button data-element-id="HIT-MBO-10-40-20-S-e34" type="button" class="drop-btn" value="S" onclick="order_status($(this))">도난신고</button>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // col end -->
+                                    </div>
+                                </div>
+                                <div class="btn-wrap ta-center">
+                                    <button data-element-id="HIT-MBO-10-40-20-S-e35" class="btn btn-md-b btn-primary-outline" type="button" id="btn_search">조회</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 테이블 영역 -->
+                        <div class="td-item-group mb12 right">
+                            <div class="td-item">
+                                <!--<div class="refresh-noti">
+                                    <p class="lh-32">검색결과: 총 <span class="fc-pri fw-600" id="tot_cnt"></span>건</p>
+                                </div>
+                            </div>
+                            <div class="td-item-group right">
+                                <div class="td-item drop-box shrink_no js-table-count" onclick="btn_cnt($(this));"><!-- trigger 버튼 클릭 시 open 클래스 추가 ->
+                                    <!-- 드롭다운 버튼영역 ->
+                                    <p><!-- 선택 시 placeholder 클래스 제거 ->
+                                        <button type="button" class="trigger drop-btn" id="show_cnt" value="30">30건 보기</button>
+                                    </p>
+                                    <!-- 드롭다운 컨텐츠 ->
+                                    <div class="drop-content">
+                                        <p class="drop-item " name="cnt">
+                                            <button type="button" class="drop-btn" value="10" onclick="cnt($(this))">10건 보기</button>
+                                        </p>
+                                        <p class="drop-item select" name="cnt">
+                                            <button type="button" class="drop-btn" value="30" onclick="cnt($(this))">30건 보기</button>
+                                        </p>
+                                        <p class="drop-item" name="cnt"><!-- 선택 시 select ->
+                                            <button type="button" class="drop-btn" value="50" onclick="cnt($(this))">50건 보기</button>
+                                        </p>
+                                        &lt;%&ndash;<p class="drop-item" name="cnt"><!-- 선택 시 select ->
+                                            <button type="button" class="drop-btn" value="100" onclick="cnt($(this))">100건 보기</button>
+                                        </p>&ndash;%&gt;
+                                    </div>
+                                </div>-->
+                                <!--<div class="td-item-group td-item right">--><!-- [D] 검색결과 없을 시 버튼 숨김 : style="display:none;" -->
+                                    <button data-element-id="HIT-MBO-10-40-20-S-e36" class="btn btn-md-b btn-gray-outline" type="button" id="btn_excel"><i class="ic ic-excel"></i>엑셀 저장</button>
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <div class="data-table-wrap" id="odr_list" hidden style="min-height: 529px;">
+                            <table class="data-table form-table pd-table" id="table"><!-- 임시 클래스 th, td 패딩값 설정용 pd-table -->
+                                <!-- <caption>표 제목</caption> -->
+                                <colgroup>
+                                    <col style="width: 180px;"><!-- 주문일시 -->
+                                    <col style="width: 120px;"><!-- 제공형태 -->
+                                    <col style="width: 100px;"><!-- 주문번호 -->
+                                    <col style="width: 110px;"><!-- 이용기관명 -->
+                                    <col style="width: 100px;"><!-- 사원번호 -->
+                                    <col style="width: 120px;"><!-- 주문자명 -->
+                                    <col style="width: 140px;"><!-- 메뉴분류명 -->
+                                    <col style="width: 250px;"><!-- 메뉴명 -->
+                                    <col style="width: 140px;"><!-- 장소명-->
+                                    <col style="width: 120px;"><!-- 세부장소명 -->
+                                    <col style="width: 100px;"><!-- 주문상태 -->
+                                    <col style="width: 100px;"><!-- 주문금액 -->
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th scope="col"><div class="ta-center">주문일시</div></th>
+                                    <th scope="col"><div class="ta-center">제공형태</div></th>
+                                    <th scope="col"><div class="ta-center">주문번호</div></th>
+                                    <th scope="col"><div class="ta-center">이용기관명</div></th>
+                                    <th scope="col"><div class="ta-center">사원번호</div></th>
+                                    <th scope="col"><div class="ta-center">주문자명</div></th>
+                                    <th scope="col"><div class="ta-center">메뉴분류명</div></th>
+                                    <th scope="col"><div class="ta-center">메뉴명</div></th>
+                                    <th scope="col"><div class="ta-center">장소명</div></th>
+                                    <th scope="col"><div class="ta-center">세부장소명</div></th>
+                                    <th scope="col"><div class="ta-center">주문상태</div></th>
+                                    <th scope="col"><div class="ta-center">주문금액</div></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr id="data" style="display: none" onclick="clk_odr($(this))">
+                                    <td colspan="12" class="button">
+                                        <div>
+                                            <a href="#none">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width: 180px;"><!-- 주문일시 -->
+                                                        <col style="width: 120px;"><!-- 제공형태 -->
+                                                        <col style="width: 100px;"><!-- 주문번호 -->
+                                                        <col style="width: 110px;"><!-- 이용기관명 -->
+                                                        <col style="width: 100px;"><!-- 사원번호 -->
+                                                        <col style="width: 120px;"><!-- 주문자명 -->
+                                                        <col style="width: 140px;"><!-- 메뉴분류명 -->
+                                                        <col style="width: 250px;"><!-- 메뉴명 -->
+                                                        <col style="width: 140px;"><!-- 장소명-->
+                                                        <col style="width: 120px;"><!-- 세부장소명 -->
+                                                        <col style="width: 100px;"><!-- 주문상태 -->
+                                                        <col style="width: 100px;"><!-- 주문금액 -->
+                                                    </colgroup>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td id="MOB_NO" hidden><div></div></td>
+                                                        <td id="PAY_TRX_DT" hidden><div></div></td>
+                                                        <td id="ODR_DTTM"><div class="ta-center"></div></td>
+                                                        <td id="ORDER_ID" hidden><div></div></td>
+                                                        <td id="BLD_TP" hidden><div></div></td>
+                                                        <td id="ODR_TYPE"><div class="ta-center"></div></td>
+                                                        <td id="PAY_TRX_SEQ" hidden><div></div></td>
+                                                        <td id="CANCEL_TRX_SEQ" hidden><div></div></td>
+                                                        <td id="DEAL_NO"><div class="ta-center"></div></td>
+                                                        <td id="SITE_NM"><div class="ta-center"></div></td>
+                                                        <td id="EMPL_NO"><div class="ta-center"></div></td>
+                                                        <td id="MEMB_NM"><div class="ta-center tx-ellipsis"></div></td>
+                                                        <td id="MENU_DV_NM"><div class="ta-center tx-ellipsis"></div></td>
+                                                        <td id="REPR_MENU_NM"><div class="ta-center tx-ellipsis" title=""></div></td>
+                                                        <td id="DELV_ADDR"><div class="ta-center tx-ellipsis" title=""></div></td>
+                                                        <td id="DELV_ADDR2"><div class="ta-center tx-ellipsis" title=""></div></td>
+                                                        <td id="ODR_ST"><div class="ta-center"></div></td>
+                                                        <td id="ORDER_TOT_AMT"><div class="ta-center"></div></td>
+                                                        <td id="DEAD_LINE_DTTM" hidden><div class="ta-center"></div></td>
+                                                        <td id="CANCEL_DTTM" hidden><div class="ta-center"></div></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- 테이블 영역 -->
+                        <div class="data-table_wrap h524" id="no_odr_list" hidden>
+                            <table class="data-table form-table">
+                                <!-- 임시 클래스 th, td 패딩값 설정용 pd-table -->
+                                <!-- <caption>표 제목</caption> -->
+                                <colgroup>
+                                    <col style="width: 180px;"><!-- 주문일시 -->
+                                    <col style="width: 120px;"><!-- 제공형태 -->
+                                    <col style="width: 100px;"><!-- 주문번호 -->
+                                    <col style="width: 110px;"><!-- 이용기관명 -->
+                                    <col style="width: 100px;"><!-- 사원번호 -->
+                                    <col style="width: 120px;"><!-- 주문자명 -->
+                                    <col style="width: 140px;"><!-- 메뉴분류명 -->
+                                    <col style="width: 250px;"><!-- 메뉴명 -->
+                                    <col style="width: 140px;"><!-- 장소명-->
+                                    <col style="width: 120px;"><!-- 세부장소명 -->
+                                    <col style="width: 100px;"><!-- 주문상태 -->
+                                    <col style="width: 100px;"><!-- 주문금액 -->
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th scope="col"><div class="ta-center">주문일시</div></th>
+                                    <th scope="col"><div class="ta-center">제공형태</div></th>
+                                    <th scope="col"><div class="ta-center">주문번호</div></th>
+                                    <th scope="col"><div class="ta-center">이용기관명</div></th>
+                                    <th scope="col"><div class="ta-center">사원번호</div></th>
+                                    <th scope="col"><div class="ta-center">주문자명</div></th>
+                                    <th scope="col"><div class="ta-center">메뉴분류명</div></th>
+                                    <th scope="col"><div class="ta-center">메뉴명</div></th>
+                                    <th scope="col"><div class="ta-center">장소명</div></th>
+                                    <th scope="col"><div class="ta-center">세부장소명</div></th>
+                                    <th scope="col"><div class="ta-center">주문상태</div></th>
+                                    <th scope="col"><div class="ta-center">주문금액</div></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="no-data">
+                                    <td colspan="12"> <!--[D]colspan:6-->
+                                        <!--[D] 검색결과가 없습니다.-->
+                                        <div class="no-data no-bd h443">
+                                            <div class="box">
+                                                <i class="ic ic-exc-40"></i>
+                                                <p id="cont">주문내역이 <br> 없습니다.</p>
+                                            </div>
+                                        </div>
+                                        <!--//검색결과가 없습니다.-->
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="pagination">
+                            <div class="pagi" style="" id="pagi">
+                                <div class="group">
+                                    <button data-element-id="HIT-MBO-10-40-20-S-e37" type="button" class="item first" onclick="javascript:void(0);">first</button><!-- 비활성화 시 disabled 클래스 추가 -->
+                                    <button data-element-id="HIT-MBO-10-40-20-S-e38" type="button" class="item prev" onclick="javascript:void(0);">prev</button>
+                                </div>
+                                <div class="group" id="page_num">
+                                    <button type="button" class="item" onclick="javascript:void(0);">1</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">2</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">3</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">4</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">5</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">6</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">7</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">8</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">9</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">10</button>
+                                </div>
+                                <div class="group">
+                                    <button data-element-id="HIT-MBO-10-40-20-S-e39" type="button" class="item next" onclick="javascript:void(0);">next</button>
+                                    <button data-element-id="HIT-MBO-10-40-20-S-e40" type="button" class="item last" onclick="javascript:void(0);">last</button>
+                                </div>
+                            </div>
+                            <div class="td-item-group top por top-29 h0">
+                                <div class="sel w120 td-item">
+                                    <select data-element-id="HIT-MBO-10-40-20-S-e48" name="" id="show_cnt" class="js-table-count" value="30" onchange="cnt()">
+                                        <option value="10">10건 보기</option>
+                                        <option value="30">30건 보기</option>
+                                        <option value="50">50건 보기</option>
+                                    </select>
+                                </div>
+                                <div class="td-item ta-right">
+                                    <p class="lh-32">검색결과: 총 <span class="fc-pri fw-600" id="tot_cnt"><!-- sample:begin -->1<!-- sample:end --></span>건</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal w635 active" id="odr_list_detail" style="display:none;"><!--[D]active-->
+    <div class="inner content-scrolling">
+        <div class="modal-header">
+            <div class="tit-area type02">
+                <p class="tit">주문내역 상세</p>
+            </div>
+            <button class="btn-close" type="button" onclick="btn_close()">닫기</button>
+        </div>
+        <div class="modal-con h90vh-192 ovf-a">
+            <!-- 주문 정보 -->
+            <div class="td-item-group">
+                <div class="td-item-group left td-item">
+                    <div class="tit-area mb4">
+                        <p class="tit-02">주문 정보</p>
+                    </div>
+                </div>
+            </div>
+
+            <table class="data-table form-table mt8">
+                <colgroup>
+                    <col style="width: 105px">
+                    <col style="width: auto;">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th class="ta-left">주문일시</th>
+                    <td class="ta-left" id="odr_tm"><!-- sample:begin -->14:22<!-- sample:end --></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">주문번호</th>
+                    <td class="ta-left" id="odr_deal_no"><!-- sample:begin -->1<!-- sample:end --></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">주문금액</th>
+                    <td class="ta-left" id="odr_menu_amt"><span></span>원</td>
+                </tr>
+                <tr>
+                    <th class="ta-left">주문상태</th>
+                    <td class="ta-left">
+                        <span id="odr_status" class=""><!-- sample:begin -->표본<!-- sample:end --></span>
+                        <button class="btn btn-sm btn-primary-outline va-0 ml8" type="button" style="display: none;" id="btn_cancel" onclick="func_cacel();">주문취소</button><!-- 접수대기 외 상태일 경우 버튼 미노출 : style="display: none;"  -->
+                    </td>
+                </tr>
+                <tr name="cancel" style="display: none">
+                    <th class="ta-left">주문취소일시</th>
+                    <td class="ta-left" id="odr_cancel_tm"><!-- sample:begin -->14:22<!-- sample:end --></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">주문자명</th>
+                    <td class="ta-left" id="odr_nm"><!-- sample:begin -->홍길동<!-- sample:end --></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">사원번호</th>
+                    <td class="ta-left" id="odr_empl_no"><!-- sample:begin -->1<!-- sample:end --></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">휴대폰번호</th>
+                    <td class="ta-left" id="odr_mob_no"><!-- sample:begin -->1<!-- sample:end --></td>
+                </tr>
+                <tr hidden>
+                    <th class="ta-left">마감시간</th>
+                    <td class="ta-left" id="dead_line"><!-- sample:begin -->표본<!-- sample:end --></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- 메뉴 정보 -->
+            <div class="td-item-group mt32">
+                <div class="td-item-group left td-item">
+                    <div class="tit-area mb4">
+                        <p class="tit-02">메뉴 정보</p>
+                    </div>
+                </div>
+            </div>
+
+            <table class="data-table form-table mt8">
+                <colgroup>
+                    <col style="width: 105px">
+                    <col style="width: auto;">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th class="ta-left">제공형태</th>
+                    <td class="ta-left" id="odr_conf"><!-- sample:begin -->표본<!-- sample:end --></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">식사형태</th>
+                    <td class="ta-left" id="odr_tp"><!-- sample:begin -->표본<!-- sample:end --></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">메뉴분류명</th>
+                    <td class="ta-left" id="odr_dv_nm"><!-- sample:begin -->홍길동<!-- sample:end --></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">메뉴명</th>
+                    <td class="ta-left" id="odr_menu_nm"><!-- sample:begin -->홍길동<!-- sample:end --></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- 배송 정보 - 딜리버리 일 경우 추가 -->
+            <div class="td-item-group mt32" name="delv_info">
+                <div class="td-item-group left td-item">
+                    <div class="tit-area mb4">
+                        <p class="tit-02">배송 정보</p>
+                    </div>
+                </div>
+            </div>
+
+            <table class="data-table form-table mt8" name="delv_info">
+                <colgroup>
+                    <col style="width: 105px">
+                    <col style="width: auto;">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th class="ta-left">장소명</th>
+                    <td class="ta-left" id="odr_deliv_nm"><!-- sample:begin -->홍길동<!-- sample:end --></td>
+                </tr>
+                </tbody>
+            </table>
+            <!-- 내역 1 -->
+            <!--<table class="data-table form-table">
+                <colgroup>
+                    <col style="width: 105px">
+                    <col style="width: auto;">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th class="ta-left">주문일시</th>
+                    <td class="ta-left" id="odr_tm"></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">주문자</th>
+                    <td class="ta-left" id="odr_nm"></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">핸드폰번호</th>
+                    <td class="ta-left" id="odr_mob_no"></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- 내역 2 ->
+            <table class="data-table form-table mt32">
+                <colgroup>
+                    <col style="width: 105px">
+                    <col style="width: auto;">
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th class="ta-left">주문내역</th>
+                    <td class="ta-left" id="odr_menu_nm"></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">주문금액</th>
+                    <td class="ta-left" id="odr_menu_amt"></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">배송지</th>
+                    <td class="ta-left" id="odr_deliv_nm"></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">결제수단</th>
+                    <td class="ta-left" id="odr_pay_mthd"></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">총 결제금액</th>
+                    <td class="ta-left" id="odr_tot_amt"></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">주문형태</th>
+                    <td class="ta-left" id="odr_conf"></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">메뉴분류명</th>
+                    <td class="ta-left" id="odr_dv_nm"></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">주문번호</th>
+                    <td class="ta-left" id="odr_deal_no"></td>
+                </tr>
+                <tr>
+                    <th class="ta-left">주문상태</th>
+                    <td class="ta-left" id="odr_status">
+                        &lt;%&ndash;<button class="btn btn-sm btn-primary-outline vam ml8" type="button">주문취소</button><!-- 비활성화 = disabled ->
+                        접수완료(비활성화)
+                        <button class="btn btn-sm btn-primary-outline vam ml8" disabled type="button">주문취소</button><!-- 비활성화 = disabled ->&ndash;%&gt;
+                    </td>
+                </tr>
+                </tbody>
+            </table>-->
+        </div>
+        <!-- <div class="modal-footer"></div> -->
+    </div>
+</div>
+<div class="dim active" id="dim" style="display: none"></div>
+</body>
+</html>

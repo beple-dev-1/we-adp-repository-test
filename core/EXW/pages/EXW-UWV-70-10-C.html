@@ -7,14 +7,15 @@
   <link rel="stylesheet" href="../assets/webview_resource/css/welfare_reset.css">
   <link rel="stylesheet" href="../assets/webview_resource/css/welfare.css">
   <link rel="stylesheet" href="../assets/webview_resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/js/lib/jquery/datepicker/daterangepicker.css">
 </head>
 <body data-screen-id="EXW-UWV-70-10-C">
 <form name="frm" id="frm" method="post">
-    <input type="hidden" id="CI" 			name="CI" 			 value=>
-	<input type="hidden" id="CANCEL_URL" 	name="CANCEL_URL" 	 value=>
-	<input type="hidden" id="FAIL_URL" 		name="FAIL_URL" 	 value=>
-	<input type="hidden" id="RES_CD" 		name="RES_CD" 		 value=>
-	<input type="hidden" id="RES_MSG" 		name="RES_MSG" 		 value=>
+    <input type="hidden" id="CI" 			name="CI" 			 value="표본">
+	<input type="hidden" id="CANCEL_URL" 	name="CANCEL_URL" 	 value="표본">
+	<input type="hidden" id="FAIL_URL" 		name="FAIL_URL" 	 value="표본">
+	<input type="hidden" id="RES_CD" 		name="RES_CD" 		 value="표본">
+	<input type="hidden" id="RES_MSG" 		name="RES_MSG" 		 value="표본">
 	<input type="hidden" id="MEMB_CD" 		name="MEMB_CD" 		 value="">
 	<input type="hidden" id="COMM" 			name="COMM" 		 value="">
 	<input type="hidden" id="ORG_ID" 		name="ORG_ID" 		 value="">
@@ -34,7 +35,7 @@
 		<!-- 헤더 -->
 		<header class="header position-sticky">
 			<nav class="header__navi">
-				<a id="btnBack" class="header__btn btn-back">
+				<a data-element-id="EXW-UWV-70-10-C-e01" id="btnBack" class="header__btn btn-back">
 					<span class="blind">이전페이지로</span>
 				</a>
 			</nav>
@@ -63,7 +64,7 @@
 
 						<!-- 비플머니 내역 -->
 						<div class="acc_history" id="acc_history"><!-- 내역 온/오프 시 on클래스 추가/제거 -->
-							<p class="btn_more"><a id="btn_more">내역보기</a></p>
+							<p class="btn_more"><a data-element-id="EXW-UWV-70-10-C-e02" id="btn_more">내역보기</a></p>
 							<div class="inner">
 								<ul>
 									<li>
@@ -76,7 +77,7 @@
 									</li>
 									<li>
 										<p class="history_tit">만료예정</p>
-										<p class="money"><a id="tot_expr_amt"><span class="arr">만료예정내역보기</span></a></p>
+										<p class="money"><a data-element-id="EXW-UWV-70-10-C-e03" id="tot_expr_amt"><span class="arr">만료예정내역보기</span></a></p>
 									</li>
 								</ul>
 							</div>
@@ -140,7 +141,7 @@
 						<dl>
 							<dt>
 								<em>출금안내</em>
-								<a class="btn_request" id="btn_request">출금신청하기<span class="arr">바로가기</span></a>
+								<a data-element-id="EXW-UWV-70-10-C-e04" class="btn_request" id="btn_request">출금신청하기<span class="arr">바로가기</span></a>
 							</dt>
 							<dd>
 								<p>충전한 비플머니는 자유롭게 출금할 수 있습니다.</p>
@@ -151,13 +152,13 @@
 					<!-- 이용내역 -->
 					<div class="history_wrap" id="history_wrap">
 						<div class="btn_filter">
-							<a id="srch_btn">전체 · 3개월<span class="arr">유효기간 선택</span></a>
+							<a data-element-id="EXW-UWV-70-10-C-e05" id="srch_btn">전체 · 3개월<span class="arr">유효기간 선택</span></a>
 						</div>
 						
 						<p class="list_none" id="list_none" style="display:none;">이용내역이 없습니다.</p>
 						
 						<div class="history_list" id="history_list">
-							<ul id="info_list"><!-- sample:begin -->표본<!-- sample:end --></ul>
+							<ul id="info_list"><!-- sample:begin --><li class="go_complete" data-trxDt="2026.09.02" data-trxSeq="1" data-bizCd="004" data-trxCd="004" data-svcTp=""><a><div class="inner"><p class="icon "><span class="blind"></span></p><div class="cont"><p class="tit">홍길동</p><p class="date">2026.09.02</p></div><div class="won_wrap"><p class="won">4,500원</p><p class="d-day">유효기간 ~14:22</p></div></div></a></li><!-- sample:end --></ul>
 						</div>
 					</div>
 					
@@ -167,7 +168,7 @@
 			<!-- 플로팅 컨테이너 -->
 			<div class="container-floating js-floating-container" id="chrg_area">
 				<article class="floating__box button-box-spacing">
-					<a id="btn_chrg" class="button button-xl button--lv1"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+					<a data-element-id="EXW-UWV-70-10-C-e06" id="btn_chrg" class="button button-xl button--lv1"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
 						<span>비플머니 충전하기</span>
 					</a>
 				</article>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>개인 제로페이 사용자 체크</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-PAY-20-20-S">
+<input type="hidden" id="res_cd"    value="" />
+	<input type="hidden" id="res_msg"   value="" />
+	<input type="hidden" id="bank_cd"   value="" />
+	<input type="hidden" id="bank_nm"   value="" />
+	<input type="hidden" id="acct_no"   value="" />
+	<input type="hidden" id="acct_seq"  value="" />
+	<input type="hidden" id="qr_code"	  value="" />
+	<input type="hidden" id="res_cd"	  value="" />
+	<input type="hidden" id="err_url"	  value="" />
+	<input type="hidden" id="bill_info"	  value='' />
+	<input type="hidden" id="acct_no_multi" value="" />
+	<input type="hidden" id="bank_nm_multi" value="" />
+	<input type="hidden" id="bank_cd_multi" value="" />
+	<input type="hidden" id="main_bank_cd" value="" />
+	<input type="hidden" id="APP_CD" value="">
+	<input type="hidden" id="MEMB_CD" value="">
+	<input type="hidden" id="MNY_YN" value="">
+	<input type="hidden" id="taxi_yn"   value=""/>
+	
+	<div class="wrap zero-wrap" id="st1_content2">
+ 		<div class="header floating-back-header">
+ 			<h1 class="title-header">비플페이 결제</h1>
+ 			<a data-element-id="BPY-PAY-20-20-S-e03" href="#" class="btn-out-page" onClick="uf_back();">종료하기</a>
+ 		</div><!-- // header -->
+		<!-- 거래승인번호/계좌가 미등록  -->
+		<div class="container">
+ 			<div class="content">
+				<div class="page-header-notbg">
+					<h2 class="title-page-16" id="ST1_FAIL_MSG"><strong>거래승인번호가 등록되어야만<br />결제 서비스를 이용하실 수 있습니다.</strong></h2>
+				</div>
+ 				<div class="row-bothpadding25-style">
+					<div class="register-section white-border-style">
+						<a data-element-id="BPY-PAY-20-20-S-e04" href="#CHECKPAY" class="btn-register" id="move_send_page">거래승인번호 등록</a>
+						<p id="ST1_NEXT_MSG">거래승인번호 등록</p>
+					</div>
+ 				</div>
+ 			</div>
+ 		</div><!-- // container -->
+	</div>
+ 	<div class="wrap zero-wrap" id="st1_content3" style="display: none;">
+ 		<div class="header floating-back-header">
+ 			<h1 class="title-header">비플페이 결제</h1>
+ 			<a href="#" class="btn-out-page" onClick="uf_back();">종료하기</a>
+ 		</div><!-- // header -->
+ 		<div class="container">
+ 			<div class="content register-account-ct">
+ 				<div class="row-bothpadding25-style">
+ 					<div class="page-header">
+ 						<h2 class="title-page-16"><strong>비플페이의 결제를 위한<br />계좌정보를 관리합니다.</strong></h2>
+ 					</div>
+					<div class="register-section white-border-style">
+						<a href="#" class="btn-register" id="acct_reg">계좌 등록</a>
+						<p>등록된 계좌가 없습니다.</p>
+					</div>
+
+					<!-- 가능은행안내문구 -->
+					<!--<div class="infotxt">
+						<h5>※ 제로페이 결제 가능 은행 안내</h5>
+						<p class="txt_b" id="able_bank"></p>
+						<ul>
+							<li>제로페이 결제는 상기 은행만 가능합니다. 계좌등록 시 위 은행으로 등록하시기 바랍니다.</li>
+							<li>현재 전 은행 결제가능하도록 준비중입니다. 신속히 이용가능하도록 노력하겠습니다. 감사합니다.</li>
+						</ul>
+					</div>-->
+ 				</div>
+ 			</div>
+ 		</div><!-- // container -->
+ 	</div><!-- // wrap -->
+</body>
+</html>

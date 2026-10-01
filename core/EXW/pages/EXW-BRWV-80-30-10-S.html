@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="../assets/resource/css/event.css">
   <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
   <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+  <link rel="stylesheet" href="../assets/raon/transkey_mobile/transkey.css">
 </head>
 <body data-screen-id="EXW-BRWV-80-30-10-S">
-<link rel="stylesheet" type="text/css" href="../assets/raon/transkey_mobile/transkey.css"/>
 <form id="frm" name="frm">	
 	<input type="hidden" name="TOKEN" id="TOKEN" >
 	<input type="hidden" name="REF_PAGE" id="REF_PAGE">
@@ -55,7 +55,7 @@
 								<div class="name">
 									<h3>이름</h3>
 									<div class="ipx_bx"><!-- 입력 활성화 시 "ipt"클래스 추가 -->
-										<input id="membNm" type="text" value="" placeholder="이름(실명)을 입력하세요.">
+										<input data-element-id="EXW-BRWV-80-30-10-S-e06" id="membNm" type="text" value="" placeholder="이름(실명)을 입력하세요.">
 									</div>
 								</div>
 								<!-- //이름 -->
@@ -63,14 +63,14 @@
 								<div class="citizen_code">
 									<h3>주민등록번호</h3>
 									<div class="code_1">
-										<input id="brtDt" maxlength="6" type="tel" value="" placeholder="앞 6자리">
+										<input data-element-id="EXW-BRWV-80-30-10-S-e07" id="brtDt" maxlength="6" type="tel" value="" placeholder="앞 6자리">
 									</div>
 									<div>
 										<span>-</span>
 									</div>
 									<div class="code_2">
 										<div class="ipt_bx">
-											<input type="tel" maxlength="1" value="" id="brtGndr">
+											<input data-element-id="EXW-BRWV-80-30-10-S-e08" type="tel" maxlength="1" value="" id="brtGndr">
 										</div>
 										<div class="code_after">
 											<i></i>
@@ -87,7 +87,7 @@
 								<div class="tel_select">
 									<h3>통신사</h3>
 									<div class="tel_name" id="sel_tel_corp">
-										<a id="teleCorp" data-value="01">SKT</a>
+										<a data-element-id="EXW-BRWV-80-30-10-S-e01" id="teleCorp" data-value="01">SKT</a>
 									</div>
 								</div>
 								<!-- //통신사 선택 -->
@@ -95,7 +95,7 @@
 								<div class="phone_number">
 									<h3>휴대폰 번호</h3>
 									<div class="ipt_bx">
-										<input id="mobNo" type="tel" value="" placeholder="휴대폰 번호를 입력하세요."><!-- 2022-04-20 -->
+										<input data-element-id="EXW-BRWV-80-30-10-S-e09" id="mobNo" type="tel" value="" placeholder="휴대폰 번호를 입력하세요."><!-- 2022-04-20 -->
 									</div>
 								</div>
 								<!-- //휴대전화 번호 -->
@@ -107,7 +107,7 @@
 				<!-- // 회원가입 -->
 				
 				<!-- 약관동의 -->
-				<div class="pg_join" id="step2" style="display:none;">
+				<div class="pg_join" id="step2" style="display:none !important;">
 					<p class="txt_bold">
 						아래 약관에 동의해 주세요.
 					</p>
@@ -182,7 +182,7 @@
 				<!-- // 약관동의 -->
 				
 				<!-- 인증번호 입력 -->
-				<div class="pg_join" id="step3" style="display:none;">
+				<div class="pg_join" id="step3" style="display:none !important;">
 					<p class="txt_bold">
 						인증번호를 입력해 주세요.
 					</p>
@@ -265,24 +265,24 @@
 			<!-- 하단 고정버튼 -->
 			<div class="btn_botFix_w webView_bnk">
 				<div class="inner bg_white">
-					<a id="next_btn" class="btn_default btn-style-h48 round_r6"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+					<a data-element-id="EXW-BRWV-80-30-10-S-e02" id="next_btn" class="btn_default btn-style-h48 round_r6"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
 						<span id="txt">다음</span>
 					</a>
 				</div>
 				<!-- 하단 네비게이션 -->
 				<nav class="nav_w bg_white">
 					<div class="prev">
-						<a id="goBack">
+						<a data-element-id="EXW-BRWV-80-30-10-S-e03" id="goBack">
 							<span>이전</span>
 						</a>
 					</div>
 					<div class="home">
-						<a id="goMain">
+						<a data-element-id="EXW-BRWV-80-30-10-S-e04" id="goMain">
 							<span>홈</span>
 						</a>
 					</div>
 					<div class="my_info">
-						<a id="goHistory">
+						<a data-element-id="EXW-BRWV-80-30-10-S-e05" id="goHistory">
 							<span>MY</span>
 						</a>
 					</div>
@@ -364,8 +364,6 @@
         </div>
     </div>
 </div>
-
-</body>
 
 <!-- 토글버튼 -->
 <script>

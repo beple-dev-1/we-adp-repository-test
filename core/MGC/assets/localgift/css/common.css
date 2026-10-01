@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+/* Nanum Square 폰트 */
+@font-face { 
+	font-family: 'NanumSquareR'; 
+	src: url('../css/font/NanumSquareR.eot'); 
+	src: url('../css/font/NanumSquareR?#iefix') format('embedded-opentype'), 
+	/*url('../css/font/NanumSquareR.woff2') format('woff2'), */
+	url('../css/font/NanumSquareR.woff') format('woff'), 
+	url('../css/font/NanumSquareR.ttf') format('truetype'), 
+	url('../css/font/NanumSquareR.svg#NanumSquareR') format('svg'); 
+	font-weight: normal; 
+	font-style: normal; 
+}
+
+@font-face {
+    font-family: 'NanumSquareB';
+    src: url('../css/font/NanumSquareB.eot');
+    src: url('../css/font/NanumSquareB.eot?#iefix') format('embedded-opentype'),
+         url('../css/font/NanumSquareB.woff2') format('woff2'),
+         url('../css/font/NanumSquareB.woff') format('woff'),
+         url('../css/font/NanumSquareB.ttf') format('truetype'),
+         url('../css/font/NanumSquareB.svg#NanumSquareB') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'NanumSquareEB';
+    src: url('../css/font/NanumSquareEB.eot');
+    src: url('../css/font/NanumSquareEB.eot?#iefix') format('embedded-opentype'),
+	url('../css/font/NanumSquareEB.woff') format('woff');
+    font-style: normal;
+    font-weight: 600;
+}
+/* 2022-01-28 웹폰트 추가 - 가맹점 명 관련 폰트 변경 */
+/* Nanum SquareAc 폰트 */
+@font-face {
+	font-family: 'NanumSquareAcL';
+	src: url('../css/font/NanumSquare_acL.eot');
+	src: url('../css/font/NanumSquare_acL.eot?#iefix') format('embedded-opentype'),
+	url('../css/font/NanumSquare_acL.woff') format('woff'),
+	url('../css/font/NanumSquare_acL.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'NanumSquareAcR';
+	src: url('../css/font/NanumSquare_acR.eot');
+	src: url('../css/font/NanumSquare_acR.eot?#iefix') format('embedded-opentype'),
+	url('../css/font/NanumSquare_acR.woff') format('woff'), 
+	url('../css/font/NanumSquare_acR.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'NanumSquareAcB';
+	src: url('../css/font/NanumSquare_acB.eot');
+	src: url('../css/font/NanumSquare_acB.eot?#iefix') format('embedded-opentype'),
+	url('../css/font/NanumSquare_acB.woff') format('woff'),
+	url('../css/font/NanumSquare_acB.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'NanumSquareAcEB';
+	src: url('../css/font/NanumSquare_acEB.eot');
+	src: url('../css/font/NanumSquare_acEB.eot?#iefix') format('embedded-opentype'),
+	url('../css/font/NanumSquare_acEB.woff') format('woff'),
+	url('../css/font/NanumSquare_acEB.ttf') format('truetype');
+}
+/* //2022-01-28 */
+
+
+
+
+/* reset */
+html, body {width:100%; height:100%;background:#f5f5f5;}
+body {-webkit-font-smoothing:subpixel-antialiased;-webkit-text-size-adjust: 100%;}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, button, address, em, img, small,  sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td, hr {font-family:'NanumSquareR', 'Sans-serif';margin:0; padding:0;line-height:1.3}
+strong {font-family:'NanumSquareB', 'Sans-serif';margin:0; padding:0;line-height:1.3}
+body {padding:0; font-family:'NanumSquareR', 'Sans-serif'; font-size:12px; color:#222;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal}
+ol, ul, li {list-style:none}
+table {width:100%; border-collapse:collapse; border-spacing:0}
+form, fieldset, iframe {display:block; border:0}
+img, button {border:0 none; vertical-align:middle}
+hr {height:0; display:none}
+i, em, address {font-style:normal}
+label, button {cursor:pointer}
+caption, legend {width:0; height:0; margin:0; padding:0; text-indent:-9999em; overflow:hidden; font-size:0;} 
+.blind {position:absolute !important; left:-9999em; width:0; height:0; margin:0; padding:0; text-indent:-9999em; overflow:hidden; font-size:0; line-height:0;} 
+header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption {display:block}
+input, textarea, select {margin:0; padding:0; font-family:'NanumSquareR', 'Sans-serif';font-size:15px;color:#000; vertical-align:middle}
+textarea {border: 1px solid #666; resize:none; overflow-y:auto}
+button {overflow:visible; margin:0; padding:0; border:0 none; background:none; font-size:0;font-family:'NanumSquareR', 'Sans-serif';vertical-align:top; cursor:pointer;}
+button::-moz-focus-inner {border:0; padding:0;}
+.ellipsis {display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+a {color:#555; text-decoration:none; word-break:break-all;}
+a:link, a:visited, a:hover, a:active, a:focus {text-decoration:none;}
+input:-webkit-autofill{-webkit-box-shadow:0 0 0px 1000px white inset;}
+img.resImg {width:100%;height:auto;}
+img.mdImg {width:80%;height:auto;}
+img.smImg {width:50%;height:auto;}
+pre {white-space:pre-wrap;}
+
+/* common */
+.mt0{margin-top:0px !important;}
+.mt10{margin-top:10px !important;}
+.mt15{margin-top:15px !important;}
+.mt20{margin-top:20px !important;}
+.mt30{margin-top:30px !important;}
+.mb0{margin-bottom:0 !important;}
+.mb5{margin-bottom:5px !important;}
+.mb10{margin-bottom:10px !important;}
+.mb20{margin-bottom:20px !important;}
+.mb30{margin-bottom:30px;}
+/* 2022-04-29 */
+.pd0 {padding:0 !important;}
+.pt0{padding-top:0 !important;}
+.pt80{padding-top:80px;}
+.pt80{padding-top:80px;}
+.pt100{padding-top:100px;}
+.pb0 {padding-bottom:0 !important;}
+.pb20 {padding-bottom:20px !important;}
+/* //2022-04-29 */
+
+
+
+/* Form */
+input[type='text'],input[type='date'], input[type='month'],input[type='submit'],input[type='search'],button,input[type='button'],input[type='submit'],input[type='reset'],input[type='file']{font-family:'NanumSquareR', 'Sans-serif';-webkit-appearance:none; border-top-left-radius:0; border-top-right-radius:0; border-bottom-left-radius:0; border-bottom-right-radius:0-webkit-appearance: none;-webkit-border-radius: 0;}
+input[type='password'] {font-family:'NanumSquareB'}
+input[type='checkbox']{-webkit-appearance:checkbox}
+input[type='radio']{-webkit-appearance:radio}
+input[type='number']{-webkit-appearance:none}
+input[type='number']::-webkit-inner-spin-button {-webkit-appearance: none;}
+input[type='search']::-webkit-search-cancel-button{-webkit-appearance:none}
+input.inTxt {webkit-appearance:none; border-top-left-radius:0; border-top-right-radius:0; border-bottom-left-radius:0; border-bottom-right-radius:0;font-size:15px;color:#222222;background:none;}
+input[type='date'],
+input[type='month'] {webkit-appearance:none; border-top-left-radius:0; border-top-right-radius:0; border-bottom-left-radius:0; border-bottom-right-radius:0;font-size:15px;color:#222222;background:none;}
+
+.chkTabWrap {margin-bottom:30px;}
+.chkTabWrap .chkTab input[type=checkbox]:checked + label{}
+.chkTab input[type=checkbox] + label{display:inline-block;text-align:left;vertical-align:top;font-size:14px;padding:0 5px 0 25px;line-height:50px;color:#222222;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;background:url('../img/common/blt_sel01.png') no-repeat left center;background-size:18px 18px;}
+.chkTab input[type=checkbox]:checked + label {font-family:'NanumSquareB', 'Sans-serif';background:url('../img/common/blt_sel01_active.png') no-repeat left center;background-size:18px 18px;}
+.chkTab input {display:none;}
+
+.chkTab02 input[type=checkbox] + label{display:inline-block;text-align:left;vertical-align:top;font-size:14px;padding:1px 5px 0 25px;color:#222222;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;background:url('../img/common/blt_chk.png') no-repeat left center;background-size:18px 18px;}
+.chkTab02 input[type=checkbox]:checked + label {font-family:'NanumSquareB', 'Sans-serif';background:url('../img/common/blt_chk_active.png') no-repeat left center;background-size:18px 18px;}
+.chkTab02 input {display:none;}
+
+
+.radioTab input[type=radio] + label{display:inline-block;text-align:left;vertical-align:top;font-size:14px;padding:1px 5px 0 25px;color:#222222;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;background:url('../img/common/blt_radio.png') no-repeat left center;background-size:18px 18px;}
+.radioTab input[type=radio]:checked + label {font-family:'NanumSquareB', 'Sans-serif';background:url('../img/common/blt_radio_active.png') no-repeat left center;background-size:18px 18px;}
+.radioTab input {display:none;}
+
+input::-webkit-input-placeholder {color:#aaa;}
+input:-moz-placeholder {color:#aaa;}
+input::-moz-placeholder {color:#aaa;}
+input:-ms-input-placeholder {color:#aaa;}
+textarea::-webkit-input-placeholder {color:#aaa;}
+textarea:-moz-placeholder {color:#aaa;}
+textarea::-moz-placeholder {color:#aaa;}
+textarea:-ms-input-placeholder {color:#aaa;}
+
+/* selectobx */
+.selectboxWrap {position:relative;display:inline-block;width:100%;vertical-align:middle;text-align:left}
+.selectboxWrap .select {width:100%;padding:0 0 0 15px;border:none;height:48px;font-size:15px;color:#aaa;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;appearance:none;-webkit-appearance:none;-moz-appearance:none;background:#fff url('../img/common/btn_selectbox.png') 94% center no-repeat;background-size:8px auto;color:#222222;-webkit-border-radius: 0;}
+select::-ms-expand {display:none;}
+/*.selectboxWrap .select:focus {outline:none;border:1px solid #222;}*/
+.selectboxWrap .select:required:invalid {color:#aaa;}
+.selectboxWrap .select option[value="0"]{color:#aaa;}
+.selectboxWrap .select option[value=""][disabled] {display:none;}
+.selectboxWrap .select option {color:#222;}
+
+
+/* blind */
+.blind{overflow:hidden; position:absolute; top:-1px; left:-1px; z-index:-1; width:1px; height:0px; font-size:0; line-height:0; white-space:nowrap}

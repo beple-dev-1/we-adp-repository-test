@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>브랜드상품권 보유상품권 선물하기</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-BRND-40-S">
+<input type="hidden" value="" id="mob_no">
+<input type="hidden" value="" id="bgc_no">
+<input type="hidden" value="" id="kind_code">
+<input type="hidden" value="" id="order_id">
+<input type="hidden" value="" id="kind_full_nm">
+	<!-- wrap -->
+	<div class="wrap" id="step_1">
+		<div class="header floating-back-header floating-sticky">
+			<h1>선물하기</h1>
+			<a data-element-id="BPY-BRND-40-S-e08" onClick="uf_back();" class="btn-history-back">뒤로가기</a>
+		</div><!-- // header -->
+		<!-- container -->
+
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="br_gift_rn">
+					<div class="product buy addBtn-pb58">
+						<!-- 상품 이미지박스 -->
+						<div class="img_bx"><img alt="" src="../assets/_sample/card.svg"></div>
+						<!-- 브랜드 명, 상품명, 가격, 공유하기 -->
+						<div class="info_bx"><!-- 특가상품의 경우 label_special 추가 -->
+							<!-- 브랜드 명 -->
+							<p class="brand">
+								비플머니
+								<span class="label">특가상품</span>
+							</p>
+							<!-- 상품 명 -->
+							<p class="name">비플머니</p>
+						</div>
+
+						<!-- 구매정보 -->
+						<div class="present_info">
+							<!-- 보내는 사람 -->
+							<div class="con_bx">
+								<p class="tit">보내는 사람</p>
+								<div class="bg_bx">
+									<input data-element-id="BPY-BRND-40-S-e11" type="text" id="sender_nm" value="비플머니" data-fill="demo">
+								</div>
+							</div>
+							<!-- 받는 사람 -->
+							<div class="con_bx ">
+								<p class="tit">받는 사람</p>
+								<p class="call_load"><a data-element-id="BPY-BRND-40-S-e09" id="get_numberList">연락처 불러오기</a></p>
+								<!-- 선물 대상자 정보입력 -->
+								<div class="send_info" id="receiver_area">
+									<div class="send_list"><!-- 삭제버튼 추가 시 add_del 클래스 추가 -->
+										<div class="bg_bx">
+											<input data-element-id="BPY-BRND-40-S-e12" type="text" maxlength="10" id="receiver_nm" placeholder="받는 분 이름">
+										</div>
+										<div class="bg_bx">
+											<input data-element-id="BPY-BRND-40-S-e13" type="text" maxlength="13" id="receiver_no" placeholder="휴대폰 번호 입력">
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 메시지 입력 -->
+							<div class="con_bx">
+								<p class="tit">메시지 입력 (선택)</p>
+								<p class="txt_count"><span id="msg_cnt">0/</span>100</p>
+								<div class="bg_bx autoresize">
+									<textarea data-element-id="BPY-BRND-40-S-e14" placeholder="전달 메시지 (최대 100자)" spellcheck="false" id="msg_txt"></textarea>
+								</div>
+							</div>
+							<!-- 선물하기 안내 메세지 -->
+							<p class="present_message">결제가 완료되면 받는 분에게 알림톡이 전송됩니다.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // content -->
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w brand_rn_btn">
+				<div class="inner bg_white">
+					<a data-element-id="BPY-BRND-40-S-e10" id="send_btn" class="btn_default round_r8 btn-style-h48 on">선물하기</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	
+	<!-- wrap -->
+	<div class="wrap" id="step_2">
+
+		<!-- container -->
+		<div class="container" id="gift_result_area"><!-- sample:begin --><div class="content"><div class="br_gift_rn"><div class="br_complete present"><div class="inner"><div class="info"><h2></h2></div><p class="btn"><a id="shareBtn">선물 직접 공유하기</a></p></div></div></div></div><div class="btn_botFix_w"><div class="inner padding0"><a id="goGiftBox" class="btn_default btn-style-h48 on">선물함으로 가기</a><!-- sample:end --></div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

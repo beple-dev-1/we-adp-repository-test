@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>사내 카페 메뉴 조회</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_beple.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_beple_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+</head>
+<body data-screen-id="HIT-ORDR-40-S">
+<div class="wrap js-wrap">
+    <header class="header position-sticky js-heder">
+        <nav class="header__navi">
+            <a data-element-id="HIT-ORDR-40-S-e12" id="backBtn" href="#none" class="header__btn btn-back"><span class="blind">이전 페이지로</span></a>
+        </nav>
+
+        <!-- 헤더 타이틀 -->
+        <div class="header__title-wrap">
+            <!-- 페이지 명 미사용 시 page-name 태그 내용 빈값 or 주석 or 삭제 -->
+            <h1 class="page-name"><span>메뉴상세</span></h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 컨테이너 -->
+        <section class="smart_oder-container">
+            <!-- 컨테이너 컨텐츠 -->
+            <!--
+                [D]
+
+                품절 : sold-out, 해당 상태일 때 aria-label ="품절" 추가
+                준비중 : waiting,  해당 상태일 때 aria-label ="준비중" 추가
+                닫힘 : close 해당 상태일 때 aria-label ="닫힘" 추가
+
+            -->
+            <article class="menu_detail">
+                <!-- 사진 -->
+                <div class="m_photo">
+                    <p id="menuImg"><a data-element-id="HIT-ORDR-40-S-e13" href="#none"><img onerror="noImage($(this))" alt="메뉴 이미지" src="../assets/_sample/card.svg"></a></p><!-- 2023-12-27 a 태그 추가 -->
+                </div>
+                <!-- 메뉴명 / 설명 -->
+                <div class="m_info">
+                    <!-- 2025-08-28 [D] - 미사용 시 영역 제거 or style="display: none;" -->
+                    <!--<div class="label-wrap" style="display: none;">
+                        <p class="label meal">조식<i class="icon sun-13"></i></p>
+                        <p class="label default">딜리버리</p>
+                    </div>-->
+                    <!-- // 2025-08-28 -->
+
+                    <!-- 2025-08-28 [D] - 구조변경 -->
+                    <p class="name">
+                        <span></span>
+                        <span class="eng"></span>
+                    </p>
+
+                    <p id = "price" class="price"><span>4,500</span>원</p>
+
+                    
+                        <p class="description ellipsis-line--3">
+                            
+                        </p>
+                    
+
+                    <!-- // 2025-08-28 -->
+                </div>
+
+                <!-- 2025-08-28 [D] - 가격정보 영역 삭제 -->
+                <!-- 가격정보 -->
+                <!-- <div class="price_w">
+                    <h2 class="tit">가격</h2>
+                    <p class="price"><span>2,300</span>원</p>
+                </div> -->
+                <!-- // 2025-08-28 [D] - 가격정보 영역 삭제 -->
+
+                <!-- 옵션박스 - 1 -->
+                
+                <div class="option_bx"><!-- 2025-08-28 필수항목 = "label-essential",  선택항목 = "label-select" 클래스 추가 -->
+                    <div class="opt_list">
+                        <!-- 2025-08-28 "list__header" div 추가-->
+                        <div class="list__header">
+                            <h3 class="opt_tit">비플머니</h3>
+                        </div>
+                        <!-- // 2025-08-28 -->
+                        
+
+                        <!--첫 영역 선택-->
+                        
+                            <div class="list__item"><!-- 2025-08-28 [D] "list__item" 클래스 추가 / 품절 시 "sold-out" 클래스 추가 및 aria-label="품절" 추가 -->
+                                <p class="select">
+                                    <label>
+                                        <input checked type="radio" data-opt-nm = "" data-opt-catg-seq ="" data-opt-seq = "" name="OPT" value="4,500">비플머니
+                                    </label>
+                                </p>
+                        
+                                <p class="price">+<span>4,500</span>원</p>
+                            </div>
+
+                        
+                    </div>
+                </div>
+                    
+
+                <!-- 옵션박스 - 3 -->
+                <!--<div class="option_bx label-select"><!-- 2025-08-28 필수항목 = "label-essential",  선택항목 = "label-select" 클래스 추가 ->
+                    <div class="opt_list">
+                        <!-- 2025-08-28 "list__header" div 추가->
+                        <div class="list__header">
+                            <h3 class="opt_tit">사이즈업</h3>
+                        </div>
+                        <!-- // 2025-08-28 ->
+
+                        <div class="list__item"><!-- 2025-08-28 [D] "list__item" 클래스 추가 / 품절 시 "sold-out" 클래스 추가 및 aria-label="품절" 추가 ->
+                            <p class="select"><label><input type="checkbox">1샷 추가</label></p>
+                            <p class="price">+<span>500</span>원</p>
+                        </div>
+                    </div>
+                </div>-->
+            </article>
+        </section>
+
+        <!-- 플로팅 박스 -->
+        <section class="container-floating js-floating-container">
+            <!-- 2025-08-28 [D] 주문수량 - 구조변경 -->
+            <article class="oder_count-container">
+                <!-- 박스 컨텐츠 -->
+                <div class="counter-box"><!-- 전체 비활성화 시 dis -->
+                    <button data-element-id="HIT-ORDR-40-S-e10" id="minus" class="counter--button counter--minus dis"><!-- 비활성화 시 dis -->
+                        <i class="icon icon--minus-24">빼기 버튼</i>
+                    </button>
+
+                    <!-- 카운터 -->
+                    <div class="counter--item">
+                        <span id="count">1</span>
+                    </div>
+
+                    <button data-element-id="HIT-ORDR-40-S-e11" id="plus" class="counter--button counter--plus dis"><!-- 비활성화 시 dis -->
+                        <i class="icon icon--plus-24">더하기 버튼</i>
+                    </button>
+                </div>
+
+                <!-- 합계 -->
+                <div class="price-box">
+                    <p class="price__head">총 상품금액</p>
+                    <p class="price"><strong id="total2">4,500</strong>원</p>
+                </div>
+            </article>
+            <!-- // 2025-08-28 -->
+
+            <!-- 메인 버튼영역 -->
+            <article class="main_btn-box">
+                <div class="multi-view"><!-- 2025-08-28 [D] 버튼 클래스 변경 btn_main 클래스 제거 -->
+                    <!-- <a href="#none" class="button button-xl button--lv1 dis" style="display: none;">2025-08-28 [D] 버튼 클래스 변경 -->
+                    <!-- <p class="more">지금은 주문가능 시간이 아닙니다.</p> -->
+                    <!-- </a> -->
+
+                    <a data-element-id="HIT-ORDR-40-S-e14" id ="btn_next" href="#none" class="button button-xl button--lv1 on"><!-- 2025-08-28 [D] 버튼 클래스 변경 -->
+                        <p class="amount">
+                            <span id="total">4,500</span>원
+                        </p>
+                        <p class="more">
+                            담기
+                        </p>
+                    </a>
+
+                    <!-- 2025-08-28 [D] 품절, 준비중 일 경우 -->
+                    <a data-element-id="HIT-ORDR-40-S-e15" id="btn_open" href="#none" class="button button-xl button--lv1 dis" style="display: none"><!-- 2025-08-28 [D] 버튼 클래스 변경 -->
+                        <p class="more">지금은 주문을 받을 수 없어요.</p>
+                    </a>
+
+                    <!-- 2025-08-28 [D] 품절, 준비중 일 경우 -->
+                    <a data-element-id="HIT-ORDR-40-S-e16" id="btn_sold" href="#none" class="button button-xl button--lv1 dis" style="display: none"><!-- 2025-08-28 [D] 버튼 클래스 변경 -->
+                        <p class="more">다 팔렸어요.</p>
+                    </a>
+
+                    <a data-element-id="HIT-ORDR-40-S-e17" id="btn_option" href="#none" class="button button-xl button--lv1" style="display: none"><!-- 2025-08-28 [D] 버튼 클래스 변경 -->
+                        <p class="more">옵션 수정하기</p>
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!-- 사진상세보기 레이어팝업 -->
+        <!-- 클래스 변경 -> photo_detail-popup  -->
+        <section id="imgDetailArea" class="photo_detail-popup menu-detail" ><!-- 노출 시 view 클래스 추가 닫힘 시 view 클래스 제거 -->
+            <div class="popup_w">
+                <div class="photo__view-box"><!-- 클래스 변경 photo__view-box -->
+                    <!-- 닫기버튼 -->
+                    <div class="btn_photo_close">
+                        <a data-element-id="HIT-ORDR-40-S-e18" id="close" href="#none"><span class="blind">닫기</span></a>
+                    </div>
+                    <!-- 이미지 영역 -->
+                    <div class="swiper-container photo_w">
+                        <!-- 슬라이드 이미지 영역 -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="img">
+                                    <img id="imgArea" alt="사진 상세보기" src="../assets/_sample/card.svg">
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- paging -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //사진상세보기 레이어팝업 -->
+    </main>
+</div>
+
+<!--<div class="wrap js-wrap">
+    <!-- 헤더 영역 ->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 ->
+        <nav class="header-nav">
+            <a href="#none"class="hd-btn back" id="backBtn"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 ->
+        <div class="page-title">
+            <h1 class="header-title">메뉴상세</h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 ->
+    <main class="container-wrap js-container-wrap">
+        <!-- 컨테이너 ->
+        <section class="smart_oder-container">
+            <!-- 컨테이너 컨텐츠 ->
+            <article class="menu_detail"><!-- 품절 시 : sold-out, 오픈준비중일 시 waiting ->
+                <!-- 사진 ->
+                <div class="m_photo">
+                    <p id="menuImg"><a href="#none"><img onerror="noImage($(this))" alt="메뉴 이미지" src="../assets/_sample/card.svg"></a></p>
+                </div>
+                <!-- 메뉴명 / 설명 ->
+                <div class="m_info">
+                   &lt;%&ndash; <div class="label-wrap"><!-- 원본기준 변경사항 -> 클래스 변경됨. : label -> label-wrap  ->
+                    </div>&ndash;%&gt;
+                    <p class="name"></p> <!--메뉴명 ->
+                    <p class="description"></p> <!--주문 가능시간 ->
+                </div>
+                <!-- 가격정보 ->
+                <div class="price_w">
+                    <h2 class="tit">가격</h2>
+                    <p class="price"><span id = "price">4,500</span>원</p>
+                </div>
+
+                    <!-- 옵션 목록 ->
+                    
+                <!-- 선택영역(옵션 등) ->
+                <div class="option_bx">
+                    <div class="opt_list">
+                        <h3 class="opt_tit">비플머니</h3>
+                        
+                        <div>
+                            <p class="select">
+                                <label>
+                                    
+                                    <input type="radio" checked data-opt-nm = "" data-opt-catg-seq ="" data-opt-seq = "" name="OPT" value="4,500">비플머니
+                                    
+                                    <input type="radio" data-opt-nm = "" data-opt-catg-seq ="" data-opt-seq = "" name="OPT" value="4,500">비플머니
+                                    
+                                </label>
+                            </p>
+                            <p class="price">+<span>4,500</span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                    
+            </article>
+        </section>
+
+        <!-- 플로팅 박스 ->
+        <section class="floating-container bottom js-floating-wrap">
+            <!-- 주문수량 ->
+            <article class="oder_count-box">
+                <!-- 박스 헤더 ->
+                <div class="box-hd">
+                    <p class="count-text title">수량</p>
+                </div>
+                <!-- 박스 컨텐츠 ->
+                <div class="box-con">
+                    <div class="spiner_btn">
+                        <p><a href="#none" class="minus on" id="minus">빼기</a></p><!-- 활성화 시 on 클래스 추가 ->
+                        <p><span id="count">1</span>개</p>
+                        <p><a href="#none" class="plus" id="plus">더하기</a></p>
+                    </div>
+                </div>
+            </article>
+            <!-- 메인 버튼영역 ->
+            <article class="main_btn-box bg-white">
+                <div class="btn-main flex-row">
+                    <a href="#none" id ="btn_next" class="btn-default radius-mid btn-style-h48 on">
+                        <span id="total">4,500</span>원 담기
+                    </a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 ->
+    &lt;%&ndash;                <a id ="btn_sold" style="display: none" href="#none" class="btn_default radius-mid btn-style-h48 ">
+
+                    </a>
+                    <a  style="display: none" href="#none" class="btn_default radius-mid btn-style-h48">
+                        지금은 주문을 받을 수 없어요.
+                    </a>
+                    <a  style="display: none" href="#none" class="btn_default radius-mid btn-style-h48 on"><!-- 활성화 시 on 클래스 추가 ->
+                        옵션 수정하기
+                    </a>&ndash;%&gt;
+                </div>
+            </article>
+            <article class="main_btn-box bg-white" id="btn_sold" style="display: none">
+                <div class="btn-main flex-row">
+                    <a href="#none" class="btn-default radius-mid btn-style-h48"> 다 팔렸어요.</a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 ->
+                </div>
+            </article>
+
+            <article class="main_btn-box bg-white" id="btn_open" style="display: none">
+                <div class="btn-main flex-row">
+                    <a href="#none" class="btn-default radius-mid btn-style-h48">지금은 주문을 받을 수 없어요.</a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 ->
+                </div>
+            </article>
+            <article class="main_btn-box bg-white" id="btn_option" style="display: none">
+                <div class="btn-main flex-row">
+                    <a href="#none" class="btn-default radius-mid btn-style-h48 on">옵션 수정하기</a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 ->
+                </div>
+            </article>
+        </section>
+        <!-- 사진상세보기 레이어팝업 ->
+        <section class="photo_detail-popup" id="imgDetailArea"><!-- 노출 시 view 클래스 추가 닫힘 시 view 클래스 제거 ->
+            <div class="popup_w">
+                <div class="photo__view-box"><!-- 클래스 변경 photo__view-box ->
+                    <!-- 닫기버튼 ->
+                    <div class="btn_photo_close">
+                        <a href="#none" id="close"><span class="blind">닫기</span></a>
+                    </div>
+                    <!-- 이미지 영역 ->
+                    <div class="swiper-container photo_w">
+                        <!-- 슬라이드 이미지 영역 ->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="img">
+                                    <img alt="사진 상세보기" id="imgArea" src="../assets/_sample/card.svg">
+                                </div>
+                                <!-- 메세지 영역 ->
+                                <div class="intro_msg">
+                                    <div class=""><!-- 메세지 영역 - 텍스트 불필요 시 div class="inner" 내부 태그 삭제 ->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //사진상세보기 레이어팝업 ->
+    </main>
+</div>-->
+</body>
+</html>

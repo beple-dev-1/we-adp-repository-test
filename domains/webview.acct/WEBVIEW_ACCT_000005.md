@@ -1,0 +1,47 @@
+# 웹뷰 API - ARS 인증 결과 확인 (WEBVIEW_ACCT_000005)
+
+- 처리: 읽기
+- 화면 겸함: 아니오
+- 상태: 따라감
+
+## 부르는 화면
+
+| 화면ID | 화면 이름 | 요소 |
+|---|---|---|
+| BPG-PGM-10-10-S | 계좌 관리 | 화면 |
+| BPG-PGM-10-20-S | 계좌 선택 | 화면 |
+| BPG-PGM-10-30-S | 계좌번호 입력 | 화면 |
+| BPG-PGM-10-40-S | 계좌 등록 완료 | 화면 |
+| BPG-PGM-10-50-S | 오픈뱅킹 약관 동의 | 화면 |
+| BPG-PGM-10-60-S | 오픈뱅킹 금융정보조회 약관 | 화면 |
+
+## 입력
+
+- 거래일자 (TRX_DT)
+- 거래번호 (TRX_SEQ)
+- 은행코드 (BANK_CD)
+- 계좌번호 (ACCT_NO)
+
+## 출력
+
+- 처리상태 (PROC_ST)
+- RSPS_CD
+- RSPS_MSG
+
+## 데이터 처리
+
+### ARS 거래 조회(BY KEY) (TB_CERTIFY_ARS_R001)
+
+- 종류: SELECT
+- 테이블: TB_CERTIFY_ARS
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ)
+
+## 실패
+
+- (없음)
+
+## 근거
+
+- BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.WEBVIEW_ACCT_000005.xml:6
+- BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/webview/acct/WEBVIEW_ACCT_000005_act.jsp:26
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CERTIFY_ARS_R001.xml:10

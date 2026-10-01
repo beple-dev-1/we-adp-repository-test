@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g data-name="사각형 201" style="fill:#fff;stroke:#ccc">
+        <rect width="32" height="32" rx="4" style="stroke:none"/>
+        <rect x=".5" y=".5" width="31" height="31" rx="3.5" style="fill:none"/>
+    </g>
+    <g data-name="그룹 25243">
+        <path data-name="선 100" transform="translate(10 11)" style="stroke:#222;stroke-linecap:round;stroke-width:1.5px;fill:none" d="M0 0h12"/>
+        <path data-name="선 101" transform="translate(10 16)" style="stroke:#222;stroke-linecap:round;stroke-width:1.5px;fill:none" d="M0 0h12"/>
+        <path data-name="선 102" transform="translate(10 21)" style="stroke:#222;stroke-linecap:round;stroke-width:1.5px;fill:none" d="M0 0h12"/>
+    </g>
+</svg>

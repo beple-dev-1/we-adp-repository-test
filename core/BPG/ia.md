@@ -1,6 +1,6 @@
 # BPG IA 이름표
 
-> `03_IA/시스템별/` 에서 기계로 옮긴 것이다. 정본은 그쪽이다.
+> 추출기 저장소 `ia/` 에서 기계로 옮긴 것이다. 정본은 추출 중에는 그쪽, 추출이 끝나면 Builder 다. 번호는 키 장부(`keys.py`)가 얼린다.
 
 ## 이름표
 - BPG: 비플PG
@@ -96,3 +96,97 @@
 - BPG/YGYO/40/20: 주소 관리 (reg)
 - BPG/YGYO/40/30: 주소 관리 (native)
 - BPG/YGYO/50: 요기요 가게 검색
+
+--- 배치 ---
+- 순서: 001 / 경로: BPG/OBO / 화면:
+- 순서: 002 / 경로: BPG/OBO/10 / 화면: BPG-OBO-10-S
+- 순서: 003 / 경로: BPG/OBO/10/10 / 화면: BPG-OBO-10-10-S
+- 순서: 004 / 경로: BPG/OBO/10/10/10 / 화면: BPG-OBO-10-10-10-S
+- 순서: 005 / 경로: BPG/OBO/10/10/20 / 화면: BPG-OBO-10-10-20-S
+- 순서: 006 / 경로: BPG/OBO/10/20 / 화면: BPG-OBO-10-20-S
+- 순서: 007 / 경로: BPG/OBO/10/20/10 / 화면: BPG-OBO-10-20-10-S
+- 순서: 008 / 경로: BPG/OBO/10/20/20 / 화면: BPG-OBO-10-20-20-S
+- 순서: 009 / 경로: BPG/OBO/10/30 / 화면: BPG-OBO-10-30-S
+- 순서: 010 / 경로: BPG/OBO/10/30/10 / 화면: BPG-OBO-10-30-10-S
+- 순서: 011 / 경로: BPG/OBO/10/30/20 / 화면: BPG-OBO-10-30-20-S
+- 순서: 012 / 경로: BPG/OBO/10/30/30 / 화면: BPG-OBO-10-30-30-S
+- 순서: 013 / 경로: BPG/OBO/20 / 화면: BPG-OBO-20-S
+- 순서: 014 / 경로: BPG/OBO/20/10 / 화면: BPG-OBO-20-10-S
+- 순서: 015 / 경로: BPG/OBO/30 / 화면: BPG-OBO-30-S
+- 순서: 016 / 경로: BPG/OBO/30/10 / 화면: BPG-OBO-30-10-S
+- 순서: 017 / 경로: BPG/OBO/40 / 화면: BPG-OBO-40-S
+- 순서: 018 / 경로: BPG/OBO/40/10 / 화면: BPG-OBO-40-10-S
+- 순서: 019 / 경로: BPG/OBO/50 / 화면: BPG-OBO-50-S
+- 순서: 020 / 경로: BPG/OBO/50/10 / 화면: BPG-OBO-50-10-S
+- 순서: 021 / 경로: BPG/OBO/60 / 화면: BPG-OBO-60-S
+- 순서: 022 / 경로: BPG/OBO/70 / 화면: BPG-OBO-70-S
+- 순서: 023 / 경로: BPG/OBO/70/10 / 화면: BPG-OBO-70-10-S
+- 순서: 024 / 경로: BPG/OBO/70/20 / 화면: BPG-OBO-70-20-S
+- 순서: 025 / 경로: BPG/OBO/70/20/10 / 화면: BPG-OBO-70-20-10-S
+- 순서: 026 / 경로: BPG/OBO/70/30 / 화면: BPG-OBO-70-30-S
+- 순서: 027 / 경로: BPG/OBO/80 / 화면: BPG-OBO-80-S
+- 순서: 028 / 경로: BPG/OBO/90 / 화면: BPG-OBO-90-S
+- 순서: 029 / 경로: BPG/YGYO / 화면:
+- 순서: 030 / 경로: BPG/YGYO/10 / 화면: BPG-YGYO-10-S
+- 순서: 031 / 경로: BPG/YGYO/10/10 / 화면: BPG-YGYO-10-10-S
+- 순서: 032 / 경로: BPG/YGYO/10/20 / 화면: BPG-YGYO-10-20-S
+- 순서: 033 / 경로: BPG/YGYO/10/30 / 화면: BPG-YGYO-10-30-S
+- 순서: 034 / 경로: BPG/YGYO/20 / 화면: BPG-YGYO-20-S
+- 순서: 035 / 경로: BPG/YGYO/20/10 / 화면: BPG-YGYO-20-10-S
+- 순서: 036 / 경로: BPG/YGYO/30 / 화면: BPG-YGYO-30-S
+- 순서: 037 / 경로: BPG/YGYO/30/10 / 화면: BPG-YGYO-30-10-S
+- 순서: 038 / 경로: BPG/YGYO/30/20 / 화면: BPG-YGYO-30-20-S
+- 순서: 039 / 경로: BPG/YGYO/40 / 화면: BPG-YGYO-40-S
+- 순서: 040 / 경로: BPG/YGYO/40/10 / 화면: BPG-YGYO-40-10-S
+- 순서: 041 / 경로: BPG/YGYO/40/20 / 화면: BPG-YGYO-40-20-S
+- 순서: 042 / 경로: BPG/YGYO/40/30 / 화면: BPG-YGYO-40-30-S
+- 순서: 043 / 경로: BPG/YGYO/50 / 화면: BPG-YGYO-50-S
+- 순서: 044 / 경로: BPG/OFFD / 화면:
+- 순서: 045 / 경로: BPG/OFFD/10 / 화면: BPG-OFFD-10-S
+- 순서: 046 / 경로: BPG/OFFD/10/10 / 화면: BPG-OFFD-10-10-S
+- 순서: 047 / 경로: BPG/OFFD/10/10/10 / 화면: BPG-OFFD-10-10-10-S
+- 순서: 048 / 경로: BPG/OFFD/10/20 / 화면: BPG-OFFD-10-20-S
+- 순서: 049 / 경로: BPG/OFFD/10/30 / 화면: BPG-OFFD-10-30-S
+- 순서: 050 / 경로: BPG/OFFD/20 / 화면: BPG-OFFD-20-S
+- 순서: 051 / 경로: BPG/OFFD/20/10 / 화면: BPG-OFFD-20-10-S
+- 순서: 052 / 경로: BPG/OFFD/20/20 / 화면: BPG-OFFD-20-20-S
+- 순서: 053 / 경로: BPG/HIST / 화면:
+- 순서: 054 / 경로: BPG/HIST/10 / 화면:
+- 순서: 055 / 경로: BPG/HIST/10/10 / 화면: BPG-HIST-10-10-S
+- 순서: 056 / 경로: BPG/HIST/10/10/10 / 화면: BPG-HIST-10-10-10-S
+- 순서: 057 / 경로: BPG/HIST/10/20 / 화면: BPG-HIST-10-20-S
+- 순서: 058 / 경로: BPG/HIST/20 / 화면:
+- 순서: 059 / 경로: BPG/HIST/20/10 / 화면: BPG-HIST-20-10-S
+- 순서: 060 / 경로: BPG/HIST/30 / 화면:
+- 순서: 061 / 경로: BPG/HIST/30/10 / 화면: BPG-HIST-30-10-S
+- 순서: 062 / 경로: BPG/HIST/30/10/10 / 화면: BPG-HIST-30-10-10-S
+- 순서: 063 / 경로: BPG/HIST/30/20 / 화면: BPG-HIST-30-20-S
+- 순서: 064 / 경로: BPG/PGM / 화면:
+- 순서: 065 / 경로: BPG/PGM/10 / 화면:
+- 순서: 066 / 경로: BPG/PGM/10/10 / 화면: BPG-PGM-10-10-S
+- 순서: 067 / 경로: BPG/PGM/10/20 / 화면: BPG-PGM-10-20-S
+- 순서: 068 / 경로: BPG/PGM/10/30 / 화면: BPG-PGM-10-30-S
+- 순서: 069 / 경로: BPG/PGM/10/40 / 화면: BPG-PGM-10-40-S
+- 순서: 070 / 경로: BPG/PGM/10/50 / 화면: BPG-PGM-10-50-S
+- 순서: 071 / 경로: BPG/PGM/10/60 / 화면: BPG-PGM-10-60-S
+- 순서: 072 / 경로: BPG/PGM/20 / 화면: BPG-PGM-20-S
+- 순서: 073 / 경로: BPG/PGM/20/10 / 화면: BPG-PGM-20-10-S
+- 순서: 074 / 경로: BPG/PGM/20/10/10 / 화면: BPG-PGM-20-10-10-S
+- 순서: 075 / 경로: BPG/PGM/30 / 화면: BPG-PGM-30-S
+- 순서: 076 / 경로: BPG/PGM/30/10 / 화면: BPG-PGM-30-10-S
+- 순서: 077 / 경로: BPG/PGM/30/10/10 / 화면: BPG-PGM-30-10-10-S
+- 순서: 078 / 경로: BPG/ORDR / 화면:
+- 순서: 079 / 경로: BPG/ORDR/10 / 화면: BPG-ORDR-10-S
+- 순서: 080 / 경로: BPG/ORDR/10/10 / 화면: BPG-ORDR-10-10-S
+- 순서: 081 / 경로: BPG/ORDR/10/10/10 / 화면: BPG-ORDR-10-10-10-S
+- 순서: 082 / 경로: BPG/ORDR/20 / 화면: BPG-ORDR-20-S
+- 순서: 083 / 경로: BPG/ORDR/20/10 / 화면: BPG-ORDR-20-10-S
+- 순서: 084 / 경로: BPG/ORDR/30 / 화면: BPG-ORDR-30-S
+- 순서: 085 / 경로: BPG/COMN / 화면:
+- 순서: 086 / 경로: BPG/COMN/10 / 화면:
+- 순서: 087 / 경로: BPG/COMN/10/10 / 화면: BPG-COMN-10-10-S
+- 순서: 088 / 경로: BPG/COMN/10/20 / 화면: BPG-COMN-10-20-S
+- 순서: 089 / 경로: BPG/COMN/20 / 화면:
+- 순서: 090 / 경로: BPG/COMN/20/10 / 화면: BPG-COMN-20-10-S
+- 순서: 091 / 경로: BPG/COMN/20/20 / 화면: BPG-COMN-20-20-S
+- 순서: 092 / 경로: BPG/COMN/20/20/10 / 화면: BPG-COMN-20-20-10-S

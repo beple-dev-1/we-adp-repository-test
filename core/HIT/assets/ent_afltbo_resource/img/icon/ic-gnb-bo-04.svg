@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <clipPath id="198xgh9dwa">
+            <path data-name="사각형 23306" style="fill:#8e95a5" d="M0 0h20v20H0z"/>
+        </clipPath>
+        <clipPath id="23dnw4fwfb">
+            <path data-name="사각형 23309" style="fill:#8e95a5" d="M0 0h10.757v10.474H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 25767">
+        <g data-name="그룹 20265">
+            <g data-name="그룹 20264" style="clip-path:url(#198xgh9dwa)" transform="translate(6 6)">
+                <path data-name="패스 8298" d="M20 16.863V20l-1.667-1.291L16.667 20 15 18.709 13.333 20l-1.666-1.291L10 20l-1.667-1.291L6.667 20 5 18.709 3.334 20l-1.667-1.291L0 20v-3.137" style="fill:#8e95a5"/>
+                <path data-name="패스 8299" d="M2.143 17.711H0V1.947A1.794 1.794 0 0 1 .63.572 2.174 2.174 0 0 1 2.143 0h15.714a2.174 2.174 0 0 1 1.513.572A1.794 1.794 0 0 1 20 1.947v15.564l-2.143-.025V1.949H2.143v15.762z" style="fill:#8e95a5"/>
+                <g data-name="그룹 20269">
+                    <path data-name="사각형 23307" transform="translate(6.607 10.087)" style="fill:#8e95a5" d="M0 0h1.738v4.387H0z"/>
+                    <g data-name="그룹 20268">
+                        <g data-name="그룹 20267" style="clip-path:url(#23dnw4fwfb)" transform="translate(4 4)">
+                            <path data-name="패스 8300" d="M7.713 0h-5.1v4.387h1.733v-2.63h3.423a1.315 1.315 0 0 1 0 2.63H4.346v1.7h3.423a1.315 1.315 0 0 1 0 2.63H6.03v1.756h1.683a3.079 3.079 0 0 0 2.159-5.237A3.092 3.092 0 0 0 9.858.893 3.029 3.029 0 0 0 7.713 0" style="fill:#8e95a5"/>
+                            <path data-name="사각형 23308" transform="translate(0 4.386)" style="fill:#8e95a5" d="M0 0h2.609v1.701H0z"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

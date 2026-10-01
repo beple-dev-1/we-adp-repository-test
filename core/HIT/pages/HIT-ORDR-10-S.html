@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플오더 가맹점 관리에 신청 가맹점 노출</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_beple.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_beple_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+</head>
+<body data-screen-id="HIT-ORDR-10-S">
+<input type="hidden" id="workCd" value="">
+<input type="hidden" id="delvSeq" value="">
+<input type="hidden" id="chnlTp" value="">
+<input type="hidden" id="bpAfltSeq" value="">
+<input type="hidden" id="deliOwnrTp" value="">
+<input type="hidden" id="orgWorkCd" value="">
+
+<div class="wrap js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky js-heder">
+        <nav class="header__navi">
+            <a data-element-id="HIT-ORDR-10-S-e03" id="backBtn" href="#none" class="header__btn btn-back"><span class="blind">이전 페이지로</span></a>
+        </nav>
+
+        <!-- 헤더 타이틀 -->
+        <div class="header__title-wrap">
+            <!-- 페이지 명 미사용 시 page-name 태그 내용 빈값 or 주석 or 삭제 -->
+            <h1 class="page-name"><span>스마트오더</span></h1>
+        </div>
+
+        <nav class="header__navi">
+<!--            <a href="#none" id="odrList" class="header__btn btn-oder_detail"><span class="blind">주문내역</span></a>-->
+            <a data-element-id="HIT-ORDR-10-S-e04" href="#none" id="myBag" class="header__btn btn-cart"><span class="blind">장바구니</span></a><!-- 장바구니에 메뉴 추가/제거 시 menu_add 클래스 추가/제거 -->
+        </nav>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 위치정보 -->
+        <!--<div class="location-box justify-spacing-def pdt16">
+            <div class="box-item">
+                <p class=" current current-location tx_ellipsis"></p>
+                <button id="addressBtn" type="button" class="loca_btn">
+                    <i class="icon gps-16"><span class="blind">현재위치 버튼</span></i>
+                </button>
+            </div>
+        </div>-->
+
+        <!-- 2025-08-28 [D] 필터 추가 -->
+        <!--<div class="filter-container pdt20 justify-spacing-def">
+            <div class="filter__body">
+                <button class="button button-small button--lv5_line radius-lv5 on">
+                    <span>인기순</span>
+                    <i class="icon icon--arrow-16 pointer-bottom"></i>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>전체</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>거리순</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>예약가능</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>인기순</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>전체</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>거리순</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>예약가능</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>인기순</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>전체</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>거리순</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>예약가능</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>인기순</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>전체</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>거리순</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>예약가능</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>인기순</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>전체</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>거리순</span>
+                </button>
+                <button class="button button-small button--lv5_line radius-lv5">
+                    <span>예약가능</span>
+                </button>
+            </div>
+        </div>-->
+        <!-- // 2025-08-28 [D] 필터 추가 -->
+
+        <!-- 컨테이너 -->
+        <section class="smart_oder-container">
+            <!-- 컨테이너 컨텐츠 -->
+            <article id="afltList" class="item-wrap store_w"><!-- sample:begin -->
+            <div class="item Y" data-work-nm="홍길동" data-deli-ownr-tp="" data-service-chnl="" data-aflt-seq="1" onclick="uf_afltDetail($(this))"><!-- 준비중 = waiting -->
+                <a href="#none" class="inner-wrap">
+                    <div class="item-con">
+                        <div class="item-info">
+                            <p class="name tx_ellipsis"><span>홍길동</span></p>
+                            <!-- 2025-08-28 [D] 거리 영역 태그 수정 및 각 목록에 추가 -->
+                            <p class="distance">
+                                <span class="ellipsis-line--1">101동 1001호</span>
+                                <!--<strong class="fw-600"><span>20</span>km</strong>-->
+                            </p>
+                            <div class="label-wrap">
+                                <!-- 2025-12-16
+                                    기본(사전예약, 로봇배송, 등) = default
+                                    보통, 잔여수량 = normal
+                                    원활 = smooth
+                                    혼잡 = warning
+                                    포장 = packing
+                                    로봇배송 = robot
+                                -->
+                                안내 문구
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2025-08-28 [D] 이미지 태그 위치 변경 -->
+                   
+                </a>
+            </div>
+        
+            <div class="item Y" data-deli-ownr-tp="" data-service-chnl="" data-aflt-seq="1" onclick="uf_afltDetail($(this))"><!-- 준비중 = waiting -->
+                <a href="#none" class="inner-wrap">
+                    <div class="item-con">
+                        <div class="item-info">
+                            <p class="name tx_ellipsis"><span>홍길동</span></p>
+                            <!-- 2025-08-28 [D] 거리 영역 태그 수정 및 각 목록에 추가 -->
+                            <p class="distance">
+                                <span class="ellipsis-line--1">101동 1001호</span>
+                                
+                            </p>
+                            <div class="label-wrap">
+                                <!-- 2025-12-16
+                                    기본(사전예약, 로봇배송, 등) = default
+                                    보통, 잔여수량 = normal
+                                    원활 = smooth
+                                    혼잡 = warning
+                                    포장 = packing
+                                    로봇배송 = robot
+                                -->
+                                안내 문구
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2025-08-28 [D] 이미지 태그 위치 변경 -->
+                    
+                </a>
+            </div>
+        <!-- sample:end --></article>
+        </section>
+    </main>
+</div>
+
+<!--<div class="wrap js-wrap">
+    <!-- 헤더 영역 ->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 ->
+        <nav class="header-nav">
+            <a href="#none" class="hd-btn back" id="backBtn"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 ->
+        <div class="page-title pd-lr75">
+            <h1 class="header-title">스마트 오더</h1>
+        </div>
+        <!-- 헤더 네비 ->
+        <nav class="header-nav">
+            <!-- <a href="#none" id="odrDetail" class="hd-btn oder_detail"><span class="blind-i">주문내역</span> </a>->
+            <a href="#none" id="myBag" class="hd-btn cart"><span class="blind-i">장바구니</span></a><!-- 장바구니에 메뉴 추가/제거 시 menu_add 클래스 추가/제거 ->
+        </nav>
+    </header>
+
+    <!-- 컨텐츠 영역 ->
+    <main class="container-wrap js-container-wrap">
+        <!-- 위치정보 ->
+        <div class="location-box">
+            <div class="box-item loca">
+                <span class="location-text tx_ellipsis current"></span>
+                <button type="button" class="loca_btn" id="addressBtn"><span class="icon gps-12">현재위치</span></button>
+            </div>
+        </div>
+        <!-- 컨테이너 ->
+        <section class="smart_oder-container">
+            <!-- 타이틀박스 ->
+            <div class="container-hd pdt32 pd-lr18">
+                <h2 class="container-text title">사내매장</h2>
+            </div>
+            <!-- 컨테이너 컨텐츠 ->
+            <article class="item-wrap no-border store_w" id="itemList">
+                <!-- 매장 ->
+            </article>
+        </section>
+       <!-- 컨테이너 ->
+        <section class="smart_oder-container" id="outStore" style="display: none">
+            <!-- 타이틀박스 ->
+            <div class="container-hd pdt32 pd-lr18">
+                <h2 class="container-text title">외부매장</h2>
+                <p class="container-text">거리순</p>
+            </div>
+            <!-- 컨테이너 컨텐츠 ->
+            <article class="item-wrap no-border store_w" id="storeList">
+                <!-- 매장 ->
+            </article>
+        </section>
+    </main>
+</div>-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>평균배송시간(로봇배송)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-10-30-20-S">
+<input type="hidden" name="bpAfltSeq" id="bpAfltSeq" value=""/>
+<input type="hidden" name="preUrl" id="preUrl" value=""/>
+
+<div class="wrap bg_f7">
+    <div class="header floating-back-header floating-sticky">
+        <h1>주문 설정</h1>
+        <a data-element-id="BPG-OBO-10-30-20-S-e04" class="btn-history-back" id="back">뒤로가기</a>
+    </div>
+    <!-- // header -->
+    <div class="container">
+        <div class="content">
+            <!-- 영업시간 등록 -->
+            <div class="bpleOder addBtn-pb58">
+                <div class="tit_bx pdt38">
+                    <h2>
+                        <strong>주문 완료 평균시간</strong>
+                    </h2>
+                    <p>주문이 완료되는 평균시간을 설정해 주세요.</p>
+                </div>
+
+                <div class="store_profile complete_time">
+                    <div class="iptbx dual">
+                        <div class="time">
+                            <h3 class="tit">최소 시간</h3>
+                            <div class="inner  ipt " id="mfnMinTmInnerDiv"><!-- 입력 시 ipt 클래스 추가 -->
+                                <input data-element-id="BPG-OBO-10-30-20-S-e06" type="tel" placeholder="시간 입력(분)" id="minDeliTm" autofocus value="14:22" data-fill="demo">
+                                <span class="txt">&nbsp;분</span>
+                            </div>
+                        </div>
+                        <p class="bar">-</p>
+                        <div class="time">
+                            <h3 class="tit">최대 시간</h3>
+                            <div class="inner  ipt " id="mfnMaxTmInnerDiv"><!-- 입력 시 ipt 클래스 추가 -->
+                                <input type="tel" placeholder="시간 입력(분)" id="maxDeliTm" autofocus value="14:22" data-fill="demo">
+                                <span class="txt">&nbsp;분</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//영업시간 등록 -->
+
+            <!-- 하단 고정버튼 -->
+            <div class="btn_botFix_w">
+                <div class="inner bg_grey">
+                    <a data-element-id="BPG-OBO-10-30-20-S-e05" class="btn_default btn-style-h48 round_r8  on " id="save"><span>저장</span></a><!-- 활성/비활성화 시 클래스 on 추가/제거 -->
+                </div>
+            </div>
+            <!-- //하단 고정버튼 -->
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

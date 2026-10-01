@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>영업 임시 중지</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-60-S">
+<input type="hidden" name="appCd" id="appCd" value=""/>
+<input type="hidden" name="afltId" id="afltId" value=""/>
+<input type="hidden" name="bpAfltSeq" id="bpAfltSeq" value=""/>
+<input type="hidden" name="preUrl" id="preUrl" value=""/>
+<input type="hidden" name="selectedIdx" id="selectedIdx"/>
+<input type="hidden" name="restDt" id="restDt" value=""/>
+<input type="hidden" name="orderType" id="orderType" value=""/>
+
+<div class="wrap bg_f7">
+	<div class="header floating-back-header floating-sticky">
+		<h1>주문 설정</h1>
+		<a data-element-id="BPG-OBO-60-S-e05" class="btn-history-back" id="back">뒤로가기</a>
+	</div>
+	<!-- // header -->
+	<div class="container">
+		<div class="content">
+			<!-- 영업시간 등록 -->
+			<div class="bpleOder addBtn-pb58">
+				<div class="store_profile">
+					<div class="tit_bx">
+						<h2>
+							<strong>주문 이용가능 시간</strong>
+						</h2>
+						<p>설정하신 주문 이용가능 시간 외에는 ‘준비중’으로 노출됩니다.</p>
+					</div>
+
+					<div class="work_time_w">
+						<div class="work_pause" id="workPause">
+							<a>
+								<strong>영업 임시 중지</strong>
+								<span id="restNm">미설정</span>
+							</a>
+						</div>
+						<!-- 영업시간 목록 -->
+						<ul class="week">
+						    
+						    <li>
+                                <div class="inner">
+                                    <div class="chk_bx"><label><input data-element-id="BPG-OBO-60-S-e07" type="checkbox" class="weeksCls" name="weeksCls" value="" id="weeksChkBx">&nbsp;</label></div>
+                                    <div class="time_bx ipt" id="weeksTimeBx"><!-- 영업시간 입력 시 ipt 클래스 추가 -->
+                                        <a href="javascript:doStopTempClick('');" id="weeksA"><!-- sample:begin -->표본<!-- sample:end --></a>
+                                    </div>
+                                </div>
+                            </li>
+                            
+						</ul>
+						<!-- //영업시간 목록 -->
+						<!-- 선택한 요일 수정버튼 -->
+						<p class="multi_sel_btn" id="multiSelBtn"><!-- 요일 선택 시 active 클래스 추가 -->
+							<a>선택한 요일 수정</a>
+						</p>
+						<!-- //선택한 요일 수정버튼 -->
+						<!-- 기타 영업정보 -->
+						<div class="etc_info">
+							<div class="info_tit">
+								<h2>기타 영업정보</h2>
+								<p class="txt_count" id="txtCountetcInfo"><span>0/</span>50</p>
+							</div>
+							<div class="iptbx autoresize"><!-- 페이지 아래쪽에 2줄까지 늘어나도록 스크립트 적용되어있습니다. -->
+								<div class="inner">
+									<textarea data-element-id="BPG-OBO-60-S-e08" placeholder="입력해 주세요." spellcheck="false" id="etcInfo" name="etcInfo"></textarea>
+								</div>
+							</div>
+						</div>
+						<!-- //기타 영업정보 -->
+					</div>
+				</div>
+			</div>
+			<!--//영업시간 등록 -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_grey">
+					<a data-element-id="BPG-OBO-60-S-e06" class="btn_default btn-style-h48 round_r8" id="save"><span>저장</span></a><!-- 활성/비활성화 시 클래스 on 추가/제거 -->
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- 레이어팝업 영업 임시 중지-->
+<div class="layer_overlay" id="stopTemp" style="display:none;">
+	<div class="layer_bPop">
+		<div class="popup_con pd0">
+			<!-- 설정팝업 -->
+			<div class="edit_pop add_tit">
+				<h2 class="ly_pop_tit">영업 임시 중지</h2>
+				<p class="btn_close" id="stopTempClose"><a></a></p>
+				<p>영업 임시 중지 설정 시, 다음날 지정된 영업일까지 영업준비 중으로 표시됩니다.</p>
+				<!-- 영업중지 선택 -->
+				<ul id="select-ul">
+					<li><a>설정</a></li><!-- 선택 시 select 클래스 추가 -->
+					<li><a>미설정</a></li>
+				</ul>
+				<!-- //영업중지 선택 -->
+				<div class="btn_w">
+					<div class="inner bg_white">
+						<a class="btn_default btn-style-h48 round_r8 on" id="stopConfirm"><!-- 활성화 시 on 클래스 추가 -->
+							적용
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- //설정팝업 -->
+		</div>
+	</div>
+</div>
+<!-- //레이어팝업 -->
+
+<!-- layer_overlay 영업시간등록 상세-->
+<div class="layer_overlay" id="useTime" style="display:none;">
+	<!-- layerpopup -->
+	<div class="popup_w">
+		<div class="popup_con pd20">
+			<!-- 영업시간 설정pop -->
+			<div class="set_time">
+				<!-- 타이틀 -->
+				<h2 class="ly_pop_tit close_add">이용가능 시간 설정</h2>
+				<p class="btn_close" id="useTimeClose"><a>팝업 닫기</a></p>
+				<!-- //타이틀 -->
+				<!-- 설정 영역 -->
+				<div class="content">
+					<!-- 선택요일 노출 -->
+					<div class="set_con">
+						<h3>선택 요일</h3>
+						<div class="iptbx">
+							<div class="inner" id="selectedDay"><!-- sample:begin -->표본<!-- sample:end --></div>
+						</div>
+					</div>
+					<!-- //선택요일 노출 -->
+					<!-- 영업시간 선택 -->
+					<div class="set_con" id="worktime_area"><!-- 영업시간 미입력 시 err 클래스 추가 -->
+						<h3>주문 이용가능 시간</h3>
+						<div class="iptbx"><!-- 휴무일 체크 시 closed 클래스 추가 -->
+							<div class="timebx"><!-- 시간 입력 시 ipt클래스 추가 -->
+								<h4>시작</h4>
+								<a>
+									<div class="inner" id="strDiv">
+										<span id="strDt">시간 선택</span>
+									</div>
+								</a>
+							</div>
+							<p class="space">-</p>
+							<div class="timebx">
+								<h4>종료</h4>
+								<a>
+									<div class="inner" id="endDiv">
+										<span id="endDt">시간 선택</span>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="holiday_chk">
+							<label><input type="checkbox" id="holYn" name="holYn">휴무일</label>
+						</div>
+						<p class="worktime_err">영업시간을 입력해 주세요.</p>
+					</div>
+					<!-- 2023-03-16 - 1 -->
+					<!-- 기타 정보 입력 -->
+					<!--div class="set_con">
+						<h3>준비 시간(선택)</h3-->
+						<!-- 영업시간 선택 -->
+						
+						<!--div class="btn_add" id="rdyAdd"><!-- 시간선택 박스 활성화 시 display:none, 휴무일 체크 시 "disabled" 클래스 추가 -->
+							<!--a href="#none">+ 준비시간 추가하기</a-->
+						<!--/div -->
+					<!--/div -->
+					<!-- //기타 정보 입력 -->
+					<!-- //2023-03-16 - 1 -->
+
+					<!-- //영업시간 선택 -->
+					<!-- 기타 정보 입력 
+					<div class="set_con">
+						<div class="tx_count_w">
+							<h3>해당 영업일 기타 정보 (선택)</h3>
+							<p class="txt_count" id="txtCountetc"><span>0/</span>50</p>
+						</div>
+						<div class="iptbx">
+							<div class="inner">
+								<input type="text" placeholder="ex) 브레이크타임 13:00~14:00" id="etc">
+							</div>
+						</div>
+					</div>
+					<!-- //기타 정보 입력 
+					-->
+				</div>
+				<!-- //설정 영역 -->
+				<!-- 버튼영역 -->
+				<div class="ly_pop_btw btns_half">
+					<a class="typeC" id="delete">삭제</a>
+					<a class="typeA" id="confirm">확인</a>
+				</div>
+				<!-- //버튼영역 -->
+			</div>
+			<!-- //영업시간 설정pop -->
+		</div>
+	</div>
+	<!-- //layerpopup -->
+</div>
+<!-- //layer_overlay -->
+</body>
+</html>

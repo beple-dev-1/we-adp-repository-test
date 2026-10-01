@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>설정 > 결제수단 설정</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-CONF-10-10-S">
+<input type="hidden" id="REG_DT" name="REG_DT" value=""/>
+<input type="hidden" id="BACK_YN" name="BACK_YN" value=""/>
+<div class="wrap js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-CONF-10-10-S-e04" href="#none" class="hd-btn back" onclick="uf_back();"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">결제수단 설정</h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <section class="account-container">
+            <!-- 컨테이너 헤더 -->
+            <div class="container-hd">
+                <p class="container__hd-text">복합 결제 수단</p>
+                <!--&lt;%&ndash;3월 5일 이전 기존 가입자 일 경우&ndash;%&gt;
+                <p class="container__hd-text info mgt8">결제금액이 보유 마일리지를 초과할 경우 사용할 복합 결제 수단을 선택해 주세요.</p>
+                -->
+                <p class="container__hd-text info mgt8">결제금액이 보유 마일리지를 초과할 경우 비플머니로 복합 결제 할 수 있습니다.</p>
+                <!---->
+            </div>
+            <!-- 결제수단 및 계좌관리 컨텐츠 -->
+            <article class="account__item-wrap">
+                <!-- 결제수단 -->
+                <div class="acc-item" onclick="mthd_opt();">
+                    <!-- 아이콘 -->
+                    <div class="acc__ico">
+                        <p class="ico">
+                            <img id="mthd_img" src="../assets/_sample/card.svg"><!-- 2023-10-23 -->
+                        </p>
+                    </div>
+                    <!-- 계좌 / 결제수단 정보 -->
+                    <div class="acc__info"><p class="info-name"></p></div>
+                    <!--&lt;%&ndash;3월 5일 이전 기존 가입자 일 경우&ndash;%&gt;
+                    <!-- 설정버튼 ->
+                    <div class="acc__set-btn">
+                        <a href="#none" class="icon arr_bottom-18"><span class="blind-i">계좌 설정</span></a>
+                    </div>
+                    -->
+                </div>
+            </article>
+        </section>
+        <section class="setting-container">
+            <!-- 설정 목록 -->
+            <article class="setting__item-wrap">
+                <!-- 설정 -->
+                <div class="setting-box item-btn">
+                    <div class="set-item">
+                        <p class="set-item-name fw-reg"><a data-element-id="HIT-CONF-10-10-S-e03" data-nav-target="HIT-CONF-10-S" class="item-btn icon arr_right-16" onclick="chrg_metd_mng();">충전수단 관리</a></p>
+                    </div>
+                </div>
+                <!--<div class="setting-box item-btn">
+                    <div class="set-item">
+                        <p class="set-item-name fw-reg"><a class="item-btn icon arr_right-16" onclick="acct_mng();">계좌 관리</a></p>
+                    </div>
+                </div>
+                <!-- 2023-10-23 ->
+                <!-- 설정 ->
+                <div class="setting-box item-btn">
+                    <div class="set-item">
+                        <p class="set-item-name fw-reg"><a href="#none" class="item-btn icon arr_right-16" onclick="card_mng();">카드 관리</a></p>
+                    </div>
+                </div>-->
+                <!-- // 2023-10-23 -->
+            </article>
+        </section>
+        <!--&lt;%&ndash;3월 5일 이전 기존 가입자 일 경우&ndash;%&gt;
+        <!-- 레이어팝업 ->
+        <section class="popup-container overlay" id="sel_mthd" style="display:none;">
+            <div class="popup-box bottom">
+                <div class="inner-box">
+                    <!-- 컨테이너 컨텐츠 ->
+                    <div class="box-hd pd-lr20 pdt24">
+                        <p class="box__hd-text">결제 수단</p>
+                    </div>
+                    <article class="box-content pd-lr20 mgt16 max_height-200 scroll-y">
+                        <p class="popup__text" id="mny_yn"><button type="button" class="text-btn pdr34" id="bple_mny" value="2" onclick="btn_click(this);"><span class="tx_ellipsis" id="mny">비플머니</span></button></p>
+                        <p class="popup__text"><button type="button" class="text-btn pdr34" id="salary" value="1" onclick="btn_click(this);"><span class="tx_ellipsis">급여공제 (복합결제 미사용)</span></button></p>
+                        <!-- <p class="popup__text"><button type="button" class="text-btn pdr34" id="card" value="3" onclick="btn_click(this);"><span class="tx_ellipsis" id="card_nm">신용카드</span></button></p> ->
+                    </article>
+                    <!-- 메인버튼 - 팝업용 ->
+                    <!--<div class="main_btn-box pd-lr10 pdb10 mgt20">
+                        <div class="btn-main">
+                            <button type="button" class="btn-default radius-mid btn-style-h48 on" onclick="pop_close('save');">저장</button>
+                        </div>
+                    </div>->
+                    <!-- 닫기버튼 ->
+                    <p class="close_btn-box"><button type="button" class="close-btn icon close-14" onclick="pop_close('close');"><span class="blind-i">팝업닫기</span></button></p>
+                </div>
+            </div>
+        </section>
+        -->
+        <!-- // 레이어팝업 끝 -->
+        
+        <!-- 플로팅 박스 -->
+        <section class="floating-container bottom js-floating-wrap">
+            <div class="payment-info">
+                <div class="info-inner">
+                    <div class="info-header">
+                        <p class="info-text title">복합 결제 수단 안내</p>
+                    </div>
+                    <div class="info-content">
+                        <ul class="list-bar">
+                            <li class="info-text">비플머니 충전수단 등록 후 조식결제/중식 마일리지 초과결제를 이용할 수 있습니다.</li>
+                            <li class="info-text">조식 및 중식 마일리지 초과 결제 시 비플머니는 <span style="font-weight:bold;">
+								 1만원 단위로 자동 충전</span>됩니다.</li>
+                            <li class="info-text">비플머니 잔액, 충전/사용내역은 H-eat+ 메인 > 상단 'B'버튼 > 이용내역 통해 확인하실 수 있습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

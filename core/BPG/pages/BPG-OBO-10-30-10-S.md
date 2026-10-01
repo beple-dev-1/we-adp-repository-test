@@ -1,0 +1,26 @@
+--- 꼬리표 ---
+id: BPG-OBO-10-30-10-S / system: BPG / 기능: 비플PG > 비플오더 점주 백오피스 > 비플오더 관리 메인 > 비플오더 주문형태 선택 > 주문설정(로봇배송) / 과업: []
+
+--- 화면명세 ---
+화면명: 주문설정(로봇배송)
+목적: 주문설정(로봇배송) 화면이다.
+
+--- IA ---
+- 종류: 화면 / 상위화면: BPG-OBO-10-30-S
+
+--- 업무 ---
+- 요소: 화면 / 업무: 평균배송시간(로봇배송) (화면) / 처리: 읽기 / 테이블: TB_BP_AFLT_MY, TB_BP_AFLT_MNG / 입력: 비플가맹점순번, PRE_URL / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.bo_my_deli_robot_tm.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/bpp/smartorder/bo_my_deli_robot_tm_act.jsp:26 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MY_R006.xml:10
+- 요소: 화면 / 업무: 비플오더 메인 (화면) / 처리: 읽기 / 테이블: TB_BP_AFLT_ODR, TB_BP_AFLT_MY, TB_BP_AFLT_MNG, TB_AFFILIATION_MY, TB_CTGR_CATG, TB_CTGR_CATG_CD / 입력: 비플가맹점순번 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.bo_my_main.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/bpp/smartorder/bo_my_main_act.jsp:22 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MY_R008.xml:10
+- 요소: 화면 / 업무: 비플오더 주문 가맹점 상태 변경 / 처리: 읽기·쓰기 / 테이블: TB_BP_AFLT_MY_PDT_INFO, TB_BP_AFLT_MY / 입력: ODR_YN, 비플가맹점순번 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.bo_my_main_info_u001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/bpp/smartorder/bo_my_main_info_u001_act.jsp:22 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MY_PDT_INFO_R006.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MY_U003.xml:10
+- 요소: 화면 / 업무: 주문가능수량 설정 (화면) / 처리: 읽기 / 테이블: TB_BP_AFLT_MY, TB_BP_AFLT_MNG / 입력: 비플가맹점순번, PRE_URL / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.bo_my_odr_qty.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/bpp/smartorder/bo_my_odr_qty_act.jsp:22 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MY_R006.xml:10
+- 요소: 화면 / 업무: 비플오더 주문서비스 주문이용가능시간 (화면) / 처리: 읽기 / 테이블: TB_BP_AFLT_MY, TB_AFFILIATION_MY_WT_INFO / 입력: 비플가맹점순번, 주문유형 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.bo_my_wt.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/bpp/smartorder/bo_my_wt_act.jsp:31 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_WT_INFO_R006.xml:10
+
+--- 정의 ---
+- 구분: 이동 / 좌표: - / 라벨: 분 ~ 분 / 앵커: BPG-OBO-10-30-10-S-e05 / 이동: BPG-OBO-10-30-20-S / 해설: 분 ~ 분
+- 구분: 이동 / 좌표: - / 라벨: 수량 제한 없음 / 앵커: BPG-OBO-10-30-10-S-e06 / 이동: BPG-OBO-10-30-30-S / 해설: 수량 제한 없음
+- 구분: 이동 / 좌표: - / 라벨: 확인 / 앵커: BPG-OBO-10-30-10-S-e07 / 이동: BPG-OBO-10-S / 해설: 확인
+- 구분: 기능 / 좌표: id=back / 라벨: 뒤로가기 / 앵커: BPG-OBO-10-30-10-S-e08 / 해설: 뒤로가기
+
+--- 원본 글 ---
+> 역추출 소스: BIZ_ZEROPAY/web/view/jex/biz_zeropay/bpp/smartorder/bo_my_main_robot_info_view.jsp
+> page2md 가 html 에서 기계로 뽑음 — 좌표 · 해설은 사람이 고치면 다음 추출에도 남는다.

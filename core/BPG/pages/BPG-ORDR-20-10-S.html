@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>스마트 오더 메뉴 상세</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-ORDR-20-10-S">
+<!-- wrap -->
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>메뉴 상세</h1>
+        <a data-element-id="BPG-ORDR-20-10-S-e08" href="#" id ="go_back" class="btn-history-back">뒤로가기</a>
+    </div>
+    <!-- // header -->
+
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <div class="content">
+            <!-- 비플오더 -->
+            <div class="flexWrap">
+                <div class="bpleOder addBtn-pb58"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+                    <!-- 메뉴상세 -->
+                    <div class="menu_detail">
+                        <!-- 사진 -->
+                        <div class="m_photo">
+                            <p><img id = "img" onerror="noImage($(this));" alt="메뉴 이미지" src="../assets/_sample/card.svg"></p>
+                        </div>
+                        <!-- 메뉴명 / 설명 -->
+                        <div class="m_info">
+                            <!-- 2023-01-13 -->
+                            <p class="name"></p>
+                            <p class="description"></p>
+                            <!-- //2023-01-13 -->
+                        </div>
+                        <!-- 가격정보 -->
+                        <div class="price_w">
+                            <h2 class="tit">가격</h2>
+                            <p class="price">+<span id = "price">4,500</span>원</p>
+                        </div>
+                        <!-- 선택영역(옵션 등) -->
+                        <div class="option_bx">
+                            <!-- 옵션 목록 -->
+                            
+                            <div class="opt_list">
+                                <h3 class="opt_tit">비플머니</h3>
+                                
+                                <div>
+                                    <p class="select">
+                                        <label>
+                                            
+                                            <input type="radio" checked data-opt-nm = "" data-opt-catg-seq ="" data-opt-seq = "" name="OPT" value="4,500">비플머니
+                                            
+                                        </label>
+                                    </p>
+                                    <p class="price">+<span>4,500</span></p>
+                                </div>
+                            
+                            </div>
+                            
+                            <!-- 수량 -->
+                            <div class="count">
+                                <h2 class="tit">수량</h2>
+                                <div class="spiner_btn">
+                                    <p><a data-element-id="BPG-ORDR-20-10-S-e09" href="#none" class="minus" id = "minus">수량빼기</a></p>
+                                    <p><span id="count">1</span>개</p>
+                                    <p><a data-element-id="BPG-ORDR-20-10-S-e10" href="#none" class="plus" id = "plus">수량추가</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //선택영역(옵션 등) -->
+                    </div>
+                    <!-- //메뉴상세 -->
+                </div>
+            </div>
+            <!-- //비플오더 -->
+        </div>
+        <!-- // content -->
+
+        <!-- 하단 고정버튼 -->
+        <div class="btn_botFix_w">
+            <div class="inner bg_white">
+                <a data-element-id="BPG-ORDR-20-10-S-e11" id="btn_next" href="#none" class="btn_default btn-style-h48 round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+                    <strong id="total">4,500</strong>원 담기
+                </a>
+                <a data-element-id="BPG-ORDR-20-10-S-e12" id ="btn_sold" style="display: none" href="#none" class="btn_default btn-style-h48 round_r8"><!-- 활성화 시 on 클래스 추가 -->
+                    다 팔렸어요.
+                </a>
+                <a data-element-id="BPG-ORDR-20-10-S-e13" id ="btn_open" style="display: none" href="#none" class="btn_default btn-style-h48 round_r8"><!-- 활성화 시 on 클래스 추가 -->
+                    지금은 주문을 받을 수 없어요.
+                </a>
+                <a data-element-id="BPG-ORDR-20-10-S-e14" id="btn_option" style="display: none" href="#none" class="btn_default btn-style-h48 round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+                    옵션 수정하기
+                </a>
+            </div>
+        </div>
+        <!-- //하단 고정버튼 -->
+    </div>
+    <!-- // container -->
+</div>
+<!-- // wrap -->
+</body>
+</html>

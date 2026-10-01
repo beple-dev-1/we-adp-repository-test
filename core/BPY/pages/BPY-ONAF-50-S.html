@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비대면결제 결제하기</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-ONAF-50-S">
+<form name="frm" id="frm" method="post">
+
+<!-- hidden input -->
+<input type="hidden" id="pay_once_min_amt" value="" />
+<input type="hidden" id="pay_once_max_amt" value="" />
+<input type="hidden" id="pay_day_max_amt"  value="" />
+<input type="hidden" id="pay_mm_max_amt"   value="" />
+<input type="hidden" id="day_amt"          value="" />
+<input type="hidden" id="mm_amt"           value="" />
+<input type="hidden" id="qr_tp"            value="" />
+<input type="hidden" id="qr_code"          value="" />
+<input type="hidden" id="bank_cd" />
+<input type="hidden" id="acct_no" />
+<input type="hidden" id="acct_seq" />
+<input type="hidden" id="pay_type" />
+<input type="hidden" id="CARD_NO" name="CARD_NO" value="" />
+
+<div class="wrap">
+	<!-- 2021-01-28 add_tline 클래스 추가 -->
+	<div class="header floating-back-header floating-sticky add_tline">
+		<h1>비대면 결제하기</h1>
+		<a data-element-id="BPY-ONAF-50-S-e07" href="#" class="btn-history-back" id="go_back">뒤로가기</a>
+		<div class="right">
+			<a data-element-id="BPY-ONAF-50-S-e08" href="#none" class="btn_outpage" id="go_home">페이지나가기</a>
+		</div>
+	</div><!-- // header -->
+	<!-- //2021-01-28 -->
+	
+	<div class="container">
+		<div class="content">
+
+			<div class="row-bottom-style">
+				<div class="st_info_wrap">
+					<!-- 가맹점 정보 -->
+					<div class="st_info_top">
+						<div class="inner">
+							<div class="tit">
+								<h2><!-- <a class="btn"><span class="blind">삭제</span></a> --></h2>
+							</div>
+							<div class="st_infoin">
+								<p>서울 강남구 테헤란로 1길 10<br> 101동 1001호</p>
+								
+									<p class="tel" onClick="location.href='tel:'">
+									<a data-element-id="BPY-ONAF-50-S-e09" class="btn" onClick="location.href='tel:'"><span class="blind">전화하기</span></a></p>
+								
+							</div>
+						</div>
+					</div>
+					<!-- //가맹점 정보 -->
+
+					<!-- 가맹점 상세정보 -->
+					<div class="st_info_view add_pd">
+						<div class="acc_iptbx inputbox-m">
+							<dl>
+								<dt>결제금액</dt>
+								<dd>
+									<div class="bg">
+										<a data-element-id="BPY-ONAF-50-S-e10" class="btn btn_del btn-clear-text" style="display:none;"><span class="blind">삭제</span></a>
+										<input type="tel" maxlength="10" id="tr_amt" jex-input="commaFormat" placeholder="0" data-input="commaFormat">
+										<span class="txt">원</span>
+									</div>
+									<div class="title-page-13 error" id="err_txt" style="margin-top: 5px;"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+								</dd>
+							</dl>
+						</div>
+
+						<div class="memo_bx">
+							<div class="m_tit" id="DIV_MEMO">
+								<a data-element-id="BPY-ONAF-50-S-e11" id="A_MEMO">메모하기</a>
+							</div>
+							<div class="m_ipt" id="DIV_MEMO2" style="display:none;">
+								<div class="bg"><input type="text" id="MEMO" placeholder="15글자 이내로 메모하세요" maxlength="15"></div>
+								<a class="btn" id="A_MEMO_DEL"><span class="blind">검색</span></a>
+							</div>
+						</div>
+						
+												
+							<!-- 법인결제의 경우 hide -->
+						
+					</div>
+					<!-- //가맹점 상세정보 -->
+				</div>
+
+				<!-- 하단 롤링버튼 -->
+				<div class="mpm_btn_roll" style="display:none;">
+					<div class="inner">
+						<a></a>
+						<a></a>
+						<a></a>
+						<a class="on"></a>
+					</div>
+				</div>
+				<!-- //하단 롤링버튼 -->
+			</div>
+
+			<!-- 하단 고정버튼 -->
+			<div class="fixed-bottom-section">
+				<a data-element-id="BPY-ONAF-50-S-e12" href="#" id="approve" class="btn-submit btn-dark-op90"><span>결제하기</span></a><!-- 활성화클래스 on -->
+				<!-- 2021-02-10 -->
+				<div class="bn_flt">
+					<div class="bn_flt_in"><div class="blind">결제내역을 사장님께 꼭 알려주세요.</div></div>
+				</div>
+				<!-- //2021-02-10 -->
+			</div>
+			<!-- //하단 고정버튼 -->
+
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- 결제금액 확인 팝업 -->
+<div class="pop-wrap" style="display: none;" id="apr_popup_area">
+	<div class="pop">
+		<section class="pop-container">
+			<div class="pop-ct">
+				<p class="pop-paragraph-16"><strong>김대표(비플카페 역삼점)</strong><br><strong id="apr_amt">결제금액 : 100,000원</strong></p>
+				<p class="pop-paragraph">결제 정보를 다시 한번 확인 해 주세요.<br><strong>확인</strong>을 누르시면 결제가 완료 됩니다.</p>
+			</div>
+			<div class="pbs-multi-2">
+				<a class="btn-pop btn-pop-dark" id="cncl_popup">취소</a>
+				<a class="btn-pop btn-pop-gray" id="apr_popup">확인</a>
+			</div>
+		</section>
+	</div>
+</div>
+
+<!-- 가맹점 결제확인 대기 팝업 -->
+<div class="pop-wrap" id="loading_pop" style="display: none; z-index: 19;">
+	<div class="pop">
+		<section class="pop-container">
+			<div class="pop-ct type_loading">
+			<p><img src="../assets/resource/images/loading.gif" alt=""></p>
+			<p>loading..</p>
+			<p>가맹점에서 결제금액을 확인 중입니다.<br>잠시만 기다려 주세요.</p>					
+			<p>(화면에서 결제확인 버튼을 클릭하셔야 결제가 완료됩니다.)</p>					
+			</div>
+		</section>
+	</div>
+</div>
+</form>
+</body>
+</html>

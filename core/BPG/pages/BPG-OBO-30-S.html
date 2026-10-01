@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플오더 메뉴관리 옵션</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-30-S">
+<form name = "frm" id = "frm" method="post">
+		<input id="BP_AFLT_SEQ" name = "BP_AFLT_SEQ" type="hidden" value="">
+		<input id="BP_AFLT_OPT_CATG_SEQ" name = "BP_AFLT_OPT_CATG_SEQ" type="hidden" value="0">
+		<input id="OPT_CATG_NM" name = "OPT_CATG_NM" type="hidden" value="">
+	</form>
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>메뉴 관리</h1>
+			<a data-element-id="BPG-OBO-30-S-e12" href="#" class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 비플오더 -->
+				<div class="flexWrap">
+					<div class="bpleOder add_flex_column auto_bot_pd"><!-- 등록 옵션 없을 시 auto_bot_pd, 그 외 addBtn-pb56 -->
+						<div class="tab_menu four">
+							<a data-element-id="BPG-OBO-30-S-e08" data-nav-target="BPG-OBO-20-S" href="#" onclick="Common.simpleSubmit('bo_my_catg.act', {BP_AFLT_SEQ:''});return false;"><span>카테고리</span></a>
+							<a data-element-id="BPG-OBO-30-S-e09" data-nav-target="BPG-OBO-50-S" href="#" onclick="Common.simpleSubmit('bo_my_pdt.act', {BP_AFLT_SEQ:''});return false;"><span>메뉴</span></a>
+							<a data-element-id="BPG-OBO-30-S-e13" href="#" onclick="return false;" class="on"><span>옵션</span></a><!-- 선택 시 on 클래스 추가 -->
+							<a data-element-id="BPG-OBO-30-S-e10" data-nav-target="BPG-OBO-40-S" href="#" onclick="Common.simpleSubmit('bo_my_orgin.act', {BP_AFLT_SEQ:''});return false;"><span>원산지</span></a>
+						</div>
+						<!-- 메뉴관리 컨텐츠 -->
+						<div class="menu_admin">
+							<div class="menu_option_add" id="opt_div"><!-- sample:begin --><div class='menu_option_list'><h3 class='tit'>홍길동</h3><p>4,500</p><dl class='chain_menu'><dt>연결메뉴</dt><dd>홍길동</dd></dl><p class='modify_btn'><a onclick='uf_optSet(`1`,this);'><span class='blind'>메뉴수정</span></a></p></div><!-- sample:end --></div>
+							<!-- 카테고리 / 메뉴 / 원산지 추가 버튼 -->
+							<p class="btn_add" id="btn_add" style="display:none">
+								<a data-element-id="BPG-OBO-30-S-e14" href="#none">+ 옵션 추가</a>
+							</p>
+						</div>
+					</div>
+					<!-- 메뉴관리 항목별 없음 안내 -->
+					<div class="empty" style="display:none;">
+						<p>등록된 옵션이 없습니다.</p>
+					</div>
+				</div>
+				<!-- //비플오더 -->
+			</div>
+			<!-- // content -->
+
+			<!-- 하단 고정버튼 영역 -->
+			<div class="btn_botFix_w bg_white">
+				<div class="oder_bot_info" style="display:none;"><!-- 등록 카테고리 없을 시 노출 -->
+					<dl>
+						<dt>‘옵션’은 무엇인가요?</dt>
+						<dd>
+							옵션은 메뉴의 세부 항목 영역입니다. Ice, Hot 같이 고객이 고를 수 있는 맛, 타입 등을 추가해 주세요. ‘연결 메뉴 추가’를 통해 쉽게 메뉴와 옵션을 연결할 수 있어요.
+						</dd>
+					</dl>
+				</div>
+				<!-- 버튼 -->
+				<div class="inner">
+					<a data-element-id="BPG-OBO-30-S-e11" data-nav-target="BPG-OBO-10-S" onclick="Common.simpleSubmit('bo_my_main.act', {BP_AFLT_SEQ:''});" class="btn_default btn-style-h46 round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+						확인
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 영역 -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	<!-- 레이어팝업 -->
+	<div class="layer_overlay" id="optlayer" style="display:none;">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 설정팝업 -->
+				<div class="edit_pop">
+					<p class="btn_close">
+						<a id="btn_close"><span class="blind">닫기</span></a>
+					</p>
+					<!-- 옵션 수정 -->
+					<ul>
+						<li><a id="btn_save">옵션 수정</a></li>
+						<li><a id="btn_del">옵션 삭제</a></li>
+					</ul>
+					<!-- //옵션 수정 -->
+				</div>
+				<!-- //설정팝업 -->
+			</div>
+		</div>
+	</div>
+	<!-- //레이어팝업 -->
+</body>
+</html>

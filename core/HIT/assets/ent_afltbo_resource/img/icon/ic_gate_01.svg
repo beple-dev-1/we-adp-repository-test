@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+    <defs>
+        <linearGradient id="335cfv7d4a" x1=".02" y1=".456" x2="1" y2=".455" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#67aafc"/>
+            <stop offset="1" stop-color="#3e84f7"/>
+        </linearGradient>
+        <linearGradient id="kb4xmy3ohb" x1=".316" y1=".163" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#a2caff"/>
+            <stop offset="1" stop-color="#74b0ff"/>
+        </linearGradient>
+        <linearGradient id="ipsiwgrd8c" x1=".316" y1=".163" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#f5f7f8"/>
+            <stop offset="1" stop-color="#d9dde2"/>
+        </linearGradient>
+        <linearGradient id="jvfch77zid" x1=".173" x2=".946" y2="2.126" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#8fbdfa"/>
+            <stop offset="1" stop-color="#74b0ff"/>
+        </linearGradient>
+    </defs>
+    <g data-name="그룹 25504">
+        <g data-name="그룹 25117" transform="translate(-191 -313)">
+            <rect data-name="사각형 30820" width="60" height="60" rx="6" transform="translate(209 339)" style="fill:url(#335cfv7d4a)"/>
+            <path data-name="사각형 30865" d="M6 0h36a6 6 0 0 1 6 6H0a6 6 0 0 1 6-6z" transform="translate(215 333)" style="fill:url(#335cfv7d4a)"/>
+            <g data-name="그룹 25115">
+                <path data-name="합치기 16" d="M19846.5 21.184A13 13 0 0 0 19833 24a5.007 5.007 0 0 0-9 0 5 5 0 0 0-9 0 5 5 0 0 0-9 0 5 5 0 0 0-9 0 5 5 0 0 1-5-5V5a5 5 0 0 1 5-5h4.166a.836.836 0 0 0 .668 0h8.332a.845.845 0 0 1 .336.07.826.826 0 0 1 .332-.07h8.332a.845.845 0 0 1 .336.07.819.819 0 0 1 .332-.07h8.332a.845.845 0 0 1 .336.07.819.819 0 0 1 .332-.07h8.336a.819.819 0 0 1 .332.07.845.845 0 0 1 .336-.07h8.332a.819.819 0 0 1 .332.07.845.845 0 0 1 .336-.07h4.162a5 5 0 0 1 5 5v14a5 5 0 0 1-9.5 2.183z" transform="translate(-19585 341)" style="fill:#3e84f7"/>
+                <g data-name="그룹 25114">
+                    <path data-name="사각형 30822" d="M5 0h4.167A.833.833 0 0 1 10 .833V19a5 5 0 0 1-5 5 5 5 0 0 1-5-5V5a5 5 0 0 1 5-5z" transform="translate(207 339)" style="fill:url(#kb4xmy3ohb)"/>
+                    <path data-name="사각형 30824" d="M.833 0h8.334A.833.833 0 0 1 10 .833V19a5 5 0 0 1-5 5 5 5 0 0 1-5-5V.833A.833.833 0 0 1 .833 0z" transform="translate(216 339)" style="fill:url(#ipsiwgrd8c)"/>
+                    <path data-name="사각형 30823" d="M.833 0h8.334A.833.833 0 0 1 10 .833V19a5 5 0 0 1-5 5 5 5 0 0 1-5-5V.833A.833.833 0 0 1 .833 0z" transform="translate(225 339)" style="fill:url(#kb4xmy3ohb)"/>
+                    <path data-name="사각형 30826" d="M.833 0h8.334A.833.833 0 0 1 10 .833V19a5 5 0 0 1-5 5 5 5 0 0 1-5-5V.833A.833.833 0 0 1 .833 0z" transform="translate(234 339)" style="fill:url(#ipsiwgrd8c)"/>
+                    <path data-name="사각형 30825" d="M.833 0h8.334A.833.833 0 0 1 10 .833V19a5 5 0 0 1-5 5 5 5 0 0 1-5-5V.833A.833.833 0 0 1 .833 0z" transform="translate(243 339)" style="fill:url(#kb4xmy3ohb)"/>
+                    <path data-name="사각형 30827" d="M.833 0h8.334A.833.833 0 0 1 10 .833V19a5 5 0 0 1-5 5 5 5 0 0 1-5-5V.833A.833.833 0 0 1 .833 0z" transform="translate(252 339)" style="fill:url(#ipsiwgrd8c)"/>
+                    <path data-name="사각형 30828" d="M.833 0H5a5 5 0 0 1 5 5v14a5 5 0 0 1-5 5 5 5 0 0 1-5-5V.833A.833.833 0 0 1 .833 0z" transform="translate(261 339)" style="fill:url(#kb4xmy3ohb)"/>
+                </g>
+            </g>
+            <path data-name="사각형 30829" d="M9 0a9 9 0 0 1 9 9v19H0V9a9 9 0 0 1 9-9z" transform="translate(230 371)" style="fill:url(#jvfch77zid)"/>
+            <circle data-name="타원 490" cx="2" cy="2" r="2" transform="translate(242 383)" style="fill:#fff"/>
+        </g>
+    </g>
+</svg>

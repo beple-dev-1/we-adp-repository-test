@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.deco-h2 {
+	font-size: 35px;
+	font-weight: 600;
+	color: hotpink;
+	margin-bottom: 20px;
+}
+.deco-h3 {
+	font-size: 20px;
+	font-weight: 600; 
+	color: hotpink;
+	margin-bottom: 10px;
+}
+

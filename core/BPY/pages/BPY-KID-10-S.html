@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>보호자가 앱 사용자인 경우 호출되는 웹뷰</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-KID-10-S">
+<input type="hidden" name="SVC_TYPE" 	id="SVC_TYPE" 	value="">
+<input type="hidden" name="SEQ" 		id="SEQ" 		value="">
+<input type="hidden" name="TRX_DT" 		id="TRX_DT" 	value="">
+<input type="hidden" name="REQ_MOB_NO" 	id="REQ_MOB_NO" value="">
+<input type="hidden" name="TIME_OVER" 	id="TIME_OVER" value="">
+<input type="hidden" name="ACTIVE_DTTM" id="ACTIVE_DTTM" value="">
+
+<div class="wrap" id="agr_app">
+	<div class="header floating-back-header floating-sticky">
+		<h1>보호자 동의</h1>
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 회원가입 요청  -->
+			<div class="consent_wrap">
+				<div class="join addBtn-pb68">
+					<div class="msg">
+											
+						<p class="user_txt"><strong>비플머니</strong>님이 회원가입을 원해요!</p>
+						<p>
+							만 14세 미만 아동의 비플페이 서비스 가입 및 이용을
+							위해 보호자 동의가 필요해요.
+						</p>
+						
+					</div>
+					<div class="timeInfo">
+						<p>보호자 동의 유효시간: <span>5</span>분</p>
+					</div>
+				</div>
+			</div>
+			<!-- //회원가입 요청 -->
+		</div>
+		<!-- content -->
+		<!-- 하단 고정버튼 -->
+		<div class="btn_botFix_w">
+			<div class="inner half type2 bg_white">
+				<a data-element-id="BPY-KID-10-S-e03" id="reject_btn" class="typeB btn-style-h48 round_r8 on"><span>거절</span></a><!-- 활성/비활성화 시 'on' 클래스 추가/제거 -->
+				<a data-element-id="BPY-KID-10-S-e04" id="agree_btn" class="typeA btn-style-h48 round_r8 on"><span>동의</span></a><!-- 활성/비활성화 시 'on' 클래스 추가/제거 -->
+			</div>
+		</div>
+		<!-- //하단 고정버튼 -->
+	</div>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<div class="wrap" id="agr_rslt_F" style="display: none;">
+	<div class="header floating-back-header floating-sticky">
+		<h1>보호자 동의</h1>
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 보호자 동의 완료/ 시간초과 / 거절  -->
+			<div class="consent_wrap"><!-- 상단 헤더 없을 시 'noHeader' 클래스 추가 -->
+				<div class="result addBtn-pb48">
+					<p class="icon"><img src="../assets/resource/images/zero/consent_fail.png" alt=""></p>
+					<div class="msgBox">
+						<p class="msg"><strong>보호자 동의 가능 시간이 초과됐어요.</strong></p>
+						<p>아동이 다시 보호자에게 동의를 요청해야 합니다.</p>
+					</div>
+				</div>
+			</div>
+			<!-- //보호자 동의 완료/ 시간초과 / 거절 -->
+		</div>
+		<!-- content -->
+		<!-- 하단 고정버튼 -->
+		<div class="btn_botFix_w">
+			<div class="inner pd0">
+				<a onClick="uf_main();" class="btn-default btn-style-h48 on">
+					확인
+				</a>
+			</div>
+		</div>
+		<!-- //하단 고정버튼 -->
+	</div>
+	<!-- // container -->
+</div>
+
+<div class="wrap" id="agr_rslt_N" style="display: none;">
+	<div class="header floating-back-header floating-sticky">
+		<h1>보호자 동의</h1>
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 보호자 동의 완료/ 시간초과 / 거절  -->
+			<div class="consent_wrap"><!-- 상단 헤더 없을 시 'noHeader' 클래스 추가 -->
+				<div class="result addBtn-pb48">
+					<p class="icon"><img src="../assets/resource/images/zero/consent_fail.png" alt=""></p>
+					<div class="msgBox">
+						<p class="msg"><strong>보호자 동의를 거절했어요.</strong></p>
+						<p>
+							만 14세 미만 아동은 보호자 동의 없이<br>
+								
+								비플페이 서비스를 이용할 수 없습니다.  
+							  
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- //보호자 동의 완료/ 시간초과 / 거절 -->
+		</div>
+		<!-- content -->
+		<!-- 하단 고정버튼 -->
+		<div class="btn_botFix_w">
+			<div class="inner pd0">
+				<a onClick="uf_main();" class="btn-default btn-style-h48 on">
+					확인
+				</a>
+			</div>
+		</div>
+		<!-- //하단 고정버튼 -->
+	</div>
+	<!-- // container -->
+</div>
+
+<div class="wrap" id="agr_rslt_Y" style="display: none;">
+	<div class="header floating-back-header floating-sticky">
+		<h1>보호자 동의</h1>
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 보호자 동의 완료/ 시간초과 / 거절  -->
+			<div class="consent_wrap"><!-- 상단 헤더 없을 시 'noHeader' 클래스 추가 -->
+				<div class="result addBtn-pb48">
+					<p class="icon"><img src="../assets/resource/images/zero/consent_complete.png" alt=""></p>
+					<div class="msgBox">
+						<p class="msg"><strong>보호자 동의를 완료했어요.</strong></p>
+						
+											
+						<p>비플페이는 아동의 건전한 소비 생활을 지향합니다.</p>
+						
+					</div>
+				</div>
+			</div>
+			<!-- //보호자 동의 완료/ 시간초과 / 거절 -->
+		</div>
+		<!-- content -->
+		<!-- 하단 고정버튼 -->
+		<div class="btn_botFix_w">
+			<div class="inner pd0">
+				<a onClick="uf_main();" class="btn-default btn-style-h48 on">
+					확인
+				</a>
+			</div>
+		</div>
+		<!-- //하단 고정버튼 -->
+	</div>
+</div>
+</body>
+</html>

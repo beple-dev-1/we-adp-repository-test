@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 인증</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-MYAF-40-10-S">
+<input type="hidden" id="FLAG" value=""/>
+<input type="hidden" id="APP_CD" value=""/>
+<input type="hidden" id="MOB_NO" value=""/>
+<input type="hidden" id="CTGR_CD" value=""/>
+<input type="hidden" id="AFLT_ID" value=""/>
+<input type="hidden" id="REPR_NO1" value=""/>
+<input type="hidden" id="REPR_NO2" value=""/>
+<input type="hidden" id="AFLT_NM" value=""/>
+<input type="hidden" id="ADDRS" value=""/>
+<input type="hidden" id="ADDRS2" value=""/>
+<input type="hidden" id="LAT" value=""/>
+<input type="hidden" id="LNG" value=""/>
+<input type="hidden" id="ZIP_CD" value=""/>
+<input type="hidden" id="BP_AFLT_ID" value=""/>
+<input type="hidden" id="BP_AFLT_SEQ" value=""/>
+
+<div class="wrap bg_br">
+	<div class="header floating-back-header floating-sticky">
+		<h1>가맹점 인증</h1>
+		<a data-element-id="BPY-MYAF-40-10-S-e03" href="#" class="btn-history-back" viewStep="1" id="backBtn">뒤로가기</a>
+		<!-- <div class="right">
+			<a href="#none" class="btn_outpage">페이지나가기</a>
+		</div> -->
+	</div><!-- // header -->
+
+	<div class="container">
+		<div class="content" id="step1">
+			<!-- 컨텐츠 영역 -->
+			<div class="store_profile addBtn-pb58">
+
+				<!-- 타이틀 영역 -->
+				<div class="tit_bx">
+					<h2 class="addStep"><!-- 등록 진행 시 addStep 클래스 추가 -->
+						<strong>가맹점 정보를 확인해 주세요.</strong>
+						<span class="regist_step">1/3</span><!-- 불필요 시 상단 addStep 클래스와 함께 삭제해주시면 됩니다. -->
+					</h2>
+				</div>
+				<!-- //타이틀 영역 -->
+
+				<!-- 기본정보, 결제가능 상품권 -->
+				<div class="store_info_box">
+					<!-- 기본정보 -->
+					<div class="inner">				
+						<h3 class="info_tit">
+							<strong>기본정보</strong>
+						</h3>
+						<dl class="info_con">
+							<dt>
+								가맹점명
+							</dt>
+							<dd>
+								비플카페 역삼점
+							</dd>
+						</dl>
+						
+						<dl class="info_con">
+							<dt>
+								주소
+							</dt>
+							<dd>
+								서울 강남구 테헤란로 1길 10 101동 1001호
+							</dd>
+						</dl>
+						
+						<dl class="info_con">
+							<dt>
+								대표자명
+							</dt>
+							<dd>
+								김대표
+							</dd>
+						</dl>					
+						<!-- // 기본정보 -->
+						
+						<!-- 결제 가능한 상품권 -->		
+						<h3 class="info_tit tooltip_w vouchers">
+							<strong>결제 가능한 상품권</strong>
+							<div class="tooltip" id="tooltip">
+								<a href="#none">
+									<img src="../assets/resource/images/zero/ico_vouchers_tooltip.png" alt="">
+								</a>
+								<p class="tooltip_message" id="t_msg">사장님 가게에서 결제 가능한 상품권이에요.</p><!-- 활성화(클릭) 시 "view" 클래스 추가 -->
+							</div>
+						</h3>
+						
+						
+						 <!-- 사용가능 상품권 리스트 -->
+							<ul class="vouchers_list">
+								
+									<li><div>비플머니</div></li>
+									
+							</ul>
+						
+						<!-- 사용가능 상품권 리스트 -->
+						<!-- // 결제 가능한 상품권 -->
+						<!-- 고객센터 안내문구 -->
+						<div class="cs_info_txt">
+							<p>
+								가맹점 기본정보 수정이 필요하신 경우,<br>
+								<u>비플가맹점관리</u>에서 변경해주세요
+							</p>
+						</div>
+						<!-- //고객센터 안내문구 -->
+					</div>
+				</div>
+				<!-- // 기본정보, 결제가능 상품권 -->				
+			</div>
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_grey">
+					<a data-element-id="BPY-MYAF-40-10-S-e04" href="#" class="btn_default btn-style-h48 round_r8 on" id="btn_ok1"><span>다음</span></a><!-- 활성/비활성화 시 on 클래스 추가/제거 -->
+				</div>
+			</div>	
+		</div>
+		
+		<div class="content" id="step3" style="display:none !important;">
+			<!-- 컨텐츠 영역 -->
+			<div class="store_profile addBtn-pb58">
+				<!-- 타이틀 영역 -->
+				<div class="tit_bx">
+					<h2 class="addStep"><!-- 등록 진행 시 addStep 클래스 추가 -->
+						<strong>대표번호를 입력해 주세요.</strong>
+						<span class="regist_step">3/3</span><!-- 불필요 시 상단 addStep 클래스와 함께 삭제해주시면 됩니다. -->
+					</h2>
+					<p>고객이 문의할 수 있는 전화번호를 입력해 주세요.</p>
+				</div>
+				<!-- //타이틀 영역 -->
+				
+				<div class="con_area" id="telBox">
+				
+					<!-- 번호추가 -->
+					<div class="btn_add">
+						<a href="#none" id="addTel">
+							<span>+ 대표번호 추가</span>
+						</a>
+					</div>
+					<!-- //번호추가 -->
+				</div>
+				<!-- 입력박스 -->
+			</div>
+			<!-- //컨텐츠 영역 -->
+			
+			<!-- 스킵텍스트 버튼 -->
+			<!-- 
+			<div class="skip_txt_btn">
+				<a href="#none" id="nextBtn">
+					<span>다음에 할게요</span>
+				</a>
+			</div> -->
+			<!-- 스킵텍스트 버튼 -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="fixed-bottom-section">
+				<!-- 2021-08-20 -->
+				<a href="#" class="btn-submit btn-skyBlue" id="btn_ok3"><span>확인</span></a><!-- 활성화클래스 on -->
+				<!-- 2021-08-20 -->
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+		
+		
+		<div class="content" id="step2" style="display:none !important;">
+
+			<!-- 컨텐츠 영역 -->
+			<div class="store_profile addBtn-pb58">
+
+				<!-- 타이틀 영역 -->
+				<div class="tit_bx"><!-- 등록 진행 시 addStep 클래스 추가 -->
+					<h2 class="addStep">
+						<strong>업종을 선택해 주세요.</strong>
+						<span class="regist_step">2/3</span><!-- 불필요 시 상단 addStep 클래스와 함께 삭제해주시면 됩니다. -->
+					</h2>
+					<p>가맹점 검색 시 필터값으로 사용됩니다.</p>
+				</div>
+				<!-- //타이틀 영역 -->
+
+				<!-- 업종선택 -->
+				<!-- 2021-11-08 -->
+				<div class="store_filter_list">
+					<ul>
+						
+						<li class="ctgr_li" id=""> <!-- 활성화 시 class="on" 추가 부탁드립니다. -->
+							<div>
+								<a href="#none">
+									<span class="img"><img alt="" src="../assets/_sample/card.svg"></span>
+									<strong></strong>
+								</a>
+							</div>
+						</li>
+							
+					</ul>
+				</div>
+				<!-- // 2021-11-08 -->
+
+				<!-- // 업종선택 -->
+
+				
+			</div>
+			<!-- //컨텐츠 영역 -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_grey">
+					<a href="#" class="btn_default btn-style-h48 round_r8 on" id="btn_ok2"><span>다음</span></a>
+				</div>
+			</div>			
+			<!-- //하단 고정버튼 -->
+		</div>
+		 
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<!-- modal overlay -->
+<div class="modaloverlay white_dim" id="modalPop" style="display:none;">
+	<div class="lytb">
+		<div class="lytb_row">
+			<div class="lytb_td style_padding_lr40">
+				<!-- layerpopup -->
+				<div class="noti_pop basic">
+					<div class="layer_po">
+						<div class="cont">
+							<p class="fch_pop_err"> <!-- 2021-12-21 -->
+								유효하지 않은 번호입니다. <br>
+								번호를 다시 확인해 주세요.
+							</p>
+						</div>
+					</div>
+
+					<div class="confirm" id="okModal">
+						<a class="btn_pop_txt_blue"><span>확인</span></a>
+					</div>
+				</div>
+				<!-- //layerpopup -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //modal overlay -->
+</body>
+</html>

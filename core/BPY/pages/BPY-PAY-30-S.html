@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>개인제로페이 MPM 결제</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-PAY-30-S">
+<input type="hidden" id="pay_once_min_amt"      name="pay_once_min_amt"     value="" />
+<input type="hidden" id="pay_once_max_amt"      name="pay_once_max_amt"     value="" />
+<input type="hidden" id="pay_day_max_amt"       name="pay_day_max_amt"      value="" />
+<input type="hidden" id="pay_mm_max_amt"        name="pay_mm_max_amt"       value="" />
+<input type="hidden" id="day_amt"               name="day_amt"              value="" />
+<input type="hidden" id="mm_amt"                name="mm_amt"               value="" />
+<input type="hidden" id="mny_yn"                name="mny_yn"               value="" />
+<input type="hidden" id="qt_tp"                 name="qr_tp"                value=""/> <!--1:가맹점 제시 고정형QR(MPM), 2:변동형QR, 3:고객제시 변동형QR(CPM)-->
+<input type="hidden" id="qr_code"               name="qr_code"              value=""/>
+<input type="hidden" id="bank_cd"               name="bank_cd"              value=""/>
+<input type="hidden" id="bank_nm"               name="bank_nm"              value=""/>
+<input type="hidden" id="acct_no"               name="acct_no"              value=""/>
+<input type="hidden" id="acct_no_enc"           name="acct_no_enc"          value=""/>
+<input type="hidden" id="acct_seq"              name="acct_seq"             value=""/>
+<input type="hidden" id="pay_type" 		        name="pay_type"             value=""/>
+<input type="hidden" id="aflt_id" 		        name="aflt_id"              value=""/>
+<input type="hidden" id="app_cd" 		        name="app_cd"               value=""/>
+<input type="hidden" id="memb_cd"		        name="memb_cd"              value=""/>
+<input type="hidden" id="qck_yn" 		        name="qck_yn"               value=""/>
+<input type="hidden" id="mny_chrg_acct_no" 		name="mny_chrg_acct_no"     value=""/>
+<input type="hidden" id="mny_chrg_bank_cd" 		name="mny_chrg_bank_cd"     value=""/>
+<input type="hidden" id="mny_chrg_amt" 		    name="mny_chrg_amt"         value="0"/>
+<input type="hidden" id="complex_yn" 		    name="complex_yn"           value="N"/>
+<input type="hidden" id="mny_chrg_once_min_amt" name ="mny_chrg_once_min_amt" value=""/>
+<input type="hidden" id="mny_chrg_once_max_amt" name ="mny_chrg_once_max_amt" value=""/>
+<input type="hidden" id="mny_chrg_day_max_amt"  name ="mny_chrg_day_max_amt"  value=""/>
+<input type="hidden" id="mny_chrg_mon_max_amt"  name ="mny_chrg_mon_max_amt"  value=""/>
+<input type="hidden" id="mny_poss_max_amt"      name ="mny_poss_max_amt"      value=""/>
+<input type="hidden" id="mny_day_tot_chrg_amt"  name ="mny_day_tot_chrg_amt"  value=""/>
+<input type="hidden" id="mny_mon_tot_chrg_amt"  name ="mny_mon_tot_chrg_amt"  value=""/>
+<input type="hidden" id="mny_cur_price"         name ="mny_cur_price"         value=""/>
+<input type="hidden" id="itgr_mny_cur_price"    name ="itgr_mny_cur_price"    value=""/>
+<input type="hidden" id="chnl_cd"               name ="chnl_cd"               value=""/>
+<input type="hidden" id="amt"                   name ="amt"                   value=""/>
+
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>결제하기</h1>
+        <a data-element-id="BPY-PAY-30-S-e10" id="move_back" href="#" class="btn-history-back">뒤로가기</a>
+    </div><!-- // header -->
+
+    <div class="container">
+        <div class="content">
+            <!-- 통합결제 -->
+            <div class="integrated_payment addBtn-pb68">
+                <!-- 매장명 및 결제금액 -->
+                <div class="pay_area">
+                    <div class="tit no_clamp">
+                        
+                            <h2><a id="show_aflt_info" href="#none"></a></h2><!-- 비대면결제의경우 a태그 추가 -->
+                        
+                    </div>
+                    <div class="payment_ipt" id="payment_ipt">
+                        
+                            <a class="btn_del btn-clear-text" style="display:none;"></a>
+                        
+                        <input data-element-id="BPY-PAY-30-S-e16" type="tel" maxlength="10" placeholder="결제금액 입력(원)" id="tr_amt" jex-input="commaFormat" data-input="commaFormat" value="" >
+                        <strong id="amt_won" style="display: none;" class="won">원</strong><!-- 2022-11-15 -->
+                        <a data-element-id="BPY-PAY-30-S-e11" href="#none" class="remove" id="remove">내용삭제</a><!-- 2022-12-06-->
+                    </div>
+                    
+                    <p id="charge_info" class="charge_info" style="display:none;">부족한 금액은 비플머니로 자동 충전됩니다.</p><!-- 충전금액 부족 시 노출, 결제 불가 메세지 노출 시 "fcRed" 추가 -->
+                    
+<!--                    <div class="title-page-13 error" id="err_txt" style="margin-top: 5px; color:red;" aria-hidden="true"></div>-->
+                    <p id="err_txt" class="charge_info error_txt" style="display:none;"><!-- sample:begin -->안내 문구<!-- sample:end --></p><!-- 충전금액 부족 시 노출, 결제 불가 메세지 노출 시 "fcRed" 추가 -->
+                </div>
+                <!-- //매장명 및 결제금액 -->
+                <!-- 충전/결제 정보 -->
+                <div id="pay_info" class="pay_info " style="display: block;"><!-- 2022-11-08 금액 입력 후 결제하기 버튼 눌렀을 시 'amt_ipt' 클래스 추가 금액수정(입력 값 변경 or 인풋박스 커서 위치 시) 'amt_ipt' 클래스 제거 -->
+                    <div class="info_bx">
+                        <h3 class="tit">결제 수단</h3>
+                        
+                            <!-- 비플머니 충전 -->
+                            <div class="list charge">
+                                <dl>
+                                    <dt>보유 비플머니</dt>
+                                    <dd>
+                                        <span id="own_bpmny">4,500</span>원<!-- 보유금액 부족 시 "fcRed" 클래스 추가 -->
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt class="charge_tooltip view"><!-- 툴팁 노출 시 "view" 추가 -->
+                                        충전 비플머니
+                                        <a data-element-id="BPY-PAY-30-S-e12" id="mny_noti" href="#none" class="btn_chargeInfo"><span class="blind">충전안내</span></a>
+                                        <div id="mny_tooltip" class="tooltip" style="display: none;">
+                                            <p>부족한 금액은 자동으로 충전됩니다.</p>
+                                        </div>
+                                    </dt>
+                                    <dd id="chrg_bpmny">0원</dd>
+                                </dl>
+                                <dl>
+                                    <dt>자동 충전 계좌</dt>
+                                    <dd id="selected_chrg_acct">
+                                        
+                                        <a data-element-id="BPY-PAY-30-S-e13" id="change_chrg_acct" bank_cd="" acct_no="" acct_no_mask="" href="#none" class="btn_acc">국민은행 </a>
+                                        
+                                    </dd>
+                                </dl>
+                            </div>
+                        <!-- //비플머니 충전 -->
+                        
+                        <!-- 직불결제 -->
+                    </div>
+                    <!-- //충전/결제 정보 -->
+                    <!-- 전달 메세지 -->
+                    
+                    <div class="info_bx message_bx">
+                        <h3 class="tit">전달 메시지</h3>
+                        <div class="message" id="message_bx">
+<!--                            <textarea name="" id="memo" maxlength="200" placeholder=" 사장님에게 전달할 메시지를 입력하세요." readonly></textarea>-->
+<!--                            <p class="count"><span id="memo_count">0/</span>200</p>-->
+                        </div>
+                        <p class="privacy_chk">
+                            <label>
+                                <input data-element-id="BPY-PAY-30-S-e17" type="checkbox" id="chk_mask">
+                                <span>개인정보 비공개 전송</span>
+                            </label>
+                        </p>
+                    </div>
+                    
+                    <!-- //전달 메세지 -->
+                </div>
+            </div>
+            <!-- //통합결제 -->
+        </div><!-- // content -->
+        <!-- 하단 고정버튼 -->
+        <div class="btn_botFix_w">
+            <div class="inner bg_white">
+                <a data-element-id="BPY-PAY-30-S-e14" id="btn_next" href="#none" class="btn_default round_r8 btn-style-h48"><!-- 활성화 시 on 클래스 추가 -->
+                    다음
+                </a>
+                <a data-element-id="BPY-PAY-30-S-e15" style="display: none;" id="btn_approve" href="#none" class="btn_default round_r8 btn-style-h48"><!-- 활성화 시 on 클래스 추가 -->
+                    결제하기
+                </a>
+            </div>
+        </div>
+        <!-- //하단 고정버튼 -->
+
+        <!-- 레이어 -->
+        <div class="layer_bPop" id="acct_pop" style="display:none;">
+            <div class="pop_box radius_16">
+                <div class="pop_content">
+                    <div class="pop_b_cn type1">
+                        <div class="p_lytit">
+                            계좌선택
+                            
+                            <div class="right"><a onclick="Common.go_loc('main_account.act?REF_URL=zero_approve_v2&QR_CD=&MNY_YN=&ACCT_NO=&CHNL_CD=01');" class="link">계좌관리</a></div>
+                            
+                        </div>
+                        <div class="p_acc_sltbx">
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a name="acct_item" bank_cd="" bank_nm="국민은행" acct_no="" acct_no_mask="" href="#none"><span class="ic_b ic_b"></span>국민은행 ()계좌</a></li>
+                                        
+                                    
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //레이어 -->
+
+    </div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- 가맹점 결제확인 대기 팝업 -->
+<div class="pop-wrap" id="loading_pop" style="display: none; z-index: 19;">
+    <div class="pop">
+        <section class="pop-container">
+            <div class="pop-ct type_loading">
+                <p><img src="../assets/resource/images/loading.gif" alt=""></p>
+                <p>loading..</p>
+                <p>가맹점에서 결제금액을 확인 중입니다.<br>잠시만 기다려 주세요.</p>
+                <p>(화면에서 결제확인 버튼을 클릭하셔야 결제가 완료됩니다.)</p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- 레이어팝업 -->
+<div id="aflt_info_pop" class="layer_overlay" style="display: none;">
+    <div class="layer_bPop">
+        <div class="popup_con pd0">
+            <!-- 가맹점 정보보기 -->
+            <div class="st_info_view">
+                <h2></h2>
+                <!-- 닫기버튼 -->
+                <p id="aflt_info_close" class="btn_close">
+                    <a href="#none"><span class="blind">닫기</span></a>
+                </p>
+                <!-- //닫기버튼 -->
+                <div class="list">
+                    <dl>
+                        <dt>주소</dt>
+                        <dd>
+                            서울 강남구 테헤란로 1길 10 101동 1001호
+                            <p class="map"><a id="aflt_map" href="#none">지도보기</a></p>
+                        </dd>
+                    </dl>
+                    
+                    <dl>
+                        <dt>대표전화</dt>
+                        <dd>
+                            
+                            <a href="tel:"></a>
+                            
+                            
+                            
+                            <span> , </span>
+                            
+                            <a href="tel:"></a>
+                            
+                        </dd>
+                    </dl>
+                    
+                    <dl>
+                        <dt>대표자명</dt>
+                        <dd></dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- //가맹점 정보보기 -->
+        </div>
+    </div>
+</div>
+<!-- //레이어팝업 -->
+
+<!-- 결제확인 레이어 -->
+<div class="layer_bPop" id="apr_popup_area" style="display:none;">
+    <div class="pop_box">
+        <div class="pop_content">
+            <div class="pop_b_cn">
+                <!-- 상단 영역 -->
+                <div class="pb_toptxt" >
+                    <p class="tit"><em class="nm"></em>에서</p>
+                    <p class="txt"><em class="won">원</em>을 결제하시겠습니까?</p>
+                </div>
+                <!-- //상단 영역 -->
+                <!-- 컨텐츠 영역 -->
+                <div class="pb_cnv">
+                    <table id="table_label">
+                        <colgroup>
+                            <col style="width:90px;"><col>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th>가맹점 주소</th>
+                            <td><div class="ellipsis">서울 강남구 테헤란로 1길 10 101동 1001호</div></td>
+                        </tr>
+                        <tr>
+                            <th>대표명</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>결제수단</th>
+                            <td id="apr_way"><!-- sample:begin -->표본<!-- sample:end --></td>
+                        </tr>
+                        
+                        <tr>
+                            <th>전달 메세지</th>
+                            <td id="apr_memo"><!-- sample:begin -->표본<!-- sample:end --></td>
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //컨텐츠 영역 -->
+            </div>
+        </div>
+        <div class="pop_button btns">
+            <a class="typeB" id="cncl_popup" role="button">아니오</a>
+            <a class="typeA" id="apr_popup" role="button">예</a>
+        </div>
+    </div>
+</div>
+<!-- //결제확인 레이어  -->
+</body>
+</html>

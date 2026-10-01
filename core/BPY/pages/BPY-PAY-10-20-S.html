@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>식권제로페이 함께결제 (list)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-PAY-10-20-S">
+<div id="hiddenBox"><!-- sample:begin -->표본<!-- sample:end --></div>
+<form name="frm" id="frm" method="post">
+	<input type="hidden" id="cls_dsp_nm" value="" />
+	<input type="hidden" id="lmt_nm" value="" />
+	<input type="hidden" id="max_pp" value="" />
+
+	<input type="hidden" id="CARD_NO" name="CARD_NO" value="" />
+	<input type="hidden" id="REC_INDEX" name="REC_INDEX" value="" />
+	<input type="hidden" id="TRX_TP"  name="TRX_TP"  value="" />
+	<input type="hidden" id="CHNL_CD"  name="CHNL_CD"  value="" />
+	<input type="hidden" id="QR_CODE"  name="QR_CODE"  value="" />
+
+	<input type="hidden" id="TGT_ORDER_DT"  name="TGT_ORDER_DT"  value="" />
+	<input type="hidden" id="TGT_ORDER_ID"  name="TGT_ORDER_ID"  value="" />
+	<input type="hidden" id="TGT_YN"  name="TGT_YN"  value="" />
+	<input type="hidden" id="AMT"  name="AMT"  value="" />
+	
+		<input type="hidden" id="SMT_ODR_PARAM"  name="SMT_ODR_PARAM"  value="" />
+	
+	
+	<input type="hidden" id="YGYO_RETURN_VALUE_MEAL_PARAM"  name="YGYO_RETURN_VALUE_MEAL_PARAM"  value="" />
+	
+
+</form>
+<input type="hidden" id="MEMB_CD" value="">
+<input type="hidden" id="APP_CD" name="APP_CD" value=""/>
+<script>
+	
+		$('#SMT_ODR_PARAM').val(JSON.stringify());
+	
+	
+		$('#YGYO_RETURN_VALUE_MEAL_PARAM').val(JSON.stringify());
+	
+</script>
+<div class="wrap meal">
+	<div class="header floating-back-header floating-sticky">
+		<h1>함께결제</h1>
+		<a data-element-id="BPY-PAY-10-20-S-e04" href="#" id="btnBack" class="btn-history-back" viewType="mny">뒤로가기</a>
+		<!-- 금액입력 화면(mny)시 뒤로가기 : zero_meal_ticket // 직원추가 화면(search)시 뒤로가기 : 직원추가화면 hide() -->
+		<!-- <div class="right">
+			<a href="#none" class="btn_outpage">페이지나가기</a>
+		</div> -->
+	</div><!-- // header -->
+	<div class="container">
+		<div class="content"  id="dftTgt">
+			<!-- 결제안내 -->
+			<div class="gift_accbx">
+				<div class="inner">
+					<div class="tit">비플머니(으)로 결제합니다.</div>
+				</div>
+			</div>
+			<!-- //결제안내 -->
+
+			<!-- 컨텐츠 영역 -->
+			<div class="row-bothpadding-addpeople">
+				<!-- 작성영역 -->
+				<div class="un_pipt_bx">
+					<dl>
+						<dt>결제할 금액을 입력하세요.</dt>
+						<dd>
+							<div class="un_input"  id="mnyDiv">
+								<input data-element-id="BPY-PAY-10-20-S-e06" id="money" type="tel" placeholder="금액입력">
+								<span>원</span>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<!-- //작성영역 -->
+				<!-- 함께결제 선택 -->
+				<div class="balanceInfo aftTyp" style="display: none;">
+					<div>
+						<strong>(최대명)</strong>
+						<span class="ball"> <!-- 활성화시 on 클래스 추가 부탁드립니다. -->
+							<a id="btnAball" href="#none">
+								<span>ball</span>
+							</a>
+							1/N 나누기
+						</span>
+					</div>
+	
+					<ul class="people_list" id="pplList">
+						<li>
+							<p>
+								<span class="name">홍길동</span>
+								<span class="type1">나</span>
+							</p>
+							<div class="un_input cost"> <!-- 작성시 ipt 클래스 추가 -->
+								<input type="tel" class="inputCost" placeholder="금액입력"> <!-- 잔여한도 부족 시 class="fcRed" 클래스 추가 부탁드립니다. -->
+								<span>원</span>
+							</div>
+							<p class="limit" name="lmt" id="my_lmt" lmt="" rc_card_no="" memb_cd="" mob_no="">잔여한도 4,500원</p>
+						</li>
+					</ul>					
+				</div>
+				<!-- 2021-10-12 -->
+				<div class="flotingBtn_addPeople aftTyp" id="addUser" style="display:none;">
+					<span>직원추가</span>
+				</div>
+				<!-- //2021-10-12 -->
+			</div>
+			<!-- //함께결제 선택 -->
+		</div>
+		<div class="row-bothpadding20-style btn" id="schUser" style="display:none;">
+			<!-- 직원검색및 추가 -->
+				<!-- 검색영역 -->
+				<div class="un_sch_gbxw position-fixed">
+					<div class="bg">
+						<input id="schKeyword" class="schKey" type="text" placeholder="사용자명으로 검색하세요"><a class="btn" id="schBtn"><span class="blind">검색</span></a>
+					</div>
+					<!-- <input type="button" value="더보기" id="btnMore" style="display:none;"/> -->
+				</div>
+				<!-- //검색영역 -->
+				
+				<ul class="searchList">  
+ 					<!--
+					<li name="user">
+						<strong class="name">고건영</strong>
+						<span class="num">(1234)</span>
+						<span class="select">
+							<input type="checkbox" name="chkBox">
+						</span>
+					</li>
+					-->
+				</ul>
+			<!-- 직원검색및 추가 -->
+			<!-- 더보기버튼 활성화 - 상단 24 line 참고 부탁드립니다. -->
+				<div class="btn_more" style="display:none;" id="btnMore">
+					<a href="#none">
+						<span>더보기</span>
+					</a>
+				</div>
+			</div>
+			<!-- //컨텐츠 영역 -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="fixed-bottom-section" id="btnAdd" style="display:none;">
+				<a href="#" class="btn-submit btn-skyBlue on"><span id="okMsg">선택</span></a><!-- 활성화클래스 on -->
+			</div>
+			<div class="fixed-bottom-section" id="btnOk">
+				<a data-element-id="BPY-PAY-10-20-S-e05" href="#" class="btn-submit btn-skyBlue" id="okA"><span id="btnNext">확인</span></a><!-- 활성화클래스 on -->
+			</div>
+			<!-- //하단 고정버튼 -->
+	</div><!-- // container -->
+	
+</div><!-- // wrap -->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>오픈뱅킹 약관 동의</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+</head>
+<body data-screen-id="HIT-ACCT-10-50-S">
+<!-- HTML 및 Contents Area -->
+<input type="hidden" id="mob_no"   				value="" />
+<input type="hidden" id="memb_nm"  				value="" />
+<input type="hidden" id="brt_dt"   				value="" />
+<input type="hidden" id="current_dt"			value="" />
+<input type="hidden" id="wact_cplx_param"		value="" />
+<input type="hidden" id="cplx_ref_url"			value="" />
+<input type="hidden" id="return_to_payment_yn"	value="" />
+
+<form id="rslt_form">
+	<input type="hidden" name="ODR_NO"        value=""       />
+	<input type="hidden" name="USER_NO"       value=""      />
+	<input type="hidden" name="DEAL_DIV_CD"   value=""  />
+	<input type="hidden" name="SALE_CHANNEL"  value="" />
+	<input type="hidden" name="PRDT_AMT"      value=""     />
+	<input type="hidden" name="PRDT_NM"       value=""      />
+	<input type="hidden" name="CALL_BACK_URL" value=""/>
+</form>
+<script>
+	$('#wact_cplx_param').val(JSON.stringify());
+</script>
+
+<!-- STEP 6-2. 하이브리드 오픈뱅킹 계좌등록인 경우 약관동의를 받는다. -->
+<div com-step-id="step6_2">
+    <div class="wrap">
+        <div class="header floating-back-header floating-sticky">
+            <h1>계좌 등록</h1>
+            <a data-element-id="HIT-ACCT-10-50-S-e05" class="btn-history-back move_back type2" role="button" >뒤로가기</a>
+        </div>
+        <!-- // header -->
+        
+        <div class="container">
+            <div class="content">
+                <div class="open_bank">
+                    <p class="msg_agree">
+                    오픈뱅킹 계좌 등록 시 <br>아래 약관 동의가 필요합니다.
+                    </p>
+                    
+                    <!-- 약관동의 체크 -->
+                <div class="agree_w">
+                    <!-- 안내메세지 -->
+                    <div class="info">
+                        <p class="txt_bg"><strong>오픈뱅킹이란?</strong></p>
+                        <p>은행 및 증권사 간에 송금, 결제 등의 금융 서비스를 개방하여 제공하는 표준화된 금융 시스템입니다.</p>
+                    </div>
+                    <!-- //안내메세지 -->
+
+                    <!-- 개별동의 -->
+                    <div class="agree_con" id="div_cls">
+                    </div>
+                    <!-- //개별동의 -->
+                    
+                    <!-- 전체 동의하기 -->
+                    <div class="agree all">
+                        <label for=""><strong>전체 동의하기</strong><input data-element-id="HIT-ACCT-10-50-S-e08" type="checkbox" id="allAgr"></label>
+                    </div>
+                    <!-- //전체 동의하기 -->
+                </div>
+                <!-- //약관동의 체크 -->
+                <!-- 알림 -->
+                <div class="noti_bx">
+                    <p class="noti_txt">은행으로부터 문자 메시지를 받더라도 놀라지 마세요!</p>
+                    <ul class="list_bl">
+                        <li>오픈뱅킹 시스템에 계좌가 잘 등록됐다는 안내이며, 간편결제 계좌를 여러 개 등록하셨다면 계좌마다 문자메시지를 받으실 수 있습니다.</li>
+                        <li>이미 출금이체 동의하셨던 간편결제 계좌에서 출금(결제, 구매, 환불 등) 시 오픈뱅킹이 사용될 수 있습니다.</li>
+                    </ul>
+                </div>
+                <!-- //알림 -->
+                <!-- 확인/취소 버튼 -->
+                <div class="fixed-bottom-section">
+                    <div class="btns" style="margin-top:-5px;">
+                        <a data-element-id="HIT-ACCT-10-50-S-e06" href="#none" class="typeB move_back">취소</a>
+                        <a data-element-id="HIT-ACCT-10-50-S-e07" href="#none" class="typeA" id="btn_next_2">확인</a>
+                    </div>
+                </div>
+                <!-- //확인/취소 버튼 -->
+
+                </div>
+            </div>		
+        </div><!-- // container -->
+    </div><!-- // wrap -->
+</div>
+
+<!-- STEP 7. 약관상세조회 -->
+</body>
+</html>

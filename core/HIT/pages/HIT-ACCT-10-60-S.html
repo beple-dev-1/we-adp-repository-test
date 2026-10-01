@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>오픈뱅킹 금융정보조회 약관</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+</head>
+<body data-screen-id="HIT-ACCT-10-60-S">
+<!-- HTML 및 Contents Area -->
+<input type="hidden" id="mob_no"   				value="" />
+<input type="hidden" id="memb_nm"  				value="" />
+<input type="hidden" id="brt_dt"   				value="" />
+<input type="hidden" id="current_dt"			value="" />
+<input type="hidden" id="wact_cplx_param"		value="" />
+<input type="hidden" id="cplx_ref_url"			value="" />
+<input type="hidden" id="return_to_payment_yn"	value="" />
+
+<form id="rslt_form">
+	<input type="hidden" name="ODR_NO"        value=""       />
+	<input type="hidden" name="USER_NO"       value=""      />
+	<input type="hidden" name="DEAL_DIV_CD"   value=""  />
+	<input type="hidden" name="SALE_CHANNEL"  value="" />
+	<input type="hidden" name="PRDT_AMT"      value=""     />
+	<input type="hidden" name="PRDT_NM"       value=""      />
+	<input type="hidden" name="CALL_BACK_URL" value=""/>
+</form>
+<script>
+	$('#wact_cplx_param').val(JSON.stringify());
+</script>
+
+<!-- STEP 6-2. 하이브리드 오픈뱅킹 계좌등록인 경우 약관동의를 받는다. -->
+
+<!-- STEP 7. 약관상세조회 -->
+<div com-step-id="step7">
+<div class="wrap">
+	<div class="header floating-back-header floating-sticky" >		
+		<a data-element-id="HIT-ACCT-10-60-S-e02" class="btn-history-back type2" onClick="uf_back();" role="button" >상위메뉴로 이동</a>
+		<h1 class="title-header" style="top:2px;" id="detail_header">「오픈뱅킹공동업무」 금융정보조회 약관 </h1>		
+	</div><!-- // header -->
+	<div class="container" id="detail_ctnt"><!-- sample:begin --><p>제1조 (목적) 이 약관은 서비스 이용에 관한 기본 사항을 정합니다.</p><p>제2조 (정의) 이 약관에서 쓰는 용어의 뜻은 관련 법령과 서비스 안내에 따릅니다.</p><p>제3조 (약관의 효력) 이 약관은 서비스 화면에 게시하여 효력이 생깁니다.</p><!-- sample:end --></div><!-- // container -->
+</div><!-- // wrap -->
+</div>
+</body>
+</html>

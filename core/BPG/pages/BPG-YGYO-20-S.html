@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>요기요 장바구니</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-YGYO-20-S">
+<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>장바구니</h1>
+			<a data-element-id="BPG-YGYO-20-S-e09" href="javascript:uf_back();" class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+
+		<!-- container -->
+		<div class="container"> 
+			<!-- content -->
+			<div class="content" id="case1" style="">
+				<!-- 요기요 -->
+				<div class="bp-ygy add_flex_column no_vh bg_f7 addBtn-pb58"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+					<div class="ygy__top-tooltip"><!-- [D] 툴팁 노출 시 view 클래스 추가 -->
+						<p class="icon round_chk-18"><span id="tooltip_text">배달로 변경되었습니다.</span></p>
+					</div>
+					<div class="top_bx" id="store_info">
+						<!-- 
+							기본 = state
+							주문취소 = state cancel
+						-->
+						<!-- <p class="state">배달로 받을게요</p>
+						<h2 class="store_name">수유시장 행운꼬마김밥</h2>
+						<div class="oder-type">
+							<button class="type-btn on">[D] 선택 시 on 클래스 추가
+								<strong>배달</strong><span>10~30분 후 도착예정</span>
+							</button>
+							<button class="type-btn  on">
+								<strong>포장</strong><span>30분 후 픽업가능</span>
+							</button>
+						</div> -->
+					</div>
+					<!-- 장바구니 -->
+					<div class="oder-cart" id="cart_info"><!-- sample:begin --><div class="cart-w border-t10">	<div class="list" name="my_bag_list" id="my_bag_list" menu_id =  menu_name ="홍길동"  menu_section_id =  menu_price =4,500  menu_section_type ="		"><h3 class="name">홍길동</h3>		<div class="detail">			<ul class="list_bar">				<li>기본 (4,500원)</li>				<li>홍길동 (4,500원)</li>			</ul>		</div>		<p class="price"><span id="singleSumAmt" name="singleSumAmt" >4,500</span>원</p>		<div class="etc">			<p class="opt-change">				<a href="javascript:doOptionChange(my_bag_list);">옵션변경</a>			</p>			<div class="spiner_btn3">				<p><a href="#none" onclick="doCalculate(this , ,-1);" class="minus" id="minus">수량빼기</a></p>				<p><span id="spanAmountQty" name="spanAmountQty" options_amt= ><!-- sample:begin -->4,500<!-- sample:end --></span></p>				<p><a data-element-id="BPG-YGYO-20-S-e10" href="#none" onclick="doCalculate(this , ,1);"  class="plus on" id="plus">수량추가</a></p>				<p><a data-element-id="BPG-YGYO-20-S-e11" href="#none" onclick="doCalculate(this , ,-1);" class="minus on" id="minus">수량빼기</a></p>				<p><span id="spanAmountQty" name="spanAmountQty" options_amt= ></span></p>				<p><a href="#none" onclick="doCalculate(this , ,1);"  class="plus on"  id="plus">수량추가</a></p>				<p><span id="spanAmountQty" name="spanAmountQty" options_amt= ></span></p>				<p><a href="#none" onclick="doCalculate(this , ,1);"  class="plus">수량추가</a></p>			</div>		</div>		<p class="delete">			<button data-element-id="BPG-YGYO-20-S-e07" href="#none" onclick="deleteMybag(this ,);" class="del-btn">메뉴 빼기</button>		</p>	</div><div class="list tooltip_w view" name="my_bag_list" id="my_bag_list"><div class="list tooltip_w" name="my_bag_list" id="my_bag_list" menu_id =  menu_name ="홍길동"  menu_section_id =  menu_price =4,500  menu_section_type ="	"><h3 class="name">                                                                              		<button data-element-id="BPG-YGYO-20-S-e08" class="tooltip_btn">                                                               			<span>홍길동</span>                                                              			<span class="icon info-15">툴팁보기</span>                                                 			<!-- 배달시간 툴팁 -->                                                                       			<div class="tooltip" style="display: none;">                                            			<div class="tooltip" >                                            				자원의 절약과 재활용촉진에 관한 법률시행에 따라 비닐봉투 대신 친환경 또는 종이 소재의 포장봉투로 픽업 포장 및 배송해 드립니다            			</div>                                                                                 		</button>                                                                                  	</h3>                                                                                          	<p class="price"><span>4,500</span>원</p>                  </div>                                                                                            <div class="list tooltip_w view" name="my_bag_list" id="my_bag_list"><div class="list tooltip_w" name="my_bag_list" id="my_bag_list" menu_id =  menu_name ="홍길동"  menu_section_id =  menu_price =4,500	<h3 class="name">                                                                              		<button class="tooltip_btn">                                                               			<span>홍길동</span>                                                              			<span class="icon info-15">툴팁보기</span>                                                 			<!-- 배달시간 툴팁 -->                                                                       			<div class="tooltip" style="display: none;">                                            				자원의 절약과 재활용촉진에 관한 법률시행에 따라 비닐봉투 대신 친환경 또는 종이 소재의 포장봉투로 픽업 포장 및 배송해 드립니다            			</div>                                                                                 		</button>                                                                                  	</h3>                                                                                          	<p class="price"><span>4,500</span>원</p>                  </div>                                                                                            </div><div class="oder-add tooltip-w" id="tooltip2"><!-- 툴팁 활성화 시 view 클래스 추가 -->	<a data-element-id="BPG-YGYO-20-S-e12" href="javascript:addMenus();">+ 더 담으러 가기</a>	<div class="tooltip">		<span id="add_tooltip"><!-- sample:begin -->표본<!-- sample:end --></span>원 더 담기	</div></div><div class="pay-info">	<div class="con">		<h4>주문금액</h4>		<p><span id="menu_total_amount"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>	</div>	<div class="con" id="del_amount_info" style="display: none;">		<h4>배달요금</h4>		<p><span id="del_amount"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>	</div>	<div class="con" id="add_amt_info" style="display: none;">		<h4>추가요금</h4>		<p><span id="add_amt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>	</div>	<div class="payment">		<h4>결제예정금액</h4>		<p><span id="payment_due" ><!-- sample:begin -->표본<!-- sample:end --></span>원</p>	</div></div><div class="oder_item_none" style="display: none;">	<p>장바구니에 담은 메뉴가 없습니다.</p></div><!-- sample:end --></div>
+					<!-- //장바구니 -->
+					<div class="noti_txt" >
+						<ul class="list_bl">
+							<li>
+								최소 주문금액은 배달요금/일회용컵 보증금을 제외한
+								금액입니다.
+							</li>
+							<li>
+								비플페이(주)는 통신판매중개자이며, 통신판매의 당사자가
+								아닙니다. 따라서 비플페이(주)는 상품, 거래정보 및 거래에
+								대하여 책임을 지지 않습니다.
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 하단 고정버튼 영역 -->
+				<div class="btn_botFix_w" id="order_info">
+					<!-- 주문버튼 -->
+					<!-- <div class="oder_btn-wrap" style="display: block;">활성 = display:block; / 비활성 시 display: none;
+						<div class="oder__minimum-msg" style="display: none;">최소주문금액 <p><span>5,000</span>원</p></div>최소 주문금액 충족 시 해당 메세지 display: none;
+						<div class="inner">
+							<a href="#none" class="round_r8 on">활성화 시 on 클래스 추가
+								배달 준비중 등 메세지 및 금액
+								<div><span>13,400</span>원 주문하기</div>
+							</a>
+						</div>
+					</div> -->
+				</div>
+				<!-- //요기요 -->
+			</div>
+			<!-- // content -->
+			
+			<div class="content" id="case2" style="display: none;">
+				<!-- 요기요 -->
+				<div class="bp-ygy add_flex_column no_vh"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+					<div class="ygy__top-tooltip"><!-- [D] 툴팁 노출 시 view 클래스 추가 -->
+						<p class="icon round_chk-18"><span>배달로 변경되었습니다.</span></p>
+					</div>
+					<!-- 장바구니 -->
+					<div class="oder-cart pdt0">
+						<!-- 장바구니 없음 -->
+						<div class="oder_item_none"><!-- 미사용 시 display: none; , 사용 시 diaplsy:none 삭제 -->
+							<p>장바구니에 담은 메뉴가 없습니다.</p>
+						</div>
+					</div>
+					<!-- //장바구니 -->
+				</div>
+				<!-- 하단 고정버튼 영역 -->
+				<div class="btn_botFix_w">
+					<!-- 주문버튼 -->
+					<div class="oder_btn-wrap" style="display: block;"><!-- 활성 = display:block; / 비활성 시 display: none; -->
+						<div class="oder__minimum-msg" style="display: none;">최소주문금액 <p><span>5,000</span>원</p></div><!-- 최소 주문금액 충족 시 해당 메세지 display: none; -->
+						<div class="inner bg_white">
+							<a href="javascript:go_menu();" class="round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+								<!-- 배달 준비중 등 메세지 및 금액 -->
+								<div>메뉴 담으러 가기</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- //요기요 -->
+			</div>
+			
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

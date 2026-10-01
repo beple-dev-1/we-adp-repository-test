@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>요기요_메인화면</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-YGYO-30-S">
+<!-- wrap -->
+    <div class="wrap beple-ui">
+        <!-- mainArea2 -->
+        <!-- header -->
+        
+            
+        
+        <!-- //header -->
+        <!-- // 2025-02-26 - [D] 즐겨찾기, 주문내역 버튼 삭제 / 배달 툴팁 삭제 (이동됨) -->
+            
+        <!-- container -->
+        <div class="container js-container-wrap">
+            <!-- content -->
+            <div class="content">
+                <div class="bp-ygy" id="mainArea"><!-- 2025-02-26 - [D] 'flexWrap no_vh' 클래스 제거-->
+                    <div class="ygy__main">
+                        <!-- 메인 - 주소, 배달/포장 탭 -->
+                        <div class="ygy__main-util">
+                            <!-- 주소설정 -->
+                            <div class="ygy__main-loca_set">
+                                <a class="loca_set-btn" id="GIL_ADDR_TXT" onclick="goAddrs();"><!-- sample:begin -->서울 강남구 테헤란로 1길 10<!-- sample:end --></a>
+                            </div>
+                            <!-- 배달 / 포장 -->
+                            <div class="ygy__main-tab">
+                                <p class="tab-btn delivery on" data-type='1'><!-- [D] 활성화 시 클래스 on 추가 -->
+                                    <button data-element-id="BPG-YGYO-30-S-e13" type="button" onclick="searchTab('derivery');">배달</button>
+                                </p>
+                                <p class="tab-btn take_out" data-type='2'>
+                                    <button data-element-id="BPG-YGYO-30-S-e14" type="button" onclick="searchTab('pickup');">포장</button>
+                                </p>
+                            </div>
+                            <!-- 2025-02-26 배너영역 아래로 이동됨 -->
+                            <!--
+                            <div class="ygy__top-tooltip" id ='tooltipAddr'><!-- [D] 툴팁 노출 시 view 클래스 추가 ->
+                                <p class="icon round_chk-18"><span>현재 위치로 주소 정보가 설정되었습니다.</span></p>
+                            </div> -->
+                        </div>
+                        <!-- 2023-09-08 메인 - 배너영역 추가 -->
+                        
+                        <!-- 메인 - 메뉴 카테고리 -->
+                        <div class="menu-categori"><!-- [D] 더보기 버튼 클릭 시 'view' 클래스 추가 -->
+                            <ul id='categoryArea'>
+                                <!--
+                                <!-- menu-util ->
+                                <li class="more" id="more_categori">
+                                    <div class="menu-categori__item">
+                                        <button type="button">
+                                            <p class="menu-categori__icon">
+                                                <img src="../assets/resource/images/ygy/icon_main-more.svg" alt="더보기">
+                                            </p>
+                                            <p class="menu-categori__name">더보기</p>
+                                        </button>
+                                    </div>
+                                </li>
+                                -->
+                            </ul>
+                        </div>
+                        
+                        <!-- 2025-02-26 배너영역 아래로 이동됨 -->
+                        <div class="ygy__banner" id='bannerArea'><!-- sample:begin --><div class="banner-container swiper-container"><div class="item-wrap swiper-wrapper"><div class="banner-item swiper-slide"><a onclick="detailBanner('',);" class="banner-img"></a></div></div><div class="swiper-pagination"></div></div><!-- sample:end --></div>
+                        <!-- // 2025-02-26 배너영역 이동 -->
+                        
+                        <!-- 2023-07-03 - 메인 - 매장없음 -->
+                        <div class="ygy__store_none" style="display: none;" id='deliveryNone'>
+                            <!-- 2025-03-06 - [D] span 태그 추가 -->
+                            <p><span>배달 가능한 매장이 없습니다</span></p>
+                            <!-- // 2025-03-06 -->
+                        </div>
+                        <!-- // 2023-07-03 - 메인 - 매장없음 -->
+                        <div class="ygy__store_none" style="display: none;" id='pickupNone'>
+                            <!-- 2025-03-06 - [D] span 태그 추가 -->
+                            <p><span>포장 가능한 매장이 없습니다</span></p>
+                            <!-- // 2025-03-06 -->
+                        </div>
+                        <!-- 메인 - 우리동네 인기 맛집 -->
+                        <div class="place" id='shopList'><!-- 2025-02-26 -->
+                            <div class="place__tit-bx">
+                                <!-- <h2 class="place-tit"  id='shopFocus'>우리동네 인기 맛집 👍</h2>-->
+                                <!-- <input type="text" id='dateInput' value='' onclick='todoCall()'> --> 
+                                <h2 class="place-tit"  id='shopFocus'>우리동네 인기 맛집 👍</h2>
+                            </div>
+                            <!-- 필터 / 카테고리 목록 - 카테고리 사용 하지않는 페이지의 경우 해당영역 제거 부탁드립니다. -->
+                            <div class="place-util scroll_fix"><!-- 2025-02-26 - [D] 'pdb10' 클래스 제거 -->
+                                <!-- 필터박스 -->
+                                <!-- 2025-03-06 -->
+                                <div class="ygy__filter-wrap">
+                                    <div class="ygy__filter-list view">
+                                        <button data-element-id="BPG-YGYO-30-S-e15" class="ygy__filter-btn" id='sortFilterBtn'><span>요기요 추천 순</span></button><!-- [D] 활성화 시 active -->
+                                        <button data-element-id="BPG-YGYO-30-S-e16" class="ygy__filter-btn" id='deliveryPriceBtn'><span>배달요금</span></button>
+                                        <button data-element-id="BPG-YGYO-30-S-e17" class="ygy__filter-btn" id='minPriceBtn'><span>최소주문금액</span></button>
+                                    </div>
+                                    <div class="ygy__filter-list">
+                                        <button data-element-id="BPG-YGYO-30-S-e18" class="ygy__filter-btn" id='categoryPopupBtn'><span>전체 카테고리</span></button><!-- [D] 활성화 시 active -->
+                                    </div>
+                                </div>
+                                <!-- // 2025-03-06 -->
+                            </div>
+                            <!-- 매장 목록 -->
+                            <div class="place__store-wrap">
+                                <!-- 배달 시 - 기본 -->
+                                <div class="place__store-list view">
+                                    <ul id="storeArea"><!-- sample:begin --><li class=""><div class="place__store-photo"><div class="place__img-main"><a onclick="shopDetail(,,)"><p class="place__photo-img"><img src="../assets/resource/images/ygy/empty_1.png" alt=""></p><p class="ready-message">14:22 오픈 예정입니다.</p></a><button class="favorite-btn added" onclick="favorites(,'홍길동',,'',this);"><span class="blind">관심가게</span></button><button class="favorite-btn" onclick="favorites(,'홍길동',,'',this);"><span class="blind">관심가게</span></button></div><div class="place__img-sub"><a onclick="shopDetail(,,)"><p class="place__photo-img" style="width: 100%"></p></a></div></div><a onclick="shopDetail(,,)"><div class="place__store-name label" data-title="위생안심"><span>홍길동</span></div><!-- 2025-02-26 - [D] 배달예상시간 구조 변경, 거리 영역 변경 등. --><div class="place__store-info"><ul class="place__oder-info"><li>최소주문<span>원</span></li></strong></li></ul><div class="delivery_info"><div class="delivery_time"><p><span>14:22분</span></p><p>~</p><p><span>14:22분</span></p></div><div class="delivery_distance"><span>안내 문구</span></div></div></div><!-- // 2025-02-26 - [D] 배달예상시간 구조 변경, 거리 영역 변경 등. --></a></li><!-- sample:end --></ul>
+                                </div>
+
+                                <!-- 포장 시 -->
+                                <div class="place__store-list">
+                                    <ul id='pickupStoreArea'><!-- sample:begin --><li class=""><div class="place__store-photo"><div class="place__img-main"><a onclick="shopDetail(,,)"><p class="place__photo-img"><img src="../assets/resource/images/ygy/empty_1.png" alt=""></p><p class="ready-message">14:22 오픈 예정입니다.</p></a><button class="favorite-btn added" onclick="favorites(,'홍길동',,'',this);"><span class="blind">관심가게</span></button><button class="favorite-btn" onclick="favorites(,'홍길동',,'',this);"><span class="blind">관심가게</span></button></div><div class="place__img-sub"><a onclick="shopDetail(,,)"><p class="place__photo-img" style="width: 100%"></p></a></div></div><a onclick="shopDetail(,,)"><div class="place__store-name label" data-title="위생안심"><span>홍길동</span></div><div class="place__store-info"><!-- 2025-03-06 - [D] 포장거리 구조 변경 --><div class="delivery_info"><div class="delivery_distance">거리<span>안내 문구</span></div><div class="delivery_time"><p>포장</p><p><span>14:22분</span></p></div></div><!-- // 2025-03-06 - [D] 포장거리 구조 변경 --></div></a></li><!-- sample:end --></ul>
+                                </div>
+                            </div>
+                            <!-- // 매장 목록 -->
+                        </div>
+                        <!-- // 메인 - 우리동네 인기 맛집 -->
+                    </div>
+                </div>
+                
+                <!-- 2023-07-03 -->
+<!--                <div class="btn_botFix_w">
+                    <div class="cs-btn">
+                        <a onclick='helpPage()' class="icon cs-32"><span class="blind">고객센터 바로가기</span></a>
+                    </div>
+                    <div class="page-top">
+                        <button type="button" class="icon page_top-32"><span class="blind">시작지점으로 올라가기</span></button>
+                    </div>
+                </div>
+                // 2023-07-03
+                <div class="floating-box bottom-h32" style="display:none;">사용 시 style="display:block;"
+                    <a href="#none" class="floating-btn"><span class="icon map-20">지도로 보기</span></a>
+                    <a href="#none" class="floating-btn" style="display:none;"><span class="icon list-20">목록으로 보기</span></a>
+                </div> -->
+
+                <!-- 2025-02-26 - [D] page-util 신규 생성 -->
+                <!-- 페이지 유틸박스 -->
+                <div class="page-util">
+                    <!-- 고객센터 버튼 -->
+                    <div class="util__item">
+                        <a data-element-id="BPG-YGYO-30-S-e20" onclick='helpPage()' class="util--button icon cs-32"><span class="blind">고객센터 바로가기</span></a>
+                    </div>
+                    <!-- 문서 최상단으로 가기 버튼 -->
+                    <div class="document-top" style="display:none;">
+                        <button type="button" class="document-top__button"><i class="icon icon--arrow_nav_cr-32_black">시작지점으로</i></button>
+                    </div>
+                    <!-- 지도 or 목록으로 보기 버튼 -->
+                    <div class="floating_btn-box" style="display:none;" id='nativeMap'><!-- [D] 미사용 시 display: none -->
+                        <a onclick='nativeCall("5010");' class="floating-btn"><span class="icon map-20">지도로 보기</span></a>
+                        <a class="floating-btn" style="display:none;"><span class="icon list-20">목록으로 보기</span></a>
+                    </div>
+                </div>
+                <!-- // 2025-02-26 - [D] page-util 신규 생성 -->
+                 
+                <!-- 2025-02-26 - [D] 플로팅영역 nav추가, 구조 및 클래스 변경 -->
+                <!-- 하단 플로팅 영역 -->
+                <div class="container-floating js-floating-container">
+                    <!-- 토스트메세지 -->
+                    <div class="toast-box"><!-- [D] 툴팁 노출 시 view 클래스 추가 -->
+                        <!-- 배달 예정시간 토스트 -->
+                        <div class="toast__body delivery"><!-- [D] 활성화 시 active 클래스 추가 -->
+                            <!-- 2025-03-04 -->
+                            <div class="toast_delivery--info">
+                                <!-- [D] 도착예정시
+                                간 줄바꿈 띄워쓰기 수정 -->
+                                <p class="scheduled"><i class="icon icon--watch-16"></i><span><strong id ='expectedHh24'>0</strong>시 &nbsp; <strong id ='expectedMi'>0</strong>분 도착예정</span></p>
+                                <!-- // 도착예정시간 줄바꿈 띄워쓰기 수정 -->
+                                <!-- [D] span태그 추가, -->
+                                <p class="store-name">
+                                    <span id ='expectedShop'></span>
+                                </p>
+                                <!-- // [D] span태그 추가, -->
+                            </div>
+                            <!-- // 2025-03-04 -->
+                            <div class="toast_delivery--img">
+                                <img src="../assets/resource/images/ygy/img_delivery_toast.png" alt="요기요 배달 오토바이 이미지">
+                            </div>
+                            <!-- 닫기버튼 - [D] 클릭 시 'toast__body.delivery'의 'active' 클래스 제거 -->
+                            <button data-element-id="BPG-YGYO-30-S-e19" type="button" class="close-btn icon icon--close-24" onclick='expectedClose()'><span class="blind">닫기</span></button>
+                        </div>
+
+                        <!-- 토스트 메세지 -->
+                        <div class="toast__body" id ='tooltipAddr'><!-- [D] 활성화 시 active 클래스 추가 -->
+                            <i class="icon icon--check_cr-20_primary"></i><span>현재 위치로 주소 정보가 설정되었습니다.</span>
+                        </div>
+                    </div>
+
+                    <!-- 요기요 하단 네비게이션 -->
+                    
+
+<!-- 네비게이션 컨테이너 -->
+                    <nav class="navigation-container yogiyo">
+                        <!-- 홈 -->
+                        <a data-element-id="BPG-YGYO-30-S-e21" class="navigation__button home" data-id="bp_ygyo_main.act"><!-- [D] 선택 시 'active' 클래스 추가 -->
+                            <span>홈</span>
+                        </a>
+                        <!-- 검색 -->
+                        <a data-element-id="BPG-YGYO-30-S-e22" class="navigation__button search" data-id="bp_ygyo_srch_shops.act">
+                            <span>검색</span>
+                        </a>
+                        <!-- 주문내역 -->
+                        <a data-element-id="BPG-YGYO-30-S-e23" class="navigation__button history" data-id="bp_ygyo_purchase_info.act">
+                            <span>주문내역</span>
+                        </a>
+                        <!-- 찜 -->
+                        <a data-element-id="BPG-YGYO-30-S-e24" class="navigation__button favorites" data-id="bp_ygyo_fav.act">
+                            <span>찜</span>
+                        </a>
+                    </nav>
+
+                    <!-- //요기요 하단 네비게이션 -->
+                </div>
+                <!-- // 2025-02-26 - [D] 플로팅영역 nav추가, 구조 및 클래스 변경 -->
+            </div>
+            <!-- // content -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap --> 
+    <!-- 레이어팝업  정렬 -->
+    <div class="layer_overlay"  id='sortFilterArea' style="display: none">
+        <div class="layer_bPop">
+            <div class="popup_con pd0">
+                <!-- 설정팝업 -->
+                <div class="edit_pop add_tit_t2">
+                    <h2 class="ly_pop_tit">정렬</h2>
+                    <p class="btn_close">
+                        <a href="javascript:sortFilterPopup();" ><span class="blind" id='sortPopupClose'>닫기</span></a>
+                    </p>
+                    <!-- 카테고리 선택 -->
+                    <ul id='sortFilter'>
+                        <li class="select"><a data-type='rank'>요기요 추천 순</a></li>
+                        <li><a data-type='estimated_delivery_time'>배달시간 빠른 순</a></li><!-- 선택 시 select 클래스 추가 -->
+                        <li><a data-type='delivery_fee'>배달요금 낮은 순</a></li>
+                        <li><a data-type='order_count'>주문 많은 순</a></li>
+                        <li><a data-type='distance'>거리 가까운 순</a></li>
+                    </ul>
+                    <!-- //카테고리 선택 -->
+                </div>
+                <!-- //설정팝업 -->
+            </div>
+        </div>
+    </div>
+    <!-- 레이어팝업  정렬 --> 
+    <!-- 레이어팝업 --> 
+    <div class="layer_overlay" id='deliveryPriceFilterArea' style="display: none">
+        <div class="layer_bPop">
+            <div class="popup_con pd0">
+                <!-- 설정팝업 -->
+                <div class="edit_pop add_tit_t2">
+                    <h2 class="ly_pop_tit">배달요금</h2>
+                    <p class="btn_close">
+                        <a href="javascript:deliveryPricePopup();"><span class="blind" id='deliveryPopupClose'>닫기</span></a>
+                    </p>
+                    <!-- 카테고리 선택 -->
+                    <ul id='deliveryPriceFilter'>
+                        <li class="select"><a data-type=''>전체</a></li><!-- 선택 시 select 클래스 추가 -->
+                        <li><a data-type='0'>무료</a></li>
+                        <li><a data-type='1000'>배달요금 1,000원 이하</a></li>
+                        <li><a data-type='2000'>배달요금 2,000원 이하</a></li>
+                        <li><a data-type='3000'>배달요금 3,000원 이하</a></li>
+                    </ul>
+                    <!-- //카테고리 선택 -->
+                </div>
+                <!-- //설정팝업 -->
+            </div>
+        </div>
+    </div>
+    <!-- //레이어팝업 배달요금-->
+    <!-- 레이어팝업 최소주문요금  -->
+    <div class="layer_overlay" id='minPriceArea' style="display: none">
+        <div class="layer_bPop">
+            <div class="popup_con pd0">
+                <!-- 설정팝업 -->
+                <div class="edit_pop add_tit_t2">
+                    <h2 class="ly_pop_tit">최소주문금액</h2>
+                    <p class="btn_close">
+                        <a href="javascript:minPricePopup();"><span class="blind" id='minPricePopupClose'>닫기</span></a>
+                    </p>
+                    <!-- 카테고리 선택 -->
+                    <ul id='minPriceFilter'>
+                        <li class="select"><a  data-type=''>전체</a></li><!-- 선택 시 select 클래스 추가 -->
+                        <li><a data-type='5000'>최소주문 5,000원 이하</a></li>
+                        <li><a data-type='10000'>최소주문 10,000원 이하</a></li>
+                        <li><a data-type='12000'>최소주문 12,000원 이하</a></li>
+                        <li><a data-type='15000'>최소주문 15,000원 이하</a></li>
+                    </ul>
+                    <!-- //카테고리 선택 -->
+                </div>
+                <!-- //설정팝업 -->
+            </div>
+        </div>
+    </div>
+    <!-- 레이어팝업 최소주문요금  -->
+    <!-- 레이어팝업 -->
+    <div class="layer_overlay" id='categoryPopupArea' style="display:none;">
+        <div class="layer_bPop beple-ui"><!-- [D] 2025-03-25 - 'beple-ui' 클래스 추가 -->
+            <div class="popup_con bp-ygy pd0">
+                <!-- 설정팝업 -->
+                <div class="edit_pop ygy_categori" ><!-- [D] 2025-03-25 - 'ygy_categori' 클래스 추가, 'add_tit_t2' 클래스 제거 -->
+                    <h2 class="ly_pop_tit">카테고리</h2>
+                    <p class="btn_close">
+                        <a id="categoryPopupCloseBtn"><span class="blind">닫기</span></a>
+                    </p>
+                    <!-- 카테고리필터 -->
+                    <div class="ygy__main">
+                        <div class="menu-categori">
+                            <ul id='categoryPopupList'><!-- sample:begin --><li><div class="menu-categori__item"><a><p class="menu-categori__icon"></p><p class="menu-categori__name" data-type ="004">홍길동</p></a></div></li><!-- sample:end --></ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //설정팝업 -->
+            </div>
+        </div>
+    </div>
+    <!-- //레이어팝업 -->
+
+    <!-- 레이어팝업-약관 -->
+    <div class="layer_overlay" id="agreArea" style="display: none">
+        <div style="background-color: #fff" >
+            <div class="layer_bPop" style="display:none" id="agreePopup">
+                <div class="pop_box radius_16">
+                    <div class="pop_content">
+                        <!-- 약관동의 -->
+                        <div class="pop_content__agree">
+                            <!-- 2023-06-01 -->
+                            <h2 class="agree__tit pdt30">
+                                요기요 주문 동의 안내
+                            </h2>
+                            <p class="agree_txt">요기요 서비스를 이용하기 위해 아래 약관에 동의해 주세요.</p>
+                            <p class="btn_close" onclick='uf_back();'>
+                                <a><span class="blind">닫기</span></a>
+                            </p>
+                            <!-- // 2023-06-01 -->
+                            <!-- 약관동의 체크박스 -->
+                            <div class="agree-wrap">
+                                <!-- 전체동의 -->
+                                <div class="agree all">
+                                    <label><input type="checkbox" id='agreeAll'><span>약관 전체 동의</span></label>
+                                </div>
+                                <!-- 비플페이 수집 항목 동의 -->
+                                <div class="toggleWrap">
+                                    <!-- 개별동의 -->
+                                    <div class="agree">
+                                        <label><input type="checkbox" id='agreeStep1'><span>[필수] 비플페이 약관 모두 동의</span></label>
+                                        <button type="button" class="trigger"><span class="blind">약관 목록 열기</span></button>
+                                    </div>
+                                    <!-- 약관목록 -->
+                                    <div class="agree-list toggleCon" id='step1List'>
+                                        <ul>
+                                            <li><a onclick='agreeDetail("060002","0")'>[필수] 개인정보 제 3자 제공 동의</a></li>
+                                            <li><a onclick='agreeDetail("060015","0")'>[필수] 위치정보 이용동의</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- 요기요 수집 항목 모두 동의 (필수) -->
+                                <div class="toggleWrap">
+                                    <!-- 개별동의 -->
+                                    <div class="agree">
+                                        <label><input type="checkbox" id='agreeStep2'><span>[필수] 요기요 약관 모두 동의</span></label>
+                                        <button type="button" class="trigger"><span class="blind">약관 목록 열기</span></button>
+                                    </div>
+                                    <!-- 약관목록 -->
+                                    <div class="agree-list toggleCon" id='step2List'>
+                                        <ul>
+                                            <li><a onclick='agreeDetail("ygyo","1")'>[필수] 요기요 이용약관</a></li>
+                                            <li><a onclick='agreeDetail("ygyo","2")'>[필수] 개인정보 수집 및 이용동의</a></li>
+                                            <li><a onclick='agreeDetail("ygyo","3")'>[필수] 개인정보 제 3자 제공 동의</a></li>
+                                            <li><a onclick='agreeDetail("ygyo","4")'>[필수] 전자금융거래 이용약관</a></li>
+                                            <li><a onclick='agreeDetail("ygyo","5")'>[필수] 요기요 위치기반서비스 이용약관</a></li>
+                                            <li><a onclick=''>[필수] 만 14세 이상 이용자입니다.</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pop_button padding10 mgt28">
+                        <a href="#" class="btn_default btn-style-h48 round_r8" id='agreeBtn' onClick='agreeUpdate();'>동의하기</a>
+                    </div>
+                    <!-- //약관동의 -->
+                </div>
+            </div>
+        <!-- //레이어 -->
+        </div>
+    </div>
+    <!-- //레이어팝업-약관 -->
+</body>
+</html>

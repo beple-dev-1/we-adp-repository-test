@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>주소 관리 (reg)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-YGYO-40-20-S">
+<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>주소 관리</h1>
+			<a data-element-id="BPG-YGYO-40-20-S-e17" href="#" class="btn-history-back" id='btnBack'>뒤로가기</a>
+			<!-- <a href="#" class="btn-out-page">닫기</a> -->
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="bp-ygy flexWrap">
+					<!-- 
+						각 화면별 페이지에 맞게 클래스 넣어주세요.
+
+						Y130주소편집, Y132주소선택 	= address
+						Y130주소관리, Y131주소검색 	= address sch (페이지 타이틀 직후에 검색창으로 시작할 때)
+						Y133현재위치확인 = location
+					-->
+					<div class="address sch" id='step1'>
+						<!-- 검색 -->
+						<div class="search on"><!-- 검색입력 활성화 시 on 클래스 추가 -->
+							<!-- 검색어 입력 -->
+							<div class="search__form "><!-- 입력 시작 시 input 클래스 추가 -->
+								<div class="search__ipt-bx">
+									<span class="search__input icon search-20"><input data-element-id="BPG-YGYO-40-20-S-e20" onkeyup="focusCheck();" id="serchTxt"type="text" placeholder="건물명, 도로명 또는 지번으로 검색해주세요"></span>
+									<button data-element-id="BPG-YGYO-40-20-S-e12" class="search__btn icon del-16" onclick="removeTxt();"><span class="blind">내용삭제</span></button>
+								</div>
+							</div>
+							<!-- 현 위치 검색 -->
+							<div class="search__loca">
+								<p class="search__find">
+									<button data-element-id="BPG-YGYO-40-20-S-e13" class="search__find-btn" id="myLocationBtn">
+										<span class="icon gps-14">현재 위치로 주소찾기</span>
+									</button>
+								</p>
+							</div>
+							<!-- 검색 컨텐츠 -->
+							<div class="search__content">
+								<!-- 검색 시작 전 intro -->
+								<div class="search__intro border-t10" id="intro" style="display:none;"><!-- 검색 시 display: none; -->
+									<p class="search__intro-msg">이렇게 검색해 보세요</p>
+									<ul class="search__intro-sample">
+										<li>
+											<div>
+												<p class="search__sample-btxt">도로명 + 건물번호</p>
+												<p class="search__sample-txt">예시) 영신로 220</p>
+											</div>
+										</li>
+										<li>
+											<div>
+												<p class="search__sample-btxt">지역동(동/리) + 번지</p>
+												<p class="search__sample-txt">예시) 영등포동 8가 92</p>
+											</div>
+										</li>
+										<li>
+											<div>
+												<p class="search__sample-btxt">지역동(동/리) + 건물명(아파트명)</p>
+												<p class="search__sample-txt">예시) 영등포동 8가 KNK디지털타워</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!-- 검색결과 -->
+								<div class="search__result border-t10 result-none" id="resultArea"><!-- sample:begin --><ul class="result-list"><li><a class="btn_send_data" data-val=""><div class="result__con"><p class="result__address">서울 강남구 테헤란로 1길 10</p><p class="result__address old">서울 강남구 테헤란로 1길 10 서울 강남구 테헤란로 1길 10 서울 강남구 테헤란로 1길 10 서울 강남구 테헤란로 1길 10 서울 강남구 테헤란로 1길 10</p><p class="result__address old">서울 강남구 테헤란로 1길 10</p></div></a></li></ul><!-- sample:end --></div>
+							</div>
+						</div>
+						<!-- // 검색 -->
+					</div>
+					<div class="address addBtn-pb58" id='step2' style="display:none !important;"><!-- 하단 버튼 추가 시 addBtn-pb58 클래스 추가 -->
+						<div class="address__detail">
+							<div class="address__content">
+								<p class="address__content-btxt" id="roadAddrNameTxt"><!-- sample:begin -->서울 강남구 테헤란로 1길 10<!-- sample:end --></p>
+								<p class="address__content-txt" id="AddrNameTxt"><!-- sample:begin -->서울 강남구 테헤란로 1길 10<!-- sample:end --></p>
+							</div>
+							<div class="address__detail-ipt"><!-- 입력 시작 시 input 추가 -->
+								<span class="address__detail-input"><input type="text" placeholder="상세주소를 입력해 주세요" id="addrDtl"></span>
+								<button class="address__detail-btn icon del-16" onclick="removeAlias();"><span class="blind">내용삭제</span></button>
+							</div>
+						</div>
+						<!-- 주소목록 -->
+						<div class="address__content">
+							<div class="address__nick border-t10" id='iconText'><!-- 직접입력 선택 시 self 클래스 추가 -->
+								<ul id='selectTP'>
+									<li class=""><!-- 선택 시 select 클래스 추가 -->
+										<div class="address__nick-con home">
+											<button onclick="selectIcon(this,1);"  id='btn1'>
+												<p class="address__nick-name">우리집</p>
+											</button>
+										</div>
+									</li>
+									<li>
+										<div class="address__nick-con comp">
+											<button onclick="selectIcon(this,2);" id='btn2'>
+												<p class="address__nick-name">회사</p>
+											</button>
+										</div>
+									</li>
+									<li>
+										<div class="address__nick-con">
+											<button onclick="selectIcon(this,9);" id='btn9'>
+												<p class="address__nick-name">직접입력</p>
+											</button>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- 기본값 = 숨김, 상단 박스에서 self 클래스 추가 시 입력창 생성 및 간격 조절됨  -->
+							<div class="address__self-bx">
+								<div class="address__detail-ipt">
+									<span class="address__detail-input"><input type="text" placeholder="주소 별칭을 입력해 주세요" id="type_aliTxt"></span>
+									<button class="address__detail-btn icon del-16"><span class="blind">내용삭제</span></button>
+								</div>
+								<p class="address__txt-btn"><a onclick="nativeCall('5011')"><span class="icon arr_right-14">지도에서 위치 확인하기</span></a></p>
+							</div>
+						</div>
+						<!-- // 주소목록 -->
+					</div>
+				</div>
+				<!-- 하단 고정버튼 -->
+				<div class="btn_botFix_w">
+					<div class="inner bg_white">
+						<a data-element-id="BPG-YGYO-40-20-S-e19" onclick="goNext()" class="btn_default round_r8 btn-style-h48 on" style="display: none" id="saveBtn">완료</a>
+					</div>
+				</div>
+				<!-- //하단 고정버튼 -->
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

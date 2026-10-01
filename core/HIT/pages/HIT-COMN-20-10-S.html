@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈 - 알림함</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-COMN-20-10-S">
+<form name="frm" id="frm" method="post">
+        <input type="hidden" name="MEMB_CD" id="MEMB_CD" value=""/>
+        <input type="hidden" name="APP_CD" id="APP_CD" value=""/>
+        <input type="hidden" name="ENC_MEMB_CD" id="ENC_MEMB_CD" value=""/>
+        <input type="hidden" name="ENC_APP_CD" id="ENC_APP_CD" value=""/>
+        <input type="hidden" name="REFERER" id="REFERER" value=""/>
+    </form>
+<div class="wrap js-wrap bg-f7">
+        <!-- 헤더 영역 -->
+        <header class="header position-sticky">
+            <!-- 헤더 네비 -->
+            <nav class="header-nav">
+                <a data-element-id="HIT-COMN-20-10-S-e06" onClick="uf_back();" class="hd-btn back"><span class="blind-i">뒤로가기</span></a>
+            </nav>
+            <!-- 헤더 타이틀 -->
+            <div class="page-title">
+                <h1 class="header-title">알림</h1>
+            </div>
+            <nav class="header-nav">
+                <a data-element-id="HIT-COMN-20-10-S-e07" id="read_all" class="hd-btn read"><span>모두읽음</span></a>
+            </nav>
+        </header>
+
+        <!-- 컨텐츠 영역 -->
+        <main class="container-wrap js-container-wrap">
+            <div class="util-box flex-row justify-end">
+                <div class="sort">
+                    <p class="sort-item">
+                        <a data-element-id="HIT-COMN-20-10-S-e08" id="selected_alarm_type" class="sort-btn"><span class="icon arr_bottom-16">전체</span></a>
+                    </p>
+                </div>
+            </div>
+            <!-- 알림함 -->
+            <section class="biz_noti">
+                <article class="noti_list_w" id="noti_list_w">
+                    <!-- 이미지 아이콘 리스트 -->
+                    <!--
+                        모바일 청구					: biz_noti_ico1.png
+                        선물 도착					: biz_noti_ico2.png
+                        결제취소&완료				: biz_noti_ico3.png
+                        상품권 구매&유효기간 만료	: biz_noti_ico4.png
+                        공지						: biz_noti_ico5.png
+                        이벤트						: biz_noti_ico6.png
+                        매니저인증 안내				: biz_noti_ico7.png
+                        접수/제조 완료				: biz_noti_ico8.png
+                        요기요                      : biz_noti_ico9.png
+                        식수신청                    : biz_noti_ico10.png
+                        다과신청                    : biz_noti_ico11.png
+                    -->
+                    <ul id="rslt_ul">
+                        <!-- <li class="read">읽음 처리 시 class="read" 추가
+                            <a href="#none">
+                                <strong>
+                                    <img src="../assets/resource/img/hdc/biz_noti_ico8.png" alt="" class="icon">
+                                    <span class="tit">접수완료</span>
+                                    <span class="date">8월17일</span>
+                                </strong>
+                                <span class="message">
+                                    WeCafe 주문이 접수되었습니다.
+                                </span>
+                            </a>
+                        </li> -->
+                    </ul>
+                    <!-- 알림함 안내 -->
+                    <div class="noti_list_info">
+                        <p>최근 90일 동안의 알림만 확인하실 수 있습니다.</p>
+                    </div>
+                    
+                    <!-- 알림내역 없는경우 -->
+                    <div class="noti_list_none" style="display:none; ">
+                        <p>최근 90일 동안의 알림이 없습니다.</p>
+                    </div>
+                </article>
+            </section>
+                        
+            <!-- 레이어팝업 -->
+	        <section class="popup-container overlay" style="display:none;">
+	            <div class="popup-box bottom">
+	                <div class="inner-box">
+	                    <!-- 컨테이너 헤더 -->
+	                    <div class="box-hd pd-lr20 pdt24">
+	                        <p class="box__hd-text">알림 유형</p>
+	                    </div>
+	                    <!-- 컨테이너 컨텐츠 -->
+	                    <article class="box-content pd-lr20 mgt16" id="alarm_type_pop"> <!-- id="alarm_type_pop" -->
+	                        <!-- <p class="popup__text"><button type="button" class="text-btn select2"><span>전체</span></button></p>선택 시 select2 클래스 추가
+	                        <p class="popup__text"><button type="button" class="text-btn"><span>결제</span></button></p>
+	                        <p class="popup__text"><button type="button" class="text-btn"><span>이벤트/혜택</span></button></p>
+	                        <p class="popup__text"><button type="button" class="text-btn"><span>공지</span></button></p>
+	                        <p class="popup__text"><button type="button" class="text-btn"><span>비플머니</span></button></p>
+	                        <p class="popup__text"><button type="button" class="text-btn"><span>스마트 오더</span></button></p>
+	                        <p class="popup__text"><button type="button" class="text-btn"><span>식수 신청</span></button></p>
+	                        <p class="popup__text"><button type="button" class="text-btn"><span>다과 신청</span></button></p>
+	                        <p class="popup__text"><button type="button" class="text-btn"><span>요기요 배달</span></button></p> -->
+	                    </article>
+	                    <!-- 닫기버튼 -->
+	                    <p id="pop_close" class="close_btn-box"><button data-element-id="HIT-COMN-20-10-S-e05" type="button" class="close-btn icon close-14"><span class="blind-i">팝업닫기</span></button></p>
+	                </div>
+	            </div>
+	        </section>
+	        <!-- // 레이어팝업 -->
+	        
+	        
+            <!-- 플로팅 박스 -->
+            <section class="floating-container bottom js-floating-wrap" >
+                <!-- 토스트 박스 -->
+                <article class="toast-box" ><!-- 노출 시 view 클래스 추가 / view 클래스 삭제 시 숨김 : 설정시간 = 1.5초 노출 후 사라짐 -->
+                    <div class="message-wrap">
+                        <p class="toast-text icon toast_chk-18"><span id="popMsg">모든 알림이 읽음 처리되었습니다.</span></p>
+                    </div>
+                </article>
+            </section>
+            
+	        <!-- 레이어 팝업 -->
+	        <div class="layer_pop">
+   			</div>
+   			<!-- //레이어 팝업 -->
+        </main>
+    </div>
+</body>
+</html>

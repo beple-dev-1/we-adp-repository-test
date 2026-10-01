@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈 가맹점pc_매니저 로그인(앱 버전)</title>
+  <link rel="stylesheet" href="../assets/ent_aflt_resource/css/heat_admin-mobile.css">
+</head>
+<body data-screen-id="HIT-MBOA-10-10-20-S">
+<div class="app app--login">
+    <header class="ds-appbar">
+      <button id="go_back" class="ds-appbar__action ds-appbar__action--leading" aria-label="뒤로"><img src="../assets/ent_aflt_resource/img/icons/ico-arrow-left.svg" width="32" height="32" alt="" /></button>
+      <span class="ds-appbar__title"></span>
+      <span class="ds-appbar__action"></span>
+    </header>
+    <div class="login-body">
+      <h2 class="login-section-title"><!-- copy: login.mgr.title -->매니저 로그인</h2>
+      <p class="desc"><!-- copy: login.mgr.desc -->등록된 매니저만 로그인 하실 수 있습니다.</p>
+      <div class="ds-text-field">
+        <label class="ds-text-field__label"><!-- copy: login.mgr.phone -->휴대폰번호</label>
+        <div class="phone-row">
+          <div class="ds-text-field__control phone-input"><input data-element-id="HIT-MBOA-10-10-20-S-e07" id="phone_num" class="ds-text-field__input" type="tel" inputmode="numeric" maxlength="11" placeholder="- 없이 입력" /></div>
+          <button data-element-id="HIT-MBOA-10-10-20-S-e05" id="cert_req" class="ds-button ds-button--secondary phone-btn"><!-- copy: login.mgr.recode -->인증번호 요청</button>
+        </div>
+      </div>
+      <div class="ds-text-field">
+        <label class="ds-text-field__label"><!-- copy: login.mgr.code -->인증번호</label>
+        <div class="ds-text-field__control"><input data-element-id="HIT-MBOA-10-10-20-S-e08" id="cert_num" class="ds-text-field__input" type="text" inputmode="numeric" placeholder="인증번호 입력" /><span id="timer" class="timer"><!-- copy: login.mgr.timer -->03:00</span></div>
+      </div>
+      <ul class="login-guide">
+        <li><!-- copy: login.mgr.help1 -->인증번호가 도착하지 않을 경우 <span class="hl">인증번호 재요청</span>을 눌러 주세요.</li>
+        <li><!-- copy: login.mgr.help2 -->인증번호는 비플페이 앱 푸시(PUSH)로 발송됩니다.</li>
+      </ul>
+    </div>
+    <div class="login-footer">
+      <button data-element-id="HIT-MBOA-10-10-20-S-e06" id="login" class="ds-button ds-button--primary ds-button--block ds-button--xlarge ds-button--disabled"><!-- copy: login.mgr.btn -->로그인</button>
+    </div>
+  </div>
+<!--   -->
+</body>
+</html>

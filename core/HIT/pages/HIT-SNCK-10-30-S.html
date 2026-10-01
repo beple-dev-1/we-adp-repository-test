@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>다과 예약 신청 (main)</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-SNCK-10-30-S">
+<div class="wrap js-wrap" >
+		<form id="frm" name="frm">
+			<input type="hidden" name="inputName" id="inputName" value="">
+			<input type="hidden" name="blockLastDate" id="blockLastDate" value="">
+			<input type="hidden" name="sendDateInput" id="sendDateInput" value="">
+			<input type="hidden" name="spanName" id="spanName" value="">
+		    <header class="header position-sticky">
+		        <nav class="header-nav">
+		           <a data-element-id="HIT-SNCK-10-30-S-e08" class="hd-btn back" id='btnBack'><span class="blind-i">뒤로가기</span></a>
+		        </nav>
+		        <div class="page-title">
+		            <h1 class="header-title">다과 예약 신청</h1>
+		        </div>
+		        <nav class="header-nav">
+		           <!--  <a href="#none" class="hd-btn close"><span class="blind-i">닫기</span></a> -->
+		        </nav>
+		    </header>
+		
+		    <main class="container-wrap js-container-wrap">
+		        <!-- 식수신청 -->
+		        <section class="orderling-container">
+		            <!-- 컨테이너 헤더 -->
+		            <div class="container-hd">
+		                <h2 class="container__hd-title">행사 정보</h2>
+		                <p class="container__hd-text">다과를 사용할 행사 정보를 작성해 주세요.</p>
+		            </div>
+		            <article class="orderling__item-wrap">
+		                <div class="form-box">
+		                    <div class="box-hd">
+		                        <p class="form-label">행사명</p>
+		                    </div>
+		                    <div class="form-item form-input">
+		                        <input data-element-id="HIT-SNCK-10-30-S-e12" onkeyup="btnCheck();textCheck(this);"  maxlength="20" type="text" id='frsh_brk_title' placeholder="행사명을 작성해 주세요.">
+		                    </div>
+		                </div>               
+		                <div class="form-box">
+		                    <div class="box-hd">
+		                        <p class="form-label">행사 일자</p>
+		                    </div>
+		                    <div class="form__item-wrap">
+		                        <div class="form-item form-btn placeholder" onclick='calendarOpen("trx_dt","dayTxt")' id='calendarDate'><!-- 일자 선택 시 placeholder 클래스 삭제 -->
+		                            <a data-element-id="HIT-SNCK-10-30-S-e09" class="icon calendar-16"><span class="tx_ellipsis"  id='dayTxt'>일자를 선택해주세요.(워킹데이 기준 7일 이후)</span></a>
+		                       		<input onchange="btnCheck();" type="hidden" id='trx_dt' value="">
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="form-box">
+			                <div class="box-hd">
+		                        <p class="form-label">행사 시간</p>
+		                    </div>
+		                    <div class="form-item form-btn placeholder" id='timeHolder'><!-- 일자 선택 시 placeholder 클래스 삭제 -->
+		                          <a data-element-id="HIT-SNCK-10-30-S-e10" class="icon arr_bottom2-16" id='trxDtSelect'><span class="tx_ellipsis"  id='btn_end_time_picker'>시간을 선택해 주세요</span></a>
+		                         <!-- <div class="sub_bx request" id="trxDtSelect" style="">
+		                             <button  class="request-btn" id="btn_end_time_picker">오후 2시 40분</button>
+		                         </div> -->
+		                    </div>
+		                </div>
+		                <!-- 참석 인원 -->
+		                <div class="form-box">
+		                    <div class="box-hd">
+		                        <p class="form-label">참석 인원</p>
+		                    </div>
+		                    <div class="form-item form-input">
+		                        <input data-element-id="HIT-SNCK-10-30-S-e13" type="tel" maxlength="6" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');checkZero();btnCheck();" id='memb_cnt' placeholder="참석인원을 입력해 주세요.">
+		                    </div>
+		                </div><!--  -->
+		                <div class="form-box">
+		                    <div class="box-hd flex-row justify-space">
+		                        <p class="form-label">행사 장소</p>
+		                        <p class="form-txt-count" style="display: none"><strong id='chekCount'>0</strong><span>/200</span></p>
+		                    </div>
+		                    <div class="form-item form-textarea hint" id='hintArea'>
+		                        <textarea data-element-id="HIT-SNCK-10-30-S-e14" name='locationDesc' id="locationDesc" onkeyup="btnCheck();textCheck(this)" ></textarea>
+		                        <p class="hint-txt">행사장소를 입력해 주세요.</p>
+		                    </div>
+		                </div>
+		            </article>
+		        </section>
+		
+		        <!-- 플로팅 박스 -->
+		        <section class="floating-container bottom js-floating-wrap">
+		            <article class="main_btn-box bg-white">
+		                <div class="btn-main">
+		                    <a data-element-id="HIT-SNCK-10-30-S-e11" onclick="menuPage()" class="btn-default radius-mid btn-style-h48" id='nextBtn'>다음</a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+		                </div>
+		            </article>
+		        </section>
+		    </main>
+		</form>
+	</div>
+</body>
+</html>

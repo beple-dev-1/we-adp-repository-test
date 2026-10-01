@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플오더 메뉴관리 카테고리</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-20-S">
+<form name = "frm" id = "frm" method="post">
+		<input id="BP_AFLT_SEQ" name = "BP_AFLT_SEQ" type="hidden" value="">
+		<input id="BP_AFLT_CATG_SEQ" name = "BP_AFLT_CATG_SEQ" type="hidden" value="">
+		<input id="BP_AFLT_CATG_NM" name = "BP_AFLT_CATG_NM" type="hidden" value="">
+	</form>
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>메뉴 관리</h1>
+			<a data-element-id="BPG-OBO-20-S-e12" href="#" class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 비플오더 -->
+				<div class="flexWrap">
+					<div class="bpleOder add_flex_column auto_bot_pd">
+						<div class="tab_menu four">
+							<a data-element-id="BPG-OBO-20-S-e13" href="#" onclick="return false;" class="on"><span>카테고리</span></a>
+							<a data-element-id="BPG-OBO-20-S-e08" data-nav-target="BPG-OBO-50-S" href="#" onclick="Common.simpleSubmit('bo_my_pdt.act', {BP_AFLT_SEQ:''});return false;"><span>메뉴</span></a>
+							<a data-element-id="BPG-OBO-20-S-e09" data-nav-target="BPG-OBO-30-S" href="#" onclick="Common.simpleSubmit('bo_my_opt.act', {BP_AFLT_SEQ:''});return false;"><span>옵션</span></a>
+							<a data-element-id="BPG-OBO-20-S-e10" data-nav-target="BPG-OBO-40-S" href="#" onclick="Common.simpleSubmit('bo_my_orgin.act', {BP_AFLT_SEQ:''});return false;"><span>원산지</span></a>
+						</div>
+						<!-- 메뉴관리 컨텐츠 -->
+						<div class="menu_admin">
+							<div class="categori_list item-move" style="display: none;"><!-- sample:begin --><ul id='catg_ul' ><li dsp_seq='1' catg_seq='1'><div class='inner' name='catg_div'><p class='btn_move'><a>순서이동</a></p><p class='name'><strong id='catgSeq1'>홍길동</strong></p><p class='btn_edit'><a onclick='uf_catgSet("1","catgSeq1");'>카테고리 설정</a></p></div></li></ul><!-- sample:end --></div>
+							<!-- 카테고리 / 메뉴 / 원산지 추가 버튼 -->
+							<p class="btn_add">
+								<a data-element-id="BPG-OBO-20-S-e14" href="#none" id="btn_add" >+ 카테고리 추가</a>
+							</p>
+						</div>
+					</div>
+					<!-- 메뉴관리 항목별 없음 안내 -->
+					<div class="empty" style="display:none;">
+						<p>등록된 카테고리가 없습니다.</p>
+					</div>
+				</div>
+				<!-- //비플오더 -->
+			</div>
+			<!-- // content -->
+
+			<!-- 하단 고정버튼 영역 -->
+			<div class="btn_botFix_w">
+				<div class="oder_bot_info" style="display:none;" ><!-- 등록 카테고리 없을 시 노출 -->
+					<dl>
+						<dt>‘카테고리’는 무엇인가요?</dt>
+						<dd>
+							카테고리는 메뉴를 하나로 묶어주는 단위입니다.<br>
+							신메뉴, 커피, 에이드와 같이 메뉴의 성격별로 카테고리를 설정해 주세요.
+						</dd>
+					</dl>
+				</div>
+				<!-- 버튼 -->
+				<div class="inner">
+					<a data-element-id="BPG-OBO-20-S-e11" data-nav-target="BPG-OBO-10-S" href="#none" onclick="Common.simpleSubmit('bo_my_main.act', {BP_AFLT_SEQ:''});"  class="btn_default btn-style-h46 round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+						확인
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 영역 -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	<!-- 레이어팝업 -->
+	<div class="layer_overlay" id="catglayer" style="display:none;" id="optlayer">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 설정팝업 -->
+				<div class="edit_pop">
+					<p class="btn_close">
+						<a id="btn_close" ><span class="blind">닫기</span></a>
+					</p>
+					<!-- 메뉴선택 -->
+					<ul>
+						<li><a href="#none" id="btn_save">카테고리 수정</a></li>
+						<li><a href="#none" id="btn_del">카테고리 삭제</a></li>
+					</ul>
+					<!-- //메뉴선택 -->
+				</div>
+				<!-- //설정팝업 -->
+			</div>
+		</div>
+	</div>
+	<!-- //레이어팝업 -->
+</body>
+</html>

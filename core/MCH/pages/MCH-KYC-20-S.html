@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>고객확인서등록_사장님정보등록</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KYC-20-S">
+<form id="frm">
+        <input type="hidden" id="SEOUL_PAY_YN" name="SEOUL_PAY_YN" value=""/>
+        <input type="hidden" id="AML_SEQ" name="AML_SEQ" value="">
+        <input type="hidden" id="CI"  name="CI"  value="" />
+        <input type="hidden" id="AC"  name="AC"  value=""/>
+        <input type="hidden" id="CORP_YN" name="CORP_YN" value="">
+        <input type="hidden" id="PREV_PAGE" name="PREV_PAGE" value="aml_reg_info.act">
+        <input type="hidden" id="NEXT_PAGE" name="NEXT_PAGE" value="aml_reg_tran.act">
+        <input type="hidden" id="MODIFY_YN" name="MODIFY_YN" value="">
+    </form>
+
+    <div class="wrap">
+        <div class="header floating-back-header floating-sticky">
+            <h1>가맹점 고객확인서</h1>
+            <a data-element-id="MCH-KYC-20-S-e23" href="#" class="btn-history-back" id="back_btn">뒤로가기</a>
+        </div>
+        <!-- // header -->
+    
+        <div class="container" id="ceo_container">
+            <div class="content">
+                <!-- 고객확인서 -> 개인 -->
+                <section class="customer-verification js-cv-container"><!-- 2024-11-19 'js-cv-container' 클래스 추가 / 'addBtn-pb58' 제거 -->
+    
+                    <div class="step-box">
+                        <ol class="step__list">
+                            <li class="step__item"><span>1</span></li>
+                            <li class="step__item on"><span>2</span></li>
+                            <li class="step__item"><span>3</span></li>
+                            <li class="step__item"><span>4</span></li>
+                        </ol>
+                    </div>
+    
+                    <!-- 대표자 정보 -->
+                    <div class="verification-section tab-container js-tab-container">
+                        <article class="verification__header">
+                            <h2 class="header__title">대표자 정보</h2>
+                            <p class="header__description">
+                                사업자등록증 상 공동대표자가 있는 경우 추가하여 모든 대표자의 정보를 입력해 주세요.<br>
+                                각자대표자가 있는 경우에도 추가하여 작성해 주세요.
+                            </p>
+                        </article>
+    
+                        <!-- 
+    
+                            정보 form -> 2번 TAB 부터는 대표자 명 input 박스 활성화 됨.
+                            <div class="form__item"> 'item-disabled' 제거, 'input' 박스의 'readonly' 제거
+                            공동 대표자 버튼의 이름 부분 태그 strong는 대표자 명 input 박스와 연동.
+    
+                        -->
+    
+                        <!-- 탭 버튼 -->
+                        <div class="tab__button-container js-tab__button-container" id="ceo_tab_container">
+                            <div class="tab__button-wrap" id="ceo_tab">
+                                <!-- 대표자 - 기본 -->
+                                <div class="tab__button-item js-tab__button-item on">
+                                    <button data-element-id="MCH-KYC-20-S-e17" type="button" class="tab-button"><span>대표자</span><strong data-id="ceo_nm_tab"></strong></button>
+                                </div>
+    
+                                <!-- 공동 대표자 -->
+                                <div class="tab__button-item js-tab__button-item on" id="ceo_sample_btn" style="display:none;">
+                                    <button type="button" class="tab-button"><span>공동대표자 <i class="counter">1</i></span><strong data-id="ceo_nm_tab" style="display:none;"></strong></button>
+                                    <!-- 삭제 버튼 -->
+                                    <button type="button" class="item__del-button js-delete-button"><span class="blind-i">삭제</span></button>
+                                </div>
+                                
+                            </div>
+    
+                            <!-- 대표자 추가 -->
+                            <div class="tab__item-add js-tab__item-add" id="add_ceo">
+                                <button data-element-id="MCH-KYC-20-S-e18" type="button" class="button-add">
+                                    <img src="../assets/resource/images/icon/icon-tab_add-32_primary.png" alt="대표자 추가 버튼 이미지">
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 정보 form -> 1 -->
+                        <article class="verification__content js-tab__content mgt12" data-id="ceo_content" data-value="">
+                            <input type="hidden" data-id="ceo_seq" value=""/>
+                            <!-- 
+                                form input 상태별 attr 아래 속성 추가할 것.
+    
+                                읽기전용 = readonly 추가
+                                비활성화 = disabled 추가
+                            -->
+                            <div class="form-box">
+                                <!-- 대표자명 -->
+                                <div class="form__item"><!-- 읽기전용, 비활성화 시 item-disabled 추가 -->
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자명</h3>
+                                    </div>
+        
+                                    <div class="form__item-wrap">
+                                        <div class="type-box">
+                                            <input data-element-id="MCH-KYC-20-S-e26" type="text" data-id="ceo_nm" value="" placeholder="대표자 성명 입력" maxlength="50">
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- 대표자명(영문) -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자명(영문)</h3>
+                                    </div>
+        
+                                    <div class="form__item-wrap">
+                                        <div class="type-box">
+                                            <input data-element-id="MCH-KYC-20-S-e27" type="text" data-id="ceo_eng_nm" value="" placeholder="대표자 여권상 영문명 입력" maxlength="50">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- 대표자 국적 -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자 국적</h3>
+                                    </div>
+        
+                                    <div class="form__item-wrap">
+                                        <div class="drop-type2 js-drop_box">
+                                            <p class="drop__trigger js-drop_trigger">
+                                                <button data-element-id="MCH-KYC-20-S-e19" type="button" class="trigger-button" data-id="ceo_nation" name="ceo_nation" value="KR">대한민국 (KR)</button>
+                                                </p>
+        
+                                            <div class="drop__content js-drop_content" style="display:none;">
+                                                <ul class="content__item-list" id="ceo_nation_list">
+                                                    <!-- <li class="content__item"><button type="button" class="item-button" name="ceo_nation" value="US">미국 (US)</button></li> -->
+                                                    <!-- <li class="content__item"><button type="button" class="item-button" name="ceo_nation" value="KR">대한민국 (KR)</button></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- 대표자 생년월일 -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자 생년월일</h3>
+                                    </div>
+    
+                                    <div class="form__item-wrap">
+                                        <div class="type-box">
+                                            <input data-element-id="MCH-KYC-20-S-e28" type="tel" data-id="ceo_brt_dt" value="" placeholder="8자리 숫자만 입력" maxlength="8">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- 대표자 휴대폰번호(선택) -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자 휴대폰번호(선택)</h3>
+                                    </div>
+    
+                                    <div class="form__item-wrap">
+                                        <div class="type-box">
+                                            <input data-element-id="MCH-KYC-20-S-e29" type="tel" data-id="ceo_mob_no" value="" placeholder="숫자만 입력" maxlength="11">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 법인 아닌 -->
+	                                <!-- 20205-02-12 -->
+									<div class="form__item">
+										<div class="form__item-header">
+											<h3 class="form__label">대표자 이메일(선택)</h3>
+										</div>
+		
+										<div class="form__item-wrap mail-box" data-id="ceo_email">
+											<div class="type-box">
+												<input data-element-id="MCH-KYC-20-S-e30" type="text" value="" placeholder="이메일 입력" data-id="input_ceo_email" class="input_number_only">
+											</div>
+											<div class="type-button" data-id="div_email_domain"><!-- 버튼 클릭 시 on 클래스 추가. -->
+												<button data-element-id="MCH-KYC-20-S-e20" class="form-button">
+													<span class="tx_ellipsis" data-id="email_domain" data-value="">직접 입력</span>
+													<i class="icon arr_down-20"></i>
+												</button>
+											</div>
+										</div>
+									</div>
+									<!-- // 20205-02-12 -->
+                                
+    
+                                <!-- 성별 -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">성별</h3>
+                                    </div>
+            
+                                    <div class="form__item-wrap">
+                                        <div class="type-radio">
+                                            <label class="radio__label"><input type="radio" data-id="ceo_gndr" name="ceo_gndr_0" value="1" checked><span>남자</span></label>
+                                            <label class="radio__label"><input type="radio" data-id="ceo_gndr" name="ceo_gndr_0" value="2"><span>여자</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- 국내거주여부 -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">국내거주여부</h3>
+                                    </div>
+    
+                                    <div class="form__item-wrap">
+                                        <div class="type-radio">
+                                            <label class="radio__label"><input type="radio" data-id="ceo_domest_yn" name="ceo_domest_yn_0" value="Y" checked><span>거주</span></label>
+                                            <label class="radio__label"><input type="radio" data-id="ceo_domest_yn" name="ceo_domest_yn_0" value="N"><span>비거주</span></label>
+                                        </div>
+    
+                                        <!-- 드롭박스 -> 비거주 선택 시 노출 -->
+                                        <div class="drop-type2 js-drop_box noabs" style="display: none;" id="div_ceo_forgn_nation">
+                                            <p class="drop__trigger js-drop_trigger placeholder"><!-- 선택 시 placeholder 제거 -->
+                                                <button type="button" class="trigger-button" data-id="ceo_forgn_nation" name="ceo_forgn_nation" value="">거주 국가 선택</button>
+                                                </p>
+        
+                                            <div class="drop__content js-drop_content" style="display:none;">
+                                                <ul class="content__item-list" id="ceo_forgn_nation_list">
+                                                    <!-- <li class="content__item"><button type="button" class="item-button" name="ceo_forgn_nation" value="US">미국 (US)</button></li> -->
+                                                    <!-- <li class="content__item"><button type="button" class="item-button" name="ceo_forgn_nation" value="KR">대한민국 (KR)</button></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 법인 아닌 -->
+
+								<!-- 주소 -->
+		                        <div class="form__item item-disabled address-box">
+		                            <!-- 2024-11-22 -->
+		                            <div class="form__item-header">
+		                                <div class="tooltip-verification js-tooltip"><!-- 활성화 시 view 클래스 추가 -->
+		                                    <div class="tooltip__trigger">
+		                                        <h3 class="form__label">주소</h3>
+		                                        <button data-element-id="MCH-KYC-20-S-e21" type="button" class="tooltip__button"><span class="blind-i">툴 팁 보기</span><i class="button-icon"></i></button>
+		                                    </div>
+		                                    <div class="tooltip__content js-tooltip__content">
+		                                        국내거주여부를 비거주(해외 거주자)로 선택하신 경우, 국내 가맹점 주소 혹은 국내 거주시 주소 등 국내에서 연락이 가능한 주소지로 입력해 주세요.
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <!-- // 2025-02-18 -->
+		
+		                            <div class="form__item-wrap code-box">
+		                                <div class="type-box">
+		                                    <input data-element-id="MCH-KYC-20-S-e31" type="tel" value="" data-id="ceo_zip_cd" placeholder="우편번호" readonly>
+		                                </div>
+		                                <div class="code__search">
+		                                    <a data-element-id="MCH-KYC-20-S-e24" href="#none" class="search-button" data-id="btn_srch_addr"><span>주소 검색</span></a>
+		                                </div>
+		                            </div>
+		
+		                            <div class="form__item-wrap">
+		                                <div class="type-box">
+		                                    <input type="text" data-id="ceo_addr" value="" readonly>
+		                                </div>
+		                            </div>
+		
+		                            <div class="form__item-wrap self-input">
+		                                <div class="type-box">
+		                                    <input data-element-id="MCH-KYC-20-S-e32" type="text" data-id="ceo_addr2" value="" placeholder="상세주소 입력" maxlength="100" onkeyup='this.value=this.value.replace(/[<>\"]/g,"");'>
+		                                </div>
+		                            </div>
+		                        </div>                                
+                                
+                                <!-- 직업 -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">직업</h3>
+                                    </div>
+        
+                                    <div class="form__item-wrap">
+                                        <div class="drop-type2 js-drop_box noabs">
+                                            <p class="drop__trigger js-drop_trigger placeholder"><!-- 값 선택 시 placeholder 클래스 제거 -->
+                                                <button data-element-id="MCH-KYC-20-S-e22" type="button" class="trigger-button" id="ceo_job" name="ceo_job" value="">직업 선택</button>
+                                                </p>
+        
+                                            <div class="drop__content js-drop_content" style="display:none;">
+                                                <ul class="content__item-list" id="ceo_job_list">
+                                                    <!-- <li class="content__item"><button type="button" class="item-button" value="">직업 선택</button></li> -->
+                                                
+                                                
+                                                    <li class="content__item">
+                                                        <button type="button" class="item-button" value="">비플머니</button>
+                                                    </li>
+                                                
+                                                    <!-- 
+                                                    <li class="content__item"><button type="button" class="item-button">직장인</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">학생/주부/군인/무직</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">의료/금융 전문가</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">세무/법조/부동산 전문가</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">일반 제조/판매/서비스업 종사자</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">법무/회계/세무/부동산 관리 서비스업 종사자</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">여행/복권/오락 관련 서비스업 종사자</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">고위(차관급이상)/선출직 공무원</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">프리랜서</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">대부업/환전상/전당포/금융업 종사자</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">귀금속/무기/예술품 제조 및 도소매업 종사자</button></li>
+                                                     -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </article>
+                        
+
+                        <!-- 정보 form -> 1 -->
+                        <article class="verification__content js-tab__content mgt12" id="ceo_sample_content" data-id="ceo_content" data-value="" style="display:none;">
+                            <input type="hidden" data-id="ceo_seq" value=""/>
+                            <!-- 
+                                form input 상태별 attr 아래 속성 추가할 것.
+    
+                                읽기전용 = readonly 추가
+                                비활성화 = disabled 추가
+                            -->
+                            <div class="form-box">
+                                <!-- 대표자명 -->
+                                <div class="form__item"><!-- 읽기전용, 비활성화 시 item-disabled 추가 -->
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자명</h3>
+                                    </div>
+        
+                                    <div class="form__item-wrap">
+                                        <div class="type-box">
+                                            <input type="text" data-id="ceo_nm" value="" placeholder="대표자 성명 입력" maxlength="50">
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- 대표자명(영문) -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자명(영문)</h3>
+                                    </div>
+        
+                                    <div class="form__item-wrap">
+                                        <div class="type-box">
+                                            <input type="text" data-id="ceo_eng_nm" value="" placeholder="대표자 여권상 영문명 입력" maxlength="50">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- 대표자 국적 -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자 국적</h3>
+                                    </div>
+        
+                                    <div class="form__item-wrap">
+                                        <div class="drop-type2 js-drop_box">
+                                            <p class="drop__trigger js-drop_trigger">
+                                                <button type="button" class="trigger-button" data-id="ceo_nation" name="ceo_nation" value="KR">대한민국 (KR)</button>
+                                                </p>
+        
+                                            <div class="drop__content js-drop_content" style="display:none;">
+                                                <ul class="content__item-list" id="ceo_nation_list">
+                                                    <!-- <li class="content__item"><button type="button" class="item-button" name="ceo_nation" value="US">미국 (US)</button></li> -->
+                                                    <!-- <li class="content__item"><button type="button" class="item-button" name="ceo_nation" value="KR">대한민국 (KR)</button></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- 대표자 생년월일 -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자 생년월일</h3>
+                                    </div>
+    
+                                    <div class="form__item-wrap">
+                                        <div class="type-box">
+                                            <input type="tel" data-id="ceo_brt_dt" value="" placeholder="8자리 숫자만 입력" maxlength="8">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- 대표자 휴대폰번호(선택) -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자 휴대폰번호(선택)</h3>
+                                    </div>
+    
+                                    <div class="form__item-wrap">
+                                        <div class="type-box">
+                                            <input type="tel" data-id="ceo_mob_no" value="" placeholder="숫자만 입력" maxlength="11">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 법인 아닌 -->
+	                                <!-- 20205-02-12 -->
+									<div class="form__item">
+										<div class="form__item-header">
+											<h3 class="form__label">대표자 이메일(선택)</h3>
+										</div>
+		
+										<div class="form__item-wrap mail-box" data-id="ceo_email">
+											<div class="type-box">
+												<input type="text" value="" placeholder="이메일 입력" data-id="input_ceo_email" class="input_number_only">
+											</div>
+											<div class="type-button" data-id="div_email_domain"><!-- 버튼 클릭 시 on 클래스 추가. -->
+												<button class="form-button">
+													<span class="tx_ellipsis" data-id="email_domain" data-value="">직접 입력</span>
+													<i class="icon arr_down-20"></i>
+												</button>
+											</div>
+										</div>
+									</div>
+									<!-- // 20205-02-12 -->
+                                
+    
+                                <!-- 성별 -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">성별</h3>
+                                    </div>
+            
+                                    <div class="form__item-wrap">
+                                        <div class="type-radio">
+                                            <label class="radio__label"><input type="radio" data-id="ceo_gndr" name="ceo_gndr" value="1" checked><span>남자</span></label>
+                                            <label class="radio__label"><input type="radio" data-id="ceo_gndr" name="ceo_gndr" value="2"><span>여자</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- 국내거주여부 -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">국내거주여부</h3>
+                                    </div>
+    
+                                    <div class="form__item-wrap">
+                                        <div class="type-radio">
+                                            <label class="radio__label"><input type="radio" data-id="ceo_domest_yn" name="ceo_domest_yn" value="Y" checked><span>거주</span></label>
+                                            <label class="radio__label"><input type="radio" data-id="ceo_domest_yn" name="ceo_domest_yn" value="N"><span>비거주</span></label>
+                                        </div>
+    
+                                        <!-- 드롭박스 -> 비거주 선택 시 노출 -->
+                                        <div class="drop-type2 js-drop_box noabs" style="display: none;" id="div_ceo_forgn_nation">
+                                            <p class="drop__trigger js-drop_trigger placeholder"><!-- 선택 시 placeholder 제거 -->
+                                                <button type="button" class="trigger-button" data-id="ceo_forgn_nation" name="ceo_forgn_nation" value="">거주 국가 선택</button>
+                                                </p>
+        
+                                            <div class="drop__content js-drop_content" style="display:none;">
+                                                <ul class="content__item-list" id="ceo_forgn_nation_list">
+                                                    <!-- <li class="content__item"><button type="button" class="item-button" name="ceo_forgn_nation" value="US">미국 (US)</button></li> -->
+                                                    <!-- <li class="content__item"><button type="button" class="item-button" name="ceo_forgn_nation" value="KR">대한민국 (KR)</button></li> -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 법인 아닌 -->
+                                <!-- 주소 -->
+		                        <div class="form__item item-disabled address-box">
+		                            <!-- 2024-11-22 -->
+		                            <div class="form__item-header">
+		                                <div class="tooltip-verification js-tooltip"><!-- 활성화 시 view 클래스 추가 -->
+		                                    <div class="tooltip__trigger">
+		                                        <h3 class="form__label">주소</h3>
+		                                        <button type="button" class="tooltip__button"><span class="blind-i">툴 팁 보기</span><i class="button-icon"></i></button>
+		                                    </div>
+		                                    <div class="tooltip__content js-tooltip__content">
+		                                        국내거주여부를 비거주(해외 거주자)로 선택하신 경우, 국내 가맹점 주소 혹은 국내 거주시 주소 등 국내에서 연락이 가능한 주소지로 입력해 주세요.
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <!-- // 2025-02-18 -->
+		
+		                            <div class="form__item-wrap code-box">
+		                                <div class="type-box">
+		                                    <input type="tel" value="" data-id="ceo_zip_cd" placeholder="우편번호" readonly>
+		                                </div>
+		                                <div class="code__search">
+		                                    <a href="#none" class="search-button" data-id="btn_srch_addr"><span>주소 검색</span></a>
+		                                </div>
+		                            </div>
+		
+		                            <div class="form__item-wrap">
+		                                <div class="type-box">
+		                                    <input type="text" data-id="ceo_addr" value="" readonly>
+		                                </div>
+		                            </div>
+		
+		                            <div class="form__item-wrap self-input">
+		                                <div class="type-box">
+		                                    <input type="text" data-id="ceo_addr2" value="" placeholder="상세주소 입력" maxlength="100" onkeyup='this.value=this.value.replace(/[<>\"]/g,"");'>
+		                                </div>
+		                            </div>
+		                        </div>        
+                                <!-- 직업 -->
+                                <div class="form__item">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">직업</h3>
+                                    </div>
+        
+                                    <div class="form__item-wrap">
+                                        <div class="drop-type2 js-drop_box noabs">
+                                            <p class="drop__trigger js-drop_trigger placeholder"><!-- 값 선택 시 placeholder 클래스 제거 -->
+                                                <button type="button" class="trigger-button" id="ceo_job" name="ceo_job" value="">직업 선택</button>
+                                                </p>
+        
+                                            <div class="drop__content js-drop_content" style="display:none;">
+                                                <ul class="content__item-list" id="ceo_job_list">
+                                                    <!-- <li class="content__item"><button type="button" class="item-button" value="">직업 선택</button></li> -->
+                                                
+                                                
+                                                    <li class="content__item">
+                                                        <button type="button" class="item-button" value="">비플머니</button>
+                                                    </li>
+                                                
+                                                    <!-- 
+                                                    <li class="content__item"><button type="button" class="item-button">직장인</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">학생/주부/군인/무직</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">의료/금융 전문가</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">세무/법조/부동산 전문가</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">일반 제조/판매/서비스업 종사자</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">법무/회계/세무/부동산 관리 서비스업 종사자</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">여행/복권/오락 관련 서비스업 종사자</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">고위(차관급이상)/선출직 공무원</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">프리랜서</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">대부업/환전상/전당포/금융업 종사자</button></li>
+                                                    <li class="content__item"><button type="button" class="item-button">귀금속/무기/예술품 제조 및 도소매업 종사자</button></li>
+                                                     -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </article>
+                        
+                    </div>
+    
+                    <!-- 법인 아닌 -->
+                    <!-- 실제소유자 정보 -> 고정, 불필요 시 영역 제거 또는 display:none; -->
+                    <div class="verification-section">
+                        <article class="verification__header">
+                            <h2 class="header__title">실제소유자 정보</h2>
+                        </article>
+    
+                        <!-- 정보 form -->
+                        <article class="verification__content mgt24">
+                            <!-- 
+                                form input 상태별 attr 아래 속성 추가할 것.
+    
+                                읽기전용 = readonly 추가
+                                비활성화 = disabled 추가
+                            -->
+                            <div class="form-box">
+                                <div class="form__item item-accent mgt0">
+                                    <div class="form__item-header">
+                                        <h3 class="form__label">대표자와 실제소유자가 동일합니까?</h3>
+                                    </div>
+    
+                                    <div class="form__item-wrap">
+                                        <div class="type-radio">
+                                            <label class="radio__label"><input type="radio" name="ceo_owner_yn" value="Y" checked><span>네, 동일합니다.</span></label>
+                                            <label class="radio__label"><input type="radio" name="ceo_owner_yn" value="N"><span>아니요,동일하지 않습니다.</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                </section>
+    
+                <!-- 하단 고정버튼 -->
+                <div class="btn_botFix_w js-floating-box"><!-- 2024-11-19 js-floating-box 클래스 추가 -->
+                    <div class="inner bg_white">
+                        <a data-element-id="MCH-KYC-20-S-e25" href="#" class="btn_default btn-style-h48 round_r8" id="btn_save_ceo"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                            <span>저장 후 다음 단계</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- // container -->
+    
+    </div><!-- // wrap -->
+    
+    
+<!-- 레이어팝업 -->
+<div class="layer_overlay" id="mail_layer" style="display:none;">
+    <div class="layer_bPop">
+        <div class="popup_con pd0">
+            <!-- 설정팝업 -->
+            <div class="edit_pop add_tit_t2">
+                <!-- 팝업 헤더 -->
+                <div class="popup-header">
+                    <h2 class="ly_pop_tit">이메일 선택</h2>
+                </div>
+
+                <!-- 팝업 컨텐츠 -> 도메인 선택 -->
+                <div class="popup-content">
+                    
+                    <ul id="select_email">
+                        <li><a data-value="">직접 입력</a></li>
+                        <li><a data-value="@gmail.com">gmail.com</a></li><!-- 선택 시 select 클래스 추가 -->
+                        <li><a data-value="@naver.com">naver.com</a></li>
+                        <li><a data-value="@yahoo.com">yahoo.com</a></li>
+                        <li><a data-value="@hanmail.co.kr">hanmail.co.kr</a></li>
+                        <li><a data-value="@outlook.com">outlook.com</a></li>
+                        <li><a data-value="@nate.com">nate.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //설정팝업 -->
+        </div>
+    </div>
+</div>
+<!-- //레이어팝업 -->
+</body>
+</html>

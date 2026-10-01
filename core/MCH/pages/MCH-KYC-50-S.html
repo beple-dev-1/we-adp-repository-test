@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>고객확인서등록_1원계좌인증</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KYC-50-S">
+<input type="hidden" id="CI"  name="CI"  value="" />
+<input type="hidden" id="AC"  name="AC"  value=""/>
+<input type="hidden" id="MEMB_NM" type="text" value="">
+<input type="hidden" id="BRT_DT" type="text" value="">
+<input type="hidden" id="MOB_NO" type="text" value="">
+<input type="hidden" id="BIZ_NO" type="text" value="">
+<input type="hidden" id="GNDR"  name="GNDR"  value=""/>
+<input type="hidden" id="SEOUL_PAY_YN"  name="SEOUL_PAY_YN"  value=""/>
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>가맹점 고객확인서</h1>
+        <a data-element-id="MCH-KYC-50-S-e08" data-nav-target="MCH-KYC-50-10-S" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+    </div>
+    <!-- // header -->
+
+    <div class="container">
+        <div class="content">
+            <section class="customer-verification js-cv-container"><!-- 2024-11-19 'js-cv-container' 클래스 추가 -->
+                <div class="verification-section">
+                    <article class="verification__header">
+                        <h2 class="header__title">입력하신 정보입니다.</h2>
+                    </article>
+
+                    <div class="verification__content">
+                        <!-- 가맹점 정보 -->
+                        <div class="data-wrap bg-box">
+                            <ul class="data-list">
+                                <li class="data-item">
+                                    <span class="item-tit">이름</span>
+                                    <span class="item-con">비플머니</span>
+                                </li>
+                                <li class="data-item">
+                                    <span class="item-tit">생년월일</span>
+                                    <span class="item-con"></span>
+                                </li>
+                                <li class="data-item">
+                                    <span class="item-tit">휴대폰번호</span>
+                                    <span class="item-con"></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="form-box mgt24">
+                            <!-- 라디오 박스 -->
+                            <div class="form__item">
+                                <div class="form__item-header">
+                                    <h3 class="form__label">위 작성자가 사업자의 대표자인가요?</h3>
+                                </div>
+
+                                <div class="form__item-wrap">
+                                    <div class="type-radio">
+                                        <label class="radio__label"><input type="radio" name="aml_repr_yn" value="Y" checked><span>네</span></label>
+                                        <label class="radio__label"><input type="radio" name="aml_repr_yn" value="N"><span>아니요, 대리인 입니다.</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="verification-section">
+                    <article class="verification__header">
+                        <h2 class="header__title">1원 계좌 인증</h2>
+                        <p class="header__description">고객확인서 작성자 명의의 계좌 정보를 입력해 주세요.</p>
+                    </article>
+
+                    <div class="verification__content mgt32">
+                        <div class="form-box">
+                            <!-- 성명 -->
+                            <div class="form__item item-disabled"><!-- 읽기전용, 비활성화 시 item-disabled 추가 -->
+                                <div class="form__item-header">
+                                    <h3 class="form__label">성명</h3>
+                                </div>
+
+                                <div class="form__item-wrap">
+                                    <div class="type-box">
+                                        <input data-element-id="MCH-KYC-50-S-e12" type="text" placeholder="성명" readonly value="비플머니" data-fill="demo">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 은행 -->
+                            <div class="form__item">
+                                <div class="form__item-header">
+                                    <h3 class="form__label">은행</h3>
+                                </div>
+
+                                <div class="form__item-wrap">
+                                    <div class="drop-type2 js-drop_box">
+                                        <p class="drop__trigger js-drop_trigger">
+                                            <button data-element-id="MCH-KYC-50-S-e09" type="button" class="trigger-button">은행 선택</button>
+                                        </p>
+
+                                        <div class="drop__content js-drop_content" style="display: none">
+                                            <ul class="content__item-list">
+                                                
+                                                <li class="content__item"><button type="button" class="item-button" bank-cd="" onclick="selectBank($(this))">국민은행</button></li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 계좌번호 -->
+                            <div class="form__item">
+                                <div class="form__item-header">
+                                    <h3 class="form__label">계좌번호</h3>
+                                </div>
+
+                                <div class="form__item-wrap">
+                                    <div class="type-box">
+                                        <input data-element-id="MCH-KYC-50-S-e13" type="tel" value="" placeholder="숫자만 입력" id="ACCT_NO">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 인증번호 입력 -->
+                            <div class="form__item">
+                                <div class="form__item-header">
+                                    <h3 class="form__label">인증번호 입력</h3>
+                                </div>
+
+                                <div class="form__item-wrap confirm-box">
+                                    <div class="type-box">
+                                        <input data-element-id="MCH-KYC-50-S-e14" type="tel" value="" maxlength="3" placeholder="숫자 3자리 입력" id="APV_NO">
+                                    </div>
+                                    <div class="confirm">
+                                        <a data-element-id="MCH-KYC-50-S-e10" href="#none" class="confirm-button" id="acct_cert_btn"><span>계좌인증 요청</span></a>
+                                    </div>
+                                </div>
+                                <p class="form__hint">계좌 거래내역에서 입금된 1원의 입금자명 확인 후 ‘비플’ 뒤 3자리 숫자를 입력해 주세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 하단 고정영역 -->
+            <div class="btn_botFix_w js-floating-box"><!-- 2024-11-19 js-floating-box 클래스 추가 -->
+                <div class="inner bg_white">
+                    <a data-element-id="MCH-KYC-50-S-e11" class="btn_default btn-style-h48 round_r8" id="btn_next" ><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                        <span>고객확인서 작성하기</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+    </div>
+    <!-- // container -->
+</div>
+<!-- // wrap -->
+</body>
+</html>

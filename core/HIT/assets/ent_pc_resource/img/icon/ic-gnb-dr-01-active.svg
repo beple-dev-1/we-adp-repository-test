@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g transform="translate(6885 3536)">
+        <rect data-name="사각형 31097" width="32" height="32" rx="6" transform="translate(-6885 -3536)" style="fill:#0d84ff"/>
+        <path data-name="패스 22258" d="M0 0h24v24H0z" style="fill:none" transform="translate(-6881 -3532)"/>
+        <path data-name="패스 22259" d="m12 5.69 5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3 2 12h3v8h6v-6h2v6h6v-8h3z" style="fill:#fff" transform="translate(-6881 -3532)"/>
+    </g>
+</svg>

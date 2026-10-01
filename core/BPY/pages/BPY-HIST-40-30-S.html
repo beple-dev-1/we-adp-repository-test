@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>제로페이 영수증 v2</title>
+  <link rel="stylesheet" href="../assets/resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_reset.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+</head>
+<body data-screen-id="BPY-HIST-40-30-S">
+<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<!-- 헤더 네비게이션(왼쪽) - 미사용 시 주석 or 삭제 (nav 태그 전체) -->
+			<!-- <nav class="header__navi">
+				<a href="#none" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav> -->
+
+			<!-- 헤더 타이틀(페이지 이름) - 어떤 경우에도 header__title-wrap 삭제 금지. -->
+			<div class="header__title-wrap">
+				<!-- 페이지 명 미사용 시 page-name 태그 내용 빈값 or 주석 or 삭제 -->
+				<h1 class="page-name"><span>전자영수증</span></h1>
+			</div>
+
+			<nav class="header__navi">
+				<a data-element-id="BPY-HIST-40-30-S-e11" id="btn_close" class="header__btn btn-close">
+					<span class="blind">페이지 닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<!-- 메인 컨텐츠 - 전자영수증 -->
+		<main class="container-wrap js-container-wrap">
+			<!-- 컨테이너 - 비플 M400a 전자영수증 -->
+			<section class="container data-receipt data-receipt--type1 js-container">
+				<!-- 컨테이너 헤더 -->
+				<header class="container__header justify-spacing-def">
+					<!-- 날짜, 공유하기 -->
+					<div class="container__header--util">
+						<time class="info__text--lv1" datetime="2024-03-06T09:33">2026.09.02 14:22</time>
+					<!-- 2024-12-24 - 버튼 삭제  -->
+					
+					<!--
+					
+						<button 
+							type="button"
+							class="util__button js-popup-open"
+							data-modal="popup-receipt--send"
+							aria-label="공유하기 팝업 열기">
+							<i class="icon icon--share-24">공유하기</i>
+						</button>
+					
+					 -->
+					</div>
+
+					<div class="container__header--content">
+						<!-- 매장명, 금액 -->
+						<h3 class="container__headline">
+							<div class="store">
+								<strong class="ellipsis-line--1"></strong>
+							</div>
+							<div class="price">
+								<strong><span>4,500</span>원</strong>
+								<!-- 플래그 박스 -->
+								<!-- 
+									구매완료, 결제완료 	= flag-box--lv1
+									구매취소, 환불		= flag-box--lv4
+									법인				= flag-box--lv5
+								-->
+								<!-- 
+								<div class="flag flag-small flag-box--lv5">
+									<p><span>비플머니</span></p>
+								</div>
+								 -->
+							</div>
+						</h3>
+					</div>
+				</header>
+
+				<!-- 영수증 내역 -->
+				<article class="container__body justify-spacing-def">
+					<div class="body__content">
+						<div class="flex-column">
+							<div class="table-wrap">
+								<!-- 테이블 - 영수증 내역 1 -->
+								<section class="table--body">
+									<table class="table table--data" aria-label="영수증 세부 내역 1">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<!-- 공급가액 -->
+											<tr>
+												<th>
+													<p>공급가액</p>
+												</th>
+												<td>
+													<p><span>4,091</span>원</p>
+												</td>
+											</tr>
+											<!-- 부가세 -->
+											<tr>
+												<th>
+													<p>부가세</p>
+												</th>
+												<td>
+													<p><span>409</span>원</p>
+												</td>
+											</tr>
+											<!-- 봉사료 -->
+											<!-- 1회용 컵 보증금 -->
+										</tbody>
+									</table>
+								</section>
+
+								<!-- 테이블 - 영수증 내역 2 (거래 및 결제) -->
+								<section class="table--body">
+									<table class="table table--data" aria-label="영수증 세부 내역 2">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<!-- 결제번호 -->
+											<tr>
+												<th>
+													<p>승인번호</p>
+												</th>
+												<td>
+													<p>000123</p>
+												</td>
+											</tr>
+											<!-- 거래유형 -->
+											<tr>
+												<th>
+													<p>거래유형</p>
+												</th>
+												<td>
+													<p class="fc-primary ">비플페이 결제</p>
+												</td>
+											</tr>
+											<!-- 결제방식 -->
+										</tbody>
+									</table>
+								</section>
+							</div>
+						</div>
+
+						<!-- 결제취소 버튼 -->
+					</div>
+				</article>
+
+				<!-- 결제수단 & 함께결제 -->
+
+				<!-- 광고 배너 -->
+				<article class="promo-banner" style="display: none;">
+					<a data-element-id="BPY-HIST-40-30-S-e12" href="#none" class="banner--button">
+						<div id="ph-NAM">광고공간</div>
+					</a>
+
+					<!-- 테스트 스크립트 -->
+					<script>
+						// 광고 1개 세팅
+						Pointhome.NAM.setPlacements({
+							elementID: 'ph-NAM', // 광고 노출 영역 (HTML Element)의 ID
+							adUnitID: 'WEB_nw_native_1-N345765840', // NAM 광고 유닛 ID
+							onClick: (elementID, curl) => { // 광고 클릭 이벤트 (curl을 통한 랜딩 처리)
+							console.log("onClick", elementID, curl);
+							},
+						});
+
+						// initialize와 동시에 광고 세팅 (MPA)
+						Pointhome.NAM.init({
+						adid: '00000000-0000-0000-0000-000000000000', // 광고 ID (gaid/idfa)
+						}).then(() => {
+							Pointhome.NAM.setPlacements({
+								elementID: 'ph-NAM',
+								adUnitID: 'WEB_nw_native_1-N345765840',
+								onClick: (elementID, curl) => {
+									console.log("onClick", elementID, curl);
+								},
+							});
+						})
+					</script>
+				</article>
+
+				<!-- 가맹점 정보 -->
+
+				<!-- 2024-12-24 추가, - 미사용 시 영역(article) 삭제 -->
+				<!-- 전달메시지 -->
+				<!-- // 2024-12-24 추가, - 미사용 시 영역(article) 삭제 -->
+
+				<!-- 안내영역 -->
+
+				<!-- 2024-12-24 추가 -->
+				<!-- 전자 영수증 보내기 버튼 -->
+				<div class="send-receipt justify-spacing-btn">
+					<button data-element-id="BPY-HIST-40-30-S-e07" 
+						type="button"
+						class="button button-large button--lv5 col--block js-popup-open"
+						data-modal="popup-receipt--send"
+						aria-label="공유하기 팝업 열기"
+						><span>전자영수증 보내기</span>
+					</button>
+				</div>
+				<!-- // 2024-12-24 추가 -->
+			</section>
+		</main>
+	</div>
+	<!-- // wrap -->
+	    
+
+<input type="hidden" id="pay_yn"  value="" />
+
+<input type="hidden" id="pay_type" 		value="" />
+<input type="hidden" id="pay_amount" 	value="" />
+<input type="hidden" id="pay_dt" 		value="" />
+
+	<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<!-- 헤더 네비게이션(왼쪽) - 미사용 시 주석 or 삭제 (nav 태그 전체) -->
+			<!-- <nav class="header__navi">
+				<a href="#none" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav> -->
+
+			<!-- 헤더 타이틀(페이지 이름) - 어떤 경우에도 header__title-wrap 삭제 금지. -->
+			<div class="header__title-wrap">
+				<!-- 페이지 명 미사용 시 page-name 태그 내용 빈값 or 주석 or 삭제 -->
+				<h1 class="page-name"><span>전자영수증</span></h1>
+			</div>
+
+			<nav class="header__navi">
+				<a id="btn_close" class="header__btn btn-close">
+					<span class="blind">페이지 닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<!-- 메인 컨텐츠 - 전자영수증 -->
+		<main class="container-wrap js-container-wrap">
+			<!-- 컨테이너 - 비플 M400a 전자영수증 -->
+			<section class="container data-receipt data-receipt--type1 js-container">
+				<!-- 컨테이너 헤더 -->
+				<header class="container__header justify-spacing-def">
+					<!-- 날짜, 공유하기 -->
+					<div class="container__header--util">
+						<time class="info__text--lv1" datetime="2024-03-06T09:33">2026.09.02 14:22</time>
+					<!-- 2024-12-24 - 버튼 삭제  -->
+					
+					<!--
+						<button 
+							type="button"
+							class="util__button js-popup-open"
+							data-modal="popup-receipt--send"
+							aria-label="공유하기 팝업 열기">
+							<i class="icon icon--share-24">공유하기</i>
+						</button>
+					
+					 -->
+					</div>
+
+					<div class="container__header--content">
+						<!-- 매장명, 금액 -->
+						<h3 class="container__headline">
+							<div class="store">
+								<strong class="ellipsis-line--1">비플머니</strong>
+							</div>
+							<div class="price">
+								<strong><span>4,500</span>원</strong>
+								<!-- 플래그 박스 -->
+								<!-- 
+									구매완료, 결제완료 	= flag-box--lv1
+									구매취소, 환불		= flag-box--lv4
+									법인				= flag-box--lv5
+								-->
+								<!-- 
+								<div class="flag flag-small flag-box--lv5">
+									<p><span>비플머니</span></p>
+								</div>
+								 -->
+							</div>
+						</h3>
+					</div>
+				</header>
+
+				<!-- 영수증 내역 -->
+				<article class="container__body justify-spacing-def">
+					<div class="body__content">
+						<div class="flex-column">
+							<div class="table-wrap">
+								<!-- 테이블 - 영수증 내역 1 -->
+								<section class="table--body">
+									<table class="table table--data" aria-label="영수증 세부 내역 1">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<!-- 공급가액 -->
+											<tr>
+												<th>
+													<p>공급가액</p>
+												</th>
+												<td>
+													<p><span>4,500</span>원</p>
+												</td>
+											</tr>
+											<!-- 부가세 -->
+											<tr>
+												<th>
+													<p>부가세</p>
+												</th>
+												<td>
+													<p><span>409</span>원</p>
+												</td>
+											</tr>
+											<!-- 봉사료 -->
+											<!-- 1회용 컵 보증금 -->
+										</tbody>
+									</table>
+								</section>
+
+								<!-- 테이블 - 영수증 내역 2 (거래 및 결제) -->
+								<section class="table--body">
+									<table class="table table--data" aria-label="영수증 세부 내역 2">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<!-- 결제번호 -->
+											<tr>
+												<th>
+													<p>승인번호</p>
+												</th>
+												<td>
+													<p>000123</p>
+												</td>
+											</tr>
+											<!-- 거래유형 -->
+											<tr>
+												<th>
+													<p>거래유형</p>
+												</th>
+												<td>
+													<p class="fc-primary ">비플페이 결제</p>
+												</td>
+											</tr>
+											<!-- 결제방식 -->
+										</tbody>
+									</table>
+								</section>
+							</div>
+						</div>
+
+						<!-- 결제취소 버튼 -->
+					</div>
+				</article>
+
+				<!-- 결제수단 & 함께결제 -->
+
+				<!-- 광고 배너 -->
+				<article class="promo-banner" style="display: none;">
+					<a href="#none" class="banner--button">
+						<div id="ph-NAM">광고공간</div>
+					</a>
+
+					<!-- 테스트 스크립트 -->
+					<script>
+						// 광고 1개 세팅
+						Pointhome.NAM.setPlacements({
+							elementID: 'ph-NAM', // 광고 노출 영역 (HTML Element)의 ID
+							adUnitID: 'WEB_nw_native_1-N345765840', // NAM 광고 유닛 ID
+							onClick: (elementID, curl) => { // 광고 클릭 이벤트 (curl을 통한 랜딩 처리)
+							console.log("onClick", elementID, curl);
+							},
+						});
+
+						// initialize와 동시에 광고 세팅 (MPA)
+						Pointhome.NAM.init({
+						adid: '00000000-0000-0000-0000-000000000000', // 광고 ID (gaid/idfa)
+						}).then(() => {
+							Pointhome.NAM.setPlacements({
+								elementID: 'ph-NAM',
+								adUnitID: 'WEB_nw_native_1-N345765840',
+								onClick: (elementID, curl) => {
+									console.log("onClick", elementID, curl);
+								},
+							});
+						})
+					</script>
+				</article>
+
+				<!-- 가맹점 정보 -->
+
+				<!-- 2024-12-24 추가, - 미사용 시 영역(article) 삭제 -->
+				<!-- 전달메시지 -->
+				<!-- // 2024-12-24 추가, - 미사용 시 영역(article) 삭제 -->
+
+				<!-- 안내영역 -->
+
+				<!-- 2024-12-24 추가 -->
+				<!-- 전자 영수증 보내기 버튼 -->
+				<!-- <div class="send-receipt justify-spacing-btn">
+					<button 
+						type="button"
+						class="button button-large button--lv5 col--block js-popup-open"
+						data-modal="popup-receipt--send"
+						aria-label="공유하기 팝업 열기"
+						><span>전자영수증 보내기</span>
+					</button>
+				</div> -->
+				<!-- // 2024-12-24 추가 -->
+			</section>
+		</main>
+	</div>
+	<!-- // wrap -->
+	    
+
+<input type="hidden" id="pay_yn"  value="" />
+
+<input type="hidden" id="pay_type" 		value="" />
+<input type="hidden" id="pay_amount" 	value="" />
+<input type="hidden" id="pay_dt" 		value="" />
+
+	<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<!-- 헤더 네비게이션(왼쪽) - 미사용 시 주석 or 삭제 (nav 태그 전체) -->
+			<!-- <nav class="header__navi">
+				<a href="#none" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav> -->
+
+			<!-- 헤더 타이틀(페이지 이름) - 어떤 경우에도 header__title-wrap 삭제 금지. -->
+			<div class="header__title-wrap">
+				<!-- 페이지 명 미사용 시 page-name 태그 내용 빈값 or 주석 or 삭제 -->
+				<h1 class="page-name"><span>전자영수증</span></h1>
+			</div>
+
+			<nav class="header__navi">
+				<a id="btn_close" class="header__btn btn-close">
+					<span class="blind">페이지 닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<!-- 메인 컨텐츠 - 전자영수증 -->
+		<main class="container-wrap js-container-wrap">
+			<!-- 컨테이너 - 비플 M400a 전자영수증 -->
+			<section class="container data-receipt data-receipt--type1 js-container">
+				<!-- 컨테이너 헤더 -->
+				<header class="container__header justify-spacing-def">
+					<!-- 날짜, 공유하기 -->
+					<div class="container__header--util">
+						<time class="info__text--lv1" datetime="2024-03-06T09:33">2026.09.02 14:22</time>
+					<!-- 2024-12-24 - 버튼 삭제  -->
+					
+					<!--
+						<button 
+							type="button"
+							class="util__button js-popup-open"
+							data-modal="popup-receipt--send"
+							aria-label="공유하기 팝업 열기">
+							<i class="icon icon--share-24">공유하기</i>
+						</button>
+					
+					 -->
+					</div>
+
+					<div class="container__header--content">
+						<!-- 매장명, 금액 -->
+						<h3 class="container__headline">
+							<div class="store">
+								<strong class="ellipsis-line--1">비플카페 역삼점</strong>
+							</div>
+							<div class="price">
+								<strong><span>4,500</span>원</strong>
+								<!-- 플래그 박스 -->
+								<!-- 
+									구매완료, 결제완료 	= flag-box--lv1
+									구매취소, 환불		= flag-box--lv4
+									법인				= flag-box--lv5
+								-->
+								
+								<div class="flag flag-small flag-box--lv5">
+									<p><span>비플머니</span></p>
+								</div>
+								
+							</div>
+						</h3>
+					</div>
+				</header>
+
+				<!-- 영수증 내역 -->
+				<article class="container__body justify-spacing-def">
+					<div class="body__content">
+						<div class="flex-column">
+							<div class="table-wrap">
+								<!-- 테이블 - 영수증 내역 1 -->
+								<section class="table--body">
+									<table class="table table--data" aria-label="영수증 세부 내역 1">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<!-- 공급가액 -->
+											<tr>
+												<th>
+													<p>공급가액</p>
+												</th>
+												<td>
+													<p><span>4,091</span>원</p>
+												</td>
+											</tr>
+											<!-- 부가세 -->
+											<tr>
+												<th>
+													<p>부가세</p>
+												</th>
+												<td>
+													<p><span>409</span>원</p>
+												</td>
+											</tr>
+											<!-- 봉사료 -->
+											<tr>
+												<th>
+													<p>봉사료</p>
+												</th>
+												<td>
+													<p><span>0</span>원</p>
+												</td>
+											</tr>
+											<!-- 1회용 컵 보증금 -->
+											<!-- 
+											<tr>
+												<th>
+													<p>1회용 컵 보증금</p>
+												</th>
+												<td>
+													<p><span>0</span>원</p>
+												</td>
+											</tr>
+											 -->
+										</tbody>
+									</table>
+								</section>
+
+								<!-- 테이블 - 영수증 내역 2 (거래 및 결제) -->
+								<section class="table--body">
+									<table class="table table--data" aria-label="영수증 세부 내역 2">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<!-- 결제번호 -->
+											<tr>
+												<th>
+													<p>결제번호</p>
+												</th>
+												<td>
+													<p>000123</p>
+												</td>
+											</tr>
+											<!-- 거래유형 -->
+											<tr>
+												<th>
+													<p>거래유형</p>
+												</th>
+												<td>
+													<p class="fc-primary ">비플페이 결제</p>
+												</td>
+											</tr>
+											<!-- 결제방식 -->
+											<!-- 
+											<tr>
+												<th>
+													<p>결제방식</p>
+												</th>
+												<td>
+													
+														<p>CPM (앱에서 바코드 제시)</p>
+													
+												</td>
+											</tr>
+											 -->
+										</tbody>
+									</table>
+								</section>
+							</div>
+						</div>
+
+						<!-- 결제취소 버튼 -->
+						<!-- 
+						
+						<div class="flex-row justify-end mgt12">
+							<button 
+								id="btn_cancel"
+								type="button"
+								class="button button-small button--lv5 js-popup-open"
+								data-modal="popup-pay--cancel"
+								aria-label="결제취소 팝업 열기">
+								<span>결제취소</span>
+							</button>
+						</div>
+						
+						 -->
+					</div>
+				</article>
+
+				<!-- 결제수단 & 함께결제 -->
+				
+				<article class="container__body justify-spacing-def">
+					<div class="body__content">
+						<div class="flex-column">
+							<div class="column__head">
+								<h5 class="container__headline container__headline--lv2 fw-600">비플머니</h5>
+							</div>
+
+							<div class="column__item">
+								<div class="table-wrap">
+									<!-- 테이블 - 영수증 내역 3 (함께 or 복합결제) -->
+									<section class="table--body">
+										<table class="table table--data" aria-label="영수증 세부 내역 3">
+											<colgroup>
+												<col style="width: 192px;">
+												<col style="width: 108px;">
+											</colgroup>
+											
+										</table>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				
+
+				<!-- 광고 배너 -->
+				<article class="promo-banner" style="display: none;">
+					<a href="#none" class="banner--button">
+						<div id="ph-NAM">광고공간</div>
+					</a>
+
+					<!-- 테스트 스크립트 -->
+					<script>
+						// 광고 1개 세팅
+						Pointhome.NAM.setPlacements({
+							elementID: 'ph-NAM', // 광고 노출 영역 (HTML Element)의 ID
+							adUnitID: 'WEB_nw_native_1-N345765840', // NAM 광고 유닛 ID
+							onClick: (elementID, curl) => { // 광고 클릭 이벤트 (curl을 통한 랜딩 처리)
+							console.log("onClick", elementID, curl);
+							},
+						});
+
+						// initialize와 동시에 광고 세팅 (MPA)
+						Pointhome.NAM.init({
+						adid: '00000000-0000-0000-0000-000000000000', // 광고 ID (gaid/idfa)
+						}).then(() => {
+							Pointhome.NAM.setPlacements({
+								elementID: 'ph-NAM',
+								adUnitID: 'WEB_nw_native_1-N345765840',
+								onClick: (elementID, curl) => {
+									console.log("onClick", elementID, curl);
+								},
+							});
+						})
+					</script>
+				</article>
+
+				<!-- 가맹점 정보 -->
+				<article class="container__body store-info">
+					<div class="flex-column drop-box js-drop-box justify-spacing-def open">
+						<!-- 가맹점 정보 버튼 -->
+						<div class="column__head">
+							<button data-element-id="BPY-HIST-40-30-S-e09" type="button" class="drop--trigger js-drop-trigger">
+								<h5 class="container__headline container__headline--lv2 fw-600">가맹점 정보</h5>
+								<i class="icon icon--arrow-24"><span class="blind">가맹점 정보 열기</span></i>
+							</button>
+						</div>
+
+						<!-- 가맹점 정보 드롭다운 -->
+						<div class="column__item drop--content js-drop-content" style="display: block;">
+							<div class="table-wrap">
+								<section class="table--body">
+									<table class="table table--data" aria-label="결제 가맹점 정보">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>
+													<p>사업자번호</p>
+												</th>
+												<td>
+													<p>123-45-67890</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>업종</p>
+												</th>
+												<td>
+													<p>
+														음식점업
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>대표자명</p>
+												</th>
+												<td>
+													<p>김대표</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>전화번호</p>
+												</th>
+												<td>
+													<p>010-1234-5678</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>주소</p>
+												</th>
+												<td>
+													<p>
+														서울 강남구 테헤란로 1길 10
+													</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</section>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- 2024-12-24 추가, - 미사용 시 영역(article) 삭제 -->
+				<!-- 전달메시지 -->
+				<!-- // 2024-12-24 추가, - 미사용 시 영역(article) 삭제 -->
+
+				<!-- 안내영역 -->
+
+				<!-- 2024-12-24 추가 -->
+				<!-- 전자 영수증 보내기 버튼 -->
+				<!-- 
+				 -->
+				<div class="send-receipt justify-spacing-btn">
+					<button 
+						type="button"
+						class="button button-large button--lv5 col--block js-popup-open"
+						data-modal="popup-receipt--send"
+						aria-label="공유하기 팝업 열기"
+						><span>전자영수증 보내기</span>
+					</button>
+				</div>
+				<!-- // 2024-12-24 추가 -->
+			</section>
+		</main>
+	</div>
+	<!-- // wrap -->
+
+<input type="hidden" id="pay_yn"  value="" />
+
+<input type="hidden" id="pay_type" 		value="" />
+<input type="hidden" id="pay_amount" 	value="" />
+<input type="hidden" id="pay_dt" 		value="" />
+
+	<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<!-- 헤더 네비게이션(왼쪽) - 미사용 시 주석 or 삭제 (nav 태그 전체) -->
+			<!-- <nav class="header__navi">
+				<a href="#none" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav> -->
+
+			<!-- 헤더 타이틀(페이지 이름) - 어떤 경우에도 header__title-wrap 삭제 금지. -->
+			<div class="header__title-wrap">
+				<!-- 페이지 명 미사용 시 page-name 태그 내용 빈값 or 주석 or 삭제 -->
+				<h1 class="page-name"><span>전자영수증</span></h1>
+			</div>
+
+			<nav class="header__navi">
+				<a id="btn_close" class="header__btn btn-close">
+					<span class="blind">페이지 닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<!-- 메인 컨텐츠 - 전자영수증 -->
+		<main class="container-wrap js-container-wrap">
+			<!-- 컨테이너 - 비플 M400a 전자영수증 -->
+			<section class="container data-receipt data-receipt--type1 js-container">
+				<!-- 컨테이너 헤더 -->
+				<header class="container__header justify-spacing-def">
+					<!-- 날짜, 공유하기 -->
+					<div class="container__header--util">
+						<time class="info__text--lv1" datetime="2024-03-06T09:33">2026.09.02 14:22</time>
+					<!-- 2024-12-24 - 버튼 삭제  -->
+					
+					<!--
+						<button 
+							type="button"
+							class="util__button js-popup-open"
+							data-modal="popup-receipt--send"
+							aria-label="공유하기 팝업 열기">
+							<i class="icon icon--share-24">공유하기</i>
+						</button>
+					
+					 -->
+					</div>
+
+					<div class="container__header--content">
+						<!-- 매장명, 금액 -->
+						<h3 class="container__headline">
+							<div class="store">
+								<strong class="ellipsis-line--1">비플카페 역삼점</strong>
+							</div>
+							<div class="price">
+								<strong><span>4,500</span>원</strong>
+								<!-- 플래그 박스 -->
+								<!-- 
+									구매완료, 결제완료 	= flag-box--lv1
+									구매취소, 환불		= flag-box--lv4
+									법인				= flag-box--lv5
+								-->
+								
+								<div class="flag flag-small flag-box--lv5">
+									<p><span>비플머니</span></p>
+								</div>
+								
+							</div>
+						</h3>
+					</div>
+				</header>
+
+				<!-- 영수증 내역 -->
+				<article class="container__body justify-spacing-def">
+					<div class="body__content">
+						<div class="flex-column">
+							<div class="table-wrap">
+								<!-- 테이블 - 영수증 내역 1 -->
+								<section class="table--body">
+									<table class="table table--data" aria-label="영수증 세부 내역 1">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<!-- 공급가액 -->
+											<tr>
+												<th>
+													<p>공급가액</p>
+												</th>
+												<td>
+													<p><span>4,091</span>원</p>
+												</td>
+											</tr>
+											<!-- 부가세 -->
+											<tr>
+												<th>
+													<p>부가세</p>
+												</th>
+												<td>
+													<p><span>409</span>원</p>
+												</td>
+											</tr>
+											<!-- 봉사료 -->
+											<tr>
+												<th>
+													<p>봉사료</p>
+												</th>
+												<td>
+													<p><span>0</span>원</p>
+												</td>
+											</tr>
+											<!-- 1회용 컵 보증금 -->
+											<tr>
+												<th>
+													<p>1회용 컵 보증금</p>
+												</th>
+												<td>
+													<p><span>0</span>원</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</section>
+
+								<!-- 테이블 - 영수증 내역 2 (거래 및 결제) -->
+								<section class="table--body">
+									<table class="table table--data" aria-label="영수증 세부 내역 2">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<!-- 결제번호 -->
+											<tr>
+												<th>
+													<p>결제번호</p>
+												</th>
+												<td>
+													<p>
+													
+												    </p>
+												</td>
+											</tr>
+											<!-- 거래유형 -->
+											<tr>
+												<th>
+													<p>거래유형</p>
+												</th>
+												<td>
+													<p class="fc-primary ">비플페이 결제</p>
+												</td>
+											</tr>
+											<!-- 결제방식 -->
+											<!-- <tr>
+												<th>
+													<p>결제방식</p>
+												</th>
+												<td>
+													
+														<p>CPM (앱에서 바코드 제시)</p>
+													
+												</td>
+											</tr> -->
+										</tbody>
+									</table>
+								</section>
+							</div>
+						</div>
+
+						<!-- 결제취소 버튼 -->
+						<!-- 
+						<div class="flex-row justify-end mgt12">
+							<button 
+								id="btn_cancel"
+								type="button"
+								class="button button-small button--lv5 js-popup-open"
+								data-modal="popup-pay--cancel"
+								aria-label="결제취소 팝업 열기">
+								<span>결제취소</span>
+							</button>
+						</div>
+						 -->
+					</div>
+				</article>
+
+				<!-- 결제수단 & 함께결제 -->
+				
+				<article class="container__body justify-spacing-def">
+					<div class="body__content">
+						<div class="flex-column">
+							<div class="column__head">
+								<h5 class="container__headline container__headline--lv2 fw-600">비플머니</h5>
+							</div>
+
+							<div class="column__item">
+								<div class="table-wrap">
+									<!-- 테이블 - 영수증 내역 3 (함께 or 복합결제) -->
+									<section class="table--body">
+										<table class="table table--data" aria-label="영수증 세부 내역 3">
+											<colgroup>
+												<col style="width: 192px;">
+												<col style="width: 108px;">
+											</colgroup>
+											
+										</table>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				
+
+				<!-- 광고 배너 -->
+				<article class="promo-banner" style="display: none;">
+					<a href="#none" class="banner--button">
+						<div id="ph-NAM">광고공간</div>
+					</a>
+
+					<!-- 테스트 스크립트 -->
+					<script>
+						// 광고 1개 세팅
+						Pointhome.NAM.setPlacements({
+							elementID: 'ph-NAM', // 광고 노출 영역 (HTML Element)의 ID
+							adUnitID: 'WEB_nw_native_1-N345765840', // NAM 광고 유닛 ID
+							onClick: (elementID, curl) => { // 광고 클릭 이벤트 (curl을 통한 랜딩 처리)
+							console.log("onClick", elementID, curl);
+							},
+						});
+
+						// initialize와 동시에 광고 세팅 (MPA)
+						Pointhome.NAM.init({
+						adid: '00000000-0000-0000-0000-000000000000', // 광고 ID (gaid/idfa)
+						}).then(() => {
+							Pointhome.NAM.setPlacements({
+								elementID: 'ph-NAM',
+								adUnitID: 'WEB_nw_native_1-N345765840',
+								onClick: (elementID, curl) => {
+									console.log("onClick", elementID, curl);
+								},
+							});
+						})
+					</script>
+				</article>
+
+				<!-- 가맹점 정보 -->
+				<article class="container__body store-info">
+					<div class="flex-column drop-box js-drop-box justify-spacing-def open">
+						<!-- 가맹점 정보 버튼 -->
+						<div class="column__head">
+							<button type="button" class="drop--trigger js-drop-trigger">
+								<h5 class="container__headline container__headline--lv2 fw-600">가맹점 정보</h5>
+								<i class="icon icon--arrow-24"><span class="blind">가맹점 정보 열기</span></i>
+							</button>
+						</div>
+
+						<!-- 가맹점 정보 드롭다운 -->
+						<div class="column__item drop--content js-drop-content" style="display: block;">
+							<div class="table-wrap">
+								<section class="table--body">
+									<table class="table table--data" aria-label="결제 가맹점 정보">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>
+													<p>사업자번호</p>
+												</th>
+												<td>
+													<p>123-45-67890</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>업종</p>
+												</th>
+												<td>
+													<p>
+														음식점업
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>대표자명</p>
+												</th>
+												<td>
+													<p>김대표</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>전화번호</p>
+												</th>
+												<td>
+													<p>010-1234-5678</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>주소</p>
+												</th>
+												<td>
+													<p>
+														서울 강남구 테헤란로 1길 10
+													</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</section>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- 2024-12-24 추가, - 미사용 시 영역(article) 삭제 -->
+				<!-- 전달메시지 -->
+				<!-- // 2024-12-24 추가, - 미사용 시 영역(article) 삭제 -->
+
+				<!-- 안내영역 -->
+
+				<!-- 2024-12-24 추가 -->
+				<!-- 전자 영수증 보내기 버튼 -->
+				<div class="send-receipt justify-spacing-btn">
+					<button 
+						type="button"
+						class="button button-large button--lv5 col--block js-popup-open"
+						data-modal="popup-receipt--send"
+						aria-label="공유하기 팝업 열기"
+						><span>전자영수증 보내기</span>
+					</button>
+				</div>
+				<!-- // 2024-12-24 추가 -->
+			</section>
+		</main>
+	</div>
+	<!-- // wrap -->
+	    
+
+<input type="hidden" id="bppg_yn" value="" />
+<input type="hidden" id="pay_yn"  value="" />
+
+<input type="hidden" id="pay_type" 		value="" />
+<input type="hidden" id="pay_amount" 	value="" />
+<input type="hidden" id="pay_dt" 		value="" />
+
+	<div class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<!-- 헤더 네비게이션(왼쪽) - 미사용 시 주석 or 삭제 (nav 태그 전체) -->
+			<!-- <nav class="header__navi">
+				<a href="#none" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav> -->
+
+			<!-- 헤더 타이틀(페이지 이름) - 어떤 경우에도 header__title-wrap 삭제 금지. -->
+			<div class="header__title-wrap">
+				<!-- 페이지 명 미사용 시 page-name 태그 내용 빈값 or 주석 or 삭제 -->
+				<h1 class="page-name"><span>전자영수증</span></h1>
+			</div>
+
+			<nav class="header__navi">
+				<a id="btn_close" class="header__btn btn-close">
+					<span class="blind">페이지 닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		<!-- 메인 컨텐츠 - 전자영수증 -->
+		<main class="container-wrap js-container-wrap">
+			<!-- 컨테이너 - 비플 M400a 전자영수증 -->
+			<section class="container data-receipt data-receipt--type1 js-container">
+				<!-- 컨테이너 헤더 -->
+				<header class="container__header justify-spacing-def">
+					<!-- 날짜, 공유하기 -->
+					<div class="container__header--util">
+						<time class="info__text--lv1" datetime="2024-03-06T09:33">2026.09.02 14:22</time>
+					<!-- 2024-12-24 - 버튼 삭제  -->
+					
+					<!--
+						<button 
+							type="button"
+							class="util__button js-popup-open"
+							data-modal="popup-receipt--send"
+							aria-label="공유하기 팝업 열기">
+							<i class="icon icon--share-24">공유하기</i>
+						</button>
+					
+					 -->
+					</div>
+
+					<div class="container__header--content">
+						<!-- 매장명, 금액 -->
+						<h3 class="container__headline">
+							<div class="store">
+								<strong class="ellipsis-line--1">비플카페 역삼점</strong>
+							</div>
+							<div class="price">
+								<strong><span>4,500</span>원</strong>
+								<!-- 플래그 박스 -->
+								<!-- 
+									구매완료, 결제완료 	= flag-box--lv1
+									구매취소, 환불		= flag-box--lv4
+									법인				= flag-box--lv5
+								-->
+								
+								<div class="flag flag-small flag-box--lv5">
+									<p><span>비플머니</span></p>
+								</div>
+								
+							</div>
+						</h3>
+					</div>
+				</header>
+
+				<!-- 영수증 내역 -->
+				<article class="container__body justify-spacing-def">
+					<div class="body__content">
+						<div class="flex-column">
+							<div class="table-wrap">
+								<!-- 테이블 - 영수증 내역 1 -->
+								<section class="table--body">
+									<table class="table table--data" aria-label="영수증 세부 내역 1">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<!-- 공급가액 -->
+											<tr>
+												<th>
+													<p>공급가액</p>
+												</th>
+												<td>
+													<p><span>4,091</span>원</p>
+												</td>
+											</tr>
+											<!-- 부가세 -->
+											<tr>
+												<th>
+													<p>부가세</p>
+												</th>
+												<td>
+													<p><span>409</span>원</p>
+												</td>
+											</tr>
+											<!-- 봉사료 -->
+											<tr>
+												<th>
+													<p>봉사료</p>
+												</th>
+												<td>
+													<p><span>0</span>원</p>
+												</td>
+											</tr>
+											<!-- 1회용 컵 보증금 -->
+											<tr>
+												<th>
+													<p>1회용 컵 보증금</p>
+												</th>
+												<td>
+													<p><span>0</span>원</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</section>
+
+								<!-- 테이블 - 영수증 내역 2 (거래 및 결제) -->
+								<section class="table--body">
+									<table class="table table--data" aria-label="영수증 세부 내역 2">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<!-- 결제번호 -->
+											<tr>
+												<th>
+													<p>결제번호</p>
+												</th>
+												<td>
+													<p>000123</p>
+												</td>
+											</tr>
+											<!-- 거래유형 -->
+											<tr>
+												<th>
+													<p>거래유형</p>
+												</th>
+												<td>
+													<p class="fc-primary ">비플페이 결제</p>
+												</td>
+											</tr>
+											<!-- 결제방식 -->
+											<tr>
+												<th>
+													<p>결제방식</p>
+												</th>
+												<td>
+													
+														<p>CPM (앱에서 바코드 제시)</p>
+													
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</section>
+							</div>
+						</div>
+
+						<!-- 결제취소 버튼 -->
+						
+						<div class="flex-row justify-end mgt12">
+							<button data-element-id="BPY-HIST-40-30-S-e08" 
+								id="btn_cancel"
+								type="button"
+								class="button button-small button--lv5 js-popup-open"
+								data-modal="popup-pay--cancel"
+								aria-label="결제취소 팝업 열기">
+								<span>결제취소</span>
+							</button>
+						</div>
+						
+					</div>
+				</article>
+
+				<!-- 결제수단 & 함께결제 -->
+				
+				<article class="container__body justify-spacing-def">
+					<div class="body__content">
+						<div class="flex-column">
+							<div class="column__head">
+								<h5 class="container__headline container__headline--lv2 fw-600">비플머니</h5>
+							</div>
+
+							<div class="column__item">
+								<div class="table-wrap">
+									<!-- 테이블 - 영수증 내역 3 (함께 or 복합결제) -->
+									<section class="table--body">
+										<table class="table table--data" aria-label="영수증 세부 내역 3">
+											<colgroup>
+												<col style="width: 192px;">
+												<col style="width: 108px;">
+											</colgroup>
+											
+										</table>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				
+
+				<!-- 광고 배너 -->
+				<article class="promo-banner" style="display: none;">
+					<a href="#none" class="banner--button">
+						<div id="ph-NAM">광고공간</div>
+					</a>
+
+					<!-- 테스트 스크립트 -->
+					<script>
+						// 광고 1개 세팅
+						Pointhome.NAM.setPlacements({
+							elementID: 'ph-NAM', // 광고 노출 영역 (HTML Element)의 ID
+							adUnitID: 'WEB_nw_native_1-N345765840', // NAM 광고 유닛 ID
+							onClick: (elementID, curl) => { // 광고 클릭 이벤트 (curl을 통한 랜딩 처리)
+							console.log("onClick", elementID, curl);
+							},
+						});
+
+						// initialize와 동시에 광고 세팅 (MPA)
+						Pointhome.NAM.init({
+						adid: '00000000-0000-0000-0000-000000000000', // 광고 ID (gaid/idfa)
+						}).then(() => {
+							Pointhome.NAM.setPlacements({
+								elementID: 'ph-NAM',
+								adUnitID: 'WEB_nw_native_1-N345765840',
+								onClick: (elementID, curl) => {
+									console.log("onClick", elementID, curl);
+								},
+							});
+						})
+					</script>
+				</article>
+
+				<!-- 가맹점 정보 -->
+				<article class="container__body store-info">
+					<div class="flex-column drop-box js-drop-box justify-spacing-def open">
+						<!-- 가맹점 정보 버튼 -->
+						<div class="column__head">
+							<button type="button" class="drop--trigger js-drop-trigger">
+								<h5 class="container__headline container__headline--lv2 fw-600">가맹점 정보</h5>
+								<i class="icon icon--arrow-24"><span class="blind">가맹점 정보 열기</span></i>
+							</button>
+						</div>
+
+						<!-- 가맹점 정보 드롭다운 -->
+						<div class="column__item drop--content js-drop-content" style="display: block;">
+							<div class="table-wrap">
+								<section class="table--body">
+									<table class="table table--data" aria-label="결제 가맹점 정보">
+										<colgroup>
+											<col style="width: 102px;">
+											<col style="width: 210px;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>
+													<p>사업자번호</p>
+												</th>
+												<td>
+													<p>123-45-67890</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>업종</p>
+												</th>
+												<td>
+													<p>
+														음식점업
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>대표자명</p>
+												</th>
+												<td>
+													<p>김대표</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>전화번호</p>
+												</th>
+												<td>
+													<p>010-1234-5678</p>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<p>주소</p>
+												</th>
+												<td>
+													<p>
+														서울 강남구 테헤란로 1길 10
+													</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</section>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- 2024-12-24 추가, - 미사용 시 영역(article) 삭제 -->
+				<!-- 전달메시지 -->
+				
+					<article class="container__body send-message">
+						<div class="flex-column drop-box js-drop-box justify-spacing-def">
+							<!-- 가맹점 정보 버튼 -->
+							<div class="column__head">
+								<button data-element-id="BPY-HIST-40-30-S-e10" type="button" class="drop--trigger js-drop-trigger">
+									<h5 class="container__headline container__headline--lv2 fw-600">전달메시지</h5>
+									<i class="icon icon--arrow-24"><span class="blind">전달메시지 열기</span></i>
+								</button>
+							</div>
+	
+							<!-- 가맹점 정보 드롭다운 -->
+							<div class="column__item drop--content pdt24 js-drop-content" style="display: none;">
+								<p class="info__text--lv2 fc-666">
+									
+								</p>
+							</div>
+						</div>
+					</article>
+				
+				<!-- // 2024-12-24 추가, - 미사용 시 영역(article) 삭제 -->
+
+				
+				<!-- 안내영역 -->
+				<article class="infomation infomation-box">
+					<div class="flex-column">
+						<!-- 안내 헤더 -->
+						<div class="column__head">
+							<i class="icon icon--info-16"><span class="blind">안내</span></i>
+							<h5 class="container__headline container__headline--lv1"></h5>
+						</div>
+						<!-- 안내 내용 -->
+						<div class="column__item">
+							<p class="info__text--lv1"></p>
+						</div>
+					</div>
+				</article>
+				
+
+				<!-- 2024-12-24 추가 -->
+				<!-- 전자 영수증 보내기 버튼 -->
+				<div class="send-receipt justify-spacing-btn">
+					<button 
+						type="button"
+						class="button button-large button--lv5 col--block js-popup-open"
+						data-modal="popup-receipt--send"
+						aria-label="공유하기 팝업 열기"
+						><span>전자영수증 보내기</span>
+					</button>
+				</div>
+				<!-- // 2024-12-24 추가 -->
+			</section>
+		</main>
+	</div>
+	<!-- // wrap -->
+
+	<!-- 팝업 - 결제취소 (bottom sheet) -->
+	<div class="popup-wrap js-popup-wrap" data-modal="popup-pay--cancel" aria-label="결제 취소 팝업" style="display:none;">
+		<section class="popup-container popup--bottom popup-payment--cancel">
+			<header class="popup-container__header">
+				<h3 class="container__headline container__headline--lv4">결제취소</h3>
+				<div class="popup-button">
+					<button type="button" class="popup-button--close js-popup-close" role="button" aria-label="팝업 창 닫기 버튼">
+						<i class="icon icon--close-32">팝업 창 닫기</i>
+					</button>
+				</div>
+			</header>
+
+			<article class="popup-container__body justify-spacing-def">
+				<!-- 탭 컴포넌트 -->
+				<section class="tab-container js-tab-container">
+					<header class="tab-container__header border--no js-tab-header">
+						<div class="tab-container__header--content tab-button-style--lv3">
+							<div class="tab-button-wrap" aria-label="결제 취소 수단 선택">
+								<!-- 바코드 -->
+								<button class="tab-button col--2 js-tab-button active" role="button" aria-selected="true" aria-label="바코드 선택 탭">
+									<span>바코드</span>
+								</button>
+								<!-- QR코드 -->
+								<button class="tab-button col--2 js-tab-button" role="button" aria-selected="false" aria-label="QR코드 선택 탭">
+									<span>QR코드</span>
+								</button>
+								<!-- 셀렉터 -->
+								<div class="tab-selector js-tab-selector">
+									<span class="blind" aria-hidden="true">탭 버튼 셀렉터</span>
+								</div>
+							</div>
+						</div>
+					</header>
+
+					<article class="tab__content js-tab-content" aria-label="바코드 탭">
+						<div class="flex-column">
+							<div class="image--barcode">
+								<div id="barcode_area" class="barcode">
+								</div>
+							</div>
+							<p id="barcode_no" class="info__text info__text--lv1 ta-center" aria-label="바코드 넘버"><!-- sample:begin -->1<!-- sample:end --></p>
+						</div>
+
+						<p class="info__text info__text--lv2 ta-center fc-333 pdt32">
+							거래를 취소하려면 상단의 바코드를<br>
+							가맹점에 제시해 주세요.
+						</p>
+					</article>
+
+					<article class="tab__content js-tab-content" aria-label="QR코드 탭" style="display: none;">
+						<div class="flex-column">
+							<div id="qr_area" class="image--qrcode">
+								<!-- <img alt="" src="../assets/_sample/card.svg"> -->
+								<!-- <img src="../assets/resource/images/beple/beple-landing--qr.svg" alt="QR코드 이미지"> -->
+							</div>
+						</div>
+
+						<p class="info__text info__text--lv2 ta-center fc-333 pdt32">
+							거래를 취소하려면 상단의 QR코드를<br>
+							가맹점에 제시해 주세요.
+						</p>
+					</article>
+				</section>
+			</article>
+		</section>
+	</div>
+
+	<!-- 팝업 - 결제 영수증 받기 (bottom sheet) -->
+	<div class="popup-wrap js-popup-wrap" data-modal="popup-receipt--send" style="display:none;">
+		<section class="popup-container popup--bottom popup-receipt--send">
+			<header class="popup-container__header">
+				<h3 class="container__headline container__headline--lv4">전자영수증 보내기</h3>
+				<div class="popup-button">
+					<button type="button" class="popup-button--close js-popup-close" role="button" aria-label="팝업 창 닫기 버튼">
+						<i class="icon icon--close-32">팝업 창 닫기</i>
+					</button>
+				</div>
+			</header>
+
+			<article class="popup-container__body"><!-- 2025-02-10 justify-spacing-def 클래스 삭제 -->
+				<div class="form-box justify-spacing-def js-form-box"><!-- 2025-02-10 justify-spacing-def 클래스 추가 -->
+					<!-- form-item - 입력전 -->
+					<div class="form__item"><!-- 활성화 시 'item--on', 읽기전용, 비활성화 시 item--disabled, 오류 시 item--error -->
+						<div class="form__item-wrap">
+							<div class="flex-column gap-8">
+								<div class="input-type--box">
+									<input id="email1" type="text" value="" placeholder="이메일 입력">
+								</div>
+
+								<div class="drop-box drop-reverse col--block js-drop-box">
+									<!-- 도메인 목록 보기 버튼 -->
+									<div class="drop--trigger js-drop-trigger" aria-label="현재 설정된 이메일 제공자">
+										<button type="button" class="input-type--button">
+											<p id="select_email" class="ellipsis-line--1">@outlook.com</p>
+											<i class="icon icon--arrow-24"><span class="blind">이메일  목록 보기</span></i>
+										</button>
+									</div>
+
+									<!-- 도메인 목록 드롭다운 -->
+									<ul class="doamin-list drop--content js-drop-content js-select-content" aria-label="이메일 제공자 목록">
+										<li class="domain__item select"><!-- 현재 선택된 항목 'select' -->
+											<button type="button"><span>직접입력</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>naver.com</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>gmail.com</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>hanmail.net</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>daum.net</span></button>
+										</li>
+										<li class="domain__item">
+											<button type="button"><span>nate.com</span></button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- 체크박스 -->
+							<div class="input-type--check">
+								<label class="flex-row">
+									<input id="agree-chk" type="checkbox"><span>이메일 정보 기억</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="flex-row pdt32 justify-spacing-btn"><!-- 2025-02-10 justify-spacing-btn 클래스 추가 -->
+					<button id="send_btn" class="button button-xl button--lv1 js-popup-close">
+						<span>발송하기</span>
+					</button>
+				</div>
+			</article>
+		</section>
+	</div>
+</body>
+</html>

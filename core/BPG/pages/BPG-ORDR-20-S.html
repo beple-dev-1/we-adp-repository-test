@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 상세 기본정보</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-ORDR-20-S">
+<!-- wrap -->
+<div class="wrap" id="app">
+    <div class="header floating-back-header floating-sticky">
+        <h1 id="name"></h1>
+        <a data-element-id="BPG-ORDR-20-S-e05" href="#" class="back-button btn-history-back">뒤로가기</a>
+    </div>
+    <!-- // header -->
+
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <div class="content">
+            <!-- 비플오더 -->
+            <div class="flexWrap no_vh"><!-- 2023-01-13 -->
+                <div class="bpleOder"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+                    <!-- 가맹점 상세 -->
+                    <div class="store_dtl">
+                        <!-- 가맹점 명 -->
+                        <div class="store_info">
+                            <div class="store_name">
+                                <!--
+                                    가맹점 별 아이콘 클래스 명
+                                    음식점/카페		= restr
+                                    농산물/청과		= agri
+                                    축산물/정육		= meat
+                                    수산물/횟집		= seafood
+                                    식료품/반찬		= grocery
+                                    학원/교육		= edu
+                                    의료/보건		= medi
+                                    미용/패션		= beauty
+                                    가전/가구		= interior
+                                    서비스업		= service
+                                    기타 도/소매	= retail
+                                -->
+                                <div class="ico agri"></div> <!--매장 사진-->
+                                <h2 class="name">
+                                    <strong></strong> <!-- 매장명-->
+                                </h2>
+                                <p class="cate"></p> <!--식당 카테고리-->
+                            </div>
+                        </div>
+                        <!-- 2023-01-13 -->
+                        <div class="st_info_con">
+                            <!-- 정보, 안내사항 탭 -->
+                            <div class="tab_area">
+                                <!-- tab btn -->
+                                <div class="tab_menu">
+                                    <a data-element-id="BPG-ORDR-20-S-e06" href="#none" class="on"><span>기본정보</span></a>
+                                    <a data-element-id="BPG-ORDR-20-S-e07" href="#none"><span>안내사항</span></a>
+                                </div> <!--기본정보, 안내사항 탭-->
+                                <!-- tab con -->
+                                <div class="tab_wrap">
+                                    <!-- slide 1 -->
+                                    <!-- 기본정보 및 주문가능 메뉴 목록 -->
+                                    <div class="tab_con on">
+                                        <!-- 주소 대표전화 -->
+                                        <div class="info_bx">
+                                            <div class="detail_w">
+                                                <h3 class="tit">주소</h3>
+                                                <div class="con">
+                                                    <p class = "address">
+                                                    </p>
+                                                    <p class="distance">
+                                                        <strong></strong> <!--매장까지 거리-->
+                                                        <a data-element-id="BPG-ORDR-20-S-e08" href="#none" class="btn_map">지도</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="detail_w">
+                                                <h3 class="tit">대표전화</h3>
+                                                <div class="con">
+                                                    <p><a href="#none" class="txt_key_color main-telephone-number"></a></p>
+                                                    <!--<p><a href="#none" class="txt_b sub-telephone-number"></a></p>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 메뉴목록 - 가맹점상세 -->
+                                        <div class="menu_bx pdt0">
+                                            <!-- 카테고리 리스트 -->
+                                            <div class="category">
+                                                <ul class="category_list"></ul>
+                                            </div>
+                                           <!-- <!-- 메뉴 분류 ->
+                                            <div id="pdt_area">
+                                            </div>-->
+                                        </div>
+                                    </div>
+                                    <!-- slide 2 -->
+                                    <!-- 안내사항 탭 -->
+                                    <div class="tab_con">
+                                        <div class="info_bx">
+                                            <h2 class="con_tit">주문 정보</h2>
+                                            <div class="detail_w mgt13">
+                                                <h3 class="tit">주문 가능 시간</h3>
+                                                <div class="con">
+                                                    <!-- 영업시간 -->
+                                                    <div class="work_time toggle_wrap">
+                                                        <!--해당일(오늘)-->
+
+                                                        <!-- 영업시간 목록 -->
+                                                        <div class="inner toggle_con" id="wt_info_area">
+                                                        </div>
+                                                        <!-- //영업시간 목록-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="detail_w" id ="div_order_time">
+                                                <h3 class="tit">평균 제조 시간</h3>
+                                                <div class="con tooltip_w">
+                                                    <p class="make_time"><a href="#none"><span id ="order_time"></span></a></p>
+                                                    <div class="tooltip" style="display: none;">
+                                                        평균 제조 시간은<br>
+                                                        실제 제조 시간과 차이가 있을 수 있습니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="detail_w" id="div_odr_min_req">
+                                                <h3 class="tit">주문 취소 조건</h3>
+                                                <div class="con">
+                                                    <p id ="odr_min_req"></p>
+                                                </div>
+                                            </div>
+                                            <div class="detail_w" id="div_odr_privil">
+                                                <h3 class="tit">주문 안내 및 혜택</h3>
+                                                <div class="con">
+                                                    <p id="odr_privil"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 가맹점 프로필 관리 정보 -->
+                                        <!-- 소개 -->
+                                        <div class="intro_bx" id="intro_area">
+                                            <h2 class="con_tit">소개</h2>
+                                            <div class="intro_txt" id="intro_text"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+                                        </div>
+                                        <!--// 소개 -->
+
+                                        <!-- 메뉴판 -->
+                                        <div style="display: none;" class="menu_bx" id="menu_area">
+                                            <h2 style="display: none;" class="con_tit" id="menuboard_title">메뉴판</h2>
+                                            <div style="display: none;" class="menu_board" id="menuboard_area">
+                                            </div>
+                                        </div>
+                                        <!-- //메뉴판 -->
+
+                                        <!-- 매장 사진 -->
+                                        <div style="display: none;" class="store_photo_bx" id="img_area">
+
+                                        </div>
+                                        <!-- //매장 사진 -->
+                                        <!-- //가맹점 프로필 관리 정보 -->
+
+                                        <!-- 원산지정보 -->
+                                        <div class="intro_bx" id ="origin_area">
+                                            <h2 class="con_tit">원산지 정보</h2>
+                                            <div class="ORIGIN_INFO">
+                                            </div>
+                                        </div>
+                                        <!-- //원산지정보 -->
+
+                                        <!-- 사업자정보 -->
+                                        <div class="info_bx">
+                                            <h2 class="con_tit">사업자 정보</h2>
+                                            <div class="detail_w mgt13">
+                                                <h3 class="tit">대표자명</h3>
+                                                <div class="con">
+                                                    <p class = "representative-name"></p>
+                                                </div>
+                                            </div>
+                                            <div class="detail_w">
+                                                <h3 class="tit">상호명</h3>
+                                                <div class="con">
+                                                    <p class ="businessShopNm"></p>
+                                                </div>
+                                            </div>
+                                            <div class="detail_w">
+                                                <h3 class="tit">사업자 주소</h3>
+                                                <div class="con">
+                                                    <p class="buisnessAddr"></p>
+                                                </div>
+                                            </div>
+                                            <div class="detail_w">
+                                                <h3 class="tit">사업자등록번호</h3>
+                                                <div class="con">
+                                                    <p class="buisnessNo"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //사업자정보 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //2023-01-13 -->
+                    </div>
+                    <!-- //가맹점 상세 -->
+                </div>
+            </div>
+            <!-- //스마트오더 -->
+        </div>
+        <!-- // content -->
+
+        <!-- 하단 고정버튼 -->
+        <div class="btn_botFix_w bpOder" id ="btn_cover" style="display:none"><!-- 장바구에 상품 있을경우 or 가맹점 영업 준비중 일 경우 style="display:block;" -->
+            <div class="inner">
+                <a href="#none" id= "btn_box" class="round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+                    <p class="amount">
+                        <strong></strong>원
+                    </p>
+                    <p class="more">
+                        장바구니 보기
+                        <span class="count"></span>
+                    </p>
+                </a>
+                <a href="#none" id ="btn_ready" style="display: none" class="round_r8"><!-- 활성화 시 on 클래스 추가 -->
+                    <span>지금은 준비 중이에요</span>
+                </a>
+
+            </div>
+        </div>
+        <!-- //하단 고정버튼 -->
+    </div>
+    <!-- // container -->
+</div>
+<!-- // wrap -->
+
+<div class="layer_overlay photo_detail hide" id="img_detail_area" style="display:none;"><!-- 기본 = hide, 사진 클릭 시 hide -> view로 클래스 변경, 상세 창 닫힐 시 view -> hide로 변경 -->
+    <div class="popup_w">
+        <div class="profile_photo_view">
+            <!-- 닫기버튼 -->
+            <div class="btn_photo_close">
+                <a onClick="uf_hide();"><span class="blind">닫기</span></a>
+            </div>
+            <!-- //닫기버튼 -->
+
+            <div class="swiper-container photo_w"  >
+                <!-- 슬라이드 이미지 영역 -->
+                <div class="swiper-wrapper" id="slide_area"><!-- sample:begin --><div class="swiper-slide"><div class="img"></div><div class="intro_msg">       <div class="inner"><p>안내 문구</p></div></div></div><!-- sample:end --></div>
+                <!-- //슬라이드 슬라이드 이미지 영역 -->
+
+                <!-- paging -->
+                <div class="swiper-pagination"></div>
+                <!-- //paging -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

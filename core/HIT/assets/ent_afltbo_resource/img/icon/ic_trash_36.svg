@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <g data-name="그룹 25421">
+        <g data-name="그룹 25422">
+            <g data-name="Icon feather-trash">
+                <path data-name="패스 22177" d="M4.5 9h20" transform="translate(3.5 2.444)" style="stroke-linejoin:round;fill:none;stroke:#111;stroke-linecap:round;stroke-width:2px"/>
+                <path data-name="패스 22178" d="M23.056 7.444V23a2.222 2.222 0 0 1-2.222 2.222H9.722A2.222 2.222 0 0 1 7.5 23V7.444m3.333 0V5.222A2.222 2.222 0 0 1 13.056 3H17.5a2.222 2.222 0 0 1 2.222 2.222v2.222" transform="translate(2.722 4)" style="stroke-linejoin:round;fill:none;stroke:#111;stroke-linecap:round;stroke-width:2px"/>
+            </g>
+            <path data-name="선 121" transform="translate(15.5 16.5)" style="fill:none;stroke:#111;stroke-linecap:round;stroke-width:2px" d="M0 0v7"/>
+            <path data-name="선 122" transform="translate(20.5 16.5)" style="fill:none;stroke:#111;stroke-linecap:round;stroke-width:2px" d="M0 0v7"/>
+        </g>
+    </g>
+</svg>

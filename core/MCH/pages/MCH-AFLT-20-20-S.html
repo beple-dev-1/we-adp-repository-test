@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>서류첨부</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+</head>
+<body data-screen-id="MCH-AFLT-20-20-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="APY_SEQ"  name="APY_SEQ"  value="" />
+    <input type="hidden" id="AC"  name="AC"  value=""/>
+    <input type="hidden" id="CI"  name="CI"  value="" />
+    <input type="hidden" id="substr_biz_no"  name="substr_biz_no"  value="" />
+    <input type="hidden" id="seoul_pay_yn"  name="seoul_pay_yn"  value="" />
+    <input type="hidden" id="FROM_PG" name="FROM_PG" value="tb_aflt_doc" />
+</form>
+<form name="form1" id="form1">
+    <input type="hidden" name="FILE_TYPE"   id="file_type"  value="doc" />
+    <input type="hidden" name="FILE_NAME"   id="file_name"  value="대리인위임장.docx" />
+    <input type="hidden" name="FILE_PATH"   id="file_path"  value="/WAS_DATA/webRoot/bls/data/down/"/>
+</form>
+<form name="doc" id="doc" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="FILE_NM"   id="FILE_NM"  value="" />
+    <div class="wrap">
+        <!-- header -->
+        <div class="header floating-back-header floating-sticky">
+            <h1>가입 신청서</h1>
+            <p class="history_back">
+                <a data-element-id="MCH-AFLT-20-20-S-e12" href="#none" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+            </p>
+        </div>
+        <!-- // header -->
+
+        <div class="container">
+            <div class="content">
+                <!-- 신규가맹점 신청 -->
+                <div class="new_store">
+                    <!-- 사업자 기본정보 -->
+                    <div class="conpany_info addBtn-pb58 step5"><!-- 신청서 각 단계별 step1 ~ step5 까지 클래스 추가 -->
+                        <div class="step_wrap">
+                            <ol>
+                                <li><span>1</span></li>
+                                <li><span>2</span></li>
+                                <li><span>3</span></li>
+                                <li><span>4</span></li>
+                                <li class="on"><span>5</span></li><!-- 진행 순서 숫자에 맞는 li 태그에 on 클래스 추가 -->
+                            </ol>
+                        </div>
+
+                            <!-- 정보영역 시작 -->
+                            <div class="inner">
+                                <!-- 법인 사장님정보 -->
+                                <h2 class="step_txt">서류 첨부</h2>
+                                <div class="info">
+                                    <!--<p><strong>※ 꼭 확인해 주세요!</strong></p>-->
+                                    <ul class="list_bar">
+                                        <li>서류 정보를 가리지 않도록 모든 모서리가 나온 이미지를 사용해 주세요.</li>
+                                        <li>zip 파일은 압축을 풀어서 하나씩 첨부해 주세요.</li>
+                                        <li>excel, docs, hwp 등 문서파일은 pdf 파일로 변환해서 첨부해 주세요.</li>
+                                        <li>첨부 가능 확장자: jpg, jpeg, png, pdf, tiff</li>
+                                        <li>용량: 파일 하나당 10MB 이하</li>
+                                    </ul>
+                                </div>
+                                <div class="ipt_area">
+                                    <div class="ipt_bx upload">
+                                        <h3>사업자등록증</h3>
+                                        <p>사업자등록증, 사업자등록증명원(발급 3개월 이내), 고유번호증(비영리법인/단체) 중 보유하신 서류를 첨부해 주세요.</p><!-- 2023-04-28 온라인신청 -->
+                                        <div class="file" id="f1">
+                                            <a data-element-id="MCH-AFLT-20-20-S-e14" href="#none" id="file1" data-value="1">파일 첨부하기</a>
+                                            <input data-element-id="MCH-AFLT-20-20-S-e16" type="file" style="display: none" href="#none" id="fi1" name="fi1" value="" onchange="fillInput()" hidden>
+                                        </div>
+                                    </div>
+
+                                    <!-- 정산 계좌 통장 사본 -->
+                                    <div class="ipt_bx upload">
+                                        <h3>정산 계좌 통장 사본 (간편 가입 프랜차이즈는 선택)</h3>
+                                        <p>정산 계좌 정보에 입력한 것과 동일한 통장 사본을 첨부해 주세요.</p>
+                                        <div class="file"  id="f2">
+                                            <a href="#none" id="file2" data-value="2">파일 첨부하기</a>
+                                            <input data-element-id="MCH-AFLT-20-20-S-e17" type="file" style="display: none" href="#none" id="fi2" name="fi2" value="" onchange="fillInput()" hidden>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 법인등기부등본 -->
+                                    <div class="ipt_bx upload">
+                                        <h3>법인등기부등본</h3>
+                                        <p>최근 3개월 이내 발급된 서류를 첨부해 주세요. 법인등기부등본이 없는 비영리법인/단체인 경우 고유번호증을 대신 첨부해 주세요.</p>
+                                        <div class="file" id="f3">
+                                            <a href="#none" id="file3" data-value="3">파일 첨부하기</a>
+                                            <input data-element-id="MCH-AFLT-20-20-S-e18" type="file" style="display: none" href="#none" id="fi3" name="fi3" value="" onchange="fillInput()" hidden>
+                                        </div>
+                                    </div>
+                                    <!-- 법인인감증명서 -->
+                                    <div class="ipt_bx upload">
+                                        <h3>법인인감증명서</h3>
+                                        <p>최근 3개월 이내 발급된 서류를 첨부해 주세요. 법인인감증명서가 없는 비영리법인/단체인 경우 고유번호증을 대신 첨부해 주세요.</p>
+                                        <div class="file" id="f4">
+                                            <a href="#none" id="file4" data-value="4">파일 첨부하기</a>
+                                            <input data-element-id="MCH-AFLT-20-20-S-e19" type="file" style="display: none" href="#none" id="fi4" name="fi4" value="" onchange="fillInput()" hidden>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 2022-12-15 -->
+                                    <!-- 매출액 확인 서류 -->
+                                    <div class="ipt_bx upload">
+                                        <h3>매출액 확인 서류 (신설사업자는 선택)</h3>
+                                        <div class="info">
+                                            <p><strong>직전 연도 과세기준으로 서류를 첨부해 주세요.</strong></p>
+                                            <ul>
+                                                <li>- 과세사업자(개인/법인) : 부가가치세과세표준증명원</li>
+                                                <li>- 면세사업자(개인) : 부가가치세면세사업자수입금액증명원</li>
+                                                <li>- 면세사업자(법인) : 매출계산서합계표</li>
+                                            </ul>
+                                        </div>
+                                        <div class="file" id="f7">
+                                            <a href="#none" id="file7" data-value="7">파일 첨부하기</a>
+                                            <input data-element-id="MCH-AFLT-20-20-S-e20" type="file" style="display: none" href="#none" id="fi7" name="fi7" value="" &lt;%&ndash;onchange="fillInput()"&ndash;%&gt; hidden>
+                                        </div>
+                                    </div>
+
+                                    <!--<!-- //2022-12-15 ->
+                                    
+                                    <!-- 실제 소유자 확인 서류 ->
+                                    <div class="ipt_bx upload">
+                                        <h3>실제 소유자 확인 서류 (선택)</h3>
+                                        <p>실제 소유자 정보에서 선택한 것과 동일한 서류를 첨부해 주세요.  3개월 이내 발급된 서류여야 합니다.</p>
+                                        <div class="file" id="f5">
+                                            <a href="#none" id="file5" data-value="5">파일 첨부하기</a>
+                                            <input type="file" style="display: none" href="#none" id="fi5" name="fi5" value="" hidden>
+                                        </div>
+                                    </div>
+                                    -->
+                                    <!-- 2023-04-28 온라인신청 -->
+									<!-- 영업 사실 확인 서류 -->
+									<div class="ipt_bx upload">
+										<h3>영업 사실 확인 서류 (선택)</h3>
+										<p>영업허가증, 영업신고증, 영업등록증 중 보유하신 서류를 첨부해 주세요.</p>
+										<div class="file" id="f8">
+											<a href="#none" id="file8" data-value="8">파일 첨부하기</a>
+											<input data-element-id="MCH-AFLT-20-20-S-e21" type="file" style="display: none" href="#none" id="fi8" name="fi8" value="" hidden>
+										</div>
+									</div>
+                                    
+									<!-- // 2023-04-28 온라인신청 -->
+                                    <!-- 대리인위임장 -->
+                                    <div class="ipt_bx upload">
+                                        <h3>대리인위임장 (선택)</h3>
+                                        <p>대리인이 신청하는 경우 대표자의 위임장을 첨부해야 합니다.</p>
+                                        <p>최근 3개월 이내 발급된 서류를 첨부해 주세요.</p>
+                                        <div class="file" id="f6">
+                                            <button data-element-id="MCH-AFLT-20-20-S-e13" type="button" class="download-button" id="download"><i class="icon download-24"></i><span>대리인 위임장 양식 내려받기</span></button>
+                                            <a href="#none" id="file6" data-value="6">파일 첨부하기</a>
+                                            <input data-element-id="MCH-AFLT-20-20-S-e22" type="file" style="display: none" href="#none" id="fi6" name="fi6" value="" hidden>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- //정보영역 끝 -->
+                    </div>
+                    <!-- //법인 사장님정보 -->
+                </div>
+                <!-- //신규가맹점 신청 -->
+                <!-- 하단 고정버튼 -->
+                <div class="btn_botFix_w">
+                    <div class="inner bg_white">
+                        <a data-element-id="MCH-AFLT-20-20-S-e15" href="#" class="btn_default btn-style-h48 round_r6" id="next_btn" onclick="next_btn(this)"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                            신청서 한눈에 보기
+                        </a>
+                    </div>
+                </div>
+                <!-- //하단 고정버튼 -->
+            </div>
+        </div><!-- // container -->
+    </div><!-- // wrap -->
+</form>
+
+<script>
+    let modify_yn   = "";
+    let pre_biz_year_sales = "";
+<!--     let page_info   = ""; -->
+</script>
+</body>
+</html>

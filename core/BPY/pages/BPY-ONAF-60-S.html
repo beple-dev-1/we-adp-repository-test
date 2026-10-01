@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>통합비대면결제 약관동의</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-ONAF-60-S">
+<input type="hidden" id="ONAF_AGR_YN" value="" />
+<input type="hidden" id="LOC_AGR_YN" value="" /> 
+<!-- wrap -->
+<div class="wrap un_pay_newType">
+    <div class="header floating-back-header floating-sticky">
+        <h1>간편결제</h1>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="un_term_agree_w">
+                <h2>약관동의</h2>
+                <p>
+                    간편결제 서비스를 이용하기 위해<br>
+                    <strong>아래 약관에 동의</strong> 해 주세요.
+                </p>
+                
+                
+                <p class="agreeCon" onclick="showClause('063002')">
+                    <a data-element-id="BPY-ONAF-60-S-e05" href="#none">[필수] 개인 정보 제3자 제공 이용 동의</a>
+                </p>
+                
+                
+                <p class="agreeCon" onclick="showClause('060015')">
+                    <a data-element-id="BPY-ONAF-60-S-e06" href="#none">[필수] 위치정보 수집 및 이용 동의</a>
+                </p>                
+                
+            </div>
+
+            <!-- 하단 고정버튼 -->
+            <div class="un_btn_w">
+                <a data-element-id="BPY-ONAF-60-S-e07" href="#none" class="agree" id="upd_onafyn">동의함</a>
+                <a data-element-id="BPY-ONAF-60-S-e08" href="#none" class="disagree" onclick="uf_back();">동의하지 않음</a>
+            </div>
+            <!-- //하단 고정버튼 -->
+
+            <!-- modal overlay -->
+            <div id="clause_modal" class="modaloverlay type1" style="display:none;">
+                <div class="lytb"><div class="lytb_row"><div class="lytb_td">
+                    <!-- layerpopup -->
+                    <div class="layer_style1">
+                        <div class="layer_po">
+                            <a class="btn_r" onclick="$('#clause_modal').hide();"><span class="btn_close"><span class="blind">닫기</span></span></a>
+                            <div class="cont2 agree_style_new">
+                                <div class="ly_st_tit">
+                                    <p></p>
+                                </div>
+
+                                <div class="ly_st_clause">
+                                </div>
+
+                                <div class="ly_st_btn" onclick="$('#clause_modal').hide()">
+                                    <a class="on">확인</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //layerpopup -->
+                </div></div></div>
+            </div>
+            <!-- //modal overlay -->
+        </div>
+    </div><!-- // container -->
+</div>
+<!-- // wrap -->
+</body>
+</html>

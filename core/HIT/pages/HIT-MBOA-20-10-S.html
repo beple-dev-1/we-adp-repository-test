@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈_가맹점 어드민_메뉴 관리 서비스(앱 버전) — 메뉴 추가/수정 step2(상세 폼)</title>
+  <link rel="stylesheet" href="../assets/ent_aflt_resource/css/heat_admin-mobile.css">
+  <link rel="stylesheet" href="../assets/ent_aflt_resource/css/datepicker.min.css">
+</head>
+<body data-screen-id="HIT-MBOA-20-10-S">
+<div class="app app--menu-add app--add-step2" id="menu_reg_root">
+    <!-- C-NAV-APPBAR -->
+    <header class="ds-appbar">
+      <button id="btn_back" class="ds-appbar__action" aria-label="뒤로가기"><img src="../assets/ent_aflt_resource/img/icons/ico-arrow-left.svg" alt="" aria-hidden="true" width="20" height="20"></button>
+      <h1 class="ds-appbar__title"><!-- copy: add.title -->메뉴 추가</h1>
+      <button id="btn_close" class="ds-appbar__action ds-appbar__action--trailing" aria-label="닫기"><img src="../assets/ent_aflt_resource/img/icons/ico-close-32.svg" alt="" aria-hidden="true" width="32" height="32"></button>
+    </header>
+
+    <main class="form">
+      <!-- 제공형태 / 끼니 — 분류명 선택 시트(sheet-category)와 동일 패턴으로 시트에서 재선택 가능.
+           라벨 미노출은 정답지 의도(Figma 362:2565 y92, 라벨 없음) 유지 — 대신 aria-label로 스크린리더 안내 -->
+      <div class="form__row2">
+        <div class="ds-select"><button class="ds-select__control" type="button" data-ds-sheet="sheet-prvd-tp" aria-label="제공 형태 선택"><span class="ds-select__value" id="prvd_tp_label"><!-- sample:begin -->안내 문구<!-- sample:end --></span><span class="ds-select__chevron" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-chevron-down.svg" alt="" aria-hidden="true" width="16" height="16"></span></button></div>
+        <div class="ds-select" id="meal_tp_pill" hidden><button class="ds-select__control" type="button" data-ds-sheet="sheet-meal-tp" aria-label="식사 형태 선택"><span class="ds-select__value" id="meal_tp_label"><!-- sample:begin -->안내 문구<!-- sample:end --></span><span class="ds-select__chevron" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-chevron-down.svg" alt="" aria-hidden="true" width="16" height="16"></span></button></div>
+      </div>
+
+      <div class="add-photo">
+        <div class="ds-menu-image" id="menu_image_wrap">
+          <span class="ds-menu-image__placeholder" id="menu_image_placeholder"><img src="../assets/ent_aflt_resource/img/icons/ico-image-placeholder.svg" alt="" aria-hidden="true" width="40" height="40"></span>
+          <img id="menu_image_preview" alt="메뉴 대표 이미지" hidden src="../assets/_sample/menu.svg"/>
+        </div>
+        <div class="photo-actions">
+          <button data-element-id="HIT-MBOA-20-10-S-e16" id="btn_photo_attach" class="ds-button ds-button--outline-primary ds-button--small" type="button"><!-- copy: add.photo.attach -->첨부하기</button>
+          <button data-element-id="HIT-MBOA-20-10-S-e17" id="btn_photo_reset" class="ds-button ds-button--outline ds-button--small" type="button" hidden><!-- copy: add.photo.default -->기본이미지로 변경</button>
+        </div>
+        <input data-element-id="HIT-MBOA-20-10-S-e22" type="file" id="menu_image_input_gallery" accept=".jpg, .jpeg, .png, image/jpeg, image/png" hidden><!-- android/allowCamera -->
+      </div>
+
+      <!-- 메뉴 분류명 -->
+      <div class="ds-select"><label class="ds-select__label"><!-- copy: add.category -->메뉴 분류명(필수)</label><button data-element-id="HIT-MBOA-20-10-S-e18" class="ds-select__control" type="button" data-ds-sheet="sheet-category"><span class="ds-select__value ds-select__value--placeholder" id="menu_dv_label">메뉴분류명 선택</span><span class="ds-select__chevron" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-chevron-down.svg" alt="" aria-hidden="true" width="18" height="18"></span></button></div>
+      <input type="hidden" id="menu_dv_seq">
+
+      <!-- 날짜 — step1(ent_aflt_menu_reg_svc)과 동일 패턴: 정답지 버튼 표시(input 미사용) + 투명 오버레이 버튼에 데이트피커 바인딩 -->
+      <div class="ds-date-field">
+        <label class="ds-date-field__label"><!-- copy: add.date -->날짜(필수)</label>
+        <div style="position:relative;">
+          <button data-element-id="HIT-MBOA-20-10-S-e19" class="ds-date-field__control" type="button" tabindex="-1" aria-hidden="true"><span class="ds-date-field__value" id="menu_prvd_dt_value">날짜 선택</span><span class="ds-date-field__icon" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-date-disabled.svg" alt="" aria-hidden="true" width="24" height="24"></span></button>
+          <button type="button" id="menu_prvd_dt" aria-label="날짜 선택" style="position:absolute;inset:0;opacity:0;border:0;padding:0;margin:0;background:transparent;cursor:pointer;"><!-- sample:begin -->2026.09.02<!-- sample:end --></button>
+        </div>
+      </div>
+
+      <!-- 메뉴명 -->
+      <div class="ds-text-field"><label class="ds-text-field__label"><!-- copy: add.name -->메뉴명(국문)(필수)</label><div class="ds-text-field__control"><input data-element-id="HIT-MBOA-20-10-S-e23" class="ds-text-field__input" type="text" id="repr_menu_nm" maxlength="50" placeholder="메뉴명 입력(국문)" /></div></div>
+      <div class="ds-text-field"><label class="ds-text-field__label"><!-- copy: add.nameEn -->메뉴명(영문)</label><div class="ds-text-field__control"><input data-element-id="HIT-MBOA-20-10-S-e24" class="ds-text-field__input" type="text" id="repr_menu_nm_en" maxlength="50" placeholder="메뉴명 입력(영문)" /></div></div>
+
+      <!-- 금액 + 금액숨김 -->
+      <div class="ds-text-field"><label class="ds-text-field__label"><!-- copy: add.price -->메뉴 금액(필수)</label><div class="ds-text-field__control"><input data-element-id="HIT-MBOA-20-10-S-e25" class="ds-text-field__input" type="text" id="menu_amt" inputmode="numeric" maxlength="9" placeholder="금액" /><span class="ds-text-field__suffix"><!-- copy: add.price.unit -->원</span></div></div>
+      <label class="ds-checkbox"><input data-element-id="HIT-MBOA-20-10-S-e26" class="ds-checkbox__input" type="checkbox" id="amt_hide_yn" /><span class="ds-checkbox__box" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-check-white.svg" alt="" aria-hidden="true" width="12" height="12"></span><span class="ds-checkbox__label"><!-- copy: add.priceHide -->금액 숨김</span></label>
+
+      <!-- 메뉴구성 -->
+      <div class="ds-textarea"><label class="ds-textarea__label"><!-- copy: add.compose -->메뉴 구성(국문)</label><div class="ds-textarea__control"><textarea data-element-id="HIT-MBOA-20-10-S-e27" class="ds-textarea__input" id="menu_pack_nm" maxlength="100" data-ds-counter placeholder="메뉴 구성 입력(최대 100자)"></textarea><span class="ds-textarea__counter"><span class="ds-textarea__count">0</span> / 100</span></div></div>
+      <div class="ds-textarea"><label class="ds-textarea__label"><!-- copy: add.composeEn -->메뉴 구성(영문)</label><div class="ds-textarea__control"><textarea data-element-id="HIT-MBOA-20-10-S-e28" class="ds-textarea__input" id="menu_pack_nm_en" maxlength="200" data-ds-counter placeholder="메뉴 구성 입력(최대 200자)"></textarea><span class="ds-textarea__counter"><span class="ds-textarea__count">0</span> / 200</span></div></div>
+
+      <!-- 메뉴 정보(반복, 최소 1개 필수) -->
+      <div>
+        <div class="field-label"><!-- copy: add.info -->메뉴 정보(필수)</div>
+        <div class="ds-repeat-card" id="menu_info_repeat" data-ds-repeat>
+          <div class="ds-repeat-card__group" id="menu_info_group"><!-- sample:begin -->표본<!-- sample:end --></div>
+          <button data-element-id="HIT-MBOA-20-10-S-e20" class="ds-repeat-card__add" type="button" id="btn_menu_info_add"><!-- copy: add.addRow -->+ 추가하기</button>
+        </div>
+      </div>
+
+      <!-- 영양 정보(반복, 선택) -->
+      <div>
+        <div class="field-label"><!-- copy: add.nutrition -->영양 정보</div>
+        <div class="ds-repeat-card" id="kcal_info_repeat" data-ds-repeat>
+          <div class="ds-repeat-card__group" id="kcal_info_group"><!-- sample:begin -->표본<!-- sample:end --></div>
+          <button class="ds-repeat-card__add" type="button" id="btn_kcal_info_add"><!-- copy: add.addRow -->+ 추가하기</button>
+        </div>
+      </div>
+
+      <!-- 수량 (딜리버리/픽업 전용) -->
+      <div class="ds-text-field" id="qty_field" hidden><label class="ds-text-field__label"><!-- copy: add.qty -->수량(필수)</label><div class="ds-text-field__control"><input data-element-id="HIT-MBOA-20-10-S-e29" class="ds-text-field__input" type="text" id="qty" inputmode="numeric" maxlength="9" placeholder="수량 입력" /></div></div>
+
+      <!-- 품절여부 (매장식사 전용) -->
+      <label class="ds-checkbox" id="soldout_field" hidden><input data-element-id="HIT-MBOA-20-10-S-e30" class="ds-checkbox__input" type="checkbox" id="c_soldout_yn" /><span class="ds-checkbox__box" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-check-white.svg" alt="" aria-hidden="true" width="12" height="12"></span><span class="ds-checkbox__label"><!-- copy: add.soldout -->품절</span></label>
+    </main>
+
+    <!-- 하단 저장 -->
+    <div class="save-bar"><button data-element-id="HIT-MBOA-20-10-S-e21" id="btn_save" class="ds-button ds-button--primary ds-button--block ds-button--xlarge ds-button--disabled" disabled><!-- copy: cm.save -->저장</button></div>
+
+    <!-- 메뉴 분류명 선택 시트 — 실제 IDO(TB_CAFETERIA_MENU_DV_R001) 조회 결과로 구성(정답지의 고정 샘플 미사용) -->
+    <div class="ds-bottom-sheet" id="sheet-category" hidden>
+      <div class="ds-bottom-sheet__dim" data-ds-close></div>
+      <div class="ds-bottom-sheet__panel" role="dialog" aria-modal="true">
+        <div class="ds-bottom-sheet__header"><h2 class="ds-bottom-sheet__title"><!-- copy: add.category.title -->메뉴 분류명 선택</h2><button class="ds-bottom-sheet__close" data-ds-close aria-label="닫기"><img src="../assets/ent_aflt_resource/img/icons/ico-close-32.svg" alt="" aria-hidden="true" width="32" height="32"></button></div>
+        <ul class="ds-bottom-sheet__list" id="menu_dv_list">
+
+          <!-- 체크 아이콘(.ds-bottom-sheet__check)은 선택된 항목에만 존재해야 하므로 여기서 렌더하지 않고
+               선택 시 selectCategory()가 동적으로 부여한다(정답지 s-menu-add_sheet-category.html과 동일 구조) -->
+          <!-- data-prvd-tp: 저장 전송용 실효 PRVD_TP 산출의 단일 원천(JS effectivePrvdTp 참조). R인 분류는
+               (사전예약) 접미를 텍스트로 붙인다 — selectCategory()의 라벨 추출이 첫 텍스트 노드 기준이라
+               자식 span 대신 텍스트 접미로 처리해야 시트/선택라벨 표시가 어긋나지 않는다 -->
+          <li class="ds-bottom-sheet__item" data-value="" data-order-form-tp="" data-prvd-tp="" data-thumb-img-path="" data-thumb-img-file-nm="비플머니" data-thumb-img-file-ext="">비플머니비플머니</li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- 제공 형태 선택 시트 (분류명 선택 시트와 동일 패턴, 고정 2항목 — IDO 조회 불필요) -->
+    <div class="ds-bottom-sheet" id="sheet-prvd-tp" hidden>
+      <div class="ds-bottom-sheet__dim" data-ds-close></div>
+      <div class="ds-bottom-sheet__panel" role="dialog" aria-modal="true">
+        <div class="ds-bottom-sheet__header"><h2 class="ds-bottom-sheet__title"><!-- copy: add.prvdTp.title -->제공 형태 선택</h2><button class="ds-bottom-sheet__close" data-ds-close aria-label="닫기"><img src="../assets/ent_aflt_resource/img/icons/ico-close-32.svg" alt="" aria-hidden="true" width="32" height="32"></button></div>
+        <ul class="ds-bottom-sheet__list" id="prvd_tp_list">
+          <li class="ds-bottom-sheet__item" data-value="C">매장식사</li>
+          <li class="ds-bottom-sheet__item" data-value="D">딜리버리/픽업</li>
+          <li class="ds-bottom-sheet__item" data-value="R">사전예약</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 식사 형태 선택 시트 (분류명 선택 시트와 동일 패턴, 고정 2항목, 매장식사 전용) -->
+    <div class="ds-bottom-sheet" id="sheet-meal-tp" hidden>
+      <div class="ds-bottom-sheet__dim" data-ds-close></div>
+      <div class="ds-bottom-sheet__panel" role="dialog" aria-modal="true">
+        <div class="ds-bottom-sheet__header"><h2 class="ds-bottom-sheet__title"><!-- copy: add.mealTp.title -->식사 형태 선택</h2><button class="ds-bottom-sheet__close" data-ds-close aria-label="닫기"><img src="../assets/ent_aflt_resource/img/icons/ico-close-32.svg" alt="" aria-hidden="true" width="32" height="32"></button></div>
+        <ul class="ds-bottom-sheet__list" id="meal_tp_list">
+          <li class="ds-bottom-sheet__item" data-value="BRUNCH">조식</li>
+          <li class="ds-bottom-sheet__item" data-value="LUNCH">중식</li>
+          <!-- 석식: PC 원본(ent_afltbo_menu_reg_view.jsp)도 미구현 주석 상태 — DB에 DINNER_YN류 컬럼 자체가
+               없어(TB_CAFETERIA_MENU는 BRUNCH_YN/LUNCH_YN만 존재) 추후 별도 과업으로 처리 예정
+          <li class="ds-bottom-sheet__item" data-value="DINNER">석식</li>
+          -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

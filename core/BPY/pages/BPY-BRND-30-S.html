@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>브랜드상품권 환불 계좌 조회</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-BRND-30-S">
+<form id="frm" name="frm">
+	<input type="hidden" id="BGC_NO" name="BGC_NO" value="">
+	<input type="hidden" id="PIN_NO" name="PIN_NO" value="">
+	<input type="hidden" id="KIND_FULL_NM" name="KIND_FULL_NM" value="">
+	<input type="hidden" id="SALES_AMT" name="SALES_AMT" value="">
+	<input type="hidden" id="REFUND_AMT" name="REFUND_AMT">
+	<input type="hidden" id="REMAIN_AMT" name="REMAIN_AMT" value="">
+	<input type="hidden" id="PROC_ABL_STATUS" name="PROC_ABL_STATUS" value="">
+	<input type="hidden" id="ACCOUNT_CNT" name="ACCOUNT_CNT" value="">
+	<input type="hidden" id="REFUND_ABL_YN" name="REFUND_ABL_YN" value="">
+</form>
+
+<div class="wrap">
+	<div class="header floating-back-header floating-sticky">
+		<h1>환불</h1>
+		<a data-element-id="BPY-BRND-30-S-e05" id="btn_back" class="btn-history-back">뒤로가기</a>
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 환불안내 - 브랜드상품권 -->
+			<div class="refund-container type-brand addBtn-pb58">
+				<div class="item-wrap">
+					<!-- 환불정보 -->
+					<div class="item-box">
+						<div class="box-hd">
+							<p class="refund-text title">환불정보</p>
+							<p class="refund-text info mgt8">환불 규정에 따라 아래 금액이 환불 예정입니다.</p>
+						</div>
+						<div class="box-content bg-box">
+							<!-- 환불 상품권 명 -->
+							<div class="refund-item">
+								<p class="refund-text sub-title">비플머니 비플머니</p>
+							</div>
+							<!-- 환불 상품권 상세정보 -->
+							<div class="refund-info">
+								<ul>
+									<li>
+										<p class="refund-text fc-info">상품권 번호</p>
+										<p class="refund-text fc-info"></p>
+									</li>
+								</ul>
+							</div>
+							<!-- 환불예정금액 -->
+							<div class="refund-price">
+								<p class="refund-text txt_bold">환불예정금액</p>
+								<p class="refund-text txt_bold txt_key_color"><span>4,500</span>원</p>
+							</div>
+						</div>
+					</div>
+					<!-- 입금정보 -->
+					<div class="item-box">
+						<div class="box-hd">
+							<p class="refund-text title">입금정보</p>
+						</div>
+						<div class="box-content p_acc_sltbx" id="brnd_gift_acct">
+							
+							<div class="acc-bx type2 icon arr_right-20" id="acct_info"><!-- 기본 = acc-bx  / 환불계좌 등록된 상태일경우 type2 추가 -->
+								<a data-element-id="BPY-BRND-30-S-e06" id="acct" bank_cd="" sub_acct ="" acct_no="" bank_nm="국민은행">
+									<span class="ic_b ic_b"></span>국민은행()
+								</a>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<ul class="list_bl">
+					<li class="refund-text info">환불은 실제 결제한 금액(할인금액 제외) 기준으로 진행됩니다.</li>
+					<li class="refund-text info">환불은 신청 후 2~3일(영업일 기준) 이내에 입금완료 예정입니다.</li>
+				</ul>
+			</div>
+			<!-- // 환불안내 - 브랜드상품권 -->
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_white">
+					<a data-element-id="BPY-BRND-30-S-e07" id="btn_refund" class="btn_default round_r8 btn-style-h48 on">신청하기</a><!-- 활성화 시 on -->
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+			<!-- 계좌선택 레이어 -->
+			<div id="p_lytit" class="layer_bPop" style="display:none;">
+				<div class="pop_box radius_16">
+					<div class="pop_content">
+						<div class="pop_b_cn type1">
+							<div class="p_lytit">
+								계좌선택
+								<div class="right"><a class="link addAcct" id="brnd_gift_acct">계좌관리</a></div>
+							</div>
+							<div class="p_acc_sltbx">
+								<ul id="ul_acctList">
+									
+									<li id="pay_info" bank_cd="" sub_acct ="" 
+										acct_no="" bank_nm="국민은행" >
+										<a><span class="ic_b ic_b"></span>국민은행()계좌
+										</a>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //레이어 -->
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

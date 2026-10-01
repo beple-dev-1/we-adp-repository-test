@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>요기요 가게 검색</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-YGYO-50-S">
+<textarea data-element-id="BPG-YGYO-50-S-e19" style="display: none" id="search_history_list"></textarea>
+    <form id="frm" name="frm">
+        <input type="hidden" name="LNG" id="lng" value="">
+        <input type="hidden" name="LAT" id="lat" value="">
+    </form>
+    <!-- wrap -->
+    <div class="wrap beple-ui">
+    
+        <!-- header -->
+        
+            
+            
+        
+        <!-- //header -->
+        
+        <!-- container -->
+        <div class="container js-container-wrap" style="padding-bottom: 96px;">
+            <!-- content -->
+            <div class="content">
+                <div class="bp-ygy">
+                    <!-- 검색 -->
+                    <div class="beple-search yogiyo">
+                        <div class="search__header">
+                            <div class="form-box">
+                                <div class="form__item js-form-item"><!-- 활성화 시 'item--on', 읽기전용, 비활성화 시 item--disabled, 오류 시 item--error -->
+                                    <div class="form__item-wrap">
+                                        <div class="input-type--search input-unit"><!-- 아이콘 및 버튼 미사용 시 input-unit 제거 -->
+                                            <input data-element-id="BPG-YGYO-50-S-e20" type="text" id="input_search" value="" placeholder="가게명 또는 음식으로 검색해 주세요.">
+                                            <button class="input__unit" id="btn_clear_search" style="display: none;"><!-- [D] 검색어 입력 시 display: none; 제거 / 검색어 없을 시 display: none; 추가 -->
+                                                <i class="icon icon--close_cr-16"></i>
+                                            </button>
+                                            <button id="btn_search" class="input__unit input__unit--24"><i class="icon icon--search-24"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 검색 컨텐츠 -->
+                        <div class="search__content">
+                            <!-- 검색 프리뷰 -->
+                            <div class="keyword-box type--3"><!-- [D] type--1 : 최근 검색어, type--2 : 검색어 자동완성, type--3 : 연관검색어, 검색결과 없을 시 type--n 클래스 제거. -->
+                                <!-- 최근검색어 -->
+                                <div class="keyword--type1" id="search_history_body">
+                                    <div class="keyword__header">
+                                        <h2 class="keyword--title">최근 검색어</h2>
+                                        <button data-element-id="BPG-YGYO-50-S-e11" type="button" class="button-remove--all" id="btn_clear_search_history">전체삭제</button>
+                                    </div>
+                                    <!-- 최근검색어 내역(최대 10개) -->
+                                    <div class="keyword__content">
+                                        <div class="keyword--item">
+                                            <a data-element-id="BPG-YGYO-50-S-e14" type="button" class="keyword--button"><span>냉채족발냉채족발냉채족발냉채족발</span></a>
+                                            <button data-element-id="BPG-YGYO-50-S-e12" type="button" class="keyword--button delete">
+                                                <i class="icon icon--close-16">삭제</i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 검색어 자동완성 -->
+                                <div class="keyword--type2" id="autocomplete_body">
+                                    <div class="keyword__content">
+                                        <div class="keyword--item">
+                                            <button data-element-id="BPG-YGYO-50-S-e13" type="button" class="keyword--button">
+                                                <span>버거킹</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 연관검색어 -->
+                                <div class="keyword--type3" id="related_key_body" style="display: none;">
+                                    <!-- 타이틀 -->
+                                    <div class="keyword__header">
+                                        <h3 class="keyword--title">연관</h3>
+                                    </div>
+                                    <!-- 버튼 -->
+                                    <div class="keyword__content">
+                                        <!--<button type="button" class="keyword--button"><span>롯데리아</span></button>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 검색결과 -->
+                            <div class="search__result" style="" id="result_search">
+                                <div class="place">
+                                    <div class="place-util">
+                                        <div class="ygy__filter-wrap">
+                                            <div class="ygy__filter-list view" id="filters">
+                                                <button data-element-id="BPG-YGYO-50-S-e21" data-id="sort_filter" data-value="REVIEW_RATE" class="ygy__filter-btn"><span>요기요 추천순</span></button><!-- [D] 활성화 시 active -->
+                                                <button data-element-id="BPG-YGYO-50-S-e22" data-id="delivery_fee_filter" data-value="" class="ygy__filter-btn"><span>배달요금</span></button>
+                                                <button data-element-id="BPG-YGYO-50-S-e23" data-id="order_amt_filter" data-value="" class="ygy__filter-btn"><span>최소주문금액</span></button>
+                                                <!-- <button data-value="" class="ygy__filter-btn"><span>위생안심</span></button> -->
+                                            </div>
+                                        </div>
+                                        <p class="place__total-count">총 <span id="total_cnt">20</span>개</p>
+                                    </div>
+    
+                                    <!-- 즐겨찾기 등록매장 -->
+                                    <ul class="store-list">
+                                        <!-- 매장 -->
+                                        <!-- <li><!-- [D] 영업 준비 중 시 'ready' 클래스 추가 ->
+                                            <div class="store-item">
+                                                <a href="#none">
+                                                    <div class="store-img">
+                                                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'><rect fill='rgba(0,0,0,0)' x='0' y='0' width='100%' height='100%'/></svg>" data-attr="empty">
+                                                        <!-- [D] 영업 준비 중 메세지 ->
+                                                        <p class="ready-message">
+                                                            배달이 잠시<br>
+                                                            중단되어<br>
+                                                            재오픈 준비 중<br>
+                                                            입니다.
+                                                        </p>
+                                                    </div>
+                                                    <!-- 매장 명 ->
+                                                    <div class="store-info label" data-title="위생안심"><!-- [D] 라벨 추가 시 data-title="" 에 라벨에 필요한 문구 작성 후 label 클래스 추가 ->
+                                                        <p class="store-name" title="일이삼사오육칠팔구십일이삼">일이삼사오육칠팔구십일이삼일이삼사오육칠팔구십일이삼22222222222222222222222222222222222222222222222</p>
+                                                        <div class="store-info-wrap">
+                                                            <p class="info-text line-max"><span>최소주문</span><strong>5,000원</strong></p>
+                                                            <p class="info-text line-max"><span>배달요금</span><strong>1,000원</strong>~<strong>3,500원</strong></p>
+                                                            <p class="info-text delivery_time"><strong>50분</strong>~<strong>60분</strong></p>
+                                                            <p class="info-text distance"><span>1.0</span>Km</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li> -->
+                                        
+                                        <!-- 매장 -->
+                                        <li class="ready"><!-- [D] 영업 준비 중 시 'ready' 클래스 추가 -->
+                                            <div class="store-item">
+                                                <a data-element-id="BPG-YGYO-50-S-e24" href="#none">
+                                                    <div class="store-img">
+                                                        <img src="../assets/resource/images/ygy/dummy_11.png">
+                                                        <!-- [D] 영업 준비 중 메세지 -->
+                                                        <p class="ready-message">
+                                                            배달이 잠시<br>
+                                                            중단되어<br>
+                                                            재오픈 준비 중<br>
+                                                            입니다.
+                                                        </p>
+                                                    </div>
+                                                    <!-- 매장 명 -->
+                                                    <div class="store-info">
+                                                        <p class="store-name" title="일이삼사오육칠팔구십일이삼">일이삼사오육칠팔구십일이삼일이삼사오육칠팔구십일이삼22222222222222222222222222222222222222222222222</p>
+                                                        <div class="store-info-wrap">
+                                                            <p class="info-text line-max"><span>최소주문</span><strong>5,000원</strong></p>
+                                                            <p class="info-text line-max"><span>배달요금</span><strong>1,000원</strong>~<strong>3,500원</strong></p>
+                                                            <p class="info-text delivery_time"><strong>50분</strong>~<strong>60분</strong></p>
+                                                            <p class="info-text distance"><span>1.0</span>Km</p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- 영업 준비 중 메세지 -->
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <!-- // 매장 -->
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 검색결과 없을 시 display: none; 제거 -->
+                            <div class="ygy__store_none" style="display:none !important;" id="empty_result">
+                                <p><span>검색결과가 없습니다.</span></p>
+                            </div>
+                            
+                            <!-- 검색결과 없을 시 display: none; 제거 -->
+                            <div class="ygy__store_none" style="display:none !important;" id="empty_result2">
+                                <p><span>찾으시는 가게가 없습니다.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 검색 -->
+                </div>
+                
+                <!-- 2025-02-26 - [D] 플로팅영역 nav추가, 구조 및 클래스 변경 -->
+                <!-- 하단 플로팅 영역 -->
+                <div class="container-floating js-floating-container">
+                    <!-- 토스트메세지 -->
+                    <div class="toast-box"><!-- [D] 툴팁 노출 시 view 클래스 추가 -->
+                        <!-- 토스트 메세지 -->
+                        <div class="toast__body"><!-- [D] 활성화 시 active 클래스 추가 -->
+                            <i class="icon icon--check_cr-20_primary"></i><span>현재 위치로 주소 정보가 설정되었습니다.</span>
+                        </div>
+                    </div>
+
+                    <!-- 요기요 네비게이션 -->
+                    
+
+<!-- 네비게이션 컨테이너 -->
+                    <nav class="navigation-container yogiyo">
+                        <!-- 홈 -->
+                        <a data-element-id="BPG-YGYO-50-S-e15" class="navigation__button home" data-id="bp_ygyo_main.act"><!-- [D] 선택 시 'active' 클래스 추가 -->
+                            <span>홈</span>
+                        </a>
+                        <!-- 검색 -->
+                        <a data-element-id="BPG-YGYO-50-S-e16" class="navigation__button search" data-id="bp_ygyo_srch_shops.act">
+                            <span>검색</span>
+                        </a>
+                        <!-- 주문내역 -->
+                        <a data-element-id="BPG-YGYO-50-S-e17" class="navigation__button history" data-id="bp_ygyo_purchase_info.act">
+                            <span>주문내역</span>
+                        </a>
+                        <!-- 찜 -->
+                        <a data-element-id="BPG-YGYO-50-S-e18" class="navigation__button favorites" data-id="bp_ygyo_fav.act">
+                            <span>찜</span>
+                        </a>
+                    </nav>
+
+                    <!-- //요기요 네비게이션 -->
+                </div>
+                <!-- // 2025-02-26 - [D] 플로팅영역 nav추가, 구조 및 클래스 변경 -->
+            </div>
+            <!-- // content -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+    
+    <!-- Sort Filter -->
+    <div class="layer_overlay drowdowp_cust" id="sort_filter" style="display:none;">
+	    <div class="layer_bPop">
+	        <div class="popup_con pd0">
+	            <div class="edit_pop add_tit_t2">
+	                <div class="popup-container__header">
+	                    <h2 class="ly_pop_tit">정렬</h2>
+	                    <p class="btn_close">
+							<a><span class="blind" id='sortPopupClose'>닫기</span></a>
+						</p>
+	                </div>
+                    <ul>
+                        <li><a data-value="REVIEW_RATE">요기요 추천순</a></li>
+                        <li><a data-value="RANK">배달시간 빠른순</a></li>
+                        <li><a data-value="DELIVERY_FEE">배달요금 낮은순</a></li>
+                        <li><a data-value="ORDER_COUNT">최소주문금액 낮은순</a></li>
+                        <li><a data-value="DISTANCE">거리 가까운순</a></li>
+                    </ul>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	
+	<!-- delivery Fee Filter -->
+    <div class="layer_overlay drowdowp_cust" id="delivery_fee_filter" style="display:none;">
+	    <div class="layer_bPop">
+	        <div class="popup_con pd0">
+	            <div class="edit_pop add_tit_t2">
+	                <div class="popup-container__header">
+	                    <h2 class="ly_pop_tit">배달요금</h2>
+						<p class="btn_close">
+							<a><span class="blind" id='sortPopupClose'>닫기</span></a>
+						</p>
+	                </div>
+                    <ul>
+                        <li><a data-value="">전체</a></li>
+                        <li><a data-value="0">무료</a></li>
+                        <li><a data-value="1000">배달요금 1,000원 이하</a></li>
+                        <li><a data-value="2000">배달요금 2,000원 이하</a></li>
+                        <li><a data-value="3000">배달요금 3,000원 이하</a></li>
+                    </ul>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	<!-- order amount Filter -->
+    <div class="layer_overlay drowdowp_cust" id="order_amt_filter" style="display:none;">
+	    <div class="layer_bPop">
+	        <div class="popup_con pd0">
+	            <div class="edit_pop add_tit_t2">
+	                <div class="popup-container__header">
+	                    <h2 class="ly_pop_tit">최소주문금액</h2>
+	                    <p class="btn_close">
+							<a><span class="blind" id='sortPopupClose'>닫기</span></a>
+						</p>
+	                </div>
+                    <ul>
+                    	<li><a data-value="">전체</a></li>
+                        <li><a data-value="5000">최소주문 5,000원 이하</a></li>
+                        <li><a data-value="10000">최소주문 10,000원 이하</a></li>
+                        <li><a data-value="20000">최소주문 12,000원 이하</a></li>
+                        <li><a data-value="15000">최소주문 15,000원 이하</a></li>
+                    </ul>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</body>
+</html>

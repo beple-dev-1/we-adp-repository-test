@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>메뉴 상세 초기화</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-ORDR-28-S">
+<div class="wrap js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-ORDR-28-S-e07" href="#none"class="hd-btn back" id="backBtn"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">메뉴상세</h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 컨테이너 -->
+        <section class="smart_oder-container">
+            <!-- 컨테이너 컨텐츠 -->
+            <article class="menu_detail" id="menuDetail"><!-- 품절 시 : sold-out, 오픈준비중일 시 waiting -->
+                <!-- 사진 -->
+                <div class="m_photo">
+                    <p><a data-element-id="HIT-ORDR-28-S-e08" href="#none"><img onerror="noImage($(this))" alt="메뉴 이미지" id="menuImg" src="../assets/_sample/menu.svg"></a></p>
+                </div>
+                <!-- 메뉴명 / 설명 -->
+                <div class="m_info">
+                    <div class="label-wrap"><!-- 원본기준 변경사항 -> 클래스 변경됨. : label -> label-wrap  -->
+                        <p class="label meal icon sun-13" id="brunch" style="display: none">조식</p><!-- 원본기준 변경사항 -> 클래스 변경됨. : ico type1 -> label meal icon sun-13  -->
+                        <p class="label meal icon sun-13" id="lunch" style="display: none">중식</p><!-- 원본기준 변경사항 -> 클래스 변경됨. : ico type1 -> label meal icon sun-13  -->
+                        <p class="label default" id="prvdTp" style="display: none">사전예약</p>
+                    </div>
+                    <p class="name" id="menuDvNm"><!-- sample:begin -->홍길동<!-- sample:end --></p>
+                    <p class="description" id="odrTime">주문 가능시간: </p>
+                </div>
+                <!-- 가격정보 -->
+                <div class="price_w" id="amtDiv">
+                    <h2 class="tit">가격</h2>
+                    <p class="price"><span id="amt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>
+                </div>
+                <!-- 선택영역(옵션 등) -->
+                <div class="option_bx">
+                    <div class="opt_list">
+                        <h3 class="opt_tit flex-row">
+                            <span class="grow-y">메뉴구성</span>
+                            <a data-element-id="HIT-ORDR-28-S-e09" href="#none" class="text-btn shrink-n" id="detail"><span class="icon arr_right-14">정보 상세보기</span></a>
+                        </h3>
+                        <div class="txt_bx" id="menuPackNm"><!-- 원본기준 변경사항 -> div 하위 p 태그 삭제됨 -->
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 플로팅 박스 -->
+        <section class="floating-container bottom js-floating-wrap" id="odrSection">
+            <!-- 주문수량 -->
+            <article class="oder_count-box">
+                <!-- 박스 헤더 -->
+                <div class="box-hd">
+                    <p class="count-text title">수량</p>
+                    <p class="count-text">주문가능수량:<span id="left"><!-- sample:begin -->표본<!-- sample:end --></span>개</p>
+                </div>
+            </article>
+            <!-- 메인 버튼영역 -->
+            <article class="main_btn-box bg-white">
+                <div class="btn-main flex-row">
+                    <a data-element-id="HIT-ORDR-28-S-e10" href="#none" id="odrBtn" style="display: none" class="btn-default radius-mid btn-style-h48 on">주문하기</a><!--딜리버리-->
+                    <a data-element-id="HIT-ORDR-28-S-e11" href="#none" id="reserveBtn" style="display: none" class="btn-default radius-mid btn-style-h48 on">예약하기</a><!--사내식당 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+                </div>
+            </article>
+        </section>
+
+        <!-- 사진상세보기 레이어팝업 -->
+        <section class="photo_detail-popup" id="imgDetailArea"><!-- 노출 시 view 클래스 추가 닫힘 시 view 클래스 제거 -->
+            <div class="popup_w">
+                <div class="photo__view-box"><!-- 클래스 변경 photo__view-box -->
+                    <!-- 닫기버튼 -->
+                    <div class="btn_photo_close">
+                        <a data-element-id="HIT-ORDR-28-S-e12" href="#none" id="close"><span class="blind">닫기</span></a>
+                    </div>
+                    <!-- 이미지 영역 -->
+                    <div class="swiper-container photo_w">
+                        <!-- 슬라이드 이미지 영역 -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="img">
+                                    <img alt="사진 상세보기" id="imgArea" src="../assets/_sample/card.svg">
+                                </div>
+                                <!-- 메세지 영역 -->
+                                <div class="intro_msg">
+                                    <div class=""><!-- 메세지 영역 - 텍스트 불필요 시 div class="inner" 내부 태그 삭제 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //사진상세보기 레이어팝업 -->
+    </main>
+</div>
+</body>
+</html>

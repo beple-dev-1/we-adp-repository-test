@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>주문집계</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-10-40-10-S">
+<div class="bp-root">
+<input type="hidden" id="BP_AFLT_SEQ"	name="BP_AFLT_SEQ"	value="" />
+<input type="hidden" id="ENV_MODE"	name="ENV_MODE"	value="" />
+    <!-- //lnb box -->
+    
+        
+    
+    
+    <!-- 메인 컨텐츠 -->
+    <div class="bp-main">
+      <div class="layout">
+          <div class="row">
+              <div class="col col-10">
+                <div class="con-wrap">
+                  <!-- 페이지 헤더 -->
+                  <div class="page-header">
+                    <p class="tit tit-01 with-desc">주문집계
+                      <span>
+                        - 사전예약, 딜리버리/픽업 접수 현황을 조회합니다.<br>
+                        - 조회 당일의 주문총계는 주문 가능 시간 이후에 최종 반영됩니다.
+                      </span>
+                    </p>
+                  </div>
+
+                  <div class="search-box fold"><!-- 상세보기 클릭 시 fold 클래스 추가/제거 -->
+                    <!-- div 구조여서 위에서 아래로 추가됩니다 - left 는 왼쪽 상단, right는 오른쪽 상단부터 추가됨. right박스 사용 안할시 해당영역 전체 삭제-->
+                    <form action="">
+                      <div class="search-form" style="width: auto;">
+                        <!-- 왼쪽박스 -->
+                        <div class="form-wrap left">
+                          <!-- col -->
+                          <!-- 검색어 -->
+                          <div class="search-item input">
+                            <div class="item-hd">
+                              <p class="item-text head">메뉴제공일자</p>
+                            </div>
+                            <div class="item-con">
+                              <div class="td-item-group left td-item">
+                                <div class="ip-wrap with-icon ta-left td-item">
+                                  <input data-element-id="HIT-MBO-10-40-10-S-e06" data-toggle="datepicker" name="" id="search_date" class="ip-txt" type="text" value="" placeholder="" style="background-color: #ffffff; color: #000000" readonly><!-- 비활성화 시 disabled, 날짜 선택 시 readonly -->
+                                  <i class="ic ic-calendar"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- // col end -->
+                        </div>
+                      </div>
+                      <div class="btn-wrap ta-center">
+                        <button data-element-id="HIT-MBO-10-40-10-S-e04" class="btn btn-md-b btn-primary-outline" type="button" onclick="fn_search()">조회</button>
+                      </div>
+                    </form>
+                  </div>
+
+                  <!-- 테이블 영역 -->
+                  <div class="td-item-group mb12">
+                    <div class="td-item left">
+                      <div class="refresh-noti">
+                        <button data-element-id="HIT-MBO-10-40-10-S-e05" class="btn-refresh" type="button" id="btn_refresh">새로고침</button>
+                        <span class="text-refresh" id="text_refresh"><!-- sample:begin -->안내 문구<!-- sample:end --></span>
+                      </div>
+                    </div>
+                    <div class="td-item-group td-item right" id="btn_group" style="display:none;"><!-- [D] 검색결과 없을 시 버튼 숨김 : style="display:none;" -->
+                      <button class="btn btn-md-b btn-gray-outline" type="button" id="btn_aggr_det">배송지별 주문 집계</button>
+                      <button class="btn btn-md-b btn-gray-outline" type="button" id="btn_excel"><i class="ic ic-excel"></i>엑셀 저장</button>
+                    </div>
+                  </div>
+
+                  <div class="data-table-wrap" id="aggr_list">
+                    <table class="data-table form-table">
+                      <!-- <caption>표 제목</caption> -->
+                      <colgroup>
+                        <col style="width: 200px;">
+                        <col style="width: auto;">
+                        <col style="width: 105px;">
+                        <col style="width: 105px;">
+                        <col style="width: 105px;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col"><div class="ta-center">메뉴분류명</div></th> 
+                          <th scope="col"><div class="ta-center">메뉴명</div></th>
+                          <th scope="col"><div class="ta-right">준비수량</div></th>
+                          <th scope="col"><div class="ta-right">주문총계</div></th>
+                          <th scope="col"><div class="ta-right">잔여수량</div></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- col -->
+                        <tr>
+                          <td> <div class="ta-center tx-ellipsis" title="" id="MENU_DV_NM"></div></td>
+                          <td> <div class="ta-center tx-ellipsis" title="" id="MENU_NM"></div></td>
+                          <td class="ta-right"><div id="QTY_PRE_ORDER"></div></td>
+                          <td class="ta-right"><div id="QTY_CALC_ORDER"></div></td>
+                          <td class="ta-right"><div id="QTY_REMAIN"></div></td>
+                        </tr>
+                      </tbody>
+                      <!-- 합계 영역 -->
+                      <tfoot>
+                        <tr>
+                          <td colspan="2"><div>합계</div></td>
+                          <td class="ta-right"><div id="tot_qty_pre_order"><!-- sample:begin -->1<!-- sample:end --></div></td>	<!-- 준비수량 -->
+                          <td><div class="ta-right" id ="tot_qty_calc_order"></div></td>	<!-- 주문 총계 -->
+                          <td><div class="ta-right" id="tot_qty_remain"><!-- sample:begin -->1<!-- sample:end --></div></td>	<!-- 잔여수량 -->
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  
+                  <!-- no data -->
+                  <!-- 테이블 영역 -->
+                  <div class="data-table-wrap" id="no_aggr_list">
+                    <table class="data-table form-table">
+                      <!-- <caption>표 제목</caption> -->
+                      <colgroup>
+                        <col style="width: 200px;">
+                        <col style="width: auto;">
+                        <col style="width: 105px;">
+                        <col style="width: 105px;">
+                        <col style="width: 105px;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col"><div class="ta-center">메뉴분류명</div></th> 
+                          <th scope="col"><div class="ta-center">메뉴명</div></th>
+                          <th scope="col"><div class="ta-right">준비수량</div></th>
+                          <th scope="col"><div class="ta-right">주문총계</div></th>
+                          <th scope="col"><div class="ta-right">잔여수량</div></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="no-data"> 
+                          <td colspan="5"> <!--[D]colspan:6-->
+                            <!--[D] 검색결과가 없습니다.-->
+                            <div class="no-data no-bd h443">
+                              <div class="box">
+                                <i class="ic ic-exc-40"></i>
+                                <p>설정한 일자에 등록된 메뉴가 없습니다.</p>
+                              </div>
+                            </div>
+                            <!--//검색결과가 없습니다.-->
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <!-- 모달 (TODO 수정) -->
+<div class="modal w880 active" id="aggr_det_pop" style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type02">
+          <p class="tit">배송지별 주문 집계</p>
+          <p class="txt-01 mt8">주문 접수가 완료된 건을 배송지별로 조회할 수 있습니다.</p>
+        </div>
+        <button class="btn-close" type="button" onclick="btn_close()">닫기</button>
+      </div>
+
+      <div class="td-item-group mt32">
+        <div class="td-item">
+          <p class="fw-400">메뉴제공일자: <span  id="pop_menu_date"><!-- sample:begin -->2026.09.02<!-- sample:end --></span></p>
+        </div>
+
+        <div class="td-item right">
+          <button class="btn btn-md-b btn-gray-outline" type="button" id="btn_det_excel"><i class="ic ic-excel"></i>엑셀 저장</button>
+        </div>
+      </div>
+
+      <div class="modal-con mt12">
+        <div class="h90vh-250_fix-max ovf-a" id="aggr_det_list">
+          <!-- 층별 집계 -->
+          <table class="data-table2 flexble sticky-table"><!-- 테이블 타입2 - 가변형태일경우 flexble 클래스 추가 -->
+            <!-- 컨텐츠 헤더 -->
+            <thead>
+              <tr>
+                <th><div class="ta-center" id="DELV_NM">장소명</div></th>
+                <th><div class="ta-center" id="DELV_DETAIL_NM">세부장소명</div></th>
+                <!-- 메뉴분류 -->
+                <th><div class="ta-center"></div></th>
+                <!-- 메뉴 분류 끝 -->
+                <th><div class="ta-center">층별 합계</div></th>
+              </tr>
+            </thead>
+
+            <!-- 컨텐츠 -->
+            <tbody id="aggr_det_list_body">
+              <!-- col -->
+             <!--   <tr>
+                <th><div class="ta-center fw-400">동관</div></th>
+                <th><div class="ta-center fw-400">1층</div></th>
+                <td><div class="ta-center">5</div></td>
+                <td><div class="ta-center">5</div></td>
+                <td><div class="ta-center">100000</div></td>
+                <td><div class="ta-center">10</div></td>
+                <td><div class="ta-center">10</div></td>
+                <td><div class="ta-center">10</div></td>
+                <td><div class="ta-center">10</div></td>
+                <td><div class="ta-center">10</div></td>
+                <td><div class="ta-center">10</div></td>
+              </tr>
+              -->
+            </tbody>
+            <!-- 컨텐츠 -->
+            <tbody id="no_aggr_det_list_body">	<!-- no data일 때 body -->
+              <tr class="no-data"> 
+                <td colspan="11"> <!--[D]colspan:6-->
+                  <!--[D] 검색결과가 없습니다.-->
+                  <div class="no-data no-bd h402">
+                    <div class="box">
+                      <i class="ic ic-exc-40"></i>
+                      <p>주문건이 없습니다.</p>
+                    </div>
+                  </div>
+                  <!--//검색결과가 없습니다.-->
+                </td>
+              </tr>
+            </tbody>
+            <!-- 합계영역 -->
+            <tfoot>
+              <tr>
+                <th colspan="2"><div class="ta-center">합계</div></th>
+                <!-- 메뉴 분류 -->
+                <td><div class="ta-center"></div></td>
+                <!-- // 메뉴 분류 끝 -->
+                <td><div class="ta-center"></div></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+     
+     
+      </div>
+    </div>
+  </div>  
+    <div class="dim active" id="dim" style="display: none"></div>
+</body>
+</html>

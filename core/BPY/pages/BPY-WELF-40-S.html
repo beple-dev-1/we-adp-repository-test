@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>복지포인트 이용정보 조회</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/lib/jquery/datepicker/daterangepicker.css">
+</head>
+<body data-screen-id="BPY-WELF-40-S">
+<script>
+    var _app_cd   = "";
+    var _env_mode = "";
+    var _app_os   = "";
+</script>
+
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="REC_INDEX" 	name="REC_INDEX" 	value="" />
+    <input type="hidden" id="CHRG_HIS_YN" 	name="CHRG_HIS_YN" 	value="" />
+    <input type="hidden" id="CORP_NM" 		name="CORP_NM" 		value="" />
+    <input type="hidden" id="CARD_NO" 		name="CARD_NO" 		value="" />
+    <input type="hidden" id="ACCT_NO" 		name="ACCT_NO" 		value="" />    
+    <input type="hidden" id="CLS_DSP_SEQ" 	name="CLS_DSP_SEQ" 	value="" />
+    <input type="hidden" id="LMT_SEQ" 		name="LMT_SEQ" 		value="" />
+    <input type="hidden" id="PROD_DV" 		name="PROD_DV" 		value="" />
+    <input type="hidden" id="APP_CD" 		name="APP_CD" 		value=""/>
+    <input type="hidden" id="MEMB_CD" 		name="MEMB_CD"		value=""/>
+    <input type="hidden" id="MEMB_NM"		name="MEMB_NM" 		value=""/>
+    <input type="hidden" id="MOB_NO" 		name="MOB_NO" 		value=""/>    
+    <input type="hidden" id="ORG_ID" 		name="ORG_ID"		value=""/>
+    <input type="hidden" id="ORG_TP" 		name="ORG_TP"		value=""/>    
+    <input type="hidden" id="AMT_DISP_UNIT" name="AMT_DISP_UNIT"			value=""/>
+    <input type="hidden" id="SETL_IMPS_RSN_DTL" name="SETL_IMPS_RSN_DTL"	value=""/>
+</form>
+<style>
+    /* custom daterangepicker */
+    .sh_date input {
+        background-color: transparent !important;
+        width: 100%;
+    }
+    .daterangepicker th.month, .daterangepicker .calendar-table th {
+        font-weight: bold;
+        color: black;
+    }
+    .daterangepicker td.in-range:not(.active),
+    .daterangepicker td.in-range:not(.active):hover {
+        background-color: #e7f2f7;
+    }
+    .daterangepicker td.in-range.end-date {
+        color: #fff;
+        background-color: #357ebd;
+    }
+    .drp-calendar.right {
+        position: absolute;
+        top: 8px;
+        left: calc(100% - 50px);
+    }
+    .drp-calendar.right .calendar-table {
+        background-color: transparent;
+    }
+    .drp-calendar.right tbody {
+        display: none;
+    }
+    .drp-calendar.right thead tr:nth-child(1) th:nth-child(1),
+    .drp-calendar.right thead tr:nth-child(1) th:nth-child(2)
+    {
+        display: none;
+    }
+    .drp-calendar.right thead tr:nth-child(2) {
+        display: none;
+    }
+    .daterangepicker:nth-of-type(3) {
+        right: 25px !important;
+    }
+    .daterangepicker:nth-of-type(3).drop-up:before {
+        left: unset;
+        right: 9px;
+    }
+    .daterangepicker:nth-of-type(3).drop-up:after {
+        left: unset;
+        right: 10px;
+    }
+</style>
+
+<div class="wrap bg_br meal flex-layout">
+	<div class="header floating-back-header floating-sticky">
+        <h1>비플머니</h1>
+        <a data-element-id="BPY-WELF-40-S-e05" id="go_back" class="btn-history-back">뒤로가기</a>
+    </div>
+
+	<div class="container">
+		<div class="content">
+			<!-- 컨텐츠 영역 -->
+			<!-- 결제하기 상단 -->
+            <div class="br_pay_topbx">
+                <div class="inner">
+                    <!-- 기업 이미지 없는 경우 -->
+                    
+                        <span class="ico_accp" style="background-image: url('../assets/_sample/card.svg');  background-size: 100% auto; background-repeat: no-repeat; background-position: 50% 50%; ">
+                    
+                    <span class="blind"></span></span>
+                    
+                    <div class="acc_paycn">                        
+                        <p class="tit">비플머니</p>
+                        
+						
+							<p class="won">4,500</p>
+						
+					</div>
+					
+                    <a data-element-id="BPY-WELF-40-S-e06" id="apprCorp" class="btn_pay" ><span>결제하기</span></a>
+                    
+                </div>
+                
+				<!-- 2025-04-08 복지포인트 추가 - 불필요 시 영역 제거 or display: none; -->
+				
+				
+				<div class="acc_history on" id="acc_history"><!-- 내역 온/오프 시 on클래스 추가/제거 -->
+					<p class="history_more"><a>내역보기</a></p>
+					<div class="inner">
+						<ul>
+						
+							<li>
+								<p class="history_tit">비플머니</p>
+								<p class="money"><span>4,500</span>원</p>
+							</li>
+						
+						</ul>
+					</div>
+				</div>
+				<!-- // 2025-04-08 -->
+				                
+				<!-- 2025-05-09 추가 -->
+				
+
+				
+				<!-- // 2025-05-09 추가 -->
+            </div>
+            <!-- //결제하기 상단 -->
+			<!-- 2023-07-13 -->
+			<div class="bp_money">
+				<!-- 탭영역 -->
+	            <div class="tab_bx">
+	                <ul>
+	                    <li id="info_li" class="on"><a><span class="bg">기본정보</span></a></li><!-- 활성화클래스 on -->
+	                    <li id="list_li"><a><span class="bg">이용내역</span></a></li>
+	                </ul>
+	            </div>
+	            <!-- //탭영역 -->				
+				<!-- 기본정보 -->
+				<div id="infoTab" class="tab-content cont_box"><!-- 2025-05-09 - 'bot_box_style_pdb160' 클래스 제거 -->
+					<!-- 기본정보 -->
+		            <div id="corpInfo" class="br_info_vbx" style="display: block;">
+		                <div class="inner">
+		                    
+		                            
+		                                <div class="info_tit"></div>
+		                            
+		                    
+		                </div>
+		            </div>
+		            <!-- //기본정보 -->
+		            
+		            <ul id="qna_ul" class="question">
+                        <li>
+                            <a>
+                                <p>
+                                    <img src="../assets/resource/images/zero/ico_online@3x.png" alt="">
+                                </p>
+                                <div>
+                                    <strong onclick="ComWebkey.callAppActionParam(ActionCode.ETC_URL, '_url', 'https://bizplay.oqupie.com/chat/customer/111/talk')">온라인 고객센터</strong>
+                                </div>
+                            </a>
+                        </li><br>
+
+	                    <li>
+	                        <a>
+	                            <p>
+	                                <img src="../assets/resource/images/zero/meal_icon_info.png" alt="">
+	                            </p>
+	                            <div>
+	                                <strong onclick="location.href='tel:1670-1380'">이용문의 <span class="fcBlue">1670-1380</span></strong>
+	                                <span>평일 09:00 ~ 18:00 주말, 공휴일 제외</span>
+	                            </div>
+	                        </a>
+	                    </li>
+	                </ul>
+	                
+	            <div class="acc-util">
+					<button data-element-id="BPY-WELF-40-S-e04" type="button" id="btn_trans" class="acc-util__button"><span>여가선용 포인트로 이관하기</span></button>
+				</div>
+					
+				</div>
+				<!-- 이용내역 -->
+				<div class="tab-content cont_box" style="display:none;">
+					<!-- 이용내역 -->
+					<div class="history_wrap">
+						<div class="btn_filter" id="period">
+                            <a id="srch_btn" href="javascript:void(0);"><span id="period_label">전체 · 1주일</span><span class="arr">유효기간 선택</span></a>
+                        </div>
+                        <!-- 이용내역 없을 시 -->
+                        <p class="list_none" style="display:none;">이용내역이 없습니다.</p>
+                        <!-- 이용내역 없을 시 -->
+                        <!-- 이용내역 리스트 -->
+                        <div id="corpList" class="history_list pdb32">
+							<ul id="info_list"><!-- sample:begin -->
+						<a>
+							<div class="inner">
+								<p class="icon "><span class="blind"></span></p>
+								<div class="cont">
+									<p class="tit">홍길동</p>
+									<p class="date">2026.09.02</p>
+								</div>
+								<div class="won_wrap">
+									<p class="won">4,500원</p>
+									
+								</div>
+							</div>
+						</a>
+					</li><!-- sample:end --></ul>
+			                
+			                <!-- 2025-08-26 [D] 더보기 버튼 추가 -->
+							<div class="history-util">
+								<button id="btn_more" type="button" class="more-button col--block" style="display:none;">
+									<span>더보기</span>
+									<i class="icon icon--arrow-16"></i>
+								</button>
+							</div>
+							<!-- // 2025-08-26 -->
+                        </div>
+                        <!-- 이용내역 리스트 -->
+					</div>
+					<!-- //이용내역 -->
+				</div>
+				<!-- //이용내역 -->
+			</div>
+			<!-- // 2023-07-13 -->
+			<!-- //컨텐츠 영역 -->
+			
+			<!-- 레이어 -->
+	        <div id="popup_dim" class="layer_bPop" style="display:none;">
+	            <div class="pop_box">
+	                <div id="srch_slider" class="pop_content tp_br">
+	                    <div class="pop_b_cn" style="padding-bottom:32px;">
+
+	                        <!-- 타이틀 영역 -->
+	                        <div class="p_lytit">기간 </div>
+	                        <!-- //타이틀 영역 -->
+
+	                        <!-- 탭영역 -->
+	                        <div class="p_ly_tab">
+	                            <div  class="inner period_tab">
+	                                <a>오늘</a>
+	                                <a class="on">1주일</a>
+	                                <a>1개월</a>
+	                                <a>3개월</a>
+	                            </div>
+	                        </div>
+	                        <!-- //탭영역 -->
+
+	                        <!-- 날짜영역 -->
+	                        <div class="p_ly_date">
+	                            <div class="inner">
+	                                <div class="date"><input readonly name="from_dt" type="text" maxlength="10"><a class="btn_cal"><span class="blind">달력</span></a></div>
+	                                <div class="dash">-</div>
+	                                <div class="date"><input readonly name="to_dt" type="text" maxlength="10"><a class="btn_cal"><span class="blind">달력</span></a></div>
+	                            </div>
+	                            <!-- 오류메시지 -->
+	                            <div id="over_data" style="display: none;" class="err_txt msg">이용내역 조회기간은 3개월을 넘을 수 없습니다.</div>
+	                            <!-- //오류메시지 -->
+	                        </div>
+	                        <!-- //날짜영역 -->
+
+	                        <!-- 타이틀 영역 -->
+	                        <div class="p_lytit">카테고리</div>
+	                        <!-- //타이틀 영역 -->
+
+	                        <!-- 탭영역 -->
+	                        <div class="p_ly_tab ctgry_tab">
+	                            <div class="inner">
+	                                <a id="all_srch" class="on" ctgry="0">전체</a>
+	                                <a id="aprv_srch" class="" ctgry="1">결제</a>
+	                                <a id="cncl_srch" class="" ctgry="2">취소</a>
+	                                <a id="trans_srch" class="" ctgry="3">이관</a>
+	                            </div>
+	                        </div>
+	                        <!-- //탭영역 -->
+                    	</div>
+	                    <div class="pop_b_btn btn_both">
+	                        <a class="btn_cc">취소</a>
+	                        <a class="on btn_sh">조회하기</a>
+	                    </div>
+                	</div>
+            	</div>
+        	</div>
+        <!-- //레이어 -->
+		</div>
+
+	</div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- 2023-07-14 -->
+<script>
+$(function(){
+	// [D] 탭
+	const tabArea = $('.bp_money .tab-content');
+	const tabBtn = $('.bp_money .tab_bx a');
+
+	tabBtn.on({
+		click : function(){
+			tabBtn.parent().removeClass('on');
+			$(this).parent().addClass('on');
+			// 활성 탭 번호
+			thisIndex = $(this).parent().index();
+			// 노출/가림 (매장목록, 필터)
+			tabArea.hide(0);
+			tabArea.eq(thisIndex).show(0);
+
+		}
+	});
+
+})
+</script>
+<!-- // 2023-07-14 -->
+</body>
+</html>

@@ -45,7 +45,7 @@
 			<h1 class="page-name"><span>머니 충전</span></h1>
 		</div>
 		<nav class="header__navi">
-			<a href="#none" class="header__btn btn-close" id="btnClose">
+			<a data-element-id="EXW-UWV-70-30-20-C-e06" href="#none" class="header__btn btn-close" id="btnClose">
 				<span class="blind">닫기</span>
 			</a>
 		</nav>
@@ -69,7 +69,7 @@
 
 				<!-- 계좌 선택 — 팝업 열기는 common-ui.js 의 activeModalHandler 가 처리한다.
 				     표시 갱신은 selectHandler 가 js-select--result 의 .target 에 넣는다. -->
-				<button type="button" class="select-account--button js-popup-open js-select--result"
+				<button data-element-id="EXW-UWV-70-30-20-C-e01" type="button" class="select-account--button js-popup-open js-select--result"
 				        data-modal="popup-select--bank" id="btnSelectAccount">
 					<p>충전계좌</p>
 
@@ -81,7 +81,7 @@
 
 					<!-- 계좌 없는 경우 -->
 					<div class="account" id="acctNoneWrap" style="display:none;">
-						<span class="fc-primary">계좌를 등록해 주세요</span>
+						<span class="fc-0d84ff">계좌를 등록해 주세요</span>
 						<i class="icon icon--arrow-24"></i>
 					</div>
 				</button>
@@ -102,7 +102,7 @@
 						<div class="form__item-wrap">
 							<div class="form__item-wrap">
 								<div class="input-type--box input-unit">
-									<input type="tel" id="inpAmt" value="" placeholder="금액을 입력해주세요"
+									<input data-element-id="EXW-UWV-70-30-20-C-e08" type="tel" id="inpAmt" value="" placeholder="금액을 입력해주세요"
 									       maxlength="11" jex-input="commaFormat" data-input="commaFormat">
 									<button type="button" class="input__unit" id="btnClearAmt" style="display: none;">
 										<i class="icon icon--close_cr-16"></i>
@@ -112,9 +112,9 @@
 
 							<!-- 퀵버튼 — 누른 금액을 현재 입력값에 더한다 -->
 							<div class="quick-amount revers-mgt2" id="quickAmount">
-								<button type="button" class="button button--lv5_line button-mid" data-add="10000"><span>+1만원</span></button>
-								<button type="button" class="button button--lv5_line button-mid" data-add="50000"><span>+5만원</span></button>
-								<button type="button" class="button button--lv5_line button-mid" data-add="100000"><span>+10만원</span></button>
+								<button data-element-id="EXW-UWV-70-30-20-C-e10" type="button" class="button button--lv5_line button-mid" data-add="20000"><span>+2만원</span></button>
+								<button data-element-id="EXW-UWV-70-30-20-C-e03" type="button" class="button button--lv5_line button-mid" data-add="50000"><span>+5만원</span></button>
+								<button data-element-id="EXW-UWV-70-30-20-C-e04" type="button" class="button button--lv5_line button-mid" data-add="100000"><span>+10만원</span></button>
 							</div>
 
 							<p class="fc-red mgt2" id="amtErrMsg" style="display: none;"><!-- sample:begin -->4,500<!-- sample:end --></p>
@@ -130,7 +130,7 @@
 				     ================================================================ -->
 				<div class="transfer__infomation flex-column drop-box js-drop-box open justify-spacing-def">
 					<div class="column__head">
-						<button type="button" class="drop--trigger js-drop-trigger">
+						<button data-element-id="EXW-UWV-70-30-20-C-e05" type="button" class="drop--trigger js-drop-trigger">
 							<h5 class="container__headline container__headline--lv2 fw-600">충전 안내</h5>
 							<i class="icon icon--arrow-24"><span class="blind">충전 안내 열기</span></i>
 						</button>
@@ -171,7 +171,7 @@
 		<div class="container-floating bg-white js-floating-container">
 			<p class="fc-999 pdb16 pdt24 ta-center justify-spacing-def revers-mgt8">에이블리 머니는 (주)비즈플레이가 발행·관리합니다</p>
 			<article class="floating__box button-box-spacing">
-				<a href="#none" class="button button-xl button--lv1 dis" id="btnNext">
+				<a data-element-id="EXW-UWV-70-30-20-C-e07" href="#none" class="button button-xl button--lv1 dis" id="btnNext">
 					<span>다음</span>
 				</a>
 			</article>
@@ -193,7 +193,7 @@
 		</div>
 	</header>
 
-	<main class="container-wrap js-container-wrap pdt32">
+	<main class="container-wrap js-container-wrap">
 		<section class="container end-container end--payment js-container">
 			<section class="body__content justify-space-def">
 				<div class="payment__head">

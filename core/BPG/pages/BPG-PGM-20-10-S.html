@@ -1,0 +1,128 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>거래승인번호검증(v2)</title>
+  <link rel="stylesheet" href="../assets/resource/css/beple_reset.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/raon/transkey_mobile/transkey.css">
+</head>
+<body data-screen-id="BPG-PGM-20-10-S">
+<div class="wrap">
+        <!-- 헤더 -->
+        <header class="header position-sticky">
+            <div class="header__title-wrap">
+                <h1 class="page-name"><span>비플페이 온라인결제</span></h1>
+            </div>
+
+            <nav class="header__navi">
+                <a data-element-id="BPG-PGM-20-10-S-e04" href="#none" class="header__btn btn-close" id="closeBtn">
+                    <span class="blind" >페이지 닫기</span>
+                </a>
+            </nav>
+        </header>
+
+        <main class="container-wrap">
+            <div class="online-payment--cert">
+                <section class="page-header justify-spacing-def">
+                    <article class="page-header__content flex-column">
+                        <div class="page-header__headline-wrap">
+                            <h2 class="flex-row">
+                                <p class="page__headline page__headline--lv1" id="infoTxt">
+                                    비플페이에 등록한 거래승인번호<br>
+                                    6자리를 입력해 주세요
+                                </p>
+                                <p class="page__headline page__headline--lv1" id="regTxt1" style="display: none">
+                                    거래승인번호 설정을 위해<br>
+                                    6자리를 입력하세요
+                                </p>
+                                <p class="page__headline page__headline--lv1" id="regTxt2" style="display: none">
+                                    거래승인번호 설정을 위해<br>
+                                    6자리를 재입력하세요
+                                </p>
+                            </h2>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- 컨테이너 -->
+                <section class="container cert__view js-container justify-spacing-def">
+                    <article class="container__body">
+                        <div class="body__content">
+                            <input type="hidden" maxlength="6" name="pwd1" id="pwd1" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);"/>
+                            <input type="hidden" maxlength="6" name="pwd2" id="pwd2" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);"/>
+                            <div class="cert__view--input" id="tac_num">
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="container">
+                    <article class="container__body align-center flex-column gap-8">
+                        <div class="info">
+                            <p class="info__text--lv1 fc-666" id="errMsg">
+                                거래승인번호가 기억나지 않으세요?<br>
+                                비플페이 앱에서 재설정 가능합니다.
+                            </p>
+                            <p class="err_msg" id="pwdReset" style="display: none">
+                                <a data-element-id="BPG-PGM-20-10-S-e05" href="#none">거래승인번호 재설정 ></a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="button-box-spacing pdt12" style="display: none;">
+                        <a data-element-id="BPG-PGM-20-10-S-e06" href="#none" class="button button-xl button--lv1 dis"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+                            <span>확인</span>
+                        </a>
+                    </article>
+                </section>
+            </div>
+
+            <!-- 키패드 호출부 -->
+
+            <!-- // 키패드 호출부 -->
+        </main>
+
+        <!-- 컨테이너 -->
+        <div class="popup-wrap js-popup-wrap active" id="pwd_pop" style="display:none;">
+            <section class="popup-container popup--center popup-confirm">
+                <div class="popup-container__body justify-spacing-def">
+                    <section class="body__content">
+                        <p class="info__text--lv2 fc-666" id="pwd_pop_text"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                    </section>
+
+                    <section class="body__button--box">
+                        <button class="button button-large button--lv1 col--block js-popup-close" id="pwd_yes_btn">
+                            <span >확인</span>
+                        </button>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- 로딩 -->
+    <div class="loading" style="display:none;">
+        <div class="loading_inner">
+            <div class="ui-loader loader-blk">
+                <svg viewBox="22 22 44 44" class="multiColor-loader">
+                    <circle cx="44" cy="44" r="20.2" class="loader-circle loader-circle-animation"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- //로딩 -->
+</body>
+</html>

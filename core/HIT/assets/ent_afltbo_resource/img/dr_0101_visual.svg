@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <linearGradient id="75kjvfr54a" x1=".961" y1=".969" x2=".218" y2=".433" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#67aafc"/>
+            <stop offset="1" stop-color="#3e84f7"/>
+        </linearGradient>
+        <linearGradient id="6unjigv9pb" x1=".058" y1=".6" x2=".975" y2=".5" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#8fbdfa"/>
+            <stop offset="1" stop-color="#74b0ff"/>
+        </linearGradient>
+        <linearGradient id="hnm47195jc" x1=".786" y1=".673" x2=".088" y2=".04" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#e6e9ed"/>
+            <stop offset="1" stop-color="#d9dde2"/>
+        </linearGradient>
+    </defs>
+    <path data-name="패스 22159" d="M108 469.143a2.857 2.857 0 0 0-1.028-2.2l-17.143-14.281a2.858 2.858 0 0 0-3.659 0l-17.142 14.286a2.857 2.857 0 0 0-1.028 2.2v20A2.857 2.857 0 0 0 70.857 492h34.286a2.857 2.857 0 0 0 2.857-2.857z" style="fill:url(#75kjvfr54a);fill-rule:evenodd" transform="translate(-68 -452)"/>
+    <path data-name="패스 22160" d="M69.028 466.948a2.858 2.858 0 0 0 0 4.39l17.143 14.286a2.858 2.858 0 0 0 3.659 0l17.143-14.286a2.858 2.858 0 0 0 0-4.39l-17.144-14.286a2.858 2.858 0 0 0-3.659 0z" style="fill:url(#6unjigv9pb);fill-rule:evenodd" transform="translate(-68 -452)"/>
+    <g data-name="그룹 25207">
+        <path data-name="패스 22161" d="M106.286 454.857a2.857 2.857 0 0 0-2.857-2.857H74.857A2.857 2.857 0 0 0 72 454.857v18.005l15.314 12.761a2.858 2.858 0 0 0 3.659 0l15.314-12.761z" transform="translate(-69.143 -452)" style="fill:url(#hnm47195jc);fill-rule:evenodd"/>
+        <path data-name="패스 22162" d="M219.429 601.429A1.428 1.428 0 0 0 218 600h-8.571a1.429 1.429 0 1 0 0 2.857H218a1.428 1.428 0 0 0 1.429-1.429z" transform="translate(-199.428 -594.286)" style="fill:#fff;fill-rule:evenodd"/>
+        <path data-name="패스 22163" d="M230.857 601.429a1.429 1.429 0 0 0-1.428-1.429h-20a1.429 1.429 0 0 0-1.429 1.429 1.428 1.428 0 0 0 1.427 1.427h20a1.428 1.428 0 0 0 1.427-1.427z" transform="translate(-199.428 -588.571)" style="fill:#fff;fill-rule:evenodd"/>
+        <path data-name="패스 22164" d="M230.857 601.429a1.429 1.429 0 0 0-1.428-1.429h-20a1.429 1.429 0 0 0 0 2.857h20a1.429 1.429 0 0 0 1.429-1.429z" transform="translate(-199.428 -582.857)" style="fill:#fff;fill-rule:evenodd"/>
+    </g>
+</svg>

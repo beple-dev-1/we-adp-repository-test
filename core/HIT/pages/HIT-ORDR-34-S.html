@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 상세 기본정보_v2</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_beple.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_beple_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+</head>
+<body data-screen-id="HIT-ORDR-34-S">
+<!--가맹점 상세-->
+<div id="aflt_detail" class="wrap js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky js-heder">
+        <nav class="header__navi">
+            <a data-element-id="HIT-ORDR-34-S-e10" id="backBtn" href="#none" class="header__btn btn-back"><span class="blind">이전 페이지로</span></a>
+        </nav>
+
+        <!-- 헤더 타이틀 -->
+        <div class="header__title-wrap">
+            <!-- 페이지 명 미사용 시 page-name 태그 내용 빈값 or 주석 or 삭제 -->
+            <h1 class="page-name"><span>스마트오더</span></h1>
+        </div>
+
+        <nav class="header__navi">
+            <a data-element-id="HIT-ORDR-34-S-e11" id="mybag_icon" href="#none" class="header__btn btn-cart menu-add"><span class="blind">장바구니</span></a><!-- 장바구니에 메뉴 추가/제거 시 menu_add 클래스 추가/제거 -->
+        </nav>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 컨테이너 -->
+        <section class="smart_oder-container">
+            <!-- 컨테이너 컨텐츠 -->
+            <article class="store-detail">
+                <div class="detail-header pdt20">
+                    <!-- 가맹점 명 -->
+                    <div class="store-box justify-spacing-def">
+                        <!--
+                            가맹점 별 아이콘 클래스 명
+                            음식점/카페		= restr
+                            농산물/청과		= agri
+                            축산물/정육		= meat
+                            수산물/횟집		= seafood
+                            식료품/반찬		= grocery
+                            학원/교육		= edu
+                            의료/보건		= medi
+                            미용/패션		= beauty
+                            가전/가구		= interior
+                            서비스업		= service
+                            기타 도/소매	= retail
+                        -->
+                        <div class="box-con">
+                            <h2 id="aflt_nm" class="name"></h2>
+
+                            <!-- 2025-08-28 [D] 태그 변경, 버튼추가 -->
+                            <p class="info">
+                                <a data-element-id="HIT-ORDR-34-S-e12" id="show_aflt_detail" href="#none" class="link"><span>가게정보</span><i class="icon icon--arrow-16"></i></a>
+                            </p>
+                            <!-- // 2025-08-28 -->
+                        </div>
+
+                        <!-- 2025-08-28 [D] 매장 사진 태그 위치 변경, 등록된 사진 없을 시 태그 삭제 or style="display: none;" -->
+                        <div class="ico agri">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'><rect fill='rgba(0,0,0,0)' x='0' y='0' width='100%' height='100%'/></svg>" class="empty"><!-- 빈 이미지 일 시 해당 img 태그(svg경로 포함된)와 empty 클래스 추가 / 이미지 변경 시 empty 클래스 제거 -->
+                        </div>
+                        <!-- 2025-08-28 [D] favorite-box 제거 -->
+                    </div>
+
+                    <!-- 2025-08-28 [D] 탭 구조변경 -->
+                    <section id="recv_type_tab" class="tab-container js-tab-container detail__store-info">
+
+                        <!-- 포장 탭 -->
+                        <div class="tab__content js-tab-content order-take-out">
+                            <article class="container__body">
+                                <div class="body__content">
+                                    <div class="table-wrap">
+                                        <!-- 테이블 body -->
+                                        <article class="table--body">
+                                            <table class="table table--data">
+                                                <colgroup>
+                                                    <col style="width: 105px;">
+                                                    <col style="width: auto;">
+                                                </colgroup>
+                                                <thead>
+                                                <tr class="divOdrCanTime">
+                                                    <th>
+                                                        <p>주문가능시간</p>
+                                                    </th>
+                                                    <td>
+                                                        <div id="wt_info_dtop_box" class="open-time js-drop-box"><!-- [D] 영업시간 1개 이상일 시 'js-drop-box' 클래스 추가, 영업시간 1개일 시 'js-drop-box' 클래스 제거.-->
+                                                            <!-- 영업시간 -->
+                                                            <button type="button" class="js-drop-trigger">
+                                                                <div id="wt_info_area" class="drop-content js-drop-content">
+                                                                </div>
+                                                                <div id="wt_info_area_today" class="today">
+                                                                </div>
+                                                            </button>
+                                                            <!-- // 영업시간 -->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr id="div_lmt_odr_cnt">
+                                                    <th>
+                                                        <p>주문가능수량</p>
+                                                    </th>
+                                                    <td>
+                                                        <p id="lmt_odr_cnt"></p>
+                                                    </td>
+                                                </tr>
+                                                <tr id="div_order_time">
+                                                    <th>
+                                                        <p>평균제조시간</p>
+                                                    </th>
+                                                    <td>
+                                                        <p id="order_time"></p>
+                                                    </td>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                        </article>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- 로봇배송 탭 -->
+                        <div class="tab__content js-tab-content order-take-out" style="display: none;">
+                            <article class="container__body">
+                                <div class="body__content">
+                                    <div class="table-wrap">
+                                        <!-- 테이블 body -->
+                                        <article class="table--body">
+                                            <table class="table table--data">
+                                                <colgroup>
+                                                    <col style="width: 105px;">
+                                                    <col style="width: auto;">
+                                                </colgroup>
+                                                <thead>
+                                                <tr class="divOdrCanTime">
+                                                    <th>
+                                                        <p>주문가능시간</p>
+                                                    </th>
+                                                    <td>
+                                                        <div id="robot_wt_info_dtop_box" class="open-time js-drop-box"><!-- [D] 영업시간 1개 이상일 시 'js-drop-box' 클래스 추가, 영업시간 1개일 시 'js-drop-box' 클래스 제거.-->
+                                                            <!-- 영업시간 -->
+                                                            <button type="button" class="js-drop-trigger">
+                                                                <div id="robot_wt_info_area" class="drop-content js-drop-content">
+                                                                </div>
+                                                                <div id="robot_wt_info_area_today" class="today">
+                                                                </div>
+                                                            </button>
+                                                            <!-- // 영업시간 -->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr id="div_available_order_qty">
+                                                    <th>
+                                                        <p>주문가능수량</p>
+                                                    </th>
+                                                    <td>
+                                                        <p id="available_order_qty"></p>
+                                                    </td>
+                                                </tr>
+                                                <tr id="div_avg_deli_time">
+                                                    <th>
+                                                        <p>평균배송시간</p>
+                                                    </th>
+                                                    <td>
+                                                        <div class="tooltip">
+                                                            <button id="tooltip_button" type="button" class="tooltip__button">
+                                                                <p id="avg_deli_time"></p>
+                                                                <i class="icon icon--info-16_line"><span class="blind">툴팁 버튼</span></i>
+                                                            </button>
+                                                            <div class="tooltip__content">
+                                                                <p>실제 배송시간과 차이가 있을 수 있습니다.</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                        </article>
+                                    </div>
+
+                                    <button id="show_robot_info" class="button col--block button-mid button--lv5_line fw-400 mgt20">
+                                        <span>로봇배송 이용안내</span>
+                                    </button>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- 2025-08-28 [D] tab-content 태그 제거, 기존 탭 2 제거 -->
+                <!-- 가맹점 상세 컨텐츠 -->
+                <div class="detail-content" style="display: ;">
+                    <!-- 2025-08-28 [D] 필터 컨테이너 클래스 명 수정  -->
+                    <div id="div_categori" class="filter-container justify-spacing-def position-sticky">
+                        <div id="categori_list" class="filter__body js-indicator-wrap">
+                            <!---->
+                        </div>
+                    </div>
+                    <!-- // 2025-08-28  -->
+
+                    <!-- 메뉴박스 -->
+                    <div id="div_menu_list" class="menu-box justify-spacing-def"><!-- sample:begin -->표본<!-- sample:end --></div>
+
+                </div>
+            </article>
+        </section>
+
+        <section class="container-floating js-floating-container">
+            <!-- 메인 버튼영역 -->
+            <article id="main_btn-box" class="main_btn-box bg-white">
+                <div class="multi-view">
+                    <!-- 2025-08-28 [D] 버튼 클래스 변경 btn_main 클래스 제거 -->
+                    <a data-element-id="HIT-ORDR-34-S-e13" id="unavailavle_order" href="#none" class="button button-xl button--lv1 dis" style="display: none;">
+                    <p class="more">지금은 주문가능 시간이 아닙니다.</p>
+                    </a>
+
+                    <a data-element-id="HIT-ORDR-34-S-e14" id="unavailavle_robot_order" href="#none" class="button button-xl button--lv1 dis" style="display: none;">
+                        <p class="more">지금은 로봇배송으로 주문할 수 없어요.</p>
+                    </a>
+
+                    <a data-element-id="HIT-ORDR-34-S-e15" id="btn_box" href="#none" class="button button-xl button--lv1"><!-- 2025-08-28 [D] 버튼 클래스 변경 -->
+                        <p id="amount" class="amount">
+                            <span></span>원
+                        </p>
+                        <p class="more">
+                            장바구니 보기
+                            <span id="count" class="count"><!-- sample:begin -->1<!-- sample:end --></span>
+                        </p>
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- 2025-11-25 -->
+    <div id="mybag_success" class="toast-container" style="bottom: 90px"><!-- [D] 나타날 때 show, 사라질 때 hide 클래스 추가 후 container div 0.3초 뒤 제거 -->
+        <div class="toast-message-box">
+            <div class="toast__text">장바구니에 메뉴를 담았습니다.</div>
+        </div>
+    </div>
+    <!-- // 2025-11-25 -->
+
+</div>
+
+<!--가맹점상세 - 기본정보-->
+<!-- 컨테이너 - 기본 정보 팝업 -->
+<div id="aflt_detail_basic_info" class="popup-wrap " style="display:none;">
+
+    <section class="popup-container popup--full">
+        <!-- 헤더 -->
+        <header class="header position-sticky">
+            <div class="header__title-wrap">
+                <h1 class="page-name"><span>기본 정보</span></h1>
+            </div>
+
+            <nav class="header__navi">
+                <a id="aflt_detail_basic_info_close" href="#none" class="header__btn btn-close js-popup-close">
+                    <span class="blind">페이지 닫기</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- 컨테이너 -->
+        <div class="smart_oder-container">
+            <!-- 컨테이너 컨텐츠 -->
+            <article class="store-detail pdb32">
+                <!-- [D] 사장님 안내 미사용 시 영역 삭제 -->
+                <div id="div_odr_privil" class="detail-content pdt12">
+                    <div class="infomation infomation-box">
+                        <div class="flex-column">
+                            <!-- 안내 헤더 -->
+                            <div class="column__head">
+                                <i class="icon icon--bell-20"><span class="blind">안내</span></i>
+                                <h2 class="container__headline container__headline--lv3">사장님 안내</h2>
+                            </div>
+                            <!-- 안내 내용 -->
+                            <div class="column__item">
+                                <p id="odr_privil" class="info__text--lv2 fc-333">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // [D] 사장님 안내 미사용 시 영역 삭제 -->
+
+                <!-- 가게정보 -->
+                <div class="detail-content flex-column">
+                    <div class="column__head">
+                        <h2 class="container__headline container__headline--lv3">가게 정보</h2>
+                    </div>
+
+                    <div class="column__item">
+                        <div class="table-wrap">
+                            <!-- 테이블 body -->
+                            <article class="table--body">
+                                <table class="table table--data">
+                                    <colgroup>
+                                        <col style="width: 105px;">
+                                        <col style="width: auto;">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th>
+                                            <p>주소</p>
+                                        </th>
+                                        <td>
+                                            <p id="address">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr id="main-telephone-number-area">
+                                        <th>
+                                            <p>대표번호</p>
+                                        </th>
+                                        <td><p id="main-telephone-number"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <p>영업시간</p>
+                                        </th>
+                                        <td>
+                                            <div id="basic_info_wt_info_dtop_box" class="open-time js-drop-box"><!-- [D] 영업시간 1개 이상일 시 'js-drop-box' 클래스 추가, 영업시간 1개일 시 'js-drop-box' 클래스 제거.-->
+                                                <!-- 영업시간 -->
+                                                <button type="button" class="js-drop-trigger">
+                                                    <div id="basic_info_wt_info_area" class="drop-content js-drop-content">
+                                                    </div>
+                                                    <div id="basic_info_wt_info_area_today" class="today">
+                                                    </div>
+                                                </button>
+                                                <!-- // 영업시간 -->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 소개 -->
+                <div id="intro_area" class="detail-content flex-column">
+                    <div class="column__head">
+                        <h2 class="container__headline container__headline--lv3">소개</h2>
+                    </div>
+
+                    <div class="column__item">
+                        <p id="intro_text" class="info__text--lv2 fc-333"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                    </div>
+                </div>
+
+                <!-- 메뉴판 -->
+                <div id="menu_area" style="display: none;" class="detail-content flex-column">
+                    <div class="column__head">
+                        <h2 class="container__headline container__headline--lv3">메뉴판</h2>
+                    </div>
+
+                    <div id="menuboard_area" class="column__item image_preview-container">
+                    </div>
+                </div>
+
+                <!-- 사진 -->
+                <div id="img_area" content-info class="detail-content flex-column">
+                    <div class="column__head">
+                        <h2 class="container__headline container__headline--lv3">사진</h2>
+                    </div>
+
+                    <div id="img_list" class="column__item image_preview-container">
+                    </div>
+                </div>
+
+                <!-- 사업자 정보 -->
+                <div class="detail-content flex-column">
+                    <div class="column__head">
+                        <h2 class="container__headline container__headline--lv3">사업자 정보</h2>
+                    </div>
+
+                    <div class="column__item">
+                        <div class="table-wrap">
+                            <!-- 테이블 body -->
+                            <article class="table--body">
+                                <table class="table table--data">
+                                    <colgroup>
+                                        <col style="width: 105px;">
+                                        <col style="width: auto;">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <th>
+                                            <p>대표자명</p>
+                                        </th>
+                                        <td>
+                                            <p id="reprNm"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <p>상호명</p>
+                                        </th>
+                                        <td>
+                                            <p id="businessShopNm"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <p>사업자 주소</p>
+                                        </th>
+                                        <td>
+                                            <p id="businessAddr"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <p>
+                                                사업자 등록번호
+                                            </p>
+                                        </th>
+                                        <td>
+                                            <p id="businessNo"></p>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 사진상세보기 레이어팝업 -->
+    <!-- 클래스 변경 -> photo_detail-popup  -->
+    <section id="img_detail_area" class="photo_detail-popup"><!-- 기본 = hide, 사진 클릭 시 hide -> view로 클래스 변경, 상세 창 닫힐 시 view -> hide로 변경 -->
+        <div class="popup_w">
+            <div class="photo__view-box"><!-- 클래스 변경 photo__view-box -->
+                <!-- 닫기버튼 -->
+                <div class="btn_photo_close">
+                    <a onclick="uf_hide()" href="#none"><span class="blind">닫기</span></a>
+                </div>
+                <!-- //닫기버튼 -->
+                <!-- 이미지 영역 -->
+                <div class="swiper-container photo_w">
+                    <!-- 슬라이드 이미지 영역 -->
+                    <div class="swiper-wrapper" id="slide_area"><!-- sample:begin -->
+            <header class="tab-container__header js-tab-header">
+                <div class="tab-container__header--content tab-button-style--lv1">
+                    <div class="tab-button-wrap" aria-label="결제 취소 수단 선택">
+                        <button id="tap_pickup" class="tab-button col--2 js-tab-button " type="button">
+                            <span>포장</span>
+                        </button>
+                        <button id="tap_robot" class="tab-button col--2 js-tab-button " type="button">
+                            <span>로봇배송</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+        <!-- sample:end --></div>
+                    <!-- //슬라이드 슬라이드 이미지 영역 -->
+                    <!-- paging -->
+                    <div class="swiper-pagination"></div>
+                    <!-- //paging -->
+                    <!-- //이미지 영역 -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //사진상세보기 레이어팝업 -->
+
+</div>
+<!-- // 컨테이너 - 이용안내 팝업 -->
+
+<!--가맹점상세 - 로봇배송 이용안내-->
+<div id="aflt_detail_robot_info" class="popup-wrap " style="display:none;">
+    <section class="popup-container popup--full delivery_use-guide">
+        <!-- 헤더 -->
+        <header class="header position-sticky">
+            <div class="header__title-wrap">
+                <h1 class="page-name"><span>로봇배송 이용안내</span></h1>
+            </div>
+
+            <nav class="header__navi">
+                <a id="aflt_detail_robot_info_close" href="#none" class="header__btn btn-close js-popup-close">
+                    <span class="blind">페이지 닫기</span>
+                </a>
+            </nav>
+        </header>
+
+        <div class="popup-container__body justify-spacing-def">
+            <section class="body__header flex-column">
+                <div class="column__head">
+                    <h2 class="headline headline--lv4">
+                        로봇배송<br>
+                        어떻게 사용하나요?
+                    </h2>
+                </div>
+
+                <div class="column__item">
+                    <p class="info__text--lv2">
+                        로봇배송은 지정된 장소로 직접 로봇이<br>
+                        찾아오는 비대면 배송 서비스입니다.
+                    </p>
+                </div>
+            </section>
+
+            <section class="body__content">
+                <!-- 로봇배송 프로세스 -->
+                <div class="flex-column">
+                    <div class="column__head">
+                        <h3 class="headline headline--lv3">로봇배송 프로세스</h3>
+                    </div>
+                    <div class="column__item">
+                        <ol class="process-step">
+                            <li><span>스마트오더에서 로봇배송 주문</span></li>
+                            <li><span>매장 조리 완료 후 로봇이 출발</span></li>
+                            <li><span>인증번호 입력 또는 얼굴 인식으로 수령</span></li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- 로봇배송 수령 -->
+                <div class="flex-column">
+                    <div class="column__head">
+                        <h3 class="headline headline--lv3">로봇배송 수령</h3>
+                    </div>
+                    <!-- 얼굴 인식 -->
+                    <div class="column__item">
+                        <h4 class="headline headline--lv2">얼굴 인식</h4>
+                        <ul class="list-bl">
+                            <li>배송 로봇의 카메라에 얼굴을 인식시키면 물품을 편리하게 수령할 수 있습니다.</li>
+                            <li>얼굴 인식 정보 등록 : 메인 > 더보기 > 설정 > 로봇배송 얼굴 인증</li>
+                        </ul>
+                        <div class="mgt24"><img src="../assets/ent_resource/img/hdc/use-guide_1.png" alt=""></div>
+                        <div class="mgt16">
+                            <button type="button" class="button button-mid col--block button--lv1" id="register_face"><span>얼굴 인식 정보 등록하기</span></button>
+                        </div>
+                    </div>
+                    <!-- 인증번호 인증 -->
+                    <div class="column__item">
+                        <h4 class="headline headline--lv2">인증번호 인증</h4>
+                        <ul class="list-bl">
+                            <li>배송 로봇에 4자리 인증번호를 입력해 물품을 수령합니다.</li>
+                            <li>인증번호는 배송 출발 후 주문내역에서 확인할 수 있습니다.</li>
+                        </ul>
+                        <p class="mgt24"><img src="../assets/ent_resource/img/hdc/use-guide_2.png" alt=""></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+<!--가맹점상세 - 로봇배송 이용안내-->
+</body>
+</html>

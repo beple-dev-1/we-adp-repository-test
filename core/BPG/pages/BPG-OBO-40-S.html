@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플오더 원산지</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-40-S">
+<form name = "frm" id = "frm" method="post">
+		<input id="BP_AFLT_SEQ" name = "BP_AFLT_SEQ" type="hidden" value="">
+		<input id="ORIGIN_INFO" name = "ORIGIN_INFO" type="hidden" value="">
+	</form>
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>메뉴 관리</h1>
+			<a data-element-id="BPG-OBO-40-S-e13" href="#" class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 비플오더 -->
+				<div class="flexWrap">
+					<div class="bpleOder add_flex_column addBtn-pb56">
+						<div class="tab_menu four">
+							<a data-element-id="BPG-OBO-40-S-e09" data-nav-target="BPG-OBO-20-S" href="#" onclick="Common.simpleSubmit('bo_my_catg.act', {BP_AFLT_SEQ:''});return false;"><span>카테고리</span></a>
+							<a data-element-id="BPG-OBO-40-S-e10" data-nav-target="BPG-OBO-50-S" href="#" onclick="Common.simpleSubmit('bo_my_pdt.act', {BP_AFLT_SEQ:''});return false;"><span>메뉴</span></a>
+							<a data-element-id="BPG-OBO-40-S-e11" data-nav-target="BPG-OBO-30-S" href="#" onclick="Common.simpleSubmit('bo_my_opt.act', {BP_AFLT_SEQ:''});return false;"><span>옵션</span></a>
+							<a data-element-id="BPG-OBO-40-S-e14" href="#" onclick="return false;" class="on"><span>원산지</span></a><!-- 선택 시 on 클래스 추가 -->
+						</div>
+						<!-- 메뉴관리 컨텐츠 -->
+						<div class="menu_admin" id="orgin_div" >
+							<div class="origin_info" >
+								<div class="info">
+									<p id="orginInfo">
+										
+									</p>
+									<p class="modify_btn"><a data-element-id="BPG-OBO-40-S-e15" id="btn_show"><span class="blind">메뉴수정</span></a></p>
+								</div>
+							</div>
+							<p class="btn_add" >
+								<a data-element-id="BPG-OBO-40-S-e16" id="btn_add">+ 원산지 정보 추가</a>
+							</p>
+						</div>
+					</div>
+					<!-- 메뉴관리 항목별 없음 안내 -->
+					<div class="empty" >
+						<p>등록된 원산지가 없습니다.</p>
+					</div>		
+				</div>
+				<!-- //비플오더 -->
+			</div>
+			<!-- // content -->
+
+			<!-- 하단 고정버튼 영역 -->
+			<div class="btn_botFix_w">
+				<!-- 버튼 -->
+				<div class="inner">
+					<a data-element-id="BPG-OBO-40-S-e12" data-nav-target="BPG-OBO-10-S" href="#none" onclick="Common.simpleSubmit('bo_my_main.act', {BP_AFLT_SEQ:''});" class="btn_default btn-style-h46 round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+						확인
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 영역 -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	<div class="layer_overlay" id="orginlayer" style="display:none;">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 설정팝업 -->
+				<div class="edit_pop">
+					<p class="btn_close">
+						<a id="btn_close"><span class="blind">닫기</span></a>
+					</p>
+					<!-- 원산지 수정 -->
+					<ul>
+						<li><a href="#none" id="btn_save">원산지 수정</a></li>
+						<li><a href="#none" id="btn_del">원산지 삭제</a></li>
+					</ul>
+					<!-- //원산지 수정 -->
+				</div>
+				<!-- //설정팝업 -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

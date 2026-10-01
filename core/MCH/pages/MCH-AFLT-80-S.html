@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>신청내역 메인</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="MCH-AFLT-80-S">
+<form id="frm">
+	<input type="hidden" id="CLS_CD" name="CLS_CD">
+</form>
+<div com-step-id="step1" class="wrap bg_f7">
+<input data-element-id="MCH-AFLT-80-S-e06" id="mate_pos_yn" hidden="hidden" value="표본">
+<input data-element-id="MCH-AFLT-80-S-e07" id="ci" hidden="hidden" value="">
+<input data-element-id="MCH-AFLT-80-S-e08" id="ac" hidden="hidden" value="">
+<input type="hidden" id="is_seoul" value=""  />
+<input type="hidden" id="is_mcp" value=""  />
+	<!-- header -->
+	<div class="header floating-back-header floating-sticky">
+		<h1>가맹점 신청 내역</h1>
+		<p class="history_back">
+			<a data-element-id="MCH-AFLT-80-S-e05" data-nav-target="MCH-AFLT-10-S" onclick="uf_back();" class="btn-history-back">뒤로가기</a>
+		</p>
+	</div>
+	<!-- // header -->
+	<div class="container">
+		<div class="content">
+			<!-- 가맹점 신청 내역, 상세 내역 -->
+			<div class="new_store">
+				<div class="join_history">
+					<!-- 신청서 목록 -->
+					<div class="list_w">
+						<div class="item_box"><!-- sample:begin --><div class="item_wrap"><p class="date">년 월 일</p><div class="list writing"><a class="list_btn"><div class="list_header"><h3 class="name">홍길동</h3><p class="business_num">사업자등록번호 : --</p><p class="business_num">종사업장번호 : 004</p></div><div class="list_content"><p class="label">작성 중</p><p class="more" data-apy_seq="1" data-proc_st="" data-appr_st="" onclick="detailPage($(this));"><span>이어서 하기</span></p></div></a></div></div><p class='noti'>※ 개인정보 보호를 위하여 신청서 생성 후 90일 내 제출되지 않은 신청서는 자동 삭제됩니다.</p><!-- sample:end --></div>
+					</div>
+					<!-- //신청서 목록 끝 -->
+					<!-- 약관 및 로고 영역 -->
+					<!--<div class="bottom_section">
+						<h2 class="logo">
+							<a><img src="../assets/resource/images/logo-bzp.png" alt="비즈플레이"></a>
+						</h2>
+						<ul class="terms">
+							<li><a style="cursor:pointer;" onclick="uf_showClauseDetail('065000')">가맹점신청약관</a></li>
+							<li><a style="cursor:pointer;" onclick="uf_showClauseDetail('060003')">개인정보처리방침</a></li>
+						</ul>
+					</div>-->
+					<!-- //약관 및 로고 영역 -->
+				</div>
+			</div>
+			<!-- //가맹점 신청 내역, 상세 내역 -->
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<!-- //레이어 -->
+<div com-step-id="step2"   style="position: fixed; left: 0; background: white; display: none; overflow: auto;">
+    <div class="header floating-back-header floating-sticky">
+        <a role="button" onclick="go_back();" class="btn-history-back">뒤로가기</a>
+        <h1 id="clause_title" style="position: relative;"></h1>
+    </div>
+
+    <!-- // container -->
+    <div class="container" style="height:100%;">
+        <div class="content" style="height:100%;">
+            <div class="body" id="clause_content" style="height:calc(100vh - 95px);"><!-- sample:begin -->표본<!-- sample:end --></div>
+            <div class="fixed-bottom-section" style="position: fixed; top: 602px;">
+                <a role="button" class="btn-submit pink" onclick="go_back();"><span>확인</span></a>
+            </div>
+        </div>
+    </div>
+    <span style="opacity:0"></span>
+</div>
+<!-- // step 2 -->
+</body>
+</html>

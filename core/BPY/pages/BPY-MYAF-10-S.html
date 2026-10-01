@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 프로필 관리</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-MYAF-10-S">
+<form id="frm" name="frm">
+	<input type="hidden" id="PROFILE_IMG_REG_YN" value=""/>
+	<input type="hidden" id="AFLT_INFO_REG_YN" value=""/>
+	<input type="hidden" id="BOARD_REG_YN" value=""/>
+	<input type="hidden" id="PDT_REG_YN" value=""/>
+	<input type="hidden" id="IMG_REG_YN" value=""/>
+	<input type="hidden" id="WT_REG_YN" value=""/>
+	<input type="hidden" id="ENC_MEMB_CD" value=""/>
+	<input type="hidden" id="ENC_APP_CD" value=""/>
+	<input type="hidden" id="AFLT_ID" value=""/>
+</form>
+<div class="wrap"> 
+	<div class="header floating-back-header floating-sticky">
+		<h1>가맹점 프로필 관리</h1>
+		<a data-element-id="BPY-MYAF-10-S-e03" href="#" class="btn-history-back" onClick="uf_btn();">뒤로가기</a>
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 프로필 사진 등록 -->
+			<div class="store_profile addBtn-pb58">
+				<div class="tit_bx pt30">
+					<h2>
+						<strong>가맹점 정보를 등록해 주세요.</strong>
+					</h2>
+					<p>
+						가맹점 프로필 관리에서<br>
+						언제든지 추가 / 수정 / 삭제가 가능합니다.
+					</p>
+				</div>
+
+				<!-- 가맹점 정보 등록상태 -->
+				<div class="regist_status" id="profile_area">					
+				</div>
+				<!-- //가맹정 정보 등록상태 -->
+			</div>
+			<!--//프로필 사진 등록 -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_white">
+					<a data-element-id="BPY-MYAF-10-S-e04" href="#" class="btn_default btn-style-h48 round_r8 on" onClick="uf_btn();"><span>확인</span></a><!-- 활성/비활성화 시 클래스 on 추가/제거 -->
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

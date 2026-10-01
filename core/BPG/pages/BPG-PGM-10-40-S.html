@@ -1,0 +1,69 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>계좌 등록 완료</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-PGM-10-40-S">
+<script>
+    const memberInfo = ${memberInfo};
+    const inputList = ${inputList};
+    const bankList = ${bankList};
+    const _APP_CD = inputList.APP_CD;
+    const pgUrl = '${pgUrl}';
+</script>
+<form id="frm" name="frm" method="post">
+    
+        <input type="hidden" name="${item.key}" value="표본">
+    
+</form>
+
+<div com-step-id="step5" class="complete-page">
+    <div class="wrap full_height">
+        <div class="header floating-back-header floating-sticky">
+            <a data-element-id="BPG-PGM-10-40-S-e03" class="btn-history-back move_back type2" role="button" >뒤로가기</a>
+            <h1>계좌 등록</h1>
+        </div><!-- // header -->
+
+        <div class="container">
+            <div class="content">
+                <!-- 계좌등록 완료 -->
+                <div class="acc_regist_comp">
+                    <div class="inner addBtn-pb48" id="reg_bankInfo">
+                        <h2 class="comp_msg" aria-label="은행계좌등록완료, 은행계좌등록이 완료되었습니다.">은행 계좌 등록이 완료되었습니다.</h2>
+                        <div class="info_bg">
+                            <ul class="list_bl">
+                                <li>계좌 등록이 완료되면 자동이체 수신되었다는 문자가 발송될 수 있습니다.</li>
+                                <li>해당 문자는 등록한 은행에서 제공하는 안내 메시지로 거래 이체 시 일회성 자동이체 된다는 내용이니 안심하고 이용하시기 바랍니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="inner addBtn-pb48" id="reg_stockInfo" style="display: none;">
+                        <h2 class="comp_msg" aria-label="증권계좌등록완료, 증권계좌등록이 완료되었습니다.">증권 계좌 등록이 완료되었습니다.</h2>
+                        <div class="info_bg">
+                            <ul class="list_bl">
+                                <li>계좌 등록이 완료되면 자동이체 수신되었다는 문자가 발송될 수 있습니다.</li>
+                                <li>해당 문자는 등록한 증권사에서 제공하는 안내 메시지로 거래 이체 시 일회성 자동이체 된다는 내용이니 안심하고 이용하시기 바랍니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //계좌등록 완료 -->
+            </div>
+            <div class="fixed-bottom-section">
+                <a data-element-id="BPG-PGM-10-40-S-e04" id="btn_complete" class="btn-submit btn-style-h48 btn-skyBlue on" role="button"><span>확인</span></a>
+            </div>
+        </div><!-- // container -->
+    </div><!-- // wrap -->
+</div>
+
+<!-- STEP 6-2. 하이브리드 오픈뱅킹 계좌등록인 경우 약관동의를 받는다. -->
+
+<!-- STEP 7. 약관상세조회 -->
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점찾기를 PC 및 모바일브라우저에서 조회</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-SRCH-30-S">
+<div class="wrap map_view">
+    <!-- header -->
+    <div class="header">
+        <h1>비플페이</h1>
+        <!-- <a href="#" class="btn_map_close">닫기</a> -->
+    </div>
+    <!-- // header -->
+
+    <!-- container -->
+    <div class="container">
+        <div class="dim" style="display:none;"></div><!-- 로딩 시 dim -->
+        <!-- 컨텐츠 영역 -->
+        <div class="content">
+            <div class="map_w">
+                <!-- 현 위치 가맹점 리스트/지도 -->
+                <div class="con_bx" style="display: ;"><!-- [D] 2025-03-26 (모바일)미사용 시 style="display: none;" / 접힘 시 'fold' 클래스 추가 / 로딩 시 'loading'클래스 추가 / 검색결과 돌아가기 버튼노출 시 btn 클래스추가 -->
+                    <!-- 가맹점 목록 -->
+                    <ul class="st_list" id="st_list" style="display:;"><!-- dim 활성/비활성화 or display:none; 추가/삭제 -->
+                        <!-- 2025-03-26 상품권영역 노출 제외 -->
+                        <!--
+                        <li>
+                            <div class="inner">
+                                <a href="#none">
+                                    <div class="name_w">
+                                        <p class="ico">
+                                            <img src="../assets/resource/images/mapview/ico_detail_agri.png" alt="">
+                                        </p>
+                                        <h2 class="name">밴건디 야채가게</h2>
+                                    </div>
+                                    <p class="address">
+                                        서울시 서초구 신반포대로 234 밴건빌딩 2층 가나다라마바사아자차카타파하
+                                    </p>
+                                </a>
+                                <a href="tel:02-2093-3232" class="phone">
+                                    02-2093-3232
+                                </a>
+                            </div>
+                        </li>
+                         -->
+                    </ul>
+                    <!-- //가맹점 목록 -->
+                    <!-- 다수 가맹점 핀 선택 시 (버튼 활성/비활성 시 con_bx 에 "btn" 클래스 추가/제거 -->
+                    <p class="search_back_btn" style="display:none;">
+                        <a data-element-id="BPY-SRCH-30-S-e34" href="#none">
+                            검색결과 돌아가기
+                        </a>
+                    </p>
+                    <!-- //다수 가맹점 핀 선택 시 -->
+                    <!-- 검색지역 상품권 없을 시 -->
+                    <div class="st_none" style="display:none;">
+                        <p>
+                                                        현재 지역에서 조회된 가맹점이 없습니다.<br>
+                                                        다른 지역으로 이동하여 조회하세요.
+                        </p>
+                        <p class="btn">
+                            <a href="#none" id="search">조회하기</a>
+                        </p>
+                    </div>
+                    <!-- //검색지역 상품권 없을 시 -->
+
+                    <!-- 2025-03-26 추가 -->
+                    <div class="list-close" id="close_area">
+                        <button data-element-id="BPY-SRCH-30-S-e19" type="button" class="close--button"><!-- 2025-03-26 [D] 버튼 클릭 시 상단 'con_bx' div에 'fold' 클래스 추가/제거 -->
+                            <span>목록닫기</span>
+                        </button>
+                    </div>
+                    <!-- // 2025-03-26 -->
+                </div>
+                <!-- //현 위치 가맹점 리스트 -->
+
+                <!-- 2025-03-26 추가 -->
+                <div class="lottie-box"></div>
+                <!-- // 2025-03-26 -->
+
+                <!-- 2025-03-26 -->
+                <div class="categori-filter"><!-- [D] 버튼 클릭 시 'open' 클래스 추가, 업종 선택 완료 시 'selected' 클래스 추가 -->
+                    <div class="filter-trigger">
+                        <button data-element-id="BPY-SRCH-30-S-e20" type="button" class="trigger--button" id="category_filter_btn">
+                            <span class="categori-name">전체 업종</span>
+                            <i class="icon icon-more"></i>
+                        </button>
+                    </div>
+
+                    <div class="filter--list-wrap">
+                        <div class="filter--list-head">
+                            <h3 class="filter--list-headline">업종 선택</h3>
+                            <button data-element-id="BPY-SRCH-30-S-e21" type="button" class="filter--list-close"><!-- [D] 버튼 클릭 시 'open' 클래스 제거 -->
+                                <span>닫기</span>
+                            </button>
+                        </div>
+                        <div class="filter--list">
+                            <button type="button" class="filter--button selected" data-ctgr-code=""><!-- [D] 선택 시 'selected' 클래스 추가 -->
+                                <img src="../assets/resource/images/mapview/ico_detail_multi.png" class="categori-icon" alt="전체 업종">
+                                <img src="../assets/resource/images/mapview/ico_detail_multi_m.png" class="categori-icon-mobile" alt="전체 업종">
+                                <span class="categori-name">전체 업종</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e22" type="button" class="filter--button" data-ctgr-code="A">
+                                <img src="../assets/resource/images/mapview/ico_detail_edu.png" class="categori-icon" alt="학원/교육">
+                                <img src="../assets/resource/images/mapview/ico_detail_edu_m.png" class="categori-icon-mobile" alt="학원/교육">
+                                <span class="categori-name">학원/교육</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e23" type="button" class="filter--button" data-ctgr-code="B">
+                                <img src="../assets/resource/images/mapview/ico_detail_restr.png" class="categori-icon" alt="음식점/카페">
+                                <img src="../assets/resource/images/mapview/ico_detail_restr_m.png" class="categori-icon-mobile" alt="음식점/카페">
+                                <span class="categori-name">음식점/카페</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e24" type="button" class="filter--button" data-ctgr-code="G">
+                                <img src="../assets/resource/images/mapview/ico_detail_grocery.png" class="categori-icon" alt="식료품/반찬">
+                                <img src="../assets/resource/images/mapview/ico_detail_grocery_m.png" class="categori-icon-mobile" alt="식료품/반찬">
+                                <span class="categori-name">식료품/반찬</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e25" type="button" class="filter--button" data-ctgr-code="D">
+                                <img src="../assets/resource/images/mapview/ico_detail_agri.png" class="categori-icon" alt="농산물/청과">
+                                <img src="../assets/resource/images/mapview/ico_detail_agri_m.png" class="categori-icon-mobile" alt="농산물/청과">
+                                <span class="categori-name">농산물/청과</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e26" type="button" class="filter--button" data-ctgr-code="F">
+                                <img src="../assets/resource/images/mapview/ico_detail_meat.png" class="categori-icon" alt="축산물/정육">
+                                <img src="../assets/resource/images/mapview/ico_detail_meat_m.png" class="categori-icon-mobile" alt="축산물/정육">
+                                <span class="categori-name">축산물/정육</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e27" type="button" class="filter--button" data-ctgr-code="E">
+                                <img src="../assets/resource/images/mapview/ico_detail_seafood.png" class="categori-icon" alt="수산물/횟집">
+                                <img src="../assets/resource/images/mapview/ico_detail_seafood_m.png" class="categori-icon-mobile" alt="수산물/횟집">
+                                <span class="categori-name">수산물/횟집</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e28" type="button" class="filter--button" data-ctgr-code="C">
+                                <img src="../assets/resource/images/mapview/ico_detail_medi.png" class="categori-icon" alt="의료/보건">
+                                <img src="../assets/resource/images/mapview/ico_detail_medi_m.png" class="categori-icon-mobile" alt="의료/보건">
+                                <span class="categori-name">의료/보건</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e29" type="button" class="filter--button" data-ctgr-code="I">
+                                <img src="../assets/resource/images/mapview/ico_detail_beauty.png" class="categori-icon" alt="미용/패션">
+                                <img src="../assets/resource/images/mapview/ico_detail_beauty_m.png" class="categori-icon-mobile" alt="미용/패션">
+                                <span class="categori-name">미용/패션</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e30" type="button" class="filter--button" data-ctgr-code="H">
+                                <img src="../assets/resource/images/mapview/ico_detail_interior.png" class="categori-icon" alt="가전/가구">
+                                <img src="../assets/resource/images/mapview/ico_detail_interior_m.png" class="categori-icon-mobile" alt="가전/가구">
+                                <span class="categori-name">가전/가구</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e31" type="button" class="filter--button" data-ctgr-code="J">
+                                <img src="../assets/resource/images/mapview/ico_detail_services.png" class="categori-icon" alt="서비스">
+                                <img src="../assets/resource/images/mapview/ico_detail_services_m.png" class="categori-icon-mobile" alt="서비스">
+                                <span class="categori-name">서비스</span>
+                            </button>
+                            <button data-element-id="BPY-SRCH-30-S-e32" type="button" class="filter--button" data-ctgr-code="K">
+                                <img src="../assets/resource/images/mapview/ico_detail_car.png" class="categori-icon" alt="자동차/주유">
+                                <img src="../assets/resource/images/mapview/ico_detail_car_m.png" class="categori-icon-mobile" alt="자동차/주유">
+                                <span class="categori-name">자동차/주유</span>
+                            </button>                            
+                            <button data-element-id="BPY-SRCH-30-S-e33" type="button" class="filter--button" data-ctgr-code="Z">
+                                <img src="../assets/resource/images/mapview/ico_detail_retail.png" class="categori-icon" alt="기타/도소매">
+                                <img src="../assets/resource/images/mapview/ico_detail_retail_m.png" class="categori-icon-mobile" alt="기타/도소매">
+                                <span class="categori-name">기타 도소매</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 2025-03-26 -->
+                
+                <!-- 지도 -->
+                <div class="map_bx">
+                
+                
+                    <!-- 지도 삽입부분 -->
+                    <div class="map">
+                         <div id="map" style="width:100%;height:100%;"></div>
+                    </div>
+                    <!-- //지도 삽입부분 -->
+                    
+                    
+                    <!-- 핀 선택 박스 -->
+                    <!-- 
+                    <div class="pick_bx" style="display:none;">
+                        <div class="inner">
+                            <div class="map_name_w">
+                                <h2 class="name">밴건디 스테이크하우스</h2>
+                                <p class="more">외 4개</p>다수 가맹점 선택 시 노출
+                            </div>
+                            <p class="address">서울시 서초구 신반포대로 234 밴건빌딩 2층서울시 서초구 신반포대로 234 밴건빌딩 2층</p>
+                            <p>
+                                <a href="tel:02-2093-3232" class="phone">
+                                    02-2093-3232
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                     -->
+                    <!-- //핀 선택 박스 -->
+                    
+                    <!-- 현 지도 검색 버튼 -->
+                    <p class="map_search_btn" style="touch-action: pan-x">  <!-- 2025-04-14 김빛누리 / touch-action: pan-x 추가-->
+                        <a data-element-id="BPY-SRCH-30-S-e35" href="#none">
+                            <span>현 지도에서 검색</span>
+                        </a>
+                    </p>
+
+                    <!-- //현 지도 검색 버튼 -->
+                    <!-- 2022-02-22 -->
+                    <!-- 현재위치 -->
+                    <p class="locationBtn">
+                        <a data-element-id="BPY-SRCH-30-S-e36" href="#none">현재위치</a>
+                    </p>
+                    <!-- 현재위치 -->
+                    <!-- //2022-02-22 -->
+                </div>
+                <!-- 지도 -->
+            </div>
+        </div>
+        <!-- //컨텐츠 영역 -->
+    </div>
+    <!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

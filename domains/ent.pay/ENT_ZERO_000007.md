@@ -1,0 +1,113 @@
+# 엔터프라이즈_결제결과 조회하기 (ENT_ZERO_000007)
+
+- 처리: 읽기·쓰기
+- 화면 겸함: 아니오
+- 상태: 따라감
+
+## 부르는 화면
+
+| 화면ID | 화면 이름 | 요소 |
+|---|---|---|
+| HIT-PAY-10-10-S | 엔터프라이즈_개인제로페이 MPM 결제 | 화면 |
+| HIT-PAY-20-S | 엔터프라이즈_법인 제로페이 결제화면 호출 | 화면 |
+
+## 입력
+
+- 거래일자 (TRX_DT)
+- 거래번호 (TRX_SEQ)
+- QR코드 (QR_CODE)
+- 비대면여부 (ONLN_YN)
+
+## 출력
+
+- 처리상태 (PROC_ST)
+
+## 데이터 처리
+
+### QR 처리결과 조회 (TB_ZEROPAY_TRAN_R005)
+
+- 종류: SELECT
+- 테이블: TB_QR_MNG, TB_ZEROPAY_TRAN
+- 입력: QR거래일자 (QR_TRX_DT), QR거래번호 (QR_TRX_SEQ), 회원코드 (MEMB_CD), 앱코드 (APP_CD)
+
+### 가맹점정보 조회 (TB_AFFILIATION_MNG_R001)
+
+- 종류: SELECT
+- 테이블: TB_AFFILIATION_MNG, TB_AFFILIATION_MY
+- 입력: 가맹점ID (AFLT_ID)
+
+### 마이가맹점 정보 조회(DYNAMIC) (TB_AFFILIATION_MY_R007)
+
+- 종류: SELECT
+- 테이블: TB_AFFILIATION_MY, TB_AFFILIATION_MY_DETAIL, TB_MEMBER_APP
+- 입력: DYNAMIC_0
+
+### 알림 템플릿 조회 (TB_ALARM_INFO_R001)
+
+- 종류: SELECT
+- 테이블: TB_ALARM_INFO
+- 입력: ALARM_CTGR_TYPE_CD, ALARM_TYPE_CD, ALARM_TMPL_CD
+
+### 비대면 결제내역 조회 (by TRX_DT, TRX_SEQ) (TB_ONLN_AFF_TRAN_R002)
+
+- 종류: SELECT
+- 테이블: TB_ONLN_AFF_TRAN
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ)
+
+### 마이가맹점 알림대상 상세원장 조회(DYNAMIC) (TB_AFFILIATION_MY_DETAIL_R002)
+
+- 종류: SELECT
+- 테이블: TB_AFFILIATION_MY_DETAIL, TB_MEMBER_APP, TB_AFFILIATION_MY
+- 입력: DYNAMIC_0
+
+### 식권제로페이 결제 정보(TRX_DT, TRX_SEQ) (TB_ZEROPAY_MT_ODR_R005)
+
+- 종류: SELECT
+- 테이블: TB_ZEROPAY_MT_ODR, TB_MEMBER_APP
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 앱코드 (APP_CD)
+
+### 식권제로페이 메인 결제 정보(TRX_SEQ, TRX_DT) (TB_ZEROPAY_MT_ODR_R007)
+
+- 종류: SELECT
+- 테이블: TB_ZEROPAY_MT_ODR
+- 입력: 거래번호 (TRX_SEQ), 거래일자 (TRX_DT)
+
+### 식권제로페이 함께결제 총금액 조회 (TB_ZEROPAY_MT_ODR_R006)
+
+- 종류: SELECT
+- 테이블: TB_ZEROPAY_MT_ODR
+- 입력: ORDER_DT, ORDER_ID
+
+### 회원정보 조회 (by mob_no) (TB_MEMBER_R029)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER, TB_MEMBER_APP
+- 입력: 앱코드 (APP_CD), 휴대폰번호 (MOB_NO), DYNAMIC_0
+
+### PUSH 내역 등록 (TB_PUSH_MSG_C001)
+
+- 종류: INSERT
+- 테이블: TB_PUSH_MSG
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 회원코드 (MEMB_CD), 휴대폰번호 (MOB_NO), 거래구분 (TRX_TP), 제목 (TITLE), 메시지 (MSG), 내용 (CTNT), WRK_ID, SNDR_CD, USER_ID, 제어코드 (CTRL_CD), GRP_ID, COMP_ID, COMP_MSG_ID, RE_TRX_YN, RMK, 앱코드 (APP_CD), 응답코드 (RSPS_CD), 응답메세지 (RSPS_MSG), 처리상태 (PROC_ST), LIST_CTNT, ALARM_CTGR_TYPE_CD, ALARM_TYPE_CD, ALARM_TMPL_CD, 가맹점ID (AFLT_ID), NOTI_EVNT_DTL
+
+- 공통 헤더 처리(이 업무 아님): TB_APP_MNG_R001
+
+## 실패
+
+- (없음)
+
+## 근거
+
+- BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ENT_ZERO_000007.xml:6
+- BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/pay/ENT_ZERO_000007_act.jsp:31
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R005.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_R007.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ALARM_INFO_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ONLN_AFF_TRAN_R002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_DETAIL_R002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R005.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R007.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R006.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R029.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_PUSH_MSG_C001.xml:10

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>만 14세미만 회원가입 & 가맹점 찾기 서비스 이용시 진입 화면</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-KID-20-S">
+<input type="hidden" name="SVC_TYPE" 		id="svc_type" 		value="">
+<input type="hidden" name="BRT_DT" 			id="brt_dt" 		value="">
+<input type="hidden" name="PUSH_ID" 		id="push_id" 		value="">
+<input type="hidden" name="GNDR"			id="gndr"			value="">	
+<input type="hidden" name="MRKT_AGREE_YN"	id="mrkt_agree_yn"	value="">
+<input type="hidden" name="TRX_SEQ" 		id="trx_seq" 		value="">
+<input type="hidden" name="TELE_CORP" 		id="tele_corp" 		value="">
+<input type="hidden" name="APRV_NO" 		id="aprv_no" 		value="">
+<input type="hidden" name="IN_FRN_TP" 		id="in_frn_tp" 		value="">
+<input type="hidden" name="MEMB_NM" 		id="memb_nm" 		value="">
+<input type="hidden" name="MOB_NO" 			id="mob_no" 		value="">
+<input type="hidden" name="MEMB_CD" 		id="memb_cd" 		value="">	
+
+<!-- 동의요청 입력 전 -->
+<div class="wrap" id="before">
+	<div class="header floating-back-header floating-sticky">
+							
+			<h1>가맹점 찾기</h1>
+		
+		<a data-element-id="BPY-KID-20-S-e07" id="back_btn" href="javascript:uf_back();" class="btn-history-back">뒤로가기</a>
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- consent_wrap -->
+			<div class="consent_wrap">
+				<!-- 보호자동의 정보입력 -->
+				<div class="infomationWrap addBtn-pb68">
+					<div class="msgBox">
+											
+							<h2>
+								만 14세 미만 어린이는<br>
+								보호자 동의가 필요해요.
+							</h2>
+							<p>
+								보호자에게 회원가입 동의를 요청해 주세요!<br>
+								문자를 보내고 5분 안에 동의를 받아야 해요.
+							</p>
+						
+						
+					</div>
+
+					<!-- 입력영역 -->
+					<div class="ipt_section">
+						<form action="">
+							<fieldset>
+								<legend>보호자 정보 입력</legend>
+													
+									<div class="agree">
+										<label for="">
+											<input data-element-id="BPY-KID-20-S-e10" id="req_YN" type="checkbox" value="">
+											<strong>위치정보 수집 및 이용 동의</strong>
+										</label>
+										<a data-element-id="BPY-KID-20-S-e08" id="btn_view" class="btn_view">보기</a>
+									</div>
+								
+								<div class="iptBx"><!-- 보호자 이름 입력 활성화 시 'ipt' 클래스 추가 -->
+									<h3>보호자 이름</h3>
+									<input data-element-id="BPY-KID-20-S-e11" name="recv_nm" id="recv_nm" type="text" placeholder="이름(실명)을 입력하세요." style="ime-mode:auto">
+								</div>	
+								<div class="iptBx">
+									<h3>보호자 휴대폰 번호</h3>
+									<input data-element-id="BPY-KID-20-S-e12" name="recv_mob_no" id="recv_mob_no" type="tel" placeholder="휴대폰 번호를 입력하세요." >
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<!-- //입력영역 -->
+				</div>
+				<!-- //보호자동의 정보입력 -->
+			</div>
+			<!-- //consent_wrap -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_white">
+					<a data-element-id="BPY-KID-20-S-e09" id="req_btn" class="btn_default round_r8 btn-style-h48" ><!-- 활성화 시 on 클래스 추가 -->
+						동의 요청하기
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+		<!-- content -->
+		
+		<!-- modal overlay -->
+		 <div id="clause_modal" class="modaloverlay type1" style="display:none;">
+		     <div class="lytb"><div class="lytb_row"><div class="lytb_td">
+		         <!-- layerpopup -->
+		         <div class="layer_style1">
+		             <div class="layer_po">
+		                 <a class="btn_r" onclick="$('#clause_modal').hide();"><span class="btn_close"><span class="blind">닫기</span></span></a>
+		                 <div class="cont2">
+		                     <div class="ly_st_tit">
+		                         <p></p>
+		                     </div>
+		
+		                     <div class="ly_st_clause">
+		                     </div>
+		
+		                     <div class="ly_st_btn" onclick="$('#clause_modal').hide()">
+		                         <a class="on">확인</a>
+		                     </div>
+		                 </div>
+		             </div>
+		         </div>
+		         <!-- //layerpopup -->
+		     </div></div></div>
+		 </div>
+		 <!-- //modal overlay -->
+	</div>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!--동의요청 대기 -->
+<div class="wrap" id="wait" style="display: none;">
+							
+		<div class="header floating-back-header floating-sticky">
+			<h1>가맹점 찾기</h1>
+		</div>
+		
+		<div class="container">
+		<div class="content">
+			<!-- 보호자 동의 대기  -->
+								
+			<div class="consent_wrap noHeader">
+			
+				<div class="waiting addBtn-pb48">
+					<p class="icon"><img src="../assets/resource/images/zero/consent_waiting.png" alt=""></p>
+					<div class="msgBox">
+						<p class="msg">
+							<strong>보호자 동의를 기다리고 있어요.</strong>
+						</p>
+						
+											
+							<p>
+								보호자에게 회원가입 동의 요청 문자를 보냈어요.
+							</p>
+						
+						<div class="timer"><!-- 남은시간 초과 시 'out' 클래스 추가 -->
+							<p>남은 시간 <strong id="time_check">05:00</strong></p>
+						</div>
+					</div>
+					<!-- 경고메세지 -->
+					<div class="warning">
+						<p>
+							5분 안에 보호자가 동의하지 않으면<br>
+												
+								처음부터 다시 회원가입을 해야 해요!
+							
+						</p>
+					</div>
+					<!-- //경고메세지 -->
+				</div>
+			</div>
+			<!-- //보호자 동의 대기 -->
+		</div>
+		<!-- content -->
+
+		<!-- 하단 고정버튼 -->
+		<div class="btn_botFix_w">
+			<div class="inner pd0">
+				<a id="wait_btn" class="btn_default btn-style-h48"><!-- 활성화 시 'on' 클래스 추가 -->
+					확인
+				</a>
+			</div>
+		</div>
+		<!-- //하단 고정버튼 -->
+	</div>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!--동의요청 성공 -->
+<div class="wrap" id="success" style="">
+						
+	<div class="header floating-back-header floating-sticky">
+		<h1>가맹점 찾기</h1>
+	</div>
+	
+		<div class="container">
+		<div class="content">
+			<!-- 보호자 동의 완료/ 시간초과 / 거절  -->
+								
+			<div class="consent_wrap noHeader">
+			
+				<div class="result">
+					<p class="icon"><img src="../assets/resource/images/zero/consent_complete.png" alt=""></p>
+					<div class="msgBox">
+											
+							<p class="msg"><strong>비플페이 회원가입에 성공했어요.</strong></p>
+							<p>
+								보호자 동의를 받았어요!
+							</p>
+						
+					</div>
+				</div>
+			</div>
+			<!-- //보호자 동의 완료/ 시간초과 / 거절 -->
+		</div>
+		<!-- content -->
+		<!-- 하단 고정버튼 -->
+		<div class="btn_botFix_w">
+			<div class="inner pd0">
+				<a data-element-id="BPY-KID-20-S-e13" id="success_btn" class="btn-default btn-style-h48 on">
+										
+						확인
+					
+				</a>
+			</div>
+		</div>
+		<!-- //하단 고정버튼 -->
+	</div>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- 동의요청 실패 -->
+<div class="wrap" id="fail" style="display:none !important;">
+						
+	<div class="header floating-back-header floating-sticky">
+		<h1>가맹점 찾기</h1>
+	</div>
+	
+	<div class="container">
+		<div class="content">
+			<!-- 보호자 동의 완료/ 시간초과 / 거절  -->
+								
+			<div class="consent_wrap noHeader">
+			
+				<div class="result addBtn-pb48">
+					<p class="icon"><img src="../assets/resource/images/zero/consent_fail.png" alt=""></p>
+					<div class="msgBox">
+						<p class="msg"><strong>보호자 동의를 받지 못했어요.</strong></p>
+											
+							<p>
+								다시 회원가입을 시도해 주세요.
+							</p>
+						
+					</div>
+				</div>
+			</div>
+			<!-- //보호자 동의 완료/ 시간초과 / 거절 -->
+		</div>
+		<!-- content -->
+		<!-- 하단 고정버튼 -->
+		<div class="btn_botFix_w">
+			<div class="inner pd0">
+				<a id="fail_btn" class="btn-default btn-style-h48 on">
+					확인
+				</a>
+			</div>
+		</div>
+		<!-- //하단 고정버튼 -->
+	</div>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+</body>
+</html>

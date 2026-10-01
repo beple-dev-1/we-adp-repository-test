@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>온라인가맹점신청 공지사항</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="MCH-COMN-40-10-S">
+<input type="hidden" id="starddt" value="">
+<input type="hidden" id="enddt" value="">
+
+<div class="wrap" id="notice_list_area">
+    <!-- 2022-11-07 - 공지사항 -->
+    <div class="header floating-back-header floating-sticky">
+        <h1></h1>
+        <a data-element-id="MCH-COMN-40-10-S-e02" class="btn-history-back" id="back_btn" role="button">상위메뉴로 이동</a>
+    </div><!-- // header -->
+
+    <div class="container">
+        <div class="content">
+            <div class="pay_list mgt10">
+                <!-- //2022-11-07 - 공지사항 -->
+                <div class="notice_list">
+                    <ul id="notice_list"><!-- sample:begin -->표본<!-- sample:end --></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bankstock-list-pop ov-visible" id="notice_detail_area" style="display:none;">
+    <div class="blp-container style-padding-0">
+        <div class="blp-inner">
+            <div class="blp-header">
+                <h1 class="pop-title"></h1>
+            </div>
+            <div class="blp-cont-wrap type3" >
+                <div class="blp-cont">
+                    <button type="button" class="btn-back-pop" id="close_btn" title="button">상위메뉴로 이동</button>
+                    <div class="alarm_detail">
+                        <div class="tit_area">
+                            <p id="detail_title"><!-- sample:begin -->안내<!-- sample:end --></p>
+                            <input type="hidden" id="title">
+                            <input type="hidden" id="detail_noti_seq">
+                            <h1 id="aria_detail_reg_dt">
+                                <span id="detail_reg_dt" aria-hidden="true"><!-- sample:begin -->2026.09.02<!-- sample:end --></span>
+                            </h1>
+                        </div>
+                        <div class="cont" id="detail_ctnt"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+                    </div>
+                </div>
+            </div>
+            <!--<button type="button" class="btn-back-pop" id="close_btn" title="button">상위메뉴로 이동</button>-->
+            <!-- <button type="button" class="btn-close-pop" id="close_btn">닫기</button>  -->
+
+            <!-- url 복사 msg -->
+            <p id="copyOk" class="copy_msg" style="display:none;">
+                <span>URL 복사가 완료되었습니다.</span>
+            </p>
+            <!-- url 복사 msg -->
+        </div>
+    </div>
+</div>
+
+<!-- 레이어팝업 -->
+<div class="layer_overlay" id="share_div" style="display: none;">
+    <div class="layer_bPop">
+        <div class="popup_con pd0">
+            <!-- 공유하기 선택 -->
+            <div class="share">
+                <h2>
+                    <strong>공유하기</strong>
+                </h2>
+                <!-- 닫기버튼 -->
+                <p class="share_btn_close">
+                    <a href="#none" id="share_close">
+                        <span class="blind">닫기</span>
+                    </a>
+                </p>
+                <!-- //닫기버튼 -->
+                <!-- 공유하기 목록 -->
+                <ul class="share_list">
+                    <li id="shareLink"><a href="#none"><img src="../assets/resource/images/ico_copy.png" alt="">URL복사</a></li><!-- 선택 시 클래스 on -->
+                    <!-- <li><a href="#none"><img src="../assets/resource/images/ico_kakao.png" alt="">카카오톡 공유</a></li>
+                    <li><a href="#none"><img src="../assets/resource/images/ico_facebook.png" alt="">페이스북 공유</a></li>
+                    <li><a href="#none"><img src="../assets/resource/images/ico_sms.png" alt="">문자로 공유</a></li> -->
+                </ul>
+                <!-- //공유하기 목록 -->
+            </div>
+            <!-- //공유하기 선택 -->
+        </div>
+    </div>
+</div>
+<!-- // 레이어팝업 -->
+</body>
+</html>

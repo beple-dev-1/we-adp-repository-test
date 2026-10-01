@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>KSQR온가신등록_정산정보</title>
+  <link rel="stylesheet" href="../assets/ksqr_resource/css/ksqr_style.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KSQR-60-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="APY_SEQ" name="APY_SEQ" value="" />
+    <input type="hidden" id="biz_no" name="biz_no" value="" />
+    <input type="hidden" id="sub_tax_mng_nm" name="tax_mng_nm" value="" />
+    <input type="hidden" id="sub_tax_mng_mob_no" name="sub_tax_mng_mob_no" value=""/>
+    <input type="hidden" id="sub_tax_email" name="sub_tax_email" value=""/>
+    <input type="hidden" id="sub_tax_email_self_yn" name="sub_tax_email_self_yn" value=""/>
+    <input type="hidden" id="brt_dt" name="brt_dt" value=""/>
+    <input type="hidden" id="owner_repr_same_yn" name="owner_repr_same_yn" value=""/>
+    <input type="hidden" id="AC"  name="AC"  value=""/>
+    <input type="hidden" id="CI"  name="CI"  value="" />
+    <div class="wrap">
+        <!-- header -->
+        <div class="header floating-back-header floating-sticky">
+            <h1>가맹점 가입 신청서</h1><!-- 2024-09-26 -> 타이틀 변경 -->
+            <p class="history_back">
+                <a data-element-id="MCH-KSQR-60-S-e13" href="javascript:void(0);" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+            </p>
+        </div>
+        <!-- // header -->
+
+        <div class="container" onkeyup="fillInput()" onclick="fillInput()">
+            <div class="content">
+                <!-- 신규가맹점 신청 -->
+                <div class="new_store">
+                    <!-- 사업자 기본정보 -->
+                    <div class="conpany_info addBtn-pb58 step3"><!-- 신청서 각 단계별 step1 ~ step5 까지 클래스 추가 -->
+                        <div class="step_wrap">
+                            <ol>
+                                <li><span>1</span></li>
+                                <li><span>2</span></li>
+                                <li><span>3</span></li>
+                                <li class="on"><span>4</span></li><!-- 진행 순서 숫자에 맞는 li 태그에 on 클래스 추가 -->
+                                <li><span>5</span></li>
+                            </ol>
+                        </div>
+
+                        <div class="inner">
+                            <!-- 법인 사장님정보 -->
+                            <h2 class="step_txt">정산 계좌 정보</h2>
+                            
+                            <p class="info">법인/단체 명의의 계좌 정보를 입력해 주세요.</p><!-- 2024-09-26 문구 수정 -->
+                            
+
+                            <div class="ipt_area">
+                                <!-- 입금 은행 -->
+                                <div class="ipt_bx">
+                                    <h3>입금 은행</h3>
+                                    <div class="toggle_wrap">
+                                        <p class="trigger placeholder" id="selected_bank"><!-- 선택 시 placeholder 클래스 삭제 -->
+                                            <a data-element-id="MCH-KSQR-60-S-e14" href="javascript:void(0);" id="sel_trig" data-value="">입금 은행 선택</a>
+                                        </p>
+                                        <div class="toggle_con bank_list" style="display:none;">
+                                            <ul id="list" style="overflow-y: auto; max-height: 24vh;">
+                                                <script>
+                                                    ComUtil.setBankList($("#list"));
+                                                </script>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 입금 계좌 번호 -->
+                                <div class="ipt_bx">
+                                    <h3>입금 계좌 번호</h3>
+                                    <div class="ipt"><input data-element-id="MCH-KSQR-60-S-e18" type="tel" placeholder="숫자만 입력" id="acct_no" maxlength="50" value="" jex-input="onlyNumber" ></div>
+                                </div>
+                                <!-- 입금 계좌 실명 -->
+                                <div class="ipt_bx cert_name">
+                                    <h3>입금 계좌 실명</h3>
+                                    <div class="ipt auto"><input data-element-id="MCH-KSQR-60-S-e19" type="text" id="acct_nm" value="" readonly></div>
+                                    <p class="address_sch"><a data-element-id="MCH-KSQR-60-S-e15" href="javascript:void(0);" id="certi_btn">실명 인증</a></p>
+                                </div>
+                            </div>
+
+                            <!-- 가맹점 추가 정보 -->
+                            <h2 class="step_txt">정산 담당자 정보</h2>
+                            <!-- 정보 동일 체크박스 -->
+                            <div class="same_box">
+                                <label><input data-element-id="MCH-KSQR-60-S-e20" type="checkbox" class="smae_check" id="check_box" value="N">가맹점주 정보와 동일합니다.</label>
+                            </div>
+
+                            <div class="ipt_area">
+                                <!-- 정산 담당자 성명 -->
+                                <div class="ipt_bx">
+                                    <h3>정산 담당자 성명</h3>
+                                    <div class="ipt"><input data-element-id="MCH-KSQR-60-S-e21" type="text" placeholder="정산 담당자 이름 입력" id="tax_mng_nm" value="" maxlength="50"></div>
+                                </div>
+                                <!-- 정산 담당자 휴대폰번호 -->
+                                <div class="ipt_bx">
+                                    <h3>정산 담당자 휴대폰번호</h3>
+                                    <div class="ipt"><input type="tel" placeholder="숫자만 입력" id="tax_mng_mob_no" value="" maxlength="12" oninput="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');"></div>
+                                </div>
+
+                                <!-- 세금계산서 이메일 -->
+                                <div class="ipt_bx email">
+                                    <h3>세금계산서 이메일</h3>
+                                    <div class="ipt"><input data-element-id="MCH-KSQR-60-S-e22" type="text" placeholder="이메일 입력" id="tax_email" value="user@example.com" data-fill="demo"></div>
+                                    <!-- 도메인 -->
+                                    <div class="ipt mail_domain toggle_wrap reverse">
+                                        <p class="trigger"><a data-element-id="MCH-KSQR-60-S-e16" href="javascript:void(0);" id="sel_mail" data-value="" class="mail_btn">직접입력</a></p>
+                                        <div class="toggle_con" style="display:none;" id="toggle_mail">
+                                            <ul>
+                                                                        <li><a name="mail" id="direct" data-value="x">직접입력</a></li>
+                                                                        <li><a name="mail" id="gmail" data-value="@gmail.com">@gmail.com</a></li>
+                                                                        <li><a name="mail" id="naver" data-value="@naver.com">@naver.com</a></li>
+                                                                        <li><a name="mail" id="daum" data-value="@daum.net">@daum.net</a></li>
+                                                                        <li><a name="mail" id="outlook" data-value="@outlook.com">@outlook.com</a></li>
+                                                                        <li><a name="mail" id="nate" data-value="@nate.com">@nate.com</a></li>
+                                                                        <li><a name="mail" id="hanmail" data-value="@hanmail.net">@hanmail.net</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="etc">
+                                        ※ 입력한 이메일로 세금계산서를 발행합니다. 이메일 정보가 틀린 경우 세금계산서 수신이 불가하며, 국세청 홈페이지 등을 통해 직접 확인하여야 합니다.
+                                    </p>
+                                </div>
+                                <!-- 위수탁 세금계산서 발행 동의 여부 -->
+                                <div class="ipt_bx" hidden>
+                                    <h3>위수탁 세금계산서 발행에 동의합니까?</h3><!-- 2024-09-26 문구 수정 -->
+                                    <div class="sel_bx justify">
+                                        <ul>
+                                            <li><label><input data-element-id="MCH-KSQR-60-S-e23" type="radio" name="tax_cons_agr_yn" id="agree" value="Y" checked>동의합니다.</label></li>
+                                            <li><label><input data-element-id="MCH-KSQR-60-S-e24" type="radio" name="tax_cons_agr_yn" id="disagree" value="N">동의하지 않습니다.</label></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //법인 사장님정보 -->
+                </div>
+                <!-- //신규가맹점 신청 -->
+                <!-- 하단 고정버튼 -->
+                <div class="btn_botFix_w">
+                    <div class="inner bg_white">
+                        <a data-element-id="MCH-KSQR-60-S-e17" href="#" class="btn_default btn-style-h48 round_r8 js-submit-button" id="next_btn" onclick="next_btn(this)"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                            <span>저장 후 다음 단계</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- //하단 고정버튼 -->
+            </div>
+        </div><!-- // container -->
+    </div>
+    <!-- // wrap -->
+    
+    <!-- layer_overlay -->
+    <div class="layer_overlay" style="display: none" id="popup">
+        <!-- layerpopup -->
+        <div class="popup_w">
+            <div class="popup_con">
+                <!-- 안내팝업_type1 -->
+                <div class="temp info_pop">
+                    <h2 class="ly_pop_tit">간편 가입 대상 프랜차이즈</h2>
+                    <!-- 텍스트 입력 -->
+                    <div class="inner">
+                        <ol class="list_num">
+                            <li>
+                                <p>
+                                    <strong>CU 계열: </strong>CU 편의점
+                                </p>
+                            </li>
+                            <li>
+                                <p><strong>GS 계열: </strong>GS25 편의점</p>
+                            </li>
+                            <li>
+                                <p><strong>이마트 계열: </strong>이마트24 편의점</p>
+                            </li>
+                            <li>
+                                <p><strong>세븐일레븐: </strong>세븐일레븐 편의점</p>
+                            </li>
+                            <li>
+                                <p><strong>SPC 계열: </strong>파리바게뜨, 파리크라상, 던킨도넛, 베스킨라빈스, 파스쿠찌, 피그인더가든, 패션5, 빚은, 퀸즈파크, 잠바주스, 커피앳웍스, OCS, 쉐이크쉑, 라그릴리아, 시티델리, 베라, 라뜰리에, 스트릿, 리나스</p>
+                            </li>
+                            <li>
+                                <p><strong>프랜차이즈 카페: </strong>메가커피, 투썸플레이스, 이디야</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- 버튼영역 -->
+                    <div class="ly_pop_btw btn_full">
+                        <a href="javascript:void(0);" class="typeA" id="conf">확인</a>
+                    </div>
+                </div>
+                <!-- //안내팝업_type1 -->
+            </div>
+        </div>
+        <!-- //layerpopup -->
+    </div>
+    <!-- //layer_overlay -->
+</form>
+
+    <script>
+        let radi_value = "";
+        <!-- let modify_yn = ""; -->
+        let page_info = "";
+        let substr_biz_no = "123-45-67890";
+        
+        /* 
+        //토글버튼
+        $(function(){
+            $('.toggle_wrap .trigger a').on({
+                click: function(){
+                    $(this).parent().parent().toggleClass('on');
+                    $(this).parent().next().slideToggle(300)
+                }
+            })
+        }) */
+    </script>
+</body>
+</html>

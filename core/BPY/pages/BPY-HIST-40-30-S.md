@@ -1,0 +1,30 @@
+--- 꼬리표 ---
+id: BPY-HIST-40-30-S / system: BPY / 기능: 비플페이 앱 > 결제내역 > 거래내역화면 > 제로페이 영수증 v2 / 과업: []
+
+--- 화면명세 ---
+화면명: 제로페이 영수증 v2
+목적: 제로페이 영수증 v2 화면이다.
+
+--- IA ---
+- 종류: 화면 / 상위화면: BPY-HIST-40-S
+
+--- 업무 ---
+- 요소: 화면 / 업무: 처리 호출(동적 id) / 미확인: 동적 id(식으로 만든 이름) / 근거: zero_complete_v2:179
+- 요소: BPY-HIST-40-30-S-e11 / 업무: 개인 제로페이 결제화면 호출 (화면) / 처리: 읽기 / 테이블: TB_AFFILIATION_MNG, TB_AFFILIATION_MY, TB_AFFILIATION_QR, TB_ZEROPAY_TRAN, TB_ZEROPAY_PG_TRAN, TB_MNY_TRAN_MST … / 입력: QR코드, 비플머니 여부 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_approve.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/zero_approve_act.jsp:18 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_QR_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R027.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R026.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ACCOUNT_R018.xml:10
+- 요소: BPY-HIST-40-30-S-e11 / 업무: 개인제로페이 MPM 결제 (화면) / 처리: 읽기 / 테이블: TB_AFFILIATION_MNG, TB_AFFILIATION_QR, TB_AFFILIATION_MY, TB_ZEROPAY_TRAN, TB_ZEROPAY_PG_TRAN, TB_MNY_TRAN_MST … / 입력: QR코드, 비플머니 여부, CHNL_CD, ACCT_NO / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_approve_v2.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/zero_approve_v2_act.jsp:26 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_QR_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R027.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R026.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R014.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_R002.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_R009.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ACCOUNT_R006.xml:10
+- 요소: BPY-HIST-40-30-S-e08 / 업무: 제로페이 영수증 v2 QR/BARCODE 생성 / 처리: 읽기 / 테이블: TB_QR_MNG / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_complete_code_v2.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/zero_complete_code_v2_act.jsp:29 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_QR_MNG_R004.xml:10
+- 요소: 화면 / 업무: 제로페이 영수증 v2 (화면) / 처리: 읽기 / 테이블: TB_ZEROPAY_TRAN, TB_FIRM_TRAN, TB_BRND_TRAN, TB_BPPAY_COMPLEX_TRAN, TB_BP_QR_MNG, TB_BPPAY_TRAN … / 입력: 거래일자, 거래번호, 거래코드, 업무코드, BIZ_CD_NM / 실패: 올바르지 않은 검색 문자가 포함되어있습니다.[0] / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_complete_v2.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/zero_complete_v2_act.jsp:18 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BRND_TRAN_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_CARD_TRAN_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_R005.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MNG_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_QR_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R005.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_COMPLEX_TRAN_R004.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_BPPG_TRAN_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_PG_TRAN_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_STORE_MNG_R002.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_BPPG_COMPLEX_TRAN_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R007.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_BPPG_TRAN_R006.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ONLN_AFF_TRAN_R002.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_COMPLEX_TRAN_R001.xml:10
+- 요소: BPY-HIST-40-30-S-e11 / 업무: 법인 제로페이 결제화면 호출 (화면) / 처리: 읽기 / 테이블: TB_AFFILIATION_MNG, TB_AFFILIATION_QR, TB_AFFILIATION_MY, TB_ZEROPAY_MT_ODR, TB_MEMBER_MNY, TB_MEMBER_APP … / 입력: CARD_NO, TGT_YN, TGT_ORDER_DT, TGT_ORDER_ID, TGT_AMT, AMT, QR_CODE, REC_INDEX, CHNL_CD, TRX_TP / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_corp_approve.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/zero_corp_approve_act.jsp:16 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R003.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_QR_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R006.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R014.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_R002.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_R009.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_CORP_APRV_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R001.xml:10
+- 요소: BPY-HIST-40-30-S-e11 / 업무: 통합 비대면결제 결제 완료 (화면) / 미확인: IDO 동적 이름 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_one_onaf_complete.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/zero_one_onaf_complete_act.jsp:32
+
+--- 정의 ---
+- 구분: 이동 / 좌표: - / 라벨: 전자영수증 보내기 / 앵커: BPY-HIST-40-30-S-e07 / 이동modal: popup-receipt--send / 해설: popup-receipt--send 팝업 열기
+- 구분: 이동 / 좌표: id=btn_cancel / 라벨: 결제취소 / 앵커: BPY-HIST-40-30-S-e08 / 이동modal: popup-pay--cancel / 해설: popup-pay--cancel 팝업 열기
+- 구분: 기능 / 좌표: - / 라벨: 가맹점 정보 가맹점 정보 열기 / 앵커: BPY-HIST-40-30-S-e09 / 해설: 가맹점 정보 가맹점 정보 열기
+- 구분: 기능 / 좌표: - / 라벨: 전달메시지 전달메시지 열기 / 앵커: BPY-HIST-40-30-S-e10 / 해설: 전달메시지 전달메시지 열기
+- 구분: 기능 / 좌표: id=btn_close / 라벨: 페이지 닫기 / 앵커: BPY-HIST-40-30-S-e11 / 해설: 페이지 닫기
+- 구분: 기능 / 좌표: - / 라벨: 광고공간 / 앵커: BPY-HIST-40-30-S-e12 / 해설: 광고공간
+
+--- 원본 글 ---
+> 역추출 소스: BIZ_ZEROPAY/web/view/jex/biz_zeropay/zero/zero_complete_v2_view.jsp
+> page2md 가 html 에서 기계로 뽑음 — 좌표 · 해설은 사람이 고치면 다음 추출에도 남는다.

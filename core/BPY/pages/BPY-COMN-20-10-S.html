@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>알림</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-COMN-20-10-S">
+<input type="hidden" id="MRKT_YN" name="MRKT_YN" value="" />
+<input type="hidden" id="MRKT_DT" name="MRKT_DT" value="" />
+<div class="bankstock-list-pop" id="push_list_area" style="display:none;">
+	<div class="blp-container" style="padding: 0px">
+	<div id="back_btn" class="header floating-back-header floating-sticky">
+		<a class="btn-history-back" id="go_main">뒤로가기</a>
+	</div><!-- // header -->
+	
+		<div class="blp-inner">
+			<div class="blp-header">
+				<h1 class="pop-title" style="margin-left: 30px; top: 0px; text-align: left;">알림</h1>
+			</div>
+			<div class="blp-cont-wrap type2">
+				<div class="blp-cont">
+					<div class="alarm_list" style="top: 25px;">
+						<ul id="push_list" style="padding: 0px 30px 35px 30px;">
+							<li class="original supOrgLi" style="display: none;">
+								<div class="msg">
+									<p id="msg_title" style="padding-right:75px;">제로페이(기업용)</p>
+									<span id="push_msg"></span>
+								</div>
+								<span class="date"></span>
+								<input type="hidden" id="push_idx"/>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bankstock-list-pop" id="detail_area">
+    <input type="hidden" id="notice_seq"/>
+	<div class="blp-container">
+		<div class="blp-inner">
+			<div class="blp-header">
+				<h1 class="pop-title"></h1>
+			</div>
+			<div class="blp-cont-wrap type2">
+				<div class="blp-cont">
+					<div class="alarm_detail">
+						<div class="tit_area">
+							<p id="detail_title"><!-- sample:begin -->안내<!-- sample:end --></p>
+							<span id="detail_procdttm"><!-- sample:begin -->14:22<!-- sample:end --></span>
+						</div>
+						<div class="cont" id="detail_txt"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+					</div>
+				</div>
+				<!-- 
+				<a id="kakao-link-btn"><img width="30" height="30" src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"></a>
+				 -->
+			</div>
+			<button data-element-id="BPY-COMN-20-10-S-e03" type="button" class="btn-close-pop" id="detail_close">닫기</button>
+		</div>
+	</div>
+</div>
+
+<!-- 팝업 -->
+<div class="pop-wrap" style="display: none;" id="agree_pop">
+	<div class="pop" id="pop_div">
+		<section class="pop-container" style="text-align:center;">
+			<!-- 팝업 내용 -->
+			<div class="pop_rbx_noti">
+				<div class="inner">
+					<div class="pop_rbx_top">
+						<h1>「농축산물 농할쿠폰 이벤트」<br>개인정보 제3자 제공에 대한 동의</h1>
+						<button type="button" class="btn-close-pop" id="close_agree_pop">닫기</button>
+					</div>
+					<div class="pop_rbx_cn">
+						<ul class="prbx_list">
+							<li>
+								<p class="tit"><strong class="no">1.</strong>제공받는 자</p>
+								<p class="txt">(재)한국간편결제진흥원, (주)쿠콘</p>
+							</li>
+							<li>
+								<p class="tit"><strong class="no">2.</strong>제공받는 자의 이용 목적</p>
+								<p class="txt">농축산물 농할쿠폰 발행 및 지급</p>
+							</li>
+							<li>
+								<p class="tit"><strong class="no">3.</strong>제공하는 항목</p>
+								<p class="txt">성명, 생년월일, 휴대폰 번호, 거래고유번호, <br>거래일자, 거래시간, 거래금액</p>
+							</li>
+							<li>
+								<p class="tit"><strong class="no">4.</strong>제공받는 자의 보유ㆍ이용 기간 :</p>
+								<p class="txt">이벤트 기간 종료일 이후 3개월</p>
+							</li>
+						</ul>
+						<div class="prbx_txt">
+							* 본 동의사항은 「농축산물 농할쿠폰 이벤트 」의 지급 대상자로 참여하기 위한
+							필수사항으로 이에 대한 동의가 없을 경우 참여가 제한됩니다.
+						</div>
+						<div class="prbx_date" id="agree_dt" style="color:#0033ff;">
+						
+							동의일자 : 
+						
+							
+						</div>
+						
+						<div class="prbx_btn">
+							<a href="#none" class="btn_type1" id="agree_btn"><span>동의</span></a>
+							<a href="#none" class="btn_type2" id="disagree_btn"><span>동의안함</span></a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- //팝업 내용 -->
+		</section>
+	</div>
+</div><!-- // 팝업 -->
+
+<!-- 팝업 -->
+<div class="pop-wrap" style="display: none;" id="agree_pop2">
+	<div class="pop" id="pop_div2">
+		<section class="pop-container" style="text-align:center;">
+			<!-- 팝업 내용 -->
+			<div class="pop_rbx_noti">
+				<div class="inner">
+					<div class="pop_rbx_top">
+						<h1>「찐 수산대전 쿠폰 이벤트」참여를 위한<br>개인정보 제3자 제공에 대한 동의</h1>
+						<button type="button" class="btn-close-pop" id="close_agree_pop2">닫기</button>
+					</div>
+					<div class="pop_rbx_cn">
+						<ul class="prbx_list">
+							<li>
+								<p class="tit"><strong class="no">1.</strong>제공받는 자</p>
+								<p class="txt">(재)한국간편결제진흥원, (주)쿠콘</p>
+							</li>
+							<li>
+								<p class="tit"><strong class="no">2.</strong>제공받는 자의 이용 목적</p>
+								<p class="txt">찐 수산대전 쿠폰 발행 및 지급</p>
+							</li>
+							<li>
+								<p class="tit"><strong class="no">3.</strong>제공하는 항목</p>
+								<p class="txt">성명, 생년월일, 휴대폰 번호, 거래고유번호, <br>거래일자, 거래시간, 거래금액</p>
+							</li>
+							<li>
+								<p class="tit"><strong class="no">4.</strong>제공받는 자의 보유ㆍ이용 기간 :</p>
+								<p class="txt">이벤트 기간 종료일 이후 3개월</p>
+							</li>
+						</ul>
+						<div class="prbx_txt">
+							* 본 동의사항은 「찐 수산대전 쿠폰 이벤트 」의 지급 대상자로 참여하기 위한
+							필수사항으로 이에 대한 동의가 없을 경우 참여가 제한됩니다.
+						</div>
+						<div class="prbx_date" id="agree_dt2" style="color:#0033ff;">
+						
+							동의일자 : 
+						
+							
+						</div>
+						
+						<div class="prbx_btn">
+							<a href="#none" class="btn_type1" id="agree_btn2"><span>동의</span></a>
+							<a href="#none" class="btn_type2" id="disagree_btn2"><span>동의안함</span></a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- //팝업 내용 -->
+		</section>
+	</div>
+</div><!-- // 팝업 -->
+
+<!-- modal overlay -->
+<div class="modaloverlay type1" id="stm_evt_pop" style="display: none;">
+    <div class="lytb"><div class="lytb_row"><div class="lytb_td">
+    <!-- layerpopup -->
+    <div class="layer_style1">
+        <div class="layer_po">
+            <a class="btn_r" id="btn_stm_close"><span class="btn_close"><span class="blind">닫기</span></span></a>
+            <div class="cont2 agree_style_new">
+                <div class="ly_st_tit">
+                    <p>경상남도 스탬프 프로모션 개인정보 제3자 제공 동의서</p>
+                </div>
+
+                <div class="ly_st_clause">
+                    <p class="pcl_txt">비즈플레이 주식회사(이하 ‘비즈플레이’라 합니다)는 경상남도 소상공인 간편결제 스탬프 프로모션 (이하 ‘본 프로모션’이라 합니다)을 진행함에 있어 「개인정보 보호법」 등 관계법령을 준수하고 있습니다. ‘비즈플레이’는 「개인정보 보호법」 제17조에 따라 서비스 제공하기 위하여 아래와 같이 개인정보를 제 3자에게 제공하기 위해 귀하의 동의를 받고자 합니다. 내용을 자세히 읽으신 후 동의 여부를 결정하여 주십시오.</p>
+
+                    <p class="pcl_tit mgb10">□ 개인정보 제3자 제공 동의 (선택)</p>
+                    <p class="pcl_txt">‘본 프로모션‘의 원활한 진행 및 리워드 지급을 위해 아래 개인정보 제공 항목을 정보주체의 동의를 받아 제3자에게 제공합니다.</p>
+                    <div class="pcl_list">
+                        <ul>
+                            <li>
+                                1. 개인정보를 제공받는 자
+                                <p>(재)한국간편결제진흥원, 경상남도청, 경상남도경제진흥원</p>
+                            </li>
+                            <li>
+                                2. 제공받는 자의 수집·이용 목적
+                                <p>- 경남 제로페이 가맹점 스탬프 이벤트 실시∙운영∙리워드 지급 및 관리</p>
+                                <p>- 이벤트 안내∙상담 및 민원 처리</p>
+                            </li>
+                            <li>
+                                3. 제공하는 개인정보 제공 항목
+                                <p>- CI(연계정보), 성명, 생년월일, 휴대전화번호, 직불결제 및 제로페이 모바일 상품권 결제 정보 일체(거래일시, 거래유형, 승인번호, 사업자번호, 가맹점ID, 가맹점명, 결제/취소 금액, 결제사 앱)</p>
+                            </li>
+                            <li>
+                                4. 제공받는 자의 보유 및 이용기간
+                                <p>이벤트 종료 후 3개월</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="pcl_txt">
+                        ○ 정보주체는 위와 같이 개인정보를 제공하는데 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 ‘본 프로모션‘의 참여가 제한됩니다.
+                    </p>
+                </div>
+
+                <div class="ly_st_btn">
+                    <a class="on" id="btn_stm_evt">학인</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //layerpopup -->
+    </div></div></div>
+</div>
+<!-- //modal overlay -->
+
+<!-- 개인정보 제3자 제공동의 dynamic wrap-container (content dynamic by 이벤트) -->
+<div class="wrap" id="template_docAgree">
+	<!-- 
+	<div class="header floating-back-header floating-sticky">
+		<h1>제로페이 페이백 이벤트 참여를 위한 개인정보 제3자 제공 동의서</h1>
+		<a id="back_detail" class="btn-history-back">뒤로가기</a>
+	</div>// header
+	<div class="container">
+		<div class="content">
+			개인정보 제3자 제공동의
+			<div class="terms-ct_t2 addBtn-pb58">
+				<div class="con_w">
+					<div class="terms-section">
+						<h1 style="font-weight: bold;">개인정보 제3자 제공 동의 (선택동의)</h1>
+						<p>비플페이는 제로페이 페이백 이벤트 진행을 위하여 아래와 같이 개인정보를 제3자에게 제공하고자 합니다. 내용을 자세히 읽으신 후 동의 여부를 결정하여 주십시오.</p>
+						<p>본 이벤트에 참여하시는 경우 원활한 이벤트 진행을 위해 아래 개인정보 제공항목이 한국간편결제진흥원에 제공됩니다.</p>
+						<div class="tbl_terms">
+							<table summary="">
+								<colgroup>
+								<col style="width: 25%;">
+								<col style="width: 25%;">
+								<col style="width: 25%;">
+								<col style="width: 25%;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">제공받는자</th>
+										<th scope="col">제공받는 자의 수집·이용목적</th>
+										<th scope="col">제공항목</th>
+										<th scope="col">제공받는 자의 보유·이용기간</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>(재)한국간편결제진흥원</td>
+										<td>
+											- 2023년 전라남도 제로페이 페이백 이벤트 당첨자 선정 및 페이백 지급<br>
+											- 이벤트 운영 및 관련 문의 응대
+										</td>
+										<td>성명, 휴대전화번호, 거래고유번호, 거래일자, 거래시간, 거래금액</td>
+										<td>페이백 지급 완료 이후 3개월</td>
+									</tr>
+								</tbody>
+							</table>
+							<br>
+							<p>이용자는 위와 같은 개인정보 제3자 제공에 동의하지 않을 수 있습니다. 그러나 동의를 거부할 경우 이벤트 참여가 제한됩니다.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="btn_botFix_w">
+					<div class="inner bg_white padding10">
+						<a id="go_page" class="btn_default btn-style-h48 round_r8 on">활성/비활성 시 on클래스 추가/삭제
+							<span>확인</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			//개인정보 제3자 제공동의
+		</div>
+	</div>
+	// container
+	-->
+</div><!-- // wrap -->
+</body>
+</html>

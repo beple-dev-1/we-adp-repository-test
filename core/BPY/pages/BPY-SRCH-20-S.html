@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점찾기 > 메인</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-SRCH-20-S">
+<input type="hidden" id="zeropay-gift-join-yn" value="">
+<input type="hidden" id="loc-agr-yn" value="">
+
+<div class="wrap bg_grey">
+
+    <!-- 2026-09-09 [D] 하단 탭바 진입(신버전) — 탭 화면 헤더. 탭바가 복귀 수단이라 뒤로가기 버튼이 없다 -->
+    <header class="header header-justify position-sticky">
+        <nav class="header__navi"></nav>
+
+        <div class="header__title-wrap">
+            <h1 class="page-name"><span>가맹점 찾기</span></h1>
+        </div>
+
+        <nav class="header__navi"></nav>
+    </header><!-- // header -->
+
+    <div class="container">
+        <div class="content">
+
+            <!-- 2026-09-09 [D] 신버전 본문 — 컨텐츠 있을 경우 pdb32 추가 / 없을 경우 제거 -->
+            <div class="find-store pdb32">
+                <!-- 전체 가맹점 -->
+                <div class="find__list store">
+                    <div class="find__item-content">
+                        <div class="item" id="all_zeropay">
+                            <a data-element-id="BPY-SRCH-20-S-e03" href="javascript:void(0);">
+                                <div class="item__img">
+                                    <img id="zeropay-usage-wrapper" alt="전체 가맹점" src="../assets/_sample/card.svg">
+                                </div>
+                                <div class="item__info">
+                                    <p class="item-name">전체 가맹점</p>
+                                    <p class="item-dsc">식권, 계좌결제, 공공상품권 사용처</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- 온누리는 구버전과 동일하게 미노출 유지. 노출 전환 시 주석만 해제한다
+                        <div class="item" id="onnuri">
+                            <a href="javascript:void(0);">
+                                <div class="item__img">
+                                    <img id="onnuri-usage-wrapper" alt="모바일 온누리상품권" src="../assets/_sample/card.svg">
+                                </div>
+                                <div class="item__info">
+                                    <p class="item-name">모바일 온누리상품권 가맹점</p>
+                                    <p class="item-dsc">온누리상품권 사용처</p>
+                                </div>
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </div>
+
+                <!-- 보유 상품권 사용처 -->
+                <div class="find__list card" id="giftcard-box">
+                    <div class="find__list-header">
+                        <h2 class="header-tit">보유 상품권 사용처</h2>
+                    </div>
+                    <div class="find__item-content" id="giftcard-usage-list"></div>
+                </div>
+
+                <!-- 복지포인트 -->
+                <div class="find__list card" id="kai-box" style="display: none;">
+                    <div class="find__list-header">
+                        <h2 class="header-tit">복지포인트 사용처</h2>
+                    </div>
+                    <div class="find__item-content" id="kai-list"></div>
+                </div>
+
+                <!-- 비플식권 -->
+                <div class="find__list card" id="meal-ticket-box" style="display: none;">
+                    <div class="find__list-header">
+                        <h2 class="header-tit">비플식권 사용처</h2>
+                    </div>
+                    <div class="find__item-content" id="meal-ticket-list"></div>
+                </div>
+
+                <!-- 검색내역 없을경우 -->
+                <p class="store_none" style="display: none;">
+                    보유 중인 상품권이 없습니다.<br>
+                    전체 제로페이 사용처로 찾아보세요.
+                </p>
+                <!-- //검색내역 없을경우 -->
+            </div>
+
+        </div><!-- //컨텐츠 영역 -->
+        
+        
+        <!-- 레이어 -->
+			<div class="layer_bPop" style="display:none;display:;">
+				<div class="pop_box">
+					<div class="pop_content">
+						<!-- 약관동의 -->
+						<div class="terms_agree_pop">
+							<h2 class="tit">
+								약관동의
+							</h2>
+							<div class="agree_txt">
+								<p>
+									가맹점찾기 서비스를 이용하기 위해<br>
+									<span class="under_line">아래 약관에 동의</span>해 주세요.
+								</p>
+							</div>
+							<p class="link"  onclick="showClause('060015')">
+								<a href="#none">[필수]위치정보 수집 및 이용 동의</span></a>
+							</p>							
+						</div>
+					</div>
+					
+					<!-- modal overlay -->
+		            <div id="clause_modal" class="modaloverlay type1" style="display:none;">
+		                <div class="lytb"><div class="lytb_row"><div class="lytb_td">
+		                    <!-- layerpopup -->
+		                    <div class="layer_style1">
+		                        <div class="layer_po">
+		                            <a class="btn_r" onclick="$('#clause_modal').hide();"><!-- <span class="btn_close"><span class="blind">닫기</span></span> --></a>
+		                            <div class="cont2">
+		                                <div class="ly_st_tit">
+		                                    <p></p>
+		                                </div>
+		
+		                                <div class="ly_st_clause">
+		                                </div>
+		
+		                                <div class="ly_st_btn" onclick="$('#clause_modal').hide()">
+		                                    <a class="on">확인</a>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <!-- //layerpopup -->
+		                </div></div></div>
+		            </div>
+		            <!-- //modal overlay -->
+					
+					<div class="pop_button btns">
+						<a href="#" class="typeB" onclick="uf_back();">동의하지않음</a>
+						<a href="#" class="typeA" onclick="uf_locYn();">동의함</a>
+					</div>
+					<!-- //약관동의 -->
+				</div>
+			</div>
+			<!-- //레이어 -->
+        
+    </div><!-- // container -->
+</div><!-- // wrap -->
+<script id="usage-template" type="text/template">
+
+    <a href="javascript:void(0);">
+        <div class="item__img">
+            <img class="usage-icon" src="" alt="">
+        </div>
+        <div class="item__info">
+            <p class="item-name tx_ellipsis-line2 usage-name"></p>
+        </div>
+    </a>
+
+</script>
+</body>
+</html>

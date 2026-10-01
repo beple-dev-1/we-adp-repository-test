@@ -1,0 +1,37 @@
+/* =============================================================================
+ * s-menu-list.css — S-MENU-LIST 화면 글루 (default/sheet-menu/popup-delete 공유)
+ * 스코프: .app--menu-list. 출처: 기존 screens/S-MENU-LIST/index.html 인라인 <style>.
+ * ========================================================================== */
+.app--menu-list .screen-content {
+    flex: 1;
+    padding: var(--space-2) var(--app-gutter) 96px;
+}
+
+/* 전체 빈 상태 (467:1790) — 메시지 프레임 절대중앙(Figma center-y ≈400, .app 800 기준) */
+.app--menu-list .screen-content--empty { flex: 1; }
+.app--menu-list .list-empty-all {
+    position: absolute; top: 50%; left: 0; right: 0;
+    transform: translateY(-50%);
+    margin: 0; text-align: center;
+    font-size: 15px; font-weight: 600; line-height: 15px;   /* Figma 467:1955 15/600 (day-empty 14/400과 분리) */
+    color: var(--text-disabled);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+
+/* 조회 필터 시트 (357:5864) */
+/* 전용 헤더(compact): Figma 제목이 액션시트와 달리 라벨급 16/600, 본문 시작 rel-y 64 */
+#sheet-filter .ds-bottom-sheet__header { height: 64px; }
+#sheet-filter .ds-bottom-sheet__title { font-size: 16px; font-weight: 600; line-height: 16px; color: var(--text-secondary); }
+.filter-sheet__body { padding: 0 var(--app-gutter); }
+/* 기간: 단일 테두리 박스 안에 값·아이콘·대시 배치 (Figma 357:5864 하나의 컨테이너 w312 h48 r8) */
+/* 기간: 단일 flex row(값1·아이콘1·대시·값2·아이콘2). 두 필드는 콘텐츠 폭(hug)으로 값+아이콘 밀착 — 화면 확장 시에도 값/아이콘이 벌어지지 않음 (강수민 260706: 유동 flex:1이 확장 시 값을 왼쪽으로 벌림) */
+.filter-range { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 48px; padding: 0 16px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); }
+.filter-range__field { flex: none; display: flex; align-items: center; gap: 8px; border: none; background: none; padding: 0; cursor: pointer; }  /* 값+아이콘 밀착(hug) */
+.filter-range__value { flex: none; font-family: var(--font-family); font-size: 16px; color: var(--text-secondary); letter-spacing: var(--letter-spacing-base); }  /* Figma 459:3486 16px, 콘텐츠 폭 */
+.filter-range__icon { display: inline-flex; align-items: center; flex: none; }
+.filter-range__dash { flex: none; color: var(--border-disabled); }   /* Figma 459:3488 대시 #cccccc */
+.filter-sheet__divider { margin: var(--space-5) 0 var(--space-6); border: 0; border-top: 1px solid var(--border-default); }
+.filter-sheet__label { margin-bottom: var(--space-4); font-size: 16px; font-weight: 600; line-height: 16px; color: var(--text-secondary); font-family: var(--font-family); letter-spacing: var(--letter-spacing-base); }  /* Figma 357:5880 lh16 */
+.filter-chips { display: flex; flex-wrap: wrap; column-gap: var(--space-2); row-gap: var(--space-3); margin-bottom: var(--space-6); }
+.filter-sheet__submit { width: calc(100% + 8px); margin: var(--space-2) -4px 0; }   /* Figma 조회버튼 x20 w320(콘텐츠 x24 대비 -4 확장); block width%가 음수마진에 미확장이라 명시 */

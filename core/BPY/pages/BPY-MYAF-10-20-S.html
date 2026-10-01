@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점프로필 > 가맹점 사진 수정</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-MYAF-10-20-S">
+<style>
+	body{
+		overflow-x:hidden;
+	}
+</style>
+<input type="hidden" id="AFLT_ID" name="AFLT_ID" value=""/>
+<input type="hidden" id="IMG_CNT" name="IMG_CNT" value=""/>
+<input type="hidden" id="ENTER_FLAG" name="ENTER_FLAG" value=""/>
+<input type="hidden" id="MEMB_CD" name="MEMB_CD" value=""/>
+<input type="hidden" id="APP_CD" name="APP_CD" value=""/>
+
+<div class="wrap bg_f7">
+	<div class="header floating-back-header floating-sticky">
+		<h1>가맹점 사진 등록</h1>
+		<a data-element-id="BPY-MYAF-10-20-S-e07" href="#" class="btn-history-back" id="btn_back">뒤로가기</a>
+	</div>
+	<!-- // header -->
+
+	<div class="container" id="step1">
+		<div class="content">
+			<!-- 가맹점 사진 등록 -->
+			<div class="store_profile addBtn-pb56">
+				<div class="tit_bx">
+					<h2>
+						<strong>가맹점 사진을 추가해 주세요.</strong>
+					</h2>
+					<p>한 장당 10MB 이하, 최대 5장 추가 가능</p>
+				</div>
+
+				<div class="list_add">
+					<!-- 등록된 가맹점 사진 및 소개 -->
+					<div class="store_photo" style="display:none;">
+						<ul id="img_ul">
+							
+								
+									<li img_seq="" img_src_info="" thumb_src_info="" dsp_seq="" img_info="">
+										<div class="inner" name="img_div">
+											<p class="moveBtn"><a href="#none"><span class="blind">사진 순서 변경 버튼: 선택한채로 위아래로 이동해주세요.</span></a></p>
+											<p class="photo"><a href="#none" name="img_thumb"><img alt="매장사진" src="../assets/_sample/card.svg"></a></p>
+											<div class="txt_info" name="img_info_txt">
+												<textarea placeholder="사진 소개글을 작성해 주세요."  class="txt_info" readonly="readonly"></textarea>
+											</div>
+											<p class="modify_btn"><a href="#none" name="btn_modi"><span class="blind">사진수정버튼</span></a></p>
+										</div>
+									</li>	
+								
+							
+							
+						</ul>
+					</div>
+					<!-- //등록된 가맹점 사진 및 소개 -->
+					<!-- 사진 추가 버튼 -->
+					<div class="btn_add">
+						<a data-element-id="BPY-MYAF-10-20-S-e08" href="#none" id="btn_add_pic">
+							<span>+ 사진 추가</span>
+						</a>
+					</div>
+					<!-- //사진 추가 버튼 -->
+					<!-- 이런 사진이 좋아요 -->
+					<p class="btn_tip"><a data-element-id="BPY-MYAF-10-20-S-e09" href="#none" id="btn_tip">이런 사진이 좋아요</a></p>
+					<!-- //이런 사진이 좋아요 -->
+				</div>
+			</div>
+			<!--//가맹점 사진 등록 -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_grey">
+					<a data-element-id="BPY-MYAF-10-20-S-e10" href="#" class="btn_default btn-style-h46 round_r8 on" id="btn_save"><span>저장</span></a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+	</div><!-- // container -->
+	
+	<div class="container" id="step2" style="display:none !important;">
+		<div class="content">
+			<!-- 가맹점 사진 및 소개등록 -->
+			<div class="store_profile addBtn-pb56">
+				<div class="st_intro pdt40">
+					<div class="photo_bx">
+						<p class="photo">
+							<img src="../assets/resource/images/profile/img_info_thumbnail.png" alt="매장 사진"  id="store_img">
+						</p>
+					</div>
+					<h3 class="intro_tit">사진 소개(선택)</h3>
+					<div class="intro_bx type2"><!-- 텍스트박스 입력 시작 시 active 클래스 추가(tip 텍스트 영역 제거용) -->
+						<div class="tx_area">
+							<textarea placeholder="사진 소개글을 작성해 주세요." id="store_int"></textarea>
+						</div>
+						<p class="txt_count"><span id="store_intCnt"><!-- sample:begin -->1<!-- sample:end --></span>/100</p>
+					</div>
+				</div>
+			</div>
+			<!--//가맹점 사진 및 소개 등록 -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_grey">
+					<a href="#" class="btn_default btn-style-h46 round_r8 on" id="btn_edit_ok"><span>확인</span></a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+	</div><!-- // container -->
+	
+</div><!-- // wrap -->
+
+<!-- 레이어팝업 -->
+<div class="layer_overlay" id="dim_pic" style="display:none;">
+	<div class="layer_bPop">
+		<div class="popup_con pd0">
+			<!-- 사진 추가/수정 시 dim 팝업 -->
+			<div class="st_profile_pop">
+				<!-- 메뉴선택 -->
+				<ul>
+					<li><a id="btn_upd" href="#none">수정하기</a></li>
+					<li><a id="btn_del" href="#none">삭제하기</a></li>
+				</ul>
+				<!-- //메뉴선택 -->
+			</div>
+			<!-- //사진 추가/수정 시 dim 팝업 -->
+		</div>
+	</div>
+</div>
+<!-- //레이어팝업 -->
+
+<!-- layer_overlay -->
+<div class="layer_overlay" id="div_tip" style="display:none;">
+	<!-- layerpopup -->
+	<div class="popup_w">
+		<div class="popup_con">
+			<!-- 이런소개 좋아요pop -->
+			<div class="intro_example slide">
+				<p class="btn_close"><a href="#none" id="btn_closePop">팝업 닫기</a></p>
+				<!-- 소개글 샘플 -->
+				<div class="content">
+					<div class="swiper-container example">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="../assets/resource/images/profile/photo2_exp_slide_1.png" alt="우리 가게의 정체성을 보여주세요! / 가게를 대표하는 로고 또는 간판사진을 올려주세요."/></div>
+							<div class="swiper-slide"><img src="../assets/resource/images/profile/photo2_exp_slide_2.png" alt="프로필 사진은 첫인상이에요! 초점이 잘 맞고 선명한 사진을 올려주세요."/></div>
+							<div class="swiper-slide"><img src="../assets/resource/images/profile/photo2_exp_slide_3.png" alt="프로필 사진은 첫인상이에요! 초점이 잘 맞고 선명한 사진을 올려주세요."/></div>
+							<div class="swiper-slide"><img src="../assets/resource/images/profile/photo2_exp_slide_4.png" alt="프로필 사진은 첫인상이에요! 초점이 잘 맞고 선명한 사진을 올려주세요."/></div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<!-- //소개글 샘플 -->
+			</div>
+			<!-- //이런소개 좋아요pop -->
+		</div>
+	</div>
+	<!-- //layerpopup -->
+</div>
+<!-- //layer_overlay -->
+
+<!-- 사진 수정 레이어팝업 -->
+<div class="layer_overlay" id="dim_addPic" style="display:none;">
+	<div class="layer_bPop">
+		<div class="popup_con pd0">
+			<!-- 사진 추가/수정 시 dim 팝업 -->
+			<div class="st_profile_pop">
+				<!-- 메뉴선택 -->
+				<ul>
+					<li><a href="#none" id="call_cam">사진 촬영</a></li>
+					<li><a href="#none" id="call_alb">앨범에서 가져오기</a></li>
+				</ul>
+				<!-- //메뉴선택 -->
+			</div>
+			<!-- //사진 추가/수정 시 dim 팝업 -->
+		</div>
+	</div>
+</div>
+<!-- //레이어팝업 -->
+<!-- Initialize Swiper -->
+<script>
+	$(function(){
+		var swiper = new Swiper('.swiper-container',{
+			slidesPerView: 1,
+			spaceBetween: 0,
+			centeredSlides: true,
+			autoplay: false,
+			loop : false,
+			autoHeight: true,
+			pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+			},
+			observer: true,
+			observeParents:true,
+		});
+	})
+	</script>
+</body>
+</html>

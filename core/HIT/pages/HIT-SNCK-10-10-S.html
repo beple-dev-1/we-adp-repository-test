@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>내역 상세</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-SNCK-10-10-S">
+<div class="wrap js-wrap" >
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+             <a data-element-id="HIT-SNCK-10-10-S-e03" class="hd-btn back" id='btnBack'><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">내역 상세</h1>
+        </div>
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-SNCK-10-10-S-e04" onclick="openMemo()"class="hd-btn memo"><span class="blind-i">채팅하기</span></a>
+        </nav>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 다과 신청 -->
+        <section class="orderling-container">
+            <!-- 컨테이너 헤더 -->
+            <div class="container-hd pdt12">
+                <h2 class="container__hd-title" id='frshBrkTitleTxt'></h2>
+            </div>
+            <div class="container-con">
+                <div class="container__text-box">
+                    <div class="text-wrap">
+                        <p class="container-text head">요청 일시</p>
+                        <p class="container-text" id='regDttmTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                    </div>
+                    <div class="text-wrap">
+                        <p class="container-text head">신청 상태</p>
+                        <p class="container-text" id='procStTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                    </div>
+                    <div class="text-wrap">
+                        <p class="container-text head">행사 일시</p>
+                        <p class="container-text" id='trxDtTex'><!-- sample:begin -->표본<!-- sample:end --></p>
+                    </div>
+                    <div class="text-wrap">
+                        <p class="container-text head">행사 장소</p>
+                        <p class="container-text" id='locationDescTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                    </div>
+                    <div class="text-wrap">
+                        <p class="container-text head">참석 인원</p>
+                        <p class="container-text" id='membCntTex'>명</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 상세 내역 -->
+        <section class="orderling-container detail">
+            <!-- 컨테이너 헤더 -->
+            <div class="container-hd sub-title">
+                <h2 class="container__hd-title">다과 신청 내역</h2>
+            </div>
+            <!-- 컨테이너 컨텐츠 -->
+            <article class="orderling__item-wrap detail-wrap">
+                <!-- 상세내역 -->
+                <div class="orderling__derail-box">
+                    <!-- 컨텐츠 -->
+                    <div class="detail-item">
+                        <!-- 상세 내역 -->
+                        <div class="detail-list">
+                            <ul class="list-bar" id='menuList'><!-- sample:begin -->표본<!-- sample:end --></ul>
+                        </div>
+                        <!-- 총 주문 예상금액 -->
+                        <div class="detail-total">
+                            <p class="shrink-n">총 주문 예상금액</p>
+                            <p class="grow-y tar" ><strong id='amtTxt'><!-- sample:begin -->4,500<!-- sample:end --></strong>원</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <!-- 요청 사항 -->
+        <section class="orderling-container detail" id='requirementArea'>
+            <!-- 컨테이너 헤더 -->
+            <div class="container-hd sub-title">
+                <h2 class="container__hd-title">요청 사항</h2>
+            </div>
+            <div class="container-con">
+                <div class="container__text-box mgt18">
+                    <p class="container-text" id='requirementTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                </div>
+            </div>
+        </section>
+        <!-- 정산 담당자 -->
+        <section class="orderling-container detail">
+            <!-- 컨테이너 헤더 -->
+            <div class="container-hd sub-title">
+                <h2 class="container__hd-title">정산 담당자</h2>
+            </div>
+            <div class="container-con">
+                <div class="container__text-box mgt18">
+                    <div class="text-wrap">
+                        <p class="container-text head width-100">예산금액(1인)</p>
+                        <p class="container-text tar" id='estAmtTxt'><!-- sample:begin -->4,500<!-- sample:end --></p>
+                    </div>
+                    <div class="text-wrap">
+                        <p class="container-text head width-100">담당자명</p>
+                        <p class="container-text tar" id='managerNmTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                    </div>
+                    <div class="text-wrap">
+                        <p class="container-text head width-100">담당 이메일</p>
+                        <p class="container-text tar" id='managerEmailTxt'><!-- sample:begin -->user@example.com<!-- sample:end --></p>
+                    </div>
+                    <div class="text-wrap">
+                        <p class="container-text head width-100">담당자 연락처</p>
+                        <p class="container-text tar" id='managerTelNoTxt'><!-- sample:begin -->010-1234-5678<!-- sample:end --></p>
+                    </div>
+                </div>
+                <!-- 접수완료 안내 -->
+                <div class="container__text-box comp-info" id='proc_st_1' style="display: none;"><!-- 접수거절 및 취소 시 style="display: none;" -->
+                    <div class="text-wrap">
+                        <p class="container-text">*접수완료 후 취소는 다과 담당자에게 직접 문의해주세요</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content_btn-box mgt16" id='proc_st_0' style="display: none;"><!-- 접수거절 or 취소 or 완료 시 style="display: none;" -->
+                  <button type="button" onclick ='updateProcStCheck();' class="content-btn btn-default btn-line2 btn-style-h40">취소 요청</button>
+           <!--   <button type="button" onclick ='updateProcSt();' class="content-btn btn-default btn-line2 btn-style-h40">취소요청</button> --> 
+            </div>
+        </section>
+        <!-- 거절 사유 -->
+        <section class="orderling-container detail" id='proc_st_3'><!-- 접수 거절 시 style="display:none" 제거 -->
+            <!-- 컨테이너 헤더 -->
+            <div class="container-hd sub-title">
+                <h2 class="container__hd-title">거절 사유</h2>
+            </div>
+            <div class="container-con">
+                <div class="container__text-box mgt18">
+                    <p class="container-text" id='proc_st_3_text'><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 플로팅 박스 -->
+<!--         <section class="floating-container bottom js-floating-wrap" style="display:none;">
+            <article class="main_btn-box bg-white">
+                <div class="btn-main">
+                    <a href="#none" class="btn-default radius-mid btn-style-h48 on">비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가
+                        <p class="fw-extra mgr4"><strong>총 금액 <span>0</span>원</strong></p>불필요 시 삭제
+                        신청하기
+                    </a>
+                </div>
+            </article>
+        </section> -->
+    </main>
+    </div>
+</body>
+</html>

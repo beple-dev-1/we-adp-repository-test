@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g data-name="icon_default_청구/수납관리">
+        <g data-name="그룹 25721">
+            <path data-name="패스 22297" d="M0 0h24v24H0z" style="fill:none" transform="translate(4 4)"/>
+        </g>
+        <g data-name="그룹 25722">
+            <path data-name="패스 22298" d="M20 4H4a1.985 1.985 0 0 0-1.99 2L2 18a1.993 1.993 0 0 0 2 2h5v-2H4v-6h18V6a1.993 1.993 0 0 0-2-2zm0 4H4V6h16zm-5.07 11.17-2.83-2.83-1.41 1.41L14.93 22 22 14.93l-1.41-1.41z" style="fill:#8e95a5" transform="translate(4 4)"/>
+        </g>
+    </g>
+</svg>

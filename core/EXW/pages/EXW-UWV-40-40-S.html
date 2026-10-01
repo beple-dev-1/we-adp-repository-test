@@ -54,6 +54,7 @@ _APP_CD = "";
 
      헤더 타이틀은 퍼블리싱 v1.3(2026-08-31) 에서 「계좌 등록」으로 확정됐다 —
      v1.2 의 「본인인증」은 ARS 스텝(D855a) 문구가 남은 오기였다.
+     단 B_ABY 는 기관 요청으로 「머니 계좌 등록」이다 (MONEY_ACCT_APP_CD · :123).
      ================================================================ -->
 
 <!-- ================================================================
@@ -75,7 +76,7 @@ _APP_CD = "";
 			<h1 class="page-name"><span>본인인증</span></h1>
 		</div>
 		<nav class="header__navi">
-			<a href="#none" class="header__btn btn-close js-btn-close">
+			<a data-element-id="EXW-UWV-40-40-S-e02" href="#none" class="header__btn btn-close js-btn-close">
 				<span class="blind">닫기</span>
 			</a>
 		</nav>
@@ -103,7 +104,7 @@ _APP_CD = "";
 				</p>
 
 				<p class="btn-box">
-					<button type="button" class="ars-info-button js-popup-open" data-modal="popup-phone--info">인증 전화가 오지 않나요?</button>
+					<button data-element-id="EXW-UWV-40-40-S-e01" type="button" class="ars-info-button js-popup-open" data-modal="popup-phone--info">인증 전화가 오지 않나요?</button>
 				</p>
 			</div>
 		</section>
@@ -111,7 +112,7 @@ _APP_CD = "";
 		<!-- 퍼블리싱 v1.3 D855a 본인인증_전화 (2026-08-31 추가분) -->
 		<div class="container-floating js-floating-container">
 			<article class="floating__box button-box-spacing">
-				<a href="#none" class="button button-xl button--lv1" id="btn_complArs">
+				<a data-element-id="EXW-UWV-40-40-S-e03" href="#none" class="button button-xl button--lv1" id="btn_complArs">
 					<span>인증완료</span>
 				</a>
 			</article>
@@ -140,6 +141,11 @@ _APP_CD = "";
 			<section class="body__content">
 				<ul class="pdb24">
 					<li>
+						<!-- 퍼블리싱 v1.7 (2026-09-09) 은 이 버튼에 js-toast-handler +
+						     data-toast-icon/data-toast-text 를 붙였으나 채택하지 않는다.
+						     common-ui.js 의 핸들러는 클릭 즉시 토스트를 띄워 실패해도 성공 문구가
+						     뜨고, 성공 시에는 zero_webview_account_v2.js 의 uf_toast 가 같은
+						     아이콘·문구로 다시 띄워 중복된다. 마크업은 종전 그대로 둔다. -->
 						<button type="button" id="btnSetMainAcct"
 						        class="flex-row align-center height-48 fs-16 ta-left js-popup-close">
 							<span class="grow-y">주계좌 설정</span>

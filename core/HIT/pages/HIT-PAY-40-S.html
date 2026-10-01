@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈_제로페이 결제 메인 > 계좌 상세</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/lib/jquery/datepicker/daterangepicker.css">
+</head>
+<body data-screen-id="HIT-PAY-40-S">
+<script>
+    var _app_cd   = "";
+    var _env_mode = "";
+    var _app_os   = "";
+</script>
+
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="REC_INDEX" name="REC_INDEX" value="" />
+    <input type="hidden" id="CHRG_HIS_YN" name="CHRG_HIS_YN" value="" />
+    <input type="hidden" id="CORP_NM" name="CORP_NM" value="" />
+    <input type="hidden" id="CARD_NO" name="CARD_NO" value="" />
+    <input type="hidden" id="ACCT_NO" name="ACCT_NO" value="" />
+    <input type="hidden" id="TG_STTL_YN" name="TG_STTL_YN" value="" />
+    <input type="hidden" id="CLS_DSP_SEQ" name="CLS_DSP_SEQ" value="" />
+    <input type="hidden" id="LMT_SEQ" name="LMT_SEQ" value="" />
+    <input type="hidden" id="PROD_DV" name="PROD_DV" value="" />
+    <input type="hidden" id="MEAL_YN" name="MEAL_YN" value="" />
+    <input type="hidden" id="GO_MAIN" name="GO_MAIN" value="" />
+    <input type="hidden" id="APP_CD" value=""/>
+    <input type="hidden" id="MEMB_CD" value=""/>
+    <input type="hidden" id="MEMB_NM" value=""/>
+    <input type="hidden" id="MOB_NO" value=""/>
+    <input type="hidden" id="APV_AUTH_DV" value=""/>
+    <input type="hidden" id="SETL_IMPS_RSN" value=""/>
+    <input type="hidden" id="SETL_IMPS_RSN_DTL" value=""/>
+    <input type="hidden" id="ORG_ID" value=""/>
+    <input type="hidden" id="MNY_YN" name="MNY_YN" value="" />
+    <input type="hidden" id="POINT_EXP_YN" name="POINT_EXP_YN" value="" />
+    <input type="hidden" id="ZERO_AMT_SETL_YN" value=""/>
+</form>
+<style>
+    /* custom daterangepicker */
+    .sh_date input {
+        background-color: transparent !important;
+        width: 100%;
+    }
+    .daterangepicker th.month, .daterangepicker .calendar-table th {
+        font-weight: bold;
+        color: black;
+    }
+    .daterangepicker td.in-range:not(.active),
+    .daterangepicker td.in-range:not(.active):hover {
+        background-color: #e7f2f7;
+    }
+    .daterangepicker td.in-range.end-date {
+        color: #fff;
+        background-color: #357ebd;
+    }
+    .drp-calendar.right {
+        position: absolute;
+        top: 8px;
+        left: calc(100% - 50px);
+    }
+    .drp-calendar.right .calendar-table {
+        background-color: transparent;
+    }
+    .drp-calendar.right tbody {
+        display: none;
+    }
+    .drp-calendar.right thead tr:nth-child(1) th:nth-child(1),
+    .drp-calendar.right thead tr:nth-child(1) th:nth-child(2)
+    {
+        display: none;
+    }
+    .drp-calendar.right thead tr:nth-child(2) {
+        display: none;
+    }
+    .daterangepicker:nth-of-type(3) {
+        right: 25px !important;
+    }
+    .daterangepicker:nth-of-type(3).drop-up:before {
+        left: unset;
+        right: 9px;
+    }
+    .daterangepicker:nth-of-type(3).drop-up:after {
+        left: unset;
+        right: 10px;
+    }
+</style>
+
+<div class="wrap js-wrap bg-f7">
+
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-PAY-40-S-e19" id="go_back" href="#none"class="hd-btn back"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">H-eat+</h1>
+        </div>
+    </header>
+
+    <!-- 식권 한도승인 버튼 있을때 pdb200 / 버튼없거나 법인일때는 pdb160 -->
+    <!--
+    
+    <div class="container bot_box_style_pdb200">
+    
+    <div class="container bot_box_style_pdb160">
+    
+    -->
+    <main class="container-wrap js-container-wrap">
+        <section class="meal">
+            <!-- 컨텐츠 영역 -->
+            <!-- 결제하기 상단 -->
+            <article class="br_pay_topbx">
+                <div class="inner">
+                    <!-- 기업 이미지 없는 경우 -->
+                    
+                    <span class="ico_accp" style="background: url('../assets/_sample/card.svg') no-repeat 50% 50%;">
+                    
+                    <span class="blind"></span></span>
+                            <!-- 기업 이미지 없는 경우 -->
+                    <div class="acc_paycn">
+                        
+                        <p class="tit">비플머니</p>
+                        
+<!--                        -->
+                        
+                            <!--<p class="won">급여공제</p>-->
+                           	<!--<p class="won">개인부담</p> -->
+                           	<p class="won">4,500</p>
+                        
+                        <!--                        -->
+					</div>
+                    <a data-element-id="HIT-PAY-40-S-e20" id="apprCorp" class="btn_pay" ><span>결제하기</span></a>
+                </div>
+            </article>
+            <!-- //결제하기 상단 -->
+            <!-- 탭영역 -->
+            <article class="tab_bx">
+                <ul>
+                    <li id="info_li" class="on"><a><span class="bg">기본정보</span></a></li><!-- 활성화클래스 on -->
+                    <li id="list_li"><a><span class="bg">이용내역</span></a></li>
+                </ul>
+            </article>
+            <!-- //탭영역 -->
+        </section>
+
+        <section class="bp_money meal">
+            <!-- 2023-07-13 -->
+
+            <!-- 기본정보 -->
+            <article id="infoTab" class="tab-content"><!-- 하단 버튼 생성 시 bot_box_style_pdb200 추가 -->
+                <!-- 기본정보 -->
+                <div id="corpInfo" class="br_info_vbx" style="display: block;">
+                    <div class="inner">
+                        
+                        
+                        <div class="info_tit"></div>
+                        
+                        
+                    </div>
+                </div>
+                <!-- //기본정보 -->
+
+            </article>
+            <!-- 이용내역 -->
+            <article id="listTab" class="tab-content cont_box bg_white">
+                <div class="history_wrap">
+                    <!-- 이용내역 -->
+                    <div class="btn_filter" id="period">
+                        <a data-element-id="HIT-PAY-40-S-e21" id="srch_btn" href="javascript:void(0);"><span id="period_label">전체 · 1주일</span><span class="arr">유효기간 선택</span></a>
+                    </div>
+                    <!-- 이용내역 없을 시 -->
+                    <p class="list_none" style="display:none;">이용내역이 없습니다.</p>
+                    <!-- 이용내역 없을 시 -->
+                    <!-- 이용내역 리스트 -->
+                    <div id="corpList" class="history_list">
+                        <ul id="info_list"><!-- sample:begin -->
+						<a href="#none">
+							<div class="inner">
+								<p class="icon "><span class="blind"></span></p>
+								<div class="cont">
+									<p class="tit">홍길동</p>
+									<p class="date">2026.09.02</p>
+								</div>
+								<div class="won_wrap">
+                                    <p class="won">4,500</p> 
+								</div>
+							</div>
+						</a>
+					</li><!-- sample:end --></ul>
+
+                        <!-- 2026-07-15 [D] 더보기 버튼 추가 (스크롤→버튼 페이징) -->
+                        <div class="history-util">
+                            <button data-element-id="HIT-PAY-40-S-e16" id="btn_more" type="button" class="more-button col--block" style="display:none;">
+                                <span>더보기</span>
+                                <i class="icon icon--arrow-16"></i>
+                            </button>
+                        </div>
+                        <!-- // 2026-07-15 -->
+                    </div>
+                    <!-- 이용내역 리스트 -->
+                    <!-- //이용내역 -->
+                </div>
+            </article>
+            <!-- //이용내역 -->
+            <!-- //컨텐츠 영역 -->
+        </section>
+
+        <!-- 레이어팝업 -->
+        <section id="popup_dim" class="popup-container overlay" style="display:none;">
+            <div class="popup-box bottom">
+                <div id="srch_slider" class="inner-box">
+                    <!-- 컨테이너 컨텐츠 -->
+                    <article class="box-content">
+                        <div class="detail_filter">
+                            <!-- 기간 -->
+                            <h2 class="filter_tit">기간</h2>
+                            <!-- 탭영역 -->
+                            <div class="filter_tab">
+                                <div class="inner four period_tab">
+                                    <a data-element-id="HIT-PAY-40-S-e22" href="#none" class="on" title="선택됨">오늘</a>
+                                    <a data-element-id="HIT-PAY-40-S-e23" href="#none">1주일</a>
+                                    <a data-element-id="HIT-PAY-40-S-e24" href="#none">1개월</a>
+                                    <a data-element-id="HIT-PAY-40-S-e25" href="#none">3개월</a>
+                                </div>
+                            </div>
+                            <div class="filter_date"><!-- 기간설정 시 style="display:block;" -->
+                                <div class="inner">
+                                    <div class="date">
+                                        <input name="from_dt" type="text" maxlength="10">
+                                        <a data-element-id="HIT-PAY-40-S-e26" class="btn_cal">
+                                            <span class="blind">달력</span>
+                                        </a>
+                                    </div>
+                                    <div class="dash">-</div>
+                                    <div class="date">
+                                        <input name="to_dt" type="text" maxlength="10">
+                                        <a class="btn_cal">
+                                            <span class="blind">달력</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- 오류메시지 -->
+                                <div class="err_txt msg" style="display:none;">결제내역 조회기간은 3개월을 넘을 수 없습니다.</div><!-- 조회기간 오류 시 (6개월 넘길경우) style="dipslay:block;" -->
+                            </div>
+                            <!-- 기간 -->
+                            <h2 class="filter_tit">카테고리</h2>
+                            <!-- 탭영역 -->
+                            <div class="filter_tab ctgry_tab">
+                                <div class="inner four">
+                                    <a data-element-id="HIT-PAY-40-S-e27" href="#none" class="on" title="전체 선택됨" ctgry="0">전체</a>
+                                    <a data-element-id="HIT-PAY-40-S-e28" href="#none" ctgry="1">승인내역</a>
+                                    <a data-element-id="HIT-PAY-40-S-e29" href="#none" ctgry="2">취소내역</a>
+                                    <a data-element-id="HIT-PAY-40-S-e30" href="#none" ctgry="3">함께결제</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- 메인버튼 - 팝업용 -->
+                    <div class="main_btn-box pd-lr10 pdb10 mgt32">
+                        <div class="btn-main flex-row">
+                            <button data-element-id="HIT-PAY-40-S-e17" type="button" class="btn_cc btn-default btn-line radius-mid btn-style-h48 on">취소</button>
+                            <button data-element-id="HIT-PAY-40-S-e18" type="button" class="btn_sh btn-default radius-mid btn-style-h48 on">조회하기</button>
+                        </div>
+                    </div>
+                    <!-- 닫기버튼 -->
+<!--                    <p class="close_btn-box"><button type="button" class="close-btn icon close-14"><span class="blind-i">팝업닫기</span></button></p>-->
+                </div>
+            </div>
+        </section>
+        <!-- // 레이어팝업 -->
+
+        <!-- 2022-05-17-->
+        <!-- 하단 고정버튼 -->
+        <div class="btn_botFix_w" id="info_li_floating" style="display: none;">
+            <div class="inner half bg_grey">
+
+                
+                <a href="#" class="typeB btn-style-h48 round_r8 btnLmt" data-type="A">
+                    <span>식권 한도 승인</span>
+                </a>
+                
+
+                
+                <a href="#" class="typeA btn-style-h48 round_r8 btnLmt" data-type="B">
+                    <span>식권 한도 요청</span>
+                </a>
+                
+
+            </div>
+        </div>
+        <!-- 하단 고정버튼 -->
+        <!-- //2022-05-17 -->
+
+        <div class="btn_botFix_w" id="list_li_floating" style="display: none;">
+            <div class="inner">
+                <a class="btn_default btn-style-h48 round_r8 on">
+                    <span>지급/차감 내역</span>
+                </a>
+            </div>
+        </div>
+
+        <!--
+        <!-- 플로팅 박스 ->
+        <section id="qna_ul" class="floating-container bottom js-floating-wrap">
+            <!-- 고객센터 플로팅 박스 위치 변경되었음. ->
+            <article class="cs-wrap"><!-- 미사용 시 display:none ->
+                <div class="cs-item">
+                    <a href="#none" onclick="ComWebkey.callAppActionParam(EntActionCode.ENT_ETC_URL, '_url', '')">
+                        <div class="cs-img"><img alt="" src="../assets/_sample/card.svg"></div>
+                        <div class="cs-con">
+                            <p class="cs-text fw-bold">비플식권 자주 묻는 질문</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="cs-item">
+                    <a href="#none" onclick="ComWebkey.callAppActionParam(EntActionCode.ENT_ETC_URL, '_url', 'https://bizplay.oqupie.com/portal/1685/request')">
+                        <div class="cs-img"><img src="../assets/ent_resource/img/hdc/ico_online@3x.png" alt=""></div>
+                        <div class="cs-con">
+                            <p class="cs-text fw-bold">온라인 고객센터 문의</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="cs-item">
+                    <a href="#none">
+                        <div class="cs-img"><img src="../assets/ent_resource/img/hdc/meal_icon_info.png" alt=""></div>
+                        <div class="cs-con flex-column">
+                            <p class="cs-text">이용문의 <span class="fc-primary fw-extra text-large">1670-0398</span></p>
+                            <p class="cs-text text-small">평일 09:00 ~ 18:00 주말, 공휴일 제외</p>
+                        </div>
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        -->
+
+    </main><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- 2023-07-14 -->
+<!--<script>
+    $(function(){
+        // [D] 탭
+        const tabArea = $('.bp_money .tab-content');
+        const tabBtn = $('.tab_bx li');
+
+        tabBtn.on({
+            click : function(){
+                tabBtn.parent().removeClass('on');
+                $(this).parent().addClass('on');
+                // 활성 탭 번호
+                thisIndex = $(this).parent().index();
+                // 노출/가림 (매장목록, 필터)
+                tabArea.hide(0);
+                tabArea.eq(thisIndex).show(0);
+
+            }
+        });
+
+    })
+</script>-->
+<!-- // 2023-07-14 -->
+</body>
+</html>

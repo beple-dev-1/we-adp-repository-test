@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>입금자명 확인</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-BRND-10-10-20-S">
+<form id="frm">
+	<input type="hidden" name="BANK_CD" id="BANK_CD"/>
+	<input type="hidden" name="ACCT_NO" id="ACCT_NO"/>
+</form>
+<!-- // wrap -->
+
+<div class="wrap" com-step-id="step2">
+	<div class="header floating-back-header floating-sticky">
+		<a data-element-id="BPY-BRND-10-10-20-S-e07" class="btn-history-back type2" id="step2_btn_back">상위메뉴로 이동</a>
+		<h1>계좌인증</h1>
+	</div>
+
+	<div class="container">
+		<div class="content">
+			<!-- 등록 계좌 있음 -->
+			<div class="account_select cert_fishing pdb32">
+				<div class="cert-hd">
+					<p class="hd-text tit">입금자명을 확인해주세요.</p>
+					<p class="hd-text fc-info">계좌 거래내역에서 입금된 1원의 입금자명을 확인 후 비플 뒤 3자리 숫자를 입력해 주세요.</p>
+				</div>
+				<!-- 인증 예시 -->
+				<div class="mgt24 pd-lr20">
+					<img src="../assets/resource/images/zero/acc_cert-sampleimg.png" alt="계좌인증 예시 이미지 // 입금자명 : 비플*** / 입금액 : 1원">
+				</div>
+				<!-- 인증 입력 -->
+				<div class="cert_input-wrap js-cert-input">
+					<div class="cert_input-item"><!-- 입력 활성화 시 on 클래스 추가 -->
+						<input data-element-id="BPY-BRND-10-10-20-S-e08" type="tel" maxlength="1" id="num1">
+					</div>
+					<div class="cert_input-item">
+						<input data-element-id="BPY-BRND-10-10-20-S-e09" type="tel" maxlength="1" id="num2">
+					</div>
+					<div class="cert_input-item">
+						<input data-element-id="BPY-BRND-10-10-20-S-e10" type="tel" maxlength="1" id="num3">
+					</div>
+				</div>
+				<!-- 2024-08-16 추가 -->
+				<!-- 숫자 입력하기 버튼 -->
+				<div class="num-input mgt24 js-num-input">
+					<button data-element-id="BPY-BRND-10-10-20-S-e06" type="button" class="num-input__button">
+						<span>숫자 입력하기</span>
+					</button>
+				</div>
+				<!-- // 2024-08-16 -->
+			</div>
+			</div>
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- // wrap -->
+</body>
+</html>

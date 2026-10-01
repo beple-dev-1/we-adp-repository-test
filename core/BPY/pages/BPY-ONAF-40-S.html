@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비대면결제 > 비대면결제과정</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-ONAF-40-S">
+<form name="frm" id="frm" method="post">
+    <!-- hidden input -->
+    <input type="hidden" id="TGT_ORDER_DT"          name="TGT_ORDER_DT"         value="" />
+    <input type="hidden" id="TGT_ORDER_ID"          name="TGT_ORDER_ID"         value="" />
+    <input type="hidden" id="TGT_YN"                name="TGT_YN"               value="" />
+    <input type="hidden" id="AMT"                   name="AMT"                  value="" />
+    <input type="hidden" id="TRX_TP"                name="TRX_TP"               value="" />
+    <input type="hidden" id="CHNL_CD"               name="CHNL_CD"              value="" />
+    <input type="hidden" id="TGT_STTL_YN"           name="TGT_STTL_YN"          value="" />
+    <input type="hidden" id="REC_INDEX"             name="REC_INDEX"            value="" />
+    <input type="hidden" id="MNY_YN"                name="MNY_YN"               value="" />
+    <input type="hidden" id="MNY_CUR_PRICE"         name="MNY_CUR_PRICE"        value="" />
+    <input type="hidden" id="ITGR_MNY_CUR_PRICE"    name="ITGR_MNY_CUR_PRICE"   value="" />
+    <input type="hidden" id="MNY_NM"                name="MNY_NM"               value="" />
+    <input type="hidden" id="CARD_NO"               name="CARD_NO"              value="" />
+    <input type="hidden" id="pay_once_min_amt"                                  value="" />
+    <input type="hidden" id="pay_once_max_amt"                                  value="" />
+    <input type="hidden" id="pay_day_max_amt"                                   value="" />
+    <input type="hidden" id="pay_mm_max_amt"                                    value="" />
+    <input type="hidden" id="day_amt"                                           value="" />
+    <input type="hidden" id="mm_amt"                                            value="" />
+    <input type="hidden" id="qr_code"                                           value="" />
+    <input type="hidden" id="pay_type"                                          value=""/>
+    <input type="hidden" id="MEMB_CD"                                           value="" />
+    <input type="hidden" id="APP_CD"                                            value="" />
+    <input type="hidden" id="AFLT_ID"                                           value="" />
+    <input type="hidden" id="ZEROPAY_GIFT_USER_NO"                              value="" />
+    <input type="hidden" id="bank_cd" />
+    <input type="hidden" id="acct_no" />
+    <input type="hidden" id="acct_seq" />
+</form>
+
+<div class="wrap un_pay_newType">
+    <div class="header floating-back-header floating-sticky">
+        <a data-element-id="BPY-ONAF-40-S-e09" href="#" class="btn-history-back type2" id="go_back" role="button">상위 메뉴로 이동</a>
+        <h1 role="none">비대면 결제</h1>
+        <div class="right">
+            <a data-element-id="BPY-ONAF-40-S-e10" href="#none" class="btn-history-back" id="go_home" role="button">비대면 결제 금액 입력 닫기</a>
+        </div>
+    </div><!-- // header -->
+    <div class="container">
+        <div class="content">
+            
+
+        <div class="gift_accbx">
+            <div class="inner">
+                
+                        <!--<a class="link ico" id="selectedAcct">비플머니에서 결제됩니다.</a>-->
+                        <div class="tit ico" id="selectedAcct">비플머니에서 결제됩니다.</div>
+                        <input type="hidden" name="inc_mok_nm" id="inc_mok_nm" value=""/>
+                        <input type="hidden" name="inc_lmt_amt" id="inc_lmt_amt" value=""/>
+                        <input type="hidden" name="inc_card_no" id="inc_card_no" value=""/>
+                        <input type="hidden" name="inc_org_nm" id="inc_org_nm" value=""/>
+                        <input type="hidden" name="inc_cls_dsp_nm" id="inc_cls_dsp_nm" value=""/>
+
+                    
+
+            </div>
+        </div>
+
+        
+            <!-- 레이어 -->
+            <div class="layer_bPop" id="layer_acct_onaf" style="display:none;">
+                <div class="pop_box">
+                    <div class="pop_content">
+                        <div class="pop_b_cn type1">
+                            <div class="p_lytit">
+                                계좌선택
+                                <!--<div class="right" id="manage_acct"><a class="link">계좌관리</a></div>-->
+                            </div>
+                            <div class="p_acc_sltbx">
+                                <ul>
+
+                                    <li onClick="fn_selectedCp('', '비플머니', '', '')"><span class="ic_b ic_b1"></span>비플머니 계좌</li>
+                                    
+                                            <li onClick="fn_selectedCp('', '비플머니', '', '')"><span class="ic_b ic_b"></span>비플머니 계좌</li>
+                                            
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //레이어 -->
+
+        
+
+    <script type="text/javascript">
+        var path = window.location.pathname;
+        var pageName = path.split("/").pop(); //현재 페이지명
+
+        if(pageName.indexOf("zero_onaf2_approve.act") == -1){
+            $("#selectedAcct").removeClass("ico");
+        }
+
+        $("body").click(function(e){
+            //결제계좌선택 레이어 영역이 아닌 경우, hide
+            if($("#layer_acct_onaf").is(":visible")){
+                if( !$(e.target).parents().is($("#layer_acct_onaf")) && !$(e.target).parents().is($(".gift_accbx")) ){
+                    $("#layer_acct_onaf").hide();
+                }
+            }
+        });
+
+        $(".gift_accbx").click(function(){
+            //결제하기 페이지에서만 결제계좌 선택 가능하도록
+            if(pageName.indexOf("zero_onaf2_approve.act") > -1){
+                //결제계좌선택 레이어 show
+                $("#layer_acct_onaf").show();
+            }
+        });
+
+        $("#manage_acct").click(function(){
+            location.href="main_account.act";
+        });
+
+        //개인 계좌선택한 경우
+        function fn_selected(bank_nm, acct_no, acct_no_enc, bank_cd, seq){
+            $("#selectedAcct").text(bank_nm+"("+acct_no.substring(acct_no.length-4)+")계좌에서 결제됩니다." );
+            $("#inc_bank_nm").val(bank_nm);
+            $("#inc_acct_no").val(acct_no);
+            $("#inc_acct_no_enc").val(acct_no_enc);
+            $("#inc_bank_cd").val(bank_cd);
+            $("#inc_seq").val(seq);
+            $("#layer_acct_onaf").hide();
+
+            fn_init_qr_confirm();
+        }
+
+        //법인 계좌선택한 경우
+        function fn_selectedCp(org_nm, inc_cls_dsp_nm, card_no, nftf_pay_rest){
+            if(nftf_pay_rest == "Y"){
+                return alert("기업제로페이 비대면결제가\n제한된 결제계좌 입니다.");
+            }
+            $("#selectedAcct").text(inc_cls_dsp_nm+"에서 결제됩니다." );
+            $("#inc_org_nm").val(org_nm);
+            $("#inc_cls_dsp_nm").val(inc_cls_dsp_nm);
+            $("#inc_card_no").val(card_no);
+            $("#layer_acct_onaf").hide();
+
+            fn_init_qr_confirm();
+        }
+
+        //세션 QR_CONFIRM 값 초기화
+        function fn_init_qr_confirm() {
+            var jexAjax = jexjs.createAjaxUtil("acct_onaf_zeropay_r001");
+            jexAjax.setting("async", false);
+            jexAjax.execute(function (response) {
+            });
+        }
+    </script>
+
+            <div class="un_payipt_w">
+                <!-- 가맹점 정보 -->
+                <div id="aflt_info" class="ipt_infobx"><!-- [D] 정보 오픈 및 해제 시 open 클래스 추가/삭제 -->
+                    <dl class="inner">
+                        <dt class="store" >
+                            <a style="font-size:21px; background-position: right 50%" href="#none"></a>
+                            <!-- 2022-01-14 툴팁 추가 -->
+                            <div id="onaf_tooltip" class="tooltip_bx">
+                                <span>매장에 비대면 결제 가능 여부를 문의하세요.</span>
+                            </div>
+                            <!-- //2022-01-14 툴팁 추가 -->
+                        </dt>
+                        <dd id="aflt_detail">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 75px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th>주소</th>
+                                    <td>
+                                        서울 강남구 테헤란로 1길 10 101동 1001호<br>
+                                        <a data-element-id="BPY-ONAF-40-S-e11" style="display: none;" id="aflt_map" href="#none" class="map">지도보기</a>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>대표번호</th>
+                                    <td>
+                                        
+                                        <a href="#none" onClick="location.href='tel:'"></a>
+                                        
+                                        
+                                        
+                                        <br/>
+                                        
+                                        <a href="#none" onClick="location.href='tel:'"></a>
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>대표자명</th>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </dd>
+                    </dl>
+                </div>
+                <!-- //가맹점 정보 -->
+                <!-- 컨텐츠 영역 -->
+                <div class="row-bothpadding20-style btn">
+                    <!-- 작성영역 -->
+                    <div class="un_pipt_bx">
+                        <dl>
+                            <dt>결제금액</dt>
+                            <dd>
+                                <div class="un_input"><!-- 작성시 ipt 클래스 추가 -->
+                                    <input data-element-id="BPY-ONAF-40-S-e14" type="tel" id="tr_amt" placeholder="금액을 입력하세요" maxlength="10" jex-input="commaFormat" placeholder="0" data-input="commaFormat" ><a data-element-id="BPY-ONAF-40-S-e12" class="del btn_del"><span class="blind">삭제</span></a>
+                                </div>
+                                <div class="title-page-13 error" id="err_txt" style="margin-top: 5px; color:red;" aria-hidden="true"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+                            </dd>
+                        </dl>
+                        <div class="info_box">
+                            <!-- 결제수단 영역 -->
+                            <dl class="payment_gift">
+                                <dt>계좌</dt>
+                                <dd>
+                                </dd>
+                            </dl>
+                            <!-- //결제수단 영역 -->
+
+                            <!--
+                                <!-- 나의 적립금 ->
+                                <dl class="point">
+                                    <dt>나의 적립금</dt>
+                                    <dd>
+                                        <p><strong>적립금 4,500원</strong> 사용하기</p>
+                                        <div class="point_ball">
+                                            <a href="#none" ><!-- 활성화 클래스 on ->
+                                                <span class="ball">on/off</span>
+                                            </a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            -->
+
+                            <!-- 전달 메세지 -->
+                            <dl class="message">
+                                <dt>전달 메세지</dt>
+                                <dd>
+                                    <div class="un_txtbx">
+                                        <textarea data-element-id="BPY-ONAF-40-S-e15" placeholder="사장님에게 전달할 메시지를 입력하세요." id="MEMO" name="MEMO" maxlength="200"></textarea>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <!-- //전달 메세지 -->
+                        </div>
+                        <!-- 하단 문구 체크 -->
+                        <div class="un_txt_chk">
+                            <label>
+                                <input data-element-id="BPY-ONAF-40-S-e16" type="checkbox" id="chk_mask" class="chk-general">
+                                <span id="span_mask">개인정보 비공개 전송</span>
+                            </label>
+                        </div>
+                        <!-- //하단 문구 체크 -->
+                    </div>
+                    <!-- 비대면 결제 결제금액 입력 -->
+                </div>
+            </div>
+            <!-- //컨텐츠 영역 -->
+
+            <!-- 하단 고정버튼 -->
+            <div class="fixed-bottom-section">
+                <a data-element-id="BPY-ONAF-40-S-e13" href="#" id="approve" class="btn-submit btn-skyBlue"><span>결제하기</span></a><!-- 활성화클래스 on -->
+            </div>
+            <!-- //하단 고정버튼 -->
+
+<!-- 220125 기존 비대면 결제 -->
+<!--
+            
+
+            <!-- 가맹점 정보 ->
+            <div class="un_st_infobx">
+                <div class="inner">
+                    <div class="un_st_tit">
+                        <p><span class="nm"></span></p>
+                        <p id="star" class="star  on " onclick="modifyBookmark();"><a href="#" role="button" aria-label="">즐겨찾기</a></p> <!-- 활성화시 on 클래스 추가 부탁드립니다. 2021-08-12 ->
+                    </div>
+                    <div class="un_st_cn">
+                        <table role="none">
+                            <colgroup><col style="width:80px;"><col></colgroup>
+                            <tbody>
+                            <tr>
+                                <th>주소</th>
+                                <td>서울 강남구 테헤란로 1길 10 101동 1001호</td>
+                            </tr>
+                            <tr>
+                                <th>대표명</th>
+                                <td></td>
+                            </tr>
+                            &lt;%&ndash;&ndash;%&gt;
+                            &lt;%&ndash;<tr>
+                                <th>대표번호</th>
+                                <td><a class="tel" onClick="location.href='tel:'"></a></td>
+                            </tr>&ndash;%&gt;
+                            
+                                <tr>
+                                    <th>대표번호</th>
+                                    <td>
+                                        <h1 role="button">
+                                            
+                                                <a class="tel" aria-label="" onClick="location.href='tel:'"></a>
+                                            
+                                                <br>
+                                                <a class="tel" aria-label="" onClick="location.href='tel:'"></a>
+                                            
+                                        </h1>
+                                    </td>
+                                </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- //가맹점 정보 ->
+
+            <!-- 컨텐츠 영역 ->
+            <div class="row-bothpadding20-style btn">
+                <!-- 작성영역 ->
+                <div class="un_pipt_bx">
+                    <dl>
+                        <dt role="none" aria-label="결제금액">결제금액 <em class="point"></em></dt>
+                        <dd>
+                            <div class="un_input">
+                                <input type="tel" id="tr_amt" placeholder="금액을 입력하세요" maxlength="10" jex-input="commaFormat" placeholder="0" data-input="commaFormat"
+                                       role="textbox" contenteditable="true" aria-describedby="err_txt">
+                                <a class="del btn_del" role="button" aria-label="(입력된 값) 지우기" aria-hidden="true"><span class="blind">삭제</span></a>
+                            </div>
+                            &lt;%&ndash;<div class="un_input ipt" style="display:none;"><!-- 작성시 ipt 클래스 추가 ->
+                                <input type="text" placeholder="금액을 입력하세요" value="15000">
+                            </div>&ndash;%&gt;
+                            <div class="title-page-13 error" id="err_txt" style="margin-top: 5px; color:red;" aria-hidden="true"></div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt role="none" aria-label="전달 메세지">전달 메세지 &lt;%&ndash;<em class="point"></em>&ndash;%&gt;</dt>
+                        <dd>
+                            <div class="un_txtbx">
+                                <textarea placeholder="전달 메시지 (최대 200자)" id="MEMO" maxlength="200" role="textbox" contenteditable="true"></textarea>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <!-- //작성영역 ->
+
+                <!-- 하단 문구 체크 ->
+                <div class="un_txt_chk">
+                    <label role="button" aria-label="선택안됨 내 이름과 번호를 마스킹처리해서 전송합니다.">
+                        <input type="checkbox" id="chk_mask" class="chk-general">
+                        <span id="span_mask">내 이름과 번호를 마스킹처리해서 전송합니다.</span>
+                    </label>
+                </div>
+                <!-- //하단 문구 체크 ->
+            </div>
+            <!-- //컨텐츠 영역 ->
+
+            <!-- 하단 고정버튼 2021-08-13 ->
+            <div class="fixed-bottom-section" role="button" aria-label="결제하기">
+                <a href="#none" id="approve" class="btn-submit btn-dark-op90" aria-hidden="true"><span>결제하기</span></a><!-- 활성화클래스 on ->
+            </div>
+            <!-- //하단 고정버튼 ->
+
+            &lt;%&ndash;            <!-- 하단 고정버튼 ->&ndash;%&gt;
+            &lt;%&ndash;            <div class="fixed-bottom-section">&ndash;%&gt;
+            &lt;%&ndash;                <a class="btn-submit btn-dark-op90" id="approve"><span>결제하기</span></a><!-- 활성화클래스 on ->&ndash;%&gt;
+            &lt;%&ndash;            </div>&ndash;%&gt;
+            &lt;%&ndash;            <!-- //하단 고정버튼 ->&ndash;%&gt;
+
+-->
+<!-- 기존 비대면 결제 -->
+
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- 결제확인 레이어 -->
+<div class="layer_bPop" id="apr_popup_area" style="display:none;">
+    <div class="pop_box">
+        <div class="pop_content">
+            <div class="pop_b_cn">
+                <!-- 상단 영역 -->
+                <div class="pb_toptxt" >
+                    <p class="tit"><em class="nm"></em>에서</p>
+                    <p class="txt"><em class="won">원</em>을 결제하시겠습니까?</p>
+                </div>
+                <!-- //상단 영역 -->
+                <!-- 컨텐츠 영역 -->
+                <div class="pb_cnv">
+                    <table id="table_label">
+                        <colgroup>
+                            <col style="width:90px;"><col>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th>가맹점 주소</th>
+                            <td><div class="ellipsis">서울 강남구 테헤란로 1길 10 101동 1001호</div></td>
+                        </tr>
+                        <tr>
+                            <th>대표명</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>결제수단</th>
+                            <td id="apr_way"><!-- sample:begin -->표본<!-- sample:end --></td>
+                        </tr>
+                        <tr>
+                            <th>전달 메세지</th>
+                            <td id="apr_memo"><!-- sample:begin -->표본<!-- sample:end --></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //컨텐츠 영역 -->
+            </div>
+        </div>
+        <div class="pop_button btns">
+            <a class="typeB" id="cncl_popup" role="button">아니오</a>
+            <a class="typeA" id="apr_popup" role="button">예</a>
+        </div>
+    </div>
+</div>
+<!-- //결제확인 레이어  -->
+
+<!-- modal overlay -->
+<div id="modaloverlay1" class="modaloverlay" style="display: none;">
+    <div class="lytb"><div class="lytb_row"><div class="lytb_td">
+        <!-- layerpopup -->
+        <!-- 2021-08-23 -->
+        <div class="un_layer_confirm">
+            <div class="layer_po" role="menuitem">
+                <div class="cont">
+                    <div class="pop_txt pop_left">
+                        이름과 번호를 마스킹 처리할 시<br>
+                        결제자 확인이 어려울 수 있습니다.
+
+                        <strong>
+                            그래도 마스킹 처리 하시겠습니까?
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="confirmBtn">
+                <a class="btn_pop_txt_grey" id="modal_masking_no" role="button"><span>아니오</span></a>
+                <a class="btn_pop_txt_blue" id="modal_masking_yes" role="button"><span>네</span></a>
+            </div>
+        </div>
+        <!-- //2021-08-23 -->
+        <!-- //layerpopup -->
+    </div></div></div>
+</div>
+<!-- //modal overlay -->
+
+<!-- modal overlay -->
+<!--<div id="modaloverlay1" class="modaloverlay" style="display:none;">-->
+<!--    <div class="lytb"><div class="lytb_row"><div class="lytb_td">-->
+<!--        <!-- layerpopup ->-->
+<!--        <div class="layer_style1">-->
+<!--            <div class="layer_po">-->
+<!--                <div class="cont">-->
+<!--                    <div class="pop_txt pop_left">-->
+<!--                        이름과 번호를 마스킹 처리할 시<br>-->
+<!--                        결제자 확인이 어려울 수 있습니다.-->
+<!--                        <p class="txt_fb">그래도 마스킹 처리 하시겠습니까?</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="ly_btn_fix_botm btn_both">-->
+<!--                <a class="btn_pop gray_st" id="modal_masking_no"><span>아니오</span></a>-->
+<!--                <a class="btn_pop" id="modal_masking_yes"><span>예</span></a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <!-- //layerpopup ->-->
+<!--    </div></div></div>-->
+<!--</div>-->
+<!-- //modal overlay -->
+
+<!-- modal overlay -->
+<!-- 2021-08-12 -->
+<div id="modaloverlay2" class="modaloverlay" style="display: none;">
+    <div class="lytb"><div class="lytb_row"><div class="lytb_td">
+        <!-- layerpopup -->
+        <div class="un_layer_confirm">
+            <div class="layer_po" role="menuitem">
+                <div class="cont">
+                    <div class="pop_txt pop_left">
+                        전달 메시지 내용이 없습니다.<br>
+                        메시지 없이 결제 하시겠습니까?<br>
+
+                        <!--                        <strong>메시지를 입력하지 않고 결제하시겠습니까?</strong>-->
+                    </div>
+                </div>
+            </div>
+            <!--            <div class="noshow">-->
+            <!--                <span>다신 보지 않기</span>-->
+            <!--                <span id="noshow_ball" class="ball on"> <!-- 활성화시 on 클래스 추가 부탁드립니다. ->-->
+            <!--                    <a href="#none">-->
+            <!--                        <span>ball</span>-->
+            <!--                    </a>-->
+            <!--                </span>-->
+            <!--            </div>-->
+            <div class="confirmBtn">
+                <a id="modal_memo_no" class="btn_pop_txt_grey" role="button"><span>아니오</span></a>
+                <a id="modal_memo_yes" class="btn_pop_txt_blue" role="button"><span>네</span></a>
+            </div>
+        </div>
+        <!-- //layerpopup -->
+    </div></div></div>
+</div>
+</body>
+</html>

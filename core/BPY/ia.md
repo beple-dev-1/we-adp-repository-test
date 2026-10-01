@@ -1,6 +1,6 @@
 # BPY IA 이름표
 
-> `03_IA/시스템별/` 에서 기계로 옮긴 것이다. 정본은 그쪽이다.
+> 추출기 저장소 `ia/` 에서 기계로 옮긴 것이다. 정본은 추출 중에는 그쪽, 추출이 끝나면 Builder 다. 번호는 키 장부(`keys.py`)가 얼린다.
 
 ## 이름표
 - BPY: 비플페이 앱
@@ -141,3 +141,142 @@
 - BPY/WELF/30: 복지포인트 결제 검증
 - BPY/WELF/40: 복지포인트 이용정보 조회
 - BPY/WELF/40/10: 복지포인트 이관 요청 화면
+
+--- 배치 ---
+- 순서: 001 / 경로: BPY/MYAF / 화면:
+- 순서: 002 / 경로: BPY/MYAF/10 / 화면: BPY-MYAF-10-S
+- 순서: 003 / 경로: BPY/MYAF/10/10 / 화면: BPY-MYAF-10-10-S
+- 순서: 004 / 경로: BPY/MYAF/10/20 / 화면: BPY-MYAF-10-20-S
+- 순서: 005 / 경로: BPY/MYAF/10/30 / 화면: BPY-MYAF-10-30-S
+- 순서: 006 / 경로: BPY/MYAF/10/40 / 화면: BPY-MYAF-10-40-S
+- 순서: 007 / 경로: BPY/MYAF/10/50 / 화면: BPY-MYAF-10-50-S
+- 순서: 008 / 경로: BPY/MYAF/20 / 화면: BPY-MYAF-20-S
+- 순서: 009 / 경로: BPY/MYAF/20/10 / 화면: BPY-MYAF-20-10-S
+- 순서: 010 / 경로: BPY/MYAF/20/20 / 화면: BPY-MYAF-20-20-S
+- 순서: 011 / 경로: BPY/MYAF/20/30 / 화면: BPY-MYAF-20-30-S
+- 순서: 012 / 경로: BPY/MYAF/30 / 화면: BPY-MYAF-30-S
+- 순서: 013 / 경로: BPY/MYAF/30/10 / 화면: BPY-MYAF-30-10-S
+- 순서: 014 / 경로: BPY/MYAF/30/20 / 화면: BPY-MYAF-30-20-S
+- 순서: 015 / 경로: BPY/MYAF/40 / 화면: BPY-MYAF-40-S
+- 순서: 016 / 경로: BPY/MYAF/40/10 / 화면: BPY-MYAF-40-10-S
+- 순서: 017 / 경로: BPY/MYAF/40/10/10 / 화면: BPY-MYAF-40-10-10-S
+- 순서: 018 / 경로: BPY/MYAF/40/20 / 화면: BPY-MYAF-40-20-S
+- 순서: 019 / 경로: BPY/MYAF/50 / 화면: BPY-MYAF-50-S
+- 순서: 020 / 경로: BPY/HIST / 화면:
+- 순서: 021 / 경로: BPY/HIST/10 / 화면: BPY-HIST-10-S
+- 순서: 022 / 경로: BPY/HIST/10/10 / 화면: BPY-HIST-10-10-S
+- 순서: 023 / 경로: BPY/HIST/10/10/10 / 화면: BPY-HIST-10-10-10-S
+- 순서: 024 / 경로: BPY/HIST/10/20 / 화면: BPY-HIST-10-20-S
+- 순서: 025 / 경로: BPY/HIST/10/20/10 / 화면: BPY-HIST-10-20-10-S
+- 순서: 026 / 경로: BPY/HIST/10/20/20 / 화면: BPY-HIST-10-20-20-S
+- 순서: 027 / 경로: BPY/HIST/20 / 화면: BPY-HIST-20-S
+- 순서: 028 / 경로: BPY/HIST/20/10 / 화면: BPY-HIST-20-10-S
+- 순서: 029 / 경로: BPY/HIST/20/10/10 / 화면: BPY-HIST-20-10-10-S
+- 순서: 030 / 경로: BPY/HIST/30 / 화면: BPY-HIST-30-S
+- 순서: 031 / 경로: BPY/HIST/40 / 화면: BPY-HIST-40-S
+- 순서: 032 / 경로: BPY/HIST/40/10 / 화면: BPY-HIST-40-10-S
+- 순서: 033 / 경로: BPY/HIST/40/20 / 화면: BPY-HIST-40-20-S
+- 순서: 034 / 경로: BPY/HIST/40/30 / 화면: BPY-HIST-40-30-S
+- 순서: 035 / 경로: BPY/HIST/40/40 / 화면: BPY-HIST-40-40-S
+- 순서: 036 / 경로: BPY/HIST/40/50 / 화면: BPY-HIST-40-50-S
+- 순서: 037 / 경로: BPY/HIST/50 / 화면: BPY-HIST-50-S
+- 순서: 038 / 경로: BPY/ONAF / 화면:
+- 순서: 039 / 경로: BPY/ONAF/10 / 화면: BPY-ONAF-10-S
+- 순서: 040 / 경로: BPY/ONAF/10/10 / 화면: BPY-ONAF-10-10-S
+- 순서: 041 / 경로: BPY/ONAF/20 / 화면: BPY-ONAF-20-S
+- 순서: 042 / 경로: BPY/ONAF/20/10 / 화면: BPY-ONAF-20-10-S
+- 순서: 043 / 경로: BPY/ONAF/30 / 화면: BPY-ONAF-30-S
+- 순서: 044 / 경로: BPY/ONAF/30/10 / 화면: BPY-ONAF-30-10-S
+- 순서: 045 / 경로: BPY/ONAF/30/20 / 화면: BPY-ONAF-30-20-S
+- 순서: 046 / 경로: BPY/ONAF/30/30 / 화면: BPY-ONAF-30-30-S
+- 순서: 047 / 경로: BPY/ONAF/30/40 / 화면: BPY-ONAF-30-40-S
+- 순서: 048 / 경로: BPY/ONAF/40 / 화면: BPY-ONAF-40-S
+- 순서: 049 / 경로: BPY/ONAF/40/10 / 화면: BPY-ONAF-40-10-S
+- 순서: 050 / 경로: BPY/ONAF/50 / 화면: BPY-ONAF-50-S
+- 순서: 051 / 경로: BPY/ONAF/60 / 화면: BPY-ONAF-60-S
+- 순서: 052 / 경로: BPY/ONAF/70 / 화면: BPY-ONAF-70-S
+- 순서: 053 / 경로: BPY/ONAF/70/10 / 화면: BPY-ONAF-70-10-S
+- 순서: 054 / 경로: BPY/ONAF/70/10/10 / 화면: BPY-ONAF-70-10-10-S
+- 순서: 055 / 경로: BPY/ONAF/80 / 화면: BPY-ONAF-80-S
+- 순서: 056 / 경로: BPY/COMN / 화면:
+- 순서: 057 / 경로: BPY/COMN/10 / 화면:
+- 순서: 058 / 경로: BPY/COMN/10/10 / 화면:
+- 순서: 059 / 경로: BPY/COMN/10/10/10 / 화면: BPY-COMN-10-10-10-S
+- 순서: 060 / 경로: BPY/COMN/10/10/20 / 화면: BPY-COMN-10-10-20-S
+- 순서: 061 / 경로: BPY/COMN/10/10/30 / 화면: BPY-COMN-10-10-30-S
+- 순서: 062 / 경로: BPY/COMN/10/10/40 / 화면: BPY-COMN-10-10-40-S
+- 순서: 063 / 경로: BPY/COMN/10/20 / 화면:
+- 순서: 064 / 경로: BPY/COMN/10/20/10 / 화면: BPY-COMN-10-20-10-S
+- 순서: 065 / 경로: BPY/COMN/10/20/20 / 화면: BPY-COMN-10-20-20-S
+- 순서: 066 / 경로: BPY/COMN/20 / 화면:
+- 순서: 067 / 경로: BPY/COMN/20/10 / 화면: BPY-COMN-20-10-S
+- 순서: 068 / 경로: BPY/COMN/20/20 / 화면: BPY-COMN-20-20-S
+- 순서: 069 / 경로: BPY/COMN/20/30 / 화면: BPY-COMN-20-30-S
+- 순서: 070 / 경로: BPY/COMN/20/30/10 / 화면: BPY-COMN-20-30-10-S
+- 순서: 071 / 경로: BPY/COMN/20/40 / 화면: BPY-COMN-20-40-S
+- 순서: 072 / 경로: BPY/COMN/20/50 / 화면: BPY-COMN-20-50-S
+- 순서: 073 / 경로: BPY/COMN/30 / 화면:
+- 순서: 074 / 경로: BPY/COMN/30/10 / 화면: BPY-COMN-30-10-S
+- 순서: 075 / 경로: BPY/COMN/30/20 / 화면: BPY-COMN-30-20-S
+- 순서: 076 / 경로: BPY/COMN/30/30 / 화면: BPY-COMN-30-30-S
+- 순서: 077 / 경로: BPY/COMN/40 / 화면: BPY-COMN-40-S
+- 순서: 078 / 경로: BPY/PAY / 화면:
+- 순서: 079 / 경로: BPY/PAY/10 / 화면: BPY-PAY-10-S
+- 순서: 080 / 경로: BPY/PAY/10/10 / 화면: BPY-PAY-10-10-S
+- 순서: 081 / 경로: BPY/PAY/10/20 / 화면: BPY-PAY-10-20-S
+- 순서: 082 / 경로: BPY/PAY/20 / 화면: BPY-PAY-20-S
+- 순서: 083 / 경로: BPY/PAY/20/10 / 화면: BPY-PAY-20-10-S
+- 순서: 084 / 경로: BPY/PAY/20/20 / 화면: BPY-PAY-20-20-S
+- 순서: 085 / 경로: BPY/PAY/20/20/10 / 화면: BPY-PAY-20-20-10-S
+- 순서: 086 / 경로: BPY/PAY/30 / 화면: BPY-PAY-30-S
+- 순서: 087 / 경로: BPY/PAY/40 / 화면: BPY-PAY-40-S
+- 순서: 088 / 경로: BPY/PAY/50 / 화면: BPY-PAY-50-S
+- 순서: 089 / 경로: BPY/BRND / 화면:
+- 순서: 090 / 경로: BPY/BRND/10 / 화면: BPY-BRND-10-S
+- 순서: 091 / 경로: BPY/BRND/10/10 / 화면:
+- 순서: 092 / 경로: BPY/BRND/10/10/10 / 화면: BPY-BRND-10-10-10-S
+- 순서: 093 / 경로: BPY/BRND/10/10/20 / 화면: BPY-BRND-10-10-20-S
+- 순서: 094 / 경로: BPY/BRND/10/10/30 / 화면: BPY-BRND-10-10-30-S
+- 순서: 095 / 경로: BPY/BRND/10/20 / 화면: BPY-BRND-10-20-S
+- 순서: 096 / 경로: BPY/BRND/10/20/10 / 화면: BPY-BRND-10-20-10-S
+- 순서: 097 / 경로: BPY/BRND/10/20/20 / 화면: BPY-BRND-10-20-20-S
+- 순서: 098 / 경로: BPY/BRND/10/20/30 / 화면: BPY-BRND-10-20-30-S
+- 순서: 099 / 경로: BPY/BRND/20 / 화면: BPY-BRND-20-S
+- 순서: 100 / 경로: BPY/BRND/30 / 화면: BPY-BRND-30-S
+- 순서: 101 / 경로: BPY/BRND/40 / 화면: BPY-BRND-40-S
+- 순서: 102 / 경로: BPY/WELF / 화면:
+- 순서: 103 / 경로: BPY/WELF/10 / 화면: BPY-WELF-10-S
+- 순서: 104 / 경로: BPY/WELF/20 / 화면: BPY-WELF-20-S
+- 순서: 105 / 경로: BPY/WELF/30 / 화면: BPY-WELF-30-S
+- 순서: 106 / 경로: BPY/WELF/40 / 화면: BPY-WELF-40-S
+- 순서: 107 / 경로: BPY/WELF/40/10 / 화면: BPY-WELF-40-10-S
+- 순서: 108 / 경로: BPY/SRCH / 화면:
+- 순서: 109 / 경로: BPY/SRCH/10 / 화면: BPY-SRCH-10-S
+- 순서: 110 / 경로: BPY/SRCH/20 / 화면: BPY-SRCH-20-S
+- 순서: 111 / 경로: BPY/SRCH/20/10 / 화면: BPY-SRCH-20-10-S
+- 순서: 112 / 경로: BPY/SRCH/20/10/10 / 화면: BPY-SRCH-20-10-10-S
+- 순서: 113 / 경로: BPY/SRCH/30 / 화면: BPY-SRCH-30-S
+- 순서: 114 / 경로: BPY/EVNT / 화면:
+- 순서: 115 / 경로: BPY/EVNT/10 / 화면: BPY-EVNT-10-S
+- 순서: 116 / 경로: BPY/EVNT/10/10 / 화면: BPY-EVNT-10-10-S
+- 순서: 117 / 경로: BPY/EVNT/10/10/10 / 화면: BPY-EVNT-10-10-10-S
+- 순서: 118 / 경로: BPY/EVNT/10/10/20 / 화면: BPY-EVNT-10-10-20-S
+- 순서: 119 / 경로: BPY/MNY / 화면:
+- 순서: 120 / 경로: BPY/MNY/10 / 화면: BPY-MNY-10-S
+- 순서: 121 / 경로: BPY/MNY/10/10 / 화면: BPY-MNY-10-10-S
+- 순서: 122 / 경로: BPY/MNY/10/20 / 화면: BPY-MNY-10-20-S
+- 순서: 123 / 경로: BPY/MNY/10/30 / 화면: BPY-MNY-10-30-S
+- 순서: 124 / 경로: BPY/KID / 화면:
+- 순서: 125 / 경로: BPY/KID/10 / 화면: BPY-KID-10-S
+- 순서: 126 / 경로: BPY/KID/20 / 화면: BPY-KID-20-S
+- 순서: 127 / 경로: BPY/KID/30 / 화면: BPY-KID-30-S
+- 순서: 128 / 경로: BPY/ACCT / 화면:
+- 순서: 129 / 경로: BPY/ACCT/10 / 화면: BPY-ACCT-10-S
+- 순서: 130 / 경로: BPY/ACCT/20 / 화면:
+- 순서: 131 / 경로: BPY/ACCT/20/10 / 화면: BPY-ACCT-20-10-S
+- 순서: 132 / 경로: BPY/ACCT/20/20 / 화면: BPY-ACCT-20-20-S
+- 순서: 133 / 경로: BPY/ACCT/20/30 / 화면: BPY-ACCT-20-30-S
+- 순서: 134 / 경로: BPY/ACCT/20/40 / 화면: BPY-ACCT-20-40-S
+- 순서: 135 / 경로: BPY/ACCT/20/50 / 화면: BPY-ACCT-20-50-S
+- 순서: 136 / 경로: BPY/ACCT/20/60 / 화면: BPY-ACCT-20-60-S
+- 순서: 137 / 경로: BPY/ACCT/20/70 / 화면: BPY-ACCT-20-70-S

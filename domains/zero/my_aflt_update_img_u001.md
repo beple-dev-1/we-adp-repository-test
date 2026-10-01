@@ -1,0 +1,91 @@
+# MY 가맹점 사진 등록/수정/삭제 (my_aflt_update_img_u001)
+
+- 처리: 읽기·쓰기
+- 화면 겸함: 아니오
+- 상태: 따라감
+
+## 부르는 화면
+
+| 화면ID | 화면 이름 | 요소 |
+|---|---|---|
+| BPY-MYAF-10-20-S | 가맹점프로필 > 가맹점 사진 수정 | BPY-MYAF-10-20-S-e10 |
+
+## 입력
+
+- 가맹점ID (AFLT_ID)
+- UPD_LIST
+- DEL_LIST
+
+## 출력
+
+- 응답코드 (RES_CD)
+- 응답메시지 (RES_MSG)
+
+## 데이터 처리
+
+### 직가맹점 또는 제로페이 가맹점(직가맹점X) 여부 조회 (TB_BP_AFLT_MNG_R024)
+
+- 종류: SELECT
+- 테이블: TB_BP_AFLT_MNG, TB_AFFILIATION_MNG, TEMP
+- 입력: 가맹점ID (AFLT_ID), 가맹점ID (AFLT_ID)
+
+### 직가맹점정보 상세조회 (TB_BP_AFLT_MNG_R007)
+
+- 종류: SELECT
+- 테이블: TB_CTGR_CATG, TB_MEMBER_AFLT, TB_DANGOL_AFLT_MNG, TB_BP_AFLT_MNG, TB_AFFILIATION_MY
+- 입력: 회원코드 (MEMB_CD), 앱코드 (APP_CD), 가맹점ID (AFLT_ID)
+
+### 가맹점정보 조회 (TB_AFFILIATION_MNG_R012)
+
+- 종류: SELECT
+- 테이블: TB_CTGR_CATG, TB_CTGR_CATG_CD, TB_MEMBER_AFLT, TB_AFFILIATION_QR, TB_AFFILIATION_MNG, TB_AFFILIATION_MY
+- 입력: 회원코드 (MEMB_CD), 앱코드 (APP_CD), 가맹점ID (AFLT_ID)
+
+### 가맹점 서비스 가맹점사진 히스토리 등록 (TB_AFFILIATION_MY_IMG_INFO_HIST_C001)
+
+- 종류: INSERT
+- 테이블: TB_AFFILIATION_MY_IMG_INFO_HIST, TB_AFFILIATION_MY_IMG_INFO
+- 입력: FLAG, HIST_REG_MEMB_CD, 가맹점ID (AFLT_ID), 앱코드 (APP_CD), IMG_SEQ
+
+### MY가맹점 사진 삭제 (TB_AFFILIATION_MY_IMG_INFO_D001)
+
+- 종류: DELETE
+- 테이블: TB_AFFILIATION_MY_IMG_INFO
+- 입력: 가맹점ID (AFLT_ID), IMG_SEQ
+
+### MY가맹점 사진 등록/수정 (TB_AFFILIATION_MY_IMG_INFO_U001)
+
+- 종류: INSERT
+- 테이블: TB_AFFILIATION_MY_IMG_INFO
+- 입력: 앱코드 (APP_CD), 가맹점ID (AFLT_ID), IMG_SEQ, IMG_PATH, IMG_FILE_NM, IMG_FILE_EXT, IMG_INFO, THUMB_IMG_PATH, THUMB_IMG_FILE_NM, THUMB_IMG_EXT, DSP_SEQ, REG_MEMB_CD, ADULT_LVL, SPOOF_LVL, MEDICAL_LVL, VIOLENCE_LVL, RACY_LVL
+
+### 마이가맹점 정보 조회(DYNAMIC) (TB_AFFILIATION_MY_R007)
+
+- 종류: SELECT
+- 테이블: TB_AFFILIATION_MY, TB_AFFILIATION_MY_DETAIL, TB_MEMBER_APP
+- 입력: DYNAMIC_0
+
+### 알림 템플릿 조회 (TB_ALARM_INFO_R001)
+
+- 종류: SELECT
+- 테이블: TB_ALARM_INFO
+- 입력: ALARM_CTGR_TYPE_CD, ALARM_TYPE_CD, ALARM_TMPL_CD
+
+- 공통 헤더 처리(이 업무 아님): TB_APP_MNG_R001, TB_MEMBER_APP_R001
+
+## 실패
+
+- (없음)
+
+## 근거
+
+- BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.my_aflt_update_img_u001.xml:6
+- BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/my_aflt_update_img_u001_act.jsp:88
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MNG_R024.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MNG_R007.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R012.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_IMG_INFO_HIST_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_IMG_INFO_D001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_IMG_INFO_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_R007.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ALARM_INFO_R001.xml:10

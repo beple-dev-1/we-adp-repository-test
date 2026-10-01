@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>브랜드 상품권 결제내역 조회</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-HIST-10-10-S">
+<form id="frm" name="frm">
+	<input type="hidden" name="BGC_NO" id="BGC_NO"/>
+	<input type="hidden" name="ORDER_ID" id="ORDER_ID"/>
+	<input type="hidden" name="PUB_TYPE" id="PUB_TYPE"/>
+	<input type="hidden" name="BGC_ID" id="BGC_ID"/>
+	
+	<input type="hidden" name="set_str_date_text" id="set_str_date_text" value=""/>
+	<input type="hidden" name="set_end_date_text" id="set_end_date_text" value=""/>
+	
+	<input type="hidden" name="option_period_text" id="option_period_text" value="1개월"/>
+	<input type="hidden" name="kind_period_text" id="kind_period_text"  value="전체"/>
+	<input type="hidden" name="req_period_text" id="req_period_text"  value="전체"/>
+</form>
+
+<!-- wrap -->
+<div class="wrap">
+	<div class="header floating-back-header floating-sticky">
+		<h1 class="brand_tooltip">
+			사용 내역
+			<a data-element-id="BPY-HIST-10-10-S-e07" id="tooltip_btn" class="info_btn"><img src="../assets/resource/images/brand/br_n_pay_detail_noti.png" alt="결제내역 안내 버튼"></a>
+			<div id="tooltip_area" class="tooltip" style="display:block;"><!-- 결제내역 옆 !버튼 클릭 시 툴팁 노출 -->
+				<strong>일부 브랜드는 결제 내역 반영에 일정 기간이 소요됩니다.</strong><br>
+				*컬쳐랜드, 해피머니는 상품권 홈페이지에서만 확인 가능합니다.
+			</div>
+		</h1>
+		<a data-element-id="BPY-HIST-10-10-S-e06" data-nav-target="BPY-HIST-10-S" onclick="uf_back();" class="btn-history-back">뒤로가기</a>
+	</div><!-- // header -->
+	<!-- container -->
+	<div class="container">
+		<!-- content -->
+		<div class="content">
+			<div class="br_gift_rn">
+				<!-- 결제내역 -->
+				<div class="detail_view">
+					<!-- 필터 -->
+					<div class="brand_filter add_arr"><!-- 화살표 추가 시 add_arr 클래스 추가 -->
+						<ul id="option_area">
+							<li class="on"><a data-element-id="BPY-HIST-10-10-S-e08" id="option_period">1개월 <span class="arr">더보기</span></a></li><!-- 설정 시 on 클래스 추가 -->
+							<li><a data-element-id="BPY-HIST-10-10-S-e09" id="kind_period">전체 상품권 <span class="arr">더보기</span></a></li>
+							<li><a data-element-id="BPY-HIST-10-10-S-e10" id="req_period">전체 상태 <span class="arr">더보기</span></a></li>
+						</ul>
+					</div>
+					<!-- 내역 목록 -->
+					<div class="dtl_list pay" id="hist_area"><!-- sample:begin --><div class="list detail" data-pubType="" data-bgcId="" data-bgcNo="1" data-orderId=""><a><div class="info"><p class="date">2026.09.02 14:22</p><p class="tit" title="홍길동 홍길동">홍길동 홍길동</p><p class="location">홍길동</p></div><div class="use"><p class="bal plus"><span>4,500</span>원</p><p class="bal">-<span>4,500</span>원</p><p class="use_txt">결제완료</p></div></a></div><!-- sample:end --></div>
+				</div>
+			</div>
+		</div>
+		<!-- // content -->
+	</div>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+	
+<!-- 레이어팝업 - 기간 및 상세필터 -->
+<div class="layer_overlay" style="display:none;" id="option_layer">
+	<div class="layer_bPop" >
+		<div class="popup_con pd0">
+			<!-- 상세필터 -->
+			<div class="detail_filter addBtn-pb56">
+				<!-- 기간 -->
+				<h2 class="filter_tit">기간</h2>
+				<!-- 탭영역 -->
+				<div class="filter_tab">
+					<div class="inner four" id="period_list">
+						<a data-period="29" class="on" title="선택됨">1개월</a>
+						<a data-period="89">3개월</a>
+						<a data-period="179">6개월</a>
+						<a data-period="setup">기간설정</a>
+						<input type="hidden" id="str_time" name="str_time">
+						<input type="hidden" id="end_time" name="end_time">
+					</div>
+				</div>
+				<!-- 날짜 -->
+				<div class="filter_date disabled" style="display:block;" id="set_period"><!-- 기간설정 시 display:block; -->
+					<div class="inner">
+						<div class="date"><input type="text" readonly id="set_str_date" value="2026.09.02" data-fill="demo"><a class="btn_cal" onclick="javascript:dateClick('str');" id="strD" style="display: none;"><span class="blind">달력</span></a></div>
+						<div class="dash">-</div>
+						<div class="date"><input type="text" readonly id="set_end_date" value="2026.09.02" data-fill="demo"><a class="btn_cal" onclick="javascript:dateClick('end');" id="endD" style="display: none;"><span class="blind">달력</span></a></div>
+					</div>
+					<!-- 오류메시지 -->
+					<div id="over_data" class="err_txt" style="display:none;">조회기간은 6개월을 넘을 수 없습니다.</div><!-- 기간설정 조회기간 오류 시(3개월 넘길경우) display:block; -->
+				</div>
+				<!-- 상품권 종류 -->
+				<h2 class="filter_tit">상품권 종류</h2>
+				<!-- 탭영역 -->
+				<div class="filter_tab">
+					<div class="inner" id="kind_type_list">
+						<a data-type="" class="on" title="선택됨">전체</a>
+						<a data-type="01">금액권</a>
+						<a data-type="02">교환권</a>
+						<input type="hidden" id="kind_type" name="kind_type" value="">
+					</div>
+				</div>
+				<!-- 결제 상태 영역 -->
+				<h2 class="filter_tit">결제 상태</h2>
+				<!-- 탭영역 -->
+				<div class="filter_tab">
+					<div class="inner" id="req_type_list">
+						<a data-type="" class="on" title="선택됨">전체</a>
+						<a data-type="PA">결제완료</a>
+						<a data-type="PC">결제취소</a>
+						<input type="hidden" id="req_type" name="req_type" value="">
+					</div>
+				</div>
+			</div>
+			<!-- //상세필터 -->
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_white">
+					<a id="search_btn" class="btn_default round_r8 btn-style-h46 on">조회하기</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+	</div>
+</div>
+</body>
+</html>

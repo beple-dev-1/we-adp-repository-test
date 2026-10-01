@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가게·원산지 정보</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-YGYO-10-30-S">
+<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1 id="shop_name_title" class="text-ellipsis pd-lr50"></h1>
+			<a data-element-id="BPG-YGYO-10-30-S-e05" href="javascript:uf_back();" class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="bp-ygy flexWrap no_vh">
+					<div class="ygy__origin-info">
+						<!-- 상단 안내메시지 박스 -->
+						<div class="ygy__top-notice" id="top-notice" style="display:none;"><!-- [D] 툴팁 노출 시 view 클래스 추가 -->
+							<p><span class="icon noti-24">비플페이에서 주문시, 리뷰 이벤트 참여가 어렵습니다.</span></p>
+							<button class="close-btn" type="button" onclick="noticeTooltipClose();"><span class="icon close-10">툴팁 닫기</span></button>
+						</div>
+						<!-- 컨텐츠 묶음 -->
+						<div class="info-container">
+							<!-- 사장님 알림 -->
+							<!-- <div id="notice"></div> -->
+							<div class="info-content" style="display:none;" id="notice"><!-- sample:begin --><div class="info__title-box">	<h2 class="info-title">사장님 알림</h2></div><div class="info__inner img-wrap"><ul>	<li>		<a href="#none" name="store_photo"  name="store_photo" imgIdx=""></a>	</li></ul></div><div class="info__inner">	<div class="inner-text">		<p></p>	</div></div><!-- sample:end --></div>
+							
+							<!-- 가게정보 -->
+							<div class="info-content border-t10" id="removeLine">
+								<div class="info__title-box">
+									<h2 class="info-title">가게 정보</h2>
+								</div>
+								<div class="info__inner store-info">
+									<div class="inner-text" id="store_info"><!-- sample:begin --><dl>	<dt>주소</dt>	<dd>서울 강남구 테헤란로 1길 10		<p class="location"><a href="#none" onclick="searchMap();" class="location-btn icon map-14">매장까지 거리 <span>안내 문구</span></a></p>	</dd></dl><dl>	<dt>대표번호</dt>	<dd><p><a href="tel:010-1234-5678">010-1234-5678</a></p>	</dd></dl><dl class="open-time">	<dt>영업시간</dt>	<dd>		<!-- 영업시간 -->		<div class="toggle_wrap">			<button type="button" class="trigger" id="shop_opening_times"><dl class="today">	<dt>요일</dt>	<dd>		<p><span>휴무일</span></p>		<p><span></span> ~ <span></span></p>	</dd></dl>			</button>		</div>		<!-- // 영업시간 -->	</dd></dl><!-- sample:end --></div>
+								</div>
+							</div>
+							<!-- 위생 안심 정보 -->
+							<div class="info-content border-t10 mgt18"  style="display:none;" id="hygiene_info"><!-- sample:begin --><div class="info__title-box"><h2 class="info-title">위생 안심 정보</h2></div><div class="info__inner"><div class="inner-text type-2" ><dl>                                                                        <dt>식약처 인증</dt>                                                             <dd>                                                                        위생등급 <br>	유효기간 : <span></span> ~ <span></span>           	<p class="etc-text">*식품의약품안전처에서 가게의 위생수준을 평가하여 ‘’ 등급을 지정하였습니다.</p></dd>                                                                       </dl>                                                                       <dl class="mgt11">	<dt>세스코</dt>	<dd>		세스코 멤버스<p class="etc-text">*세스코의 해충방제 솔루션으로 특별히 관리하는 가게입니다.</p></dd></dl></div></div><!-- sample:end --></div>
+							<!-- 배달요금 안내 -->
+							<div class="info-content border-t10 mgt31" id="delivery_fee_range"  style="display:none;"><!-- sample:begin --><div class="info__title-box">                                             <h2 class="info-title">배달요금 안내</h2>                                       <p class="info-title-sub">배달요금은 배달거리, 주문금액, 시간, 날씨 등에 따라 달라질 수 있습니다.</p>  </div>                                                                    <div class="info__inner delivery" >                                       	<h3 class="inner-tit">기본 배달요금</h3>                                     	<div class="bg-box">                                                   		<div class="box-head">                                             			<p>주문금액</p>                                                    			<p>배달요금</p>                                                    		</div>                                                             <div><p><span></span>원 이상</p><p>무료</p></div>	</div></div><!-- sample:end --></div>
+							<!-- 결제 정보 -->
+							<div class="info-content border-t10">
+								<div class="info__title-box">
+									<h2 class="info-title">결제 정보</h2>
+									<p class=""></p>
+								</div>
+								<div class="info__inner">
+									<div class="inner-text">
+										<dl>
+											<dt>최소주문금액</dt>
+											<dd id="minimum_order_amount"><!-- sample:begin -->4,500<!-- sample:end --></dd>
+										</dl>
+										<dl>
+											<dt>결제수단</dt>
+											<dd>비플식권, 비플머니</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<!-- 사업자 정보 -->
+							<div class="info-content border-t10">
+								<div class="info__title-box">
+									<h2 class="info-title">사업자 정보</h2>
+								</div>
+								<div class="info__inner">
+									<div class="inner-text" id="company_info"><!-- sample:begin --><dl>	<dt>상호명</dt>	<dd>홍길동</dd></dl><dl>	<dt>대표자</dt>	<dd></dd></dl><dl>	<dt>사업자등록증</dt>	<dd></dd></dl><!-- sample:end --></div>
+								</div>
+							</div>
+							<!-- 영양성분 및 알레르기 유발 정보 -->
+							<div class="info-content border-t10"  id="nutrition_allergy" style="display:none;"><!-- sample:begin --><div class="info__title-box">                <h2 class="info-title">영양성분 및 알레르기 유발 정보</h2></div>                                       <div class="info__inner">                    <div class="inner_btn-wrap inline" >         <a href="javascript:nutritionPopup();" class="round-btn"><span class="icon arr_right-16">영양성분 정보</span></a><a href="javascript:allergyPopup();" class="round-btn"><span class="icon arr_right-16">알레르기 유발 정보</span></a></div>                                       </div>                                       <!-- sample:end --></div>
+							<!-- 원산지 정보 -->
+							<div class="info-content border-t10" id="origin_info"  style="display:none;"><!-- sample:begin --><div class="info__title-box"><h2 class="info-title">원산지 정보</h2></div><div class="info__inner mgt16">	<div class="inner-text"><p></p>	</div></div><!-- sample:end --></div>
+							<!-- 위반사항 -->
+							<div class="info-content border-t10 violation" id="violation_info"  style="display:none;"><!-- sample:begin --><div class="info__title-box">	<h2 class="info-title">위반사항</h2></div><div class="info__inner">	<div class="inner-text">		<dl>			<dt>처분확정일자</dt></div><!-- sample:end --></div>
+						</div>
+						<!-- 컨텐츠 묶음 끝 -->
+					</div>
+				</div>
+				<!-- 하단 고정버튼 영역 -->
+				<div class="btn_botFix_w">
+					<div class="page-top">
+						<button data-element-id="BPG-YGYO-10-30-S-e04" type="button" class="icon page_top-32"><span class="blind">시작지점으로 올라가기</span></button>
+					</div>
+				</div>
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	
+		<!-- 사진상세보기 레이어팝업 --> 
+<div class="layer_overlay photo_detail hide" id="photoDetail" style="display: block;"><!-- 기본 = hide, 사진 클릭 시 hide -> view로 클래스 변경, 상세 창 닫힐 시 view -> hide로 변경 -->
+	<div class="popup_w">
+		<div class="profile_photo_view">
+			<!-- 닫기버튼 -->
+			<div class="btn_photo_close">
+				<a data-element-id="BPG-YGYO-10-30-S-e06" href="javascript:photoDetailPopup();" ><span class="blind">닫기</span></a>
+			</div>
+			<!-- //닫기버튼 -->
+			<!-- 이미지 영역 -->
+			<div class="swiper-container photo_w">
+				<!-- 슬라이드 이미지 영역 -->
+				<div class="swiper-wrapper" id="store_photo_detail" ><!-- sample:begin --><div class="swiper-slide"><div class="img"></div><div class="intro_msg">	<div class="inner">		<p>		</p>	</div></div></div><!-- sample:end --></div>
+				<!-- //슬라이드 슬라이드 이미지 영역 -->
+				<!-- paging -->
+				<div class="swiper-pagination"></div>
+				<!-- //paging -->
+				<!-- //이미지 영역 -->
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

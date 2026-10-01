@@ -1,0 +1,202 @@
+/* =============================================================================
+ * s-store-main.css — S-STORE-MAIN 화면 글루 (default/switch-sheet 공유)
+ * 스코프: .app--store-main. 색·간격은 var(--*)/고정px만.
+ * 정답지: Figma 357:1532 섹션 — 메인 357:4287 / 가맹점선택 시트 357:5642
+ *         (fileKey svpgMnp1MU3lHASafIRau3, mobile 360).
+ * 구조: 상태바 없음(헤더 최상단 sticky) — 로그인 재구현 컨벤션 준용.
+ *
+ * 세로 리듬: 균일 gap이 아니라 Figma 요소 절대좌표 실측 구간(고정px)을 요소별 margin으로 지정.
+ *   Figma(상태바 24 제거 기준으로 리베이스 — 헤더 0..48):
+ *   HDR(48)→사용자행 17 / 사용자행→썸네일 24 / 썸네일→이름 16 / 이름→주소 8 /
+ *   주소→칩 16 / 칩→구분띠 32 / 구분띠→서비스라벨 32 / 라벨→메뉴항목 12 / 로그아웃 하단32.
+ * ========================================================================== */
+
+/* --- 본문 컨테이너: 헤더 아래, 로그아웃 하단 고정용 flex 컬럼 --- */
+.app--store-main .screen-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;                    /* 풀폭 구분띠가 있으므로 섹션마다 개별 gutter */
+}
+
+/* ============================================================
+   가맹점 프로필 섹션 (Figma 직접 배치 — 사용자행 좌측 + 히어로 중앙)
+   ============================================================ */
+.app--store-main .store-profile {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--app-gutter);  /* 좌우 gutter 24, 상하 margin으로 관리 */
+}
+
+/* 사용자명 + 매니저 배지 행 (좌측 정렬) — Figma 김비플 x24, 배지 x64 (gap 4) */
+.app--store-main .store-profile__user {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);           /* 4px (Figma 60→64) */
+    margin-top: 17px;              /* 헤더(48) → 사용자행 (Figma 89-72=17) */
+}
+/* 김비플: Figma 14px/400 #555 → grayscale 9단 스냅 #666 (backlog: 디자이너 확인 대기) */
+.app--store-main .store-profile__username {
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--text-tertiary);      /* #666 (Figma #555 스냅) */
+    letter-spacing: var(--letter-spacing-base);
+}
+/* flag_round: Figma pad(7 10) r12 fill=#0d84ff@0.08 / 매니저 12px/700 #0d84ff */
+.app--store-main .store-profile__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: var(--radius-md);   /* r12 */
+    background-color: var(--color-primary-weak);  /* #eef6ff ≈ rgba(13,132,255,0.08) 플랫 */
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-base);
+}
+
+/* 가맹점 대표 이미지 (Figma 98×98 r16, 중앙) */
+.app--store-main .store-profile__thumb {
+    width: 98px;
+    height: 98px;
+    border-radius: 16px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+    margin: 24px auto 0;          /* 사용자행 → 이미지 24, 중앙 */
+}
+
+/* 가맹점명: Figma 20px/700 lh1 #333 중앙 */
+.app--store-main .store-profile__name {
+    margin-top: 16px;              /* 이미지 → 이름 16 */
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-secondary);  /* #333 */
+    letter-spacing: var(--letter-spacing-base);
+    text-align: center;
+}
+
+/* 주소: Figma 14px/400 lh1 #999 중앙 */
+.app--store-main .store-profile__addr {
+    margin-top: 8px;               /* 이름 → 주소 8 */
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--text-disabled);   /* #999 */
+    letter-spacing: var(--letter-spacing-base);
+    text-align: center;
+}
+
+/* 가맹점 전환 칩 행: 중앙 */
+.app--store-main .store-switch-btn {
+    margin-top: 16px;              /* 주소 → 칩 16 */
+    align-self: center;
+    display: inline-flex;
+}
+/* 가맹점 전환 칩: Figma h32 r16 border#dbdbdb / 가맹점 14/500 #333 + chevron16 */
+.app--store-main .store-switch-btn__ctrl {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;                        /* Figma 칩폭 72 = pl12+label36+chevron16+pr8 (gap은 라벨 트레일링에 흡수) */
+    height: 32px;
+    padding: 4px 8px 4px 12px;     /* Figma pl12 pr8 py4 */
+    border: 1px solid var(--border-strong);   /* #dbdbdb */
+    border-radius: 16px;
+    background: var(--bg-surface);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);  /* #333 */
+    cursor: pointer;
+    letter-spacing: var(--letter-spacing-base);
+}
+.app--store-main .store-switch-btn__chevron {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* ============================================================
+   회색 구분 띠 (Figma Rectangle 9665 357:4313 360×10 #f7f7f7)
+   ============================================================ */
+.app--store-main .store-divider-band {
+    width: 100%;
+    height: 10px;
+    margin-top: 32px;              /* 칩 → 구분띠 32 */
+    background-color: var(--bg-section-band);  /* #f7f7f7 */
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   가맹점 서비스 섹션
+   (Figma: 라벨 T417 / 메뉴항목 T443 312×56 r8)
+   ============================================================ */
+.app--store-main .svc-section {
+    padding: 32px var(--app-gutter) 0;   /* 구분띠 → 라벨 32 */
+}
+/* 라벨: Figma 14px/700 lh1 #999 */
+.app--store-main .svc__title {
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-disabled);   /* #999 */
+    letter-spacing: var(--letter-spacing-base);
+    margin-bottom: 12px;           /* 라벨 → 메뉴항목 12 */
+}
+/* 메뉴 항목: Figma 312×56 r8 border#ededed / 메뉴 관리 16/600 #333 + arrow24 */
+.app--store-main .svc__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+    padding: 0 16px 0 20px;        /* Figma text l20, arrow 우 16 */
+    border: 1px solid var(--border-default);   /* #ededed */
+    border-radius: var(--radius-sm);           /* r8 */
+    background: var(--bg-surface);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);  /* #333 */
+    letter-spacing: var(--letter-spacing-base);
+    cursor: pointer;
+}
+.app--store-main .svc__item .chev {
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   로그아웃 (Figma btn_text 64×16 L148 T752 / 로그아웃 14/600 #666 + arrow16)
+   ============================================================ */
+.app--store-main .logout {
+    margin-top: auto;              /* 하단으로 밀기 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;                        /* Figma 로그아웃(0..48)→arrow(48..64) 밀착 */
+    padding: 24px 0 32px;          /* 하단 32 (Figma 800-768) */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-tertiary);   /* #666 */
+    letter-spacing: var(--letter-spacing-base);
+}
+.app--store-main .logout__arrow {
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   가맹점 선택 시트 헤더 정합 — 2026-07-03 공유 ds-bottom-sheet 컴포넌트로 승격 완료.
+   (닫기 top8 / 제목 top32 / 첫 항목 76 = Figma 357:5665·메뉴 357:6025 공통 스펙)
+   구 store 스코프 오버라이드는 컴포넌트가 동일 스펙을 소유하므로 제거(divergence 해소).
+   ============================================================ */

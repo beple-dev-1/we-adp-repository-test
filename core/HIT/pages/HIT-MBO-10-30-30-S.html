@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>메뉴분류 관리</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-10-30-30-S">
+<div class="bp-root">
+    
+        
+    
+
+    <div class="bp-main">
+      <div class="layout">
+        <div class="row">
+          <div class="col col-10">
+            <div class="con-wrap">
+
+              <div class="page-header">
+                <p class="tit-01 with-desc">
+                  메뉴분류 관리
+                  <span>
+                    메뉴분류를 등록하고 사용 여부를 관리할 수 있습니다.
+                  </span>
+                </p>
+              </div>
+
+              <!-- 버튼 위치: menu_reg 패턴과 동일 -->
+              <div class="td-item-group mb12 right">
+                <div class="td-item-group td-item">
+                  <button data-element-id="HIT-MBO-10-30-30-S-e08" class="btn btn-md-b btn-gray-outline" type="button" id="btn-open-dsp">순서 관리</button>
+                  <button data-element-id="HIT-MBO-10-30-30-S-e09" class="btn btn-md-b btn-primary ml0" type="button" id="btn-open-add">메뉴분류 등록</button>
+                </div>
+              </div>
+
+              <!-- 목록 (데이터 있음) — ComTable 템플릿 행 -->
+              <div class="data-table-wrap" id="dv_list" hidden style="min-height: 529px;">
+                <table class="data-table form-table pd-table" id="table">
+                  <colgroup>
+                    <col style="width: 160px;">
+                    <col style="width: auto;">
+                    <col style="width: 110px;">
+                    <col style="width: 200px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col"><div class="ta-center">제공형태</div></th>
+                      <th scope="col"><div class="ta-center">메뉴분류명</div></th>
+                      <th scope="col"><div class="ta-center">사용여부</div></th>
+                      <th scope="col"><div class="ta-center">등록일자</div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr style="display: none;" onclick="clk_dv($(this))">
+                    <td class="button" colspan="4">
+                      <div>
+                        <a href="#none">
+                          <table>
+                            <colgroup>
+                              <col style="width: 160px;">
+                              <col style="width: auto;">
+                              <col style="width: 110px;">
+                              <col style="width: 200px;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                              <td id="DV_SEQ" hidden><div></div></td>
+                              <td id="PRVD_TP" hidden><div></div></td>
+                              <td id="USE_YN" hidden><div></div></td>
+                              <td id="PRVD_TP_NM"><div class="ta-center"></div></td>
+                              <td id="DV_NM"><div class="tx-ellipsis ta-center"></div></td>
+                              <td id="USE_YN_NM"><div class="ta-center"></div></td>
+                              <td id="REG_DT"><div class="ta-center"></div></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="data-table-wrap h524" id="dv_no_list" hidden>
+                <table class="data-table form-table">
+                  <colgroup>
+                    <col style="width: 160px;">
+                    <col style="width: auto;">
+                    <col style="width: 110px;">
+                    <col style="width: 200px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col"><div class="ta-center">제공형태</div></th>
+                      <th scope="col"><div class="ta-center">메뉴분류명</div></th>
+                      <th scope="col"><div class="ta-center">사용여부</div></th>
+                      <th scope="col"><div class="ta-center">등록일자</div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="no-data">
+                    <td colspan="4">
+                      <div class="no-data no-bd h443">
+                        <div class="box">
+                          <i class="ic ic-exc-40"></i>
+                          <p>등록된 정보가 없습니다.</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="pagination">
+                <div class="pagi" id="pagi">
+                  <div class="group">
+                    <button data-element-id="HIT-MBO-10-30-30-S-e10" type="button" class="item first" onclick="javascript:void(0);">first</button>
+                    <button data-element-id="HIT-MBO-10-30-30-S-e11" type="button" class="item prev" onclick="javascript:void(0);">prev</button>
+                  </div>
+                  <div class="group" id="page_num">
+                    <button type="button" class="item" onclick="javascript:void(0);">1</button>
+                    <button type="button" class="item" onclick="javascript:void(0);">2</button>
+                    <button type="button" class="item" onclick="javascript:void(0);">3</button>
+                    <button type="button" class="item" onclick="javascript:void(0);">4</button>
+                    <button type="button" class="item" onclick="javascript:void(0);">5</button>
+                    <button type="button" class="item" onclick="javascript:void(0);">6</button>
+                    <button type="button" class="item" onclick="javascript:void(0);">7</button>
+                    <button type="button" class="item" onclick="javascript:void(0);">8</button>
+                    <button type="button" class="item" onclick="javascript:void(0);">9</button>
+                    <button type="button" class="item" onclick="javascript:void(0);">10</button>
+                  </div>
+                  <div class="group">
+                    <button data-element-id="HIT-MBO-10-30-30-S-e12" type="button" class="item next" onclick="javascript:void(0);">next</button>
+                    <button data-element-id="HIT-MBO-10-30-30-S-e13" type="button" class="item last" onclick="javascript:void(0);">last</button>
+                  </div>
+                </div>
+                <div class="td-item-group top por top-29 h0">
+                  <div class="sel w120 td-item">
+                    <select data-element-id="HIT-MBO-10-30-30-S-e14" name="" id="show_cnt" class="js-table-count" value="30" onchange="cnt()">
+                      <option value="10">10건 보기</option>
+                      <option value="30">30건 보기</option>
+                      <option value="50">50건 보기</option>
+                    </select>
+                  </div>
+                  <div class="td-item ta-right">
+                    <p class="lh-32">검색결과: 총 <span class="fc-pri fw-600" id="tot_cnt"><!-- sample:begin -->1<!-- sample:end --></span>건</p>
+                  </div>
+                </div>
+              </div>
+
+            </div><!--con-wrap-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================Modal===================================== -->
+  <div class="modal w600" id="dv_reg_modal" style="display:none;">
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type02">
+          <p class="tit" id="dv_reg_modal_title">메뉴분류 등록</p>
+        </div>
+        <button class="btn-close" type="button" id="btn-close-reg">닫기</button>
+      </div>
+      <div class="modal-con mt24">
+        <table class="data-table form-table no-bd">
+          <colgroup>
+            <col width="110px">
+            <col width="">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="required ta-left pl0"><div>제공형태</div></th>
+              <td class="ta-right pr0">
+                <div class="td-item w290 drop-box" id="dv_reg_prvd_drop" onclick="btn_drop($(this))">
+                  <p class="placeholder" id="dv_reg_prvd_phd">
+                    <button type="button" class="trigger drop-btn" id="DV_REG_PRVD_TP" value="">선택해주세요.</button>
+                  </p>
+                  <div class="drop-content">
+                    <p class="drop-item">
+                      <button type="button" class="drop-btn" value="C" onclick="selDvPrvdTp($(this))">매장식사</button>
+                    </p>
+                    <p class="drop-item">
+                      <button type="button" class="drop-btn" value="D" onclick="selDvPrvdTp($(this))">딜리버리/픽업</button>
+                    </p>
+                    <p class="drop-item">
+                      <button type="button" class="drop-btn" value="R" onclick="selDvPrvdTp($(this))">사전예약</button>
+                    </p>
+                  </div>
+                </div>
+                <!-- 수정 모드: 디자인상 제공형태는 드롭다운이 아닌 텍스트로만 노출 -->
+                <div class="td-item ta-left" id="dv_reg_prvd_text" style="display: none"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+              </td>
+            </tr>
+            <tr>
+              <th class="required ta-left pl0"><div>메뉴분류명</div></th>
+              <td class="ta-right pr0">
+                <input maxlength="50" id="DV_REG_NM" class="ip-txt w100p" type="text" value="" placeholder="메뉴분류명을 입력해 주세요">
+                <!-- 수정 모드: 디자인상 메뉴분류명도 제공형태와 동일하게 텍스트로만 노출 -->
+                <div class="td-item ta-left" id="dv_reg_nm_text" style="display: none"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left pl0"><div>메뉴사진</div></th>
+              <td class="ta-right pr0">
+                <div class="image_write-box mb2" id="dv_reg_tot_img">
+                  <div class="image w132 empty" id="dv_reg_img">
+                    <img id="dv_reg_preview_img" alt="이미지 영역" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'><rect fill='rgba(0,0,0,0)' x='0' y='0' width='100%' height='100%'/></svg>">
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-sm btn-gray-outline" type="button" id="btn-dv-reg-img">첨부하기</button>
+                    <button class="btn btn-sm btn-gray-outline" type="button" id="btn-dv-reg-img-delete" style="display: none">기본이미지로 변경</button>
+                    <input type="file" id="dv_reg_img_upload" accept="image/*" hidden>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="required ta-left pl0"><div>사용여부</div></th>
+              <td class="ta-right pr0">
+                <div class="td-item w120 drop-box" id="dv_reg_use_drop" onclick="btn_drop($(this))">
+                  <p id="dv_reg_use_phd">
+                    <button type="button" class="trigger drop-btn" id="DV_REG_USE_YN" value="Y">사용</button>
+                  </p>
+                  <div class="drop-content">
+                    <p class="drop-item select">
+                      <button type="button" class="drop-btn" value="Y" onclick="selDvUseYn($(this))">사용</button>
+                    </p>
+                    <p class="drop-item">
+                      <button type="button" class="drop-btn" value="N" onclick="selDvUseYn($(this))">미사용</button>
+                    </p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn btn-md-a btn-primary" type="button" id="btn-save-dv-reg">저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dim" id="dv_reg_modal_dim" style="display: none"></div>
+
+  <div class="modal w600" id="dv_dsp_modal" style="display:none;">
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type02">
+          <p class="tit">메뉴분류 순서 관리</p>
+        </div>
+        <button class="btn-close" type="button" id="btn-close-dsp">닫기</button>
+      </div>
+
+      <div class="td-item-group mt24">
+        <div class="dv-parent-box">
+          <div class="td-item dv-parent-box--head">
+            <p class="fs-14 fc-111 fw-600">상위 카테고리</p>
+          </div>
+          <div class="td-item dv-parent-box--content drop-box" id="dv_dsp_prvd_drop" onclick="btn_drop($(this))">
+            <p id="dv_dsp_prvd_phd">
+              <button type="button" class="trigger drop-btn" id="DV_DSP_PRVD_TP" value="C">매장식사</button>
+            </p>
+            <div class="drop-content">
+              <p class="drop-item select">
+                <button type="button" class="drop-btn" value="C" onclick="selDvDspPrvdTp($(this))">매장식사</button>
+              </p>
+              <p class="drop-item">
+                <button type="button" class="drop-btn" value="D" onclick="selDvDspPrvdTp($(this))">딜리버리/픽업</button>
+              </p>
+              <p class="drop-item">
+                <button type="button" class="drop-btn" value="R" onclick="selDvDspPrvdTp($(this))">사전예약</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-con mt24">
+        <div class="h90vh-250_fix-max ovf-a">
+          <table class="data-table2 flexble sticky-table sortableTable">
+            <colgroup>
+              <col style="width: 52px;">
+              <col style="width: 85px;">
+              <col style="width: auto;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th><div class="ta-center"></div></th>
+                <th><div class="ta-center">노출순서</div></th>
+                <th><div class="ta-center">메뉴분류명</div></th>
+              </tr>
+            </thead>
+            <tbody id="dv_dsp_list_body"><!-- sample:begin --><tr dv-seq="1"><td><div class="ta-center"><button type="button" class="icon--table-row-move"><span></span><span></span><span></span></button></div></td><td><div class="ta-center dv-dsp-order"></div></td><td><div class="ta-center"></div></td></tr><!-- sample:end --></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn btn-md-a btn-primary" type="button" id="btn-save-dv-dsp">저장</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dim" id="dv_dsp_modal_dim" style="display: none"></div>
+</body>
+</html>

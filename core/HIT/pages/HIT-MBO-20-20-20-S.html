@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>메뉴</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-20-20-20-S">
+<script>
+  	let onloadData = ``;
+  </script>
+  <div class="bp-root">
+    <!-- gnb -->
+		
+
+<!-- gnb -->
+<div class="bp-aside">
+  <!-- <div class="top">
+    <div class="logo">
+      <img src="../assets/resource/img/icon/ic_gate_small_02.svg" alt="">
+    </div>
+    <div class="right">
+      <p class="user-name">
+        김식권
+        <span>님</span>
+      </p>
+      <span class="user-position">매니저</span>
+      <button class="btn-logout" type="button">로그아웃</button>
+    </div>
+  </div> -->
+  <div class="bottom">
+    <div class="gnb gnb-type02">
+      <ul class="d1">
+        <li class="item item-01"> <!--[D]active-->
+          <i class="ic ic-gnb-bo-05 normal"></i>
+          <i class="ic ic-gnb-bo-05 active"></i>
+          <a data-element-id="HIT-MBO-20-20-20-S-e06" data-nav-target="HIT-MBO-20-10-10-S" href="/ent_afltbo_frsh_brk_list.act">다과 신청 내역</a>
+          <!-- <ul class="d2">
+            <li class="item"> <\!--[D]active--\>
+              <a href="/ent_afltbo_frsh_brk_list.act">다과 신청 내역</a>
+            </li>
+          </ul> -->
+        </li>
+        <li class="item item-02"> <!--[D]active-->
+          <i class="ic ic-gnb-bo-06 normal"></i>
+          <i class="ic ic-gnb-bo-06 active"></i>
+          <a data-element-id="HIT-MBO-20-20-20-S-e07" data-nav-target="HIT-MBO-20-20-10-S" href="/ent_afltbo_frsh_brk_catg.act">다과 메뉴 관리</a>
+          <ul class="d2">
+            <li class="item" name="ent_afltbo_frsh_brk_catg"> <!--[D]active-->
+              <a data-element-id="HIT-MBO-20-20-20-S-e08" data-nav-target="HIT-MBO-20-20-10-S" href="/ent_afltbo_frsh_brk_catg.act">카테고리</a>
+            </li>
+            <li class="item" name="ent_afltbo_frsh_brk_menu">
+              <a data-element-id="HIT-MBO-20-20-20-S-e09" data-nav-target="HIT-MBO-20-20-20-S" href="/ent_afltbo_frsh_brk_menu.act">메뉴</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+	<!-- gnb -->
+
+    <div class="bp-main">
+      <div class="layout">
+        <div class="row">
+          <div class="col col-10">
+            <div class="con-wrap">
+              <div class="page-header">
+                <p class="tit-01 with-desc">
+                	  메뉴
+                  <span>
+                 	  메뉴의 재고가 없을 경우, 숨김 처리를 해주세요.
+                  </span>
+                </p>
+              </div>
+
+              <div id="list-menu-parent">
+              	<div class="no-data h480">
+                <div class="box">
+                  <i class="ic ic-exc-40"></i>
+                  <p>
+                    	등록된 메뉴가 없습니다
+                  </p>
+                  <button data-element-id="HIT-MBO-20-20-20-S-e10" class="btn btn-md-b btn-gray-outline btn-new-menu-pop" type="button">+ 추가하기</button>
+                </div>
+              </div>
+              </div>
+              </div>
+
+              <!-- <div class="categori-box">
+                <div class="card-group-sorting">
+                  <p class="tit-02">
+                    카테고리 > 패키지
+                  </p>
+
+                  <div class="no-data h480">
+                    <div class="box">
+                      <i class="ic ic-exc-40"></i>
+                      <p>
+                        등록된 메뉴가 없습니다
+                      </p>
+                      <button class="btn btn-md-b btn-gray-outline" type="button">+ 추가하기</button>
+                    </div>
+                  </div>
+              </div>
+            </div>con-wrap -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- ===================================Modal===================================== -->
+  	<!-- create new menu -->
+    <div class="modal w520" id="new-menu-pop" style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type01">
+          <p class="tit">메뉴 추가</p>
+        </div>
+        <button class="btn-close" type="button" onclick="pop.newMenu.close()">닫기</button>
+      </div>
+      <div class="modal-con ta-center h90vh-185 ovf-a">
+        <table class="data-table mb0">
+          <colgroup>
+            <col width="135px">
+            <col width="">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left">카테고리</th>
+              <td class="ta-left">
+                <div class="sel w100p">
+                  <select name="" id="new-menu-catg" class="">
+                    
+                  </select>
+                </div>
+              </td>
+            </tr>  
+
+            <tr>
+              <th class="ta-left">메뉴명</th>
+              <td class="ta-left">
+                <input maxlength="20" name="" id="input-menu-nm" class="ip-txt w100p" type="text" value="" placeholder="메뉴명을 입력해 주세요.">
+                <!-- <div class="ip-ch-group mt8">
+                  <label for="ch-1-1" class="ip-ch-label">
+                    <input name="ch-1" id="ch-1-1" class="ip-ch" type="checkbox" value="">
+                    <span class="check"></span> 추천 메뉴로 등록하기
+                  </label>
+                </div> -->
+              </td>
+            </tr>
+
+            <tr>
+              <th class="ta-left">메뉴 가격</th>
+              <td class="ta-left">
+                <div class="ip-wrap type-unit w100p">
+                  <input name="" id="input-menu-price" maxlength="12" class="ip-txt ta-left" type="tel" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');comma(this);" value="" placeholder="메뉴 가격을 입력해 주세요.">
+                  <span class="unit">원</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <th class="ta-left">메뉴소개 (선택)</th>
+              <td class="ta-left">
+                <div class="ta-group gray with-counting h200">
+                  <textarea id="input-menu-info" class="ta-ip" placeholder="메뉴 소개를 작성해 주세요" maxlength="200"></textarea>
+                  <span class="counting">0/200</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="btn-group ta-center mt32">
+        <button class="btn btn-md-a btn-primary" id="btn-save-menu" type="button" >저장</button>
+	  </div>
+    </div>
+  </div>
+  <div class="dim" id="new-menu-pop-dim" style="display:none;"></div><!-- [D]active -->
+  
+  <!-- update menu -->
+    <div class="modal w520" id="update-menu-pop" style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type01">
+          <p class="tit">메뉴 수정</p>
+        </div>
+        <button class="btn-close" type="button" onclick="pop.updateMenu.close()">닫기</button>
+      </div>
+      <div class="modal-con ta-center h90vh-185 ovf-a">
+        <table class="data-table mb0">
+          <colgroup>
+            <col width="135px">
+            <col width="">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left">카테고리</th>
+              <td class="ta-left">
+                <div class="sel w100p">
+                  <select name="" id="new-menu-catg2" class="">
+                    
+                  </select>
+                </div>
+              </td>
+            </tr>  
+
+            <tr>
+              <th class="ta-left">메뉴명</th>
+              <td class="ta-left">
+                <input maxlength="20" name="" id="input-menu-nm2" class="ip-txt w100p" type="text" value="" placeholder="메뉴명을 입력해 주세요.">
+                <!-- <div class="ip-ch-group mt8">
+                  <label for="ch-1-1" class="ip-ch-label">
+                    <input name="ch-1" id="ch-1-1" class="ip-ch" type="checkbox" value="">
+                    <span class="check"></span> 추천 메뉴로 등록하기
+                  </label>
+                </div> -->
+              </td>
+            </tr>
+
+            <tr>
+              <th class="ta-left">메뉴 가격</th>
+              <td class="ta-left">
+                <div class="ip-wrap type-unit w100p">
+                  <input name="" id="input-menu-price2" maxlength="12" class="ip-txt ta-left" type="tel" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');comma(this);" value="" placeholder="메뉴 가격을 입력해 주세요.">
+                  <span class="unit">원</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <th class="ta-left">메뉴소개 (선택)</th>
+              <td class="ta-left">
+                <div class="ta-group gray with-counting h200">
+                  <textarea id="input-menu-info2" class="ta-ip" placeholder="메뉴 소개를 작성해 주세요" maxlength="200"></textarea>
+                  <span class="counting">0/200</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="btn-group ta-center mt32">
+        <button class="btn btn-md-a btn-primary" id="btn-update-menu" type="button" >저장</button>
+	  </div>
+    </div>
+  </div>
+  <div class="dim" id="update-menu-pop-dim" style="display:none;"></div><!-- [D]active -->
+</body>
+</html>

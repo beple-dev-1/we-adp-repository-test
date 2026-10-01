@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>스마트오더 임직원도메인검증</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-ORDR-88-S">
+<script type="text/javascript" >
+var seq = "";
+var corp_nm = "비플머니";
+var memb_nm = "비플머니";
+var mob_no = "";
+</script>
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>비플 오더</h1>
+			<a data-element-id="HIT-ORDR-88-S-e08" id="btn_back" class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 비플오더 -->
+				<div class="flexWrap">
+					<div class="bpleOder addBtn-pb56"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+						<!-- 본인인증 -->
+						<div class="auth">
+							<h2>임직원 인증</h2>
+							<p>
+								비플머니 임직원은 비플 오더 서비스 이용 시,<br>
+								할인 혜택을 받으실 수 있습니다.
+							</p>
+							<form action="">
+								<fieldset>
+									<legend>임직원 인증</legend>
+									<div class="user">
+										<div class="bg_box">
+											<dl>
+												<dt>이름(실명)</dt>
+												<dd id="memb_nm">비플머니</dd>
+											</dl>
+											<dl>
+												<dt>휴대폰 번호</dt>
+												<dd id="mob_no"></dd>
+											</dl>	
+										</div>
+									</div>
+									<!-- 정보입력 -->
+									<div class="ipt_area">
+										<div class="question">
+											<h3>비플머니 임직원이십니까?</h3>
+											<div class="sel_bx">
+												<label><input data-element-id="HIT-ORDR-88-S-e11" type="radio" name="isEmployee" id="isY" checked="checked" value="Y">네, 회사용 이메일이 있습니다.</label>
+												<label><input data-element-id="HIT-ORDR-88-S-e12" type="radio" name="isEmployee" id="isN" value="N">아니요</label>
+											</div>
+										</div>
+										<!-- 2023-02-20 -->
+										<!-- 인증번호 -->
+										<div class="ipt_bx mgt29">
+											<h3 id="emailTitle">회사 이메일</h3>
+											<p>회사용 이메일로 발송된 인증번호를 확인하고 입력해 주세요.</p>
+											<!-- 텍스트 -->
+											<div class="ipt" id="no_combo_box" style="display:none;">
+												<input type="text" placeholder="이메일을 입력해주세요" id="email">
+											</div>
+											<div class="combo_box">
+												<div class="ipt long" id="short_combo">
+													<input data-element-id="HIT-ORDR-88-S-e13" type="text" placeholder="회사 이메일 입력" id="emailId">
+												</div>
+												<div class="space">
+													<span>@</span>
+												</div>
+												<div class="ipt combo_btn short">
+													<a data-element-id="HIT-ORDR-88-S-e09" id="email_domain">선택하세요</a><!-- 항목 선택 시 on 클래스 추가 -->
+												</div>
+												<div class="ipt" id="long_combo" style="display:none;width:100%;">
+													<input type="text" placeholder="회사 이메일 입력하세요." id="emailAddress">
+												</div>
+											</div>
+										</div>
+										<!-- //2023-02-20 -->
+										<div class="ipt_bx auth_num">
+											<!-- 번호 -->
+											<div class="ipt">
+												<input data-element-id="HIT-ORDR-88-S-e14" type="tel" value="" id="apv_no" placeholder="인증번호 6자리" maxlength="6" jex-input="onlyNumber">
+											</div>
+											<div class="btn_request">
+												<a>인증번호 요청</a>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+						<!-- 본인인증 -->
+					</div>
+				</div>
+				<!-- //비플오더 -->
+			</div>
+			<!-- // content -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner">
+					<a data-element-id="HIT-ORDR-88-S-e10" class="btn_default btn-style-h46 round_r8" id="authenticate"><!-- 활성화 시 on 클래스 추가 -->
+						인증하기
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+
+<!-- 레이어팝업 -->
+<div class="layer_overlay" id="layer_domain" style="display:none;">
+	<div class="layer_bPop">
+		<div class="popup_con pd0">
+			<!-- 설정팝업 -->
+			<div class="edit_pop add_tit_t2">
+				<h2 class="ly_pop_tit">이메일 선택</h2>
+				<!-- 카테고리 선택 -->
+				<ul id="list">
+					<li class="select"><a value="Hyundai.com">Hyundai.com</a></li><!-- 선택 시 select 클래스 추가 -->
+					<li><a value="Kia.com">Kia.com</a></li>
+					<li><a value="Genesis.com">Genesis.com</a></li>
+					<li><a value="mobis.co.kr">mobis.co.kr</a></li>
+					<li><a value="hmsec.com">hmsec.com</a></li>
+					<li><a value="hec.co.kr">hec.co.kr</a></li>
+					<li><a value="hyundai-autoever.com">hyundai-autoever.com</a></li>
+				</ul>
+				<input type="hidden" id="domain_val" />
+				<!-- //카테고리 선택 -->
+			</div>
+			<!-- //설정팝업 -->
+		</div>
+	</div>
+</div>
+<!-- //레이어팝업 -->
+</body>
+</html>

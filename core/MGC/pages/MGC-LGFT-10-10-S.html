@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>매장검색(카테고리·지도로 찾기)</title>
+  <link rel="stylesheet" href="../assets/localgift/css/common.css">
+  <link rel="stylesheet" href="../assets/localgift/css/zeropay_local.css">
+</head>
+<body data-screen-id="MGC-LGFT-10-10-S">
+<input type="hidden" id="ZPP_ID" 		value="" />
+	<input type="hidden" id="ZPP_POST_DO" 	value="" />
+	<input type="hidden" id="ZPP_POST_SI" 	value="" />
+	<input type="hidden" id="LOCAL_GOV_LAT" value="" />
+	<input type="hidden" id="LOCAL_GOV_LNG" value="" />
+	<input type="hidden" id="ZPP_NM" 		value="" />
+	
+	<input type="hidden" id="_APP_CD_"		value=""/>
+
+	<input type="hidden" id="CATEGORY_CD"		value="">
+	<input type="hidden" id="ORDER_CODE"		value="D">	<!-- D:거리순, P:인기순 -->
+	<input type="hidden" id="SRCH_ORDER_CODE"	value="D">	<!-- D:거리순, P:인기순 -->
+	
+	<!-- 위치검색, 매장검색 화면에서 돌아온 경우 -->
+	<input type="hidden" id="APP_PARAM_YN"	value="">
+	<input type="hidden" id="ZPP_POST_ADDR"	value="">
+
+	<!-- 가맹점목록 화면 -->
+	<div class="wrap full_height" id="store_list_main"><!-- 화면 높이 100%세팅 -->
+		<!-- header -->
+		<header id="header" class="find_store_hd hd_center">
+			<a data-element-id="MGC-LGFT-10-10-S-e24" href="#" class="prev">이전</a>
+			<h1 class="pgtit">
+				<a data-element-id="MGC-LGFT-10-10-S-e25" href="#none" class="gift_sel_btn"><em>비플머니</em></a><!-- 팝업창 활성화 시 클래스 on 추가 -->
+			</h1>
+			<a data-element-id="MGC-LGFT-10-10-S-e26" href="#none" class="local_set">지도로 찾기</a>
+		</header>
+		<!-- //header -->
+
+		<!-- container -->
+		<div class="container" id="container">
+			<!-- content -->
+			<div class="content" id="page_top">
+				<!-- 가맹점 찾기 -->
+				<div class="find_store">
+					<div class="store_list_w">
+						<!-- 매장검색 -->
+						<div class="st_search">
+							<div class="local_area">
+								<strong id="post_do_si"><!-- sample:begin -->표본<!-- sample:end --></strong>
+								<a data-element-id="MGC-LGFT-10-10-S-e27" href="#none">변경</a>
+							</div>
+							<div class="st_search_btn">
+								<a data-element-id="MGC-LGFT-10-10-S-e28" href="#none">매장검색</a>
+							</div>
+						</div>
+						<!-- 업종 -->
+						<div class="category_w"><!-- 업종 전체보기 열기/닫기 클래스 more 추가/삭제 -->
+						<!-- 
+							[D] 리스트 스크롤 이동 시 (아래) moveScroll 클래스 추가
+							[D] 리스트 스크롤 이동 시 (위) moveScroll 클래스 제거 만약, 이 때 more 클래스 추가되어 있을경우에는 more클래스 함께 제거
+						-->
+							<!-- 업종목록 -->
+							<ul class="cate_list">
+								<li class="all">
+									<a data-element-id="MGC-LGFT-10-10-S-e29" href="#none" class="on" value="">전체</a><!-- 업종 선택/해제 시 class="on" 추가/제거 -->
+								</li>
+								<li class="edu">
+									<a data-element-id="MGC-LGFT-10-10-S-e30" href="#none" value="A">학원/교육</a>
+								</li>
+								<li class="restr">
+									<a data-element-id="MGC-LGFT-10-10-S-e31" href="#none" value="B">음식점/카페</a>
+								</li>
+								<li class="medi">
+									<a data-element-id="MGC-LGFT-10-10-S-e32" href="#none" value="C">의료/보건</a>
+								</li>
+								<li class="agri">
+									<a data-element-id="MGC-LGFT-10-10-S-e33" href="#none" value="D">농산물/청과</a>
+								</li>
+								<li class="seafood">
+									<a data-element-id="MGC-LGFT-10-10-S-e34" href="#none" value="E">수산물/횟집</a>
+								</li>
+								<li class="meat">
+									<a data-element-id="MGC-LGFT-10-10-S-e35" href="#none" value="F">축산물/정육</a>
+								</li>
+								<li class="beauty">
+									<a data-element-id="MGC-LGFT-10-10-S-e36" href="#none" value="I">미용/패션</a>
+								</li>
+								<li class="grocery">
+									<a data-element-id="MGC-LGFT-10-10-S-e37" href="#none" value="G">식료품/반찬</a>
+								</li>
+								<li class="interior">
+									<a data-element-id="MGC-LGFT-10-10-S-e38" href="#none" value="H">가구/가전</a>
+								</li>
+								<li class="service">
+									<a data-element-id="MGC-LGFT-10-10-S-e39" href="#none" value="J">서비스업</a>
+								</li>
+								<li class="retail">
+									<a data-element-id="MGC-LGFT-10-10-S-e40" href="#none" value="Z">기타 도소매</a>
+								</li>
+							</ul>
+							<!-- //업종목록 -->
+							<!-- 업종 전체보기 btn -->
+							<p class="btn_category">
+								<a data-element-id="MGC-LGFT-10-10-S-e41" href="#none" class="">업종 전체보기</a>
+							</p>
+							<!-- //업종 전체보기 btn -->
+						</div>
+						<!-- //업종 -->
+						<!-- 정렬 -->
+						<div class="sort">
+							<a data-element-id="MGC-LGFT-10-10-S-e42" href="#none" id="sort_order_D" onclick="javascript:_thisPage.changeOrder('D');" class="on">거리순</a>
+							<a data-element-id="MGC-LGFT-10-10-S-e43" href="#none" id="sort_order_P" onclick="javascript:_thisPage.changeOrder('P');">인기순</a><!-- 선택 시 클래스 on -->
+						</div>
+						<!-- //정렬 -->
+						<!-- 매장목록 -->
+						<div class="store_list"><!-- sample:begin --><ul>	<li>		<a href="#none" onclick="_thisPage.goDtl('', '', );">			<div class="inner">				<div class="left">					<p class="st_name"><strong></strong></p>					<p class="sector">004</p>					<p class="address">서울 강남구 테헤란로 1길 10</p>				</div>				<div class="right">					<p class="img">						<img alt="004" src="../assets/_sample/card.svg">					</p>					<p class="cnt">1건<br>						결제					</p>				</div>				<div class="right">					<p class="img">						<img alt="004" src="../assets/_sample/card.svg">					</p>					<p class="distance"></p>				</div>			</div>		</a>	</li></ul><!-- sample:end --></div>
+						<!-- //매장목록 -->
+					</div>
+				</div>
+				<!-- //가맹점 찾기 -->
+			</div>
+			<!-- content -->
+		</div>
+		<!--// container -->
+	</div>
+	<!-- 가맹점목록 화면 -->
+	
+	<!-- 레이어팝업 오버레이 -->
+	<div class="layeroverlay" id="layer_gift_select" style="display:none;">
+		<!-- 레이어팝업 시작 -->
+		<div class="layer_pop_w">
+			<div class="layer_bpop gift_sel">
+				<div class="layer_con">
+					<div class="top_bx">
+						<p>검색하실 상품권을 선택하세요.</p>
+						<p class="pop_close_btn"><a href="#none">팝업닫기</a></p>
+					</div>
+					<div class="gift_select_bx">
+						<ul class="gift_select">
+						
+							<li><a href="#none" value="">전체 제로페이 사용처</a></li><!-- 선택 시 클래스 on -->
+						
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //레이어팝업 시작 -->
+	</div>
+	<!-- //레이어팝업 오버레이 -->
+	
+	
+	<!-- 위치정보 팝업 -->
+	<div class="wrap" id="layer_location" style="display:none;">
+		<!-- header -->
+		<header id="header" class="find_store_hd search_bot_bd">
+			<a href="#" class="prev">이전</a>
+			<div class="st_search_bx type2">
+				<a href="#none" class="location_btn">위치검색</a>
+				<input type="text" id="SRCH_WORD_SIDO" name="SRCH_WORD_SIDO" placeholder="시/도/구 검색">
+				<a href="#none" class="btn_del" style="display:none;">삭제</a>
+			</div>
+			<p class="st_search_btn">
+				<a href="#none">검색</a>
+			</p>
+		</header>
+		<!-- //header -->
+
+		<!-- container -->
+		<div class="container" id="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 가맹점 찾기 -->
+				<div class="find_store top_bd_line">
+					<!-- 검색결과 -->
+					<div class="search_result" style="display:none;">
+						<div class="top_bx" style="display:none;">
+							<h2>최근 검색 위치</h2>
+							<p class="del_all">
+								<a href="#none">전체삭제</a>
+							</p>
+						</div>
+						<!-- 리스트 -->
+						<ul class="result_list">
+						</ul>
+						<!-- //리스트 -->
+					</div>
+					<!-- //검색결과 -->
+				</div>
+				<!-- //가맹점 찾기 -->
+			</div>
+			<!-- content -->
+		</div>
+		<!--// container -->
+	</div>
+	<!-- 위치정보 팝업 -->
+	
+	
+	<!-- 가맹점검색 팝업 -->
+	<div class="wrap full_height" id="layer_find_store"><!-- 화면 높이 100%세팅 -->
+		<!-- header -->
+		<header id="header" class="find_store_hd search_bot_bd">
+			<a href="#" class="prev">이전</a>
+			<!-- <h1 class="pgtit"><em>가맹점 찾기</em></h1> -->
+			<div class="st_search_bx">
+				<input data-element-id="MGC-LGFT-10-10-S-e46" type="text" id="SRCH_WORD_STORE" name="SRCH_WORD_STORE" value="" placeholder="매장명 또는 전화번호 검색">
+				<a data-element-id="MGC-LGFT-10-10-S-e44" href="#none" class="btn_del" style="display:none;">삭제</a>
+			</div>
+			<p class="st_search_btn">
+				<a data-element-id="MGC-LGFT-10-10-S-e45" href="#none">검색</a>
+			</p>
+		</header>
+		<!-- //header -->
+
+		<!-- 매장검색내역 화면 -->
+		<!-- container -->
+		<div id="search_recent_aflt" class="container" id="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 가맹점 찾기 -->
+				<div class="find_store top_bd_line">
+					<!-- 검색결과 -->
+					<div class="search_result" style="display:none;">
+						<div class="top_bx" style="display:none;">
+							<h2>최근검색어</h2>
+							<p class="del_all">
+								<a href="#none">전체삭제</a>
+							</p>
+						</div>
+						<!-- 리스트 -->
+						<ul class="result_list">
+						</ul>
+						<!-- //리스트 -->
+					</div>
+					<!-- //검색결과 -->
+				</div>
+				<!-- //가맹점 찾기 -->
+			</div>
+			<!-- content -->
+		</div>
+		<!--// container -->
+		<!-- 매장검색내역 화면 -->
+		
+		
+		<!-- 매장검색 메인화면 -->
+		<!-- container -->
+		<div id="search_aflt" style="display:none;" class="container" id="container">
+			<!-- content -->
+			<div class="content" id="page_top_aflt">
+				<!-- 가맹점 찾기 -->
+				<div class="find_store">
+					<!-- 검색결과 -->
+					<div class="search_result">
+						<div class="store_list_w">
+							<!-- 매장검색 -->
+							<div class="st_search tbd_n">
+								<div class="local_area">
+									<strong id="aflt_post_do_si"><!-- sample:begin -->표본<!-- sample:end --></strong>
+									<a href="#none">변경</a>
+								</div>
+							</div>
+							<!-- 정렬 -->
+							<div class="sort">
+							<a href="#none" id="srch_sort_order_D" onclick="javascript:_thisPage.changeOrderFindStore('D');" class="on">거리순</a>
+							<a href="#none" id="srch_sort_order_P" onclick="javascript:_thisPage.changeOrderFindStore('P');">인기순</a><!-- 선택 시 클래스 on -->
+							</div>
+							<!-- //정렬 -->
+							<!-- 매장목록 -->
+							<div class="store_list">
+							</div>
+							<!-- //매장목록 -->
+						</div>
+					</div>
+					<!-- //검색결과 -->
+				</div>
+				<!-- //가맹점 찾기 -->
+			</div>
+			<!-- content -->
+		</div>
+		<!--// container -->
+		<!-- 매장검색 메인화면 -->
+	<!-- 가맹점검색 팝업 -->
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점관리 > 직원등록</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="MCH-AFMG-40-20-S">
+<div class="wrap">
+<input data-element-id="MCH-AFMG-40-20-S-e10" id="zp_comp_id" hidden="hidden" value="표본">
+	<div class="header floating-back-header floating-sticky">
+		<h1>직원관리</h1>
+		<!-- <a href="#" class="btn-history-back">뒤로가기</a> -->
+		<div class="right">
+			<a data-element-id="MCH-AFMG-40-20-S-e08" href="#none" class="btn_outpage">페이지나가기</a>
+		</div>
+	</div><!-- // header -->
+	<div class="container">
+		<div class="content">
+			<div class="row-bothpadding25-style">
+				<div class="input_wrap">
+					<!-- 2021-02-10 삭제 -->
+					<!-- <div class="store_tit">
+						관리가맹점 : 비플다방
+					</div> -->
+					<!-- //2021-02-10 삭제 -->
+					<!-- 2021-02-10 -->
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">관리가맹점</div></td></tr>
+								<tr>
+									<td>
+										<div class="select_type">
+											<div class="sel">
+												<select data-element-id="MCH-AFMG-40-20-S-e11" id="store_list"><!-- 
+													<option value="null">전체</option> -->
+												</select>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- //2021-02-10 -->
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">이름</div></td></tr>
+								<tr>
+									<td>
+										<div class="input_type active">
+											<input data-element-id="MCH-AFMG-40-20-S-e12" type="text" id="input_nm" maxlength="20">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">연락처</div></td></tr>
+								<tr>
+									<td>
+										<div class="input_type active">
+											<input data-element-id="MCH-AFMG-40-20-S-e13" id="input_mb" maxlength="13">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">메모</div></td></tr>
+								<tr>
+									<td>
+										<div class="memo_txt">
+											<textarea data-element-id="MCH-AFMG-40-20-S-e14" cols="50" rows="4" id="memo" maxlength="200"></textarea>
+										</div>
+										<div class="countxt" id="cnt_txt">(0/200자)</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="fixed-bottom-section" style="position: fixed; top: 712px;">
+				<a data-element-id="MCH-AFMG-40-20-S-e09" href="#" class="btn-submit btn-deepblack-op90" id="reg_btn"><span>등록</span></a><!-- 활성화클래스 on -->
+			</div>
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<!-- modal overlay -->
+<div id="ok_msg" class="modaloverlay" style="display:none";>
+		<div class="lytb"><div class="lytb_row"><div class="lytb_td">
+		<!-- layerpopup -->
+		<div class="layer_style1">
+			<div class="layer_po">
+				<div class="cont">
+					<div class="pop_txt" id="rslt_msg">
+						직원 등록이 완료 되었습니다.
+					</div>
+				</div>
+			</div>
+			<div class="ly_btn_fix_botm">
+				<a class="btn_pop reg_yes"><span>확인</span></a>
+			</div>
+		</div>
+		<!-- //layerpopup -->
+		</div></div></div>
+	</div>
+<!-- //modal overlay -->
+
+<!-- modal overlay -->
+<div id="no_msg" class="modaloverlay" style="display:none";>
+		<div class="lytb"><div class="lytb_row"><div class="lytb_td">
+		<!-- layerpopup -->
+		<div class="layer_style1">
+			<div class="layer_po">
+				<div class="cont">
+					<div class="pop_txt" id="no_rslt">
+						이미 등록된 직원입니다.
+					</div>
+				</div>
+			</div>
+			<div class="ly_btn_fix_botm">
+				<a class="btn_pop reg_no"><span>확인</span></a>
+			</div>
+		</div>
+		<!-- //layerpopup -->
+		</div></div></div>
+	</div>
+<!-- //modal overlay -->
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점관리 > 결제내역</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/lib/jquery/datepicker/daterangepicker.css">
+</head>
+<body data-screen-id="MCH-AFMG-20-S">
+<style>
+    /* custom daterangepicker */
+    .sh_date input {
+        background-color: transparent !important;
+        width: 100%;
+    }
+    .daterangepicker th.month, .daterangepicker .calendar-table th {
+        font-weight: bold;
+        color: black;
+    }
+    .daterangepicker td.in-range:not(.active),
+    .daterangepicker td.in-range:not(.active):hover {
+        background-color: #e7f2f7;
+    }
+    .daterangepicker td.in-range.end-date {
+        color: #fff;
+        background-color: #357ebd;
+    }
+    .drp-calendar.right {
+        position: absolute;
+        top: 8px;
+        left: calc(100% - 50px);
+    }
+    .drp-calendar.right .calendar-table {
+        background-color: transparent;
+    }
+    .drp-calendar.right tbody {
+        display: none;
+    }
+    .drp-calendar.right thead tr:nth-child(1) th:nth-child(1),
+    .drp-calendar.right thead tr:nth-child(1) th:nth-child(2)
+    {
+        display: none;
+    }
+    .drp-calendar.right thead tr:nth-child(2) {
+        display: none;
+    }
+    .daterangepicker:nth-of-type(3) {
+        right: 25px !important;
+    }
+    .daterangepicker:nth-of-type(3).drop-up:before {
+        left: unset;
+        right: 9px;
+    }
+    .daterangepicker:nth-of-type(3).drop-up:after {
+        left: unset;
+        right: 10px;
+    }
+</style>
+
+<div class="wrap">
+
+    <!-- 헤더 -->
+    <div class="header floating-back-header floating-sticky">
+        <h1 id="header">&nbsp;<span class="hearder_drop"></span></h1>
+        <a data-element-id="MCH-AFMG-20-S-e04" id="back_btn" href="javascript:void(0);" class="btn-history-back">뒤로가기</a>
+        <div class="right">
+            <a data-element-id="MCH-AFMG-20-S-e05" id="conf_btn" href="javascript:void(0);" class="btn_option">옵션</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <!-- 검색바 -->
+            <div id="period_panel" class="ph_date">
+                &nbsp;
+                <a data-element-id="MCH-AFMG-20-S-e06" id="srch_btn" href="javascript:void(0);" class="ico_search">상세검색</a>
+            </div>
+            <!-- 거래목록 -->
+            <ul id="tran_list" class="ph_list" style="height:calc(100vh - 102px); overflow-y:scroll;">
+                <li class="tran_item sample_row" style="display:none;">
+                    <div class="left">
+                        <p name="auth_dttm"></p>
+                        <p name="gift_info" class="tit"></p>
+                    </div>
+                    <div class="right">
+                        <p class="pay"><span name="total_price"></span></p>
+                        <p name="req_type" class="status"></p>
+                    </div>
+                </li>
+                <li id="no_data" style="text-align:center; font-size:14px; line-height:1.6; padding-top:30px;">
+                    검색된 결제내역이 없습니다.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 레이아웃 중첩시 뒷배경 -->
+    <div id="popup_dim" class="dim" style="display:none;"></div>
+
+    <!-- 가맹점슬라이더 -->
+    <div id="aflt_slider" class="ly_wrap type3" style="display:none;">
+        <form>
+            <fieldset>
+                <legend>가맹점 선택</legend>
+                <div class="store_tit">가맹점 선택 <a href="javascript:void(0);" class="btn_close"></a></div>
+                <div class="stc_warp">
+                    <ul>
+                        <li class="sample_row" style="display:none;"><a href="javascript:void(0);"><span class="s_tit"></span>&nbsp;</a></li>
+                    </ul>
+                </div>
+                <div id="add_aflt_btn" class="stc_btn" style="display:none;">
+                    <a href="zero_aflt_prvt.act">
+                        <span class="ico">사업장 추가</span>
+                    </a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- 검색슬라이더 -->
+    <div id="srch_slider" class="ly_wrap type2" style="display:none;">
+        <form>
+            <fieldset>
+                <legend>상세검색</legend>
+                <div class="sh_warp">
+                    <input name="srch_keyword" type="text" maxlength="50" placeholder="결제자 이름, 휴대폰번호 검색">
+                    <div class="sh_tab period_tab">
+                        <a href="javascript:void(0);" class="on">1주</a>
+                        <a href="javascript:void(0);">1개월</a>
+                        <a href="javascript:void(0);">직접입력</a>
+                    </div>
+                    <div class="sh_date"> <!-- on 으로 활성화 -->
+                        <div><input name="from_dt" type="text" maxlength="10" disabled readonly></div>
+                        <div><input name="to_dt" type="text" maxlength="10" disabled readonly></div>
+                    </div>
+                    <div class="sh_tab state_tab">
+                        <a data-state="" href="javascript:void(0);" class="on">전체</a>
+                        <a data-state="P" href="javascript:void(0);">결제완료</a>
+                        <a data-state="N" href="javascript:void(0);">결제취소</a>
+                    </div>
+                    <div class="fixed_bottom" style="z-index:999;">
+                        <a href="javascript:void(0);" class="btn_subtwo btn_cc">취소</a>
+                        <a href="javascript:void(0);" class="btn_subtwo btn_sh">검색</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- 거래내역 상세팝업 -->
+    <div id="tran_detail" class="pop_wrap" style="display:none;">
+        <div class="popup_cont">
+            <a href="javascript:void(0);" class="btn_close"></a>
+            <dl class="bigtit">
+                <dt>
+                    <p name="gift_info"></p>
+                    <p name="pay_user_nm"></p>
+                </dt>
+                <dd name="total_price"></dd>
+            </dl>
+            <dl class="pay_details">
+                <dt>거래상태</dt>
+                <dd name="req_type"></dd>
+                <dt>거래일시</dt>
+                <dd name="auth_dttm"></dd>
+                <dt>거래번호</dt>
+                <dd name="order_id"></dd>
+                <dt>결제금액</dt>
+                <dd name="total_price"></dd>
+                <dt>과세표준</dt>
+                <dd name="val_of_sply"></dd>
+                <dt>부가세</dt>
+                <dd name="vat"></dd>
+                <dt>봉사료</dt>
+                <dd name="svc_chrg"></dd>
+                <dt>결제유형</dt>
+                <dd name="pay_zpp_type"></dd>
+                <dt>판매처</dt>
+                <dd name="sale_channel_nm"></dd>
+                <dt>고객정보</dt>
+                <dd name="pay_user_nm"></dd>
+            </dl>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

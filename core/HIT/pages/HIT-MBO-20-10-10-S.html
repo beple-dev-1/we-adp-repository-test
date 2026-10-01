@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>다과 신청 내역</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-20-10-10-S">
+<div class="bp-root">
+    <!-- gnb -->
+		
+
+<!-- gnb -->
+<div class="bp-aside">
+  <!-- <div class="top">
+    <div class="logo">
+      <img src="../assets/resource/img/icon/ic_gate_small_02.svg" alt="">
+    </div>
+    <div class="right">
+      <p class="user-name">
+        김식권
+        <span>님</span>
+      </p>
+      <span class="user-position">매니저</span>
+      <button class="btn-logout" type="button">로그아웃</button>
+    </div>
+  </div> -->
+  <div class="bottom">
+    <div class="gnb gnb-type02">
+      <ul class="d1">
+        <li class="item item-01"> <!--[D]active-->
+          <i class="ic ic-gnb-bo-05 normal"></i>
+          <i class="ic ic-gnb-bo-05 active"></i>
+          <a data-element-id="HIT-MBO-20-10-10-S-e13" data-nav-target="HIT-MBO-20-10-10-S" href="/ent_afltbo_frsh_brk_list.act">다과 신청 내역</a>
+          <!-- <ul class="d2">
+            <li class="item"> <\!--[D]active--\>
+              <a href="/ent_afltbo_frsh_brk_list.act">다과 신청 내역</a>
+            </li>
+          </ul> -->
+        </li>
+        <li class="item item-02"> <!--[D]active-->
+          <i class="ic ic-gnb-bo-06 normal"></i>
+          <i class="ic ic-gnb-bo-06 active"></i>
+          <a data-element-id="HIT-MBO-20-10-10-S-e14" data-nav-target="HIT-MBO-20-20-10-S" href="/ent_afltbo_frsh_brk_catg.act">다과 메뉴 관리</a>
+          <ul class="d2">
+            <li class="item" name="ent_afltbo_frsh_brk_catg"> <!--[D]active-->
+              <a data-element-id="HIT-MBO-20-10-10-S-e15" data-nav-target="HIT-MBO-20-20-10-S" href="/ent_afltbo_frsh_brk_catg.act">카테고리</a>
+            </li>
+            <li class="item" name="ent_afltbo_frsh_brk_menu">
+              <a data-element-id="HIT-MBO-20-10-10-S-e16" data-nav-target="HIT-MBO-20-20-20-S" href="/ent_afltbo_frsh_brk_menu.act">메뉴</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+	<!-- gnb -->
+
+    <div class="bp-main">
+        <div class="layout">
+            <div class="row">
+                <div class="col col-10">
+                  <div class="con-wrap">
+
+                    <div class="page-header">
+                      <p class="tit tit-01">다과 신청 내역</p>
+                    </div>
+                    
+                    <div class="td-item-group mb12">
+                      <div class="td-item-group left td-item">
+                        <div class="td-item">
+                          <div class="btn-group">
+                            <button data-element-id="HIT-MBO-20-10-10-S-e17" class="btn btn-md-b btn-gray-outline w200 ta-left select_bx-style" type="button" onclick='filterPopupOpen();'><span id='dateText'>1개월</span><i class="ic-arr-md-bottom normal poa top-1 right0"></i></button>
+                          </div>
+                        </div>
+                        <div class="td-item">
+                          <div class="sel w120 td-item">
+                            <select data-element-id="HIT-MBO-20-10-10-S-e22" name="filter_proc_st" id="filter_proc_st" class="">
+                              <option value="">전체 상태</option>
+                              <option value="1">승인대기</option>
+                              <option value="4">승인완료</option>
+                              <option value="3">승인거절</option>
+                              <option value="2">신청취소</option>
+                              <option value="0">접수대기</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="td-item">
+                          <div class="sel w120 td-item">
+                            <select data-element-id="HIT-MBO-20-10-10-S-e23" name="filter_site_cd" id="filter_site_cd" class="">
+                              <!-- <option value="side_cd">전체 사업장</option> -->
+                            </select>
+                          </div>
+                        </div>
+                        <div class="ip-wrap with-icon ta-left w220">
+                          <input data-element-id="HIT-MBO-20-10-10-S-e24" name="filter_keyword" id="filter_keyword" class="ip-txt" type="text" value="" placeholder="신청자명을 입력해 주세요">
+                          <i class="ic ic-search-14" id="search_button"></i>
+                        </div>
+                      </div>
+					  <!-- 
+                      <div class="td-item-group left td-item">
+                        <button class="btn btn-md-b btn-gray-outline" type="button"><i class="ic ic-down"></i>내려받기</button>
+                      </div>
+                       -->
+                    </div>
+
+                    <div class="data-table-wrap data-table-wrap-y h413 bd_b ovx-a">
+                      <table id="table" class="data-table form-table no-bdb">
+                        <!-- <caption>표 제목</caption> -->
+                        <colgroup>
+                          <col style="width: 120px;"><!-- 요청일시 -->
+                          <col style="width: 150px;"><!-- 신청건명 -->
+                          <col style="width: 120px;"><!-- 행사일시 -->
+                          <col style="width: 70px;"><!-- 참석인원 -->
+                          <col style="width: 120px;"><!-- 신청자 정보 -->
+                          <col style="width: 120px;"><!-- 사업장 -->
+                          <!-- <col style="width: 130px;">부서 -->
+                          <col style="width: 70px;"> <!-- 상태 -->
+                        </colgroup>
+                        <thead>
+                          <tr>
+	                          <th class="ta-center" scope="col">요청일시</th>
+	                          <th class="ta-center" scope="col">신청건명</th>
+	                          <th class="ta-center" scope="col">행사일시</th>
+	                          <th class="ta-center" scope="col">참석인원</th>
+	                          <th class="ta-center" scope="col">신청자 정보</th>
+	                          <th class="ta-center" scope="col">사업장</th>
+	                          <!-- <th class="ta-center" scope="col">부서</th> -->
+	                          <th class="ta-center" scope="col">상태<a onclick='procPopupOpen();' class="ic ic-exc-22 ml2 vab-6"></a></th>
+                          </tr>
+                        </thead>
+                        <tfoot>
+                          <tr class="no-data">
+                            <td colspan="7">
+                              <!--[D] 검색결과가 없습니다.-->
+                              <div class="no-data no-bd h350">
+                                <div class="box">
+                                  <i class="ic ic-exc-40"></i>
+                                  <p>신청내역이 없습니다.</p>
+                                </div>
+                              </div>
+                              <!--//검색결과가 없습니다.-->
+                            </td>
+                          </tr>
+                        </tfoot>
+                        <tbody id="listArea">
+                          <tr style="display:none;"> <!-- [D] active 마우스 오버 시 -->
+                          	<input type="hidden" id="FRSH_BRK_SEQ" name="FRSH_BRK_SEQ" value="">
+                            <td class="ta-center" id="REG_DTTM"></td>
+                            <td class="ta-center tx-ellipsis" id="FRSH_BRK_TITLE"></td>
+                            <td class="ta-center" id="TRX_DTTM"></td>
+                            <td class="ta-center" id="MEMB_CNT"></td>
+                            <td class="ta-center" id="MEMB_INFO"></td>
+                            <td class="ta-center" id="SITE_NM" title=""></td>
+                            <!-- <td class="ta-center" id="DEPT_NM" title=""></td> -->
+                            <td class="ta-center" id="PROC_ST"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <!-- pagination -->
+                    <div id="pagination">
+                      <div class="pagi" id="pagi">
+                        <div class="group">
+                          <button data-element-id="HIT-MBO-20-10-10-S-e18" type="button" class="item first disabled" onclick="javascript:void(0);">first</button><!-- 비활성화 시 disabled 클래스 추가 -->
+                          <button data-element-id="HIT-MBO-20-10-10-S-e19" type="button" class="item prev disabled" onclick="javascript:void(0);">prev</button>
+                        </div>
+                        <div class="group" id="page_num">
+                          <button type="button" class="item" onclick="javascript:void(0);">1</button>
+	                      <button type="button" class="item" onclick="javascript:void(0);">2</button>
+	                      <button type="button" class="item" onclick="javascript:void(0);">3</button>
+	                      <button type="button" class="item" onclick="javascript:void(0);">4</button>
+	                      <button type="button" class="item" onclick="javascript:void(0);">5</button>
+	                      <button type="button" class="item" onclick="javascript:void(0);">6</button>
+	                      <button type="button" class="item" onclick="javascript:void(0);">7</button>
+	                      <button type="button" class="item" onclick="javascript:void(0);">8</button>
+	                      <button type="button" class="item" onclick="javascript:void(0);">9</button>
+	                      <button type="button" class="item" onclick="javascript:void(0);">10</button>
+                        </div>
+                        <div class="group">
+                          <button data-element-id="HIT-MBO-20-10-10-S-e20" type="button" class="item next disabled" onclick="javascript:void(0);">next</button>
+                          <button data-element-id="HIT-MBO-20-10-10-S-e21" type="button" class="item last disabled" onclick="javascript:void(0);">last</button>
+                        </div>
+                      </div>
+                    </div>
+                  <!-- //pagination -->
+                    
+                  </div>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!--=============================================================================================================== -->
+  <!-- 조건필터 -->
+  <div class="modal w410" id='filterPopup_1' style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type02">
+          <p class="tit">필터</p>
+        </div>
+        <button class="btn-close" type="button" onclick='filterPopupClose();'>닫기</button>
+      </div>
+      <div class="modal-con">
+        <p class="fs-16 lh-19 fw-600 fc-222">기간</p>
+        <div class="ip-chbt-group mt12">
+          <!--temp width-->
+          <label for="chbt-1-1" class="ip-chbt-label">
+            <input name="chbt-1" id="chbt-1-1" class="ip-chbt" type="checkbox" value="1" checked=true>
+            <span class="check"></span>
+            <span class="txt" >1개월</span>
+          </label>
+          <label for="chbt-1-2" class="ip-chbt-label">
+            <input name="chbt-1" id="chbt-1-2" class="ip-chbt" type="checkbox" value="6">
+            <!--checked-->
+            <span class="check"></span>
+            <span class="txt">6개월</span>
+          </label>
+          <label for="chbt-1-3" class="ip-chbt-label">
+            <input name="chbt-1" id="chbt-1-3" class="ip-chbt" type="checkbox" value="12">
+            <!--checked-->
+            <span class="check"></span>
+            <span class="txt">1년</span>
+          </label>
+          <label for="chbt-1-4" class="ip-chbt-label">
+            <input name="chbt-1" id="chbt-1-4" class="ip-chbt" type="checkbox" value="0">
+            <!--checked-->
+            <span class="check"></span>
+            <span class="txt">직접입력</span>
+          </label>
+        </div>
+        <div class="td-item-group mt16">
+          <div class="ip-wrap with-icon ta-left w100p td-item">
+            <input data-toggle="datepicker" name="startDate" id="startDate" style="background-color: fff" class="ip-txt" type="text" value="" placeholder="" readonly disabled><!-- 직접입력 시 readonly 제거 -->
+            <!-- <i class="ic ic-calendar"></i> -->
+          </div>
+          <span class="td-item"> ~ </span>
+          <div class="ip-wrap with-icon ta-left w100p td-item">
+            <input data-toggle="datepicker" name="endDate" id="endDate" class="ip-txt" type="text" value="" placeholder="" readonly disabled><!-- 직접입력 시 readonly 제거 -->
+            <!-- <i class="ic ic-calendar"></i> -->
+          </div>
+        </div>
+        <div class="btn-group ta-center mt32">
+          <button class="btn btn-md-a btn-primary" type="button" onclick='selectListbf();'>적용</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <!-- 조건필터 -->
+  
+  <!--=============================================================================================================== -->
+  <!-- 상태 팝업  -->
+  <div class="modal w450 " id='procPopup_1' style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type02">
+          <p class="tit">다과상태</p>
+        </div>
+        <button class="btn-close" type="button" onclick='procPopupClose();'>닫기</button>
+      </div>
+      <div class="modal-con">
+        <table class="data-table form-table">
+          <colgroup>
+            <col style="width:105px">
+            <col style="*;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left fw-400">
+                접수 대기
+              </th>
+              <td class="ta-left">
+                <p class="txt-01">다과 업체가 제공 금액 입력 전</p>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left fw-400">
+                승인 대기
+              </th>
+              <td class="ta-left">
+                <p class="txt-01">관리자가 수락 전</p>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left fw-400">
+                승인 거절
+              </th>
+              <td class="ta-left">
+                <p class="txt-01">관리자가 신청건 반려</p>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left fw-400">
+                신청 완료
+              </th>
+              <td class="ta-left">
+                <p class="txt-01">관리자가 수락</p>
+              </td>
+            </tr>
+            <tr>
+              <th class="ta-left fw-400">
+                신청 취소
+              </th>
+              <td class="ta-left">
+                <p class="txt-01">사용자가 신청을 취소했을 경우 (승인 완료 전)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <div class="modal-footer"></div> -->
+    </div>
+  </div>
+  <!-- //상태 팝업  -->
+  
+  
+  <!--=============================================================================================================== -->
+  <!--다과 관리 상세 팝업 -->
+  <div class="modal w880" id='detailPopup_1' style="display:none;"><!--[D]active-->
+    <div class="modal_wrap-header bd-b">
+      <p class="tit">다과 관리 상세</p>
+      <button class="btn-close" type="button" onclick='detailPopupClose()'>닫기</button>
+    </div>
+    <div class="inner-wrap">
+      <div class="inner h90vh-136 content-scrolling">
+        <div class="modal-header mb0">
+          <div class="tit-area">
+            <p class="tit" id='frshBrkTitleTxt'>신입사원 워크샵 </p>
+            <p class="tit-02 fw-400 fc-pri fs-16 mt12" id="confirmAmt_p"> <!-- [D] 불필요 시 display: none; -->
+              최종 제공금액 <strong class="fw-600" id='confirmAmt'>0원</strong>
+            </p>
+          </div>
+          <div class="td-item-group right top td-item" id="proc_st_0" style="display:none;">
+            <button class="btn btn-sm btn-primary" type="button" onclick ='confirmAmtPopupOpen();'>접수하기</button>
+          </div>
+        </div>
+        <div class="modal-con">
+          <!-- 신청정보 -->
+          <div class="td-item-group">
+            <div class="td-item-group left td-item">
+              <div class="tit-area mb4">
+                <p class="tit-02">신청정보</p>
+              </div>
+            </div>
+          </div>
+          <table class="data-table form-table mt8">
+            <colgroup>
+              <col style="width: 115px;">
+              <col style="width: auto;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="ta-left">
+                  요청일시
+                </th>
+                <td class="ta-left" id='regDttmTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></td>
+              </tr>
+              <tr>
+                <th class="ta-left">
+                  신청업체
+                </th>
+                <td class="ta-left" id='corpNmTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></td>
+              </tr>
+              <tr>
+                <th class="ta-left">
+                  신청자
+                </th>
+                <td class="ta-left" id="membInfo"><!-- sample:begin -->표본<!-- sample:end --></td>
+              </tr>
+              <tr>
+                <th class="ta-left">
+                  신청자 근무지
+                </th>
+                <td class="ta-left" id="siteInfoTxt"><!-- sample:begin -->안내 문구<!-- sample:end --></td>
+              </tr>
+              <tr>
+                <th class="ta-left">
+                  신청 상태
+                </th>
+                <td class="ta-left" id="procStTxt"><!-- sample:begin -->안내 문구<!-- sample:end --></td>
+              </tr>
+              <tr id='comentArea'>
+                <th class="ta-left">
+                  거절사유
+                </th>
+                <td class="ta-left" id='comentTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></td>
+              </tr>
+              
+            </tbody>
+          </table>
+
+          <!-- 행사 정보 -->
+          <div class="td-item-group mt32">
+            <div class="td-item-group left td-item">
+              <div class="tit-area mb4">
+                <p class="tit-02">행사정보</p>
+              </div>
+            </div>
+          </div>
+          <table class="data-table form-table mt8">
+            <colgroup>
+              <col style="width: 115px;">
+              <col style="width: auto;">
+              <col style="width: 130px;">
+              <col style="width: auto;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="ta-left">
+                  행사일시
+                </th>
+                <td class="ta-left" id='trxDtTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></td>
+                <th class="ta-left">
+                  참석인원
+                </th>
+                <td class="ta-left" id='membCntTxt'><!-- sample:begin -->1<!-- sample:end --></td>
+              </tr>
+              <tr>
+                <th class="ta-left">
+                  행사장소
+                </th>
+                <td class="ta-left" colspan="3" id='locationDescTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- 다과신청내역 -->
+          <div class="td-item-group mt32">
+            <div class="left td-item">
+              <div class="tit-area mb4">
+                <p class="tit-02">다과신청내역</p>
+              </div>
+            </div>
+          </div>
+          <table class="data-table form-table border_dashed mt8">
+            <colgroup>
+              <col style="width:50%">
+              <col style="width:50%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>메뉴명/수량</th>
+                <th>금액</th>
+              </tr>
+            </thead>
+            <tbody id='menuList'><!-- sample:begin --><div class="memo-item"><div class="item-hd"><p class="memo-name"><strong>홍길동</strong></p><p class="memo-date">2026.09.02 14:22</p></div><div class="item-con"></div></div><!-- sample:end --></tbody>
+          </table>
+          <!-- 행사 정보 > 총 예상 주문금액 -->
+          <div class="td-item-group right mt9">
+            <div class="td-item">
+              <p class="txt-01 fc-333"><span>총 예상 주문금액</span> <span id='amtTxt'>0원</span> <span>/ 최종 제공 금액 <strong class="fw-600" id='confirmAmtTxt'>0원</strong></span></p>
+            </div>
+          </div>
+
+          <!-- 요청사항 -->
+          <div class="td-item-group mt32" id='requirementTxtArea'>
+            <div class="td-item-group left td-item">
+              <div class="tit-area">
+                <p class="tit-02">요청사항</p>
+              </div>
+            </div>
+          </div>
+          <div class="pn mt12" id='requirementTxtArea2'>
+            <p class="txt-01" id='requirementTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+          </div>
+
+          <!-- 정산 -->
+          <div class="td-item-group mt32">
+            <div class="td-item-group left td-item">
+              <div class="tit-area mb4">
+                <p class="tit-02">정산</p>
+              </div>
+            </div>
+          </div>
+          <table class="data-table form-table mt8">
+            <colgroup>
+              <col style="width: 115px;">
+              <col style="width: auto;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="ta-left">
+                  예산금액(1인)
+                </th>
+                <td class="ta-left"id='estAmtTxt'>
+                </td>
+              </tr>
+              <tr>
+                <th class="ta-left">
+                  담당자명
+                </th>
+                <td class="ta-left" id='managerNmTxt'><!-- sample:begin -->안내 문구<!-- sample:end --></td>
+              </tr>
+              <tr>
+                <th class="ta-left">
+                  담당자 이메일
+                </th>
+                <td class="ta-left" id='managerEmailTxt'><!-- sample:begin -->user@example.com<!-- sample:end --></td>
+              </tr>
+              <tr>
+                <th class="ta-left">
+                  담당자 연락처
+                </th>
+                <td class="ta-left" id='managerTelNoTxt'><!-- sample:begin -->010-1234-5678<!-- sample:end --></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- <div class="modal-footer"></div> -->
+      </div>
+      <!-- 메모박스 -->
+      <div class="inner memo">
+        <!-- 요청사항 -->
+        <div class="td-item-group">
+          <div class="td-item-group left td-item">
+            <div class="tit-area">
+              <p class="tit-02">메모</p>
+            </div>
+          </div>
+        </div>
+        <div class="memo__item-wrap" id='memoList'><!-- sample:begin --><div class="memo-item"><div class="item-hd"><p class="memo-name"><strong>홍길동</strong></p><p class="memo-date">2026.09.02 14:22</p></div><div class="item-con"></div></div><!-- sample:end --></div>
+        <div class="memo__item-wrap" id='noMemoList'>
+          <div class="item-none">
+            <i class="ic ic-exc-40"></i>
+            <p class="item-none-text">작성된 메모가 없습니다.</p>
+          </div>
+        </div>
+        <div class="memo_input-container">
+          <!-- 입력 form box - 예시 -->
+          <div class="form-box">
+              <!-- 박스 컨텐츠 -->
+              <div class="form__item-wrap">
+                  <div class="form-item">
+                      <textarea onkeyup="checkCount();" name="ctnt" id="ctnt" placeholder="메모를 남겨주세요(최대 100글자)"></textarea>
+                  </div>
+                  <!-- 메모 전송 버튼 -->
+                  <div class="send_btn-box">
+                      <button type="button" class="send-btn icon send-24" id='sendBtn' onclick="sendMessage()"><!-- 입력 시 on 클래스 추가 / 내용 없을 시 on 클래스 제거 -->
+                          <span>메모 전송</span>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!--//다과 관리 상세 팝업 -->
+  
+
+<!--=============================================================================================================== -->
+  <!--다과 관리 상세 팝업 > 다과 수락 팝업-->
+  <div class="modal w370" id="confirmAmtPopup" style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type01">
+          <p class="tit">다과 수락</p>
+          <div class="desc">입력하신 최종 제공 금액으로 신청됩니다</div>
+        </div>
+        <button class="btn-close" type="button" onclick="confirmAmtPopupClose();">닫기</button>
+      </div>
+      <div class="modal-con">
+        <table class="data-table form-table no-bd">
+          <colgroup>
+            <col width="90px">
+            <col width="">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left pl0">최종 제공 금액</th>
+              <td class="ta-left">
+                <div class="ip-wrap type-unit w100p">
+                  <input name="inputConfirmAmt" id="inputConfirmAmt" class="ip-txt ta-right" type="tel" maxlength="12" value="0" placeholder="" jex-input="commaFormat"> <!-- [D] 수정 불가 시 readonly -->
+                  <span class="unit">원</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn btn-md-a btn-primary" type="button" onclick="confirmCheck();">수락하기</button>
+        </div>        
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="dim " id='dimArea' style="display:none;"></div>
+</body>
+</html>

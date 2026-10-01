@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>주문내역</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-HIST-10-10-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="ORDER_ID"  name="ORDER_ID"  value="" />
+    <input type="hidden" id="ORDER_TYPE"  name="ORDER_TYPE"  value="" />
+    <input type="hidden" id="TRX_DT"  name="TRX_DT"  value="" />
+    <input type="hidden" id="TRX_SEQ"  name="TRX_SEQ"  value="" />
+</form>
+
+<!-- wrap -->
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>주문 내역</h1>
+        <a data-element-id="BPG-HIST-10-10-S-e03" href="#" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+    </div>
+    <!-- // header -->
+
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <div class="content">
+            <!-- 비플오더 -->
+            <div class="flexWrap">
+                <div class="bpleOder bg_f7"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+                    <!-- 주문내역 -->
+                    <div class="oder_list">
+                        <div class="list_box">
+<!--                            <!-- 일자 및 매장 ->-->
+<!--                            <div class="list">-->
+<!--                                <!-- 날짜 및 주문상태 ->-->
+<!--                                <div class="util">-->
+<!--                                    <p class="date">2022년 12월 29일 15:14</p>-->
+<!--                                    <p class="state cancel"><!-- 주문취소 시 cancel 클래스 추가 ->-->
+<!--                                        <span>포장</span>-->
+<!--                                        <span>·</span>-->
+<!--                                        <strong>주문취소</strong>-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <!-- 상세정보 ->-->
+<!--                                <div class="con_bx">-->
+<!--                                    <div class="info">-->
+<!--                                        <h2 class="name">-->
+<!--                                            <a href="#none"><span>Wecafe 영등포점</span></a>-->
+<!--                                        </h2>-->
+<!--                                        <p>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 1개</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="pay">-->
+<!--                                        <div>-->
+<!--                                            <h3>환불금액</h3>-->
+<!--                                            <p class="won"><span>17,700</span>원</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="btn">-->
+<!--                                        <p><a href="#none" class="reOder">재주문 하기</a></p><!-- 재주문하기 버튼 reOder 클래스 추가 ->-->
+<!--                                        <p><a href="#none">영수증 보기</a></p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <!-- 일자 및 매장 ->-->
+<!--                            <div class="list">-->
+<!--                                <!-- 날짜 및 주문상태 ->-->
+<!--                                <div class="util">-->
+<!--                                    <p class="date">2022년 12월 29일 15:14</p>-->
+<!--                                    <p class="state">-->
+<!--                                        <span>포장</span>-->
+<!--                                        <span>·</span>-->
+<!--                                        <strong>주문완료</strong>-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <!-- 상세정보 ->-->
+<!--                                <div class="con_bx">-->
+<!--                                    <div class="info">-->
+<!--                                        <h2 class="name">-->
+<!--                                            <a href="#none"><span>Wecafe 영등포점</span></a>-->
+<!--                                        </h2>-->
+<!--                                        <p>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 1개</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="pay">-->
+<!--                                        <div>-->
+<!--                                            <h3>환불금액</h3>-->
+<!--                                            <p class="won"><span>17,700</span>원</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="btn">-->
+<!--                                        <p><a href="#none">영수증 보기</a></p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <!-- 일자 및 매장 ->-->
+<!--                            <div class="list">-->
+<!--                                <!-- 날짜 및 주문상태 ->-->
+<!--                                <div class="util">-->
+<!--                                    <p class="date">2022년 12월 29일 15:14</p>-->
+<!--                                    <p class="state">-->
+<!--                                        <span>포장</span>-->
+<!--                                        <span>·</span>-->
+<!--                                        <strong>주문완료</strong>-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <!-- 상세정보 ->-->
+<!--                                <div class="con_bx">-->
+<!--                                    <div class="info">-->
+<!--                                        <h2 class="name">-->
+<!--                                            <a href="#none"><span>Wecafe 영등포점</span></a>-->
+<!--                                        </h2>-->
+<!--                                        <p>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 1개</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="pay">-->
+<!--                                        <div>-->
+<!--                                            <h3>환불금액</h3>-->
+<!--                                            <p class="won"><span>17,700</span>원</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="btn">-->
+<!--                                        <p><a href="#none">영수증 보기</a></p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <!-- 일자 및 매장 ->-->
+<!--                            <div class="list">-->
+<!--                                <!-- 날짜 및 주문상태 ->-->
+<!--                                <div class="util">-->
+<!--                                    <p class="date">2022년 12월 29일 15:14</p>-->
+<!--                                    <p class="state">-->
+<!--                                        <span>포장</span>-->
+<!--                                        <span>·</span>-->
+<!--                                        <strong>주문완료</strong>-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <!-- 상세정보 ->-->
+<!--                                <div class="con_bx">-->
+<!--                                    <div class="info">-->
+<!--                                        <h2 class="name">-->
+<!--                                            <a href="#none"><span>Wecafe 영등포점</span></a>-->
+<!--                                        </h2>-->
+<!--                                        <p>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 1개</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="pay">-->
+<!--                                        <div>-->
+<!--                                            <h3>환불금액</h3>-->
+<!--                                            <p class="won"><span>17,700</span>원</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="btn">-->
+<!--                                        <p><a href="#none" class="reOder">영수증 보기</a></p>-->
+<!--                                        <p><a href="#none">영수증 보기</a></p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <!-- // 일자 및 매장 목록 끝->-->
+                        </div>
+                    </div>
+                    <!-- //주문내역 -->
+                </div>
+            </div>
+            <!-- //비플오더 -->
+        </div>
+        <!-- // content -->
+        <!-- 하단 고정버튼 -->
+        <div class="btn_botFix_w">
+            <div class="inner">
+                <a data-element-id="BPG-HIST-10-10-S-e04" data-nav-target="BPG-ORDR-30-S" class="btn_default btn-style-h48 round_r8 on" id="do_order" onclick="do_order();"><!-- 활성화 시 on 클래스 추가 -->
+                    주문하러 가기
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- // container -->
+</div>
+<!-- // wrap -->
+<div class="layer_overlay" id="layer_overlay" style="display:none">
+    <!-- layerpopup -->
+    <div class="popup_w">
+        <div class="popup_con">
+            <div class="qr_popup">
+                <h2>로봇커피</h2>
+                <ol class="list_num">
+                    <li>리더기에 QR 코드를 스캔해 주세요.</li>
+                    <li>주문한 음료를 가져가 주세요.</li>
+                </ol>
+                <div class="qr_area">
+                    <div id="qr_area" class="qr_code">
+                        <img alt="" src="../assets/_sample/card.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //layerpopup -->
+</div>
+</body>
+</html>

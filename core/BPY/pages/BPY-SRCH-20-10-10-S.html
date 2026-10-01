@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점찾기 > 가맹점 상세</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-SRCH-20-10-10-S">
+<div id="app" class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>매장 정보</h1>
+        <a data-element-id="BPY-SRCH-20-10-10-S-e08" href="#" class="back-button btn-history-back">뒤로가기</a>
+        <!-- <div class="right">
+            <a href="#none" class="btn_outpage">페이지나가기</a>
+        </div> -->
+    </div><!-- // header -->
+
+    <div class="container">
+        <!-- 컨텐츠 영역 -->
+        <div class="content">
+            <!-- 가맹점 -->
+            <div class="franchisee_w">
+                <!-- 매장정보 -->
+                <div class="store_info">
+                    <!-- 매장명, 즐겨찾기 -->
+                    <div class="store_name">
+                        <!--
+                            가맹점 별 아이콘 클래스 명
+                            음식점/카페		= restr
+                            농산물/청과		= agri
+                            축산물/정육		= meat
+                            수산물/횟집		= seafood
+                            식료품/반찬		= grocery
+                            학원/교육		= edu
+                            의료/보건		= medi
+                            미용/패션		= beauty
+                            가전/가구		= interior
+                            서비스업		= service
+                            기타 도/소매	= retail
+                        -->
+                        <div class="ico agri"></div>
+						<h2 class="name">
+                            <strong></strong>
+                        </h2>
+                        <p class="cate"></p>
+                        <p class="heart"><!-- 즐겨찾기 추가/삭제 시 "on" 클래스 추가/삭제 -->
+                            <a data-element-id="BPY-SRCH-20-10-10-S-e09" href="#none">즐겨찾기</a>
+                        </p>
+                    </div>
+                    <!-- //매장명, 즐겨찾기 -->
+                    <!-- 매장정보 상세 -->
+                    <div class="info_detail">
+                    	<div class="detail_w">
+							<h3 class="tit">주소</h3>
+							<div class="con">
+								<p class="address">										
+								</p>
+								<p><a data-element-id="BPY-SRCH-20-10-10-S-e10" href="#none" class="map txt_b map-button">지도보기</a></p>
+							</div>
+						</div>
+						<div class="detail_w">
+							<h3 class="tit">대표전화</h3>
+							<div class="con">
+								<p><a href="#none" class="txt_b main-telephone-number"></a></p>
+								<p><a href="#none" class="txt_b sub-telephone-number"></a></p>
+							</div>
+						</div>
+						<div class="detail_w" id="wt_info" style="display: none;">
+							<h3 class="tit">영업시간</h3>
+							<div class="con">
+								<!-- 2022-08-03 기존위치 덮어주세요 -->
+								<div class="work_time"><!-- 더보기 버튼 클릭 시 open 클래스 추가 -->
+									<!-- 영업시간 목록 -->
+									<div class="inner" id="wt_info_area">
+									
+									</div>
+									<!-- 영업시간 목록 -->
+								</div>
+								<!-- //2022-08-03 -->							
+							</div>
+						</div>
+						<div class="detail_w">
+							<h3 class="tit">대표자명</h3>
+							<div class="con">
+								<p class = "representative-name"></p>
+							</div>
+						</div>
+                        
+                    </div>
+                    <!-- //매장정보 상세 -->
+                    
+                    <!-- 상품권리스트 -->
+                    <!-- <div class="gift_scroll_w">
+                        <div class="gift_list">
+                        </div>
+                    </div> -->
+                    
+                    
+                    
+                    <!-- 매장소개 -->
+					<div class="st_info_con" id="info_area">
+					
+						<!-- 탭메뉴 -->
+						<div class="tab_bx" id="tab_area">
+							<a data-element-id="BPY-SRCH-20-10-10-S-e11" id="intro_tab" style="display: none;" class="on"><span>소개</span></a>
+							<a data-element-id="BPY-SRCH-20-10-10-S-e12" id="menu_tab"  style="display: none;" ><span>메뉴</span></a>
+							<a data-element-id="BPY-SRCH-20-10-10-S-e13" id="img_tab"   style="display: none;" ><span>사진</span></a>
+						</div>
+						<!-- //탭메뉴 -->
+						
+						<!-- 소개 -->
+						<div class="intro_bx box" id="intro_area">
+							<h4 class="con_tit">소개</h4>
+							<div class="intro_txt" id="intro_text"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+						</div>
+						<!-- //소개 -->
+						
+						<!-- 메뉴판, 메뉴 -->
+						<div class="menu_bx box" id="menu_area">
+							<h4 style="display: none;" class="con_tit" id="menuboard_title">메뉴판</h4>
+							<div class="menu_board" id="menuboard_area"><!-- sample:begin --><ul><li><a img-path="" board-seq="1"></a></li></ul><!-- sample:end --></div>
+							
+							<h4 style="display: none;" class="con_tit" id="pdt_title">메뉴</h4>
+							<div class="list_add" id="pdt_area"><!-- sample:begin --><div class="menu_list"><ul><li><div class="inner"><p class="photo"><a img-path="" pdt-seq="1"></a></p><div class="info_w"><p class="name push" >홍길동</p><p class="info"></p><p class="won">4,500 원</p></div></div></li></ul><!-- sample:end --></div>
+						</div>
+						<!-- //메뉴판, 메뉴 -->
+						
+						<!-- 매장사진 -->
+						<div class="store_photo_bx box" id="img_area"><!-- sample:begin --><h4 class="con_tit">사진</h4><div class="photo_list"><ul><li><a img-path="" img-seq="1"></a></li><li><a img-path="" img-seq="1"><img src="../assets/resource/images/profile/st_photo_dummy1.png"></a></li></ul></div><!-- sample:end --></div>
+						<!-- //매장사진 -->
+					</div>
+					<!-- //매장소개 -->
+					
+					<!-- 매장정보 없음 -->
+					<div class="store_info_none" style="display: none;" id="no_info_area">
+						<div class="regist_info">
+							<p class="msg">이 매장의 사장님이신가요?</p>
+							<p class="regist_btn"><a onClick="uf_regInfo();">정보 등록하기</a></p>
+						</div>
+						<div class="none_msg">
+							등록된 매장 정보가 없습니다.
+						</div>
+					</div>
+					<!-- //매장정보 없음 -->
+					
+					
+					<p class="problem_btn info_none"><a data-element-id="BPY-SRCH-20-10-10-S-e14" id="report_btn">프로필 정보에 문제가 있어요!<span>신고하기</span></a></p>
+					
+                </div>
+                <!-- //매장정보 -->
+            </div>
+            <!-- 가맹점 -->
+        </div>
+        <!-- //컨텐츠 영역 -->
+    </div><!-- // container -->
+</div><!-- // wrap -->
+
+<div class="layer_overlay photo_detail hide" id="img_detail_area" style="display:none;"><!-- 기본 = hide, 사진 클릭 시 hide -> view로 클래스 변경, 상세 창 닫힐 시 view -> hide로 변경 -->
+	<div class="popup_w">
+		<div class="profile_photo_view">
+			<!-- 닫기버튼 -->
+			<div class="btn_photo_close">
+				<a onClick="uf_hide();"><span class="blind">닫기</span></a>
+			</div>
+			<!-- //닫기버튼 -->
+			
+			<div class="swiper-container photo_w"  >
+				<!-- 슬라이드 이미지 영역 -->
+				<div class="swiper-wrapper" id="slide_area"><!-- sample:begin --><div class="swiper-slide"><div class="img"></div><div class="intro_msg"><div><div class="inner"><p>안내 문구</p></div></div></div><!-- sample:end --></div>
+				<!-- //슬라이드 슬라이드 이미지 영역 -->
+				
+				<!-- paging -->
+				<div class="swiper-pagination"></div>
+				<!-- //paging -->
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

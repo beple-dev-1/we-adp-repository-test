@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>거래승인번호검증 VIEW</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/raon/transkey_mobile/transkey.css">
+</head>
+<body data-screen-id="BPG-PGM-30-S">
+<div class="wrap">
+    <!-- header -->
+    <div class="header floating-back-header floating-sticky">
+        <h1>비플페이 PG</h1>
+        <!--
+            <p class="history_back">
+                <a href="#none" class="btn-history-back">뒤로가기</a>
+            </p>
+         -->
+        <p class="outpage">
+            <a data-element-id="BPG-PGM-30-S-e08" href="#none" class="btn_outpage" id="btn_out">페이지나가기</a>
+        </p>
+    </div>
+    <!-- // header -->
+
+    <div class="container">
+        <div class="content">
+            <!-- PG -->
+            <div class="biz_pg_w">
+                <!-- 제로페이 pg 사용인증 -->
+                <div class="transaction">
+                    <p class="txt_bold">
+                        비플페이에서 사용하는<br>
+                        거래승인번호 6자리를 입력하세요.
+                    </p>
+                    <!-- 정보입력 폼 -->
+                    <div class="ipt_section">
+                        <form action="">
+                            <input type="hidden" maxlength="6" name="pwd1" id="pwd1"
+                                   data-tk-kbdType="number" data-tk-bottom="true"
+                                   onfocus="mtk.onKeyboard(this);"/>
+                            <fieldset>
+                                <legend>승인번호 입력</legend>
+                                <div class="tac_num" id="tac_num">
+                                    <div><input data-element-id="BPG-PGM-30-S-e09" type="password" title="결제비밀번호 첫 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                    <div><input data-element-id="BPG-PGM-30-S-e10" type="password" title="결제비밀번호 두 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                    <div><input data-element-id="BPG-PGM-30-S-e11" type="password" title="결제비밀번호 세 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                    <div><input data-element-id="BPG-PGM-30-S-e12" type="password" title="결제비밀번호 네 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                    <div><input data-element-id="BPG-PGM-30-S-e13" type="password" title="결제비밀번호 다섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                    <div><input data-element-id="BPG-PGM-30-S-e14" type="password" title="결제비밀번호 여섯 번째 자리를 입력해주세요."></div><!-- 입력 시 ipt클래스 추가 -->
+                                </div>
+                            </fieldset>
+                        </form>
+                        <!-- //정보입력 폼 -->
+                    </div>
+                    <p class="err_msg" style="">
+                        거래승인번호가 기억나지 않으세요?<br>
+                        비플페이앱에서 재설정 가능합니다.
+                    </p>
+                </div>
+                <!-- 제로페이 pg 사용인증 -->
+            </div>
+            <!-- //PG -->
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+
+    
+<div class="layer_overlay_join modaloverlay" style="display:none;">
+    <!-- layerpopup -->
+    <div class="popup_w lytb">
+        <div class="popup_con">
+            <!-- 결제실패알림 -->
+            <div class="pg_noti">
+                <div class="inner">
+                    <p>
+                        등록된 회원정보가 없습니다.<br>
+                        비플페이에 가입하시겠습니까?
+                    </p>
+                </div>
+                <p class="ly_pop_btw btns">
+                    <a id="join_no_btn" href="#none" class="btn_cancel">아니오</a>
+                    <a id="join_yes_btn" href="#none">네</a>
+                </p>
+            </div>
+            <!-- //결제실패알림 -->
+        </div>
+    </div>
+    <!-- //layerpopup -->
+</div>
+    
+
+    
+<div class="layer_overlay_sleep modaloverlay" style="display:none;">
+    <!-- layerpopup -->
+    <div class="popup_w lytb">
+        <div class="popup_con">
+            <!-- 결제실패알림 -->
+            <div class="pg_noti">
+                <div class="inner">
+                    <p>
+                        장기미접속으로 인하여 휴면계정으로 전환되었습니다.<br>
+                        앱 사용을 위해 휴면계정해제가 필요합니다.
+                    </p>
+                </div>
+                <p class="ly_pop_btw btn">
+                    <a id="sleep_yes_btn" href="#none">확인</a>
+                </p>
+            </div>
+            <!-- //결제실패알림 -->
+        </div>
+    </div>
+    <!-- //layerpopup -->
+</div>
+    
+
+    
+<div class="layer_overlay_sleep modaloverlay" style="display:none;">
+    <!-- layerpopup -->
+    <div class="popup_w lytb">
+        <div class="popup_con">
+            <!-- 결제실패알림 -->
+            <div class="pg_noti">
+                <div class="inner">
+                    <p>
+                        고객님의 요청으로 인한 사용이 정지된 회원입니다.<br>
+                        고객센터()로 문의 부탁드립니다.
+                    </p>
+                </div>
+                <p class="ly_pop_btw btn">
+                    <a id="stop_yes_btn" href="#none">확인</a>
+                </p>
+            </div>
+            <!-- //결제실패알림 -->
+        </div>
+    </div>
+    <!-- //layerpopup -->
+</div>
+    
+
+    
+<div class="layer_overlay_sleep modaloverlay" style="display:none;">
+    <!-- layerpopup -->
+    <div class="popup_w lytb">
+        <div class="popup_con">
+            <!-- 거래승인번호 미등록 안내 -->
+            <div class="pg_noti">
+                <div class="inner">
+                    <p>
+                        거래승인번호가 등록되어 있지 않습니다.<br>
+                        비플페이 앱 &gt; 더보기 &gt; 설정 &gt; 거래승인번호 등록에서 등록 후 다시 결제해 주세요.
+                    </p>
+                </div>
+                <p class="ly_pop_btw btn">
+                    <a id="no_trx_pwd_yes_btn" href="#none">확인</a>
+                </p>
+            </div>
+            <!-- //거래승인번호 미등록 안내 -->
+        </div>
+    </div>
+    <!-- //layerpopup -->
+</div>
+    
+
+<div class="layer_overlay" id="pwd_pop" style="display:none;">
+    <!-- layerpopup -->
+    <div class="popup_w lytb">
+        <div class="popup_con">
+            <!-- 결제실패알림 -->
+            <div class="pg_noti">
+                <div class="inner">
+                    <p id="pwd_pop_text"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                </div>
+                <p class="ly_pop_btw btn">
+                    <a id="pwd_yes_btn" href="#none">확인</a>
+                </p>
+            </div>
+            <!-- //결제실패알림 -->
+        </div>
+    </div>
+    <!-- //layerpopup -->
+</div>
+</body>
+</html>

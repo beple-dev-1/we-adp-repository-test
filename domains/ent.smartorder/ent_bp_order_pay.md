@@ -1,0 +1,185 @@
+# 스마트오더 결제하기(VIEW) (ent_bp_order_pay)
+
+- 처리: 읽기·쓰기
+- 화면 겸함: 예
+- 상태: 따라감
+
+## 부르는 화면
+
+| 화면ID | 화면 이름 | 요소 |
+|---|---|---|
+| HIT-ORDR-16-S | 장바구니 조회 | 화면 |
+| HIT-ORDR-22-10-S | 스마트오더 주문 | 화면 |
+| HIT-ORDR-22-S | 스마트오더 결제하기(VIEW) | 화면 |
+| HIT-PAY-10-20-S | 식권제로페이 함께결제 (list) | HIT-PAY-10-20-S-e04 |
+| HIT-PAY-10-S | 엔터프라이즈_비플식권 혼자/함께결제 선택 | 화면 |
+
+## 입력
+
+- ORDER_DT
+- ORDER_ID
+- 메뉴개수 (MENU_CNT)
+- MENU_SCHEDULE_ID
+- SMT_ODR_PARAM
+
+## 출력
+
+- MNY_AUTO_ACCT_CNT
+- MNY_AUTO_CARD_CNT
+- MNY_CUR_PRICE
+- AFLT_NM
+- BP_AFLT_ID
+- PG_AFLT_ID
+- AMT
+- ORDER_DT
+- ORDER_ID
+- TGT_ORDER_ID
+- TGT_ORDER_DT
+- TGT_YN
+- 위치 타이틀 (LOC_TITLE)
+- 위치정보2 (SPOT_TITLE_1)
+- ADDR1
+- WORK_NM
+- DELV_NM
+- 합산결제수단 (CPX_PAY_MTHD)
+- 서비스채널 (SERVICE_CHNL)
+- SERVICE_DTL_CHNL
+- EXIST_YN
+- MNY_CHRG_TYPE
+- BP_AFLT_REQ
+- MEAL_REC
+- MNY_AUTO_ACCT_REC
+- MNY_AUTO_CARD_REC
+- 마감일시 (DEAD_LINE_DTTM)
+- 구내식당 복합결제 고정차감 결제수단구분 (CAFE_COMPLEX_FIX_PAY_MSR_TP)
+- 구내식당 복합결제 고정차감금액 (CAFE_COMPLEX_FIX_AMT)
+- 금액숨김여부 (AMT_HIDE_YN)
+- 카드결제사용여부 (CARD_APRV_USE_YN)
+- ROBOT_DELIVERY_ADDR
+- 로봇배송 대기건수 (BEAVERWORKS_ORDER_COUNT)
+- 수령방법 (RECV_TYPE)
+
+## 데이터 처리
+
+### 비플오더 주문원장 조회(ORDER_DT, ORDER_ID) (TB_BP_AFLT_ODR_R001)
+
+- 종류: SELECT
+- 테이블: TB_BP_AFLT_ODR_PDT, TB_BP_AFLT_ODR, TB_BP_AFLT_MY
+- 입력: ORDER_DT, ORDER_ID, 주문유형 (ORDER_TYPE)
+
+### 회원정보조회(MEMB_CD, APP_CD) (TB_MEMBER_R001)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER, TB_MEMBER_APP
+- 입력: 앱코드 (APP_CD), 회원코드 (MEMB_CD)
+
+### 푸드오피스 메뉴 조회 (TB_MEMBER_APP_DELIV_R001)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER_APP_DELIV, TB_BP_AFLT_MNG, TB_BP_AFLT_MYBAG, TB_BP_AFLT_DELIV_MYBAG_MENU, TB_BP_AFLT_MY, TB_CTGR_CATG_CD
+- 입력: 비플가맹점순번 (BP_AFLT_SEQ), 회원코드 (MEMB_CD), 앱코드 (APP_CD), 비플가맹점순번 (BP_AFLT_SEQ), 회원코드 (MEMB_CD)
+
+### 비플오더 가맹점관리 원장 조회(BP_AFLT_SEQ) (TB_BP_AFLT_MY_R002)
+
+- 종류: SELECT
+- 테이블: TB_BP_AFLT_MY, TB_BP_AFLT_MNG
+- 입력: 비플가맹점순번 (BP_AFLT_SEQ)
+
+### 사용자 정보 변경 (TB_MEMBER_APP_U001)
+
+- 종류: UPDATE
+- 테이블: TB_MEMBER_APP
+- 입력: AUTO_LOGIN_YN, 생체로그인여부 (BIO_LOGIN_YN), 푸쉬등록여부 (PUSH_REG_YN), PUSH_APR_NOTI_YN, 거래승인번호 등록 여부 (TRX_PWD_REG_YN), TRX_PWD_FAIL_CNT, PWD_FAIL_CNT, 비밀번호 (PWD), PWD_CHNG_DT, 거래승인번호 (TRX_PWD), TRX_PWD_CHNG_DT, MEMB_ST, 휴대폰번호 (MOB_NO), 통신사 (TELE_CORP), DVC_ID, APP_TP, APP_ID, PUSH_ID, 모델명 (MDL_NM), FIN_CONN_DT, OS, ENC_SALT, PUSH_LMT_TM_YN, PUSH_LMT_STR_TM, PUSH_LMT_END_TM, MRKT_AGR_YN, MRKT_AGR_DT, SMALL_YN, SMALL_JOIN_DTTM, 소상공인 사업자번호 (SMALL_BIZ_NO), QCK_PAY_YN, QCK_UPD_DTTM, MNY_MEMB_CD, OS_VER, MRKT_CNCL_DTTM, MRKT_AGR_DTTM, RE_APRV_YN, RE_APRV_DTTM, 회원코드 (MEMB_CD), 앱코드 (APP_CD)
+
+### 비플머니 총 잔액조회 (TB_MEMBER_MNY_R001)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER_MNY, TB_MEMBER_APP
+- 입력: 회원코드 (MEMB_CD), 앱코드 (APP_CD), DYNAMIC_0
+
+### 엔터프라이즈 회원 부가정보 조회 (TB_MEMBER_ENT_APP_R001)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER_ENT_APP, TB_WORK_CD_MNG, TB_CAFETERIA_WORK_PLCE, TB_CAFETERIA_DELV_ADDR
+- 입력: SITE_CD, 회원코드 (MEMB_CD), 앱코드 (APP_CD), DYNAMIC_0
+
+### 사용자 가맹점별 배달주소지 조회 (TB_MEMBER_ENT_APP_DELV_R001)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER_ENT_APP_DELV
+- 입력: 회원코드 (MEMB_CD), 앱코드 (APP_CD), 비플가맹점순번 (BP_AFLT_SEQ), WORK_CD
+
+### 딜리버리 장소 카테고리 조회 (TB_CAFETERIA_DELV_R002)
+
+- 종류: SELECT
+- 테이블: TB_CAFETERIA_DELV_DETAIL, TB_CAFETERIA_DELV
+- 입력: WORK_CD, 비플가맹점순번 (BP_AFLT_SEQ)
+
+### 딜리버리 주문시 가맹점 배송지 리스트 (TB_CAFETERIA_DELV_DETAIL_R002)
+
+- 종류: SELECT
+- 테이블: TB_CAFETERIA_DELV, TB_CAFETERIA_DELV_DETAIL
+- 입력: WORK_CD, 비플가맹점순번 (BP_AFLT_SEQ)
+
+### 엔터프라이즈 결제수단관리 회원조회 (TB_MEMBER_ENT_PAY_MNG_R001)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER_ENT_PAY_MNG
+- 입력: 회원코드 (MEMB_CD), 앱코드 (APP_CD)
+
+### service_chnl 검색 (TB_BP_AFLT_MY_R012)
+
+- 종류: SELECT
+- 테이블: TB_BP_AFLT_MY, TB_BP_AFLT_ODR, TB_CAFETERIA_ODR, TB_CAFETERIA_MENU
+- 입력: ORDER_DT, ORDER_ID, 주문유형 (ORDER_TYPE)
+
+### 구내식당 주문내역 조회 (TB_CAFETERIA_ODR_R002)
+
+- 종류: SELECT
+- 테이블: TB_CAFETERIA_MENU, TB_BP_AFLT_ODR, TB_CAFETERIA_ODR, TB_CAFETERIA_ODR_MENU, TB_BP_AFLT_MY
+- 입력: ORDER_DT, ORDER_ID
+
+### 구내식당 복합결제 기초정보 조회 (TB_CAFETERIA_COMPLEX_BASC_R001)
+
+- 종류: SELECT
+- 테이블: TB_CAFETERIA_COMPLEX_BASC
+- 입력: 비플가맹점순번 (BP_AFLT_SEQ)
+
+### 로봇배송 장소 조회 (TB_CAFETERIA_ROBOT_DELV_ADDR_R001)
+
+- 종류: SELECT
+- 테이블: TB_CAFETERIA_ROBOT_DELV_ADDR
+- 입력: 비플가맹점순번 (BP_AFLT_SEQ)
+
+### 비플오더 장바구니 조회(옵션포함) (TB_BP_AFLT_MYBAG_R004)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER_APP, TB_BP_AFLT_MYBAG, TB_BP_AFLT_MYBAG_PDT, TB_BP_AFLT_MYBAG_OPT, TB_BP_AFLT_OPT, TB_BP_AFLT_OPT_CATG, TB_BP_AFLT_MY, TB_BP_AFLT_MY_PDT_INFO
+- 입력: 회원코드 (MEMB_CD), 앱코드 (APP_CD), 회원코드 (MEMB_CD), 처리상태 (PROC_ST), DYNAMIC_0
+
+- 공통 헤더 처리(이 업무 아님): TB_APP_MNG_R001
+
+## 실패
+
+- (없음)
+
+## 근거
+
+- BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ent_bp_order_pay.xml:6
+- BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/smartorder/ent_bp_order_pay_act.jsp:31
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_ODR_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_APP_DELIV_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MY_R002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_APP_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_ENT_APP_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_ENT_APP_DELV_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CAFETERIA_DELV_R002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CAFETERIA_DELV_DETAIL_R002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_ENT_PAY_MNG_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MY_R012.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CAFETERIA_ODR_R002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CAFETERIA_COMPLEX_BASC_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CAFETERIA_ROBOT_DELV_ADDR_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_MYBAG_R004.xml:10

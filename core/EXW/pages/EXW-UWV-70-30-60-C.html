@@ -35,7 +35,7 @@
 			<h1 class="page-name"><span>머니 보내기</span></h1>
 		</div>
 		<nav class="header__navi">
-			<a href="#none" class="header__btn btn-close" id="btnClose">
+			<a data-element-id="EXW-UWV-70-30-60-C-e09" href="#none" class="header__btn btn-close" id="btnClose">
 				<span class="blind">닫기</span>
 			</a>
 		</nav>
@@ -50,10 +50,10 @@
 			     info 아이콘이 popup-transper--info(출금가능 비플머니란?)를 연다.
 			     팝업 본체는 아래 계좌선택 팝업 옆에 있다.
 			     ================================================================ -->
-			<section class="current page-header justify-spacing-def">
+			<section class="current page-header gap-32 justify-spacing-def">
 				<div class="current-content">
 					<div class="current__title">
-						<button type="button" class="button js-popup-open" data-modal="popup-transper--info">
+						<button data-element-id="EXW-UWV-70-30-60-C-e01" type="button" class="button js-popup-open" data-modal="popup-transper--info">
 							<span class="title-text">출금가능 비플머니</span>
 							<i class="icon icon--info-16"></i>
 						</button>
@@ -65,13 +65,13 @@
 					<!-- 총 보유 머니 — 위 출금가능액과 다른 값이다.
 					     출금가능액은 충전유형·머니상태 조건이 더 붙는다(TB_MEMBER_MNY_R010). -->
 					<div class="total-balance">
-						<p>총 보유 머니<span><strong id="totBalance">0</strong>원</span></p>
+						<p>총 보유 머니 <span><span id="totBalance">0</span>원</span></p>
 					</div>
 				</div>
 
-				<button type="button" class="select-account--button js-popup-open js-select--result"
+				<button data-element-id="EXW-UWV-70-30-60-C-e13" type="button" class="select-account--button js-popup-open js-select--result"
 				        data-modal="popup-select--bank" id="btnSelectAccount">
-					<p>충전계좌</p>
+					<p>입금계좌</p>
 
 					<div class="account" id="acctHasWrap">
 						<span class="target" id="acctText"><!-- sample:begin -->안내 문구<!-- sample:end --></span>
@@ -79,7 +79,7 @@
 					</div>
 
 					<div class="account" id="acctNoneWrap" style="display:none;">
-						<span class="fc-primary">계좌를 등록해 주세요</span>
+						<span class="fc-0d84ff">계좌를 등록해 주세요</span>
 						<i class="icon icon--arrow-24"></i>
 					</div>
 				</button>
@@ -93,13 +93,13 @@
 					<div class="form__item js-form-item" id="frmItemAmt">
 						<div class="form__item-header">
 							<h3 class="form__label container__headline container__headline--lv1 fc-333">
-								<label for="inpAmt">보낼금액</label>
+								<label for="inpAmt">보낼 금액</label>
 							</h3>
 						</div>
 						<div class="form__item-wrap">
 							<div class="form__item-wrap">
 								<div class="input-type--box input-unit">
-									<input type="tel" id="inpAmt" value="" placeholder="금액을 입력해주세요"
+									<input data-element-id="EXW-UWV-70-30-60-C-e11" type="tel" id="inpAmt" value="" placeholder="금액을 입력해주세요"
 									       maxlength="11" jex-input="commaFormat" data-input="commaFormat">
 									<button type="button" class="input__unit" id="btnClearAmt" style="display: none;">
 										<i class="icon icon--close_cr-16"></i>
@@ -108,10 +108,10 @@
 							</div>
 
 							<div class="quick-amount revers-mgt2" id="quickAmount">
-								<button type="button" class="button button--lv5_line button-mid" data-add="10000"><span>+1만원</span></button>
-								<button type="button" class="button button--lv5_line button-mid" data-add="50000"><span>+5만원</span></button>
-								<button type="button" class="button button--lv5_line button-mid" data-add="100000"><span>+10만원</span></button>
-								<button type="button" class="button button--lv5_line button-mid" data-all="Y"><span>전액</span></button>
+								<button data-element-id="EXW-UWV-70-30-60-C-e03" type="button" class="button button--lv5_line button-mid" data-add="10000"><span>+1만원</span></button>
+								<button data-element-id="EXW-UWV-70-30-60-C-e04" type="button" class="button button--lv5_line button-mid" data-add="50000"><span>+5만원</span></button>
+								<button data-element-id="EXW-UWV-70-30-60-C-e05" type="button" class="button button--lv5_line button-mid" data-add="100000"><span>+10만원</span></button>
+								<button data-element-id="EXW-UWV-70-30-60-C-e06" type="button" class="button button--lv5_line button-mid" data-all="Y"><span>전액</span></button>
 							</div>
 
 							<p class="fc-red mgt2" id="amtErrMsg" style="display: none;"><!-- sample:begin -->4,500<!-- sample:end --></p>
@@ -124,7 +124,7 @@
 				<!-- 출금 안내 — 열기·닫기는 dropDownHandler 가 처리한다 -->
 				<div class="transfer__infomation flex-column drop-box js-drop-box open justify-spacing-def">
 					<div class="column__head">
-						<button type="button" class="drop--trigger js-drop-trigger">
+						<button data-element-id="EXW-UWV-70-30-60-C-e07" type="button" class="drop--trigger js-drop-trigger">
 							<h5 class="container__headline container__headline--lv2 fw-600">출금 안내</h5>
 							<i class="icon icon--arrow-24"><span class="blind">출금 안내 열기</span></i>
 						</button>
@@ -145,21 +145,11 @@
 								<dd class="content-detail">
 									<ul class="list-bullet">
 										<li>
-											계좌로 충전한 비플머니만 출금할 수 있으며, <br>
-											지급된 비플머니는 출금할 수 없습니다.
+											계좌로 직접 충전한 머니만 출금할 수 있습니다. 이벤트 등으로 지급받은 머니는 출금할 수 없습니다.
 										</li>
-										<li>출금은 비플페이에 등록된 본인 명의의 계좌로만 가능합니다.</li>
-										<li>출금 신청한 금액은 선택한 계좌로 다음 영업일에 입금됩니다.</li>
+										<li>출금은 에이블리 머니에 등록된 본인 명의 계좌로만 가능합니다.</li>
+										<li>낮 12시 이전 신청 시 다음 영업일 낮 12시, 12시 이후 신청 시 그다음 영업일 낮 12시에 입금됩니다.</li>
 									</ul>
-								</dd>
-							</dl>
-							<dl>
-								<dt class="content-title">출금 계좌</dt>
-								<dd class="content-detail">
-									<p>충전 계좌는 비플페이 &gt; 더보기 &gt; 설정 &gt; 계좌 관리에 등록된 계좌로만 이용 가능합니다.</p>
-									<button type="button" class="button button-small button--lv5_line mgt12" id="btnGuideAcct">
-										<span>비플머니 출금하기</span>
-									</button>
 								</dd>
 							</dl>
 						</div>
@@ -171,7 +161,7 @@
 		<div class="container-floating bg-white js-floating-container">
 			<p class="fc-999 pdb16 pdt24 ta-center justify-spacing-def revers-mgt8">에이블리 머니는 (주)비즈플레이가 발행·관리합니다</p>
 			<article class="floating__box button-box-spacing">
-				<a href="#none" class="button button-xl button--lv1 dis" id="btnNext">
+				<a data-element-id="EXW-UWV-70-30-60-C-e10" href="#none" class="button button-xl button--lv1 dis" id="btnNext">
 					<span>다음</span>
 				</a>
 			</article>
@@ -190,12 +180,16 @@
 	     결제완료(webview_pay_complete_view.jsp:163)도 같은 이유로 주석 처리돼 있다.
 	     (사용자 확정 2026-08-31 — 「일단 무시하고 안보이게」) -->
 	<header class="header position-sticky">
+		<nav class="header__navi"></nav>
+
 		<div class="header__title-wrap">
 			<h1 class="page-name"><span class="blind">머니 보내기</span></h1>
 		</div>
+
+		<nav class="header__navi"></nav>
 	</header>
 
-	<main class="container-wrap js-container-wrap pdt32">
+	<main class="container-wrap js-container-wrap">
 		<section class="container end-container end--payment js-container">
 			<section class="body__content justify-space-def">
 				<!-- 「보냈다」가 아니라 「보낼 예정」이다 — 즉시 이체가 아니라 예약 입금이다.
@@ -205,12 +199,13 @@
 					<h2 class="container__headline">
 						<p class="head-text fw-600"><strong id="endAmt">0</strong>원을 보낼 예정이에요</p>
 					</h2>
-					<!-- 완료 화면은 날짜를 계산하지 않는다 — 고정 문구다(사용자 확정 2026-08-31).
-					     정보확인 팝업은 날짜를 보여준다(「9월 1일(화) 낮 12시」) — 표현이 다른 것이 의도다.
+					<!-- 입금 예정일시는 화면 JS 가 채운다(거래일+1일 · 낮 12시 고정).
 
-					     🔴 이 안에 자식 요소를 두지 않는다 — .info__text--lv1 이 display:flex 라
-					        <span> 을 넣으면 flex item 이 되어 문장이 조각난다(줄바꿈·간격이 깨진다). -->
-					<p class="info__text--lv1 fc-666 pdt12">입금계좌로 1일 후 입금됩니다.</p>
+					     🔴 이 안에 자식 요소를 두지 않는다 — .info__text--lv1 은 display:inherit 이고
+					        부모(.payment__head)가 flex 라 이 <p> 자체가 flex 컨테이너다.
+					        <span> 을 넣으면 텍스트와 함께 flex item 여러 개가 되어 문장이 조각난다
+					        (공백이 사라지고 줄바꿈이 엉킨다). <p> 에 id 를 주고 JS 가 통째로 넣는다. -->
+					<p class="info__text--lv1 fc-666 pdt12" id="endDepositText"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
 				</div>
 
 				<div class="payment__info">
@@ -332,7 +327,7 @@
 					</div>
 					<div class="column__item">
 						<p class="info__text--lv1 bullet-text">
-							머니를 보내면 <span id="cfmDepositDt"><!-- sample:begin -->2026.09.02<!-- sample:end --></span>에 입금 받을 수 있어요.</p>
+							머니를 보내면 <span id="cfmDepositDt"><!-- sample:begin -->2026.09.02<!-- sample:end --></span>에 입금 받을 수 있어요</p>
 					</div>
 				</div>
 			</div>

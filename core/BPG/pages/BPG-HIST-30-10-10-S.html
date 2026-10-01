@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>주문내역(상세)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-HIST-30-10-10-S">
+<form id="frm" name="frm">
+	<input type="hidden" name="order_id" id="order_id" value="" />
+	<input type="hidden" name="shop_id" id="shop_id"  />
+	<input type="hidden" name="lng" id="lng" />
+	<input type="hidden" name="lat" id="lat" />
+	<input type="hidden" name="shop_name" id="shop_name"  />
+	<input type="hidden" name="shop_phone_number" id="shop_phone_number"  />
+	<input type="hidden" name="shop_address" id="shop_address"  />
+	<input type="hidden" name="TRX_SEQ" id="TRX_SEQ"  />
+	<input type="hidden" name="TRX_DT" id="TRX_DT"  />
+	<input type="hidden" name="CANCEL_PAYMENT_TRANSACTION_DT" id="CANCEL_PAYMENT_TRANSACTION_DT"  />
+	<input type="hidden" name="CANCEL_PAYMENT_TRANSACTION_NUMBER" id="CANCEL_PAYMENT_TRANSACTION_NUMBER"  />
+	<input type="hidden" name="memcd" id="memcd" value="" />
+	
+</form>
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>내역상세</h1>
+			<a data-element-id="BPG-HIST-30-10-10-S-e05" href="javascript:uf_back();" class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 요기요 -->
+				<div class="bp-ygy add_flex_column no-vh">
+					<!-- top box -->
+					<div class="top_bx pdb28">
+						<!-- 
+							기본 = state
+							주문취소 = state cancel
+						-->
+						<p class="state cancel" id="canceled_text" style="display: none;">주문이 취소되었습니다.</p>
+						<h2 class="store_name" id="shop_name_text"></h2>
+						<div class="oder_info" id="oder_info"><!-- sample:begin --><div>                         <p>주문 번호</p>                  <p></p>   </div>                        <div>                         	<p>주문 일시</p>               	<p>안내 문구</p></div>                        <div>                         	<p>주문 방법</p>               	<p>안내 문구</p></div>                        <!-- sample:end --></div>
+						<div class="cs-help" style="display: none;">
+							<a href="#none" onclick="helpPage();"><span>도움이 필요하신가요?</span></a>
+						</div>
+					</div>
+					<!-- //top box -->
+					<!-- 주문상태 상세-->
+					<!-- 
+						주문상태별 클래스 추가
+						주문확인중 		= step1
+						주문접수 		= step2
+						배달완료 		= step3
+						픽업준비완료 	= pickup
+					-->
+					
+					<div class="ygy__oder_state border-t10" id="order_state"><!-- sample:begin --><h2 class="ygy__state-tit" id="ygy_state_tit" >주문을 확인하고 있습니다</h2><p class="ygy__state-info" id="ygy_state_info" >매장에서 주문을 확인하고 있습니다.</p><p class="ygy__delivery-time" id="ygy_delivery_time">14:22</p><div class="ygy__state-btn_bx" id="ygy_state_btn1">	<button class="ygy__state-btn" onclick="goPurchaseCancel();">주문취소</button></div><div class="ygy__state-btn_bx" id="ygy_state_btn2" style="display:none !important;" >	<button class="ygy__state-btn" onclick="goBarcodeUrl();">교환코드</button></div><!-- sample:end --></div>
+					
+					<!-- //주문상태 상세 -->
+					<!-- 주문내역 상세-->
+					<div class="cart_w border-t10">
+						<div class="cart_w__tit-bx">
+							<h2 class="tit">주문내역</h2>
+							<p><a data-element-id="BPG-HIST-30-10-10-S-e06" href="javascript:go_ygyo_receipt();"><span class="icon arr_right-14">결제상세 보기</span></a></p>
+						</div>
+						<div class="list_w" id="order_list">
+							<!-- 목록 -->
+							<!-- 메뉴 -->
+							<!-- <div class="list">
+								<h3 class="name">사장님 김밥 1개</h3>
+								<div class="detail">
+									<ul class="list_bar">
+										<li>가격: 기본 (5,000원)</li>
+										<li>HOT/ICE 선택 : HOT (0원)</li>
+										<li>샷 조절 : 1샷 추가 (500원)</li>
+										<li>시럽 : 카라멜 시럽 (1,200원), 초코(1,000원)</li>
+									</ul>
+								</div>
+								<p class="price"><span>13,400</span>원</p>
+							</div> -->
+						</div>
+						<!-- 결제상세 -->
+						<div class="payment_dtl">
+							<div class="dtl_w" id="payment_info"><!-- sample:begin --><div class="dtl_con ygy">                              	<p>주문금액</p>                                        	<p><span></span>원</p></div>                                                 <div class="dtl_con">                                  	<p>배달비</p>                                         	<p><span></span>원</p></div>                                                 <div class="dtl_con">	<p>배달비 할인</p>	<p><span>-</span>원</p></div><div class="dtl_con">                                  	<p>추가요금</p>                                         	<p><span></span>원</p></div>                                                 <div class="dtl_con">                                  	<p>할인요금</p>                                         	<p><span>4,500</span>원</p></div>                                                 <div class="pay_total">                                	<div>                                               		<p>총 결제 금액</p>                                  		<p class="won"><span>4,500</span>원</p>	</div>                                              <div id="fcRedChk" style="display: none;" > 	<p>최종 환불 금액</p>                                                       	<p class="won fcRed" ><span>4,500</span>원</p><!-- 환불일 경우 fcRed 추가 --> </div>                                                                 </div>                                                 <!-- sample:end --></div>
+						</div>
+					</div>
+					<!-- //주문내역 상세 -->
+					<!-- 배달정보 -->
+					<div class="infomation border-t10" id="delivery_info"><!-- sample:begin --><h2 class="tit">배달정보</h2><div class="infomation__con">	<h3 class="infomation-tit">배달주소</h3>	<p class="infomation-txt">서울 강남구 테헤란로 1길 10</p>	<p class="infomation-txt"></p>	<p class="infomation-txt">서울 강남구 테헤란로 1길 10</p></div><div class="infomation__con">	<h3 class="infomation-tit">연락처</h3>	<p class="infomation-txt">010-1234-5678</p></div><div class="infomation__con">	<h3 class="infomation-tit">가게 요청사항</h3>	<p class="infomation-txt"></p></div><div class="infomation__con">    <h3 class="infomation-tit">배달 요청사항</h3>    <p class="infomation-txt"></p></div><!-- sample:end --></div>
+					<div class="infomation border-t10" id="cancel_info"  style="display: none;"><!-- sample:begin --><h2 class="tit">취소사유</h2>                               <div class="infomation__con">                           	<p class="infomation-txt"></p>  	<p class="infomation-txt"></p>  </div>                                                  <!-- sample:end --></div>
+				</div>
+				<!-- 하단 고정버튼 영역 -->
+				<div class="btn_botFix_w">
+					<div class="page-top">
+						<button data-element-id="BPG-HIST-30-10-10-S-e04" type="button" class="icon page_top-32"><span class="blind">시작지점으로 올라가기</span></button>
+					</div>
+					<!-- 주문버튼 -->
+				
+					<div class="oder_btn-wrap bg_white"  id="goShopView"  style="display: none;"><!-- 활성 = display:block; / 비활성 시 display: none; -->
+						<div class="oder__minimum-msg" style="display: none;">최소주문금액 <p><span>5,000</span>원</p></div><!-- 최소 주문금액 충족 시 해당 메세지 display: none; -->
+						<div class="inner bg_white">
+							<a href="#none" onclick="goAlft();"class="round_r8 on" ><!-- 활성화 시 on 클래스 추가 -->
+								<!-- 배달 준비중 등 메세지 및 금액 -->
+								<div>가게보기</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

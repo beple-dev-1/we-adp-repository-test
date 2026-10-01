@@ -1,0 +1,170 @@
+/* =============================================================================
+ * s-login.css — S-LOGIN 화면 글루 (owner / mgr-request / mgr-verify / store 공유)
+ * 스코프: .app--login (전역 @import 충돌 방지). 색·간격은 var(--*)/고정px만.
+ * 정답지: Figma 357:1527 "0. 로그인" (fileKey svpgMnp1MU3lHASafIRau3, mobile 360).
+ * 구조: 상태바 없음(헤더 최상단 sticky) · 매니저/가맹점선택은 하단 고정 footer.
+ * ========================================================================== */
+
+/* 본문: 헤더 아래 스크롤 영역
+ *   세로 리듬은 균일 gap이 아니라 Figma 실측 구간값(고정px)으로 요소별 margin 지정.
+ *   Figma(상태바 제거 기준): HDR→TTL 24 / TTL→DESC 16 / (TTL|DESC)→FLD 32 / FLD→FLD 32
+ *   / FLD→GUIDE 12 / DESC→카드리스트 40 / FLD→owner버튼군 32. */
+.app--login .login-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-6) var(--app-gutter) 0;   /* 상단 24(HDR→TTL) */
+}
+/* 섹션 타이틀: Figma title_24 24/600 #111, y96 */
+.app--login .login-section-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text-primary);
+    margin: 0;
+}
+/* desc: Figma contents_16 16/400 #666, TTL→DESC 16 */
+.app--login .desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-tertiary);
+    line-height: 1;
+    margin: 0;
+    margin-top: var(--space-4);        /* 16 */
+}
+/* 입력 필드: Figma 필드 간(및 TTL/DESC→첫 필드) 32, label→control 12 */
+.app--login .ds-text-field { gap: var(--space-3); }   /* label y0 → control y26 = 12 */
+.app--login .ds-text-field__label { line-height: 1; } /* Figma label h14(lh1) — line-box 초과 제거 */
+.app--login .login-body > .ds-text-field { margin-top: 32px; }
+
+/* -----------------------------------------------------------------------------
+ * 휴대폰번호 필드 — 인풋(테두리 박스) + 인증버튼을 "분리된 형제"로 배치
+ *   (★기존 결함 수정: 버튼이 .ds-text-field__control 테두리 안에 중첩되던 구조 제거)
+ *   Figma 357:4244: input 174px(border #dbdbdb r8) + gap8 + btn_large 130px(#eef6ff r10)
+ * --------------------------------------------------------------------------- */
+.app--login .phone-row {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+}
+.app--login .phone-row .phone-input {
+    flex: 1;                      /* 화면 폭에 맞게 확장(사용자 지시). 360기준 174 = 312-버튼130-gap8 */
+    min-width: 0;
+    padding: 0 var(--space-4);    /* Figma placeholder left16 */
+}
+.app--login .phone-row .phone-btn {
+    flex: none;
+    width: 130px;                 /* Figma btn_large 130×48 */
+    height: 48px;
+    padding: 0 var(--space-4);    /* 16px — "인증번호 재요청" 130폭 정합 */
+    font-size: 16px;              /* Figma btn_large 16/600 */
+    white-space: nowrap;
+}
+
+/* 인증번호 필드 — 우측 타이머 suffix */
+.app--login .timer {
+    flex: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-tertiary);   /* Figma 05:00 #666 */
+}
+
+/* 안내 bullet — Figma #999 14px, 첫 항목의 "인증번호 재요청"만 primary 강조 */
+.app--login .login-guide {
+    list-style: none;
+    margin: var(--space-3) 0 0;    /* 인증번호 필드 → 안내 12 */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+.app--login .login-guide li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-disabled);   /* #999 */
+    line-height: 1.5;
+}
+.app--login .login-guide li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    top: 0;
+}
+.app--login .login-guide .hl { color: var(--color-primary); }
+
+/* -----------------------------------------------------------------------------
+ * 하단 고정 footer (mgr-request / mgr-verify / store) — Figma 버튼 bottom24 w320
+ *   sticky bottom:0 → 스크롤 시에도 하단 유지. 좌우 20px로 버튼 320 확보.
+ * --------------------------------------------------------------------------- */
+.app--login .login-footer {
+    position: sticky;
+    bottom: 0;
+    margin-top: auto;
+    padding: var(--space-4) 20px 24px;
+    background: var(--bg-surface);
+}
+
+/* owner: 폼 아래 인라인 버튼군(로그인→divider→매니저), 하단고정 아님 */
+.app--login .login-owner-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);           /* Figma 로그인↔divider↔매니저 ~24 */
+    margin-top: 32px;              /* Figma 비밀번호 필드 → 로그인 버튼 32 */
+}
+
+/* -----------------------------------------------------------------------------
+ * 가맹점 선택 카드 리스트 — Figma 312 r8 (카드형 라디오)
+ *   선택: border/이름/주소 primary + active 체크 / 미선택: border #ededed + default 체크
+ * --------------------------------------------------------------------------- */
+.app--login .store-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;                      /* Figma 카드 간격 10 */
+    margin-top: 40px;               /* Figma desc → 카드리스트 40 */
+}
+.app--login .store-card {
+    display: flex;
+    align-items: flex-start;        /* 텍스트 top정렬(Figma name y20) — 체크만 별도 중앙 */
+    gap: var(--space-2);
+    min-height: 78px;               /* Figma 단일카드 78 */
+    padding: var(--space-5) var(--space-4) var(--space-5) var(--space-5);  /* Figma 좌20/우16(체크 우여백 16) */
+    border: 1px solid var(--border-default);   /* 미선택 #ededed */
+    border-radius: var(--radius-sm);
+    background: var(--bg-surface);
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.app--login .store-card--selected { border-color: var(--color-primary); }   /* #0d84ff */
+.app--login .store-card__input { position: absolute; opacity: 0; width: 0; height: 0; }
+.app--login .store-card__info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);            /* Figma name y20 → addr y44 = 8 */
+}
+.app--login .store-card__name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;              /* Figma 357:4221 다줄 줄피치 = fontSize16 + paragraphSpacing6 (강수민 260706, 구 lh1은 2줄 딱붙음) */
+    color: var(--text-secondary);   /* 미선택 #333 */
+}
+.app--login .store-card__addr {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;              /* Figma 357:4222 다줄 줄피치 = fontSize14 + paragraphSpacing6 (2줄 h34=14+6+14 실측) (강수민 260706) */
+    color: var(--text-disabled);    /* 미선택 #999 */
+}
+.app--login .store-card--selected .store-card__name,
+.app--login .store-card--selected .store-card__addr { color: var(--color-primary); }
+/* 체크 아이콘: Figma export SVG(active/default) — <img> 24×24 */
+.app--login .store-card__check {
+    flex: none;
+    align-self: center;             /* Figma 체크 카드 세로 중앙 */
+    width: 24px;
+    height: 24px;
+}
+.app--login .store-card__check img { display: block; width: 24px; height: 24px; }

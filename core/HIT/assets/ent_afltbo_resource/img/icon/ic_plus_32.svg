@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g data-name="+">
+        <path data-name="선 139" transform="translate(8 16)" style="fill:none;stroke:#222;stroke-linecap:round;stroke-width:2px" d="M0 0h16"/>
+        <path data-name="선 140" transform="rotate(90 4 12)" style="fill:none;stroke:#222;stroke-linecap:round;stroke-width:2px" d="M0 0h16"/>
+    </g>
+</svg>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>보호자가 앱 미설치자인경우 호출되는 웹페이지</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-KID-30-S">
+<input type="hidden" name="SVC_TYPE" 	id="SVC_TYPE" 	value="">
+<input type="hidden" name="SEQ" 		id="SEQ" 		value="">
+<input type="hidden" name="TRX_DT" 		id="TRX_DT" 	value="">
+<input type="hidden" name="REQ_MOB_NO" 	id="REQ_MOB_NO" value="">
+<input type="hidden" id="rsng_yn" value="N" />
+<input type="hidden" id="trx_seq" value=""  />
+<input type="hidden" name="TIME_OVER" 	id="TIME_OVER" value="">
+<input type="hidden" name="ACTIVE_DTTM" id="ACTIVE_DTTM" value="">
+
+<div class="wrap" id="agr_web">
+	<div class="container">
+		<div class="content">
+			<!-- 본인인증 -->
+			<div class="authentication addBtn-pb48">
+				<div class="agree_msg">
+										
+						<h1>비플페이 서비스 가입을 원해요!</h1>
+						<p>
+							만 14세 미만 아동의 비플페이 서비스 가입 및 이용을
+							위해 보호자 동의가 필요해요.
+						</p>
+											
+				</div>
+
+				<form action="">
+					<fieldset>
+						<legend>본인인증 정보 입력</legend>
+						<!-- 인증관련 동의 -->
+						<div class="agree_w toggleWrap">
+							<dl>
+								<!-- 전체동의 -->
+								<dt class="agree_all">
+									<div class="inner">
+										<label for="check_all">
+											<input data-element-id="BPY-KID-30-S-e22" type="checkbox" id="check_all" data-attr="N">
+											<strong>본인인증 필수항목 모두 동의</strong>
+										</label>
+										<a data-element-id="BPY-KID-30-S-e17" class="trigger"><span class="blind">약관열기</span></a>
+									</div>								
+								</dt>
+								<!-- //전체동의 -->
+								<!-- 약관목록 -->
+								<dd class="agree_con toggleCon">
+									<ul>
+										<li>
+											<div class="inner">
+												<label for="agree-chk1">
+													<input data-element-id="BPY-KID-30-S-e23" type="checkbox" id="agree-chk1">
+													<strong>통신사 이용약관</strong>
+													<a data-element-id="BPY-KID-30-S-e18" class="btn_view" onClick="uf_showAgreement('1'); return false;">보기</a>
+												</label>
+											</div>
+										</li>
+										<li>
+											<div class="inner">
+												<label for="agree-chk2">
+													<input data-element-id="BPY-KID-30-S-e24" type="checkbox" id="agree-chk2">
+													<strong>본인확인 서비스 이용약관</strong>
+													<a class="btn_view" onClick="uf_showAgreement('2'); return false;">보기</a>
+												</label>
+											</div>
+										</li>
+										<li>
+											<div class="inner">
+												<label for="agree-chk3">
+													<input data-element-id="BPY-KID-30-S-e25" type="checkbox" id="agree-chk3">
+													<strong>개인 정보 수집·이용·취급·위탁 동의</strong>
+													<a class="btn_view" onClick="uf_showAgreement('3'); return false;">보기</a>
+												</label>
+											</div>
+										</li>
+										<li>
+											<div class="inner">
+												<label for="agree-chk4">
+													<input data-element-id="BPY-KID-30-S-e26" type="checkbox" id="agree-chk4">
+													<strong>고유식별 정보 처리 동의</strong>
+													<a class="btn_view" onClick="uf_showAgreement('4'); return false;">보기</a>
+												</label>
+											</div>
+										</li>
+										<li style="display:none;">
+											<div class="inner">
+												<label for="agree-chk5">
+													<input data-element-id="BPY-KID-30-S-e27" type="checkbox" id="agree-chk5">
+													<strong>알뜰폰 개인정보 제3자 제공동의</strong>
+													<a class="btn_view" onClick="uf_showAgreement('5'); return false;">보기</a>
+												</label>
+											</div>
+										</li>
+									</ul>
+								</dd>
+								<!-- //약관목록 -->
+							</dl>
+						</div>
+						<!-- //인증관련 동의 -->
+						<!-- 정보입력 -->
+						<div class="ipt_section">
+							<!-- 이름 -->
+							<div class="name">
+								<input data-element-id="BPY-KID-30-S-e28" type="text" placeholder="이름(실명)" id="memb_nm" maxlength="40">
+							</div>
+							<!-- //이름 -->
+							<!-- 주민등록번호 -->
+							<div class="citizen_code">
+								<div class="code_1">
+									<input data-element-id="BPY-KID-30-S-e29" type="tel" id="brt_dt" jex-input="onlyNumber" maxlength="6" placeholder="주민번호 앞자리">
+								</div>
+								<div>
+									<span>-</span>
+								</div>
+								<div class="code_2">
+									<div class="ipt_bx">
+										<input data-element-id="BPY-KID-30-S-e30" type="tel" jex-input="onlyNumber" maxlength="1" id="brt_gndr">
+									</div>
+									<div class="code_after">
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+									</div>
+								</div>
+							</div>
+							<!-- //주민등록번호 -->
+							<!-- 전화번호 -->
+							<div class="phone">
+								<div class="tel_select">
+									<a data-element-id="BPY-KID-30-S-e19" id="sel_tel_corp">통신사</a><!-- 통신사 선택 시 클래스 "on" 추가 -->
+								</div>
+								<div class="ipt_bx">
+									<input data-element-id="BPY-KID-30-S-e31" type="tel" id="tel_no" placeholder="휴대폰번호" maxlength="11" jex-input="onlyNumber">
+								</div>
+							</div>
+							<!-- //전화번호 -->
+							<!-- 인증번호 -->
+							<div class="ipt_code">
+								<div class="ipt_bx">
+									<input data-element-id="BPY-KID-30-S-e32" type="tel" id="aprv_no" placeholder="인증번호 6자리" maxlength="6" jex-input="onlyNumber">
+									<span class="time" id="time_check">0:00</span><!-- 인증번호 전송 시 클래스 "on" 추가 -->
+								</div>
+								<div class="btn_request">
+									<a data-element-id="BPY-KID-30-S-e20" id="aprv_send">인증번호 요청</a>
+								</div>
+							</div>
+							<!-- //인증번호 -->
+						</div>
+						<!-- //정보입력 -->
+					</fieldset>
+				</form>
+			</div>
+			<!-- 본인인증 -->
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_white">
+					<a data-element-id="BPY-KID-30-S-e21" href="#none" class="btn_default round_r8 btn-style-h48" id="btn_next"><!-- 활성화 시 on 클래스 추가 -->
+						동의하기
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+		<!-- content -->
+	</div>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- 레이어 -->
+<div class="layer_overlay" id="tel_corp_layer" style="display:none;">
+	<div class="layer_bPop" >
+		<div class="popup_con pd0">
+			<!-- 통신사 선택 -->
+			<div class="tel_select">
+				<h2>
+					<strong>통신사 선택</strong>
+				</h2>
+				<!-- 닫기버튼 -->
+				<p class="btn_close">
+					<a id="close_tel_corp_layer">
+						<span class="blind">닫기</span>
+					</a>
+				</p>
+				<!-- //닫기버튼 -->
+				<!-- 통신사 목록 -->
+				<ul class="tel_list">
+					<li>
+						<a value="01">SKT</a><!-- 선택 시 클래스 "on" 추가 -->
+					</li>
+					<li>
+						<a value="02">KT</a>
+					</li>
+					<li>
+						<a value="03">LG U+</a>
+					</li>
+					<li>
+						<a value="04">SKT 알뜰폰</a>
+					</li>
+					<li>
+						<a value="05">KT 알뜰폰</a>
+					</li>
+					<li>
+						<a value="06">LG U+ 알뜰폰</a>
+					</li>
+				</ul>
+				<!-- //통신사 목록 -->
+				<input type="hidden" class="sds-value" id="tele_corp" />
+			</div>
+			<!-- //통신사 선택 -->
+		</div>
+	</div>
+</div>
+<!-- //레이어 -->
+
+<div class="wrap" id="agr_rslt_y" style="display: none;">
+	<div class="container">
+		<div class="content">
+			<!-- 보호자 동의 완료/ 시간초과 / 거절  -->
+			<div class="consent_wrap noHeader"><!-- 상단 헤더 없을 시 'noHeader' 클래스 추가 -->
+				<div class="result">
+					<p class="icon"><img src="../assets/resource/images/zero/consent_complete.png" alt=""></p>
+					<div class="msgBox">
+						<p class="msg"><strong>보호자 동의를 완료했어요.</strong></p>
+											
+						<p>비플페이는 아동의 건전한 소비 생활을 지향합니다.</p>
+						
+						
+					</div>
+				</div>
+			</div>
+			<!-- //보호자 동의 완료/ 시간초과 / 거절 -->
+		</div>
+		<!-- content -->
+	</div>
+	<!-- // container -->
+</div>
+
+<div class="wrap" id="agr_rslt_f" style="display: none;">
+	<div class="container">
+		<div class="content">
+			<!-- 보호자 동의 완료/ 시간초과 / 거절  -->
+			<div class="consent_wrap noHeader"><!-- 상단 헤더 없을 시 'noHeader' 클래스 추가 -->
+				<div class="result">
+					<p class="icon"><img src="../assets/resource/images/zero/consent_fail.png" alt=""></p>
+					<div class="msgBox">
+						<p class="msg"><strong>보호자 동의 가능 시간이 초과됐어요.</strong></p>
+						<p>아동이 다시 보호자에게 동의를 요청해야 합니다.</p>
+					</div>
+				</div>
+			</div>
+			<!-- //보호자 동의 완료/ 시간초과 / 거절 -->
+		</div>
+		<!-- content -->
+	</div>
+	<!-- // container -->
+</div>
+</body>
+</html>

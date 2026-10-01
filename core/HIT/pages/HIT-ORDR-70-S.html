@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈 주간메뉴 메인 화면</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-ORDR-70-S">
+<div class="wrap js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-ORDR-70-S-e07" class="hd-btn back" onclick="uf_back();"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">주간 메뉴</h1>
+        </div>
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-ORDR-70-S-e08" class="hd-btn menu_all" id="all_menu"><span class="blind-i">전체메뉴보기</span></a>
+        </nav>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 날짜선택 -->
+        <div class="date_box mgt8 js-swipe-box">
+            <ul id="dateHtml"><!-- sample:begin --><li class="late today select"><a href="#none" id="2026.09.02"><span class=""></span><strong></strong></a></li><!-- sample:end --></ul>
+        </div>
+        <!--
+            카테고리 추가 시 컨테이너(section)단위로 추가해주시면 됩니다.
+        -->
+        <div class="weekely-meal" id="weekely_meal_info">
+            <!-- 카테고리 -->
+            <div class="categori-wrap sticky" id="category"><!-- [D] 메뉴 없을 시 display:none; -->
+	            <div class="categori__item-wrap pdb10 js-indicator-btn-wrap">
+	            	<p class="categori__item" id="brunch_btn"><a data-element-id="HIT-ORDR-70-S-e09" href="#none" class="item-btn">조식</a></p>
+	            	<p class="categori__item" id="lunch_btn"><a data-element-id="HIT-ORDR-70-S-e10" href="#none" class="item-btn">중식</a></p>
+	            </div>
+            </div>
+            <div class="js-slide-container"><!-- [D] 슬라이드 스크립트 추가용 클래스 js-slide-container -->
+                <div class="js-slide-wrapper" id="total"><!-- sample:begin --><div class="js-slide"><section class="smart_oder-container js-item-categori"><div class="container-hd pdt10 pd-lr20"><p class="container-text type2"><strong class="fw-extra fz-rag lh-24 mgr2">조식메뉴</strong>(<span>14:22</span>~<span>14:22</span>)</p></div><article class="item-wrap no-border menu-view-weekely"><div class="item"><a class="inner-wrap" onclick="uf_clickMenu($(this))" data-order-form-tp = "" data-bld-tp="" data-menu-prvd-dt ="2026.09.02" data-aflt-seq="1" data-menu-seq="1" data-prvd-tp=""><div class="item-img"></div><div class="item-con"><div class="item-info"><p class="course">홍길동</p><p class="name">안내 문구</p><p class="menu-descrition">안내 문구</p></div></div></a></div></article></section><section class="smart_oder-container js-item-categori"><div class="container-hd pdt20 pd-lr20"><p class="container-text type2"><strong class="fw-extra fz-rag lh-24 mgr2">중식메뉴</strong>(<span>14:22</span>~<span>14:22</span>)</p></div><article class="item-wrap no-border menu-view-weekely"><div class="item"><a class="inner-wrap" onclick="uf_clickMenu($(this));" data-order-form-tp = "" data-bld-tp="" data-menu-prvd-dt ="2026.09.02" data-aflt-seq="1" data-menu-seq="1" data-prvd-tp=""><div class="item-img"></div><div class="item-con"><div class="item-info"><p class="course">홍길동</p><p class="name">안내 문구</p><p class="menu-descrition">안내 문구</p><p class="price">원</p></div></div></a></div></article></section><section class="smart_oder-container"><article class="item-wrap no-border"><div class="menu_none"><p>선택하신 날짜는 메뉴 준비중입니다. <br>조금만 기다려주세요.</p></div></article></section></div><!-- sample:end --></div>
+            </div>
+        </div>
+        <!-- 하단 플로팅 박스 -->
+        <section class="floating-container bottom">
+            <!-- 시작지점으로 이동 버튼 -->
+            <article class="page-top js-page-top">
+                <button data-element-id="HIT-ORDR-70-S-e06"><span class="blind-i">시작지점으로</span></button>
+            </article>
+        </section>
+    </main>
+</div>
+</body>
+</html>

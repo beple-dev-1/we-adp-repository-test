@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈_비플머니 기본정보</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/lib/jquery/datepicker/daterangepicker.css">
+</head>
+<body data-screen-id="HIT-MNY-10-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="MNY_YN"        name="MNY_YN"        value="Y" />
+    <input type="hidden" id="MNY_CUR_PRICE" name="MNY_CUR_PRICE" value="" />
+    <input type="hidden" id="REF_URL" 		name="REF_URL" 		 value="" />
+</form>
+<div class="wrap bg-f7 js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-MNY-10-S-e22" id="btnBack" href="#none"class="hd-btn back"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">비플머니</h1>
+        </div>
+    </header>
+
+    <main class="container-wrap js-container-wrap">
+        <!-- 비플머니 -->
+        <section class="bp_money">
+            <!-- 상태 및 결제 -->
+            <article class="top_bx">
+                <div class="inner">
+                    <!-- 보유 비플머니 -->
+                    <div class="status">
+                        <p class="ico_bpmoney">
+                            <img src="../assets/ent_resource/img/bpmoney/ico_bpmoney.png" alt="">
+                        </p>
+                        <div class="acc_paycn">
+                            <p class="tit">보유 비플머니</p>
+                            <p class="won"><em id="cur_price"><!-- sample:begin -->4,500<!-- sample:end --></em>원</p>
+                        </div>
+                        <a data-element-id="HIT-MNY-10-S-e23" class="btn_pay" role="button"><span>결제하기</span></a>
+                    </div>
+                    <!-- //보유 비플머니 -->
+                    <!-- 비플머니 내역 -->
+                    <div class="acc_history"><!-- 내역 온/오프 시 on클래스 추가/제거 -->
+                        <p class="btn_more"><a data-element-id="HIT-MNY-10-S-e24" href="#none">내역보기</a></p>
+                        <div class="inner">
+                            <ul>
+                                <li>
+                                    <p class="history_tit">적립</p>
+                                    <p class="money" id="tot_blc_amt_02">0원</p>
+                                </li>
+                                <li>
+                                    <p class="history_tit">충전</p>
+                                    <p class="money" id="tot_blc_amt_01">0원</p>
+                                </li>
+                                <li>
+                                    <p class="history_tit">만료예정</p>
+                                    <p class="money"><a data-element-id="HIT-MNY-10-S-e25" id="tot_expr_amt" href="javascript:void(0);">0원<span class="arr">만료예정내역보기</span></a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //비플머니 내역 -->
+                </div>
+            </article>
+            <!-- //상태 및 결제 -->
+            <!-- 탭영역 -->
+            <article class="tab_bx">
+                <ul>
+                    <li id="info_li" class="on"><a><span class="bg">기본정보</span></a></li><!-- 활성화클래스 on -->
+                    <li id="list_li"><a><span class="bg">이용내역</span></a></li>
+                </ul>
+            </article>
+            <!-- //탭영역 -->
+            <!-- 기본정보/이용내역 -->
+            <article class="cont_box">
+                <!-- 기본정보 -->
+                <!-- <div class="info_bx"> -->
+                <div class="info_bx">   <!-- custom-scroll -->
+                    <dl>
+                        <dt>
+                            <em>비플머니 소개</em>
+                        </dt>
+                        <dd>
+                            <p>비플머니는 간편하게 미리 충전 후 전국 제로페이 가맹점 어디서나 사용할 수 있습니다.</p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <em>사용 유효기간</em>
+                        </dt>
+                        <dd>
+                            <p>지급된 비플머니는 지급 후 60일이 지나면 만료되며, 충전한 비플머니는 충전일로부터 5년(60개월) 동안 사용할 수 있습니다.</p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <em>보유·충전 한도</em>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>비플머니 보유·충전 한도는 회원 기준으로 통합 관리됩니다.</li>
+                                <li>1회 충전한도 : 30만원</li>
+                                <li>1일 충전한도 : 300만원</li>
+                                <li>월 충전한도 : 1천만원</li>
+                                <li>보유 한도 : 200만원</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <em>유의사항</em>
+                        </dt>
+                        <dd>
+                            <p>
+                                지급받은 비플머니는 출금하실 수 없습니다.<br>
+                                회원 탈퇴 시 보유한 비플머니는 소멸될 수 있습니다.
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <em>출금안내</em>
+                            <a data-element-id="HIT-MNY-10-S-e26" href="#none" class="btn_request">출금신청하기<span class="arr">바로가기</span></a>
+                        </dt>
+                        <dd>
+                            <p>충전한 비플머니는 자유롭게 출금할 수 있습니다.</p>
+                        </dd>
+                    </dl>
+                </div>
+                <!-- //기본정보 -->
+
+                <!-- 이용내역 -->
+                <div class="history_wrap" style="display:none;">
+                    <div class="btn_filter" id="period">
+                        <a id="srch_btn" href="javascript:void(0);"><span id="period_label" style="font-size:12px;color:#626262;font-family:'NanumSquareB';">전체 · 1주일</span><span class="arr">유효기간 선택</span></a>
+                    </div>
+                    <!-- 이용내역 없을 시 -->
+                    <p class="list_none" style="display:none;">이용내역이 없습니다.</p>
+                    <!-- 이용내역 없을 시 -->
+                    <!-- 이용내역 리스트 -->
+                    <div class="history_list">
+                        <ul id="info_list" style="padding-left:20px; padding-right:20px;"><!-- sample:begin --><li onclick="zero_mny_info.go_complete_v2('')"><li><a href="#"><div class="inner"><p class="icon "><span class="blind"></span></p><div class="cont"><p class="tit">홍길동</p><p class="date">2026.09.02</p></div><div class="won_wrap"><p class="d-day">유효기간 ~14:22</p></div></div></a></li><!-- sample:end --></ul>
+
+                        <!-- 2026-07-15 [D] 더보기 버튼 추가 (스크롤→버튼 페이징) -->
+                        <div class="history-util">
+                            <button id="btn_more" type="button" class="more-button col--block">
+                                <span>더보기</span>
+                                <i class="icon icon--arrow-16"></i>
+                            </button>
+                        </div>
+                        <!-- // 2026-07-15 -->
+                    </div>
+                    <!-- 이용내역 리스트 -->
+                </div>
+                <!-- //이용내역 -->
+            </article>
+            <!-- //기본정보/이용내역 -->
+        </section>
+        <!-- // 비플머니 -->
+
+        <!-- 플로팅 박스 -->
+        <section class="floating-container bottom js-floating-wrap">
+            <!-- 메인 버튼영역 -->
+            <article class="main_btn-box bg-white pd0">
+                <div class="btn-main flex-row gap-0">
+<!--                    <a href="#" class="btn-default btn-line btn-style-h48 on"><span>선물하기</span></a>-->
+                    <a data-element-id="HIT-MNY-10-S-e27" id="btn_chrg" href="#" class="btn-default btn-style-h48 on"><span>충전하기</span></a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+                </div>
+            </article>
+        </section>
+
+        <!-- 레이어팝업 -->
+        <section id="popup_dim" class="popup-container overlay" style="display:none;">
+            <div class="popup-box bottom">
+                <div class="inner-box">
+                    <!-- 컨테이너 컨텐츠 -->
+                    <article id="srch_slider" class="box-content">
+                        <div class="detail_filter">
+                            <!-- 기간 -->
+                            <h2 class="filter_tit">기간</h2>
+                            <!-- 탭영역 -->
+                            <div class="filter_tab">
+                                <div class="inner four period_tab">
+                                    <a data-element-id="HIT-MNY-10-S-e28" href="#none" class="on" title="선택됨">오늘</a>
+                                    <a data-element-id="HIT-MNY-10-S-e29" href="#none">1주일</a>
+                                    <a data-element-id="HIT-MNY-10-S-e30" href="#none">1개월</a>
+                                    <a data-element-id="HIT-MNY-10-S-e31" href="#none">3개월</a>
+                                </div>
+                            </div>
+                            <div class="filter_date"><!-- 기간설정 시 style="display:block;" -->
+                                <div class="inner">
+                                    <div class="date"><input name="from_dt" type="text" maxlength="10" readonly="readonly"><a data-element-id="HIT-MNY-10-S-e32" class="btn_cal"><span class="blind">달력</span></a></div>
+                                    <div class="dash">-</div>
+                                    <div class="date"><input name="to_dt" type="text" maxlength="10" readonly="readonly"><a class="btn_cal"><span class="blind">달력</span></a></div>
+                                </div>
+                                <!-- 오류메시지 -->
+                                <div class="err_txt msg" style="display:none;">조회기간은 3개월을 넘을 수 없습니다.</div><!-- 조회기간 오류 시 (6개월 넘길경우) style="dipslay:block;" -->
+                            </div>
+                            <!-- 기간 -->
+                            <h2 class="filter_tit">카테고리</h2>
+                            <!-- 탭영역 -->
+                            <div class="filter_tab">
+                                <div class="inner four ctgry_tab">
+                                    <a data-element-id="HIT-MNY-10-S-e33" ctgry="0" href="#none" class="on" title="전체 선택됨">전체</a>
+                                    <a data-element-id="HIT-MNY-10-S-e34" ctgry="1" href="#none">사용</a>
+                                    <a data-element-id="HIT-MNY-10-S-e35" ctgry="2" href="#none">적립</a>
+                                    <a data-element-id="HIT-MNY-10-S-e36" ctgry="3" href="#none">충전</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- 메인버튼 - 팝업용 -->
+                    <div class="main_btn-box pd-lr10 pdb10 mgt32">
+                        <div class="btn-main flex-row">
+                            <button data-element-id="HIT-MNY-10-S-e19" type="button" class="btn_cc btn-default btn-line radius-mid btn-style-h48 on">취소</button>
+                            <button data-element-id="HIT-MNY-10-S-e20" type="button" class="btn_sh btn-default radius-mid btn-style-h48 on">조회하기</button>
+                        </div>
+                    </div>
+                    <!-- 닫기버튼 -->
+                    <p class="close_btn-box"><button data-element-id="HIT-MNY-10-S-e21" type="button" class="close-btn icon close-14"><span class="blind-i">팝업닫기</span></button></p>
+                </div>
+            </div>
+        </section>
+        <!-- // 레이어팝업 -->
+
+    </main><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

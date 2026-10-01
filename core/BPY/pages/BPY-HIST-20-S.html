@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>더보기>비대면결제내역>상세</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-HIST-20-S">
+<!-- request parameter --> 
+<input type="hidden" id="req_mch_send_uniq_no" value="">
+<input type="hidden" id="req_auth_date"        value="">
+<input type="hidden" id="req_channel_gb"       value="">
+<input type="hidden" id="req_aflt_id"          value="">
+
+<div class="wrap bg_g">
+    <div class="header floating-back-header floating-sticky">
+        <a data-element-id="BPY-HIST-20-S-e05" role="button" id="back_btn"  href="javascript:void(0);" class="btn-history-back">뒤로가기</a>
+        <h1 style="position: relative;">비대면 결제내역</h1>
+        <div class="right">
+            <a data-element-id="BPY-HIST-20-S-e06" role="button" id="share_btn" href="javascript:void(0);" class="btn_share" style="display:none;">공유하기</a>
+        </div>
+    </div><!-- // header -->
+    <div class="container">
+        <div class="content">
+
+            <!-- 컨텐츠 영역 -->
+            <div class="row-bothpadding20-style">
+                <!-- 결제정보 -->
+                <div class="un_payinfo_bx">
+                    <div class="un_p_top">
+                        <dl>
+                            <dt>
+                                2026.09.02 
+                                <div class="right"><span class="type">가맹점용</span></div>
+                            </dt>
+                            <dd>
+                                <div class="user">비플머니()</div>
+                                <div class="won"><em>4,500</em>원</div>
+                                <div class="txt">1</div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="un_p_msg">
+                        <p></p>
+                    </div>
+                </div>
+                <!-- //결제정보 -->
+
+                <!-- 결제 상세정보 -->
+                <div class="un_pay_dtailbx">
+                    <div class="tbl_d">
+                        <table>
+                            <colgroup>
+                                <col style="width:100px;"><col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th>가맹점명</th>
+                                <td><div class="ellipsis">비플머니</div></td>
+                            </tr>
+                            <tr>
+                                <th>결제수단</th>
+                                <td>비플머니</td>
+                            </tr>
+                            <tr>
+                                <th>거래번호</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>상태</th>
+                                <td>승인</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tbl_d add_line">
+                        <table>
+                            <colgroup>
+                                <col style="width:100px;"><col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th>공급금액</th>
+                                <td class="won"> 원</td>
+                            </tr>
+                            <tr>
+                                <th>부가가치세</th>
+                                <td class="won">409 원</td>
+                            </tr>
+                            <tr>
+                                <th>봉사료</th>
+                                <td class="won">4,500 원</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //결제 상세정보 -->
+            </div>
+            <!-- //컨텐츠 영역 -->
+
+            <!-- 메모 리스트영역 -->
+            <div class="un_memo_vbx">
+                <div class="memo_v">
+                    <!-- 메모 있는경우 -->
+                    <ul id="rpy_list" style="display:none;">
+                    </ul>
+                    <!-- //메모 있는경우 -->
+                    <!-- 메모 없는경우 -->
+                    <div id="rpy_empty" class="memo_no" style="display:none;">
+                        <p>작성된 메모는 가맹점주와 매니저만 확인 가능합니다.</p>
+                    </div>
+                    <!-- //메모 없는경우 -->
+                </div>
+            </div>
+            <!-- //메모 리스트영역 -->
+
+            <!-- 하단 고정 메모 작성영역 -->
+            <div class="fix_memo_iptbx">
+                <div class="inner">
+                    <div class="bg"><input data-element-id="BPY-HIST-20-S-e08" id="rpy_tx" type="text" placeholder="메모 남기기 (최대 15글자)" maxlength="15" value=""><a data-element-id="BPY-HIST-20-S-e07" role="button" id="rpy_btn" class="btn">입력</a></div>
+                </div>
+            </div>
+            <!-- //하단 고정 메모 작성영역 -->
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+
+<script id="rpy_template" type="text/template">
+    <li>
+        <em>{{ rpy_dt }}</em>
+        <span class="txt">{{ rpy_tx }}</span>
+        <a class="btn_del" style="display: none;">
+            <span class="blind">삭제</span>
+        </a>
+    </li>
+</script>
+</body>
+</html>

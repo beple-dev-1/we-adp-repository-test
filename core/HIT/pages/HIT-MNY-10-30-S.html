@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈_비플머니 출금</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-MNY-10-30-S">
+<script>
+    var public_modulus  = ""; //RSA 공개키로 암호화 하기위한 공개키데이터
+    var public_exponent = ""; //RSA 공개키로 암호화 하기위한 공개키데이터
+</script>
+<input type="hidden" id="TOT_WDRW_AMT"         name="TOT_WDRW_AMT"        value="" />
+<input type="hidden" id="bank_cd"               name="bank_cd"        />
+<input type="hidden" id="acct_no"               name="acct_no"        />
+<input type="hidden" id="dec_acct_no"           name="dec_acct_no"        />
+<input type="hidden" id="bank_nm"               name="bank_nm"        />
+<input type="hidden" id="firm_join_yn"          name="firm_join_yn"        />
+<input type="hidden" id="obank_join_yn"         name="obank_join_yn"        />
+
+<div com-step-id="step1" class="wrap js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-MNY-10-30-S-e13" id="go_back" href="#none"class="hd-btn back"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">출금하기</h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!--비플머니 -->
+        <section class="bp_money">
+            <!-- 비플머니 잔액 -->
+            <article class="top_bx bdt_none">
+                <div class="inner">
+                    <div class="balance_info">
+                        <dl>
+                            <dt>출금 가능 비플머니</dt>
+                            <dd>
+                                <strong>4,500<span class="won">원</span></strong>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </article>
+            <!-- //비플머니 잔액 -->
+            <!-- 충전/출금 wrap -->
+            <article class="cash_wrap ">
+                <!-- 출금수단 선택 -->
+                <dl class="acc_sel">
+                    <dt><strong>입금계좌</strong></dt>
+                    <dd>
+                        
+                        <a data-element-id="HIT-MNY-10-30-S-e14" id="acct_info" href="#none" class="sel_acc_btn">
+                            <!-- 계좌리스트 -->
+                            <div class="p_acc_sltbx">
+                                <ul id="selected_acct">
+                                    <li name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="국민은행" >
+                                        <span class="ic_b ic_b"></span>국민은행()계좌
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- //계좌리스트 -->
+                        </a>
+                        
+                    </dd>
+                </dl>
+                <!-- //출금수단 선택 -->
+                <!-- 출금금액 -->
+                <dl class="amount_ipt">
+                    <dt><strong>출금 비플머니</strong></dt>
+                    <dd>
+                        <div class="ipt_bx"><!-- 내용 입력/삭제 시 ipt클래스 추가/제거 -->
+                            <p>
+                                <input data-element-id="HIT-MNY-10-30-S-e19" type="tel" id="tr_amt" placeholder="금액을 입력해 주세요" maxlength="10" jex-input="commaFormat" data-input="commaFormat">
+                                <a data-element-id="HIT-MNY-10-30-S-e15" href="#none" class="del"><img src="../assets/ent_resource/img/bpmoney/ico_amount_ipt_delete.png" alt="내용삭제"></a>
+                            </p>
+                        </div>
+                        <p class="info_msg">최소 천원이상부터 출금이 가능합니다. <a data-element-id="HIT-MNY-10-30-S-e16" href="#none" class="cash_all" id="cash_all">전액출금</a></p>
+                    </dd>
+                </dl>
+                <!-- //출금금액 -->
+                <dl class="notice">
+                    <dt>유의사항</dt>
+                    <dd>
+                        <ul>
+                            <!--                                <li>인출 시 등록하신 계좌로 바로 입금됩니다.</li>-->
+                            <li>
+                                유상수단으로 충전한 비플머니만 인출이 가능합니다.<br>
+                                (지급받은 적립 비플머니는 불가)
+                            </li>
+                            <li>비플머니는 4,500원 이상부터 1원단위로 인출하실 수 있습니다.</li>
+                            <li>본인 명의의 비플페이에 등록된 계좌만 출금이 가능합니다.</li>
+                            <li>출금신청한 출금금액은 신청일 다음 영업일에 입금됩니다.</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </article>
+            <!-- //충전/출금 wrap -->
+        </section>
+        <!-- // 비플머니 -->
+
+        <!-- 플로팅 박스 -->
+        <section class="floating-container bottom js-floating-wrap">
+            <!-- 메인 버튼영역 -->
+            <article class="main_btn-box bg-white">
+                <div class="btn-main">
+                    <a id="open_wdrw_info" href="#" class="btn-default radius-mid btn-style-h48"><span>신청하기</span></a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+                </div>
+            </article>
+        </section>
+
+        <!-- 계좌 선택 -->
+        <section id="acct_list" class="popup-container overlay" style="display:none;">
+            <div class="popup-box bottom" id="acct_list_div">
+                <div class="inner-box pdb24">
+                    <!-- 컨테이너 헤더 -->
+                    <div class="box-hd pd-lr20 pdt24">
+                        <p class="box__hd-text">계좌선택</p>
+                    </div>
+                    <!-- 컨테이너 컨텐츠 -->
+                    <article class="box-content pd-lr20 mgt16 max_height-150 scroll-y">
+                        <div class="p_acc_sltbx">
+                            <ul class="acc-list">
+                                
+                                <li class="acc-item" name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="국민은행" >
+                                    <a href="#none" class="acc-item__btn">
+                                        <span class="ic_b ic_b"></span>국민은행()계좌
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <!--        <div class="pop_button btns" style="display:none;">-->
+                <!--            <a href="#" class="typeB">아니오</a>-->
+                <!--            <a href="#" class="typeA">예</a>-->
+                <!--        </div>-->
+            </div>
+        </section>
+
+        <!-- 레이어 -->
+        <section id="wdrw_info" class="popup-container overlay" style="display:none;">
+            <div class="popup-box bottom" id="wdrw_info_div">
+                <div class="inner-box store-info pdb0">
+                    <!-- 컨테이너 헤더 -->
+                    <div class="box-hd pd-lr20 pdt32">
+                        <p class="box__hd-text">출금 신청 정보</p>
+                    </div>
+                    <!-- 컨테이너 컨텐츠 -->
+                    <article class="box-content">
+                        <div class="store-info__item-wrap">
+                            <div class="info-item justify-space">
+                                <p class="info-text head">출금금액</p>
+                                <p class="info-text fc-222" id="info_wdrw_amt"><!-- sample:begin -->4,500<!-- sample:end --></p>
+                            </div>
+                            <div class="info-item justify-space">
+                                <p class="info-text head">입금계좌</p>
+                                <p class="info-text fc-222" id="info_acct"><!-- sample:begin -->표본<!-- sample:end --></p>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- 메인버튼 - 팝업용 -->
+                    <div class="main_btn-box pd-lr10 pdb10 ">
+                        <div class="btn-main">
+                            <button data-element-id="HIT-MNY-10-30-S-e11" id="wdrw" type="button" class="btn-default radius-mid btn-style-h48 on">신청하기</button>
+                        </div>
+                    </div>
+
+                    <!-- 닫기버튼 -->
+                    <p id="wdrw_info_close" class="close_btn-box"><button data-element-id="HIT-MNY-10-30-S-e12" type="button" class="close-btn icon close-14"><span class="blind-i">팝업닫기</span></button></p>
+                </div>
+            </div>
+        </section>
+        <!-- //레이어 -->
+
+    </main><!-- // container -->
+</div><!-- // wrap -->
+
+<div com-step-id="step2" class="wrap js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky flex-end">
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">비플머니</h1>
+        </div>
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-MNY-10-30-S-e17" id="com_close" href="#none"class="hd-btn close"><span class="blind-i">닫기</span></a>
+        </nav>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!--비플머니 -->
+        <section class="bp_money">
+            <!-- 충전/출금 신청완료 -->
+            <article class="regist_complete" style="display:none;">
+                <div class="inner type2"><!-- 충전 = type1, 출금 = type2 -->
+                    <!-- 완료 메세지 -->
+                    <div class="message">
+                        <p>
+                            비플머니출금 신청이<br>
+                            완료되었습니다.
+                        </p>
+                        <p class="info">입력하신 계좌로 2-3일 내로 입금됩니다.</p>
+                    </div>
+                    <!-- //완료 메세지 -->
+                </div>
+            </article>
+            <!-- //충전/출금 신청완료 -->
+
+            <!-- 하단 고정버튼 -->
+        </section>
+        <!-- // 비플머니 -->
+
+        <!-- 플로팅 박스 -->
+        <section class="floating-container bottom js-floating-wrap">
+            <!-- 메인 버튼영역 -->
+            <article class="main_btn-box pd0">
+                <div class="btn-main">
+                    <a data-element-id="HIT-MNY-10-30-S-e18" id="com_complete" href="#" class="btn-default btn-style-h48 on"><span>확인</span></a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+                </div>
+            </article>
+        </section>
+
+    </main><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

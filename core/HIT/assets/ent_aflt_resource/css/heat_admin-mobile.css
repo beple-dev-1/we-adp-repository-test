@@ -1,0 +1,23 @@
+/* =============================================================================
+ * heat_admin-mobile.css — ★ HTML에 엮이는 유일한 CSS (진입점)
+ * 모든 화면 페이지·index.html은 이 파일 1개만 <link>한다. 나머지는 아래 @import로 합성.
+ * cascade 순서 고정: ① 토큰(변수 정의) → ② 컴포넌트(var 참조) → ③ 전역/뷰어 글루 → ④ 화면별 글루.
+ * 빌드 방식: node toolchain 없이 CSS @import 조립(BUILD.md 규약).
+ * ========================================================================== */
+
+/* ① 테마 토큰 (primitive + semantic, @font-face) — 반드시 선행 */
+@import "tokens.css";
+
+/* ② 라이브러리 컴포넌트 스타일 (var(--*) 참조) */
+@import "components.css";
+
+/* ③ 전역 글루 + 적응형 프레임 + 뷰어 셸 chrome */
+@import "app.css";
+
+/* ④ 화면별 글루 (.app--<screen> 스코프) */
+@import "screens/login/s-login.css";
+@import "screens/menu/s-menu-list.css";
+@import "screens/menu/s-menu-add.css";
+@import "screens/store/s-store-main.css";
+@import "screens/public/logout-info_popup.css";
+@import "screens/public/loading.css";

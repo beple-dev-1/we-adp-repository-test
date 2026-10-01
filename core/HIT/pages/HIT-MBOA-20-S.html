@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈_가맹점 어드민_메뉴 관리(앱 버전)</title>
+  <link rel="stylesheet" href="../assets/ent_aflt_resource/css/heat_admin-mobile.css">
+  <link rel="stylesheet" href="../assets/ent_aflt_resource/css/datepicker.min.css">
+</head>
+<body data-screen-id="HIT-MBOA-20-S">
+<div class="app app--menu-list">
+    <header class="ds-appbar">
+      <span class="ds-appbar__action"></span>
+      <h1 class="ds-appbar__title"><!-- copy: list.title -->메뉴 관리</h1>
+      <button id="close" class="ds-appbar__action ds-appbar__action--trailing" aria-label="닫기">
+        <img src="../assets/ent_aflt_resource/img/icons/ico-close-32.svg" alt="" aria-hidden="true" width="32" height="32">
+      </button>
+    </header>
+
+    <nav class="ds-week-nav">
+      <button class="ds-week-nav__arrow" aria-label="이전 주"><img src="../assets/ent_aflt_resource/img/icons/ico-arrow-left.svg" alt="" aria-hidden="true" width="20" height="20"></button>
+      <div class="ds-week-nav__range"><span class="ds-week-nav__label"><!-- data: 주간범위 -->3/16 ~ 3/22</span>
+        <button class="ds-week-nav__cal" aria-label="필터" data-ds-sheet="sheet-filter"><img src="../assets/ent_aflt_resource/img/icons/ico-date.svg" alt="" aria-hidden="true" width="18" height="18"></button>
+      </div>
+      <button class="ds-week-nav__arrow" aria-label="다음 주"><img src="../assets/ent_aflt_resource/img/icons/ico-arrow-right.svg" alt="" aria-hidden="true" width="20" height="20"></button>
+    </nav>
+
+    <main class="screen-content" id="menu_list_content">
+      <!-- ent_aflt_menu_list_r001 호출 결과로 JS가 동적 렌더링 (day-group + ds-menu-card 반복) -->
+    </main>
+    <main class="screen-content screen-content--empty" id="menu_list_empty" hidden>
+      <p class="list-empty-all"><!-- copy: list.emptyAll -->등록된 메뉴가 없습니다.</p>
+    </main>
+
+    <div class="ds-fab__wrap"><button data-element-id="HIT-MBOA-20-S-e08" id="menu_add" class="ds-fab"><span class="ds-fab__label"><!-- copy: list.fab -->메뉴 추가</span><span class="ds-fab__icon" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-fab.svg" alt="" aria-hidden="true" width="24" height="24"></span></button></div>
+
+    <!-- 메뉴 액션 시트 (heat-ui.js data-ds-sheet/data-ds-close 자동 처리) -->
+    <div class="ds-bottom-sheet" id="sheet-menu-action" hidden>
+      <div class="ds-bottom-sheet__dim" data-ds-close></div>
+      <div class="ds-bottom-sheet__panel" role="dialog" aria-modal="true">
+        <div class="ds-bottom-sheet__header"><h2 class="ds-bottom-sheet__title">중식 A</h2><button class="ds-bottom-sheet__close" data-ds-close aria-label="닫기"><img src="../assets/ent_aflt_resource/img/icons/ico-close-32.svg" alt="" aria-hidden="true" width="32" height="32"></button></div>
+        <ul class="ds-bottom-sheet__list">
+          <li class="ds-bottom-sheet__item" data-ds-action="soldout-toggle"><!-- copy: list.action.soldout -->품절 처리</li>
+          <li class="ds-bottom-sheet__item" data-ds-action="edit"><!-- copy: list.action.edit -->메뉴 수정</li>
+          <li class="ds-bottom-sheet__item" data-ds-action="delete"><!-- copy: list.action.delete -->메뉴 삭제</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 삭제 확인/완료, 수정 경고 팝업은 정적 마크업 대신 AfltPopup.showAfltConfirm/showAfltAlert로 동적 생성 -->
+
+    <div class="ds-bottom-sheet ds-bottom-sheet--filter" id="sheet-filter" hidden>
+      <div class="ds-bottom-sheet__dim" data-ds-close></div>
+      <div class="ds-bottom-sheet__panel" role="dialog" aria-modal="true">
+        <div class="ds-bottom-sheet__header"><h2 class="ds-bottom-sheet__title">기간</h2><button class="ds-bottom-sheet__close" data-ds-close aria-label="닫기"><img src="../assets/ent_aflt_resource/img/icons/ico-close-32.svg" alt="" aria-hidden="true" width="32" height="32"></button></div>
+        <div class="filter-sheet__body">
+          <!-- 조회기간 시작/종료 — step1(ent_aflt_menu_reg_svc)과 동일 패턴: 정답지 버튼 표시(input 미사용) + 투명 오버레이 버튼에 데이트피커 바인딩 -->
+          <div class="filter-range">
+            <div style="position:relative;">
+              <button class="filter-range__field" type="button" tabindex="-1" aria-hidden="true"><span class="filter-range__value" id="from_dt_value"><!-- sample:begin -->표본<!-- sample:end --></span><span class="filter-range__icon" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-date-disabled.svg" alt="" aria-hidden="true" width="18" height="18"></span></button>
+              <button type="button" id="from_dt" aria-label="시작 날짜 선택" style="position:absolute;inset:0;opacity:0;border:0;padding:0;margin:0;background:transparent;cursor:pointer;"><!-- sample:begin -->2026.09.02<!-- sample:end --></button>
+            </div>
+            <span class="filter-range__dash">–</span>
+            <div style="position:relative;">
+              <button class="filter-range__field" type="button" tabindex="-1" aria-hidden="true"><span class="filter-range__value" id="to_dt_value"><!-- sample:begin -->표본<!-- sample:end --></span><span class="filter-range__icon" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-date-disabled.svg" alt="" aria-hidden="true" width="18" height="18"></span></button>
+              <button type="button" id="to_dt" aria-label="종료 날짜 선택" style="position:absolute;inset:0;opacity:0;border:0;padding:0;margin:0;background:transparent;cursor:pointer;"><!-- sample:begin -->2026.09.02<!-- sample:end --></button>
+            </div>
+          </div>
+          <hr class="filter-sheet__divider">
+          <div class="filter-sheet__label">이용구분</div>
+          <div class="filter-chips">
+            <button data-element-id="HIT-MBOA-20-S-e09" class="ds-chip ds-chip--selected" data-value="A">전체</button>
+            <button data-element-id="HIT-MBOA-20-S-e10" class="ds-chip" data-value="C">매장식사</button>
+            <button data-element-id="HIT-MBOA-20-S-e11" class="ds-chip" data-value="D">딜리버리/픽업</button>
+            <button data-element-id="HIT-MBOA-20-S-e12" class="ds-chip" data-value="R">사전예약</button>
+          </div>
+          <button data-element-id="HIT-MBOA-20-S-e13" class="ds-button ds-button--primary ds-button--block ds-button--xlarge filter-sheet__submit">조회</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-bottom-sheet" id="sheet-photo" hidden>
+      <div class="ds-bottom-sheet__dim" data-ds-close></div>
+      <div class="ds-bottom-sheet__panel" role="dialog" aria-modal="true">
+        <div class="ds-bottom-sheet__header"><h2 class="ds-bottom-sheet__title">사진</h2><button class="ds-bottom-sheet__close" data-ds-close aria-label="닫기"><img src="../assets/ent_aflt_resource/img/icons/ico-close-32.svg" alt="" aria-hidden="true" width="32" height="32"></button></div>
+        <ul class="ds-bottom-sheet__list">
+          <li class="ds-bottom-sheet__item" data-ds-action="photo-change">사진 변경</li>
+          <li class="ds-bottom-sheet__item" data-ds-action="photo-reset">기본 이미지로 변경</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- capture 미지정 — 안드로이드 카메라도 노출됨. 상세 사유는 ent_aflt_menu_list.js 참조 -->
+    <input data-element-id="HIT-MBOA-20-S-e14" type="file" id="photo-file-input-gallery" accept=".jpg, .jpeg, .png, image/jpeg, image/png" hidden>
+  </div>
+</body>
+</html>

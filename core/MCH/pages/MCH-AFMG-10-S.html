@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 인증</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="MCH-AFMG-10-S">
+<input type="hidden" id="referer" value="">
+
+<div class="wrap">
+	<div class="header floating-back-header floating-sticky">
+		<h1>가맹점 인증</h1>
+		<a data-element-id="MCH-AFMG-10-S-e09" href="#" id="go_back" class="btn-history-back">뒤로가기</a>
+	</div><!-- // header -->
+	<div class="container">
+		<div class="content">
+			<div class="row-bothpadding25-style">
+				<div class="input_wrap">
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">이용자명</div></td></tr>
+								<tr>
+									<td>
+										<div class="input_type dis">
+											비플머니
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">제로페이 가맹점 대표명</div></td></tr>
+								<tr>
+									<td>
+										<div class="input_type active">
+											<input data-element-id="MCH-AFMG-10-S-e11" type="text" id="REPR_NM" value="" maxlength="40" oninput="checkOnClass()">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">사업자 등록 번호</div></td></tr>
+								<tr>
+									<td>
+										<div class="input_type active">
+											<input data-element-id="MCH-AFMG-10-S-e12" type="tel" id="BIZ_NO" placeholder="숫자 10자리" maxlength="10" value="" oninput="checkOnClass()">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">제로페이등록 대표자 전화번호 뒤 4자리</div></td></tr>
+								<tr>
+									<td>
+										<div class="input_type2">
+											<span class="active"><input data-element-id="MCH-AFMG-10-S-e13" type="tel" value="" maxlength="1" name="tel_no" id="tel1" oninput="checkOnClass()"></span>
+											<span class="active"><input data-element-id="MCH-AFMG-10-S-e14" type="tel" value="" maxlength="1" name="tel_no" id="tel2" oninput="checkOnClass()"></span>
+											<span class="active"><input data-element-id="MCH-AFMG-10-S-e15" type="tel" value="" maxlength="1" name="tel_no" id="tel3" oninput="checkOnClass()"></span>
+											<span class="active"><input data-element-id="MCH-AFMG-10-S-e16" type="tel" value="" maxlength="1" name="tel_no" id="tel4" oninput="checkOnClass()"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<ul class="txt_dot">
+						<li>사업자 인증의 오류가 있을 경우 제로페이 고객센터로 문의 바랍니다. (1670-0582)</li>
+						<li>사업자 번호를 도용하여 가입 시 형사 처벌 받을 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="fixed-bottom-section" style="position: fixed; top: 712px;">
+				<a data-element-id="MCH-AFMG-10-S-e10" id="auth_btn" href="#" class="btn-submit btn-deepblack-op90"><span>인증</span></a><!-- 활성화클래스 on -->
+			</div>
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- 유효하지 않은 사업자 -->
+<!-- modal overlay -->
+<div class="modaloverlay"; id="aflt_prvt_popup_area" style="display:none;">
+		<div class="lytb"><div class="lytb_row"><div class="lytb_td">
+		<!-- layerpopup -->
+		<div class="layer_style1">
+			<div class="layer_po">
+				<div class="cont">
+					<div id="msg" class="pop_txt"><!-- sample:begin -->표본<!-- sample:end --></div>
+				</div>
+			</div>
+			<div class="ly_btn_fix_botm">
+				<a class="btn_pop" id="cncl_popup"><span>확인</span></a>
+			</div>
+		</div>
+		<!-- //layerpopup -->
+		</div></div></div>
+	</div>
+<!-- //modal overlay -->
+</body>
+</html>

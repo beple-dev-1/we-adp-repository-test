@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>고객확인제도 수집정보 안내</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KYC-10-10-20-S">
+<input type="hidden" id="aml_seq" value=""  />
+<input type="hidden" id="biz_no" value=""  />
+<input type="hidden" id="shop_cnt" value=""  />
+<input type="hidden" id="aml_ci" value=""  />
+<input type="hidden" id="aml_ac" value=""  />
+<textarea data-element-id="MCH-KYC-10-10-20-S-e06" id="load_data" style="display: none;" rows="" cols=""></textarea>
+<div class="wrap bg_f7">
+	<div class="header floating-back-header floating-sticky">
+		<h1>고객확인서 수집현황</h1>
+		<a data-element-id="MCH-KYC-10-10-20-S-e04" data-nav-target="MCH-KYC-10-10-10-S" onclick="ur_back();" class="btn-history-back">뒤로가기</a>
+		<!-- <a onclick="ur_back();" class="btn-out-page">닫기</a> -->
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 고객확인서 -> 개인 -->
+			<section class="customer-verification">
+				<!-- 고객확인제도 수집정보 안내 -->
+				<div class="verification-section">
+					<article class="verification__header pdt32">
+						<h2 class="header__title">고객확인제도 수집정보 안내</h2>
+						<p class="header__description">
+							특정금융거래정보의 보고 및 이용 등에 관란 법률 제 5조의2(금융회사 등의 고객 확인의무)에 따라, 정산 대금을 지급받는 판매자는 고객확인제도 정보등록을 완료해주셔야 합니다. 수집된 정보는 신원확인 용도로만 사용되며, 고객확인제도를 이행하지 않는 경우 서비스 이용이 불가할 수 있습니다.
+						</p>
+					</article>
+				</div>
+
+				<div class="verification-section">
+					<article class="verification__header">
+						<h2 class="header__title">고객확인서 심사현황</h2>
+					</article>
+
+					<article class="verification__content mgt20">
+						<div class="verification__status">
+							<!-- 드롭박스 -->
+							<div class="drop-type2 bg-white js-drop_box">
+								<div class="drop__trigger js-drop_trigger">
+									<h3 class="status__title">
+										<button data-element-id="MCH-KYC-10-10-20-S-e05" type="button" class="trigger-button">심사안내</button>
+									</h3>
+								</div>
+
+								<div class="drop__content js-drop_content">
+									<p class="status__info-text">입력하신 서류 및 정보는 별도 심사 절차가 진행되며 최대 7 영업일이 소요됩니다.</p>
+									<p class="status__info-text">심사 결과에 따라 추가 정보를 요청할 수 있습니다.</p>
+
+									<div class="status-tip">
+										<h4 class="tip__tit">심사상태 안내</h4>
+										<ul class="list_bar">
+											<li>확인중: 고객확인제도 정보 심사 중</li>
+											<li>확인완료: 고객확인제도 정보 심사 결과, 확인 완료</li>
+											<li>확인실패: 고객확인제도 정보 심사 결과, 확인 실패</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="status__wrap" id="article_body">
+								<!-- 일자별 status -->
+								<!-- <article class="status__box">
+									<p class="box__date">2024년 02월 01일</p>
+
+									<div class="box__content">
+										<div class="status__content">
+											상태
+											<div class="status__item">
+												<p class="item__head">심사상태</p>
+												<p class="item__data">확인중</p>
+											</div>
+											코멘트
+											<div class="status__item">
+												<p class="item__head">심사자 코멘트</p>
+												<p class="item__data"></p>
+											</div>
+											상태변경일
+											<div class="status__item">
+												<p class="item__head">심사상태 변경일</p>
+												<p class="item__data">2024.09.09</p>
+											</div>
+										</div>
+									</div>
+								</article>
+
+								일자별 status
+								<article class="status__box">
+									<p class="box__date">2024년 02월 01일</p>
+
+									<div class="box__content">
+										<div class="status__content">
+											상태
+											<div class="status__item">
+												<p class="item__head">심사상태</p>
+												<p class="item__data fcRed">확인실패</p>
+											</div>
+											코멘트
+											<div class="status__item">
+												<p class="item__head">심사자 코멘트</p>
+												<p class="item__data">주주명부 미제출로 확인이 실패되었습니다.</p>
+											</div>
+											상태변경일
+											<div class="status__item">
+												<p class="item__head">심사상태 변경일</p>
+												<p class="item__data">2024.09.09</p>
+											</div>
+										</div>
+
+										<p class="status__info-text ref-mark">
+											관련 문의는 비즈플레이 고객센터로 부탁드립니다.<br>
+											(<a href="tel:1670-0136">1670-0136</a> / 평일 09:00-18:00 / 주말·공휴일 휴무)
+										</p>
+									</div>
+								</article>
+
+								일자별 status
+								<article class="status__box">
+									<p class="box__date">2024년 02월 01일</p>
+
+									<div class="box__content">
+										<div class="status__header">
+											<h3 class="header__title">고객신원확인</h3>
+										</div>
+
+										<div class="status__content">
+											상태
+											<div class="status__item">
+												<p class="item__head">심사상태</p>
+												<p class="item__data fcBlue">확인완료</p>
+											</div>
+											코멘트
+											<div class="status__item">
+												<p class="item__head">심사자 코멘트</p>
+												<p class="item__data">확인이 완료되었습니다.</p>
+											</div>
+											상태변경일
+											<div class="status__item">
+												<p class="item__head">심사상태 변경일</p>
+												<p class="item__data">2024.09.09</p>
+											</div>
+										</div>
+									</div>
+								</article> -->
+							</div>
+
+							<!-- 안내사항 -->
+							<div class="info-tip">
+								<h3 class="tip__tit">안내 사항</h3>
+								<div class="tip__con">
+									<ul class="list_bar">
+										<li>금융기관, 전자금융업자 등은 특정금융거래정보의 보고 및 이용 등에 관한 법률 제 5조의2(금융회사 등의 고객 확인의무)에 따라 신규 계약 체결 및 기존 가맹점 대상으로 주기적으로 필요한 정보 및 자료를 요청하는 것이며 수집된 정보는 법령에 따른 신원 확인 용도로만 사용 및 저장되며, 다른 용도로는 활용되지 않습니다.</li>
+										<li>가맹점 정보 변경(대표자 정보 변경 등)이 필요한 경우, 그 외 관련 문의 사항은 고객센터(1670-0136)로 문의해 주세요.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

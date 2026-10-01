@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>약관내용조회화면 (KCB 약관 백엔드 fetch+캐시+sanitize / b안 - 과업014, 통신사 탭 지</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-COMN-10-10-40-S">
+<input type="hidden" id="callback_url" name="callback_url" value="">
+<div class="wrap">
+    <!-- // header -->
+    <div class="header floating-back-header floating-sticky">
+        <a data-element-id="BPY-COMN-10-10-40-S-e03" role="button" class="btn-history-back" onClick="uf_back();" aria-label="상위메뉴로 이동">뒤로가기</a>
+        <h1 style="position: relative;" id="clause_title"></h1>
+    </div>
+
+    <!-- // container -->
+    <div class="container" style="height:100%;">
+        <div class="content" style="height:100%;">
+            <div id="clause_content" class="kcb-terms-embed" >
+                
+                    
+                        <!-- 서버에서 fetch·정제된 KCB 약관 조각(+ 다통신사 탭). 통신사 탭 토글은 CLS_000008.js 담당 -->
+                        
+                    
+                    
+                        <!-- 미지원 약관코드 / 전체 fetch 실패 & 캐시 없음 → 폴백 -->
+                        <div class="kcb-terms-fallback">
+                            <p>약관을 불러올 수 없습니다.</p>
+                            <p>잠시 후 다시 시도해 주세요.</p>
+                        </div>
+                    
+                
+            </div>
+            <!-- 2026-07-23 -->
+            <div class="btn_botFix_w">
+                <div class="inner bg_white">
+                    <a data-element-id="BPY-COMN-10-10-40-S-e04" role="button" onClick="uf_back();" class="btn-style-h48 btn-skyBlue round_r8 on">
+                        <span>확인</span>
+                    </a><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                </div>
+            </div>
+            <!-- // 2026-07-23 -->
+        </div>
+    </div>
+</div>
+</body>
+</html>

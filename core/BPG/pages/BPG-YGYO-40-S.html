@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>기타 주소 (addr)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-YGYO-40-S">
+<form id="frm" name="frm">
+    <input type="hidden" name="MODE" id="MODE" value="">
+    <input type="hidden" name="TYPE_TP" id="TYPE_TP" value="">
+    <input type="hidden" name="TYPE_ALI" id="TYPE_ALI" value="">
+    <input type="hidden" name="ADDR_DTL" id="ADDR_DTL" value="">
+    <input type="hidden" name="POST_NO" id="POST_NO" value="">
+    <input type="hidden" name="LAT" id="LAT" value="">
+    <input type="hidden" name="LNG" id="LNG" value="">
+    <input type="hidden" name="ADDR_SEQ" id="ADDR_SEQ" value="">
+    <input type="hidden" name="MODE" id="MODE" value="i">
+    <input type="hidden" name="DEFAULT_YN" id="DEFAULT_YN" value="">
+    <input type="hidden" name="COMPANY" id="COMPANY" value="">
+    <input type="hidden" name="HOME" id="HOME" value="">
+    <input type="hidden" name="LENGTH" id="LENGTH" value="">
+    <input type="hidden" name="SELECT_CODE" id="SELECT_CODE" value="">
+    <input type="hidden" name="REC_LENGTH" id="REC_LENGTH" value="">
+
+    <input type="hidden" name="LEGAL_ADDRESS_SIDO" id="LEGAL_ADDRESS_SIDO" value="" >
+    <input type="hidden" name="LEGAL_ADDRESS_SIGUGUN" id="LEGAL_ADDRESS_SIGUGUN" value="" >
+    <input type="hidden" name="LEGAL_ADDRESS_DONGMYUN" id="LEGAL_ADDRESS_DONGMYUN" value="" >
+    <input type="hidden" name="LEGAL_ADDRESS_EUPRI" id="LEGAL_ADDRESS_EUPRI" value="" >
+    <input type="hidden" name="LEGAL_ADDRESS_JIBEON" id="LEGAL_ADDRESS_JIBEON" value="" >
+    <input type="hidden" name="LEGAL_ADDRESS_BUILDING_NAME" id="LEGAL_ADDRESS_BUILDING_NAME" value="" >
+    
+    <input type="hidden" name="ADMINISTRATIVE_ADDRESS_SIDO" id="ADMINISTRATIVE_ADDRESS_SIDO" value="" >
+    <input type="hidden" name="ADMINISTRATIVE_ADDRESS_SIGUGUN" id="ADMINISTRATIVE_ADDRESS_SIGUGUN" value="" >
+    <input type="hidden" name="ADMINISTRATIVE_ADDRESS_DONGMYUN" id="ADMINISTRATIVE_ADDRESS_DONGMYUN" value="" >
+    <input type="hidden" name="ADMINISTRATIVE_ADDRESS_JIBEON" id="ADMINISTRATIVE_ADDRESS_JIBEON" value="" >
+    <input type="hidden" name="ADMINISTRATIVE_ADDRESS_BUILDING_NAME" id="ADMINISTRATIVE_ADDRESS_BUILDING_NAME" value="" >
+    
+    <input type="hidden" name="ROAD_ADDRESS_SIDO" id="ROAD_ADDRESS_SIDO" value="" >
+    <input type="hidden" name="ROAD_ADDRESS_SIGUGUN" id="ROAD_ADDRESS_SIGUGUN" value="" >
+    <input type="hidden" name="ROAD_ADDRESS_ROAD_NAME" id="ROAD_ADDRESS_ROAD_NAME" value="" >
+    <input type="hidden" name="ROAD_ADDRESS_BUILDING_NUMBER" id="ROAD_ADDRESS_BUILDING_NUMBER" value="" >
+    <input type="hidden" name="ROAD_ADDRESS_BUILDING_NAME" id="ROAD_ADDRESS_BUILDING_NAME" value="" >
+     
+</form>
+<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>주소 관리</h1>
+			<a data-element-id="BPG-YGYO-40-S-e09" class="btn-history-back" id="btnBack">뒤로가기</a>
+			<div class="header_util" id='editBtn'>
+				<a data-element-id="BPG-YGYO-40-S-e06" data-nav-target="BPG-YGYO-40-10-S" onclick="editMode();" class="header__btn edit" >
+					<span>편집</span>
+				</a>
+			</div>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="bp-ygy flexWrap">
+					<!-- 
+						각 화면별 페이지에 맞게 클래스 넣어주세요.
+
+						Y130주소편집, Y132주소선택 	= address
+						Y130주소관리, Y131주소검색 	= address sch (페이지 타이틀 직후에 검색창으로 시작할 때)
+						Y133현재위치확인 = location
+					-->
+					<div class="address sch">
+						<!-- 검색 -->
+						<div class="search">
+							<!-- 검색어 입력 -->
+							<div class="search__form" onclick="serchAddr();"><!-- 입력 시작 시 input 클래스 추가 -->
+								<div class="search__ipt-bx">
+									<span class="search__input icon search-20"><input data-element-id="BPG-YGYO-40-S-e10" type="text" readonly="readonly" placeholder="건물명, 도로명 또는 지번으로 검색해주세요"></span>
+									<button data-element-id="BPG-YGYO-40-S-e07" class="search__btn icon del-16"><span class="blind">내용삭제</span></button>
+								</div>
+							</div>
+							<!-- 현 위치 검색 -->
+							<div class="search__loca">
+								<p class="search__find">
+									<button data-element-id="BPG-YGYO-40-S-e08" class="search__find-btn" onclick="getAddress()">
+										<span class="icon gps-14">현재 위치로 주소찾기</span>
+									</button>
+								</p>
+							</div>
+						</div>
+						<!-- // 검색 -->
+						<!-- 주소목록 -->
+						<div class="address__content" id ='editMode'><!-- 주소 편집 시 edit-mode 클래스 추가(수정/삭제 버튼 생성) -->
+							<div class="border-t10">
+								<div class="address__list set">
+									<ul id="addrsMarkListArea"><!-- sample:begin -->서울 강남구 테헤란로 1길 10<!-- sample:end --></ul>
+								</div>
+							</div>
+							<!-- 최근 배달 주소 -->
+							<!-- 최근 배달 주소 없을 시 영역 전체 삭제 - 추가/제거로 인한 상단 박스 스타일 변화 있습니다. -->
+							<div class="border-t10" id="historyArea">
+								<h2 class="address__tit">기타 주소</h2>
+								<div class="address__list">
+									<ul id="addrsListArea"><!-- sample:begin --><li class="select"><div class="address__con"><a onclick="selectDefault(서울 강남구 테헤란로 1길 10,this);"><p class="adress-name"><span>101동 1001호</span></p><p class="adress-more"><span>[지번] 101동 1001호</span></p></a><div class="edit"><button class="address__edit-btn" onclick="changAddr(서울 강남구 테헤란로 1길 10);">수정</button><button class="address__edit-btn del" onclick="deleteAddr(서울 강남구 테헤란로 1길 10);">삭제</button></div></div></li><!-- sample:end --></ul>
+								</div>
+							</div>
+							<!-- // 최근 배달 주소 -->
+						</div>
+						<!-- // 주소목록 -->
+					</div>
+				</div>
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

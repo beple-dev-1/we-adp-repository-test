@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>거래내역화면</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-HIST-40-S">
+<!--<div class="wrap">
+	<div class="header floating-back-header floating-sticky">
+		<a href="#" class="btn-history-back" id="go_main">뒤로가기</a>
+	</div><!-- // header ->
+	
+	<div class="container">
+		<div class="content">
+			<h1>결제 내역</h1>
+			<div class="pay_list unpay_list" id="tran_list">
+				<div class="article original supOrgLi">
+					<p class="date"></p>
+					<ul class="list">
+						<li>
+							<div class="tit_area">
+								<p class="tit" id="aflt_nm"></p>
+								<span id="trx_tm"></span>
+							</div>
+							<div class="right">
+								<div class="price"> 원</div>
+								<div class="txt" id="trx_tp"></div>
+							</div>
+							<input id="tr_idx" type="hidden" />
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="pcs-cfm-comment" id="no_tran_list" style="display: none;">
+				<span class="icon-i-complete"></span>
+				<h2>내역이 없습니다.</h2>
+				<div class=" row-padding20-top-style" style="text-align:center;"><a style="text-decoration:underline;" onClick="uf_back();">뒤로가기</a></div>
+			</div>
+		</div>
+	</div><!-- // container ->
+</div><!-- // wrap ->-->
+
+<!-- 2021-08-27 추가 -->
+<div class="wrap">
+	<div class="header floating-back-header floating-sticky">
+        <a data-element-id="BPY-HIST-40-S-e02" href="#" class="btn-history-back" id="go_main" role="button">상위메뉴로 이동</a>
+		<h1 style="position: relative">결제 내역</h1>
+	</div>
+
+	<div class="container">
+		<div class="content">
+			<div class="pay_list unpay_list" id="tran_list">
+				<div class="article original supOrgLi" style="display: none;" role="button">
+					<p class="date"></p>
+					<ul class="list">
+						<li>
+							<div class="tit_area">
+								<p class="tit" id="aflt_nm"></p>
+								<span id="trx_tm"></span>
+							</div>
+							<div class="right">
+								<div class="price"></div>
+								<div class="txt" id="trx_tp"></div>
+							</div>
+							<input id="tr_idx" type="hidden" />
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!--<div class="pcs-cfm-comment" id="no_tran_list" style="display: none;">
+				<span class="icon-i-complete"></span>
+				<h2>내역이 없습니다.</h2>
+				<div class=" row-padding20-top-style" style="text-align:center;"><a style="text-decoration:underline;" onClick="uf_back();">뒤로가기</a></div>
+			</div>-->
+			<div class="pcs-cfm-comment" id="no_tran_list" style="display: none;">
+				<span class="icon-i-complete"></span>
+				<h2>결제 내역이 없습니다.</h2>
+			</div>
+
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

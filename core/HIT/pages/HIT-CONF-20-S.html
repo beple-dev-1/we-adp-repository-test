@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈 근무지 설정</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-CONF-20-S">
+<form id="frm" name="frm">
+	<input type="hidden" id="FRM_WORK_NM" name="FRM_WORK_NM" value="">
+	<input type="hidden" id="WORK_CD" name="WORK_CD" value="">
+	<input type="hidden" id="type" name="type">
+	<input type="hidden" id="corp_yn" value="">
+</form>
+    <div class="wrap js-wrap">
+        <!-- 헤더 영역 -->
+        <header class="header position-sticky">
+            <!-- 헤더 네비 -->
+            <nav class="header-nav">
+                <a data-element-id="HIT-CONF-20-S-e08" onclick="uf_back()" class="hd-btn back"><span class="blind-i">뒤로가기</span></a>
+            </nav>
+            <!-- 헤더 타이틀 -->
+            <div class="page-title">
+                <h1 class="header-title">근무지 확인</h1>
+            </div>
+        </header>
+        <!-- 컨텐츠 영역 -->
+        <main class="container-wrap js-container-wrap">
+            <section class="setting-container">
+                <!-- 컨테이너 컨텐츠 -->
+                <article class="setting__item-wrap">
+                    <!-- 입력 form box -->
+                    <div class="form-box">
+                        <!-- 박스 헤더 -->
+                        <div class="box-hd">
+                            <p class="form-label">근무지</p>
+                        </div>
+                        <!-- 박스 컨텐츠 -->
+                        <div class="form-item form-btn dis"><!-- fix 클래스 추가 -->
+                        	<a data-element-id="HIT-CONF-20-S-e09" href="#none" class="icon arr_bottom2-16">                            
+                            	<span class="tx_ellipsis">비플머니</span>                        
+                        	</a>
+                        </div>	
+                    </div>
+                    <!-- 입력 form box -->                    
+                    <!-- 2026-08-24 -->
+                   
+                    <!-- 입력 form box -->
+                    <div class="form-box">
+                        <!-- 박스 헤더 -->
+                        <div class="box-hd">
+                            <p class="form-label">배달 주소지</p>
+                        </div>
+                        <!-- 박스 컨텐츠 -->
+                        <div class="form-item form-btn dis"><!-- [D] 근무지 설정 시 placeholder 클래스 제거 -->
+                            <a data-element-id="HIT-CONF-20-S-e10" href="#none" class="icon arr_bottom2-16">
+                                <span class="tx_ellipsis">서울 강남구 테헤란로 1길 10</span>
+                            </a>
+                        </div>
+                        <div class="form-hint">
+                            <p class="form-hint__text">배달 주소지 변경은 메뉴 주문 시 가능합니다.</p>
+                        </div>
+                    </div>
+                    <!-- 2026-08-24 -->
+                    
+                    <!-- 입력 form box -->
+                    <div class="form-box" style="display:none;">
+                        <!-- 박스 헤더 -->
+                        <div class="box-hd">
+                            <p class="form-label">현 근무지</p>
+                        </div>
+                        <!-- 박스 컨텐츠 -->
+                        <div class="form-item form-btn dis">
+                            <a id="work_nm" work_cd="" class="icon arr_bottom2-16" type="A" ><span class="tx_ellipsis">비플머니</span></a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            
+            <!-- 플로팅 박스 -->
+            <section class="floating-container bottom js-floating-wrap" >
+                <!-- 토스트 박스 -->
+                <article class="toast-box" ><!-- 노출 시 view 클래스 추가 / view 클래스 삭제 시 숨김 : 설정시간 = 1.5초 노출 후 사라짐 -->
+                    <div class="message-wrap">
+                        <p class="toast-text icon toast_chk-18"><span id="popMsg">배달 주소지가 변경되었습니다.</span></p>
+                    </div>
+                </article>
+            </section>
+            
+            <!-- 레이어팝업 -->
+            <section class="popup-container overlay" name="popBox" id="workListBox" style="display:none;">
+                <div class="popup-box bottom">
+                    <div class="inner-box">
+                        <!-- 컨테이너 헤더 -->
+                        <div class="box-hd pd-lr20 pdt24">
+                            <p class="box__hd-text">근무지</p>
+                        </div>
+                        <!-- 컨테이너 컨텐츠 -->
+                        <article class="box-content pd-lr20 mgt16 max_height-200 scroll-y" id="workList"><!-- sample:begin --><p class="popup__text">
+				<button type="button" work_cd="004" class="text-btn pdr34">
+					<span class="tx_ellipsis">홍길동</span>
+				</button>
+				</p><!-- sample:end --></article>
+                        <!-- 메인버튼 - 팝업용 -->
+                        <div class="main_btn-box pd-lr10 pdb10 mgt20">
+                            <div class="btn-main">
+                                <button data-element-id="HIT-CONF-20-S-e06" id="savebtn" type="button" class="btn-default radius-mid btn-style-h48">저장</button>
+                            </div>
+                        </div>
+                        <!-- 닫기버튼 -->
+                        <p id="workListBox_exit" class="close_btn-box"><button data-element-id="HIT-CONF-20-S-e07" type="button" class="close-btn icon close-14"><span class="blind-i">팝업닫기</span></button></p>
+                    </div>
+                </div>
+            </section>
+            <!-- // 레이어팝업 끝 -->
+        </main>
+    </div>
+</body>
+</html>

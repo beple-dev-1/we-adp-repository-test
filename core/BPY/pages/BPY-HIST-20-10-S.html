@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>더보기>비대면결제내역</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/lib/jquery/datepicker/daterangepicker.css">
+</head>
+<body data-screen-id="BPY-HIST-20-10-S">
+<style>
+    /* custom daterangepicker */
+    .sh_date input {
+        background-color: transparent !important;
+        width: 100%;
+    }
+    .daterangepicker th.month, .daterangepicker .calendar-table th {
+        font-weight: bold;
+        color: black;
+    }
+    .daterangepicker td.in-range:not(.active),
+    .daterangepicker td.in-range:not(.active):hover {
+        background-color: #e7f2f7;
+    }
+    .daterangepicker td.in-range.end-date {
+        color: #fff;
+        background-color: #357ebd;
+    }
+    .drp-calendar.right {
+        position: absolute;
+        top: 8px;
+        left: calc(100% - 50px);
+    }
+    .drp-calendar.right .calendar-table {
+        background-color: transparent;
+    }
+    .drp-calendar.right tbody {
+        display: none;
+    }
+    .drp-calendar.right thead tr:nth-child(1) th:nth-child(1),
+    .drp-calendar.right thead tr:nth-child(1) th:nth-child(2)
+    {
+        display: none;
+    }
+    .drp-calendar.right thead tr:nth-child(2) {
+        display: none;
+    }
+    .daterangepicker:nth-of-type(3) {
+        right: 25px !important;
+    }
+    .daterangepicker:nth-of-type(3).drop-up:before {
+        left: unset;
+        right: 9px;
+    }
+    .daterangepicker:nth-of-type(3).drop-up:after {
+        left: unset;
+        right: 10px;
+    }
+</style>
+<form id="frm" name="frm">
+	<input type="hidden" id="REC" name="REC" value=''>
+</form>
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <a data-element-id="BPY-HIST-20-10-S-e04" id="go_back" class="btn-history-back" role="button">상위 메뉴로 이동</a>        
+        <h1 style="position: relative;">비대면 결제내역</h1>                
+        <a data-element-id="BPY-HIST-20-10-S-e05" id="alert_set" class="btn-noti" role="button">알림설정</a>
+        <!-- <div class="right">
+            <a href="#none" class="btn_outpage">페이지나가기</a>
+        </div> -->
+    </div><!-- // header -->
+    <div class="container">
+        <div class="content">
+
+            <!-- 가맹점 영역 -->            
+            <div class="st_top_listbx" style="display: none;" > 
+                <div  class="st_topin" style="width:max-content; padding-right:26px;" id="AFLT_LIST"><!-- sample:begin --><dd ><div   class="un_pay_vcn"><ul role="button"><li tabindex="-1" class='err'><div class="date" aria-label="14:22시14:22분">14:22:14:22</div><div class="txt"><span class="ellipsis">홍길동</span>010-1234-5678 결제 취소<span class="won"><em>4,500</em>원</span></div><div class="memo" aria-label="전달메시지,"></div></li></ul></div></dd><!-- sample:end --></div>
+            </div>
+            <!-- //가맹점 영역 -->
+
+            <!-- 결제기간 -->
+            <div class="period">
+                <p>
+                    <a data-element-id="BPY-HIST-20-10-S-e06" aria-label="조회 필터, 전체, 1주일" role="button" id="srch_btn" >전체 · <span id="period_label">1주일</span></a>
+                    <!-- 활성화 시 open클래스 추가 -->
+                </p>
+            </div>
+
+            <!-- 비대면 결제내역 -->
+            <div class="un_pay_vlist">
+                <!-- 결제내역 있는 경우 -->
+                <dl id="rslt_cont">
+                    <!--<dt><p>2021-02-16</p></dt>
+                    <dd>
+                        <div class="un_pay_vcn">
+                            <ul>
+                                <li>
+                                    <div class="date">12:34</div>
+                                    <div class="txt">
+                                        <span class="ellipsis">이름이엄청긴 이름이엄청긴</span>(9836) 결제완료
+                                        <span class="won"><em>21,651,000</em>원</span>
+                                    </div>
+                                    <div class="memo">아이스아메리카노 2잔, 카페모카 1잔 휘핑 빼고, 아이스아메리카노 2잔, 카페모카 1잔 휘핑 빼고,</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </dd>-->
+                </dl>
+                <!-- 결제내역 있는 경우 -->
+                <!-- 결제내역 없는 경우 -->
+                <div class="data_no" style="display:none;">
+                    <p aria-hidden="true">
+                        <span class="ellipsis" id="data_no_aflt" ><!-- sample:begin -->표본<!-- sample:end --></span>에서의<br>
+                        비대면 결제내역이 없습니다.
+                    </p>
+                </div>
+                <!-- //결제내역 없는 경우 -->
+            </div>
+            <!-- //비대면 결제내역 -->
+
+        </div>
+    </div><!-- // container -->
+
+    
+
+</div><!-- // wrap -->
+
+<!-- modal overlay -->
+<!-- 2021-08-20 추가 -->
+<div id="popup_dim" class="modaloverlay" style="display:none;" role="dialog" aria-labelledby="modal_period">
+    <div class="lytb"><div class="lytb_row"><div class="lytb_td">
+        <!-- layerpopup -->
+        <div id="srch_slider" class="unpay_term_filter" style="display:none;">
+            <div class="layer_po">
+                <div class="cont">
+                    <h2 id="modal_period">기간</h2>
+                    <ul class="period_tab">
+                        <li class="on">
+                            <a role="button">오늘</a>
+                        </li>
+                        <li>
+                            <a role="button">1주일</a>
+                        </li>
+                        <li>
+                            <a role="button">1개월</a>
+                        </li>
+                        <li>
+                            <a role="button">3개월</a>
+                        </li>
+                    </ul>
+                    <div class="date">
+                        <div style="background: none;"> <!--20211202 앱 접근성 심사-->
+                            <input name="from_dt" type="text" maxlength="10" readonly><!--20211202 앱 접근성 심사-->
+                        </div>
+                        <span>-</span>
+                        <div style="background: none;"> <!-- 20211202 앱 접근성 심사-->
+                            <input name="to_dt" type="text" maxlength="10" readonly><!--20211202 앱 접근성 심사-->
+                        </div>
+                    </div>
+                    <div class="msg" style="margin-top: 20px; display: none;">
+                        <p style="color: red; text-align: right;">조회기간은 3개월을 넘을 수 없습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="error"> <!-- 활성화 시 on 클래스 추가 부탁드립니다. -->
+                결제내역 조회기간은 3개월을 넘을 수 없습니다.
+            </p>
+
+            <div class="btn">
+                <a role="button" class="btn_pop_txt_BdBlue btn_cc"><span>취소</span></a>
+                <a role="button" class="btn_pop_txt_blue btn_sh"><span>조회하기</span></a>
+            </div>
+        </div>
+        <!-- //layerpopup -->
+    </div></div></div>
+</div>
+<!-- 2021-08-20 추가 -->
+<!-- //modal overlay -->
+
+<!-- modal overlay -->
+<!-- 2021-08-12 추가 -->
+<div class="modaloverlay" id="alert_pop" style="display:none;">
+	<div class="lytb"><div class="lytb_row"><div class="lytb_td out_padding20_style">
+	<!-- layerpopup -->
+	<div class="unpay_get_noti">
+		<div class="layer_po">
+			<div class="cont">
+				<div class="pop_txt pop_left">
+					
+					<dl>
+						<!-- 2021-08-20추가 -->
+						<dd class="btn_close">
+							<a role="button">
+								닫기
+							</a>
+						</dd>
+						<!-- //2021-08-20 -->
+						
+						<dt id="pop_title" class="noti_on"> <!-- 알림받기 활성화 시 noti_on 클래스 추가 부탁드립니다. -->
+							<strong id="tit"><!-- sample:begin -->표본<!-- sample:end --></strong>	
+							<span class="ball" id="ball_1"> <!-- 활성화시 on 클래스 추가 부탁드립니다. -->
+								<a role="switch">
+									<span aria-hidden="true">비대면결제 알림</span>
+								</a>
+							</span>
+						</dt>
+						<dd>
+							<ul>
+								<li>
+									<strong>카카오톡 알림톡</strong>
+									<span class="info">비대면결제 내역 알림톡으로 받기</span>
+									<span class="ball" id="ball_2"> <!-- 활성화시 on 클래스 추가 부탁드립니다. -->
+										<a role="switch">
+											<span aria-hidden="true">카카오톡 알림</span>
+										</a>
+									</span>
+								</li>
+								<li>
+									<strong>PUSH 알림</strong>
+									<span class="info">비대면결제 내역 비플페이 앱 PUSH로 받기</span>
+									<span class="ball" id="ball_3"> <!-- 활성화시 on 클래스 추가 부탁드립니다. -->
+										<a role="switch">
+											<span aria-hidden="true">PUSH 알림</span>
+										</a>
+									</span>
+								</li>
+							</ul>
+						</dd>
+						
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //layerpopup -->
+	</div></div></div>
+</div>
+<!-- //modal overlay -->
+</body>
+</html>

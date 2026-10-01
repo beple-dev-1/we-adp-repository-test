@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>오피스푸드 메인</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OFFD-10-S">
+<input type="hidden" id="day" name="day" value=""/>
+	<input type="hidden" id="dayNm" name="dayNm" value=""/>
+	<input type="hidden" id="bpAfltSeq" name="bpAfltSeq" value=""/>
+	<input type="hidden" id="myUrl" name="myUrl" value=""/>
+	<input type="hidden" id="menuCnt" name="menuCnt" value=""/>
+	<input type="hidden" id="preTrxDt" name="preTrxDt" value=""/>
+	<input type="hidden" id="preDisplayName" name="preDisplayName" value=""/>
+	<input type="hidden" id="more" name="more" value=""/>
+	<input type="hidden" id="appTp" value=""/>
+
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>오피스 푸드</h1>
+			<a data-element-id="BPG-OFFD-10-S-e07" href="#" class="btn-history-back" id="back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="bpOder_util">
+					<a data-element-id="BPG-OFFD-10-S-e06" data-nav-target="BPG-HIST-10-10-S" class="oder_detail" id="oder_detail" onclick="oder_detail();"><span>주문내역</span></a>
+				</div>
+				<div class="flexWrap no_vh">
+					<!-- fooding -->
+					<div class="fooding">
+						<!-- 매장명 -->
+						<div class="name_box">
+							<!-- 
+								가맹점 별 아이콘 클래스 명
+								음식점/카페		= restr
+								농산물/청과		= agri
+								축산물/정육		= meat
+								수산물/횟집		= seafood
+								식료품/반찬		= grocery
+								학원/교육		= edu
+								의료/보건		= medi
+								미용/패션		= beauty
+								가전/가구		= interior
+								서비스업		= service
+								기타 도/소매	= retail
+							-->
+							<div class="ico restr">
+								<img alt="" src="../assets/_sample/card.svg">
+							</div>
+							<div class="name">
+								<h2></h2>
+								<p class="cate"></p>
+							</div>
+						</div>
+						<!-- 정보박스 - 주소추가 -->
+						<div class="frame_box-def border-t8">
+							<div class="title_box justify">
+								<h2 class="sub_title extra_01">배송지</h2>
+								<p class="btn border h24">
+									<a data-element-id="BPG-OFFD-10-S-e08" href="#none" id="locChange"><span>배송지 변경</span></a>
+								</p>
+							</div>
+							<dl class="address_area">
+								<dt>&nbsp;&nbsp;</dt>
+								<dd>
+									<address>서울 강남구 테헤란로 1길 10&nbsp;101동 1001호</address>
+								</dd>
+							</dl>
+						</div>
+						<!-- 정보박스 - 날짜영역 -->
+						<div class="frame_box-def sticky border-t8 pdb20">
+							<div class="title_box column">
+								<h2 class="sub_title extra_01 width-100" id="dayMenu"></h2>
+								<p class="oder_last_time"><span>※ 주문 마감시간 :</span><span>배송 전일 오후 3시</span></p>
+							</div>
+							<div class="date_box swipe_area">
+								<ul>
+								
+										<li id="" onclick="javascript:doMoveDay('', '비플머니'); return false;" class=''>
+											<a data-element-id="BPG-OFFD-10-S-e09" href="#">
+												<span style="color: opacity: ">비플머니</span>
+												<strong></strong>
+											</a>
+										</li>
+								
+								</ul>
+							</div>
+						</div>
+						<!-- 메뉴리스트 -->
+						<div class="frame_box-wrap border-t1 addBtn-pb58">
+							<!-- 메뉴 박스 -->
+							<div class="frame_box-def" id="breakFastDiv">
+								<div class="title_box">
+									<h2 class="sub_title extra_01">조식메뉴</h2>
+									<p class="delivery_time">배송시간 09:00~09:30</p>
+								</div>
+								<!-- 메뉴 목록 -->
+								<div class="list_box pd-lr20" id="breakFast"><!-- sample:begin -->표본<!-- sample:end --></div>
+							</div>
+							<!-- 메뉴 박스 -->
+							<div class="frame_box-def" id="lunchDiv">
+								<div class="title_box">
+									<h2 class="sub_title extra_01">점심메뉴</h2>
+									<p class="delivery_time">배송시간 09:00~09:30</p>
+								</div>
+								<!-- 메뉴 목록 -->
+								<div class="list_box pd-lr20" id="lunch"><!-- sample:begin -->표본<!-- sample:end --></div>
+							</div>
+							<!-- 메뉴 박스 -->
+							<div class="frame_box-def" id="dinnerDiv">
+								<div class="title_box">
+									<h2 class="sub_title extra_01">석식메뉴</h2>
+									<p class="delivery_time">배송시간 09:00~09:30</p>
+								</div>
+								<!-- 메뉴 목록 -->
+								<div class="list_box pd-lr20" id="dinner"><!-- sample:begin -->표본<!-- sample:end --></div>
+							</div>
+							<!-- 메뉴 없음 -->
+							<div id="menuNoneDiv" class="menu_none" style="display:none;">
+								<p>
+									선택하신 날짜는 메뉴 준비중입니다.<br>
+									조금만 기다려주세요.
+								</p>
+							</div>
+							<!-- 20230523 -->
+							<div class="frame_box-def border-t10 mgt30 fd_cs">
+								<p class="fd_cs-tit">도움이 필요하신가요?</p>
+								<p class="fd_cs-btn">
+									<a data-element-id="BPG-OFFD-10-S-e10" href="#none" class="border_bx small_bx" onclick="ComWebkey.callAppActionUrl(ActionCode.ETC_URL, 'http://pf.kakao.com/_xbLxiWC/chat');">
+										<span class="icon kakao-16">톡상담 하러가기</span>
+									</a>
+								</p>
+							</div>
+							<!-- 20230523 -->
+						</div>
+					</div>
+					<!-- fooding end -->
+				</div>
+			</div>
+			<!-- // content -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w bpOder" style="display: none;" id="divMyBag"><!-- 장바구에 상품 있을경우 or 가맹점 영업 준비중 일 경우 style="display:block;" -->
+				<div class="inner">
+					<a href="javascript:doMoveMyBag();" class="round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+						<p class="amount">
+							<strong>4,500</strong>원
+						</p>
+						<p class="more">
+							장바구니 보기
+							<span class="count">1</span>
+						</p>
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+
+			<div class="btn_botFix_w bpOder" style="display:none;" id="divDeadLine"><!-- 장바구에 상품 있을경우 or 가맹점 영업 준비중 일 경우 style="display:block;" -->
+				<div class="inner">
+					<a href="#none" class="round_r8"><!-- 활성화 시 on 클래스 추가 -->
+						<span>주문이 마감되었습니다</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

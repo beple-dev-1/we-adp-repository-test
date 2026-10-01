@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈_가맹점 어드민_메뉴 관리 서비스(앱 버전) — 메뉴 추가 step1(제공형태 선택)</title>
+  <link rel="stylesheet" href="../assets/ent_aflt_resource/css/heat_admin-mobile.css">
+  <link rel="stylesheet" href="../assets/ent_aflt_resource/css/datepicker.min.css">
+</head>
+<body data-screen-id="HIT-MBOA-20-20-S">
+<div class="app app--menu-add app--add-step1" id="menu_add_root">
+    <!-- C-NAV-APPBAR (메뉴 추가 + ✕) — step1은 뒤로화살표 없음(Figma 357:5201/6690/6801) -->
+    <header class="ds-appbar">
+      <span class="ds-appbar__action"></span>
+      <h1 class="ds-appbar__title"><!-- copy: add.title -->메뉴 추가</h1>
+      <button id="btn_close" class="ds-appbar__action ds-appbar__action--trailing" aria-label="닫기"><img src="../assets/ent_aflt_resource/img/icons/ico-close-32.svg" alt="" aria-hidden="true" width="32" height="32"></button>
+    </header>
+
+    <main class="form">
+      <!-- 제공 형태 -->
+      <div class="add-section">
+        <div class="field-label">제공 형태</div>
+        <div class="ds-radio" role="radiogroup" aria-label="제공 형태" id="radio_serve">
+          <label class="ds-radio__item"><input class="ds-radio__input" type="radio" name="serve" value="C" /><span class="ds-radio__mark" aria-hidden="true"></span><span class="ds-radio__label"><!-- copy: add.serve.dinein -->매장식사</span></label>
+          <label class="ds-radio__item"><input class="ds-radio__input" type="radio" name="serve" value="D" /><span class="ds-radio__mark" aria-hidden="true"></span><span class="ds-radio__label"><!-- copy: add.serve.delivery -->딜리버리/픽업</span></label>
+          <label class="ds-radio__item"><input class="ds-radio__input" type="radio" name="serve" value="R" /><span class="ds-radio__mark" aria-hidden="true"></span><span class="ds-radio__label"><!-- copy: add.serve.preorder -->사전예약</span></label>
+        </div>
+      </div>
+
+      <hr class="ds-divider" id="divider_date" hidden />
+
+      <!-- 날짜 선택 (매장식사/딜리버리·픽업 공통 확장) -->
+      <div class="add-section" id="section_date" hidden>
+        <div class="field-label">날짜 선택</div>
+        <div class="ds-date-field">
+          <div style="position:relative;">
+            <!-- 정답지와 동일한 버튼 표시(input 미사용) — 실제 데이트피커는 투명 오버레이 버튼에 바인딩(fengyuanchen/datepicker가 pick 시 바인딩 대상의 내부 마크업을 통째로 텍스트로 교체하므로, 아이콘을 포함한 표시용 버튼에 직접 바인딩할 수 없음) -->
+            <button data-element-id="HIT-MBOA-20-20-S-e03" class="ds-date-field__control" type="button" tabindex="-1" aria-hidden="true"><span class="ds-date-field__value" id="date_value">날짜 선택</span><span class="ds-date-field__icon" aria-hidden="true"><img src="../assets/ent_aflt_resource/img/icons/ico-date-disabled.svg" alt="" aria-hidden="true" width="24" height="24"></span></button>
+            <button type="button" id="menu_prvd_dt" aria-label="날짜 선택" style="position:absolute;inset:0;opacity:0;border:0;padding:0;margin:0;background:transparent;cursor:pointer;"><!-- sample:begin -->2026.09.02<!-- sample:end --></button>
+          </div>
+        </div>
+      </div>
+
+      <hr class="ds-divider" id="divider_meal" hidden />
+
+      <!-- 식사 형태 (매장식사 전용 확장) -->
+      <div class="add-section" id="section_meal" hidden>
+        <div class="field-label">식사 형태</div>
+        <div class="ds-radio" role="radiogroup" aria-label="식사 형태" id="radio_meal">
+          <label class="ds-radio__item"><input class="ds-radio__input" type="radio" name="meal" value="BRUNCH" /><span class="ds-radio__mark" aria-hidden="true"></span><span class="ds-radio__label"><!-- copy: add.meal.breakfast -->조식</span></label>
+          <label class="ds-radio__item"><input class="ds-radio__input" type="radio" name="meal" value="LUNCH" /><span class="ds-radio__mark" aria-hidden="true"></span><span class="ds-radio__label"><!-- copy: add.meal.lunch -->중식</span></label>
+          <!-- 석식(DINNER) — 백엔드 컬럼 없음(TB_CAFETERIA_MENU는 BRUNCH_YN/LUNCH_YN만 보유), 선택해도 미저장되어 재숨김.
+               백엔드 지원 추가 시 연동 필요
+          <label class="ds-radio__item"><input class="ds-radio__input" type="radio" name="meal" value="DINNER" /><span class="ds-radio__mark" aria-hidden="true"></span><span class="ds-radio__label"><!-- copy: add.meal.dinner ->석식</span></label>
+          -->
+        </div>
+      </div>
+    </main>
+
+    <!-- 하단 다음 -->
+    <div class="save-bar"><button data-element-id="HIT-MBOA-20-20-S-e04" id="btn_next" class="ds-button ds-button--primary ds-button--block ds-button--xlarge ds-button--disabled" disabled><!-- copy: cm.next -->다음</button></div>
+  </div>
+</body>
+</html>

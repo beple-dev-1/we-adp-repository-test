@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>복지포인트 이관 요청 화면</title>
+  <link rel="stylesheet" href="../assets/resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_reset.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+</head>
+<body data-screen-id="BPY-WELF-40-10-S">
+<input type="hidden" id="ORG_TP"      name="ORG_TP"      value="" />
+<input type="hidden" id="ORG_ID"      name="ORG_ID"      value="" />
+<input type="hidden" id="ORG_NM"      name="ORG_NM"      value="" />
+<input type="hidden" id="BIZ_NO"      name="BIZ_NO"      value="" />
+<input type="hidden" id="CARD_NO"     name="CARD_NO"     value="" />
+<input type="hidden" id="BANK_CD"     name="BANK_CD"     value="" />
+<input type="hidden" id="ACCT_NO"     name="ACCT_NO"     value="" />
+<input type="hidden" id="LMT_AMT"     name="LMT_AMT"     value="" />
+<input type="hidden" id="LMT_SEQ"     name="LMT_SEQ"     value="" />
+<input type="hidden" id="LMT_NM"      name="LMT_NM"      value="" />
+<input type="hidden" id="CLS_DSP_NM"  name="CLS_DSP_NM"  value="" />
+<input type="hidden" id="ACCT_BIZ_NO" name="ACCT_BIZ_NO" value="" />
+<input type="hidden" id="CLS_DSP_SEQ" name="CLS_DSP_SEQ" value="" />
+<input type="hidden" id="EMPL_NO"     name="EMPL_NO"     value="" />
+	<div id="pre_trans" class="wrap" style="display:none;">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<nav class="header__navi">
+				<a id="btn_back" href="#none" class="header__btn btn-back">
+					<span class="blind">이전페이지로</span>
+				</a>
+			</nav>
+
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span> 이관</span></h1>
+			</div>
+		</header>
+
+		<main class="container-wrap js-container-wrap">
+			<!-- 페이지 헤더 - 필요 시 사용 -->
+			<section class="page-header justify-spacing-def pdt24">
+				<article class="page-header__content flex-column gap-16">
+					<div class="page-header__headline-wrap">
+						<h2 class="page__headline page__headline--lv1 fw-600">
+							<strogn class="fc-primary">총 <span>4,500</span>원</strogn>을 여가선용<br>
+							포인트로 이관할 수 있어요
+						</h2>
+					</div>
+					<div class="flex-column">
+						<p class="page__description page__description--lv1">
+							이관한 포인트는 근로계약 종료 후에도<br>
+							여가선용몰에서 사용할 수 있어요.
+						</p>
+					</div>
+				</article>
+			</section>
+
+			<!-- 컨테이너 -->
+			<section class="container js-container justify-spacing-def pdt32">
+				<!-- 컨테이너 바디 -->
+				<article class="container__body">
+					<div class="body__content">
+						<!-- form -->
+						<form action="" class="">
+							<fieldset class="form__fieldset">
+								<legend>이관할 포인트</legend>
+								<!-- form - input -->
+								<div class="form-box js-form-box">
+									<div id="wrap_point" class="form__item js-form-item"><!-- [D] 활성화 시 'item--on', 읽기전용, 비활성화 시 item--disabled, 오류 시 item--error -->
+										<div class="form__item-header input-line--header">
+											<h3 class="form__label container__headline container__headline--lv1">
+												<label>이관할 포인트</label>
+											</h3>
+										</div>
+
+										<div class="form__item-wrap">
+											<div class="input-type--line">
+												<input id="ipx_point" type="text" value="" placeholder="이관할 포인트 입력(원)" inputmode="numeric">
+												<button type="button" id="btn_all" class="input__unit button button-small button--lv5_line"><span>모두 사용</span></button>
+											</div>
+										</div>
+										<!-- 힌트 메세지 -->
+										<p id="msg_hint" class="form__hint info__text--lv1"><!-- sample:begin -->표본<!-- sample:end --></p>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</article>
+			</section>
+
+			<!-- 플로팅 컨테이너 -->
+			<section class="container-floating gap-24 js-floating-container">
+				<article class="infomation infomation-box">
+					<div class="flex-column">
+						<!-- 안내 헤더 -->
+						<div class="column__head">
+							<i class="icon icon--info-16"><span class="blind">안내</span></i>
+							<h5 class="container__headline container__headline--lv1">꼭 알아두세요!</h5>
+						</div>
+						<!-- 안내 내용 -->
+						<div class="column__item">
+							<p class="info__text--lv1 fw-600 fc-red">
+								여가선용 포인트로 이관한 금액은 로 복구 또는 환불할 수 없습니다.
+							</p>
+							<p class="info__text--lv1">
+								여가선용 포인트는 여가선용몰에서만 조회 및 사용할 수 있습니다.
+							</p>
+							<p class="info__text--lv1">
+								여가선용 포인트 유효기간은 이관한 날로부터 1년입니다.
+							</p>
+							<p class="info__text--lv1">
+								일부 는 여가선용 포인트로 이관할 수 없습니다.
+							</p>
+						</div>
+					</div>
+				</article>
+
+				<article class="floating__box button-box-spacing">
+					<a href="#none" id="btn_next" class="button button-xl button--lv1 dis"><!-- [D] 활성화 시 "dis" 클래스 제거 -->
+						<span>다음</span>
+					</a>
+				</article>
+			</section>
+		</main>
+	</div>
+	
+	<!-- 컨테이너 -->
+	<div id="pop_trans" class="popup-wrap js-popup-wrap" style="display:none;">
+		<section class="popup-container popup--bottom popup--welpoint-transfer">
+			<header class="popup-container__header">
+				<h3 class="container__headline container__headline--lv5">
+					여가선용 포인트로<br>
+					<strong><span id="spn_point"></span>원</strong>을 이관하시겠습니까?
+				</h3>
+				<p class="container__description">
+					<span class="info__text--lv2 fc-666">여가선용 포인트로 이관한 금액은 로</span>
+					<span class="info__text--lv2 fc-666 fc-red">복구 또는 환불할 수 없습니다.</span>
+				</p>
+			</header>
+
+			<section class="popup-container__body">
+				<div class="flex-column justify-spacing-def">
+					<div class="table-wrap" id="tbl_point">
+						<!-- 테이블 body -->
+					</div>
+				</div>
+
+				<!-- 하단 버튼 -->
+				<div class="flex-row justify-spacing-btn">
+					<button class="button button-xl button--lv5 col--3 js-popup-close"><!-- [D] 활성화 시 dis 클래스 제거 -->
+						<span>취소</span>
+					</button>
+					<button id="btn_transPoint" class="button button-xl button--lv1 col--1-5 js-popup-close"><!-- [D] 활성화 시 dis 클래스 제거 -->
+						<span>이관하기</span>
+					</button>
+				</div>
+			</section>
+		</section>
+	</div>
+	
+	<div id="rslt_trans" class="wrap">
+		<!-- 헤더 -->
+		<header class="header position-sticky">
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span class="blind">비플페이 온라인결제</span></h1>
+			</div>
+
+			<nav class="header__navi">
+				<a data-element-id="BPY-WELF-40-10-S-e09" href="#none" class="header__btn btn-export js-popup-open" data-modal="popup-select--share">
+					<span class="blind">공유하기</span>
+				</a>
+			</nav>
+		</header>
+
+		<main class="container-wrap js-container-wrap pdt32">
+			<section class="container end-container end--payment js-container">
+				<section class="body__content justify-space-def">
+					<!-- 결제완료 - 헤더 -->
+					<div class="payment__head">
+						<i class="icon icon--state_check-64">결제 완료</i>
+						<h2 class="container__headline">
+							<p class="head-text">
+								<strong class="fc-primary"><span id="spn_rsltPoint">29,000</span>원</strong><br>
+								이관을 완료했습니다
+							</p>
+						</h2>
+					</div>
+
+					<!-- 결제완료 - 결제정보 -->
+					<div class="payment__info">
+						<div class="flex-row">
+							<div class="info-head">이관일시</div>
+							<p id="trans_date" class="info-data fw-600"><!-- sample:begin -->2026.09.02<!-- sample:end --></p>
+						</div>
+						<div class="flex-row">
+							<div class="info-head">
+								<span>여가선용몰 ID</span>
+								<div id="div_tooltip" class="tooltip view"><!-- 툴 팁 활성화 시 'view' 클래스 추가 -->
+									<div class="tooltip__trigger">
+										<button data-element-id="BPY-WELF-40-10-S-e11" type="button" class="tooltip__button"><i class="icon icon--info-16"><span class="blind">툴 팁 버튼</span></i></button>
+									</div>
+
+									<div class="tooltip__content">
+										<span class="tooltip__text">비밀번호는 여가선용몰에서 설정해 주세요.</span>
+									</div>
+								</div>
+							</div>
+							<p id="mall_id" class="info-data fc-111"><!-- sample:begin -->표본<!-- sample:end --></p>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<!-- 플로팅 컨테이너 -->
+			<div class="container-floating js-floating-container">
+				<article class="flex-row button-box-spacing">
+					<a data-element-id="BPY-WELF-40-10-S-e14" id="btn_check" href="#none" class="button button-xl button--lv5 col--3"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+						<span>확인</span>
+					</a>
+					<a data-element-id="BPY-WELF-40-10-S-e15" id="btn_mall" href="#none" class="button button-xl button--lv1 col--1-5"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+						<span class="shrink-n">여가선용몰 바로가기</span>
+					</a>
+				</article>
+			</div>
+		</main>
+	</div>
+</body>
+</html>

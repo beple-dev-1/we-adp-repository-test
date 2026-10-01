@@ -1,0 +1,177 @@
+/* =============================================================================
+ * tokens.css — 테마 토큰 (heat-plus@0.1.0)
+ * 출처: BD-002_heat-plus@0.2.0 bundle.css [1] THEME TOKENS 섹션 분리.
+ * 정본(SSOT): design-system/themes/heat-plus/tokens.css · docs/common/design-tokens.md
+ * 구조: primitive(--c-* 실측 hex) → semantic(의미 매핑) 2레이어.
+ * 폰트: Pretendard woff2 로컬 포함(오프라인 자족) — ../fonts/ 참조(assets/css/ 기준).
+ *
+ * ⚠️ 프로젝트 레이아웃 보정(G-1·G-2, 2026-06-30):
+ *   - --app-gutter: clamp(16px,4vw,24px) → 16px 고정 (유동 단위 금지, 360 실효값).
+ *   - --app-max는 오버레이/콘텐츠 폭 캡(480) 유지, 프레임 캡은 --frame-max(960) 신설로 분리.
+ *   이 보정으로 본 사본은 마스터 번들 BD-002@0.2.0과 내용 divergence(bundle.lock 사유 참조).
+ * ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * 0. 폰트 페이스 (로컬 Pretendard — 상대경로 ../fonts/, 자족)
+ *    실사용 4웨이트(400·500·600·700)만 선언. woff2 우선 + woff 폴백.
+ *    (폴더엔 Thin~Black 전체 웨이트가 있으나 미사용 웨이트는 미선언)
+ * --------------------------------------------------------------------------- */
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/Pretendard-Regular.woff2") format("woff2"),
+         url("../fonts/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/Pretendard-Medium.woff2") format("woff2"),
+         url("../fonts/Pretendard-Medium.woff") format("woff");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/Pretendard-SemiBold.woff2") format("woff2"),
+         url("../fonts/Pretendard-SemiBold.woff") format("woff");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/Pretendard-Bold.woff2") format("woff2"),
+         url("../fonts/Pretendard-Bold.woff") format("woff");
+}
+
+:root {
+    /* =========================================================================
+     * 1. PRIMITIVE — 실측 hex (값의 원천, design-tokens.md §1)
+     *    primitive는 테마 내부에서만 semantic 매핑에 쓴다. 마크업 직접 호출 금지.
+     * ===================================================================== */
+
+    /* --- Primary (Blue) --- */
+    --c-blue-500: #0d84ff;   /* Primary 메인 (Primary Color/#0D84FF) */
+    --c-blue-050: #eef6ff;   /* 선택 배경(연) (Primary Color/#EEF6FF) */
+    --c-blue-050b: #edf6ff;  /* 선택 배경 변형 [추정] 동일계열 (화면 실측) */
+    --c-blue-025: #fbfdff;   /* 필터 칩 선택 배경 (Figma 357:5871 fill #fbfdff) */
+
+    /* --- Secondary / 강조 --- */
+    --c-red-600:    #f70000;  /* 위험·강조 A (Figma 변수 표기 #E70000, 실측 #F70000) */
+    --c-orange-500: #ff3d01;  /* 강조 B(품절 등) (Secondary Color/#FF3D01) */
+
+    /* --- Gray scale (9단) --- */
+    --c-gray-900: #111111;   /* 본문 최강조 */
+    --c-gray-800: #333333;   /* 본문 */
+    --c-gray-600: #666666;   /* 보조 텍스트 */
+    --c-gray-400: #999999;   /* placeholder·비활성 텍스트 */
+    --c-gray-300: #cccccc;   /* 비활성 보더 */
+    --c-gray-250: #dbdbdb;   /* 보더 */
+    --c-gray-200: #ededed;   /* 구분선·필드 보더 */
+    --c-gray-150: #f4f4f4;   /* 이미지 플레이스홀더 배경 (Figma 대표이미지 357:7048 bg) */
+    --c-gray-125: #f7f7f7;   /* 섹션 구분 띠 (Figma Rectangle 9665 357:4313 fill=#f7f7f7) */
+    --c-gray-100: #fafafa;   /* 면 배경(연) */
+    --c-white:    #ffffff;   /* 흰 면 */
+
+    /* =========================================================================
+     * 2. SEMANTIC — 의미 매핑 (라이브러리 마크업이 호출하는 슬롯, design-tokens.md §2)
+     *    값은 반드시 primitive var() 참조(리터럴 금지).
+     * ===================================================================== */
+
+    /* --- Color: brand --- */
+    --color-primary:      var(--c-blue-500);   /* 주요 버튼·링크·포커스·선택 표시 */
+    --color-primary-weak: var(--c-blue-050);   /* 선택된 항목 배경 */
+    --color-on-primary:   var(--c-white);      /* primary 위 텍스트 */
+
+    /* --- Color: status / accent --- */
+    --color-danger: var(--c-red-600);     /* 삭제·위험 액션 [추정] */
+    --color-accent: var(--c-orange-500);  /* 품절 배지·강조 [추정] (#F70000과 의미 분리는 디자이너 확인) */
+
+    /* --- Color: text --- */
+    --text-primary:   var(--c-gray-900);  /* 제목·핵심 본문 */
+    --text-secondary: var(--c-gray-800);  /* 일반 본문 */
+    --text-tertiary:  var(--c-gray-600);  /* 보조 설명 */
+    --text-disabled:  var(--c-gray-400);  /* 비활성 텍스트·단위(원)·카운터 (#999) */
+    --text-placeholder: var(--c-gray-300); /* 입력 placeholder (#cccccc, Figma) — --text-disabled(#999)와 분리 */
+
+    /* --- Color: surface / background --- */
+    --bg-surface:  var(--c-white);     /* 카드·시트 면 */
+    --bg-muted:    var(--c-gray-100);  /* 섹션 배경 */
+    --bg-muted-2:  var(--c-gray-150);  /* 이미지 플레이스홀더 배경 (Figma 대표이미지 357:7048 #f4f4f4) */
+    --bg-section-band: var(--c-gray-125); /* 섹션 구분 띠 (Figma 357:4313 #f7f7f7) */
+
+    /* --- Color: border / overlay --- */
+    --border-default:  var(--c-gray-200);  /* 입력·카드 보더 */
+    --border-strong:   var(--c-gray-250);  /* 강조 보더 */
+    --border-disabled: var(--c-gray-300);  /* 비활성 보더 */
+    --dim-overlay:     rgba(17, 17, 17, 0.7);  /* 바텀시트·팝업 뒤 dim (Figma 357:6025 Dimmed opacity 0.7·fill #111 실측) */
+
+    /* =========================================================================
+     * 3. TYPOGRAPHY (Pretendard, design-tokens.md §2 타이포)
+     *    letter-spacing -2.5% = -0.025em (전 크기 비례). 행간은 명목값 1,
+     *    본문계열은 가독성 위해 1.4 [추정] — 렌더 검수에서 Figma 대조 확정.
+     * ===================================================================== */
+    --font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    --letter-spacing-base: -0.025em;
+
+    /* semantic 타이포 (font shorthand — letter-spacing은 전역/컴포넌트에서 별도 적용) */
+    --text-title-24:  600 24px/1 var(--font-family);    /* title_24 (SemiBold 24) */
+    --text-body-16:   400 16px/1 var(--font-family);    /* contents_16 (Regular 16) */
+    --text-body-14:   400 14px/1.4 var(--font-family);  /* [추정] 카드 본문·라벨 */
+    --text-caption-12: 400 12px/1.4 var(--font-family); /* [추정] 캡션·배지 */
+
+    /* =========================================================================
+     * 4. SPACING / RADIUS (8px 그리드 — 2026-06-29 figma_get_file_nodes 부분 실측 확인)
+     *    실측 관측: itemSpacing 8 · padding 24 · cornerRadius 10/12 (8px 그리드 부합).
+     *    space-*·radius-md(12)는 실측 확인. radius-sm/lg·일부는 그리드 추정 잔존(렌더 검수서 최종 확정).
+     * ===================================================================== */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+
+    --radius-sm:   8px;     /* 입력·메뉴카드(Figma 476:1829 r8) */
+    --radius-md:   12px;    /* 품절배지 flag_round(Figma r12) */
+    --radius-lg:   16px;    /* 바텀시트·팝업 */
+    --radius-xl:   24px;    /* 휠 피커 패널 상단(Figma 357:6818 rectangleCornerRadii 24) */
+    --radius-pill: 999px;   /* FAB·pill 버튼 */
+    --radius-thumb: 10px;   /* 메뉴 썸네일(Figma 476:1829 r10) */
+
+    /* =========================================================================
+     * 5. ADAPTIVE — 모바일-first 적응형 거동 (design-tokens.md §3, G-2)
+     *    기준 360px. 프레임은 --frame-max(960)까지 확장 후 중앙정렬.
+     *    오버레이(시트·피커·팝업)도 프레임과 동일 적응(2026-07-01): dim=프레임 전체(≤960·초과 시 중앙정렬), 시트/피커 패널=프레임 폭으로 확장(팝업만 280 중앙 박스). --app-max는 토스트/콘텐츠 폭 캡 용도(오버레이 패널 캡 아님).
+     *    고정 px 일원화(G-1): vw/clamp/minmax 등 유동 단위 사용 금지.
+     * ===================================================================== */
+    --screen-min:  320px;   /* 최소 지원 폭 */
+    --screen-base: 360px;   /* Figma 기준 폭(정답지 기준) */
+    --frame-max:   960px;   /* .app 프레임 최대 폭(이후 중앙정렬) — G-2 */
+    --app-max:     480px;   /* 토스트/콘텐츠 폭 캡. 오버레이 패널은 프레임 폭 확장으로 미참조(2026-07-01 변경) */
+    --app-gutter:  24px;    /* 좌우 안전 여백 — 고정 px(G-1, Figma 476:1829 실측: 카드 312=360-48) */
+
+    /* =========================================================================
+     * 6. 코딩 파생 토큰 (라이브러리 코드화 중 발견 — design-tokens.md 미정의)
+     *    하드코딩 회피용. PoC/화면 관측값에서 승격. 대부분 [추정] — Figma 실측 보정 대상.
+     *    (beple-default 선례: "라이브러리 코드화 중 발견된 정식 토큰 추가")
+     * ===================================================================== */
+    --color-accent-weak:     rgba(255, 61, 1, 0.08);  /* 품절 배지 배경(Figma flag_round accent 8%) */
+    --color-category:        #ff9d00;                 /* 끼니 카테고리 배지 색 (Figma tag_특가할인 #ff9d00) */
+    --color-category-weak:   rgba(255, 157, 0, 0.10); /* 끼니 카테고리 배지 배경 (Figma tag_특가할인 fill #ff9d00@0.10) */
+    --color-icon-placeholder: var(--c-gray-300);      /* 이미지 placeholder 글리프 */
+    --color-scrim:           rgba(17, 17, 17, 0.8);   /* 토스트 배경(gray-900 80%) [추정] */
+    --overlay-soldout:       rgba(0, 0, 0, 0.5);       /* 품절 대표이미지 오버레이 (Figma 362:1972 opacity0.5·fill #000) — dim-overlay와 분리 */
+    --bg-inverse:    var(--c-gray-800);                /* 반전 배경(바나·다크 띠) = #333333 (Figma ds-banner bg) */
+    --color-on-inverse: var(--c-white);               /* 반전 배경 위 텍스트/아이콘 = #ffffff */
+    --shadow-fab:    0 4px 12px rgba(13, 132, 255, 0.35);  /* FAB 부유 그림자 [추정] */
+    --shadow-thumb:  0 0 2px rgba(0, 0, 0, 0.2);           /* 썸네일 편집펜 [추정] */
+    --shadow-card:   0 1px 4px rgba(0, 0, 0, 0.06);        /* 카드 약한 그림자 [추정] */
+    --shadow-sheet:  0 -2px 16px rgba(0, 0, 0, 0.12);      /* 바텀시트 [추정] (Batch B) */
+    --shadow-popup:  0 8px 12px rgba(0, 0, 0, 0.08);       /* 팝업 다이얼로그 — Figma 357:7337 get_design_context 실측(2026-07-01 FIGMA-ALIGN) */
+}

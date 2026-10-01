@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 찾기 검색 화면</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-SRCH-30-10-S">
+<div class="wrap js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-SRCH-30-10-S-e19" class="hd-btn back" onclick="uf_back();"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">검색하기</h1>
+        </div>
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-SRCH-30-10-S-e20" class="hd-btn close" onclick="uf_exit();"><span class="blind-i">나가기</span></a>
+        </nav>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <section class="store_find-container">
+            <!-- 컨테이너 컨텐츠 -->
+            <article class="find__item-wrap">
+                <!-- form box -->
+                <div class="form-box">
+                    <!-- 박스 헤더 -->
+                    <div class="box-hd">
+                        <p class="form-label">지역 <span>(필수)</span></p>
+                    </div>
+                    <div class="form__item-wrap">
+                        <!-- 박스 컨텐츠 -->
+                        <div class="form-item form-btn"><!-- 설정 시 placeholder 클래스 제거 미설정 시 placeholder클래스 추가 -->
+                            <a data-element-id="HIT-SRCH-30-10-S-e21" class="icon arr_bottom2-16" id="item_sido" data-value="" onclick="sel_sido()"><span class="tx_ellipsis">시/도</span></a>
+                        </div>
+                        <!-- 박스 컨텐츠 -->
+                        <div class="form-item form-btn"><!-- 설정 시 placeholder 클래스 제거 미설정 시 placeholder클래스 추가 -->
+                            <a data-element-id="HIT-SRCH-30-10-S-e22" class="icon arr_bottom2-16" id="item_sigungu" data-value="" onclick="sel_sigungu()"><span class="tx_ellipsis">시/군/구</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- form box -->
+                <!--<div class="form-box">
+                    <!-- 박스 헤더 ->
+                    <div class="box-hd">
+                        <p class="form-label">업종</p>
+                    </div>
+                    <!-- 박스 컨텐츠 ->
+                    <div class="form-item form-btn">
+                        <a href="#none" class="icon arr_bottom2-16" id="item_ctgr" data-value="" onclick="sel_category()"><span class="tx_ellipsis">비플머니</span></a>
+                    </div>
+                </div>
+                <!-- form box ->
+                <div class="form-box">
+                    <!-- 박스 헤더 ->
+                    <div class="box-hd">
+                        <p class="form-label">필터</p>
+                    </div>
+                    <!-- 박스 컨텐츠 ->
+                    <div class="form-item form-btn">
+                        <a href="#none" class="icon arr_bottom2-16" id="item_filter" data-value="" onclick="filter();">비플머니</a>
+                    </div>
+                </div>-->
+                <!-- form box -->
+                <div class="form-box">
+                    <!-- 박스 헤더 -->
+                    <div class="box-hd">
+                        <p class="form-label">검색어 <span>(필수)</span></p>
+                    </div>
+                    <!-- 박스 컨텐츠 -->
+                    <div class="form-item form-input">
+                        <p class="icon search-20 pdl24"><input data-element-id="HIT-SRCH-30-10-S-e24" type="text" placeholder="매장명을 입력해 주세요." class="tx_ellipsis" id="search_txt"></p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <!-- 플로팅 박스 -->
+        <section class="floating-container bottom js-floating-wrap">
+            <!-- 메인 버튼영역 -->
+            <article class="main_btn-box bg-white">
+                <div class="btn-main">
+                    <a data-element-id="HIT-SRCH-30-10-S-e23" class="btn-default radius-mid btn-style-h48 on" onclick="tot_search();">검색하기</a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+                </div>
+            </article>
+        </section>
+        <!-- 시, 도 버튼 -->
+        <section class="popup-container overlay" id="btn_sido" style="display:none;">
+            <div class="popup-box bottom">
+                <div class="inner-box">
+                    <!-- 컨테이너 헤더 -->
+                    <div class="box-hd pd-lr20 pdt24">
+                        <p class="box__hd-text">시/도</p>
+                    </div>
+                    <!-- 컨테이너 컨텐츠 -->
+                    <article class="box-content pd-lr20 mgt16 max_height-200 scroll-y" id="ctnt_sido">
+                            
+                        <p class="popup__text"><button data-element-id="HIT-SRCH-30-10-S-e13" type="button" class="text-btn pdr34" id="" value="" onclick="func_sido(this);"><span class="tx_ellipsis">비플머니</span></button></p>
+                        
+                    </article>
+                    <!-- 메인버튼 - 팝업용 -->
+                    <div class="main_btn-box pd-lr10 pdb10 mgt20">
+                        <div class="btn-main">
+                            <button data-element-id="HIT-SRCH-30-10-S-e14" type="button" class="btn-default radius-mid btn-style-h48 on" id="sido" onclick="on_search(this);">적용</button>
+                        </div>
+                    </div>
+                    <!-- 닫기버튼 -->
+                    <p class="close_btn-box"><button data-element-id="HIT-SRCH-30-10-S-e15" type="button" class="close-btn icon close-14" id="close_sido" onclick="pop_close(this);"><span class="blind-i">팝업닫기</span></button></p>
+                </div>
+            </div>
+        </section>
+        <!-- 시, 군, 구 버튼 -->
+        <section class="popup-container overlay" id="btn_sigungu" style="display:none;">
+            <div class="popup-box bottom">
+                <div class="inner-box">
+                    <!-- 컨테이너 헤더 -->
+                    <div class="box-hd pd-lr20 pdt24">
+                        <p class="box__hd-text">시/군/구</p>
+                    </div>
+                    <!-- 컨테이너 컨텐츠 -->
+                    <article class="box-content pd-lr20 mgt16 max_height-200 scroll-y" id="ctnt_sigungu"><!-- sample:begin --><p class='popup__text'><button type='button' class='text-btn pdr34' id='si1' value='1' onclick='func_sigungu(this);'><span class='tx_ellipsis'>홍길동</span></button></p><!-- sample:end --></article>
+                    <!-- 메인버튼 - 팝업용 -->
+                    <div class="main_btn-box pd-lr10 pdb10 mgt20">
+                        <div class="btn-main">
+                            <button type="button" class="btn-default radius-mid btn-style-h48 on" id="sigungu" onclick="on_search(this);">적용</button>
+                        </div>
+                    </div>
+                    <!-- 닫기버튼 -->
+                    <p class="close_btn-box"><button type="button" class="close-btn icon close-14" id="close_sigungu" onclick="pop_close(this);"><span class="blind-i">팝업닫기</span></button></p>
+                </div>
+            </div>
+        </section>
+        <!-- 업종버튼 -->
+        <section class="popup-container overlay" id="btn_ctgr" style="display:none;">
+            <div class="popup-box bottom">
+                <div class="inner-box">
+                    <!-- 컨테이너 헤더 -->
+                    <div class="box-hd pd-lr20 pdt24">
+                        <p class="box__hd-text">업종</p>
+                    </div>
+                    <!-- 컨테이너 컨텐츠 -->
+                    <article class="box-content pd-lr20 mgt16 max_height-200 scroll-y" id="ctnt_ctgr">
+                        <p class="popup__text"><button data-element-id="HIT-SRCH-30-10-S-e16" type="button" class="text-btn pdr34 select" id="ctgr_all" value="ctgr_all" onclick="func_ctgr(this);"><span class="tx_ellipsis">전체</span></button></p><!-- 선택 시 select 추가 -->
+                        
+
+                        <p class="popup__text"><button type="button" class="text-btn pdr34" id="" value="" onclick="func_ctgr(this);"><span class="tx_ellipsis">비플머니</span></button></p>
+                        
+                    </article>
+                    <!-- 메인버튼 - 팝업용 -->
+                    <div class="main_btn-box pd-lr10 pdb10 mgt20">
+                        <div class="btn-main">
+                            <button type="button" class="btn-default radius-mid btn-style-h48 on" id="ctgr" onclick="on_search(this);">적용</button>
+                        </div>
+                    </div>
+                    <!-- 닫기버튼 -->
+                    <p class="close_btn-box"><button type="button" class="close-btn icon close-14" id="close_ctgr" onclick="pop_close(this);"><span class="blind-i">팝업닫기</span></button></p>
+                </div>
+            </div>
+        </section>
+        <!-- 필터버튼 -->
+        <section class="popup-container overlay" id="btn_filter" style="display:none;">
+            <div class="popup-box bottom">
+                <div class="inner-box">
+                    <!-- 컨테이너 헤더 -->
+                    <div class="box-hd pd-lr20 pdt24">
+                        <p class="box__hd-text">필터</p>
+                    </div>
+                    <!-- 컨테이너 컨텐츠 -->
+                    <article class="box-content pd-lr20 mgt16 max_height-200 scroll-y" id="ctnt_filter">
+                        <p class="popup__text"><button type="button" class="text-btn pdr34 select" id="all" value="all" onclick="func_filter(this);"><span class="tx_ellipsis">전체</span></button></p><!-- 선택 시 select 추가 -->
+                        <p class="popup__text"><button data-element-id="HIT-SRCH-30-10-S-e17" type="button" class="text-btn pdr34" id="bp_aprv_yn" value="1" onclick="func_filter(this);"><span class="tx_ellipsis">비플 인증 가맹점</span></button></p>
+                        <p class="popup__text"><button data-element-id="HIT-SRCH-30-10-S-e18" type="button" class="text-btn pdr34" id="pay_abl_yn" value="2" onclick="func_filter(this);"><span class="tx_ellipsis">최근 결제 인증 가맹점</span></button></p>
+                    </article>
+                    <!-- 메인버튼 - 팝업용 -->
+                    <div class="main_btn-box pd-lr10 pdb10 mgt20">
+                        <div class="btn-main">
+                            <button type="button" class="btn-default radius-mid btn-style-h48 on" id="filter" onclick="on_search(this);">적용</button>
+                        </div>
+                    </div>
+                    <!-- 닫기버튼 -->
+                    <p class="close_btn-box"><button type="button" class="close-btn icon close-14" id="close_filter" onclick="pop_close(this);"><span class="blind-i">팝업닫기</span></button></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

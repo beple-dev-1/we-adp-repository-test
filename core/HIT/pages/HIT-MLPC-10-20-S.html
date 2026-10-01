@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>식수시간관리</title>
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/bp_ent_pc.css">
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_pc_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MLPC-10-20-S">
+<div class="ent-root">
+  <form id="frm" name="frm">
+		<input type="hidden" id="SITE_CD"	name="SITE_CD"	value="" />
+	</form>
+    <div class="ent-aside" style="display:;">
+      <div class="bottom">
+        <div class="gnb gnb-type02"> <!--[D]gnb-type01 || gnb-type02-->
+          <ul class="d1">
+            <li class="item active"> <!--[D]active-->
+              <i class="ic ic-gnb-bo-01 normal"></i>
+              <i class="ic ic-gnb-bo-01 active"></i>
+              <a data-element-id="HIT-MLPC-10-20-S-e13" href="">식수신청</a>
+              <ul class="d2">
+                <li class="item"> <!--[D]active-->
+                  <a data-element-id="HIT-MLPC-10-20-S-e14" href="javascript:Common.go_formsubmit($('#frm'), 'ent_bo_headcnt_list.act');">식수 신청내역 조회</a> 
+                </li>
+                <li class="item">
+                  <a data-element-id="HIT-MLPC-10-20-S-e15" href="javascript:Common.go_formsubmit($('#frm'), 'ent_bo_headcnt_bulk_list.act');">식수 대량 신청</a>
+                </li>
+                <li class="item active">
+                  <a data-element-id="HIT-MLPC-10-20-S-e16" href="javascript:Common.go_formsubmit($('#frm'), 'ent_bo_headcnt_time_management.act');">신청 시간 관리</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div class="ent-main">
+      <div class="layout">
+          <div class="row">
+              <div class="col col-10">
+                <div class="con-wrap">
+                  <!-- 페이지 헤더 -->
+                  <div class="page-header">
+                    <p class="tit tit-01 with-desc">신청 시간 관리
+                      <span>현대자동차 신청자가 당일 식수를 신청 가능한 시간을 선택해 주세요.</span>
+                    </p>
+                  </div>
+
+                  <div class="data-table-wrap min-h450">
+                    <table class="data-table no-active">
+                      <!-- <caption></caption> -->
+                      <colgroup>
+                        <col width="90px">
+                        <col width="">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="ta-left">사업장</th>
+                          <td class="ta-left">
+                            <div class="td-item-group">
+                              <div class="td-item-group left td-item">
+                                <!-- 드롭박스 -->
+                                <div class="td-item drop-box" id="td_item_drop_box"><!-- trigger 버튼 클릭 시 open 클래스 추가 -->
+                                  <!-- 드롭다운 버튼영역 -->
+                                  <p class="placeholder"><!-- 선택 시 placeholder 클래스 제거 -->
+                                    <button data-element-id="HIT-MLPC-10-20-S-e11" type="button" class="trigger drop-btn" id="dropBox"><span id="dropBox_nm">선택해주세요</span></button>
+                                  </p>
+                                  <!-- 드롭다운 컨텐츠 -->
+                                  <div class="drop-content" style="display: none" id="drop_content"><!-- sample:begin -->표본<!-- sample:end --></div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="ta-left">시간설정</th>
+                          <td class="ta-left">
+                            <div class="td-item-group w500 left">
+                              <span class="td-item">시작시간</span>
+                              <div class="sel td-item">
+                                <select data-element-id="HIT-MLPC-10-20-S-e17" name="std_hour" id="std_hour" class="" required></select>
+                              </div>
+                              <div class="sel td-item">
+                                <select data-element-id="HIT-MLPC-10-20-S-e18" name="std_minute" id="std_minute" class="" required></select>
+                              </div>
+                              <span class="td-item">~</span>
+                              <span class="td-item">종료시간</span>
+                              <div class="sel td-item">
+                                <select data-element-id="HIT-MLPC-10-20-S-e19" name="end_hour" id="end_hour" class="" required></select>
+                              </div>
+                              <div class="sel td-item">
+                                <select data-element-id="HIT-MLPC-10-20-S-e20" name="end_minute" id="end_minute" class="" required></select>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  <div class="btn-group ta-center mt40">
+                    <button data-element-id="HIT-MLPC-10-20-S-e12" class="btn btn-big btn-primary" type="button" onclick="javascript:goHeadCntSaveTime();">저장하기</button><!-- 활성화 시 disabled 제거 -->
+                  </div>
+                </div>
+
+              </div>
+          </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+</body>
+</html>

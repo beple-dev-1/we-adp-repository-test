@@ -1,0 +1,27 @@
+/* =============================================================================
+ * logout-info_popup.css — 자동 로그아웃 안내 팝업 화면 글루 (public/logout-info_popup.html)
+ * 스코프: .app--logout-popup (전역 @import 충돌 방지). 인라인 <style>에서 이관, 값·순서 불변.
+ * 폰트만 토큰 통일: font-family "Pretendard" → var(--font-family).
+ * ========================================================================== */
+.app--logout-popup .popup-container {z-index: 1;position: relative;display: flex;flex-direction: column;width: 100%;background-color: #fff;}
+.app--logout-popup .popup-container .headline {width: 100%;color: #333;font-weight: 600;}
+.app--logout-popup .popup-container .headline--lv1 {font-size: 14px;line-height: 20px;display: initial;}
+.app--logout-popup .popup-container .headline--lv2 {font-size: 16px;line-height: 22px;display: initial;}
+.app--logout-popup .popup-container .headline--lv3 {font-size: 18px;line-height: 24px;display: initial;}
+.app--logout-popup .popup-container .headline--lv4 {font-size: 20px;line-height: 26px;display: initial;}
+.app--logout-popup .popup--center {align-self: center;min-height: 184px;margin: 0 24px;border-radius: 10px;filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.08));}
+.app--logout-popup .popup--center .popup-container__header {padding: 32px 24px 0;}
+.app--logout-popup .popup--center .popup-container__body {flex-grow: 1;display: flex;flex-direction: column;justify-content: flex-start;gap: 24px;}
+.app--logout-popup .popup--center .popup-container__body:not(:only-child) {padding-top: 12px;}
+.app--logout-popup .popup--center .popup-container__body:not(:only-child) .flex-column .info__text--lv2 {color: #666;}
+.app--logout-popup .popup--center .popup-container__body .body__content {flex-grow: 1;display: flex;flex-direction: column;width: 100%;height: inherit;max-height: 50vh;padding-left: 24px;padding-right: 24px;padding-bottom: 3px;margin-bottom: -3px;box-sizing: border-box;overflow: auto;}
+.app--logout-popup .popup--center .popup-container__body .body__button--box {flex-grow: 0;display: flex;padding-left: 20px;padding-right: 20px;padding-bottom: 20px;}
+.app--logout-popup .popup--center.popup-temp--type1 {margin: 0 40px;}
+.app--logout-popup .popup--center.popup-temp--type1 .flex-column {gap: 16px;}
+.app--logout-popup .popup--center.popup-temp--type1 .flex-column .info__text--lv2 {color: #333;}
+.app--logout-popup .popup--center.popup-temp--type1 .flex-column .description {color: #999;font-size: 12px;line-height: 18px;}
+.app--logout-popup .button.button {color: #333;font-family: var(--font-family);font-weight: 600;position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.app--logout-popup .button.button-large span {display: inherit;font-size: 16px;margin-top: -3px;margin-bottom: -3px;line-height: 22px;padding: 4px;}
+.app--logout-popup .button.button--lv1 {color: #fff;background-color: #0d84ff;}
+.app--logout-popup .button.button-large {gap: 4px;min-width: 112px;padding: 12px;border-radius: 10px;border: 0 none;}
+.app--logout-popup .col--block {width: 100% !important;}

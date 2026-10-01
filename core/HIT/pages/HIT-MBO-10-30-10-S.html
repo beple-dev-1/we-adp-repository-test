@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>메뉴</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-10-30-10-S">
+<input type="hidden" id="BP_AFLT_SEQ"	name="BP_AFLT_SEQ"	value="" />
+<input type="hidden" id="SEL_MENU_SEQ"	name="SEL_MENU_SEQ"	value="" />
+<input type="hidden" id="SEL_MENU_IMG_SEQ"	name="SEL_MENU_IMG_SEQ"	value="" />
+<input type="hidden" id="IMG_SRC"	name="IMG_SRC"	value="" />
+<input type="hidden" id="ENV_MODE"	name="ENV_MODE"	value="" />
+<div class="bp-root">
+    <!-- //lnb box -->
+    
+        
+    
+
+    <!-- 메인 컨텐츠 -->
+    <div class="bp-main">
+        <div class="layout">
+            <div class="row">
+                <div class="col col-10">
+                    <div class="con-wrap">
+                        <!-- 페이지 헤더 -->
+                        <div class="page-header">
+                            <p class="tit-01 with-desc">
+                                메뉴관리
+                                <span>
+                        - 스마트오더에 노출되는 메뉴 정보를 관리합니다.<!--<br>
+                        - 메뉴의 재고가 없을 경우 품절처리를 해주세요.-->
+                      </span>
+                            </p>
+                        </div>
+
+                        <!-- 검색조건 박스 -->
+                        <div class="search-box"><!-- 상세보기 클릭 시 fold 클래스 추가/제거 -->
+                            <!-- div 구조여서 위에서 아래로 추가됩니다 - left 는 왼쪽 상단, right는 오른쪽 상단부터 추가됨. right박스 사용 안할시 해당영역 전체 삭제-->
+                            <form action="">
+                                <div class="search-form">
+                                    <!-- 왼쪽박스 -->
+                                    <div class="form-wrap left">
+                                        <!-- col -->
+                                        <!-- 날짜 -->
+                                        <div class="search-item">
+                                            <div class="item-hd">
+                                                <p class="item-text head">날짜</p>
+                                            </div>
+                                            <div class="item-con">
+                                                <div class="td-item-group left td-item">
+                                                    <div class="ip-wrap with-icon ta-left td-item">
+                                                        <input data-element-id="HIT-MBO-10-30-10-S-e26" data-toggle="datepicker" name="" id="START_DATE"  class="ip-txt" type="text" value="" placeholder="" style="background-color: #ffffff; color: #000000" autocomplete="off" readonly><!-- 비활성화 시 disabled, 날짜 선택 시 readonly -->
+                                                        <i class="ic ic-calendar"></i>
+                                                    </div>
+                                                    <div class="td-item space">~</div>
+                                                    <div class="ip-wrap with-icon ta-left td-item">
+                                                        <input data-element-id="HIT-MBO-10-30-10-S-e27" data-toggle="datepicker" name="" id="END_DATE" class="ip-txt" type="text" value="" placeholder="" style="background-color: #ffffff; color: #000000" autocomplete="off" readonly><!-- 비활성화 시 disabled, 날짜 선택 시 readonly -->
+                                                        <i class="ic ic-calendar"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <!-- 제공형태 -->
+                                        <div class="search-item">
+                                            <div class="item-hd">
+                                                <p class="item-text head">제공형태</p>
+                                            </div>
+                                            <div class="item-con">
+                                                <div class="drop-box" onclick="btn_drop($(this))"><!-- trigger 버튼 클릭 시 open 클래스 추가 -->
+                                                    <!-- 드롭다운 버튼영역 -->
+                                                    <p class="placeholder" id="sel_phd"><!-- 선택 시 placeholder 클래스 제거 -->
+                                                        <button data-element-id="HIT-MBO-10-30-10-S-e15" type="button" class="trigger drop-btn" id="SEL_PRVD_TP" value="A"><span>전체</span></button>
+                                                    </p>
+                                                    <!-- 드롭다운 컨텐츠 -->
+                                                    <div class="drop-content">
+                                                        <p class="drop-item select" name="sel_prvd_tp"><!-- 선택 시 select -->
+                                                            <button type="button" class="drop-btn" value="A" onclick="provide_type($(this))">전체</button>
+                                                        </p>
+                                                        <p class="drop-item" name="sel_prvd_tp"><!-- 선택 시 select -->
+                                                            <button data-element-id="HIT-MBO-10-30-10-S-e16" type="button" class="drop-btn" value="C" onclick="provide_type($(this))">매장식사</button>
+                                                        </p>
+                                                        <p class="drop-item" name="sel_prvd_tp">
+                                                            <button data-element-id="HIT-MBO-10-30-10-S-e17" type="button" class="drop-btn" value="D" onclick="provide_type($(this))">딜리버리/픽업</button>
+                                                        </p>
+                                                        <p class="drop-item" name="sel_prvd_tp">
+                                                            <button data-element-id="HIT-MBO-10-30-10-S-e18" type="button" class="drop-btn" value="R" onclick="provide_type($(this))">사전예약</button>
+                                                        </p>
+<!--                                                        <p class="drop-item" name="sel_prvd_tp">-->
+<!--                                                            <button type="button" class="drop-btn" value="G" onclick="provide_type($(this))">그랩앤고</button>-->
+<!--                                                        </p>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- // col end -->
+                                    </div>
+                                </div>
+                                <div class="btn-wrap ta-center">
+                                    <button data-element-id="HIT-MBO-10-30-10-S-e19" class="btn btn-md-b btn-gray-outline" type="button" id="btn_search">검색하기</button>
+                                </div>
+                            </form>
+                        </div>
+
+<!--                        <div class="td-item-group mb12 left">-->
+<!--                            <div class="td-item">-->
+<!--                                <button class="btn btn-md-b btn-gray-outline" type="button" id="btn_excel"><i class="ic ic-excel"></i>엑셀 저장</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <!-- 테이블 영역 -->
+                        <div class="td-item-group mb12 right">
+                            <div class="td-item-group td-item">
+                                <button data-element-id="HIT-MBO-10-30-10-S-e20" class="btn btn-md-b btn-gray-outline" type="button" onclick="add_picture()">사진첨부</button>
+                                <button data-element-id="HIT-MBO-10-30-10-S-e21" class="btn btn-md-b btn-primary ml0" type="button" onclick="add_menu_pop()">+ 추가하기</button>
+                            </div>
+                        </div>
+
+                        <div class="data-table-wrap" id="menu_list" hidden style="min-height: 529px;">
+                            <table class="data-table form-table pd-table" id="table">
+                                <!-- <caption>표 제목</caption> -->
+                                <colgroup>
+                                    <col style="width: 150px;">
+                                    <col style="width: 135px;">
+                                    <col style="width: 90px;">
+                                    <col style="width: 135px;">
+                                    <col style="width: 350px;">
+                                    <col style="width: 120px;">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th scope="col"><div class="ta-center">제공일자</div></th>
+                                    <th scope="col"><div class="ta-center">제공형태</div></th>
+                                    <th scope="col"><div class="ta-center">식사형태</div></th>
+                                    <th scope="col"><div class="ta-center">메뉴분류명</div></th>
+                                    <th scope="col"><div class="ta-center">메뉴명</div></th>
+                                    <th scope="col"><div class="ta-center">금액</div></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- 메뉴목록 -->
+                                <tr style="display: none;" onclick="clk_menu($(this))">
+                                    <td class="button" colspan="6"><!-- 활성화 시 active -->
+                                        <div>
+                                            <a href="#none">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width: 150px;">
+                                                        <col style="width: 145px;">
+                                                        <col style="width: 90px;">
+                                                        <col style="width: 145px;">
+                                                        <col style="width: 330px;">
+                                                        <col style="width: 120px;">
+                                                    </colgroup>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td id="MENU_SEQ" hidden><div></div></td>
+                                                        <td id="MENU_IMG_SEQ" hidden><div></div></td>
+                                                        <td id="MENU_PRVD_DT"><div></div></td>
+                                                        <td id="PRVD_TP_NM"><div class="tx-ellipsis"></div></td>
+                                                        <td id="MEAL_TP"><div></div></td>
+                                                        <td id="MENU_DV_NM"><div class="tx-ellipsis"></div></td>
+                                                        <td id="REPR_MENU_NM"><div class="tx-ellipsis"></div></td>
+                                                        <td id="MENU_AMT"><div class="ta-right"></div></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="data-table-wrap h524" id="no_menu_list" hidden>
+                            <table class="data-table form-table">
+                                <!-- <caption>표 제목</caption> -->
+                                <colgroup>
+                                    <col style="width: 150px;">
+                                    <col style="width: 135px;">
+                                    <col style="width: 90px;">
+                                    <col style="width: 135px;">
+                                    <col style="width: 400px;">
+                                    <col style="width: 120px;">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th scope="col"><div class="ta-center">제공일자</div></th>
+                                    <th scope="col"><div class="ta-center">제공형태</div></th>
+                                    <th scope="col"><div class="ta-center">식사형태</div></th>
+                                    <th scope="col"><div class="ta-center">메뉴분류명</div></th>
+                                    <th scope="col"><div class="ta-center">메뉴명</div></th>
+                                    <th scope="col"><div class="ta-center">금액</div></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="no-data">
+                                    <td colspan="6"> <!--[D]colspan:6-->
+                                        <!--[D] 검색결과가 없습니다.-->
+                                        <div class="no-data no-bd h443">
+                                            <div class="box">
+                                                <i class="ic ic-exc-40"></i>
+                                                <p>등록된 정보가 없습니다.</p>
+                                            </div>
+                                        </div>
+                                        <!--//검색결과가 없습니다.-->
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="pagination">
+                            <div class="pagi" style="" id="pagi">
+                                <div class="group">
+                                    <button data-element-id="HIT-MBO-10-30-10-S-e22" type="button" class="item first" onclick="javascript:void(0);">first</button><!-- 비활성화 시 disabled 클래스 추가 -->
+                                    <button data-element-id="HIT-MBO-10-30-10-S-e23" type="button" class="item prev" onclick="javascript:void(0);">prev</button>
+                                </div>
+                                <div class="group" id="page_num">
+                                    <button type="button" class="item" onclick="javascript:void(0);">1</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">2</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">3</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">4</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">5</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">6</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">7</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">8</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">9</button>
+                                    <button type="button" class="item" onclick="javascript:void(0);">10</button>
+                                </div>
+                                <div class="group">
+                                    <button data-element-id="HIT-MBO-10-30-10-S-e24" type="button" class="item next" onclick="javascript:void(0);">next</button>
+                                    <button data-element-id="HIT-MBO-10-30-10-S-e25" type="button" class="item last" onclick="javascript:void(0);">last</button>
+                                </div>
+                            </div>
+                            <div class="td-item-group top por top-29 h0">
+                                <div class="sel w120 td-item">
+                                    <select data-element-id="HIT-MBO-10-30-10-S-e28" name="" id="show_cnt" class="js-table-count" value="30" onchange="cnt()">
+                                        <option value="10">10건 보기</option>
+                                        <option value="30">30건 보기</option>
+                                        <option value="50">50건 보기</option>
+                                    </select>
+                                </div>
+                                <div class="td-item ta-right">
+                                    <p class="lh-32">검색결과: 총 <span class="fc-pri fw-600" id="tot_cnt"><!-- sample:begin -->1<!-- sample:end --></span>건</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 메뉴 추가 모달 -->
+<div class="modal w360 active" id="add_menu_pop" style="display: none"><!--[D]active-->
+    <div class="inner">
+        <div class="modal-header">
+            <div class="tit-area type02">
+                <p class="tit">추가하기</p>
+            </div>
+            <button class="btn-close type-2" type="button" onclick="btn_close('just')">닫기</button>
+        </div>
+        <div class="modal-con mt40">
+            <div class="btn-group block">
+                <button class="btn btn-big btn-gray-outline" type="button" onclick="add_menu()">개별등록</button>
+                <button class="btn btn-big btn-gray-outline" type="button" onclick="add_menu_all()">일괄등록</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 모달창 -->
+<div class="modal w880 active" id="add_menu_modal" style="display: none"><!--[D]active-->
+    <div class="inner type2">
+        <div class="modal-header">
+            <div class="tit-area type02">
+                <p class="tit">메뉴 추가</p>
+            </div>
+            <button class="btn-close" type="button" onclick="btn_close('confirm', 'add')">닫기</button>
+        </div>
+        <div class="modal-con h90vh-169_fix ovf-a">
+            <!-- 상단 테이블 -->
+            <div class="table-wrap ovf-visible"><!-- 영역넘침 숨김처리 해제 = ovf-visible -->
+                <table class="data-table no-bd-left "><!-- [D] 제공형태 선택 시 no-bdb 클래스 제거 -->
+                    <colgroup>
+                        <col style="width: 96px;">
+                        <col style="width: 310px;">
+                        <col style="width: 112px;">
+                        <col style="width: 310px;">
+                    </colgroup>
+                    <tbody>
+                    <!-- 제공형태 -->
+                    <tr>
+                        <td colspan="4" class="p0">
+                            <!-- 제공형태 내부테이블 -->
+                            <div>
+                                <table class="w100p">
+                                    <colgroup>
+                                        <col style="width: 96px;">
+                                        <col style="width: 310px;">
+                                        <col style="width: 112px;">
+                                        <col style="width: 310px;">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr class="p0">
+                                        <th class="required"><div>제공형태</div></th>
+                                        <td>
+                                            <div>
+                                                <!-- 드롭박스 -->
+                                                <div class="td-item w290 drop-box" onclick="btn_drop($(this))"><!-- [D] trigger 버튼 클릭 시 open 클래스 추가 -->
+                                                    <!-- 드롭다운 버튼영역 -->
+                                                    <p class="placeholder" id="add_phd"><!-- [D] 선택 시 placeholder 클래스 제거 -->
+                                                        <button type="button" class="trigger drop-btn" id="ADD_PRVD_TP" value="X"><span>선택해주세요.</span></button>
+                                                    </p>
+                                                    <!-- 드롭다운 컨텐츠 -->
+                                                    <div class="drop-content">
+                                                        <p class="drop-item" name="add_prvd_tp"><!-- [D] 선택 시 select -->
+                                                            <button type="button" id="prvd_tp_C" value="C" class="drop-btn" onclick="add_prvd_tp($(this))">매장식사</button>
+                                                        </p>
+                                                        <p class="drop-item" name="add_prvd_tp">
+                                                            <button type="button" id="prvd_tp_D" value="D" class="drop-btn" onclick="add_prvd_tp($(this))">딜리버리/픽업</button>
+                                                        </p>
+                                                        <p class="drop-item" name="add_prvd_tp">
+                                                            <button type="button" id="prvd_tp_R" value="R" class="drop-btn" onclick="add_prvd_tp($(this))">사전예약</button>
+                                                        </p>
+                                                        <!--<p class="drop-item" name="add_prvd_tp">
+                                                            <button type="button" id="prvd_tp_G" value="G" class="drop-btn" onclick="add_prvd_tp($(this))">그랩앤고</button>
+                                                        </p>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <!-- 제공형태 선택 시 노출 -->
+                                        <th class="required" name="gubun_a" style="display: none;"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                                            <div>날짜선택</div>
+                                        </th>
+                                        <td name="gubun_a" style="display: none;"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                                            <div>
+                                                <div class="ip-wrap with-icon ta-left td-item">
+                                                    <input data-toggle="datepicker" name="" id="ADD_DATE" class="ip-txt" type="text" value="" placeholder="날짜선택" autocomplete="off" style="background-color: #ffffff; color: #000000" readonly><!-- 비활성화 시 readonly -->
+                                                    <i class="ic ic-calendar"></i>
+                                                    <script>
+                                                        $(function(){
+                                                            let target;
+                                                            let before_value;
+                                                            $('#ADD_DATE').on({
+                                                                mouseover : function(){
+                                                                    target = $(this);
+                                                                    modalDatepickerControl(target);
+                                                                },
+                                                                click : function(){
+                                                                    target = $(this);
+                                                                    modalDatepickerControl(target);
+                                                                },
+                                                                focus : function(){
+                                                                    before_value = this.value;
+                                                                },
+                                                                change : function(){
+                                                                    const date = new Date();
+
+                                                                    let year = date.getFullYear();
+                                                                    let month = date.getMonth() + 1;
+                                                                    month = month >= 10 ? month : "0" + month;
+
+                                                                    let day = date.getDate();
+                                                                    day = day >= 10 ? day : "0" + day;
+
+                                                                    let yyyymmdd = year.toString() + month.toString() + day.toString();
+
+                                                                    let after_value = this.value.replaceAll("-", "");
+
+                                                                    if(after_value < yyyymmdd){
+                                                                        this.value = before_value;
+                                                                        ComPopup.showAfltboAlert("정확한 날짜를 확인해 주세요.");
+                                                                    }
+                                                                }
+                                                            })
+
+                                                            function modalDatepickerControl(target){
+                                                                for(let modalIndex = 0; modalIndex <= $('.modal').length; modalIndex++){
+                                                                    if(target.parents('.modal.active').eq(modalIndex).hasClass('date-control') === true){
+                                                                        target.datepicker({
+                                                                            language: 'ko-KR',
+                                                                            format: 'yyyy-mm-dd',
+                                                                            startDate: new Date(),
+                                                                            autoHide : true,
+                                                                        })
+                                                                    }else if(target.parents('.modal.active').eq(modalIndex).hasClass('date-control') === false) {
+                                                                        target.datepicker({
+                                                                            language: 'ko-KR',
+                                                                            format: 'yyyy-mm-dd',
+                                                                            autoHide : true,
+                                                                        });
+                                                                    }
+                                                                }
+                                                            }
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- //내부테이블 end -->
+                        </td>
+                    </tr>
+                    <!-- 식사형태 - 제공형태 선택 시 노출-->
+                    <tr style="display: none;"  name="gubun_b"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                        <th class="required"><div>식사형태</div></th>
+                        <td colspan="3">
+                            <div>
+                                <div class="ip-ch-group flex-row">
+                                    <label class="ip-ch-label">
+                                        <input name="ch-1" id="ADD_BRUNCH" class="ip-ch" type="checkbox" value="" onclick="check_to_radio($(this))">
+                                        <span class="check"></span> 조식
+                                    </label>
+                                    <label class="ip-ch-label ml40">
+                                        <input name="ch-1" id="ADD_LUNCH" class="ip-ch" type="checkbox" value="" onclick="check_to_radio($(this))">
+                                        <!--checked-->
+                                        <span class="check"></span> 중식
+                                    </label>
+                                    <!--<label class="ip-ch-label ml40">
+                                        <input name="ch-1" id="" class="ip-ch" type="checkbox" value="" checked="">
+                                        <!--checked->
+                                        <span class="check"></span> 석식
+                                    </label>-->
+                                </div>
+                                <p class="fs-12 fc-666 mt5">*매점 그랩앤고 메뉴의 경우 중식으로 선택하여 주시기 바랍니다.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 금액숨김여부 노출-->
+                    <tr style="display: none;"  name="gubun_a"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                        <th class="vat"><div>금액숨김여부</div></th>
+                        <td colspan="3">
+                            <div>
+                                <div class="ip-ch-group flex-row">
+                                    <label class="ip-ch-label">
+                                        <input name="ch-1" id="HIDE_AMT" class="ip-ch" type="checkbox" value="" onclick="check_to_radio($(this))">
+                                        <span class="check"></span> 금액숨김
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 메뉴정보 테이블 - 제공형태 선택 시 노출 -->
+            <div class="table-wrap mt32" style="display: none;" name="gubun_a"><!-- style="display:none" 제거 -->
+                <p class="tit-02">메뉴 정보</p>
+                <table class="data-table no-bd-left mt12">
+                    <colgroup>
+                        <col style="width: 96px;">
+                        <col style="width: auto;">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th class="vat">
+                            <div>
+                                메뉴사진
+                                <span class="fs-12 fc-999 mt5 d-block">(5MB)</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div>
+                                <!-- 이미지 등록 -->
+                                <div class="image_write-box mb2" id="add_tot_img">
+                                    <div class="image w132 empty" id="add_img"><!-- 기본이미지 = empty 클래스 추가 -->
+                                        <img id="preview_img" alt="이미지 영역" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'><rect fill='rgba(0,0,0,0)' x='0' y='0' width='100%' height='100%'/></svg>">
+                                        <!-- <img src="../assets/resource/img/dummy/download 1.png" alt=""> -->
+                                    </div>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-gray-outline" type="button" onclick="btn_img()">첨부하기</button>
+                                        <button class="btn btn-sm btn-gray-outline" type="button" id="add_init_img" onclick="init_img()" style="display: none">기본이미지로 변경</button>
+                                        <input type="file" onchange="img_upload()" id="img_upload" accept="image/*" hidden>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required">
+                            <div>메뉴분류명</div>
+                        </th>
+                        <td>
+                            <div>
+                                <!-- 드롭박스 -->
+                                <div class="td-item drop-box" onclick="sel_menu_gubun($(this))"><!-- trigger 버튼 클릭 시 open 클래스 추가 -->
+                                    <!-- 드롭다운 버튼영역 -->
+                                    <p class="placeholder"><!-- 선택 시 placeholder 클래스 제거 -->
+                                        <button type="button" class="trigger drop-btn" id="ADD_MENU_GUBUN" value="X"><span>선택해주세요.</span></button>
+                                    </p>
+                                    <!-- 드롭다운 컨텐츠 -->
+                                    <div class="drop-content">
+                                        
+                                        
+                                        
+                                        <p class="drop-item" name="order_form_c" hidden><!-- 선택 시 select -->
+                                            <button type="button" class="drop-btn" order-form-tp="" prvd-tp="" data-img-path="" data-img-file-nm="비플머니" data-img-file-ext="" name="menu_gubun" id="menu_dv_" onclick="add_menu_gubun($(this))" value="">비플머니</button>
+                                        </p>
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required vat">
+                            <div>메뉴명(국문)</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ip-wrap w100p type-unit style-2">
+                                    <input name="" class="ip-txt" type="text" value="" placeholder="메뉴명을 입력해 주세요.(국문)" id="ADD_MENU_NM" onkeyup="reloadTxtArea('nm')" maxlength="50">
+                                    <p class="unit"><span id="nm_cnt">0</span><span>/50</span></p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴명(영문)</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ip-wrap w100p type-unit style-2">
+                                    <input name="" class="ip-txt" type="text" value="" placeholder="메뉴명을 입력해 주세요.(영문)" id="ADD_MENU_NM_EN" onkeyup="reloadTxtArea('nm_en')" maxlength="50">
+                                    <p class="unit"><span id="nm_en_cnt">0</span><span>/50</span></p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴구성(국문)</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ta-group gray with-counting h84 pr70"><!-- [D] 텍스트 입력 초과 시 counting-over 클래스 추가 -->
+                                    <textarea class="ta-ip" placeholder="구성된 메뉴를 모두 입력해 주세요.(국문)" id="ADD_MENU_CTNT" onkeyup="reloadTxtArea('ctnt')" maxlength="200"></textarea>
+                                    <span class="counting" id="ctnt_cnt">0/200</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴구성(영문)</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ta-group gray with-counting h84 pr70"><!-- [D] 텍스트 입력 초과 시 counting-over 클래스 추가 -->
+                                    <textarea class="ta-ip" placeholder="구성된 메뉴를 모두 입력해 주세요.(영문)" id="ADD_MENU_CTNT_EN" onkeyup="reloadTxtArea('ctnt_en')" maxlength="200"></textarea>
+                                    <span class="counting" id="ctnt_en_cnt">0/200</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required" id="menu_gubun">
+                            <div>메뉴정보</div>
+                        </th>
+                        <td>
+                            <div>
+                                <!-- 메뉴정보 wrap -->
+                                <div class="td-item-group flex-column" id="ADD_MENU_INFO">
+                                    <!-- 메뉴정보 -->
+                                    <div class="td-item-group td-item w100p left gap10">
+                                        <div class="ip-wrap">
+                                            <input name="nxt_menu_nm" class="ip-txt" type="text" value="" placeholder="메뉴명(국문)" maxlength="50" id="first_menu">
+                                        </div>
+                                        <div class="ip-wrap">
+                                            <input name="nxt_menu_nm_en" class="ip-txt" type="text" value="" placeholder="메뉴명(영문)" maxlength="50" id="first_menu_en">
+                                        </div>
+                                        <div class="ip-wrap type-unit style-2">
+                                            <input name="nxt_menu_kcal" class="ip-txt" type="text" value="" placeholder="열량" maxlength="10" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
+                                            <p class="unit">Kcal</p>
+                                        </div>
+                                        <div class="ip-wrap type-unit">
+                                            <input name="nxt_menu_ctnt" class="ip-txt" type="text" value="" placeholder="메뉴 구성을 입력해 주세요">
+                                            <p class="unit">g</p>
+                                        </div>
+                                        <!-- 버튼 -->
+                                        <div class="btn-group w80 shrink-no">
+                                            <button class="btn btn-sm btn-gray-outline" type="button" onclick="add_menu_info()">+ 추가하기</button>
+                                        </div>
+                                    </div>
+                                    <!-- 메뉴정보 -->
+                                    <div class="td-item-group td-item w100p left gap10" name="add_menu_info">
+                                        <div class="ip-wrap">
+                                            <input name="nxt_menu_nm" class="ip-txt" type="text" value="" placeholder="메뉴명(국문)" maxlength="50">
+                                        </div>
+                                        <div class="ip-wrap">
+                                            <input name="nxt_menu_nm_en" class="ip-txt" type="text" value="" placeholder="메뉴명(영문)" maxlength="50">
+                                        </div>
+                                        <div class="ip-wrap type-unit style-2">
+                                            <input name="nxt_menu_kcal" class="ip-txt" type="text" value="" placeholder="열량" maxlength="10" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
+                                            <p class="unit">Kcal</p>
+                                        </div>
+                                        <div class="ip-wrap type-unit">
+                                            <input name="nxt_menu_ctnt" class="ip-txt" type="text" value="" placeholder="메뉴 구성을 입력해 주세요">
+                                            <p class="unit">g</p>
+                                        </div>
+                                        <!-- 버튼 -->
+                                        <div class="btn-group w80 shrink-no">
+                                            <button class="btn-remove" type="button" onclick="add_menu_info_remove($(this))" id="add_menu_info_remove">삭제</button>
+                                        </div>
+                                    </div>
+                                    <!-- // 메뉴정보 -->
+                                </div>
+                                <!-- // 메뉴정보 wrap end -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>영양정보</div>
+                        </th>
+                        <td>
+                            <div>
+                                <!-- 메뉴정보 wrap -->
+                                <div class="td-item-group flex-column" id="ADD_KCAL_INFO">
+                                    <!-- 메뉴정보 -->
+                                    <div class="td-item-group w100p left td-item gap10">
+                                        <div class="ip-wrap">
+                                            <input name="add_kcal_info_menu_nm" class="ip-txt" type="text" value="" placeholder="성분명" maxlength="10">
+                                        </div>
+                                        <div class="ip-wrap type-unit style-2">
+                                            <input name="add_kcal_info_menu_kcal" class="ip-txt" type="text" value="" placeholder="ex) 1000kcal">
+                                            <p class="unit"><!--Kcal--></p>
+                                        </div>
+                                        <!-- 버튼 -->
+                                        <div class="btn-group w80 shrink-no">
+                                            <button class="btn btn-sm btn-gray-outline" type="button" onclick="add_kcal_info()">+ 추가하기</button>
+                                        </div>
+                                    </div>
+                                    <!-- 메뉴정보 -->
+                                    <div class="td-item-group td-item w100p left gap10" name="add_kcal_info">
+                                        <div class="ip-wrap">
+                                            <input name="add_kcal_info_menu_nm" class="ip-txt" type="text" value="" placeholder="성분명" maxlength="10">
+                                        </div>
+                                        <div class="ip-wrap type-unit style-2">
+                                            <input name="add_kcal_info_menu_kcal" class="ip-txt" type="text" value="" placeholder="ex) 1000kcal">
+                                            <p class="unit"><!--Kcal--></p>
+                                        </div>
+                                        <!-- 버튼 -->
+                                        <div class="btn-group w80 shrink-no">
+                                            <button class="btn-remove" type="button" onclick="add_kcal_info_remove($(this))" id="add_kcal_info_remove">삭제</button>
+                                        </div>
+                                    </div>
+                                    <!-- // 메뉴정보 -->
+                                </div>
+                                <!-- 메뉴정보 wrap end -->
+                            </div>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <th class="vat">
+                            <div>원산지</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ta-group gray with-counting counting-over h82 pr70"><!-- 텍스트 입력 초과 시 counting-over 클래스 추가 ->
+                                    <textarea class="ta-ip" placeholder="원산지를 입력해주세요." id="ADD_MENU_FROM" onkeyup="reloadTxtArea('from')" maxlength="200"></textarea>
+                                    <span class="counting" id="from_cnt">0/200</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>-->
+                    <tr>
+                        <th class="required vat">
+                            <div>메뉴금액</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ip-wrap type-unit w100p">
+                                    <input name="" id="ADD_MENU_AMT" class="ip-txt" type="text" value="" placeholder="메뉴 금액을 입력해 주세요" maxlength="9" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
+                                    <p class="unit">원</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr id="tr_add_menu_cnt">
+                        <th class="vat" id="cnt_menu">
+                            <div>수량</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ip-wrap type-unit w100p">
+                                    <input name="" id="ADD_MENU_CNT" class="ip-txt" type="text" value="" placeholder="수량을 입력해 주세요" maxlength="9" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
+                                    <p class="unit">개</p>
+                                </div>
+                                <p class="fs-12 fc-666 mt5">수량은 픽업, 사전예약 메뉴일 경우 입력해 주세요.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 2026.07.06 추가 -->
+                    <tr id="tr_c_soldout_yn"  style="display:none;"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                        <th class="vat"><div>품절여부</div></th>
+                        <td colspan="3">
+                            <div>
+                                <div class="ip-ch-group flex-row">
+                                    <label class="ip-ch-label">
+                                        <input name="ch-1" id="C_SOLDOUT_YN" class="ip-ch" type="checkbox" value="">
+                                        <span class="check"></span> 품절
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- // 2026.07.06 추가 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="btn-group ta-center mt24">
+            <button class="btn btn-md-a btn-primary" type="button" onclick="btn_save()" id="btn_save">저장</button>
+        </div>
+    </div>
+</div>
+<div class="modal w880 active" id="conf_menu_pop" style="display:none;"><!--[D]active-->
+    <div class="inner type2">
+        <div class="modal-header">
+            <div class="tit-area type02">
+                <p class="tit">메뉴 추가</p>
+            </div>
+            <button class="btn-close" type="button" onclick="btn_close('just')">닫기</button>
+        </div>
+        <div class="modal-con h90vh-169_fix ovf-a">
+            <!-- 제공형태 -->
+            <div class="table-wrap">
+                <table class="data-table no-bd-left"><!-- [D] 제공형태 선택 시 no-bd-bottom 클래스 제거 -->
+                    <colgroup>
+                        <col style="width: 96px;">
+                        <col style="width: 310px;">
+                        <col style="width: 112px;">
+                        <col style="width: 310px;">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <td colspan="4" class="p0">
+                            <!-- 제공형태 내부테이블 -->
+                            <div>
+                                <table class="w100p">
+                                    <colgroup>
+                                        <col style="width: 96px;">
+                                        <col style="width: 310px;">
+                                        <col style="width: 112px;">
+                                        <col style="width: 310px;">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr class="p0">
+                                        <th><div>제공형태</div></th>
+                                        <td>
+                                            <div class="txt-01 fc-333" id="conf_prvd_tp"><!-- sample:begin -->표본<!-- sample:end --></div>
+                                        </td>
+                                        <th>
+                                            <div>제공일자</div>
+                                        </th>
+                                        <td>
+                                            <div class="txt-01 fc-333" id="conf_prvd_dt"><!-- sample:begin -->2026.09.02<!-- sample:end --></div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- //내부테이블 end -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><div>식사형태</div></th>
+                        <td colspan="3">
+                            <div class="txt-01 fc-333" id="conf_meal_tp"><!-- sample:begin -->표본<!-- sample:end --></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><div>금액숨김여부</div></th>
+                        <td colspan="3">
+                            <div class="txt-01 fc-333" id="conf_amt_hide_yn"><!-- sample:begin -->4,500<!-- sample:end --></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 메뉴정보 테이블 -->
+            <div class="table-wrap mt32">
+                <p class="tit-02">메뉴 정보</p>
+                <table class="data-table no-bd-left mt12">
+                    <colgroup>
+                        <col style="width: 96px;">
+                        <col style="width: auto;">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴사진</div>
+                        </th>
+                        <td>
+                            <div>
+                                <!-- 이미지 등록 -->
+                                <div class="image_write-box mb2">
+                                    <div class="image w132 empty" id="conf_img"><!-- 기본이미지 = empty 클래스 추가 -->
+                                        <img alt="이미지 영역" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'><rect fill='rgba(0,0,0,0)' x='0' y='0' width='100%' height='100%'/></svg>">
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴분류명</div>
+                        </th>
+                        <td>
+                            <div class="txt-01 fc-333" id="conf_menu_dv"><!-- sample:begin -->표본<!-- sample:end --></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴명</div>
+                        </th>
+                        <td>
+                            <div class="txt-01 fc-333" id="conf_menu_nm"><!-- sample:begin -->홍길동<!-- sample:end --></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴구성</div>
+                        </th>
+                        <td>
+                            <div class="txt-01 fc-333" id="conf_menu_pack_nm"><!-- sample:begin -->홍길동<!-- sample:end --></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴정보</div>
+                        </th>
+                        <td>
+                            <div class="txt-01 fc-333">
+                                <ul id="conf_menu_info"><!-- sample:begin -->표본<!-- sample:end --></ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>영양정보</div>
+                        </th>
+                        <td>
+                            <div id="conf_nutr_info"><!-- sample:begin -->표본<!-- sample:end --></div>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <th class="vat">
+                            <div>원산지</div>
+                        </th>
+                        <td>
+                            <div>
+                                일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+                            </div>
+                        </td>
+                    </tr>-->
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴금액</div>
+                        </th>
+                        <td>
+                            <div class="txt-01 fc-333" id="conf_menu_amt"><!-- sample:begin -->4,500<!-- sample:end --></div>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <th class="vat">
+                            <div>수량</div>
+                        </th>
+                        <td>
+                            <div class="txt-01 fc-333" id="conf_menu_cnt">
+                            </div>
+                        </td>
+                    </tr>-->
+                    
+                    <!-- 2026.07.06 추가 -->
+                    <tr id="conf_tr_c_soldout_yn"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                        <th class="vat"><div>품절여부</div></th>
+                        <td>
+                            <div class="txt-01 fc-333" id="conf_c_soldout_yn"><!-- sample:begin -->Y<!-- sample:end --></div>
+                        </td>
+                    </tr>
+                    <!-- // 2026.07.06 추가 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="btn-group ta-center mt24">
+            <button class="btn btn-md-a btn-primary" type="button" onclick="conf_modify()">수정</button>
+            <button class="btn btn-md-a btn-gray" type="button" onclick="conf_delete()">삭제</button>
+        </div>
+    </div>
+</div>
+<div class="modal w880 active" id="modify_menu_modal" style="display: none"><!--[D]active-->
+    <div class="inner type2">
+        <div class="modal-header">
+            <div class="tit-area type02">
+                <p class="tit">메뉴 수정</p>
+            </div>
+            <button class="btn-close" type="button" onclick="btn_close('confirm')">닫기</button>
+        </div>
+        <div class="modal-con h90vh-169_fix ovf-a">
+            <!-- 상단 테이블 -->
+            <div class="table-wrap ovf-visible"><!-- 영역넘침 숨김처리 해제 = ovf-visible -->
+                <table class="data-table no-bd-left "><!-- [D] 제공형태 선택 시 no-bdb 클래스 제거 -->
+                    <colgroup>
+                        <col style="width: 96px;">
+                        <col style="width: 310px;">
+                        <col style="width: 112px;">
+                        <col style="width: 310px;">
+                    </colgroup>
+                    <tbody>
+                    <!-- 제공형태 -->
+                    <tr>
+                        <td colspan="4" class="p0">
+                            <!-- 제공형태 내부테이블 -->
+                            <div>
+                                <table class="w100p">
+                                    <colgroup>
+                                        <col style="width: 96px;">
+                                        <col style="width: 310px;">
+                                        <col style="width: 112px;">
+                                        <col style="width: 310px;">
+                                    </colgroup>
+                                    <tbody>
+                                    <tr class="p0">
+                                        <th class="required"><div>제공형태</div></th>
+                                        <td>
+                                            <div>
+                                                <!-- 드롭박스 -->
+                                                <div class="td-item w290 drop-box" onclick="btn_drop($(this))"><!-- [D] trigger 버튼 클릭 시 open 클래스 추가 -->
+                                                    <!-- 드롭다운 버튼영역 -->
+                                                    <p class="placeholder" id="mod_phd"><!-- [D] 선택 시 placeholder 클래스 제거 -->
+                                                        <button type="button" class="trigger drop-btn" id="MOD_PRVD_TP" value="X"><span>선택해주세요.</span></button>
+                                                    </p>
+                                                    <!-- 드롭다운 컨텐츠 -->
+                                                    <div class="drop-content">
+                                                        <p class="drop-item" name="mod_prvd_tp"><!-- [D] 선택 시 select -->
+                                                            <button type="button" id="mod_prvd_tp_C" value="C" class="drop-btn" onclick="add_prvd_tp($(this))">매장식사</button>
+                                                        </p>
+                                                        <p class="drop-item" name="mod_prvd_tp">
+                                                            <button type="button" id="mod_prvd_tp_D" value="D" class="drop-btn" onclick="add_prvd_tp($(this))">딜리버리/픽업</button>
+                                                        </p>
+                                                        <p class="drop-item" name="mod_prvd_tp">
+                                                            <button type="button" id="mod_prvd_tp_R" value="R" class="drop-btn" onclick="add_prvd_tp($(this))">사전예약</button>
+                                                        </p>
+                                                        <!--<p class="drop-item" name="mod_prvd_tp">
+                                                            <button type="button" id="mod_prvd_tp_G" value="G" class="drop-btn" onclick="add_prvd_tp($(this))">그랩앤고</button>
+                                                        </p>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <!-- 제공형태 선택 시 노출 -->
+                                        <th class="required" name="gubun_a" style="display: none;"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                                            <div>날짜선택</div>
+                                        </th>
+                                        <td name="gubun_a" style="display: none;"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                                            <div>
+                                                <div class="ip-wrap with-icon ta-left td-item">
+                                                    <input data-toggle="datepicker" name="" id="MOD_DATE" class="ip-txt" type="text" value="" placeholder="날짜선택" autocomplete="off" style="background-color: #ffffff; color: #000000" readonly><!-- 비활성화 시 readonly -->
+                                                    <i class="ic ic-calendar"></i>
+                                                    <script>
+                                                        $(function(){
+                                                            let target;
+                                                            let before_value;
+
+                                                            $('#MOD_DATE').on({
+                                                                mouseover : function(){
+                                                                    target = $(this);
+                                                                    modalDatepickerControl(target);
+                                                                },
+                                                                click : function(){
+                                                                    target = $(this);
+                                                                    modalDatepickerControl(target);
+                                                                },
+                                                                focus : function(){
+                                                                    before_value = this.value;
+                                                                },
+                                                                change : function(){
+                                                                    const date = new Date();
+
+                                                                    let year = date.getFullYear();
+                                                                    let month = date.getMonth() + 1;
+                                                                    month = month >= 10 ? month : "0" + month;
+
+                                                                    let day = date.getDate() + 1;
+                                                                    day = day >= 10 ? day : "0" + day;
+
+                                                                    let yyyymmdd = year.toString() + month.toString() + day.toString();
+
+                                                                    let after_value = this.value.replaceAll("-", "");
+
+                                                                    if(after_value < yyyymmdd){
+                                                                        this.value = before_value;
+                                                                        ComPopup.showAfltboAlert("정확한 날짜를 확인해 주세요.");
+                                                                    }
+                                                                }
+                                                            })
+
+                                                            function modalDatepickerControl(target){
+                                                                for(let modalIndex = 0; modalIndex <= $('.modal').length; modalIndex++){
+                                                                    if(target.parents('.modal.active').eq(modalIndex).hasClass('date-control') === true){
+                                                                        target.datepicker({
+                                                                            language: 'ko-KR',
+                                                                            format: 'yyyy-mm-dd',
+                                                                            startDate: new Date(),
+                                                                            autoHide : true,
+                                                                        })
+                                                                    }else if(target.parents('.modal.active').eq(modalIndex).hasClass('date-control') === false) {
+                                                                        target.datepicker({
+                                                                            language: 'ko-KR',
+                                                                            format: 'yyyy-mm-dd',
+                                                                            autoHide : true,
+                                                                        });
+                                                                    }
+                                                                }
+                                                            }
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- //내부테이블 end -->
+                        </td>
+                    </tr>
+                    <!-- 식사형태 - 제공형태 선택 시 노출-->
+                    <tr style="display: none;"  name="gubun_b"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                        <th class="required"><div>식사형태</div></th>
+                        <td colspan="3">
+                            <div>
+                                <div class="ip-ch-group flex-row">
+                                    <label class="ip-ch-label">
+                                        <input name="ch-1" id="MOD_BRUNCH" class="ip-ch" type="checkbox" value="" onclick="check_to_radio($(this))">
+                                        <span class="check"></span> 조식
+                                    </label>
+                                    <label class="ip-ch-label ml40">
+                                        <input name="ch-1" id="MOD_LUNCH" class="ip-ch" type="checkbox" value="" onclick="check_to_radio($(this))">
+                                        <!--checked-->
+                                        <span class="check"></span> 중식
+                                    </label>
+                                    <!--<label class="ip-ch-label ml40">
+                                        <input name="ch-1" id="" class="ip-ch" type="checkbox" value="" checked="">
+                                        <!--checked->
+                                        <span class="check"></span> 석식
+                                    </label>-->
+                                </div>
+                                <p class="fs-12 fc-666 mt5">*매점 그랩앤고 메뉴의 경우 중식으로 선택하여 주시기 바랍니다.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 금액숨김여부 노출-->
+                    <tr style="display: none;"  name="gubun_a"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                        <th class="vat"><div>금액숨김여부</div></th>
+                        <td colspan="3">
+                            <div>
+                                <div class="ip-ch-group flex-row">
+                                    <label class="ip-ch-label">
+                                        <input name="ch-1" id="MOD_HIDE_AMT" class="ip-ch" type="checkbox" value="" onclick="check_to_radio($(this))">
+                                        <span class="check"></span> 금액숨김
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 메뉴정보 테이블 - 제공형태 선택 시 노출 -->
+            <div class="table-wrap mt32" style="display: none;" name="gubun_a"><!-- style="display:none" 제거 -->
+                <p class="tit-02">메뉴 정보</p>
+                <table class="data-table no-bd-left mt12">
+                    <colgroup>
+                        <col style="width: 96px;">
+                        <col style="width: auto;">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th class="vat">
+                            <div>
+                                메뉴사진
+                                <span class="fs-12 fc-999 mt5 d-block">(5MB)</span>
+                            </div>
+                        </th>
+                        <td>
+                            <div>
+                                <!-- 이미지 등록 -->
+                                <div class="image_write-box mb2" id="mod_tot_img">
+                                    <div class="image w132 empty" id="mod_img"><!-- 기본이미지 = empty 클래스 추가 -->
+                                        <img id="mod_preview_img" alt="이미지 영역" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'><rect fill='rgba(0,0,0,0)' x='0' y='0' width='100%' height='100%'/></svg>">
+                                        <!-- <img src="../assets/resource/img/dummy/download 1.png" alt=""> -->
+                                    </div>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-gray-outline" type="button" onclick="btn_img()">첨부하기</button>
+                                        <button class="btn btn-sm btn-gray-outline" type="button" id="mod_init_img" onclick="init_img()" style="display: none">기본이미지로 변경</button>
+                                        <input type="file" onchange="img_upload()" id="mod_img_upload" accept="image/*" hidden>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required">
+                            <div>메뉴분류명</div>
+                        </th>
+                        <td>
+                            <div>
+                                <!-- 드롭박스 -->
+                                <div class="td-item drop-box" onclick="sel_menu_gubun($(this))"><!-- trigger 버튼 클릭 시 open 클래스 추가 -->
+                                    <!-- 드롭다운 버튼영역 -->
+                                    <p class="placeholder"><!-- 선택 시 placeholder 클래스 제거 -->
+                                        <button type="button" class="trigger drop-btn" id="MOD_MENU_GUBUN" value="X"><span>선택해주세요.</span></button>
+                                    </p>
+                                    <!-- 드롭다운 컨텐츠 -->
+                                    <div class="drop-content">
+                                        
+                                        
+                                        
+                                        <p class="drop-item" name="order_form_c" hidden><!-- 선택 시 select -->
+                                            <button type="button" class="drop-btn" order-form-tp="" prvd-tp="" data-img-path="" data-img-file-nm="비플머니" data-img-file-ext="" name="mod_menu_gubun" id="mod_menu_dv_" onclick="add_menu_gubun($(this))" value="">비플머니</button>
+                                        </p>
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                                <!-- // 2023-11-06 -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required vat">
+                            <div>메뉴명(국문)</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ip-wrap w100p type-unit style-2">
+                                    <input name="" class="ip-txt" type="text" value="" placeholder="메뉴명을 입력해 주세요.(국문)" id="MOD_MENU_NM" onkeyup="reloadTxtArea('nm')" maxlength="50">
+                                    <p class="unit"><span id="mod_nm_cnt">0</span><span>/50</span></p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴명(영문)</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ip-wrap w100p type-unit style-2">
+                                    <input name="" class="ip-txt" type="text" value="" placeholder="메뉴명을 입력해 주세요.(영문)" id="MOD_MENU_NM_EN" onkeyup="reloadTxtArea('nm_en')" maxlength="50">
+                                    <p class="unit"><span id="mod_nm_en_cnt">0</span><span>/50</span></p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴구성(국문)</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ta-group gray with-counting h84 pr70"><!-- [D] 텍스트 입력 초과 시 counting-over 클래스 추가 -->
+                                    <textarea class="ta-ip" placeholder="구성된 메뉴를 모두 입력해 주세요.(국문)" id="MOD_MENU_CTNT" onkeyup="reloadTxtArea('ctnt')" maxlength="200"></textarea>
+                                    <span class="counting" id="mod_ctnt_cnt">0/200</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>메뉴구성(영문)</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ta-group gray with-counting h84 pr70"><!-- [D] 텍스트 입력 초과 시 counting-over 클래스 추가 -->
+                                    <textarea class="ta-ip" placeholder="구성된 메뉴를 모두 입력해 주세요.(영문)" id="MOD_MENU_CTNT_EN" onkeyup="reloadTxtArea('ctnt_en')" maxlength="200"></textarea>
+                                    <span class="counting" id="mod_ctnt_en_cnt">0/200</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="required">
+                            <div>메뉴정보</div>
+                        </th>
+                        <td>
+                            <div>
+                                <!-- 메뉴정보 wrap -->
+                                <div class="td-item-group flex-column" id="MOD_MENU_INFO">
+                                    <!-- 메뉴정보 -->
+                                    <div class="td-item-group td-item w100p left gap10">
+                                        <div class="ip-wrap">
+                                            <input name="mod_nxt_menu_nm" class="ip-txt" type="text" value="" placeholder="메뉴명(국문)" maxlength="50" id="mod_first_menu">
+                                        </div>
+                                        <div class="ip-wrap">
+                                            <input name="mod_nxt_menu_nm_en" class="ip-txt" type="text" value="" placeholder="메뉴명(영문)" maxlength="50" id="mod_first_menu_en">
+                                        </div>
+                                        <div class="ip-wrap type-unit style-2">
+                                            <input name="mod_nxt_menu_kcal" class="ip-txt" type="text" value="" placeholder="열량" maxlength="10" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
+                                            <p class="unit">Kcal</p>
+                                        </div>
+                                        <div class="ip-wrap type-unit">
+                                            <input name="mod_nxt_menu_ctnt" class="ip-txt" type="text" value="" placeholder="메뉴 구성을 입력해 주세요">
+                                            <p class="unit">g</p>
+                                        </div>
+                                        <!-- 버튼 -->
+                                        <div class="btn-group w80 shrink-no">
+                                            <button class="btn btn-sm btn-gray-outline" type="button" onclick="add_menu_info()">+ 추가하기</button>
+                                        </div>
+                                    </div>
+                                    <!-- 메뉴정보 -->
+                                    <div class="td-item-group td-item w100p left gap10" name="mod_menu_info">
+                                        <div class="ip-wrap">
+                                            <input name="mod_nxt_menu_nm" class="ip-txt" type="text" value="" placeholder="메뉴명(국문)" maxlength="50">
+                                        </div>
+                                        <div class="ip-wrap">
+                                            <input name="mod_nxt_menu_nm_en" class="ip-txt" type="text" value="" placeholder="메뉴명(영문)" maxlength="50">
+                                        </div>
+                                        <div class="ip-wrap type-unit style-2">
+                                            <input name="mod_nxt_menu_kcal" class="ip-txt" type="text" value="" placeholder="열량" maxlength="10" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
+                                            <p class="unit">Kcal</p>
+                                        </div>
+                                        <div class="ip-wrap type-unit">
+                                            <input name="mod_nxt_menu_ctnt" class="ip-txt" type="text" value="" placeholder="메뉴 구성을 입력해 주세요">
+                                            <p class="unit">g</p>
+                                        </div>
+                                        <!-- 버튼 -->
+                                        <div class="btn-group w80 shrink-no">
+                                            <button class="btn-remove" type="button" onclick="add_menu_info_remove($(this))" id="mod_menu_info_remove">삭제</button>
+                                        </div>
+                                    </div>
+                                    <!-- // 메뉴정보 -->
+                                </div>
+                                <!-- // 메뉴정보 wrap end -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="vat">
+                            <div>영양정보</div>
+                        </th>
+                        <td>
+                            <div>
+                                <!-- 메뉴정보 wrap -->
+                                <div class="td-item-group flex-column" id="MOD_KCAL_INFO">
+                                    <!-- 메뉴정보 -->
+                                    <div class="td-item-group w100p left td-item gap10">
+                                        <div class="ip-wrap">
+                                            <input name="mod_kcal_info_menu_nm" class="ip-txt" type="text" value="" placeholder="성분명" maxlength="10">
+                                        </div>
+                                        <div class="ip-wrap type-unit style-2">
+                                            <input name="mod_kcal_info_menu_kcal" class="ip-txt" type="text" value="" placeholder="ex) 1000kcal">
+                                            <p class="unit"><!--Kcal--></p>
+                                        </div>
+                                        <!-- 버튼 -->
+                                        <div class="btn-group w80 shrink-no">
+                                            <button class="btn btn-sm btn-gray-outline" type="button" onclick="add_kcal_info()">+ 추가하기</button>
+                                        </div>
+                                    </div>
+                                    <!-- 메뉴정보 -->
+                                    <div class="td-item-group td-item w100p left gap10" name="mod_kcal_info">
+                                        <div class="ip-wrap">
+                                            <input name="mod_kcal_info_menu_nm" class="ip-txt" type="text" value="" placeholder="성분명" maxlength="10">
+                                        </div>
+                                        <div class="ip-wrap type-unit style-2">
+                                            <input name="mod_kcal_info_menu_kcal" class="ip-txt" type="text" value="" placeholder="ex) 1000kcal">
+                                            <p class="unit"><!--Kcal--></p>
+                                        </div>
+                                        <!-- 버튼 -->
+                                        <div class="btn-group w80 shrink-no">
+                                            <button class="btn-remove" type="button" onclick="add_kcal_info_remove($(this))" id="mod_kcal_info_remove">삭제</button>
+                                        </div>
+                                    </div>
+                                    <!-- // 메뉴정보 -->
+                                </div>
+                                <!-- 메뉴정보 wrap end -->
+                            </div>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <th class="vat">
+                            <div>원산지</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ta-group gray with-counting counting-over h82 pr70"><!-- 텍스트 입력 초과 시 counting-over 클래스 추가 ->
+                                    <textarea class="ta-ip" placeholder="원산지를 입력해주세요." id="ADD_MENU_FROM" onkeyup="reloadTxtArea('from')" maxlength="200"></textarea>
+                                    <span class="counting" id="from_cnt">0/200</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>-->
+                    <tr>
+                        <th class="required vat">
+                            <div>메뉴금액</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ip-wrap type-unit w100p">
+                                    <input name="" id="MOD_MENU_AMT" class="ip-txt" type="text" value="" placeholder="메뉴 금액을 입력해 주세요" maxlength="9" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
+                                    <p class="unit">원</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="mod_tr_add_menu_cnt">
+                        <th class="vat" id="mod_cnt_menu">
+                            <div>잔여수량</div>
+                        </th>
+                        <td>
+                            <div>
+                                <div class="ip-wrap type-unit w100p">
+                                    <input name="" id="MOD_MENU_CNT" class="ip-txt" type="text" value="" placeholder="잔여수량을 입력해 주세요" maxlength="9" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
+                                    <p class="unit">개</p>
+                                </div>
+                                <p class="fs-12 fc-666 mt5">수량은 픽업, 사전예약 메뉴일 경우 입력해 주세요.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 2026.07.06 추가 -->
+                    <tr id="mod_tr_c_soldout_yn"  style="display:none;"><!-- [D] 제공형태 선택 시 style="display:none" 제거 -->
+                        <th class="vat"><div>품절여부</div></th>
+                        <td colspan="3">
+                            <div>
+                                <div class="ip-ch-group flex-row">
+                                    <label class="ip-ch-label">
+                                        <input name="ch-1" id="MOD_C_SOLDOUT_YN" class="ip-ch" type="checkbox" value="">
+                                        <span class="check"></span> 품절
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- // 2026.07.06 추가 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="btn-group ta-center mt24">
+            <button class="btn btn-md-a btn-primary" type="button" onclick="btn_update()" id="mod_btn_save">저장</button>
+        </div>
+    </div>
+</div>
+<!--일괄 등록-->
+<div class="modal w635 active" id="add_all_menu_modal" style="display: none"><!--[D]active-->
+    <div class="inner">
+        <div class="modal-header">
+            <div class="tit-area type02">
+                <p class="tit">일괄등록</p>
+                <p class="txt-01 mt8">
+                    - <!--<a class="fc-pri underline_no" href="" id="excel_down">-->Excel 템플릿을 다운로드<!--</a>--> 후 양식에 맞추어 작성해주시기 바랍니다.<br>
+                    - 저장된 Excel 템플릿을 드래그하거나 파일선택하여 업로드하여 등록하시기 바랍니다.
+                </p>
+                <div class="btn-group mt12">
+                    <button class="btn btn-md-b btn-gray-outline" type="button" onclick="btn_excel()"><i class="ic ic-excel"></i>Excel 양식 다운로드</button>
+                </div>
+            </div>
+            <button class="btn-close" type="button" onclick="btn_close('just')">닫기</button>
+        </div>
+        <div class="modal-con">
+            <div class="upload-area">
+                <div class="inner-box" id="drag_excel">
+                    <p class="upload-info">Excel 템플릿을 이 곳에 드래그 또는
+                        <span class="upload-file fc-pri">파일 찾아보기
+                            <input type="file" class="upload-btn" id="excel_file"/>
+                        </span>
+                    </p>
+                    <div class="upload_file-list" id="excel_list" style="display: none">
+                        <div class="file-item" id="import_excel">
+<!--                            <p class="item-text"></p>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let _excel_ext = ['xls', 'xlsx', 'XLS', 'XLSX'];
+            let uploadedExcelFiles = []; // 업로드된 파일 배열
+
+            // Drag over and drop events
+            $('#drag_excel').on('dragover', function(e) {
+                e.preventDefault();
+                $(this).addClass('drag-over');
+            });
+
+            $('#drag_excel').on('dragleave', function(e) {
+                e.preventDefault();
+                $(this).removeClass('drag-over');
+            });
+
+            $('#drag_excel').on('drop', function(e) {
+                e.preventDefault();
+                $(this).removeClass('drag-over');
+                let files = e.originalEvent.dataTransfer.files;
+                $('#excel_file')[0].files = files;
+                handleFiles(files);
+            });
+
+            // Input file change event
+            $('#excel_file').on('change', function() {
+                if($(this)[0].files.length > 0){
+                    let files = $(this)[0].files;
+                    handleFiles(files);
+                }
+            });
+
+            // Upload button click event
+            $('#upload_excel').on('click', function() {
+                sendFiles(); // 업로드된 파일 배열을 전달하여 전송
+            });
+
+            // Handle files function
+            function handleFiles(files) {
+                let max_size = 5 * 1024 * 1024;
+
+                uploadedExcelFiles = [];
+                $('#import_excel').empty();
+
+                // 확장자 명 검증
+                if(!_excel_ext.includes(files[0].name.split(".").reverse()[0].toLowerCase())) {
+                    uploadedExcelFiles = [];
+                    $('#import_excel').empty();
+                    return ComPopup.showAfltboAlert('파일의 확장자를 정확히 확인해 주세요.');
+                }
+
+                if(files.length > 1){
+                    uploadedExcelFiles = [];
+                    $('#import_excel').empty();
+                    return ComPopup.showAfltboAlert('엑셀 파일은 1개만 등록 가능합니다.');
+                }
+
+                if(files[0].size > max_size){
+                    uploadedExcelFiles = [];
+                    $('#import_excel').empty();
+                    return ComPopup.showAfltboAlert("엑셀파일이 5MB 용량을 초과하였습니다.");
+                }
+
+                $('#excel_list').show();
+                uploadedExcelFiles.push(files[0]); // 파일을 업로드된 파일 배열에 추가
+                let fileId = 'file-' + uploadedExcelFiles.indexOf(files[0]);
+                let fileList = '<p class="item-text" id='+fileId+'>' + files[0].name + '</p>';
+                $('#import_excel').html(fileList); // 파일 리스트에 추가
+            }
+
+            let isSubmit = false;
+            // Function to send files to server
+            function sendFiles() {
+                let excelFile = $('#excel_file').get(0).files[0];
+
+                if(isSubmit) return;
+
+                if(!excelFile) return ComPopup.showAfltboAlert("파일을 업로드해주세요.");
+
+                let jexUploader = jexjs.plugin("upload", "ent_afltbo_menu_reg_c002", {
+                    name	  : "FILE_NM",
+                    indicator : jexjs.plugin("indicator")
+                });
+
+                jexUploader.add(excelFile);
+
+                ComUtil.startLoading();
+                isSubmit = true;
+
+                jexUploader.upload(function(response){
+                    let res_cd = "";
+                    let res_msg = "";
+
+                    if (ComUtil.isError(response)) {
+                        ComUtil.endLoading();
+                        ComPopup.showAfltboAlert("처리중 오류가 발생하였습니다.");
+                    } else {
+                        res_cd = response.RES_CD;
+                        res_msg = response.RES_MSG;
+
+                        ComUtil.endLoading();
+
+                        if(res_cd === "0000"){
+                            $('#upload_excel').prop('disabled', true);
+                            ComPopup.showAfltboAlert("등록이 완료 되었습니다.", "go_home");
+                        } else {
+                            if(res_cd === "E001" || res_cd === "E002" || res_cd === "E003" || res_cd === "E004" || res_cd === "E101"){
+                                ComPopup.showAfltboAlert(res_msg, "go_home");
+                            }else{
+                                if(res_msg === undefined){
+                                    ComPopup.showAfltboAlert("처리중 오류가 발생하였습니다.");
+                                }else{
+                                    if(res_cd === "E999"){
+                                        ComPopup.showAfltboAlert(res_msg);
+                                    }else{
+                                        ComPopup.showAfltboAlert("파일 내용을 정확히 입력해 주세요.");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    isSubmit = false;
+                })
+
+                /*let fileNmList = uploadedExcelFiles.map((file) => {
+                    return file.name;
+                }).join('|');
+
+                let formData = new FormData();
+
+                for (let i = 0; i < uploadedExcelFiles.length; i++) {
+                    formData.append('FILE_NM', uploadedExcelFiles[i]); // 파일 리스트
+                }
+
+                $.ajax({
+                    url: '/ent_afltbo_menu_reg_c002.act',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    async: false,
+                    success: function(result) {
+                        // 전송 후 파일 배열 비우기
+                        uploadedExcelFiles = [];
+
+                        console.log(result);
+
+                        // if(result.RES_CD === "0000"){
+                        //     ComPopup.showAfltboAlert("파일 업로드가 완료되었습니다.", "go_home");
+                        // }else{
+                        //
+                        //     ComPopup.showAfltboAlert(result.RES_MSG);
+                        // }
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(xhr + "\n" + status + "\n" + error);
+                        ComPopup.showAfltboAlert(error);
+                    }
+                });*/
+            }
+
+            function go_home(){
+                $('#upload_excel').prop('disabled', false);
+                // 메뉴등록 화면으로 이동
+                location.href = "/ent_afltbo_menu_reg.act";
+            }
+        </script>
+        <div class="btn-group ta-center mt24">
+            <button class="btn btn-md-a btn-primary-outline" type="button" onclick="btn_close('just')">취소</button>
+            <button class="btn btn-md-a btn-primary" type="button" id="upload_excel">저장</button>
+        </div>
+    </div>
+</div>
+<div class="modal w635 active" id="add_all_img_modal" style="display: none"><!--[D]active-->
+    <div class="inner">
+        <div class="modal-header">
+            <div class="tit-area type02">
+                <p class="tit">사진첨부</p>
+                <p class="txt-01 mt8">
+                    - 메뉴 이미지를 드래그하거나 파일선택하여 업로드하여 등록하시기 바랍니다.<br>
+                    - 등록된 메뉴 이미지명에 맞추어 메뉴 이미지가 등록됩니다. 최대 20장까지 등록 가능합니다.<br>
+                    (1장당 5MB / 최대 20장 100MB)
+                    - 사진 파일명은 “날짜8자리_식사형태N.jpg”로 등록해 주세요.<br>
+                    - 예시) 20231010_조식1.jpg
+                </p>
+            </div>
+            <button class="btn-close" type="button" onclick="btn_close('just')">닫기</button>
+        </div>
+        <div class="modal-con">
+            <div class="upload-area">
+                <div class="inner-box" id="drag_img">
+                    <p class="upload-info">파일을 이 곳에 드래그 또는
+                        <span class="upload-file fc-pri">파일 찾아보기
+                            <input type="file" class="upload-btn" multiple accept="image/*" id="img_file"/>
+                        </span>
+                    </p>
+                    <div class="upload_file-list" id="img_list" style="display: none">
+                        <!--<div class="file-item" id="">
+                            <p class="item-text">에버랜드에서 찍은 사진<span>.png</span></p>
+                            <button type="button" class="item-btn ic ic-remove2"><span>삭제</span></button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let _img_ext = ['jpg', 'jpeg', 'png', 'gif', 'JPG', 'JPEG', 'PNG', 'GIF'];
+            let uploadedImgFiles = []; // 업로드된 파일 배열
+
+            // Drag over and drop events
+            $('#drag_img').on('dragover', function(e) {
+                e.preventDefault();
+                $(this).addClass('drag-over');
+            });
+
+            $('#drag_img').on('dragleave', function(e) {
+                e.preventDefault();
+                $(this).removeClass('drag-over');
+            });
+
+            $('#drag_img').on('drop', function(e) {
+                e.preventDefault();
+                $(this).removeClass('drag-over');
+                let files = e.originalEvent.dataTransfer.files;
+                handleFiles(files);
+            });
+
+            // Input file change event
+            $('#img_file').on('change', function() {
+                let files = $(this)[0].files;
+                handleFiles(files);
+            });
+
+            $('#img_file').click(function(e) {
+                e.target.value = '';
+            });
+
+            // Upload button click event
+            $('#upload_img').on('click', function() {
+                sendFiles(); // 업로드된 파일 배열을 전달하여 전송
+            });
+
+            // Handle files function
+            function handleFiles(files) {
+                // uploadedImgFiles = [];
+                // $('#img_list').empty();
+                let uploadedImgFilesTemp = [];
+
+                for (let i = 0; i < files.length; i++) {
+                    // 용량 검증
+                    if(files[i].size > (5 * 1024 *1024)) {
+                        // uploadedImgFiles = [];
+                        // $('#img_list').empty();
+                        return ComPopup.showAfltboAlert('파일 사이즈는 5MB까지 가능합니다.');
+                    }
+
+                    // 확장자 명 검증
+                    if(!_img_ext.includes(files[i].name.split(".").reverse()[0].toLowerCase())) {
+                        // uploadedImgFiles = [];
+                        // $('#img_list').empty();
+                        return ComPopup.showAfltboAlert('이미지 파일은(jpg, jpeg, png, gif) 형식만 등록 가능합니다.');
+                    }
+
+                    let fileList = "";
+
+                    $('#img_list').show();
+
+                    if(uploadedImgFiles.length > 0){
+                        for(let k = 0 ; k < uploadedImgFiles.length ; k ++){
+                            if(uploadedImgFiles[k].name === files[i].name){
+                                return;
+                            }
+                        }
+
+                    }
+
+                    uploadedImgFilesTemp.push(files[i]); // 파일을 업로드된 파일 배열에 추가
+                    let fileId = 'file-' + files[i].size;
+                    fileList = '<div class="file-item" id="' + fileId + '"><p class="item-text">' + files[i].name + '</p><button name="img_file" type="button" onclick="img_delete(event)" class="item-btn ic ic-remove" data-file-id="' + fileId + '"><span class="blind">삭제</span></button></div>';
+
+                    $('#img_list').append(fileList); // 파일 리스트에 추가
+
+                    // $('#img_list').show();
+                    // uploadedImgFiles.push(files[i]); // 파일을 업로드된 파일 배열에 추가
+                    // let fileId = 'file-' + files[i].size;
+                    // let fileList = '<div class="file-item" id="' + fileId + '"><p class="item-text">' + files[i].name + '</p><button name="img_file" type="button" onclick="img_delete(event)" class="item-btn ic ic-remove" data-file-id="' + fileId + '"><span class="blind">삭제</span></button></div>';
+                    // $('#img_list').append(fileList); // 파일 리스트에 추가
+                }
+
+                for(let j = 0 ; j < uploadedImgFilesTemp.length ; j ++){
+                    uploadedImgFiles.push(uploadedImgFilesTemp[j]);
+                }
+
+                console.log(uploadedImgFiles);
+            }
+
+            function img_delete(e){
+                let fileId = e.target.getAttribute('data-file-id');
+                $('#' + fileId).remove();
+
+                let target_nm = e.target.parentElement.firstElementChild.innerHTML;
+
+                for(let i = 0 ; i < uploadedImgFiles.length ; i ++){
+                    if(uploadedImgFiles[i].name === target_nm){
+                        uploadedImgFiles.splice(i, 1);
+                    }
+                }
+            }
+
+            // Function to send files to server
+            function sendFiles() {
+                let fileNmList = uploadedImgFiles.map((file) => {
+                    console.log(file.name);
+                    return file.name;
+                }).join('|');
+                let formData = new FormData();
+                for (let i = 0; i < uploadedImgFiles.length; i++) {
+                    formData.append('FILE', uploadedImgFiles[i]); // 파일 리스트
+                }
+                formData.append("FILE_NMS", fileNmList); // 파일 이름 리스트
+                ComUtil.startLoading();
+                $.ajax({
+                    url: '/ent_afltbo_menu_reg_c003.jct',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        ComUtil.endLoading();
+
+                        if(response.RES_CD === "0000"){
+                            $('#upload_img').prop('disabled', false);
+                            ComPopup.showAfltboAlert("사진 업로드가 완료되었습니다.", "go_home");
+                        }else{
+                            ComPopup.showAfltboAlert(response.RES_MSG);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                    }
+                });
+            }
+
+            function go_home(){
+                $('#upload_img').prop('disabled', false);
+                // 전송 후 파일 배열 비우기
+                uploadedImgFiles = [];
+
+                // 메뉴등록 화면으로 이동
+                location.href = "/ent_afltbo_menu_reg.act";
+            }
+        </script>
+        <div class="btn-group ta-center mt24">
+            <button class="btn btn-md-a btn-primary-outline" type="button" onclick="btn_close('just')">취소</button>
+            <button class="btn btn-md-a btn-primary" type="button" id="upload_img">저장</button>
+        </div>
+    </div>
+</div>
+<div class="dim active" id="dim" style="display: none"></div>
+<form name="form1" id="form1">
+    <input type="hidden" name="FILE_TYPE"   id="file_type"  value="doc" />
+    <input type="hidden" name="FILE_NAME"   id="file_name"  value="reg_menu_templ.xlsx" />
+    <input type="hidden" name="FILE_PATH"   id="file_path"  value="/WAS_DATA/webRoot/bls/data/down/"/>
+</form>
+<iframe name="ifrm" width="0" height="0" style="display:none;"></iframe>
+</body>
+</html>

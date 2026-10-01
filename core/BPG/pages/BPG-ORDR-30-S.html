@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플오더 가맹점 관리에 신청 가맹점 노출</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-ORDR-30-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="BP_AFLT_SEQ"  name="BP_AFLT_SEQ"  value="" />
+    <input type="hidden" id="MYBAG_SEQ"  name="MYBAG_SEQ"  value="" />
+    <input type="hidden" id="LAT"  name="LAT"  value="" />
+    <input type="hidden" id="LNG"  name="LNG"  value="" />
+    <input type="hidden" id="SMT_ODR_LOC_AGR_YN"  name="SMT_ODR_LOC_AGR_YN"  value="" />
+    <input type="hidden" id="MEMB_DELIV_CNT"  name="MEMB_DELIV_CNT"  value="" />
+</form>
+<!-- wrap -->
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>비플오더</h1>
+        <a data-element-id="BPG-ORDR-30-S-e06" href="#" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+    </div>
+    <!-- // header -->
+
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <div class="content">
+            <!-- 비플오더 -->
+            <!-- 주문내역, 장바구니 -->
+            <div class="bpOder_util">
+                <a data-element-id="BPG-ORDR-30-S-e07" class="oder_detail" id="oder_detail"><span>주문내역</span></a>
+                <a data-element-id="BPG-ORDR-30-S-e08" class="cart" id="cart"><span>장바구니</span></a><!-- 장바구니에 메뉴 추가/제거 시 menu-add 클래스 추가/제거 -->
+            </div>
+            <div class="flexWrap no_vh">
+                <div class="bpleOder"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+                    <!-- 메인 -->
+                    <div class="oder_main">
+                        <!-- 위치정보, 분류 -->
+                        <div class="setting">
+                            <div class="loca">
+                                <span class="current"></span>
+                                <a data-element-id="BPG-ORDR-30-S-e09" class="loca_btn" id="loca_btn">현재위치</a>
+                            </div>
+                        </div>
+                        <!-- 타이틀박스 -->
+                        <div class="title_box" id="title_box" style="display:none;">
+                            <h2 class="sub_title extra_01">식사배송 서비스</h2>
+                        </div>
+                        <!-- 매장목록 - 오피스푸드 -->
+                        <div class="store_w" id="meal_service">
+                            <!-- list -->
+                            <!--<div class="list">
+                                <a href="#none">
+
+                                    &lt;%&ndash;가맹점 분류별 아이콘 클래스 명 img -> 가맹점 로고 추가 시 분류아래 분류별 클래스 삭제 (img만 남기면됨)&ndash;%&gt;
+                                    &lt;%&ndash;음식점/카페		= restr&ndash;%&gt;
+                                    &lt;%&ndash;농산물/청과		= agri&ndash;%&gt;
+                                    &lt;%&ndash;축산물/정육		= meat&ndash;%&gt;
+                                    &lt;%&ndash;수산물/횟집		= seafood&ndash;%&gt;
+                                    &lt;%&ndash;식료품/반찬		= grocery&ndash;%&gt;
+                                    &lt;%&ndash;학원/교육		= edu&ndash;%&gt;
+                                    &lt;%&ndash;의료/보건		= medi&ndash;%&gt;
+                                    &lt;%&ndash;미용/패션		= beauty&ndash;%&gt;
+                                    &lt;%&ndash;가전/가구		= interior&ndash;%&gt;
+                                    &lt;%&ndash;서비스업		= service&ndash;%&gt;
+                                    &lt;%&ndash;기타 도/소매	= retail&ndash;%&gt;
+
+                                    <p class="img restr">
+                                        <img alt="" src="../assets/_sample/card.svg">
+                                    </p>
+                                    <div class="info">
+                                        <p class="name">그린샐러드 문래창작점</p>
+                                        <p class="distance">매장까지 <strong>0.2km</strong></p>
+                                        <div class="etc">
+                                            <span>배달</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>-->
+                        </div>
+                        <div class="title_box justify">
+                            <h2 class="sub_title extra_01">일반주문</h2>
+                            <p class="sort">
+                                <a data-element-id="BPG-ORDR-30-S-e10" href="#none">거리순</a>
+                            </p>
+                        </div>
+                        <!-- 매장목록 -->
+                        <div class="store_w" id="normal_order">
+                            <!-- list -->
+<!--                            <div class="list">-->
+<!--                                <a href="#none">-->
+<!--                                    <!---->
+<!--                                        가맹점 분류별 아이콘 클래스 명 img -> 가맹점 로고 추가 시 분류아래 분류별 클래스 삭제 (img만 남기면됨)-->
+<!--                                        음식점/카페		= restr-->
+<!--                                        농산물/청과		= agri-->
+<!--                                        축산물/정육		= meat-->
+<!--                                        수산물/횟집		= seafood-->
+<!--                                        식료품/반찬		= grocery-->
+<!--                                        학원/교육		= edu-->
+<!--                                        의료/보건		= medi-->
+<!--                                        미용/패션		= beauty-->
+<!--                                        가전/가구		= interior-->
+<!--                                        서비스업		= service-->
+<!--                                        기타 도/소매	= retail-->
+<!--                                    ->-->
+<!--                                    <p class="img restr">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">그린샐러드 문래창작점</p>-->
+<!--                                        <p class="distance">매장까지 <strong>0.2km</strong></p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                            <span>배달</span>-->
+<!--                                            <span>픽업</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list"><!-- 매장 영업 준비중 일 시 "close" 클래스 추가 ->-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img agri"><img src="../assets/resource/images/profile/img_profile_store_imsi.png" alt=""></p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list close"><!-- 매장 영업 준비중 일 시 "close" 클래스 추가/제거 ->-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img agri">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                            <span>배달</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list">-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img meat">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list">-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img seafood">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                            <span>배달</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list">-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img grocery">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list">-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img edu">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span>픽업</span>-->
+<!--                                            <span>배달</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list">-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img medi">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span>픽업</span>-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list">-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img beauty">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                            <span>픽업</span>-->
+<!--                                            <span>배달</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list">-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img interior">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                            <span>픽업</span>-->
+<!--                                            <span>배달</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list">-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img service">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                            <span>픽업</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <!-- list ->-->
+<!--                            <div class="list">-->
+<!--                                <a href="#none">-->
+<!--                                    <p class="img retail">-->
+<!--                                        <img alt="" src="../assets/_sample/card.svg">-->
+<!--                                    </p>-->
+<!--                                    <div class="info">-->
+<!--                                        <p class="name">H 카페 영등포점</p>-->
+<!--                                        <p class="distance">매장까지 <span>50</span>m</p>-->
+<!--                                        <div class="etc">-->
+<!--                                            <span class="hall">매장</span>-->
+<!--                                            <span>픽업</span>-->
+<!--                                            <span>배달</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <!-- //매장목록 -->
+                    </div>
+                    <!-- //메인 -->
+                </div>
+            </div>
+            <!-- //비플오더 -->
+        </div>
+        <!-- // content -->
+
+        <!-- 하단 고정버튼 -->
+        <div class="btn_botFix_w bpOder" id="mybag" style="display:none;"><!-- 장바구에 상품 있을경우 or 가맹점 영업 준비중 일 경우 style="display:block;" -->
+            <div class="inner">
+                <a class="round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+                    <p class="amount">
+                        <strong></strong>원
+                    </p>
+                    <p class="more">
+                        장바구니 보기
+                        <span class="count"></span>
+                    </p>
+                </a>
+            </div>
+        </div>
+        <!-- //하단 고정버튼 -->
+    </div>
+    <!-- // container -->
+    </div>
+</div>
+<!-- // wrap -->
+<!-- 레이어 -->
+<div class="layer_overlay" style="display:none;">
+    <div class="layer_bPop">
+        <div class="pop_box">
+            <div class="pop_content">
+            <!-- 약관동의 -->
+                <div class="terms_agree_pop">
+                    <h2 class="tit"> 약관동의 </h2>
+                    <div class="agree_txt">
+                        <p>
+                            가맹점찾기 서비스를 이용하기 위해<br>
+                            <span class="under_line">아래 약관에 동의</span>해 주세요.
+                        </p>
+                    </div>
+                    <p class="link"><a id="agree_pop">[필수] 위치정보 수집 및 이용 동의</a></p>
+                </div>
+                <!-- 하단버튼 -->
+<!--                <div class="ly_pop_btw btns_half mgt0">-->
+<!--                    <a class="btn-style-h46 typeB short round_r8 pd0" id="disagree">동의하지 않음</a>-->
+<!--                    <a class="btn-style-h46 typeA long round_r8 pd0" id="agree">동의함</a>-->
+<!--                </div>-->
+            <!-- //약관동의 -->
+            </div>
+            <div class="pop_button btns">
+                <a href="#" class="typeB" id="disagree">동의하지않음</a>
+                <a href="#" class="typeA" id="agree">동의함</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //레이어 -->
+
+<!-- modal overlay -->
+<div id="clause_modal" class="modaloverlay type1" style="display: none">
+    <div class="lytb"><div class="lytb_row"><div class="lytb_td">
+        <!-- layerpopup -->
+        <div class="layer_style1">
+            <div class="layer_po">
+                <a class="btn_r" onclick="$('#clause_modal').hide();"><span class="btn_close"><span class="blind">닫기</span></span></a>
+                <div class="cont2">
+                    <div class="ly_st_tit">
+                        <p>위치기반서비스 이용약관</p>
+                    </div>
+
+                    <div class="ly_st_clause">
+
+                    </div>
+                    <div class="ly_st_btn" onclick="$('#clause_modal').hide();">
+                        <a class="on">확인</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //layerpopup -->
+    </div></div></div>
+</div>
+<!-- //modal overlay -->
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>KSQR온가신등록_사업자번호 입력</title>
+  <link rel="stylesheet" href="../assets/ksqr_resource/css/ksqr_style.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KSQR-10-20-10-S">
+<div class="wrap">
+        <div class="header floating-back-header floating-sticky">
+            <h1>신규 가맹점 신청</h1>
+            <a data-element-id="MCH-KSQR-10-20-10-S-e06" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+        </div>
+        <!-- // header -->
+
+        <div class="container">
+            <div class="content">
+                <!-- 신규가맹점 신청 -->
+                <div class="new_store">
+                    <div class="join addBtn-pb58">
+                        <h2 class="step_txt">
+                            신청하실 가맹점의<br>
+                            사업자등록번호를 입력해 주세요.
+                        </h2>
+                        <div class="ipt_area">
+                            <div class="ipt_bx"><!-- 입력 시 ipt 클래스 추가 -->
+                                <h3>사업자등록번호</h3>
+                                <div class="ipt">
+                                    <input data-element-id="MCH-KSQR-10-20-10-S-e08" type="tel" value="" placeholder="사업자등록번호 숫자 10자리 입력" id="biz_no" maxlength="10" jex-input="onlyNumber" onkeyup="fill();">
+                                </div>
+                            </div>
+                            <div class="ipt_bx"><!-- 입력 시 ipt 클래스 추가 -->
+                                <h3>종사업장 번호가 있나요?</h3>
+                                <div class="sel_bx justify">
+                                    <ul>
+                                        <li><label><input data-element-id="MCH-KSQR-10-20-10-S-e09" type="radio" name="sub_biz_yn" id="Y" value="Y">네</label></li>
+                                        <li><label><input data-element-id="MCH-KSQR-10-20-10-S-e10" type="radio" name="sub_biz_yn" id="N" value="N" checked>아니요</label></li>
+                                    </ul>
+                                </div>
+                                <!-- 아니오 체크 선택 시 숨김 -->
+                                <div class="ipt" style="display: none;" id="ipt_bx2">
+                                    <input type="tel" value="" placeholder="종사업장번호 숫자 4자리를 입력해 주세요." id="sub_biz_cd" maxlength="4" jex-input="onlyNumber" onkeyup="fill();">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-tip">
+                            <h3 class="tip__tit">가맹점 신청 안내</h3>
+                            <div class="tip__con">
+                                <ul class="list_bar">
+                                    <li>개인사업자는 대표자 본인만 「가맹점 가입 신청서」를 작성할 수 있습니다.</li>
+                                    <li>가입이 승인된 후 「가맹점 고객확인서」를 작성해 주세요. 고객확인제도를 수행하지 않은 가맹점은 결제가 제한될 수 있습니다.</li>
+                                    <li>단, 본사(본점)와 사업자등록번호가 같은 종된 사업장(프랜차이즈 직영점)인 경우 본사의 고객확인제도 정보 등록 및 심사가 진행되면 고객확인제도를 중복 수행하지 않아도 됩니다. 재이행 시점 도래 시에도 본사가 고객확인제도 이행을 완료하면 종된 사업장에 자동 적용됩니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 하단 플로팅 영역 -->
+                <div class="btn_botFix_w">
+                    <div class="inner bg_white">
+                        <a data-element-id="MCH-KSQR-10-20-10-S-e07" class="btn_default btn-style-h48 round_r6" id="btnNext" style="pointer-events:none;"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                            <span>다음</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+</body>
+</html>

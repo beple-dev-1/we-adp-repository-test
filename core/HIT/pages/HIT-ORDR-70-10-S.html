@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>엔터프라이즈 주간메뉴 전체보기 화면</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-ORDR-70-10-S">
+<div class="wrap js-wrap bg-f7">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky flex-end">
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">전체 보기</h1>
+        </div>
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-ORDR-70-10-S-e04" class="hd-btn close" onclick="uf_back();"><span class="blind-i">닫기</span></a>
+        </nav>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap" style="overflow: auto;">
+        <div class="weekely-meal">
+            <!-- 컨테이너 -->
+            <section class="weekely-container" style="display:;"><!-- [D] 메뉴 없을 시 display:none; -->
+                <div class="weekely-header">
+                    <div class="flex-row" id="date"><!-- sample:begin -->2026.09.02<!-- sample:end --></div>
+                </div>
+                <div class="weekely-meal-box">
+                    <!-- 조식 -->
+                    <article class="meal__detail-box" id="brunch"><!-- sample:begin --><div class="detail-item-wrap"><ul class="item-list"><li class="list"><div class="list-hd"><p class="title icon sun-13">조식</p></div><div class="item"><p class="course"></p><p class="menu-name tx_ellipsis"></p><p class="menu-descrition"></p></div></li></ul></div><!-- sample:end --></article>
+                    <!-- 중식 -->
+                    <article class="meal__detail-box" id="lunch"><!-- sample:begin --><div class="detail-item-wrap"><ul class="item-list"><li class="list"><div class="list-hd"><p class="title icon sun-13">중식</p></div><div class="item"><p class="course"></p><p class="menu-name tx_ellipsis"></p><p class="menu-descrition"></p></div></li></ul></div><!-- sample:end --></article>
+                </div>
+            </section>
+        </div>
+        <!-- 하단 플로팅 박스 -->
+        <section class="floating-container bottom">
+            <!-- 시작지점으로 이동 버튼 -->
+            <article class="page-top js-page-top">
+                <button data-element-id="HIT-ORDR-70-10-S-e03"><span class="blind-i">시작지점으로</span></button>
+            </article>
+        </section>
+    </main>
+</div>
+</body>
+</html>

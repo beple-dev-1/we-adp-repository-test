@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>고객확인서등록_거래정보등록</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KYC-40-S">
+<textarea data-element-id="MCH-KYC-40-S-e11" style="display: none" id="onloadData"></textarea>
+    <form id="frm">
+        <input type="hidden" id="AML_SEQ" name="AML_SEQ" value="" />
+        <input type="hidden" id="aml_ci" name="CI" value="" />
+        <input type="hidden" id="aml_ac" name="AC" value="" />
+    </form>
+
+	<div class="wrap">
+	    <div class="header floating-back-header floating-sticky">
+	        <h1>가맹점 고객확인서</h1>
+			<a data-element-id="MCH-KYC-40-S-e09" id="btn_goback" class="btn-history-back">뒤로가기</a>
+		</div>
+	    <!-- // header -->
+	
+	    <div class="container">
+	        <div class="content">
+	            <!-- 고객확인서 -->
+	            <section class="customer-verification js-cv-container">
+	
+	                <div class="step-box">
+	                    <ol class="step__list">
+	                        <li class="step__item"><span>1</span></li>
+	                        <li class="step__item"><span>2</span></li>
+	                        <li class="step__item on"><span>3</span></li>
+	                        <li class="step__item"><span>4</span></li>
+	                    </ol>
+	                </div>
+	
+	                <!-- 사업자 정보 -->
+	                <div class="verification-section">
+	                    <article class="verification__header">
+	                        <h2 class="header__title">거래 정보</h2>
+	                    </article>
+	    
+	                    <!-- 정보 form -->
+	                    <article class="verification__content mgt32">
+	                        <!-- 
+	                            form input 상태별 attr 아래 속성 추가할 것.
+	    
+	                            읽기전용 = readonly 추가
+	                            비활성화 = disabled 추가
+	                        -->
+	                        <div class="form-box">
+	                            <!-- 거래 목적 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label">거래 목적</h3>
+	                                </div>
+	    
+	                                <div class="form__item-wrap selection_box">
+	                                    <div class="drop-type2 js-drop_box">
+	                                        <p class="drop__trigger js-drop_trigger placeholder"><!-- 선택 시 placeholder 클래스 제거 -->
+	                                            <button data-element-id="MCH-KYC-40-S-e07" type="button" class="trigger-button" data-value="" id="purpose_select">거래 목적 선택</button>
+	                                            </p>
+	    
+	                                        <div class="drop__content js-drop_content" style="display: none">
+	                                            <ul class="content__item-list">
+	                                                <li data-value="EP" class="content__item"><button type="button" class="item-button" >간편결제서비스</button></li>
+	                                                <li data-value="PG" class="content__item"><button type="button" class="item-button" >지급결제대행</button></li>
+	                                                <li data-value="ET" class="content__item"><button type="button" class="item-button" >기타</button></li>
+	                                            </ul>
+	                                        </div>
+	                                    </div>
+	                                    <!-- 기타 선택 시 노출 -->
+	                                    <div class="type-box" style="display: none"><!-- 기타 선택 시 display: none; 제거 -->
+	                                        <input type="text" value="" id="other_input1" maxlength="50" placeholder="기타를 선택한 경우 상세 내용 작성" onkeyup='this.value=this.value.replace(/[<>\"]/g,"");'>
+	                                    </div>
+	                                </div>
+	                            </div>
+	
+	                            <!-- 거래 자금의 원천 및 출처 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label">거래 자금의 원천 및 출처</h3>
+	                                </div>
+	    
+	                                <div class="form__item-wrap selection_box">
+	                                    <div class="drop-type2 js-drop_box">
+	                                        <p class="drop__trigger js-drop_trigger placeholder"><!-- 선택 시 placeholder 클래스 제거 -->
+	                                            <button data-element-id="MCH-KYC-40-S-e08" type="button" class="trigger-button" data-value="" id="cryto_origin_select">거래 자금의 원천 및 출처 선택</button>
+	                                            </p>
+	    
+	                                        <div class="drop__content js-drop_content" style="display: none">
+	                                            <ul class="content__item-list">
+	                                                <li data-value="S" class="content__item"><button type="button" class="item-button" >사업소득</button></li>
+	                                                <li data-value="P" class="content__item"><button type="button" class="item-button" >물품 구매 대금</button></li>
+	                                                <li data-value="F" class="content__item"><button type="button" class="item-button" >금융소득(이자 및 배당)</button></li>
+	                                                <li data-value="G" class="content__item"><button type="button" class="item-button" >지원금/기부금</button></li>
+	                                                <li data-value="A" class="content__item"><button type="button" class="item-button" >부동산소득</button></li>
+	                                                <li data-value="E" class="content__item"><button type="button" class="item-button" >기타</button></li>
+	                                            </ul>
+	                                        </div>
+	                                    </div>
+	
+	                                    <!-- 기타 선택 시 노출 -->
+	                                    <div class="type-box" style="display: none"><!-- 기타 선택 시 display: none; 제거 -->
+	                                        <input type="text" value="" id="other_input2" maxlength="50" placeholder="기타를 선택한 경우 상세 내용 작성" onkeyup='this.value=this.value.replace(/[<>\"]/g,"");'>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </article>
+	                </div>
+	
+	                <!-- 가상자산사업 취급 여부 확인 -->
+				<div class="verification-section">
+					<article class="verification__header">
+						<h2 class="header__title">가상자산사업 취급 여부 확인</h2>
+					</article>
+	
+					<!-- 정보 form -->
+					<article class="verification__content mgt32">
+						<!-- 
+							form input 상태별 attr 아래 속성 추가할 것.
+	
+							읽기전용 = readonly 추가
+							비활성화 = disabled 추가
+						-->
+						<div class="form-box">
+							<!-- 2024-10-14 -> 1단계에서 이동됨 -->
+							<div class="form__item item-accent">
+								<div class="form__item-header">
+									<h3 class="form__label">취급 품목 확인</h3>
+								</div>
+		
+								<div class="form__item-wrap">
+									<p class="form__text">가상자산 취급업소 또는 가상자산을 취급할 예정입니까?</p>
+									<div class="type-radio mgt16">
+										<!-- 아니요 선택 시 아래 항목 비활성화 -->
+										<label class="radio__label"><input type="radio" name="crypto"><span>네</span></label>
+										<label class="radio__label"><input type="radio" name="crypto"><span>아니요</span></label>
+									</div>
+								</div>
+							</div>
+							<!-- // 2024-10-14 -->
+
+							<!-- 회사가 제공하는 서비스 내용 -->
+							<div class="form__item">
+								<div class="form__item-header">
+									<h3 class="form__label">회사가 제공하는 서비스 내용</h3>
+								</div>
+
+								<div class="form__item-wrap">
+									<!-- 기타 선택 시 노출 -->
+									<div class="type-box"><!-- 비활성화 시 item-disabled 클래스 추가 -->
+										<input data-element-id="MCH-KYC-40-S-e12" type="text" value="" id="service_input" maxlength="50" placeholder="제공 중인 서비스 내용 입력" onkeyup='this.value=this.value.replace(/[<>\"]/g,"");'><!-- 읽기전용 = readonly, 비활성화 = disabled -->
+									</div>
+								</div>
+							</div>
+
+							<!-- 실명확인 입출금계정 서비스를 이용하고 있습니까? -->
+							<div class="form__item">
+								<div class="form__item-header">
+									<h3 class="form__label line-h22">실명확인 입출금계정 서비스를 이용하고 있습니까?</h3>
+								</div>
+
+								<div class="form__item-wrap">
+									<div class="type-radio">
+										<label class="radio__label">
+											<input type="radio" name="step3-1"><!-- 비활성화 시 disabled 추가 -->
+											<span>네</span>
+										</label>
+										<label class="radio__label">
+											<input type="radio" name="step3-1"><!-- 비활성화 시 disabled 추가 -->
+											<span>아니요</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<!-- 실명확인 입출금계정 서비스를 이용하실 계획이 있습니까? -->
+							<div class="form__item">
+								<div class="form__item-header">
+									<h3 class="form__label line-h22">실명확인 입출금계정 서비스를 이용하실 계획이 있습니까?</h3>
+								</div>
+
+								<div class="form__item-wrap">
+									<div class="type-radio">
+										<label class="radio__label">
+											<input type="radio" name="step3-2"><!-- 비활성화 시 disabled 추가 -->
+											<span>네</span>
+										</label>
+										<label class="radio__label">
+											<input type="radio" name="step3-2"><!-- 비활성화 시 disabled 추가 -->
+											<span>아니요</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<!-- 이용자의 생년월일, 주소, 연락처 등을 포함한 신원사항 확인하고 있습니까? -->
+							<div class="form__item">
+								<div class="form__item-header">
+									<h3 class="form__label line-h22">이용자의 생년월일, 주소, 연락처 등을 포함한 신원사항을 확인하고 있습니까?</h3>
+								</div>
+
+								<div class="form__item-wrap">
+									<div class="type-radio">
+										<label class="radio__label">
+											<input type="radio" name="step3-3"><!-- 비활성화 시 disabled 추가 -->
+											<span>네</span>
+										</label>
+										<label class="radio__label">
+											<input type="radio" name="step3-3"><!-- 비활성화 시 disabled 추가 -->
+											<span>아니요</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<!-- 회사의 고유재산과 이용자의 예탁, 거래금을 분리하여 관리하고 있습니까? -->
+							<div class="form__item">
+								<div class="form__item-header">
+									<h3 class="form__label line-h22">회사의 고유재산과 이용자의 예탁, 거래금을 분리하여 관리하고 있습니까?</h3>
+								</div>
+
+								<div class="form__item-wrap">
+									<div class="type-radio">
+										<label class="radio__label">
+											<input type="radio" name="step3-4"><!-- 비활성화 시 disabled 추가 -->
+											<span>네</span>
+										</label>
+										<label class="radio__label">
+											<input type="radio" name="step3-4"><!-- 비활성화 시 disabled 추가 -->
+											<span>아니요</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<!-- 이용자별 거래내역을 구분하여 관리하고 있습니까? -->
+							<div class="form__item">
+								<div class="form__item-header">
+									<h3 class="form__label line-h22">이용자별 거래내역을 구분하여 관리하고 있습니까?</h3>
+								</div>
+
+								<div class="form__item-wrap">
+									<div class="type-radio">
+										<label class="radio__label">
+											<input type="radio" name="step3-5"><!-- 비활성화 시 disabled 추가 -->
+											<span>네</span>
+										</label>
+										<label class="radio__label">
+											<input type="radio" name="step3-5"><!-- 비활성화 시 disabled 추가 -->
+											<span>아니요</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<!-- 이용자를 상대로 가상통화는 법정화폐가 아니라는 사실과 가상통화 위험에 대한 고지 및 설명하고 있습니까? -->
+							<div class="form__item">
+								<div class="form__item-header">
+									<h3 class="form__label line-h22">이용자를 상대로 가상통화는 법정화폐가 아니라는 사실과 가상통화 위험을 고지 및 설명하고 있습니까?</h3>
+								</div>
+
+								<div class="form__item-wrap">
+									<div class="type-radio">
+										<label class="radio__label">
+											<input type="radio" name="step3-6"><!-- 비활성화 시 disabled 추가 -->
+											<span>네</span>
+										</label>
+										<label class="radio__label">
+											<input type="radio" name="step3-6"><!-- 비활성화 시 disabled 추가 -->
+											<span>아니요</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<!-- 가상화폐관련 집금을 위해 임직원 계좌 등 별도의 계좌를 운용하고 있습니까? -->
+							<div class="form__item">
+								<div class="form__item-header">
+									<h3 class="form__label line-h22">가상화폐관련 집금을 위해 임직원 계좌 등 별도의 계좌를 운용하고 있습니까?</h3>
+								</div>
+
+								<div class="form__item-wrap">
+									<div class="type-radio">
+										<label class="radio__label">
+											<input type="radio" name="step3-7"><!-- 비활성화 시 disabled 추가 -->
+											<span>네</span>
+										</label>
+										<label class="radio__label">
+											<input type="radio" name="step3-7"><!-- 비활성화 시 disabled 추가 -->
+											<span>아니요</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<!-- 대한민국 정부에서 발표하는 가상통화와 관련한 정책의 준수하고 있습니까? -->
+							<div class="form__item">
+								<div class="form__item-header">
+									<h3 class="form__label line-h22">대한민국 정부에서 발표하는 가상통화와 관련한 정책을 준수하고 있습니까?</h3>
+								</div>
+
+								<div class="form__item-wrap">
+									<div class="type-radio">
+										<label class="radio__label">
+											<input type="radio" name="step3-8"><!-- 비활성화 시 disabled 추가 -->
+											<span>네</span>
+										</label>
+										<label class="radio__label">
+											<input type="radio" name="step3-8"><!-- 비활성화 시 disabled 추가 -->
+											<span>아니요</span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</article>
+				</div>
+	            </section>
+	
+	            <!-- 하단 고정버튼 -->
+	            <div class="btn_botFix_w js-floating-box">
+	                <div class="inner bg_white">
+	                    <a data-element-id="MCH-KYC-40-S-e10" id="btn_next" class="btn_default btn-style-h48 round_r8"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+	                        <span>저장 후 다음 단계</span>
+	                    </a>
+	                </div>
+	            </div>
+	        </div>
+	    </div><!-- // container -->
+	</div><!-- // wrap -->
+</body>
+</html>

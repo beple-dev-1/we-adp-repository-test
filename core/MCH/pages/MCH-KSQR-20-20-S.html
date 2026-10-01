@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>KSQR온가신등록_서류첨부</title>
+  <link rel="stylesheet" href="../assets/ksqr_resource/css/ksqr_style.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KSQR-20-20-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="APY_SEQ"  name="APY_SEQ"  value="" />
+    <input type="hidden" id="AC"  name="AC"  value=""/>
+    <input type="hidden" id="CI"  name="CI"  value="" />
+    <input type="hidden" id="substr_biz_no"  name="substr_biz_no"  value="" />
+    <input type="hidden" id="FROM_PG" name="FROM_PG" value="tb_aflt_doc" />
+</form>
+<form name="form1" id="form1">
+    <input type="hidden" name="FILE_TYPE"   id="file_type"  value="doc" />
+    <input type="hidden" name="FILE_NAME"   id="file_name"  value="KSQR_대리인위임장.docx" />
+    <input type="hidden" name="FILE_PATH"   id="file_path"  value=""/>
+</form>
+<form name="doc" id="doc" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="FILE_NM"   id="FILE_NM"  value="" />
+    <div class="wrap">
+        <!-- header -->
+        <div class="header floating-back-header floating-sticky">
+            <h1>가맹점 가입 신청서</h1>
+            <p class="history_back">
+                <a data-element-id="MCH-KSQR-20-20-S-e09" href="javascript:void(0);" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+            </p>
+        </div>
+        <!-- // header -->
+
+        <div class="container">
+            <div class="content">
+                <!-- 신규가맹점 신청 -->
+                <div class="new_store">
+                    <!-- 사업자 기본정보 -->
+                    <div class="conpany_info addBtn-pb58 step4"><!-- 신청서 각 단계별 step1 ~ step5 까지 클래스 추가 -->
+                        <div class="step_wrap">
+                            <ol>
+                                <li><span>1</span></li>
+                                <li><span>2</span></li>
+                                <li><span>3</span></li>
+                                <li><span>4</span></li>
+                                <li class="on"><span>5</span></li><!-- 진행 순서 숫자에 맞는 li 태그에 on 클래스 추가 -->
+                            </ol>
+                        </div>
+
+                        <!-- 정보영역 시작 -->
+                        <div class="inner">
+                            <!-- 법인 사장님정보 -->
+                            <h2 class="step_txt">서류첨부</h2>
+                            <div class="info">
+                                <ul class="list_bar">
+                                    <li>서류 정보를 가리지 않도록 모든 모서리가 나온 이미지를 사용해 주세요.</li>
+                                    <li>zip 파일은 압축을 풀어서 하나씩 첨부해 주세요.</li>
+                                    <li>excel, docs, hwp 등 문서 파일은 pdf 파일로 변환하여 첨부해 주세요.</li>
+                                    <li>첨부 가능 확장자: jpg, jpeg, png, pdf, tiff</li>
+                                    <li>용량: 파일 하나당 10MB 이하</li>
+                                </ul>
+                            </div>
+
+                            <div class="ipt_area">
+                                <!-- 사업자등록증 -->
+                                <div class="ipt_bx upload">
+                                    <h3>사업자 등록증</h3>
+                                    <p>사업자등록증, 사업자등록증명원(발급 3개월 이내), 고유번호증(비영리법인/단체) 중 보유하신 서류를 첨부해 주세요.</p>
+                                    <div class="file" id="f1">
+                                        <a data-element-id="MCH-KSQR-20-20-S-e11" href="javascript:void(0);" id="file1" data-value="1">파일 첨부하기</a>
+                                        <input data-element-id="MCH-KSQR-20-20-S-e13" type="file" style="display: none" id="fi1" name="fi1" value="" hidden>
+                                    </div>
+                                </div>
+                                
+                                <!-- 정산 계좌 통장 사본 -->
+                                <div class="ipt_bx upload">
+                                    <h3>정산 계좌 통장 사본</h3>
+                                    <p>정산 계좌 정보에 입력한 것과 동일한 통장 사본을 첨부해 주세요.</p>
+                                    <div class="file" id="f2">
+                                        <a href="javascript:void(0);" id="file2" data-value="2">파일 첨부하기</a>
+                                        <input data-element-id="MCH-KSQR-20-20-S-e14" type="file" style="display: none" id="fi2" name="fi2" value="" hidden>
+                                    </div>
+                                </div>
+
+                                <!-- 2026-04-03 [D] 제거 -->
+                                <!--
+                                <div class="ipt_bx upload">
+                                    <h3>법인등기부등본</h3>
+                                    <p>최근 3개월 이내 발급된 서류를 첨부해 주세요. 법인인감증명서가 없는 비영리법인/단체인 경우 고유번호증을 대신 첨부해 주세요.</p>
+                                    <div class="file" id="f3">
+                                        <a href="javascript:void(0);" id="file3" data-value="3">파일 첨부하기</a>
+                                        <input type="file" style="display: none" id="fi3" name="fi3" value="" hidden>
+                                    </div>
+                                </div>
+
+                                <div class="ipt_bx upload">
+                                    <h3>법인인감증명서</h3>
+                                    <p>최근 3개월 이내 발급된 서류를 첨부해 주세요. 법인인감증명서가 없는 비영리법인/단체인 경우 고유번호증을 대신 첨부해 주세요.</p>
+                                    <div class="file" id="f4">
+                                        <a href="javascript:void(0);" id="file4" data-value="4">파일 첨부하기</a>
+                                        <input type="file" style="display: none" id="fi4" name="fi4" value="" hidden>
+                                    </div>
+                                </div> -->
+                                <!-- 2026-04-03 [D] 제거 -->
+
+                                <!-- 매출액 확인 서류 -->
+                                <div class="ipt_bx upload">
+                                    <h3>매출액 확인 서류 (신설사업자는 선택)</h3><!-- 2026-04-03 [D] 문구 수정 -->
+                                    <div class="info">
+                                        <p><strong>직전 연도 과세기준으로 서류를 첨부해 주세요.</strong></p>
+                                        <ul>
+                                            <li>- 과세사업자(개인/법인) : 부가가치세과세표준증명원</li>
+                                            <li>- 면세사업자(개인) : 부가가치세면세사업자수입금액증명원</li>
+                                            <li>- 면세사업자(법인) : 매출계산서합계표</li>
+                                        </ul>
+                                    </div>
+                                    <div class="file" id="f7">
+                                        <a href="javascript:void(0);" id="file7" data-value="7">파일 첨부하기</a>
+                                        <input data-element-id="MCH-KSQR-20-20-S-e15" type="file" style="display: none" id="fi7" name="fi7" value="" hidden>
+                                    </div>
+                                </div>
+
+                                <!-- 2026-04-03 [D] 제거 -->
+                                <!-- <div class="ipt_bx upload">
+                                    <h3>영업 사실 확인 서류 (선택)</h3>
+                                    <p>영업허가증, 영업신고증, 영업등록증 중 보유하신 서류를 첨부해 주세요.</p>
+                                    <div class="file" id="f8">
+                                        <a href="javascript:void(0);" id="file8" data-value="8">파일 첨부하기</a>
+                                        <input type="file" style="display: none" id="fi8" name="fi8" value="" hidden>
+                                    </div>
+                                </div> -->
+                                <!-- 2026-04-03 [D] 제거 -->
+                                
+                                <!-- 대리인위임장 -->
+                                <div class="ipt_bx upload">
+                                    <h3>대리인위임장 (선택)</h3>
+                                    <p>
+                                        대리인이 신청하는 경우 대표자의 위임장을 첨부해야 합니다.<br>
+                                        최근 3개월 이내 발급된 서류를 첨부해 주세요.
+                                    </p>
+                                    <div class="file" id="f6">
+                                        <button data-element-id="MCH-KSQR-20-20-S-e10" type="button" class="download-button" id="download"><i class="icon download-24"></i><span>대리인 위임장 양식 내려받기</span></button>
+                                        <a href="javascript:void(0);" id="file6" data-value="6">파일 첨부하기</a>
+                                        <input data-element-id="MCH-KSQR-20-20-S-e16" type="file" style="display: none" id="fi6" name="fi6" value="" hidden>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 하단 고정영역 -->
+                <div class="btn_botFix_w">
+                    <div class="inner bg_white">
+                        <a data-element-id="MCH-KSQR-20-20-S-e12" href="#" class="btn_default btn-style-h48 round_r8" id="next_btn" onclick="next_btn(this)"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                            신청서 한눈에 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+</form>
+
+<script>
+    <!-- let modify_yn   = ""; -->
+    let pre_biz_year_sales = "";
+<!--     let page_info   = ""; -->
+</script>
+</body>
+</html>

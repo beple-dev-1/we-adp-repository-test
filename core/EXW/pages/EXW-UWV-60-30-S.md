@@ -1,35 +1,28 @@
-화면명: CPM/MPM 결제
-목적: CPM/MPM 결제 화면이다. 원본은 `zero_pre_approve_view.jsp` 다.
+--- 꼬리표 ---
 id: EXW-UWV-60-30-S / system: EXW / 기능: 외부제공 웹뷰 > 통합웹뷰API > 결제 > CPM/MPM 결제 / 과업: []
 
 --- 화면명세 ---
+화면명: CPM/MPM 결제
+목적: CPM/MPM 결제 화면이다.
 
-- 구분: 기능 / 좌표: - / 라벨: 페이지나가기 / 해설: 페이지나가기 / 앵커: EXW-UWV-60-30-S#e01
-- 구분: 기능 / 좌표: - / 라벨: 거래승인번호 재설정 / 해설: 거래승인번호 재설정 / 앵커: EXW-UWV-60-30-S#e02
-- 구분: 기능 / 좌표: - / 라벨: 1 / 해설: 1 / 앵커: EXW-UWV-60-30-S#e03
-- 구분: 기능 / 좌표: - / 라벨: 2 / 해설: 2 / 앵커: EXW-UWV-60-30-S#e04
-- 구분: 기능 / 좌표: - / 라벨: 3 / 해설: 3 / 앵커: EXW-UWV-60-30-S#e05
-- 구분: 기능 / 좌표: - / 라벨: 4 / 해설: 4 / 앵커: EXW-UWV-60-30-S#e06
-- 구분: 기능 / 좌표: - / 라벨: 5 / 해설: 5 / 앵커: EXW-UWV-60-30-S#e07
-- 구분: 기능 / 좌표: - / 라벨: 6 / 해설: 6 / 앵커: EXW-UWV-60-30-S#e08
-- 구분: 기능 / 좌표: - / 라벨: 7 / 해설: 7 / 앵커: EXW-UWV-60-30-S#e09
-- 구분: 기능 / 좌표: - / 라벨: 8 / 해설: 8 / 앵커: EXW-UWV-60-30-S#e10
-- 구분: 기능 / 좌표: - / 라벨: 9 / 해설: 9 / 앵커: EXW-UWV-60-30-S#e11
-- 구분: 기능 / 좌표: - / 라벨: 0 / 해설: 0 / 앵커: EXW-UWV-60-30-S#e12
-- 구분: 기능 / 좌표: - / 라벨: 지우기 / 해설: 지우기 / 앵커: EXW-UWV-60-30-S#e13
-- 구분: 기능 / 좌표: - / 라벨: 확인 / 해설: 확인 / 앵커: EXW-UWV-60-30-S#e14
-- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 첫 번째 자리를 입력해주세요. / 해설: 입력 칸 / 앵커: EXW-UWV-60-30-S#e15
-- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 두 번째 자리를 입력해주세요. / 해설: 입력 칸 / 앵커: EXW-UWV-60-30-S#e16
-- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 세 번째 자리를 입력해주세요. / 해설: 입력 칸 / 앵커: EXW-UWV-60-30-S#e17
-- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 네 번째 자리를 입력해주세요. / 해설: 입력 칸 / 앵커: EXW-UWV-60-30-S#e18
-- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 다섯 번째 자리를 입력해주세요. / 해설: 입력 칸 / 앵커: EXW-UWV-60-30-S#e19
-- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 여섯 번째 자리를 입력해주세요. / 해설: 입력 칸 / 앵커: EXW-UWV-60-30-S#e20
+--- IA ---
+- 종류: 화면 / 상위화면:
+
+--- 업무 ---
+- 요소: 화면 / 업무: 결제결과 조회하기 / 처리: 읽기·쓰기 / 테이블: TB_QR_MNG, TB_ZEROPAY_TRAN, TB_AFFILIATION_MNG, TB_AFFILIATION_MY, TB_AFFILIATION_MY_DETAIL, TB_MEMBER_APP … / 입력: 거래일자, 거래번호, QR코드, 비대면여부 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ZERO_000007.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/ZERO_000007_act.jsp:20 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R005.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_R007.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ALARM_INFO_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ONLN_AFF_TRAN_R002.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_DETAIL_R002.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R005.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R007.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R006.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R029.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_PUSH_MSG_C001.xml:10
+- 요소: 화면 / 업무: 결제완료 및 영수증(웹뷰) / 처리: 읽기 / 테이블: TB_ZEROPAY_TRAN, TB_MEMBER, TB_MEMBER_APP, TB_AFFILIATION_MNG, TB_ZEROPAY_MT_ODR / 입력: QR_TRX_DT, QR_TRX_SEQ / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.wapi_zero_complete.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/wapi/wapi_zero_complete_act.jsp:28 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R030.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R005.xml:10
+- 요소: 화면 / 업무: QR/바코드 토큰 생성(결제웹뷰) / 처리: 읽기·쓰기 / 테이블: TB_MEMBER, TB_MEMBER_APP, TB_QR_MNG / 입력: MEMB_CD, WAPI_APP_CD, WAPI_ORG_ID, USER / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_pre_approve_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/wapi/zero_pre_approve_r001_act.jsp:37 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_QR_MNG_C001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_QR_MNG_R004.xml:10
+- 요소: 화면 / 업무: 거래승인번호 검증(웹뷰) / 처리: 읽기·쓰기 / 테이블: TB_MEMBER, TB_MEMBER_APP / 입력: MEMB_CD, PASSWORD_ID / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_pre_approve_r002.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/wapi/zero_pre_approve_r002_act.jsp:33 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_U001.xml:10
+
+--- 정의 ---
+- 구분: 기능 / 좌표: id=btn_out_step1 / 라벨: 페이지나가기 / 앵커: EXW-UWV-60-30-S-e01 / 해설: 페이지나가기
+- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 첫 번째 자리를 입력해주세요. / 앵커: EXW-UWV-60-30-S-e15 / 해설: 입력 칸
+- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 두 번째 자리를 입력해주세요. / 앵커: EXW-UWV-60-30-S-e16 / 해설: 입력 칸
+- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 세 번째 자리를 입력해주세요. / 앵커: EXW-UWV-60-30-S-e17 / 해설: 입력 칸
+- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 네 번째 자리를 입력해주세요. / 앵커: EXW-UWV-60-30-S-e18 / 해설: 입력 칸
+- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 다섯 번째 자리를 입력해주세요. / 앵커: EXW-UWV-60-30-S-e19 / 해설: 입력 칸
+- 구분: 항목 / 좌표: - / 라벨: 결제비밀번호 여섯 번째 자리를 입력해주세요. / 앵커: EXW-UWV-60-30-S-e20 / 해설: 입력 칸
 
 --- 원본 글 ---
-
-`04_도구/page2md.py` 가 html 에서 기계로 뽑았다. **정본은 운영 소스다.**
-
-- 소스 — `zero_pre_approve_view.jsp`
-- 라벨은 html 에서 뗀 것이라 지어낸 값이 없다.
-- ⛔ `좌표` 와 `해설` 은 사람이 채운다 — 기계는 `-` 와 라벨 복사로 둔다.
-- 숨어 있는 단계·모달은 명세에서 뺐다. 그 화면은 별도로 뽑을 일이다.
+> 역추출 소스: BIZ_ZEROPAY/web/view/jex/biz_zeropay/zero/wapi/zero_pre_approve_view.jsp
+> page2md 가 html 에서 기계로 뽑음 — 좌표 · 해설은 사람이 고치면 다음 추출에도 남는다.

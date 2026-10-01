@@ -1,0 +1,102 @@
+/* =============================================================================
+ * app.css — 전역 글루 + 적응형 프레임 + index.html 뷰어 셸 chrome
+ * 화면 인라인 <style>에서 공통 규칙을 추출. 화면 고유 글루는 screens/<cat>/<screen>.css.
+ * 모든 값 var(--*) 또는 고정 px(G-1). 프레임 적응(G-2): 360 → --frame-max(960) → 중앙정렬.
+ * ========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * 1. 전역 리셋 / body (전 화면 공통)
+ * --------------------------------------------------------------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg-muted);
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+
+/* -----------------------------------------------------------------------------
+ * 2. .app 프레임 (적응형, G-2)
+ *    모바일-first: width 100% → --frame-max(960)까지 확장 → 그 이상 중앙정렬.
+ *    요소 본연 치수는 고정 px 유지(프레임 폭에 배율로 스케일링하지 않음).
+ * --------------------------------------------------------------------------- */
+.app {
+    position: relative;
+    width: 100%;
+    max-width: var(--frame-max);
+    min-height: 100vh;
+    margin-inline: auto;
+    background: var(--bg-surface);
+    display: flex;
+    flex-direction: column;
+}
+
+/* 오버레이(dialog/bottom-sheet/wheel-picker) 열림 시 배경 문서 스크롤 잠금.
+   heat-ui.js가 열린 오버레이 감지 시 <html>에 .ds-scroll-locked 토글(동적 개폐 + 정적 상태 페이지 로드 모두). */
+html.ds-scroll-locked,
+html.ds-scroll-locked body { overflow: hidden; height: 100%; }
+
+/* -----------------------------------------------------------------------------
+ * 3. index.html 뷰어 셸 chrome (로컬 미리보기 도구 — 핸드오프 비대상)
+ *    nav 폭 등은 도구 chrome이므로 고정 px. 디자인 요소 아님.
+ * --------------------------------------------------------------------------- */
+.viewer { display: flex; min-height: 100vh; background: var(--bg-muted); }
+
+.viewer__nav {
+    flex: 0 0 280px;
+    width: 280px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    background: var(--bg-surface);
+    border-right: 1px solid var(--border-default);
+    padding: var(--space-4) 0;
+}
+.viewer__brand {
+    padding: 0 var(--space-4) var(--space-4);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-default);
+    margin-bottom: var(--space-2);
+}
+.viewer__brand small { display: block; margin-top: var(--space-1); font-size: 11px; font-weight: 400; color: var(--text-tertiary); }
+.viewer__cat {
+    padding: var(--space-3) var(--space-4) var(--space-1);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.viewer__link {
+    display: block;
+    padding: var(--space-2) var(--space-4);
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+}
+.viewer__link:hover { background: var(--bg-muted); }
+.viewer__link.is-active {
+    background: var(--color-primary-weak);
+    color: var(--color-primary);
+    border-left-color: var(--color-primary);
+    font-weight: 600;
+}
+.viewer__link small { display: block; font-size: 11px; color: var(--text-disabled); }
+
+.viewer__main { flex: 1; min-width: 0; height: 100vh; display: flex; flex-direction: column; }
+.viewer__bar {
+    flex: 0 0 auto;
+    padding: var(--space-3) var(--space-4);
+    font-size: 13px;
+    color: var(--text-tertiary);
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-default);
+}
+.viewer__bar code { color: var(--text-primary); font-weight: 600; }
+.viewer__frame { flex: 1; width: 100%; border: 0; background: var(--bg-muted); }

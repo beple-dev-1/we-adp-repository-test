@@ -1,0 +1,359 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>통합PG 거래승인번호 재설정</title>
+  <link rel="stylesheet" href="../assets/resource/css/beple.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_reset.css">
+  <link rel="stylesheet" href="../assets/raon/transkey_mobile/transkey.css">
+</head>
+<body data-screen-id="BPG-PGM-20-10-10-S">
+<div class="wrap" com-step-id="step1">
+        <!-- 헤더 -->
+        <header class="header position-sticky">
+            <nav class="header__navi">
+                <a data-element-id="BPG-PGM-20-10-10-S-e24" href="#none" class="header__btn btn-back" onclick="uf_failCallBack()">
+                    <span class="blind">이전페이지로</span>
+                </a>
+            </nav>
+            <div class="header__title-wrap">
+                <h1 class="page-name"><span>본인인증</span></h1>
+            </div>
+        </header>
+
+        <!-- 메인 컨텐츠 -->
+        <main class="container-wrap js-container-wrap">
+            <!-- 컨테이너 -->
+            <div class="container page--auth js-container justify-spacing-def pdt24">
+                <section class="container__body">
+                    <div class="body__content">
+                        <div class="flex-column">
+                            <!-- 약관동의 -->
+                            <div class="form-box auth__terms-agree freeze js-checked--handle">
+                                <div class="form__item js-form-item"><!-- 활성화 시 'item--on', 읽기전용, 비활성화 시 item--disabled, 오류 시 item--error -->
+                                    <!-- 전체 동의하기 -->
+                                    <div class="form__item-header">
+                                        <div class="input-type--check"> <!-- [D] 인증번호 요청 시 readonly 추가 -->
+                                            <label class="flex-row">
+                                                <input data-element-id="BPG-PGM-20-10-10-S-e26" type="checkbox" class="js-all-check" id="check_all">
+                                                <span>전체 동의하기</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- 개별 동의하기 -->
+                                    <div class="form__item-wrap" id="checkList">
+                                        <!-- (필수) 통신사 이용약관 -->
+                                        <div class="input-type--check"><!-- [D] 인증번호 요청 시 readonly 클래스 추가 -->
+                                            <label class="flex-row">
+                                                <input data-element-id="BPG-PGM-20-10-10-S-e27" type="checkbox" id="agree-chk1" class="checkSingle">
+                                                <span>(필수) 통신사 이용약관</span>
+                                            </label>
+                                            <!-- 버튼 -->
+                                            <button data-element-id="BPG-PGM-20-10-10-S-e19" class="terms-view--button" onclick="uf_showAgreement('1'); return false;">
+                                                <i class="icon icon--arrow-16"></i>
+                                                <span class="blind">통신사 이용약관 보기</span>
+                                            </button>
+                                        </div>
+                                        <!-- (필수) 본인확인 서비스 이용약관 -->
+                                        <div class="input-type--check"><!-- [D] 인증번호 요청 시 readonly 클래스 추가 -->
+                                            <label class="flex-row">
+                                                <input data-element-id="BPG-PGM-20-10-10-S-e28" type="checkbox" id="agree-chk2" class="checkSingle">
+                                                <span>(필수) 본인확인 서비스 이용약관</span>
+                                            </label>
+                                            <!-- 버튼 -->
+                                            <button data-element-id="BPG-PGM-20-10-10-S-e20" class="terms-view--button" onclick="uf_showAgreement('2'); return false;">
+                                                <i class="icon icon--arrow-16"></i>
+                                                <span class="blind">본인확인 서비스 이용약관 보기</span>
+                                            </button>
+                                        </div>
+                                        <!-- (필수) 개인정보 수집 · 이용 · 취급 · 위탁 동의 -->
+                                        <div class="input-type--check"><!-- [D] 인증번호 요청 시 readonly 클래스 추가 -->
+                                            <label class="flex-row">
+                                                <input data-element-id="BPG-PGM-20-10-10-S-e29" type="checkbox" id="agree-chk3" class="checkSingle">
+                                                <span>(필수) 개인정보 수집 · 이용 · 취급 · 위탁 동의</span>
+                                            </label>
+                                            <!-- 버튼 -->
+                                            <button data-element-id="BPG-PGM-20-10-10-S-e21" class="terms-view--button" onclick="uf_showAgreement('3'); return false;">
+                                                <i class="icon icon--arrow-16"></i>
+                                                <span class="blind">개인정보 수집 · 이용 · 취급 · 위탁 동의 약관 보기</span>
+                                            </button>
+                                        </div>
+                                        <!-- (필수) 고유식별정보 처리 동의 -->
+                                        <div class="input-type--check"><!-- [D] 인증번호 요청 시 readonly 클래스 추가 -->
+                                            <label class="flex-row">
+                                                <input data-element-id="BPG-PGM-20-10-10-S-e30" type="checkbox" id="agree-chk4" class="checkSingle">
+                                                <span>(필수) 고유식별정보 처리 동의</span>
+                                            </label>
+                                            <!-- 버튼 -->
+                                            <button data-element-id="BPG-PGM-20-10-10-S-e22" class="terms-view--button" onclick="uf_showAgreement('4'); return false;">
+                                                <i class="icon icon--arrow-16"></i>
+                                                <span class="blind">고유식별정보 처리 동의 약관 보기</span>
+                                            </button>
+                                        </div>
+                                        <!-- [D] 알뜰폰 선택 시 노출 - 체크 비활성화 -->
+<!--                                        <div class="input-type--check" style="display: none" id="Budget"><!-- [D] 인증번호 요청 시 readonly 클래스 추가 ->
+                                            <label class="flex-row">
+                                                <input type="checkbox" id="agree-chk5" class="checkSingle">
+                                                <span>(필수) 알뜰폰 개인정보 제3자 제공 동의</span>
+                                            </label>
+                                            <!-- 버튼 ->
+                                            <button class="terms-view--button" onclick="uf_showAgreement('5'); return false;">
+                                                <i class="icon icon--arrow-16"></i>
+                                                <span class="blind">알뜰폰 개인정보 제3자 제공 동의 약관 보기</span>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 정보입력 -->
+                            <div class="form-box js-form-box gap-10">
+                                <!-- 이름 -->
+                                <div class="form__item js-form-item"><!-- [D] 인증번호 요청 시 'item--disabled' 클래스 추가 -->
+                                    <div class="form__item-wrap">
+                                        <div class="input-type--box">
+                                            <input data-element-id="BPG-PGM-20-10-10-S-e31" type="text" value="" id="input_memb_nm" maxlength="40" placeholder="이름(실명) 입력"><!-- [D] 이름 입력 -->
+                                            <button type="button" class="input__unit" style="display: none;"><i class="icon icon--close_cr-16"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 주민등록번호 -->
+                                <div class="form__item regist-code js-form-item"><!-- [D] 인증번호 요청 시 'item--disabled' 클래스 추가 -->
+                                    <div class="form__item-wrap">
+                                        <div class="input-type--box">
+                                            <input data-element-id="BPG-PGM-20-10-10-S-e32" type="tel" value="" placeholder="생년월일 6자리" maxlength="6" id="brt_dt">
+                                            <span class="between-bar">-</span>
+                                            <input type="tel" value="" placeholder="0" maxlength="1" id="brt_gndr">
+                                            <div class="currency-box">
+                                                <p class="currency-bullet"></p>
+                                                <p class="currency-bullet"></p>
+                                                <p class="currency-bullet"></p>
+                                                <p class="currency-bullet"></p>
+                                                <p class="currency-bullet"></p>
+                                                <p class="currency-bullet"></p>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" class="sds-value" id="gender" value="1" />
+                                    </div>
+                                </div>
+
+                                <!-- 휴대폰번호 입력 -->
+                                <div class="form__item phone-box js-form-item"><!-- [D] 인증번호 요청 시 'item--disabled' 클래스 추가 -->
+                                    <div class="form__item-wrap">
+                                        <div class="input-type--box">
+                                            <button data-element-id="BPG-PGM-20-10-10-S-e18" type="button" id="sel_tel_corp" class="input-unit fc-placeholder js-select--result js-popup-open" data-modal="popup-select--telecom">
+                                                <span class="target">통신사 선택</span><i class="icon icon--arrow-16 pointer-bottom"></i>
+                                            </button>
+                                            <input data-element-id="BPG-PGM-20-10-10-S-e33" type="tel" value="" placeholder="휴대폰번호 입력" maxlength="11" id="tel_no">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 인증번호 입력 -->
+                                <div class="form__item cert-box js-form-item" id="aprvDiv"><!-- [D] 인증번호 요청 시 'item--disabled' 클래스 제거 -->
+                                    <div class="form__item-wrap flex-row">
+                                        <div class="input-type--box un-freeze">
+                                            <input data-element-id="BPG-PGM-20-10-10-S-e34" type="tel" id="aprvNo" value="" placeholder="인증번호 6자리" maxlength="6">
+                                            <span class="shrink-n" id="timeCheck">0:00</span>
+                                        </div>
+                                        <button data-element-id="BPG-PGM-20-10-10-S-e23" class="button button-large button--lv4 js-cert-button" id="aprvBtn">
+                                            <span>인증번호 요청</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 플로팅 컨테이너 -->
+            <div class="container-floating js-floating-container">
+                <article class="floating__box button-box-spacing">
+                    <a data-element-id="BPG-PGM-20-10-10-S-e25" href="#none" class="button button-xl button--lv1 dis" id="btn_next"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+                        <span>인증하기</span>
+                    </a>
+                </article>
+            </div>
+        </main>
+        <!-- // 메인 컨텐츠 -->
+
+        <!-- 팝업 - 통신사 선택 -->
+        <div class="popup-wrap js-popup-wrap" data-modal="popup-select--telecom" id="tel_corp_layer" style="display:none;">
+            <div class="popup-container popup--bottom popup-select--type1 box-padding--type2 js-popup-select">
+                <section class="popup-container__body">
+                    <div class="flex-column justify-spacing-def" id="tel_list">
+                        <!-- 선택 시 button 에 select 클래스 추가 -->
+                        <button type="button" value="01" class="select__button js-select-content js-popup-close">
+                            <span>SKT</span><i class="icon icon--check-24_primary"></i>
+                        </button>
+                        <button type="button" value="02" class="select__button js-select-content js-popup-close">
+                            <span>KT</span><i class="icon icon--check-24_primary"></i>
+                        </button>
+                        <button type="button" value="03" class="select__button js-select-content js-popup-close">
+                            <span>LG U+</span><i class="icon icon--check-24_primary"></i>
+                        </button>
+                        <button type="button" value="04" class="select__button js-select-content js-popup-close">
+                            <span>SKT 알뜰폰</span><i class="icon icon--check-24_primary"></i>
+                        </button>
+                        <button type="button" value="05" class="select__button js-select-content js-popup-close">
+                            <span>KT 알뜰폰</span><i class="icon icon--check-24_primary"></i>
+                        </button>
+                        <button type="button" value="06" class="select__button js-select-content js-popup-close">
+                            <span class="target">LG U+ 알뜰폰</span><i class="icon icon--check-24_primary"></i>
+                        </button>
+                        <!-- //통신사 목록 -->
+                        <input type="hidden" class="sds-value" id="tele_corp" />
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+<!-- // wrap -->
+
+    <div class="wrap js-wrap" com-step-id="step2" style="display:none;">
+        <!-- 헤더 -->
+        <header class="header position-sticky">
+            <div class="header__title-wrap">
+                <h1 class="page-name"><span>비플페이 온라인결제</span></h1>
+            </div>
+
+            <nav class="header__navi">
+                <a href="#none" class="header__btn btn-close" onclick='uf_cancelUrl();'>
+                    <span class="blind" >페이지 닫기</span>
+                </a>
+            </nav>
+        </header>
+
+        <main class="container-wrap">
+            <div class="online-payment--cert">
+                <section class="page-header justify-spacing-def">
+                    <article class="page-header__content flex-column">
+                        <div class="page-header__headline-wrap">
+                            <h2 class="flex-row">
+                                <p class="page__headline page__headline--lv1" id="infoTxt">
+                                    거래승인번호 등록을 위해<br>
+                                    6자리 비밀번호를 입력해 주세요
+                                </p>
+                            </h2>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- 컨테이너 -->
+                <section class="container cert__view js-container justify-spacing-def">
+                    <article class="container__body">
+                        <div class="body__content">
+                            <input type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+                            <input type="hidden" name="pwd2" id="pwd2" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+
+                            <div class="cert__view--input" id="tac_num">
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                                <input type="password" maxlength="1" class="cert-num js-cert-num" inputmode="none">
+                                <!-- [D] 입력 시 on 클래스 추가 -->
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="container">
+                   <article class="button-box-spacing pdt12" style="display: none;">
+                        <a href="#none" class="button button-xl button--lv1 dis" id="btn_pwd"><!-- [D] 활성화 시 'dis' 클래스 제거  -->
+                            <span>확인</span>
+                        </a>
+                    </article>
+                </section>
+            </div>
+
+            <!-- 키패드 호출부 -->
+
+            <!-- // 키패드 호출부 -->
+        </main>
+    <!--<header class="header-wrap js-header-wrap">
+        <div class="header">
+            <!-- left nav ->
+            <nav class="header-nav">
+                <a onclick='uf_back(step1);' class="hd-btn back"><span class="blind-i">이전으로 가기</span></a>
+            </nav>
+            <!-- header-title ->
+            <div class="header-title-wrap">
+                <h1 class="header-title">거래승인번호 설정</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-wrap js-container-wrap">
+        <section class="container transaction">
+            <!-- container-header ->
+            <div class="container-header justify-space-def">
+                <p class="container-title" id="guide_txt">
+                    거래승인번호 등록을 위해<br>
+                    6자리 비밀번호를 입력해 주세요
+                </p>
+            </div>
+
+            <!-- container-content ->
+            <article class="container-content justify-space-def">
+                <div class="">
+                    <!-- 정보입력 폼 ->
+                    <div class="ipt_section">
+                        <form action="">
+                            <fieldset>
+                                <input type="hidden" name="pwd1" id="pwd1" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+                                <input type="hidden" name="pwd2" id="pwd2" maxlength="6" data-tk-kbdType="number" data-tk-bottom="true" onfocus="mtk.onKeyboard(this);">
+
+                                <legend>승인번호 입력</legend>
+                                <div class="tac_num" id="tac_num">
+                                    <div><input type="password" title="거래승인번호 첫 번째 자리를 입력해주세요." inputmode="none"></div><!-- 입력 시 ipt클래스 추가 ->
+                                    <div><input type="password" title="거래승인번호 두 번째 자리를 입력해주세요." inputmode="none"></div><!-- 입력 시 ipt클래스 추가 ->
+                                    <div><input type="password" title="거래승인번호 세 번째 자리를 입력해주세요." inputmode="none"></div><!-- 입력 시 ipt클래스 추가 ->
+                                    <div><input type="password" title="거래승인번호 네 번째 자리를 입력해주세요." inputmode="none"></div><!-- 입력 시 ipt클래스 추가 ->
+                                    <div><input type="password" title="거래승인번호 다섯 번째 자리를 입력해주세요." inputmode="none"></div><!-- 입력 시 ipt클래스 추가 ->
+                                    <div><input type="password" title="거래승인번호 여섯 번째 자리를 입력해주세요." inputmode="none"></div><!-- 입력 시 ipt클래스 추가 ->
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </article>
+            <!-- // content ->
+        </section>
+
+        <!-- 하단 고정영역 ->
+        <section class="container-floating js-floating-container">
+            <article class="inner bg-white main-button-pd">
+                <a id="btn_pwd" class="btn-default on"><!-- 활성/비활성 시 on클래스 추가/삭제 ->
+                    <span>거래승인번호 입력하기</span>
+                </a>
+            </article>
+        </section>
+    </main>-->
+    <!-- // container -->
+    </div>
+<!-- // wrap -->
+    <!-- 로딩 -->
+    <div class="loading" style="display:none;">
+        <div class="loading_inner">
+            <div class="ui-loader loader-blk">
+                <svg viewBox="22 22 44 44" class="multiColor-loader">
+                    <circle cx="44" cy="44" r="20.2" class="loader-circle loader-circle-animation"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- //로딩 -->
+</body>
+</html>

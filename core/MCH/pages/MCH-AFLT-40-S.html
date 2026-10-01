@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 정보 입력</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="MCH-AFLT-40-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="APY_SEQ"  name="APY_SEQ"  value="" />
+    <input type="hidden" id="apy_repr_yn"  name="apy_repr_yn"  value="" />
+    <input type="hidden" id="sub_aflt_nm"  name="sub_aflt_nm"  value="" />
+    <input type="hidden" id="sub_aflt_repr_nm"  name="sub_aflt_repr_nm"  value="" />
+    <input type="hidden" id="sub_aflt_repr_mob_no"  name="sub_aflt_repr_mob_no"  value="" />
+    <input type="hidden" id="sub_aflt_zip_cd"  name="sub_aflt_zip_cd"  value="" />
+    <input type="hidden" id="sub_aflt_addrs"  name="sub_aflt_addrs"  value="" />
+    <input type="hidden" id="sub_aflt_addrs2"  name="sub_aflt_addrs2"  value="" />
+    <input type="hidden" id="AC"  name="AC"  value=""/>
+    <input type="hidden" id="CI"  name="CI"  value="" />
+    <input type="hidden" id="SEOUL_PAY_YN"  name="SEOUL_PAY_YN"  value="" />
+    <input type="hidden" id="MCP_YN"  name="MCP_YN"  value="" />
+    <input type="hidden" id="BIZ_DOT"  name="BIZ_DOT"  value="" />
+</form>
+<div class="wrap" id="view">
+    <!-- header -->
+    <div class="header floating-back-header floating-sticky">
+        <h1>가입 신청서</h1>
+        <p class="history_back">
+            <a data-element-id="MCH-AFLT-40-S-e24" href="#none" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+        </p>
+    </div>
+    <!-- // header -->
+
+    <div class="container" onkeyup="fillInput()" onclick="fillInput()">
+        <div class="content">
+            <!-- 신규가맹점 신청 -->
+            <div class="new_store">
+                <!-- 사업자 기본정보 -->
+                <div class="conpany_info addBtn-pb58 step3"><!-- 신청서 각 단계별 step1 ~ step5 까지 클래스 추가 -->
+                    <div class="step_wrap">
+                        <ol>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li class="on"><span>3</span></li><!-- 진행 순서 숫자에 맞는 li 태그에 on 클래스 추가 -->
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                        </ol>
+                    </div>
+                    <!-- 정보영역 시작 -->
+                    <div class="inner">
+                        <!-- 사업자 정보 -->
+                        <h2 class="step_txt">가맹점 정보</h2>
+                        <div class="step_info">
+                            <ul class="list_bar">
+                                <li>직접 가맹점 서비스를 이용하여 매장을 관리할 가맹점주(점장) 정보를 입력해 주세요. 가맹점주(점장)만 가맹점 서비스에 가맹점을 등록할 수 있어요.</li>
+                                <li>고객에게 안내될 가맹점 정보를 입력해 주세요. 가맹점명, 가맹점 주소, 가맹점 전화번호, 업종 정보는 불특정 다수 고객에게 노출될 수 있어요.</li>
+                            </ul>
+                        </div>
+
+                        <div class="ipt_area">
+                            <!-- 정보 동일 체크박스 -->
+                            <div class="same_box">
+                                <label><input data-element-id="MCH-AFLT-40-S-e33" type="checkbox" class="smae_check" id="check_box" value="비플머니">사업자 정보와 동일합니다.</label>
+                            </div>
+                            <!-- 가맹점주명 -->
+                            <div class="ipt_bx">
+                                <h3>가맹점주(점장)명</h3>
+                                <div class="ipt"><input data-element-id="MCH-AFLT-40-S-e34" type="text" placeholder="가맹점주 이름 입력" id="aflt_repr_nm" maxlength="50" value="김대표" data-fill="demo"></div>
+                            </div>
+                            <!-- 가맹점주 휴대폰번호 -->
+                            <div class="ipt_bx">
+                                <h3>가맹점주(점장) 휴대폰번호</h3>
+                                <div class="ipt">
+                                    <input data-element-id="MCH-AFLT-40-S-e35" type="tel" placeholder="숫자만 입력" id="aflt_repr_mob_no" maxlength="12" oninput="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');" value="1" data-fill="demo">
+                                </div>
+                            </div>
+                            <!-- 가맹점주(점장) 이메일 -->
+                            <div class="ipt_bx email">
+                                <h3>가맹점주(점장) 이메일</h3>
+                                <div class="ipt"><input data-element-id="MCH-AFLT-40-S-e36" type="text" placeholder="이메일 입력" id="aflt_repr_email" value="user@example.com" data-fill="demo"></div>
+                                <!-- 도메인 -->
+                                <div class="ipt mail_domain toggle_wrap">
+                                    <p class="trigger"><a data-element-id="MCH-AFLT-40-S-e25" href="#none" id="sel_mail" data-value="" class="mail_btn">직접입력</a></p>
+                                    <div class="toggle_con" style="display:none;" id="toggle_mail">
+                                        <ul>
+                                            <li><a name="mail" id="direct" data-value="x">직접입력</a></li>
+                                            <li><a name="mail" id="gmail" data-value="@gmail.com">@gmail.com</a></li>
+                                            <li><a name="mail" id="naver" data-value="@naver.com">@naver.com</a></li>
+                                            <li><a name="mail" id="daum" data-value="@daum.net">@daum.net</a></li>
+                                            <li><a name="mail" id="outlook" data-value="@outlook.com">@outlook.com</a></li>
+                                            <li><a name="mail" id="nate" data-value="@nate.com">@nate.com</a></li>
+                                            <li><a name="mail" id="hanmail" data-value="@hanmail.net">@hanmail.net</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 가맹점명 -->
+                            <div class="ipt_bx">
+                                <h3>가맹점명</h3>
+                                <div class="ipt"><input data-element-id="MCH-AFLT-40-S-e37" type="text" placeholder="가맹점 이름 입력" id="aflt_nm" maxlength="50" value="비플카페 역삼점" data-fill="demo"></div>
+                            </div>
+                            <!-- 가맹점 주소 -->
+                            <div class="ipt_bx adress">
+                                <h3>가맹점 주소</h3>
+                                <div class="ipt auto"><input data-element-id="MCH-AFLT-40-S-e38" type="text" placeholder="우편번호" id="aflt_zip_cd" readonly value="004" data-fill="demo"></div>
+                                <p class="address_sch"><a data-element-id="MCH-AFLT-40-S-e26" id="post_btn">주소 검색</a></p>
+                                <div class="ipt auto"><input data-element-id="MCH-AFLT-40-S-e39" type="text" id="aflt_addrs" readonly value="서울 강남구 테헤란로 1길 10" data-fill="demo"></div>
+                                <div class="ipt"><input data-element-id="MCH-AFLT-40-S-e40" type="text" placeholder="상세주소 입력" id="aflt_addrs2" maxlength="100" value="101동 1001호" data-fill="demo"></div>
+                            </div>
+                            <!-- 가맹점 구분 -->
+                            <!--<div class="ipt_bx">
+                                <h3>가맹점 구분</h3>
+                                <div class="toggle_wrap">
+                                    <p class="trigger"><a href="#none" id="sel_trig" data-value="" >해당 구분을 선택해 주세요.</a></p>
+                                    <div class="toggle_con" style="display:none;" id="toggle_store">
+                                        <ul>
+                                            <li><a name="trig" id="N1" data-value="N">부가가치세 일반과세자</a></li>
+                                            <li><a name="trig" id="T1" data-value="T">부가가치세 간이과세자</a></li>
+                                            <li><a name="trig" id="P1" data-value="P">면세사업자(개인)</a></li>
+                                            <li><a name="trig" id="F1" data-value="F">면세사업자(법인)</a></li>
+                                            <li><a name="trig" id="C1" data-value="C">법인사업자</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <!-- 가맹점주명 -->
+                            <div class="ipt_bx">
+                                <h3>가맹점 전화번호</h3>
+                                <div class="ipt">
+                                    <input type="tel" placeholder="숫자만 입력" maxlength="12" id="aflt_tel_no" oninput="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');" value="010-1234-5678" data-fill="demo">
+                                </div>
+                            </div>
+                            <!--<!-- 업종 분류 ->
+                            <div class="ipt_bx">
+                                <h3>업종 분류</h3>
+                                <div class="toggle_wrap noabs">
+                                    <p class="trigger"><a href="#none" id="sel_cat" data-value="">해당 구분을 선택해 주세요.</a></p>
+                                    <div class="toggle_con" style="display:none;" id="toggle_cat">
+                                        <!-- 업종목록 ->
+                                        <ul class="cate_list">
+                                            <li class="edu">
+                                                <a href="#none" id="A" data-value="A">학원/교육</a>
+                                            </li>
+                                            <li class="restr">
+                                                <a href="#none" id="B" data-value="B">음식점/카페</a>
+                                            </li>
+                                            <li class="medi">
+                                                <a href="#none" id="C" data-value="C">의료/보건</a>
+                                            </li>
+                                            <li class="agri">
+                                                <a href="#none" id="D" data-value="D">농산물/청과</a>
+                                            </li>
+                                            <li class="seafood">
+                                                <a href="#none" id="E" data-value="E">수산물/횟집</a>
+                                            </li>
+                                            <li class="meat">
+                                                <a href="#none" id="F" data-value="F">축산물/정육</a>
+                                            </li>
+                                            <li class="grocery">
+                                                <a href="#none" id="G" data-value="G">식료품/반찬</a>
+                                            </li>
+                                            <li class="interior">
+                                                <a href="#none" id="H" data-value="H">가구/가전</a>
+                                            </li>
+                                            <li class="beauty">
+                                                <a href="#none" id="I" data-value="I">미용/패션</a>
+                                            </li>
+                                            <li class="service">
+                                                <a href="#none" id="J" data-value="J">서비스업</a>
+                                            </li>
+                                            <li class="retail">
+                                                <a href="#none" id="Z" data-value="Z">기타 도소매</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="toggle_wrap noabs">
+                                <p class="trigger"><a id="sel_upjong_cd" data-value="">상세 업종을 선택해 주세요.</a></p>
+                                <div class="toggle_con" style="display:none;" id="toggle_detail">
+                                    <ul id="category_detail">
+                                    </ul>
+                                </div>
+                            </div>-->
+                            <!-- 2024-04-02 가맹점 분류 영역 삭제 및 가맹점 업종코드 영역 추가 -->
+                            <!-- 가맹점 업종코드 -->
+                            <div class="ipt_bx c_code">
+                                <h3>가맹점 업종코드</h3>
+                                <div class="ipt auto"><input data-element-id="MCH-AFLT-40-S-e41" type="text" placeholder="(업종코드) 업종명" data-ctgr-catg="" id="upjong_cd" readonly value="004" data-fill="demo"></div>
+                                <p class="code_sch"><a data-element-id="MCH-AFLT-40-S-e27" href="#none" class="sch_btn" onclick="btn_upjong()">업종코드 검색</a></p>
+                            </div>
+                        </div>
+
+                        <!-- 가맹점 추가 정보 -->
+                        <h2 class="step_txt">가맹점 추가 정보</h2>
+                        <div class="ipt_area">
+                            <!-- 신용카드 가맹점 여부 -->
+                            <div class="ipt_bx">
+                                <h3>신용카드 가맹점 여부</h3>
+                                <div class="sel_bx justify">
+                                    <ul>
+                                        <li><label><input data-element-id="MCH-AFLT-40-S-e42" type="radio" name="card_yn" id="card_yes" value="Y" checked>네</label></li>
+                                        <li><label><input data-element-id="MCH-AFLT-40-S-e43" type="radio" name="card_yn" id="card_no" value="N">아니요</label></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 제로페이 가맹점 여부 -->
+                            <div class="ipt_bx">
+                                <h3>제로페이 가맹점 여부</h3>
+                                <div class="sel_bx justify">
+                                    <ul>
+                                        <li><label><input data-element-id="MCH-AFLT-40-S-e44" type="radio" name="zero_yn" id="zero_yes" value="Y" checked>네</label></li>
+                                        <li><label><input data-element-id="MCH-AFLT-40-S-e45" type="radio" name="zero_yn" id="zero_no" value="N">아니요</label></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- VAN 정보(선택) -->
+                            <div class="ipt_bx">
+                                <h3>VAN 정보(선택)</h3>
+                                <div class="toggle_wrap noabs">
+                                    <p class="trigger"><a data-element-id="MCH-AFLT-40-S-e28" href="#none" id="sel_van" data-value="">사용 중인 VAN사 선택</a></p>
+                                    <div class="toggle_con" style="display:none;" id="toggle_van">
+                                        <ul>
+                                            <li><a  name="van" id="NICE" data-value="NICE">나이스정보통신(NICE)</a></li>
+                                            <li><a  name="van" id="KICC" data-value="KICC">한국정보통신 (KICC)</a></li>
+                                            <li><a  name="van" id="KIS" data-value="KIS">키스정보통신 (KIS)</a></li>
+                                            <li><a  name="van" id="SMARTRO" data-value="SMARTRO">스마트로 (SMARTRO)</a></li>
+                                            <li><a  name="van" id="KPN" data-value="KPN">한국결제네트웍스(KPN, 구 파이서브코리아)</a></li>
+                                            <li><a  name="van" id="ICB" data-value="ICB">아이씨비(ICB)</a></li>
+                                            <li><a  name="van" id="KFTC" data-value="KFTC">금융결제원 (KFTC)</a></li>
+                                            <li><a  name="van" id="KOVAN" data-value="KOVAN">코밴(KOVAN)</a></li>
+                                            <li><a  name="van" id="KOCES" data-value="KOCES">한국신용카드결제 (KOCES)</a></li>
+                                            <li><a  name="van" id="KSNET" data-value="KSNET">케이에스넷 (KSNET)</a></li>
+                                            <li><a  name="van" id="DAOUDATA" data-value="DAOUDATA">다우데이타 (DAOUDATA)</a></li>
+                                            <li><a  name="van" id="NHNKCP" data-value="NHNKCP">NHN한국사이버결제 (NHNKCP)	</a></li>
+                                            <li><a  name="van" id="JTNet" data-value="JTNet">나이스페이먼츠 (구 JTNet)</a></li>
+                                            <li><a  name="van" id="INICIS" data-value="INICIS">케이지이니시스 (INICIS)</a></li>
+                                            <li><a  name="van" id="SPC" data-value="SPC">섹타나인(SPC 네트웍스(SPC))</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //정보영역 끝 -->
+                </div>
+                <!-- //사업자 기본정보 -->
+            </div>
+            <!-- //신규가맹점 신청 -->
+            <!-- 하단 고정버튼 -->
+            <div class="btn_botFix_w">
+                <div class="inner bg_white">
+                    <a data-element-id="MCH-AFLT-40-S-e29" href="#" class="btn_default btn-style-h48 round_r6" id="next_btn" onclick="next_btn(this)"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                        <span>저장 후 다음 단계</span>
+                    </a>
+                </div>
+            </div>
+            <!-- //하단 고정버튼 -->
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+<div class="wrap" id="popup">
+    <div class="header floating-back-header floating-sticky">
+        <h1>업종코드 검색</h1>
+        <a data-element-id="MCH-AFLT-40-S-e30" href="#" class="btn-out-page" onclick="exit($(this))">종료하기</a>
+    </div>
+    <!-- // header -->
+
+    <div class="container">
+        <div class="content">
+            <!-- 컨텐츠 영역 -->
+            <div class="new_store search">
+                <!-- 검색영역 -->
+                <div class="local_sch">
+                    <div class="bg btn_right">
+                        <input data-element-id="MCH-AFLT-40-S-e46" type="text" placeholder="업종명 또는 업종코드 입력" value="" id="upjong" onkeyup="evt_upjong()">
+                        <a data-element-id="MCH-AFLT-40-S-e31" class="btn search_right" onclick="fnSearch()"><span class="blind">검색</span></a>
+                        <!--<a class="btn del" onclick="del_kwd()" style="display: none"><span class="blind">검색어삭제</span></a>-->
+                    </div>
+                </div>
+                <!-- 검색결과 -->
+                <div class="search_result-container">
+                    <!-- 결과없음 -->
+                    <div class="result_empty" style="display: none;" id="no_data">
+                        <p class="result_text">검색 결과가 없습니다.</p>
+                    </div>
+                    <!-- 검색결과 -->
+                    <div class="result_content addBtn-pb58" id="data"><!-- sample:begin --><div class='result_item' name='upjong_nm' onclick='clk_upjong($(this))' data-uptae='홍길동' data-jongmok='홍길동' data-upjong-cd='' data-upjong-nm='홍길동'><button type='button' class='result_btn'><div class='detail_box'><p class='detail_text head'>업태</p><p class='detail_text'>홍길동</p></div><div class='detail_box'><p class='detail_text head'>종목</p><p class='detail_text'>홍길동</p></div><div class='detail_box'><p class='detail_text head'>(업종코드)<br>업종명</p><p class='detail_text'>()<br>홍길동</p></div></button><p class='select_icon icon chk-18'><span class='blind-i'>선택됨</span></p></div><!-- sample:end --></div>
+
+                    <!-- 맨처음 -->
+                    <div class="result_intro addBtn-pb58" id="intro" style="display:none;">
+                        <div class="content-header">
+                            <h3 class="content_tit">이렇게 검색해 주세요!</h3>
+                        </div>
+                        <div class="intro">
+                            <div class="intro_item">
+                                <p class="intro_text">
+                                    업종코드
+                                </p>
+                                <p class="intro_text description">
+                                    예시) 5611,56111
+                                </p>
+                            </div>
+                            <div class="intro_item">
+                                <p class="intro_text">
+                                    업종명
+                                </p>
+                                <p class="intro_text description">
+                                    예시) 음식점, 한식
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 하단 고정버튼 -->
+            <div class="btn_botFix_w">
+                <div class="inner bg_white pdt10">
+                    <a data-element-id="MCH-AFLT-40-S-e32" href="#" class="btn_default btn-style-h48 round_r6" id="upjong_sel" onclick="exit($(this))"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                        <span>확인</span>
+                    </a>
+                </div>
+            </div>
+            <!-- //하단 고정버튼 -->
+        </div>
+    </div><!-- // container -->
+</div>
+<script>
+    let card_yn = "";
+    let zeropay_yn = "";
+    let aflt_shop_nm_yn = "비플머니";
+    let modify_yn = "";
+    let page_info = "";
+    let em  = "";
+    let biz_no  = "123-45-67890";
+    let appr_st  = "";
+</script>
+</body>
+</html>

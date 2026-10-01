@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13">
+    <defs>
+        <clipPath id="ad8hhe3ola">
+            <path data-name="사각형 9963" transform="translate(2316 362)" style="stroke:#666;fill:#fff" d="M0 0h10.25v4H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 25006">
+        <g data-name="그룹 20092">
+            <g data-name="사각형 9957" style="stroke:#666;fill:#fff">
+                <path d="M0 0h10v11a2 2 0 0 1-2 2H0V0z" style="stroke:none" transform="translate(2)"/>
+                <path d="M.5.5h9V11A1.5 1.5 0 0 1 8 12.5H.5V.5z" style="fill:none" transform="translate(2)"/>
+            </g>
+            <g data-name="사각형 9958" transform="translate(4 3)" style="stroke:#666;fill:#fff">
+                <path style="stroke:none" d="M0 0h6v1H0z"/>
+                <rect x=".5" y=".5" width="5" style="fill:none"/>
+            </g>
+            <g data-name="사각형 9959" transform="translate(4 5)" style="stroke:#666;fill:#fff">
+                <path style="stroke:none" d="M0 0h6v1H0z"/>
+                <rect x=".5" y=".5" width="5" style="fill:none"/>
+            </g>
+            <g data-name="마스크 그룹 3" style="clip-path:url(#ad8hhe3ola)" transform="translate(-2316 -353)">
+                <g data-name="빼기 1" style="fill:#fff">
+                    <path d="M9.998-5859.5H2c-.827 0-1.5-.673-1.5-1.5v-1.5h9v1.5c0 .563.184 1.082.498 1.5z" style="stroke:none" transform="translate(2316 6225)"/>
+                    <path d="M9.17-5860c-.11-.313-.17-.65-.17-1v-1H1v1c0 .551.448 1 1 1h7.17m2.74 1H2c-1.103 0-2-.897-2-2v-2h10v2c0 1.073.839 1.95 1.91 1.999v.001z" style="fill:#666;stroke:none" transform="translate(2316 6225)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

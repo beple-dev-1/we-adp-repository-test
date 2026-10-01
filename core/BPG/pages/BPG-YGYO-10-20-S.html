@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>요기요 메뉴상세(Y220)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-YGYO-10-20-S">
+<form id="frm" name="frm">
+	<input type="hidden" name="shop_id" id="shop_id" value="" />
+	<input type="hidden" name="shop_name" id="shop_name" value="" />
+	<input type="hidden" name="menu_id" id="menu_id"  value=""/>
+	<input type="hidden" name="lat" id="lat"  value=""/>
+	<input type="hidden" name="lng" id="lng"  value=""/>
+	<input type="hidden" name="menus" id="menus" />
+	<input type="hidden" name="delivery" id="delivery"  value=''/>
+	<input type="hidden" name="shop_state" id="shop_state"  value=''/>
+	<input type="hidden" name="shop_today_opening_time_begin" id="shop_today_opening_time_begin"  value=""/>
+	<input type="hidden" name="mybag_option_change" id="mybag_option_change"  value=""/>
+	<input type="hidden" name="menu_option_sections" id="menu_option_sections"  value=''/>
+	<input type="hidden" name="qty" id="qty"  value=""/>
+	<input type="hidden" name="cart_id" id="cart_id"  />
+	<input type="hidden" name="serving_type" id="serving_type" value=""  />
+	<input type="hidden" name="disposable_menu" id="disposable_menu" value=''  />
+
+</form>
+
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1 class="text-ellipsis pd-lr50" id="shop_name_text"></h1>
+			<a data-element-id="BPG-YGYO-10-20-S-e02" href="javascript:uf_back();" class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 요기요 -->
+				<div class="bp-ygy flexWrap no_vh" id="menu_detail"><!-- sample:begin -->	<div class="ygy__menu_detail addBtn-pb58"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->	<div class="m_photo">		<p></p>	</div><div class="m_photo">		<p></p></div>		<p></p>	<div class="m_info">		<p class="name">홍길동</p>	<p class="description"></p>		<p class="description"></p>	</div>	<div class="price_w">		<h2 class="tit">가격</h2>		<p class="price"><span>4,500</span>원</p>	</div>	<div class="option_bx">		<div class="count">			<div class="title-box column">				<h2 class="tit">수량</h2>			</div>			<div class="spiner_btn">				<p><a href="javascript:doCalculate(-1);" class="minus">수량빼기</a></p>				<p><span id="spanAmountQty">1</span></p>				<p><a href="javascript:doCalculate(1);" class="plus">수량추가</a></p>			</div>		</div>	</div></div><!-- sample:end --></div>
+				<!-- 하단 고정버튼 영역 -->
+				<div class="btn_botFix_w">
+					<!-- 주문버튼 -->
+					<div class="oder_btn-wrap" id="oder_btn" style="display: block;"><!-- sample:begin --><div class="oder__minimum-msg" style="display: none;">최소주문금액 <p><span>0</span>원</p></div><!-- 최소 주문금액 충족 시 해당 메세지 display: none; --><div class="inner bg_white">	<a href="#none" class="round_r8" ><!-- 활성화 시 on 클래스 추가 -->		<div></div>	</a></div><!-- sample:end --></div>
+				</div>
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

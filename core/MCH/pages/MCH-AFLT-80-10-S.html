@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>신청내역 심사중</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="MCH-AFLT-80-10-S">
+<form id="frm">
+	<input type="hidden" id="CLS_CD" name="CLS_CD">
+</form>
+<div class="wrap" com-step-id="step1">
+<input data-element-id="MCH-AFLT-80-10-S-e07" id="apy_seq" hidden="hidden" value="표본">
+<input data-element-id="MCH-AFLT-80-10-S-e08" id="ci" hidden="hidden" value="표본">
+<input data-element-id="MCH-AFLT-80-10-S-e09" id="ac" hidden="hidden" value="표본">
+<input data-element-id="MCH-AFLT-80-10-S-e10" id="mate_pos_yn" hidden="hidden" value="표본">
+<input id="is_mcp" type="hidden" value="표본">
+<input type="hidden" id="is_seoul" value=""  />
+	<!-- header -->
+	<div class="header floating-back-header floating-sticky">
+		<h1>상세 내역</h1>
+		<p class="history_back">
+			<a data-element-id="MCH-AFLT-80-10-S-e06" data-nav-target="MCH-AFLT-80-S" onclick="uf_back();" class="btn-history-back">뒤로가기</a>
+		</p>
+	</div>
+	<!-- // header -->
+	<div class="container">
+		<div class="content">
+			<!-- 가맹점 신청 내역, 상세 내역 -->
+			<div class="new_store">
+				<div class="join_history more-view">
+					<!-- 상세보기 -->
+					<div class="list_w">
+						<div class="item_box">
+							<div class="item_wrap"><!-- sample:begin --><p class="date">년 월 일 신청서 접수</p><div class="list"><div class="list_inner"><div class="list_header"><h3 class="name">홍길동</h3></div><div class="list_content"><div class="content-item"><p class="item__head">접수일</p><p class="item__data">..</p></div><div class="content-item"><p class="item__head">사업자등록번호</p><p class="item__data">--</p></div><div class="content-item"><p class="item__head">종사업장번호</p><p class="item__data">004</p></div></div></div></div><p class="business_num">사업자등록번호 </p></div></div></div><div class="type-box"><div class="list"><div class="list_inner"><div class="list_header"><h3 class="name">비즈플레이 가맹점</h3></div><div class="list_content"><div class="content-item"><p class="item__head">심사상태</p><p class="item__data">심사중</p></div><div class="content-item"><p class="item__head">가맹점주</p><p class="item__data">()</p></div><div class="content-item"><p class="item__head">정산계좌</p><p class="item__data">해당 사항 없음</p></div></div><p class="condition_text">현재 서류 심사 중입니다.</p><div class="condition_info"><p class="info_text title">정산계좌: </p></div><div class="noti_box"><p class="noti_text">가맹점 신청 접수 후 5영업일 이내에 서류 심사가 완료됩니다.<br>가맹점 문의가 많은 경우 7영업일이 소요될 수 있습니다.</p></div></div></div><div class="list"><div class="list_inner"><div class="list_header"><h3 class="name">서울사랑상품권 가맹점</h3></div><div class="list_content"><div class="content-item"><p class="item__head">심사상태</p><p class="item__data">심사중</p></div><div class="content-item"><p class="item__head">가맹점주</p><p class="item__data">()</p></div><div class="content-item"><p class="item__head">정산계좌</p><p class="item__data">해당 사항 없음</p></div></div><div class="noti_box"><p class="noti_text">가맹점 신청 접수 후 5영업일 이내에 서류 심사가 완료됩니다.<br>가맹점 문의가 많은 경우 7영업일이 소요될 수 있습니다.</p></div></div></div><div class="list"><div class="list_inner"><div class="list_header"><h3 class="name">서울사랑상품권 가맹점</h3></div><div class="list_content"><p class="condition_text">현재 서류 심사 중입니다.</p><div class="condition_info"><p class="info_text title">정산계좌: </p></div><div class="noti_box"><p class="noti_text">가맹점 신청 접수 후 5영업일 이내에 서류 심사가 완료됩니다. 가맹점 문의가 많은 경우 7영업일이 소요될 수 있습니다.</p></div></div></div></div><div class="list"><div class="list_inner"><div class="list_header"><h3 class="name">심사의견</h3></div><div class="list_content"><div class="list"><div class="list_inner"><div class="list_header"><h3 class="name">심사의견</h3></div><div class="list_content"><div class="list"><div class="list_inner"><div class="list_header"><h3 class="name">심사의견</h3></div><div class="list_content"><!-- sample:end --></div>
+						</div>
+						<!--<p class="date"></p>
+						<div class="list">
+							<!-- 타이틀 ->
+							<div class="tit">
+<!-- 								<h3 title=""></h3> ->
+								<p><strong>사업자등록번호 :</strong><span id="biz_no"></span></p>
+							</div>
+							<!-- 진행상태 바 ->
+							<div class="progress_bar">
+								<ol>
+									<li class="on"><!-- 진행 완료 시 on 클래스 추가 ->
+										<span>접수 완료</span>
+									</li>
+									<li id="status">
+										<span id="activate1">심사 중</span><!-- 진행 중인 step에 active 클래스 추가 (심사중, 심사완료에만 적용) ->
+									</li>
+									<li>
+										<span id="activate2">심사 완료</span><!-- 진행 중인 step에 active 클래스 추가 (심사중, 심사완료에만 적용) ->
+									</li>
+								</ol>
+							</div>
+							<!-- 내용->
+							<div class="cont">
+								<!-- 진행상태 메세지 ->
+								<p class="progress_state">
+									비즈플레이 가맹점으로 승인 되었습니다.
+								</p>
+								<!-- 다시 신청하기 버튼 ->
+								<p class="btn_retry" style="display:none;"><a style="cursor:pointer;">다시 신청하기</a></p>
+								<!--  심사 안내 ->
+								<p class="info_msg" style="display:none;">
+									가맹점 신청 접수 후 5영업일 이내에 서류 심사가 완료됩니다. 가맹점 문의가 많은 경우 7영업일이 소요될 수 있습니다.
+								</p>
+								<!-- 접수진행안내 ->
+								<div class="pay_info">
+									<ul>
+										<li>
+											<p class="info_tit">정산계좌 :</p>
+											<div class="info_con">
+												<p id="bank_info"></p>
+												<p id="acct_nm"></p>
+											</div>
+										</li>
+										<li id="commission" style="display:none;">
+											<p class="info_tit">수수료율 :</p>
+											<div class="info_con">
+												<p id="fee_rate">1.8%</p>
+											</div>
+										</li>
+										<li id="settle" style="display:none;">
+											<p class="info_tit">정산주기 :</p>
+											<div class="info_con">
+												<p id="settle_dt">일정산 3일 (영업일 기준)</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<p class="noti" style="display:none;">※ 거절 사유 문의는 비즈플레이 고객센터(1670-0136)로 부탁드립니다.</p>-->
+					</div>
+					<!-- //상세보기 끝 -->
+					<!-- 약관 및 로고 영역 -->
+					<!--<div class="bottom_section">
+						<h2 class="logo">
+							<a><img src="../assets/resource/images/logo-bzp.png" alt="비즈플레이"></a>
+						</h2>
+						<ul class="terms">
+							<li><a style="cursor:pointer;" onclick="uf_showClauseDetail('065000')">가맹점신청약관</a></li>
+							<li><a style="cursor:pointer;" onclick="uf_showClauseDetail('060003')">개인정보처리방침</a></li>
+						</ul>
+					</div>-->
+					<!-- //약관 및 로고 영역 -->
+				</div>
+			</div>
+			<!-- //가맹점 신청 내역, 상세 내역 -->
+			<div class="btn_botFix_w" style="display: none" id="btn_area">
+				<div class="inner">
+					<a class="btn_default btn_line btn-style-h48 round_r8" onclick="btn_rewind()">
+						다시 가맹점 신청하기
+					</a>
+				</div>
+			</div>
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<!-- //레이어 -->
+<!-- step 2 -->
+<div com-step-id="step2"   style="position: fixed; left: 0; background: white; display: none; overflow: auto;">
+    <div class="header floating-back-header floating-sticky">
+        <a role="button" onclick="go_back();" class="btn-history-back">뒤로가기</a>
+        <h1 id="clause_title" style="position: relative;"></h1>
+    </div>
+
+    <!-- // container -->
+    <div class="container" style="height:100%;">
+        <div class="content" style="height:100%;">
+            <div class="body" id="clause_content" style="height:calc(100vh - 95px);"><!-- sample:begin -->표본<!-- sample:end --></div>
+            <div class="fixed-bottom-section" style="position: fixed; top: 602px;">
+                <a role="button" class="btn-submit pink" onclick="go_back();"><span>확인</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // step 2 -->
+</body>
+</html>

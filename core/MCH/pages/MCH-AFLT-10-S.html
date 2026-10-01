@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 신청메인</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="MCH-AFLT-10-S">
+<input type="hidden" id="TEST"  name="TEST"  value=""/>
+<input type="hidden" id="ENV_MODE"  name="ENV_MODE"  value=""/>
+<input type="hidden" id="MATE_POS"  name="MATE_POS"  value=""/>
+<input type="hidden" id="SEOUL_PAY_YN"  name="SEOUL_PAY_YN"  value=""/>
+<input type="hidden" id="SESSION_ID"  name="SESSION_ID"  value=""/>
+<div class="wrap">
+	<div class="header intro__header"><!-- logo 클래스 추가 -->
+		<h1 class="intro__logo">
+			
+			<a data-element-id="MCH-AFLT-10-S-e10" href="#none"><img src="../assets/resource/images/logo-spay.svg" alt="서울사랑상품권"></a>
+			
+		</h1>
+	</div><!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 신규가맹점 신청 -->
+			<div class="new_store">
+				<div class="join_intro">
+					<div class="inner">
+						<h2>
+							
+							<span class="name">서울사랑상품권</span>가맹점 신청
+							
+						</h2>
+						<div class="btn_wrap">
+						    <!-- 2026-09-07 서울페이 온가신 서비스 종료: 9/1부터 서울페이 경로에서 [가맹점 신청하기] 버튼 미노출 -->
+						    
+							<p class="btn_box"><a data-element-id="MCH-AFLT-10-S-e07" data-nav-target="MCH-AFLT-10-10-S" class="btn_default btn-style-h48 round_r8 on" onclick="aflt_reg()">가맹점 신청하기</a></p>
+							
+							<p class="btn_box"><a data-element-id="MCH-AFLT-10-S-e08" data-nav-target="MCH-AFLT-70-S" onclick="Common.simpleSubmit('bp_aflt_cert.act', {FROM_PG:'bp_aflt_main', MATE_POS:''});" class="btn_default btn_line btn-style-h48 round_r8">신청 내역 보기</a></p>
+						</div>
+					</div>
+
+					
+
+					
+
+				</div>
+			</div>
+			<!-- //신규가맹점 신청 -->
+		</div>
+	</div><!-- // container -->
+	<!-- 가맹점 신청 하단 버튼 -->
+	<div class="intro__footer">
+		<div class="footer__inner">
+			<!--<p class="btn_box"><a href="bp_aflt_notice_list.act" class="footer_btn"><span>공지사항</span></a></p>-->
+			<p class="btn_box"><a data-element-id="MCH-AFLT-10-S-e09" data-nav-target="MCH-COMN-10-10-S" onclick="Common.simpleSubmit('bp_aflt_clause.act', {MATE_POS:''});" class="footer_btn"><span>이용약관</span></a></p>
+		</div>
+	</div>
+</div><!-- // wrap -->
+
+<!-- layer_overlay -->
+<!-- 2026-09-08 서울페이 온가신 서비스 종료 안내팝업(안내팝업_type2)으로 교체 -->
+<div class="layer_overlay js-popup-container" id="popup" style="display:none;">
+	<!-- layerpopup -->
+	<div class="popup_w" style="max-width: 480px;">
+		<div class="popup_con">
+		    <!-- 안내팝업_type2 -->
+			<div class="temp info_pop type2">
+				<div class="icon notice">안내사항</div>
+				<h2 class="ly_pop_tit">가맹점 신청 사이트 변경 안내</h2>
+				<!-- 텍스트 입력 -->
+				<div class="inner">
+				    <p>
+				        서울Pay+ 가맹점 신청 사이트가 변경되었습니다.<br>
+				        가입신청서는 아래 신규 사이트에서 작성해 주세요.
+				        <br><br>
+				        ※ 신규 사이트 : <span onclick="window.open('https://seoulpay-merc.bizplay.co.kr', '_blank', 'noopener,noreferrer')" style="text-decoration:underline;color:inherit;font:inherit;">seoulpay-merc.bizplay.co.kr</span><br>
+				        ※ 2026.09.07(월)까지 최종 제출되지 않은 가입신청서는 삭제됩니다. 신규 사이트에서 새로 가입신청서를 작성해 주세요.
+				    </p>
+				</div>
+				<!-- //텍스트 입력 -->
+                <!-- 버튼영역 -->
+                <div class="ly_pop_btw btn_full type2">
+                    <a href="#none" class="typeA js-popup_close-btn" name="close">확인</a>
+                </div>
+				<!-- //버튼영역 -->
+			</div>
+			<!-- //안내팝업_type2 -->
+		</div>
+	</div>
+	<!-- //layerpopup -->
+</div>
+<!-- //layer_overlay -->
+</body>
+</html>

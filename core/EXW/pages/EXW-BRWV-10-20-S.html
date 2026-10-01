@@ -49,30 +49,24 @@
 						<div class="search_bx on"><!-- 검색영역 활성화 시 "on" 추가/제거 -->
 							<div class="ipt_bx">
 								<span class="scarch_icon">검색</span>
-								<input id="search_keyword" type="text" value="" placeholder="브랜드 또는 키워드를 검색해 보세요.">
-								<a id="del_input_keyword" class="del" style="display:none;"><span class="blind">내용삭제</span></a><!-- 내용 입력 시 활성화 -->
+								<input data-element-id="EXW-BRWV-10-20-S-e09" id="search_keyword" type="text" value="" placeholder="브랜드 또는 키워드를 검색해 보세요.">
+								<a data-element-id="EXW-BRWV-10-20-S-e01" id="del_input_keyword" class="del" style="display:none;"><span class="blind">내용삭제</span></a><!-- 내용 입력 시 활성화 -->
 							</div>
 							
 							
 							<div id="SrchHistList" class="keyword recent"><!-- 최근검색어 의 경우 "recent" 클래스 추가 -->
 								<p class="tit">최근 검색어</p>
-								<p class="del_all"><a id="del_recent_all">전체 삭제</a></p><!-- 최근 검색어 전체삭제 -->
+								<p class="del_all"><a data-element-id="EXW-BRWV-10-20-S-e02" id="del_recent_all">전체 삭제</a></p><!-- 최근 검색어 전체삭제 -->
 								<div class="list" id="recent_keyword_list">
 									<ul>
 										
 										<li id="gift_list">
 											<a id="recent_li" onclick="uf_callSearch('');"></a>
-											<a class="key_del" value=""><span class="blind">삭제</span></a>
+											<a data-element-id="EXW-BRWV-10-20-S-e03" class="key_del" value=""><span class="blind">삭제</span></a>
 										</li>
 										
 									</ul>
 								</div>
-							</div>
-							
-							<div id="SrchHistList" class="keyword recent" style ="display:none;">
-								<p class="tit">최근 검색어</p>
-								<p class="del_all"><a id="del_recent_all">전체 삭제</a></p>
-								<div class="list" id="recent_keyword_list"></div>
 							</div>
 							
 							
@@ -100,13 +94,13 @@
 						</div>
 						<!-- 상품권 목록 -->
 						<!-- 필터 -->
-						<div id="kindList_filter" class="filter" style="display:none;">
-							<p class="sort"><a id="sort_type" data-type="0" >혜택순</a></p>
-							<p class="sch_filter"><a id="open_pop">필터</a></p>
+						<div id="kindList_filter" class="filter">
+							<p class="sort"><a data-element-id="EXW-BRWV-10-20-S-e12" id="sort_type" data-type="0" >혜택순</a></p>
+							<p class="sch_filter"><a data-element-id="EXW-BRWV-10-20-S-e13" id="open_pop">필터</a></p>
 						</div>
 						<!-- 상품권 목록 -->
 						
-						<div id="kindList" class="list_area addBtn-pb56" style="display:none;"><!-- sample:begin --><div class="item" pub="" code="004" bgc=""><a id="홍길동"><div class="item_img"><p class="img"></p><p class="img"></p><p class="special_price"><span>특가상품</span></p><p class="remainder"><span></span></p><p class="out"><span>소진 완료</span></p><p class="out"><span>타임세일 종료</span></p></div><div class="item_info"><p class="brand" title="홍길동">홍길동</p><p class="name" title="홍길동">홍길동</p></div><div class="item_price"><span class="discount">% </span><strong>4,500</strong>원<strong>4,500</strong>원</div></a></div><!-- sample:end --></div>
+						<div id="kindList" class="list_area addBtn-pb56" style="display:none;"><!-- sample:begin --><div class="item" pub="" code="004" bgc=""><a id="홍길동"><div class="item_img"><p class="img"></p><p class="img"></p><p class="special_price"><span>특가상품</span></p><p class="remainder"><span></span></p><p class="out"><span>소진 완료</span></p></div><div class="item_info"><p class="brand" title="홍길동">홍길동</p><p class="name" title="홍길동">홍길동</p></div><div class="item_price"><span class="discount">% </span><strong>4,500</strong>원</div></a></div><!-- sample:end --></div>
 					</div>
 					<!-- //상품권 리스트 -->
 				</div>
@@ -114,8 +108,8 @@
 				<!-- 하단 네비게이션 -->
 				<div class="btn_botFix_w">
 				<!-- <nav class="nav_w bg_white">
-						<div class="home on"><!-- 선택 시 on -->
-							<!-- <a href="/brnd_webview_main.act"> -->
+						<div class="home on"><!-- 선택 시 on ->
+							<!-- <a href="/brnd_webview_main.act"> ->
 							<a href="/brnd_webview_main.act?TOKEN=" >
 								<span>홈</span>
 							</a>
@@ -138,22 +132,22 @@
 					</nav> -->
 					<nav class="nav_w bg_white">
 						<div class="home on" id="home"><!-- 선택 시 on -->
-							<a href="#none" onclick="uf_move('home');">
+							<a data-element-id="EXW-BRWV-10-20-S-e08" data-nav-target="EXW-BRWV-10-S" href="#none" onclick="uf_move('home');">
 								<span>홈</span>
 							</a>
 						</div>
 						<div class="history on" id="history">
-						<a href="#none" onclick="uf_move('history');">
+						<a data-element-id="EXW-BRWV-10-20-S-e05" data-nav-target="EXW-BRWV-20-S" href="#none" onclick="uf_move('history');">
 								<span>내역</span>
 							</a>
 						</div>
 						<div class="prev on" id="prev">
-							<a href="#none" onclick="uf_move('prev');">
+							<a data-element-id="EXW-BRWV-10-20-S-e06" data-nav-target="EXW-BRWV-10-S" href="#none" onclick="uf_move('prev');">
 								<span>이전</span>
 							</a>
 						</div>
 						<div class="next on" id="next">
-							<a href="#none" onclick="uf_move('next');">
+							<a data-element-id="EXW-BRWV-10-20-S-e07" data-nav-target="EXW-BRWV-10-10-10-S" href="#none" onclick="uf_move('next');">
 								<span>다음</span>
 							</a>
 						</div>

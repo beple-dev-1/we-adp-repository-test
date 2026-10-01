@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>신청 신청_정보 입력</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-MEAL-20-20-S">
+<div class="wrap js-wrap">
+		<form id="frm" name="frm">
+				<!-- <input type="hidden" id="USER_DATA"	name="USER_DATA" value='' /> -->
+				<input type="hidden" name="BLOCK_LAST_DATE" id="BLOCK_LAST_DATE" value="">
+				<input type="hidden" name="SEND_DATE_INPUT" id="SEND_DATE_INPUT" value="">
+			
+		</form>
+	    <!-- 헤더 영역 -->
+	    <header class="header position-sticky">
+	        <!-- 헤더 네비 -->
+	        <nav class="header-nav">
+	            <a data-element-id="HIT-MEAL-20-20-S-e07" href="javascript:uf_back();" class="hd-btn back"><span class="blind-i">뒤로가기</span></a>
+	        </nav>
+	        <!-- 헤더 타이틀 -->
+	        <div class="page-title">
+	            <h1 class="header-title">식수 신청</h1>
+	        </div>	        
+	    </header>
+	
+	    <!-- 컨텐츠 영역 -->
+	    <main class="container-wrap js-container-wrap">
+	        <!-- 식수신청 -->
+	        <section class="orderling-container">
+	            <!-- 컨테이너 헤더 -->
+	            <div class="container-hd">
+	                <h2 class="container__hd-title">식수 신청 정보</h2>
+	                <p class="container__hd-text">식수 신청 일자와 사유를 입력해 주세요.</p>
+	            </div>
+	            <!-- 컨테이너 컨텐츠 -->
+	            <article class="orderling__item-wrap">
+	                <!-- 식수 신청 일자 -->
+	                <div class="form-box">
+	                    <!-- 헤더 -->
+	                    <div class="box-hd">
+	                        <p class="form-label">식수 신청 일자</p>
+	                    </div>
+	                    <!-- 컨텐츠 -->
+	                    <!-- <div class="box-con" id="calendar_info">
+	                        <div class="form__item-wrap" id="calendar_list0">2개 이상일 시 btn-add 클래스 추가
+		                       		신청일자
+		                        <div class="form-item form-btn form-calendar" id="calendarDate">
+		                            <a href="#none" ><span class="tx_ellipsis"></span></a>
+		                            <input type="hidden" id="headcnt_date" name=headcnt_date value="" >
+		                        </div> 
+		                        	삭제하기 버튼
+		                        <div class="content_btn-box">
+		                            <button type="button" class="btn-del icon delete-16" onclick="deleteCalendar(0);"><span class="blind-i">삭제하기</span></button>
+		                        </div>
+		                    </div>
+	                    </div> -->
+	                     <div class="box-con" id="calendar_info">
+                            <!-- 컨텐츠 -->
+                            <div class="form__item-wrap"><!-- 2개 이상일 시 btn-add 클래스 추가 -->
+                                <!-- 신청일자 -->
+                                <div class="form-item form-btn form-calendar placeholder" id="start_headcnt_go_date"><!-- 날짜 지정 이전 힌트문구 일 시 placeholder 클래스 추가 -->
+                                    <a data-element-id="HIT-MEAL-20-20-S-e08" class="icon calendar-16"><span class="tx_ellipsis" id="start_headcnt_date" >시작일자 선택</span></a>
+                                </div>
+                                <!-- 신청일자 -->
+                                <div class="form-item form-btn form-calendar placeholder" id="end_headcnt_go_date">
+                                    <a data-element-id="HIT-MEAL-20-20-S-e09" class="icon calendar-16"><span class="tx_ellipsis" id="end_headcnt_date" >종료일자 선택</span></a>
+                                </div>
+                            </div>
+                        </div>
+	                </div>
+	                <!-- 식수 신청건 명 -->
+	                <div class="form-box">
+	                    <!-- 헤더 -->
+	                    <div class="box-hd">
+	                        <p class="form-label">식수 신청건 명</p>
+	                    </div>
+	                    <!-- 컨텐츠 -->
+	                    <div class="form-item form-input">
+	                        <input data-element-id="HIT-MEAL-20-20-S-e11" type="text" placeholder="식수 신청건 명을 작성해 주세요." id="headcnt_title" maxlength="20" onkeyup="headCntMainCheck()" >
+	                    </div>
+	                </div>
+	                <!-- 식수 신청 사유 -->
+	                <div class="form-box">
+	                    <!-- 헤더 -->
+	                    <div class="box-hd flex-row justify-space">
+	                        <p class="form-label">식수 신청 사유</p>
+	                        <p class="form-txt-count"><strong id="real_cnt">0</strong>/<span>200</span></p>
+	                        <!-- <p class="txt_count"><span id="real_cnt">0</span>/500</p> -->
+	                        
+	                    </div>
+	                    <!-- 컨텐츠 -->
+	                    <div class="form-item form-textarea hint">
+	                        <textarea data-element-id="HIT-MEAL-20-20-S-e12" name="headcnt_reason" id="headcnt_reason" maxlength="200" ></textarea>
+	                        <!-- 힌트 txt -->
+	                        <p class="hint-txt">식수 신청 사유를 입력해 주세요.<br>
+	                        </p>
+	                    </div>
+	                </div>
+	            </article>
+	        </section>
+	
+	        <!-- 플로팅 박스 -->
+	        <section class="floating-container bottom js-floating-wrap">
+	            <article class="main_btn-box bg-white">
+	                <div class="btn-main">
+	                    <!-- <a href="javascript:goHeadCntRequestTimeChk();" class="btn-default radius-mid btn-style-h48" id="btnMain">다음</a>비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+	                    <a data-element-id="HIT-MEAL-20-20-S-e10" href="javascript:goHeadCntUserRequest();" class="btn-default radius-mid btn-style-h48" id="btnMain">다음</a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+	                    
+	                    
+	                </div>
+	            </article>
+	        </section>
+	    </main>
+	</div>
+</body>
+</html>

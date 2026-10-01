@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>계좌번호 입력</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+</head>
+<body data-screen-id="HIT-ACCT-10-30-S">
+<!-- HTML 및 Contents Area -->
+<input type="hidden" id="mob_no"   				value="" />
+<input type="hidden" id="memb_nm"  				value="" />
+<input type="hidden" id="brt_dt"   				value="" />
+<input type="hidden" id="current_dt"			value="" />
+<input type="hidden" id="wact_cplx_param"		value="" />
+<input type="hidden" id="cplx_ref_url"			value="" />
+<input type="hidden" id="return_to_payment_yn"	value="" />
+
+<form id="rslt_form">
+	<input type="hidden" name="ODR_NO"        value=""       />
+	<input type="hidden" name="USER_NO"       value=""      />
+	<input type="hidden" name="DEAL_DIV_CD"   value=""  />
+	<input type="hidden" name="SALE_CHANNEL"  value="" />
+	<input type="hidden" name="PRDT_AMT"      value=""     />
+	<input type="hidden" name="PRDT_NM"       value=""      />
+	<input type="hidden" name="CALL_BACK_URL" value=""/>
+</form>
+<script>
+	$('#wact_cplx_param').val(JSON.stringify());
+</script>
+
+<div com-step-id="step3">
+	<div class="wrap">
+ 		<div class="header floating-back-header floating-sticky">
+ 			<a data-element-id="HIT-ACCT-10-30-S-e06" class="btn-history-back move_back type2" role="button" >상위메뉴로 이동</a>
+ 			<h1>계좌 등록</h1> 			
+ 		</div><!-- // header -->
+ 		<div class="container">
+ 			<div class="content">
+ 				<div class="account addBtn-pb48">
+ 					<div class="regist_w">
+						<p class="acc_msg">
+							<strong class="txt_bold">계좌번호를 입력하고 ARS 인증을 진행해 주세요.</strong>
+							<input type="hidden" id="sec_bank_cd" />
+ 							<!-- <input type="hidden" id="sec_bank_nm" /> -->
+						</p>
+						<div class="ipt_section">
+							<div class="ipt_w">
+								<h2 class="ipt_tit">은행명</h2>
+								<div class="ipt_bx">
+									<input data-element-id="HIT-ACCT-10-30-S-e08" type="text" id="sec_bank_nm" aria-readonly readonly>
+								</div>
+							</div>
+							<div class="ipt_w">
+								<h2 class="ipt_tit">계좌번호</h2>
+								<div class="ipt_bx">
+									<input data-element-id="HIT-ACCT-10-30-S-e09" id="account-number" type="tel" placeholder="-없이 입력" maxlength="20"  jex-input="onlyNumber"/>
+								</div>
+							</div>
+							<div class="ipt_w">
+								<h2 class="ipt_tit">이름</h2>
+								<div class="ipt_bx">
+									<input data-element-id="HIT-ACCT-10-30-S-e10" id="name" type="text" maxlength="10" aria-readonly readonly value="홍길동" data-fill="demo">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- ARS안내 -->
+					<div class="ars_info">
+						<div class="bg_box">
+							<p>	
+								안전한 계좌 등록을 위해 ARS 전화를 받고<br>
+								생년월일 6자리를 입력하세요.
+							</p>
+						</div>
+						<div class="noti">
+							<p>
+								ARS 음성메시지 청음이 어려우신 경우 전화 연결 상태에서 생년월일 6자리 입력 시 인증 완료됩니다.
+							</p>
+						</div>
+					</div>
+					<!-- //ARS안내 -->
+ 				</div>			
+ 			</div>
+ 			<div class="row-bothpadding25-style" style="margin-top:25px;">
+ 				<span id="span_txt" style="color:red;"></span>
+ 			</div> 			
+ 			<div class="fixed-bottom-section">
+				<a data-element-id="HIT-ACCT-10-30-S-e07" id="acct_Confirm" class="btn-submit btn-style-h48 btn-skyBlue"><span>ARS 인증 요청</span></a>
+ 			</div>
+ 		</div><!-- // container -->
+ 	</div><!-- // wrap -->
+</div>
+
+<!-- STEP 6-2. 하이브리드 오픈뱅킹 계좌등록인 경우 약관동의를 받는다. -->
+
+<!-- STEP 7. 약관상세조회 -->
+</body>
+</html>

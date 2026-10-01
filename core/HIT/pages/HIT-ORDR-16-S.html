@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>장바구니 조회</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_beple.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_beple_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/beple_popup.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+</head>
+<body data-screen-id="HIT-ORDR-16-S">
+<form name="frm" id="frm" type="POST">
+    <input id="LAT" name="LAT" type="hidden" value="">
+    <input id="LNG" name="LNG" type="hidden" value="">
+</form>
+<form name="frmOpt" id="frmOpt" type="POST">
+    <input id="OPT_BP_AFLT_SEQ" name="BP_AFLT_SEQ" type="hidden" value="">
+    <input id="MYBAG_SEQ" name="MYBAG_SEQ" type="hidden" value="">
+    <input id="MYBAG_PDT_SEQ" name="MYBAG_PDT_SEQ" type="hidden">
+    <input id="BP_AFLT_PDT_SEQ" name="BP_AFLT_PDT_SEQ" type="hidden">
+    <input id="PDT_CNT" name="PDT_CNT" type="hidden">
+    <input id="OPT_LIST" name="OPT_LIST" type="hidden">
+</form>
+<input id="totalCnt" name="totalCnt" type="hidden">
+<input id="hideAmt" type="hidden">
+<input id="BP_AFLT_SEQ" name="BP_AFLT_SEQ" type="hidden" value="">
+<input id="BEFORE_BP_AFLT_SEQ" type="hidden" value="">
+
+<div class="wrap js-wrap"><!-- 2025-08-28 [D] "bg-f7" 클래스 제거 -->
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky js-heder">
+        <nav class="header__navi">
+            <a data-element-id="HIT-ORDR-16-S-e05" id="backBtn" href="#none" class="header__btn btn-back"><span class="blind">이전 페이지로</span></a>
+        </nav>
+
+        <!-- 헤더 타이틀 -->
+        <div class="header__title-wrap">
+            <!-- 페이지 명 미사용 시 page-name 태그 내용 빈값 or 주석 or 삭제 -->
+            <h1 class="page-name"><span>장바구니</span></h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 컨테이너 -->
+        <section id="menuArea" class="smart_oder-container">
+            <!-- 2025-08-28 [D] 구조변경 -->
+            <div class="container-header pickup-method menu_detail">
+                <h2 id="storeName" class="container__headline container__headline--lv4"></h2>
+                <div class="option_bx">
+                    <div id="div_select" class="opt_list"><!-- sample:begin -->
+            <div class="list__item">
+                <div class="select"><label><input name="select_radio" data-select_radio="P" type="radio" checked>포장</label></div>
+                <!--<p class="status">30분 후 픽업가능</p>-->
+            </div>
+            
+                <div class="list__item">
+                    <div class="select">
+                        <label><input name="select_radio" data-select_radio="R" type="radio">로봇배송</label>
+                        <!-- 툴팁 -->
+                        <div id="div_tooltip" onclick="tooltip_toggle();" class="tooltip"><!-- [D] 툴 팁 노출 시 "view" 클래스 추가 -->
+                            <button id="tooltip_btn" type="button" class="tooltip__button">
+                                <i class="icon icon--info-16_line"><span class="blind">툴팁 버튼</span></i>
+                            </button>
+                            <div class="tooltip__content">
+                                
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            <!-- sample:end --></div>
+                </div>
+            </div>
+            <!-- // 2025-08-28 [D] -->
+
+            <!-- 컨테이너 컨텐츠 -->
+            <article class="oder_cart">
+                <!-- 주문목록 -->
+                <div id="menuList" class="cart_w"><!-- sample:begin -->
+                    <div class="list">
+                        <div class="list-hd">
+                            <!-- 2025-08-28 [D] 내부 구조 일부 변경 -->
+                            <h3 class="name">
+                                <span>홍길동</span>
+                                <span class="eng"></span>
+                            </h3>
+                            <!-- 2025-08-28 [D] 메뉴빼기 버튼 이동 -->
+                            <p class="delete"><button data-mybag-pdt-seq="1" onclick="uf_deleteMenu($(this))" type="button">메뉴 빼기</button></p>
+                            <!-- // 2025-08-28 [D] -->
+                        </div>
+
+                        <!-- 주문상세 -->
+                        <div class="detail">
+                            <ul class="list-bl"><!-- 2025-08-28 [D] 클래스 명 변경 "list-bar -> list-bl" -->
+                                <li>가격: 기본(4,500원)</li>
+                
+                        <li data-opt-catg-seq="1" data-opt-seq="1">
+                            홍길동 : 홍길동(+4,500원)
+                        </li>
+                    
+                            </ul>
+                        </div>
+                        <p class="price"><span>4,500</span>원</p>
+
+                        <!-- 옵션, 수량 변경 -->
+                        <div class="etc" data-mybag-pdt-seq="1" data-aflt-pdt-seq="1" data-robot-menu-cd="004">
+                            <p class="opt-change">
+                                <a onclick="uf_changeOpt($(this))" href="#none">옵션변경</a>
+                            </p>
+
+                            <div class="spiner_btn3">
+                                <p><a onclick="count($(this))" id="minus" href="#none" class="minus">수량빼기</a></p><!-- 수량 2개부터 on 클래스 추가 1개로 내려가면 on클래스 제거 --><!-- 수량 2개부터 on 클래스 추가 1개로 내려가면 on클래스 제거 -->
+                                <p><span data-pdt-amt="4,500">1</span></p>
+                                <p><a onclick="count($(this))" id="plus" href="#none" class="plus">수량추가</a></p>
+                            </div>
+                        </div>
+                        <!-- 2025-08-28 [D] 메뉴빼기 버튼 이동 -->
+                        <!-- <p class="delete"><a href="#none">메뉴 빼기</a></p> -->
+                    </div>
+                <!-- sample:end --></div>
+
+                <!-- 메뉴 추가 -->
+                <p id="more" class="oder_add">
+                    <a data-element-id="HIT-ORDR-16-S-e06" href="#none">더 담으러 가기</a><!-- 2025-08-28 [D] "+" 텍스트 제거 -->
+                </p>
+
+                <!-- 주문/결제금액 -->
+                <div class="pay_info">
+                    <div class="con">
+                        <p>주문예정금액</p>
+                        <p><span id="orderAmt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>
+                    </div>
+                    <div class="payment">
+                        <p>총 결제예정금액</p>
+                        <p><span id="payAmt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</p>
+                    </div>
+                </div>
+
+                <!-- 안내사항 -->
+                <div class="noti_txt">
+                    비플페이(주)는 통신판매중개자이며, 통신판매의 당사자가 아닙니다. 따라서 비플페이(주)는 상품, 거래정보 및 거래에대하여 책임을 지지 않습니다.
+                </div>
+            </article>
+        </section>
+
+        <!-- 장바구니 없음 -->
+        <section id="noMenuArea" class="container end-container end-type--sub js-container" style="display: none;">
+            <!-- 컨테이너 바디 -->
+            <article class="container__body">
+                <div class="body__content">
+                    <i class="icon icon--document2-64" aria-hidden="true"></i><!-- 2025-08-28 [D] 텍스트 제거 -->
+                    <div class="desc-box mgt8">
+                        <p class="info__text--lv2 fc-999">장바구니에 담은 메뉴가 없습니다.</p><!-- 2025-08-28 [D] 텍스트 수정 -->
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!--<section class="container-floating js-floating-container">
+            <!-- 메인 버튼영역 ->
+            <article class="main_btn-box">
+                <div class="multi-view"><!-- 2025-08-28 [D] 버튼 클래스 변경 btn_main 클래스 제거 ->
+                    <!-- <a href="#none" class="button button-xl button--lv1 dis" style="display: none;">2025-08-28 [D] 버튼 클래스 변경 ->
+                    <!-- <p class="more">지금은 주문가능 시간이 아닙니다.</p> ->
+                    <!-- </a> ->
+
+                    <a id="menuBtn" href="#none" class="button button-xl button--lv1"><!-- 2025-08-28 [D] 버튼 클래스 변경 ->
+                        <p class="amount">
+                            <span id="menuBtnAmt"></span>원
+                        </p>
+                        <p class="more">
+                            장바구니 보기
+                        </p>
+                    </a>
+                    <a id="noMenuBtn" style="display: none" href="#none" class="button button-xl button--lv1">
+                        <p class="more">주문하러 가기</p>
+                    </a>
+                </div>
+            </article>
+        </section>-->
+
+        <section id="btnSection" class="container-floating js-floating-container"><!-- [D] 2025-12-24 -->
+            <!-- 메인 버튼영역 -->
+            <article class="main_btn-box"><!-- [D] 2025-12-24 -->
+                <div class="multi-view">
+                    <!-- <a href="#none" class="button button-xl button--lv1 dis" style="display: none;"> -->
+                    <!-- <p class="more">지금은 주문가능 시간이 아닙니다.</p> -->
+                    <!-- </a> -->
+
+                    <a data-element-id="HIT-ORDR-16-S-e07" id="menuBtn" href="#none" class="button button-xl button--lv1">
+                        <p class="amount">
+                            <span id="menuBtnAmt"><!-- sample:begin --><!-- sample:end --></span>원
+                        </p>
+                        <p class="more">
+                            주문하기
+                        </p>
+                    </a>
+                    <a data-element-id="HIT-ORDR-16-S-e08" id="noMenuBtn" style="display: none" href="#none" class="button button-xl button--lv1">
+                        <p class="more">주문하러 가기</p>
+                    </a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <div id="toastDiv" class="toast-container" style="bottom: 90px"><!-- [D] 나타날 때 show, 사라질 때 hide 클래스 추가 후 container div 0.3초 뒤 제거 -->
+        <div class="toast-message-box">
+            <div class="toast__text"></div>
+        </div>
+    </div>
+
+</div>
+
+<!--<div class="wrap js-wrap bg-f7">
+    <!-- 헤더 영역 ->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 ->
+        <nav class="header-nav">
+            <a href="#none"class="hd-btn back" id="backBtn"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 ->
+        <div class="page-title">
+            <h1 class="header-title">장바구니</h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 ->
+    <main class="container-wrap js-container-wrap">
+        <!-- 컨테이너 ->
+        <section class="smart_oder-container" id="menuArea">
+            <!-- 신규추가 ->
+            <div class="container-hd type2 flex-column pdt16">
+                <p class="oder-type" id="orderType">포장</p>
+                <h2 class="container-text title large" id="storeName"></h2> <!--매장명 ->
+            </div>
+            <!-- 컨테이너 컨텐츠 ->
+            <article class="oder_cart">
+                <!-- 장바구니 있을 때 ->
+                <div class="cart_w border-t10" id="menuList"><!-- 장바구니 일 경우(상단 날짜영역 없을 시) - border-t10 클래스 추가 ->
+                    <!-- 목록 ->
+                </div>
+                <!-- 메뉴 추가 ->
+                <p class="oder_add"><a href="#none" id="more">+ 더 담으러 가기</a></p>
+                <!-- 수령방법 ->
+                <!--<div class="oder_case">
+                    &lt;%&ndash;추후 주문 유형에 따라 분리 필요.&ndash;%&gt;
+                    <p><strong id="recvType"></strong> (담은 메뉴 : <span id="totalCnt"></span>개)</p>
+                </div> ->
+                <!-- 주문/결제금액 ->
+                <div class="pay_info">
+                    <div class="con">
+                        <p>주문예정금액</p><!-- 원본기준 변경사항 -> h4 -> p ->
+                        <p><span id="orderAmt"></span>원</p>
+                    </div>
+                    <div class="payment">
+                        <p>결제예정금액</p><!-- 원본기준 변경사항 -> h4 -> p ->
+                        <p><span id="payAmt"></span>원</p>
+                    </div>
+                </div>
+                <!-- 안내사항 ->
+                <div class="noti_txt">
+                    비플페이(주)는 통신판매중개자이며, 통신판매의 당사자가 아닙니다. 따라서 비플페이(주)는 상품, 거래정보 및 거래에 대하여 책임을 지지 않습니다.
+                </div>
+            </article>
+        </section
+        &lt;%&ndash; //컨테이너 영역&ndash;%&gt;
+                <!-- 장바구니 없음 ->
+        <section class="end-container content-none" id="noMenuArea" style="display: none">
+            <article class="end__item-wrap">
+                <div class="end-box">
+                    <div class="end-item">
+                        <p class="end-text">장바구니에 담은 메뉴가 없습니다.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 플로팅 박스 ->
+        <section class="floating-container bottom js-floating-wrap">
+            <!-- 메인 버튼영역 ->
+            <article class="main_btn-box bg-f7">
+                <div class="btn-main">
+                    <a href="#none" id="menuBtn" class="btn-default radius-mid btn-style-h48 on"><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 ->
+                        <strong class="fw-extra mgr4"><span id="menuBtnAmt"></span>원</strong>주문하기
+                    </a>
+                    <a href="#none" id="noMenuBtn" style="display: none" class="btn-default radius-mid btn-style-h48 on"><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 ->
+                        메뉴 담으러 가기
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
+</div>-->
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>오피스푸드(식사배송) 구매내역 상세 - 조회</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-HIST-20-10-S">
+<!-- wrap -->
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>내역 상세</h1>
+        <a data-element-id="BPG-HIST-20-10-S-e04" data-nav-target="BPG-HIST-10-10-S" href="#" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+    </div>
+    <!-- // header -->
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <div class="content">
+            <div class="flexWrap no_vh">
+                <!-- fooding -->
+                <div class="fooding">
+                    <!-- 주문내역 상세 -->
+                    <div class="oder_history">
+                        <!-- 주문정보 -->
+                        <div class="frame_box-def doc_top">
+                            <div class="title_box">
+                                <h2 class="title extra_01" style="width: 100px;" id="aflt_nm"></h2>
+                            </div>
+                            <div class="list_bx justify">
+                                <div>
+                                    <p class="caption_txt reg_01">주문 시간</p>
+                                    <p class="caption_txt reg_01" id="order_time"><!-- sample:begin -->14:22<!-- sample:end --></p>
+                                </div>
+                                <div>
+                                    <p class="caption_txt reg_01">결제 방법</p>
+                                    <p class="caption_txt reg_01" id="pay_measure">포인트(복합 결제)</p>
+                                </div>
+                                <div>
+                                    <p class="caption_txt reg_01">매장 대표번호</p>
+                                    <p class="caption_txt reg_01" id="aflt_tel_no"><!-- sample:begin -->010-1234-5678<!-- sample:end --></p>
+                                </div>
+                                <div>
+                                    <p class="caption_txt reg_01">스팟 배송지</p>
+                                    <p class="caption_txt reg_01" id="spot_area"><!-- sample:begin -->표본<!-- sample:end --></p>
+                                </div>
+                                <div>
+                                    <p class="caption_txt reg_01">주문번호</p>
+                                    <p class="caption_txt reg_01" id="order_no"><!-- sample:begin -->1<!-- sample:end --></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 주문내역 -->
+                        <div class="frame_box-def title_txt border-t10">
+                            <div class="title_box">
+                                <h2 class="sub_title extra_02">주문내역</h2>
+                            </div>
+                            <div class="border_bx_wrap">
+<!--                                <div class="border_bx">-->
+<!--                                    <div class="title_bx">-->
+<!--                                        <h3 class="sub_title bold_02"><span>배송일자</span><span>2023.03.04(수)</span></h3>-->
+<!--                                    </div>-->
+<!--                                    <ul class="list_bar">-->
+<!--                                        <li>중식) 비건 브런치 박스</li>-->
+<!--                                        <li>중식) 비건 브런치 박스</li>-->
+<!--                                        <li>중식) 비건 브런치 박스</li>-->
+<!--                                        <li>중식) 비건 브런치 박스</li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                                <div class="border_bx">-->
+<!--                                    <div class="title_bx">-->
+<!--                                        <h3 class="sub_title bold_02"><span>배송일자</span><span>2023.03.04(수)</span></h3>-->
+<!--                                    </div>-->
+<!--                                    <ul class="list_bar">-->
+<!--                                        <li>중식) 비건 브런치 박스</li>-->
+<!--                                        <li>중식) 비건 브런치 박스</li>-->
+<!--                                        <li>중식) 비건 브런치 박스</li>-->
+<!--                                        <li>중식) 비건 브런치 박스</li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                        <!-- 결제상세 -->
+                        <div class="frame_box-def title_txt border-t10 pay_history">
+                            <div class="title_box">
+                                <h2 class="sub_title extra_02">결제상세</h2>
+                            </div>
+                            <div class="list_bx justify" id="amt">
+<!--                                <!-- 주문금액 ->-->
+<!--                                <div class="oder_amount">-->
+<!--                                    <p>주문금액</p><p><span>19,400</span>원</p>-->
+<!--                                </div>-->
+<!--                                <!-- 결제금액상세 ->-->
+<!--                                <div>-->
+<!--                                    <p class="caption_txt reg_02">포인트</p>-->
+<!--                                    <p class="caption_txt reg_02"><span>-9,400</span>원</p>-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                    <p class="caption_txt reg_02">비플머니</p>-->
+<!--                                    <p class="caption_txt reg_02"><span>-400</span>원</p>-->
+<!--                                </div>-->
+<!--                                <!-- 총 결제금액 ->-->
+<!--                                <div class="total_amount">-->
+<!--                                    <p>총 결제금액</p>-->
+<!--                                    <p><strong><span>19,400</span>원</strong></p>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                        <!-- 주문취소 및 환불 -->
+                        <div class="frame_box-def title_txt border-t10 etc">
+                            <div class="title_box">
+                                <h2 class="sub_title bold_02">주문취소 및 환불</h2>
+                            </div>
+                            <div class="list_bx">
+                                <ul class="list_bl">
+                                    <li>주문취소 배송 일자 전일 15시까지 가능합니다.</li>
+                                    <li>매장으로 전화주시거나 하단 '주문취소' 버튼을 클릭하여 주문을 취소할 수 있습니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="frame_box-btn">
+                            <p><a data-element-id="BPG-HIST-20-10-S-e05" data-nav-target="BPG-OFFD-20-10-S" class="btn_default btn-style-h48 btn_line round_r8" onclick="cancel();" id="btn_cancel">주문 취소</a></p>
+                            <p><a data-element-id="BPG-HIST-20-10-S-e06" data-nav-target="BPG-HIST-10-20-S" class="btn_default btn-style-h48 round_r8 on" onclick="receipt();">영수증 상세내역</a></p>
+                        </div>
+
+                    </div>
+                    <!-- //주문내역 상세 -->
+                </div>
+                <!-- fooding end -->
+            </div>
+        </div>
+        <!-- // content -->
+
+        <!-- 하단 고정버튼 -->
+        <div class="btn_botFix_w">
+        </div>
+        <!-- //하단 고정버튼 -->
+    </div>
+    <!-- // container -->
+</div>
+<!-- // wrap -->
+</body>
+</html>

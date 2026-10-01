@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>KSQR온가신등록_사장님정보등록</title>
+  <link rel="stylesheet" href="../assets/ksqr_resource/css/ksqr_style.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KSQR-50-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="APY_SEQ"  name="APY_SEQ"  value="" />
+    <input type="hidden" id="substr_biz_no"  name="substr_biz_no"  value="" />
+    <input type="hidden" id="AC"  name="AC"  value=""/>
+    <input type="hidden" id="CI"  name="CI"  value="" />
+    <div class="wrap">
+        <!-- header -->
+        <div class="header floating-back-header floating-sticky">
+            <h1>가맹점 가입 신청서</h1>
+            <p class="history_back">
+                <a data-element-id="MCH-KSQR-50-S-e06" href="javascript:void(0);" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+            </p>
+        </div>
+
+        <div class="container" onkeyup="fillInput()" onclick="fillInput()">
+            <div class="content">
+                <!-- 신규가맹점 신청 -->
+                <div class="new_store">
+                    <!-- 대표자 정보 -->
+                    <div class="conpany_info addBtn-pb58 step2"><!-- 신청서 각 단계별 step1 ~ step5 까지 클래스 추가 -->
+                        <div class="step_wrap">
+                            <ol>
+                                <li><span>1</span></li>
+                                <li class="on"><span>2</span></li>
+                                <li><span>3</span></li>
+                                <li><span>4</span></li>
+                                <li><span>5</span></li>
+                            </ol>
+                        </div>
+
+                        <div class="inner">
+                            <h2 class="step_txt">대표자 정보</h2>
+                            <div class="info">
+                                <ul class="list_bar">
+                                    <li>사업자등록증 상의 대표자 정보를 입력해 주세요.</li>
+                                    <li>각자대표 또는 공동대표 정보는 가맹점 승인 후 작성하는 「가맹점 고객확인서」로 제출할 수 있습니다.</li>
+                                </ul>
+                            </div>
+
+                            <!-- from -->
+                            <div class="ipt_area">
+                                <!-- 대표자 성명 -->
+                                <div class="ipt_bx">
+                                    <h3>대표자 성명</h3>
+                                    <div class="ipt"><input data-element-id="MCH-KSQR-50-S-e08" type="text" placeholder="대표자 이름 입력" id="repr_nm" maxlength="50" value="김대표" data-fill="demo"></div>
+                                </div>
+
+                                <!-- 대표자 생년월일 -->
+                                <div class="ipt_bx">
+                                    <h3>대표자 생년월일</h3>
+                                    <div class="ipt"><input data-element-id="MCH-KSQR-50-S-e09" type="tel" placeholder="8자리 숫자만 입력" id="repr_brt_dt" maxlength="8" oninput="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');" value="2026.09.02" data-fill="demo"></div>
+                                </div>
+
+                                <!-- 대표자 휴대폰 번호 -->
+                                <div class="ipt_bx">
+                                    <h3></h3>
+                                    <div class="ipt"><input data-element-id="MCH-KSQR-50-S-e10" type="tel" placeholder="숫자만 입력"  id="repr_mob_no" maxlength="12" oninput="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');" value="1" data-fill="demo"></div>
+                                </div>
+                            </div>
+                            <!-- // from -->
+                        </div>
+                    </div>
+                    <!-- //대표자 정보 -->
+                </div>
+
+                <!-- 하단 고정버튼 -->
+                <div class="btn_botFix_w">
+                    <div class="inner bg_white">
+                        <a data-element-id="MCH-KSQR-50-S-e07" href="#" class="btn_default btn-style-h48 round_r8" id="next_btn" onclick="next_btn(this)"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                            <span style="line-height:48px !important;">저장 후 다음 단계</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+</form>
+
+<!-- 토글버튼 -->
+<script>
+    let radi_value           = "";
+    <!-- let modify_yn            = ""; -->
+    let page_info            = "";
+    let owner_repr_same_yn   = "";
+    
+    <!-- 토글버튼 -->
+    $(function(){
+        $('.toggle_wrap .trigger a').on({
+            click: function(){
+                $(this).parent().parent().toggleClass('on');
+                $(this).parent().next().slideToggle(300)
+            }
+        })
+    })
+</script>
+</body>
+</html>

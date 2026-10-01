@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>KSQR온가신등록_기본정보등록</title>
+  <link rel="stylesheet" href="../assets/ksqr_resource/css/ksqr_style.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KSQR-30-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="APY_SEQ"  name="APY_SEQ"  value="" />
+    <!-- <input type="hidden" id="BIZ_DOT"  name="BIZ_DOT"  value="" /> -->
+    <input type="hidden" id="AC"  name="AC"  value=""/>
+    <input type="hidden" id="CI"  name="CI"  value="" />
+    <input type="hidden" id="BIZ_NO"  name="BIZ_NO"  value="" />
+    <div class="wrap">
+        <!-- header -->
+        <div class="header floating-back-header floating-sticky">
+            <h1>가맹점 가입 신청서</h1><!-- 2024-09-26 -> 타이틀 변경 -->
+            <p class="history_back">
+                <a data-element-id="MCH-KSQR-30-S-e12" href="javascript:void(0);" class="btn-history-back" onclick="uf_back();">뒤로가기</a>
+            </p>
+        </div>
+        <!-- // header -->
+
+        <div class="container">
+            <div class="content">
+                <!-- 신규가맹점 신청 -->
+                <div class="new_store">
+                    <!-- 사업자 기본정보 -->
+                    <div class="conpany_info addBtn-pb58 step1"><!-- 신청서 각 단계별 step1 ~ step5 까지 클래스 추가 -->
+                        <div class="step_wrap">
+                            <ol>
+                                <li class="on"><span>1</span></li>
+                                <li><span>2</span></li>
+                                <li><span>3</span></li>
+                                <li><span>4</span></li>
+                                <li><span>5</span></li>
+                            </ol>
+                        </div>
+
+                        <!-- 정보영역 시작 -->
+                        <div class="inner">
+                            <!-- 사업자 정보 -->
+                            <h2 class="step_txt">사업자 정보</h2>
+                            <div class="info">
+                                <ul>
+                                    <li>사업자등록번호 : 123-45-67890</li>
+                                    <li>사업자구분 : </li>
+                                    
+                                    <li>종사업장번호 : </li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="ipt_area">
+                                <div class="ipt_bx" style="display: none">
+                                    <h3>법인yn</h3>
+                                    <input type="text" id="substr_biz_no" readonly value="123-45-67890" data-fill="demo">
+                                </div>
+                                <!-- 상호 -->
+                                <div class="ipt_bx">
+                                    <h3>상호</h3>
+                                    <div class="ipt"><input data-element-id="MCH-KSQR-30-S-e17" type="text" placeholder="사업자등록증과 동일한 상호 입력" id="shop_nm" onkeyup="fillInput('shop_nm')" maxlength="50" value="비플머니" data-fill="demo"></div>
+                                </div>
+
+                                <!-- 'input type' 변경/ 읽기전용 'readonly' 속성 추가 -->
+                                <!-- 사업장 소재지 -->
+                                <div class="ipt_bx adress">
+                                    <h3>사업장 소재지</h3>
+                                    <!--우편번호 -->
+                                    <div class="ipt auto">
+                                        <input data-element-id="MCH-KSQR-30-S-e18" type="text" placeholder="우편번호" id="zip_cd" onkeyup="fillInput('zip_cd')"  readonly value="004" data-fill="demo">
+                                    </div>
+                                    <!-- 주소검색 버튼 -->
+                                    <div class="address_sch"><a data-element-id="MCH-KSQR-30-S-e13" href="javascript:" id="post_btn">주소 검색</a></div>
+                                    <!-- 주소 1 -->
+                                    <div class="ipt auto">
+                                        <input data-element-id="MCH-KSQR-30-S-e19" type="text" id="addrs" onkeyup="fillInput('addrs')" readonly value="서울 강남구 테헤란로 1길 10" data-fill="demo">
+                                    </div>
+                                    <!-- 주소 2 -->
+                                    <div class="ipt">
+                                        <input data-element-id="MCH-KSQR-30-S-e20" type="text" placeholder="상세주소 입력" id="addrs2" maxlength="100" value="101동 1001호" data-fill="demo">
+                                    </div>
+                                </div>
+
+                                <!-- 직전 사업연도 매출액 -->
+                                <div class="ipt_bx">
+                                    <h3>직전 사업연도 매출액</h3>
+                                    <div class="toggle_wrap chk_bx noabs"> <!-- 2026-04-09 noabs 추가 -->
+                                        <p class="trigger"><a data-element-id="MCH-KSQR-30-S-e14" id="sel_trig" data-value="">직전 사업연도 매출액 선택</a></p>
+                                        <div class="toggle_con" style="display:none;" id="toggle_mny">
+                                            <ul>
+                                                <li><a href="javascript:void(0);" name="money" id="X" data-value="X">없음(신설사업자 포함)</a></li>
+                                                <li><a href="javascript:void(0);" name="money" id="S" data-value="S">연매출 3억원 이하</a></li>
+                                                <li><a href="javascript:void(0);" name="money" id="M" data-value="M">연매출 3억원 초과 ~ 5억원 이하</a></li>
+                                                <li><a href="javascript:void(0);" name="money" id="L" data-value="L">연매출 5억원 초과 ~ 10억원 이하</a></li>
+                                                <li><a href="javascript:void(0);" name="money" id="XL" data-value="XL">연매출 10억원 초과 ~ 30억원 이하</a></li>
+                                                <li><a href="javascript:void(0);" name="money" id="2XL" data-value="2XL">연매출 30억원 초과</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 사업자 유형 -->
+                                <div class="ipt_bx">
+                                    <h3>사업자 유형</h3>
+                                    <div class="toggle_wrap noabs"> <!-- 2026-04-09 noabs 추가 -->
+                                        <p class="trigger"><a data-element-id="MCH-KSQR-30-S-e15" href="javascript:void(0);" id="sel_trig2" data-value="">사업자 유형 선택</a></p>
+                                        <div class="toggle_con" style="display:none;" id="toggle_store">
+                                            <ul>
+                                                <li><a name="trig" id="N1" data-value="N">부가가치세 일반과세자</a></li>
+                                                <li><a name="trig" id="T1" data-value="T">부가가치세 간이과세자</a></li>
+                                                <li><a name="trig" id="P1" data-value="P">면세사업자(개인)</a></li>
+                                                <li><a name="trig" id="F1" data-value="F">면세사업자(법인)</a></li>
+                                                <li><a name="trig" id="C1" data-value="C">법인사업자</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 상시 근로자수 -->
+                                <div class="ipt_bx">
+                                    <h3>상시 근로자수 (선택)</h3>
+                                    <div class="ipt"><input data-element-id="MCH-KSQR-30-S-e21" type="tel" jex-input="onlyNumber" placeholder="숫자만 입력" id="const_worker_cnt" maxlength="6" value="1" data-fill="demo"></div>
+                                </div>
+                                <!-- //2022-12-15 추가 -->
+                                
+                                <!-- 법인등록번호 -->
+                                <div class="ipt_bx">
+                                    <h3>법인등록번호</h3>
+                                    <div class="ipt"><input data-element-id="MCH-KSQR-30-S-e22" type="tel" placeholder="13자리 숫자만 입력" id="corp_no" onkeyup="fillInput('corp_no')" maxlength="13" oninput="this.value=this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g,'$1');" value="1" data-fill="demo"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 하단 플로팅 영역 -->
+                <div class="btn_botFix_w">
+                    <div class="inner bg_white">
+                        <a data-element-id="MCH-KSQR-30-S-e16" href="#" class="btn_default btn-style-h48 round_r8" id="next_btn" onclick="next_btn(this)"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                            <span>저장 후 다음 단계</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+</form>
+    
+    <script>
+        <!-- let modify_yn = ""; -->
+        let page_info = "";
+        let em  = "";
+        <!-- 
+        $(function(){
+            $('.toggle_wrap .trigger a').on({
+                click: function(){
+                    $(this).parent().parent().toggleClass('on');
+                    $(this).parent().next().slideToggle(300)
+                }
+            })
+        }); -->
+    </script>
+</body>
+</html>

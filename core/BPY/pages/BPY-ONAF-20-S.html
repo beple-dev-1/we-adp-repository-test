@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비대면결제 검색하기</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-ONAF-20-S">
+<form name="frm" id="frm" method="post">
+
+<input type="hidden" id="app_cd" value="표본" />
+<input type="hidden" id="memb_cd" value="표본" />
+<input type="hidden" id="post_do1" value="표본"/>
+<input type="hidden" id="KEYWORD" name="KEYWORD" value=""/>
+<input type="hidden" id="OPTION_DO" name="OPTION_DO" value=""/>
+<input type="hidden" id="OPTION_SI" name="OPTION_SI" value=""/>
+
+</form>
+
+<div class="wrap">
+	<div class="header floating-back-header floating-sticky">
+		<h1>비대면 결제</h1>
+		<!-- 2021-01-28 -->
+		<div class="right">
+			<a data-element-id="BPY-ONAF-20-S-e07" href="#none" class="btn_outpage" id="go_home">페이지나가기</a>
+		</div>
+		<!-- //2021-01-28 -->		
+	</div><!-- // header -->
+	<div class="container">
+		<div class="content">
+			<!-- 비대면 결제 상단 영역 -->
+			<div class="unpay_topbx">
+				<div class="inner">
+					<!-- 검색 상단영역 -->
+					<div class="unpay_top">
+						<!-- <div class="tit"><h2>비대면 결제</h2></div> --><!-- 2021-01-29 삭제 -->
+						<!-- 2021-01-28 삭제 -->
+						<!-- <div class="btn">
+							<a id="go_aff_tran" class="btn_arr_w"><span>최근결제 가맹점</span></a>
+						</div> -->
+						<!-- 2021-01-28 삭제 -->
+						<!-- 2021-01-29 -->
+						<div class="txt">
+							<p>
+								매장을 직접 방문하지 않아도<br>
+								언제 어디서나<br>
+								<strong>비대면</strong>으로 <strong>간편</strong>하게 <strong>결제</strong>합니다.
+							</p>
+							<div class="unpay_result_no" style="margin-top:15px">
+							원격 결제가 가능한 가맹점만 비대면결제가 가능합니다.
+							</div>
+						</div>
+						<!-- //2021-01-29 -->
+						
+
+					</div>
+					<!-- //검색 상단영역 -->
+
+					<!-- 지역 선택 -->
+					<div class="ar_selectbx">
+						<dl>
+							<!-- <dt>지역을 선택하세요.</dt> -->
+							<dd>
+								<div class="unpay_select">
+									<div class="sel">
+										<select data-element-id="BPY-ONAF-20-S-e10" id="post_do" name="">
+											<option value="option_do" selected>시/도</option>
+										</select>
+									</div>
+									<div class="sel">
+										<select data-element-id="BPY-ONAF-20-S-e11" id="post_si" name="">
+											<option value="option_si" selected>시/구/군</option>
+										</select>
+									</div>
+								</div>
+							</dd>
+						</dl>
+					</div>
+					<!-- //지역 선택 -->
+
+					<!-- 검색영역 -->
+					<div class="unpay_iptbx">
+						<div class="bg">
+							<input data-element-id="BPY-ONAF-20-S-e12" id="afld_keyword" type="text" placeholder="매장명 검색">
+							<a data-element-id="BPY-ONAF-20-S-e08" href="#" class="btn_sch" id='search_btn'><span class="blind">검색</span></a><!-- 2021-01-28 검색 버튼 추가 -->
+						</div>
+						
+						<!-- 2021-01-28 -->
+						<div class="btn">
+							<a data-element-id="BPY-ONAF-20-S-e09" id="go_aff_tran" class="btn_arr_w"><span>최근결제 가맹점</span></a>
+						</div>
+						<!-- 2021-01-28 -->
+					</div>
+					<!-- //검색영역 -->
+
+					<!-- 2021-01-28 삭제 -->
+					<!-- 버튼영역 -->
+					<div id='search_btn' class="unpay_btn" style="display:none;">
+						<a class="on">검색하기</a>
+					</div>
+					<!-- //버튼영역 -->
+					<!-- 2021-01-28 삭제 -->
+				</div>
+			</div>
+			<!-- //비대면 결제 상단 영역 -->
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+</body>
+</html>

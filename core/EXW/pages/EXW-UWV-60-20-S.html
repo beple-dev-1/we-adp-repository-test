@@ -48,7 +48,7 @@
 		<!-- 헤더 -->
 		<header class="header position-sticky">
 			<nav class="header__navi">
-				<a id="back_btn" class="header__btn btn-back">
+				<a data-element-id="EXW-UWV-60-20-S-e16" id="back_btn" class="header__btn btn-back">
 					<span class="blind">이전 페이지로</span>
 				</a>
 			</nav>
@@ -65,7 +65,7 @@
 					<header id="lmt_info_area" class="container__header">
 						<div class="headline">
 							<!-- [D] 이미지 미사용 시 주석 또는 이미지 태그 삭제 -->
-							 <img alt="" class="head-image"> 
+							 <img alt="" class="head-image" src="../assets/_sample/card.svg"> 
 							<p class="head-text">
 								<span class="method-name" id="lmt_nm"><!-- sample:begin -->홍길동<!-- sample:end --></span>
 								<span class="method-amount" id="lmt_amt"><!-- sample:begin -->4,500<!-- sample:end --></span>
@@ -126,7 +126,7 @@
 										<th><p>자동충전 계좌</p></th>
 										<td>
 											<p>
-												<button id="mny_acct_info" type="button" class="flex-row align-center button js-popup-open" data-modal="popup-select--bank"><!-- sample:begin -->표본<!-- sample:end --></button>
+												<button data-element-id="EXW-UWV-60-20-S-e01" id="mny_acct_info" type="button" class="flex-row align-center button js-popup-open" data-modal="popup-select--bank"><!-- sample:begin -->표본<!-- sample:end --></button>
 											</p>
 										</td>
 									</tr>
@@ -148,11 +148,11 @@
 							<button type="button" data-key="9" class="key-item"><span>9</span></button>
 							<button type="button" data-key="00" class="key-item"><span>00</span></button>
 							<button type="button" data-key="0" class="key-item"><span>0</span></button>
-							<button type="button" class="key-item delete"><span class="blind">지우기</span></button>
+							<button data-element-id="EXW-UWV-60-20-S-e15" type="button" class="key-item delete"><span class="blind">지우기</span></button>
 						</div>
 						<!-- 메인버튼 -->
 						<div class="btn-box justify-spacing-btn">
-							<a id="btn_next" class="button button-xl button--lv1 js-popup-open dis" data-modal="popup-payment--confirm"><!-- [D] 활성화 시 dis 클래스 제거 -->
+							<a data-element-id="EXW-UWV-60-20-S-e02" id="btn_next" class="button button-xl button--lv1 js-popup-open dis" data-modal="popup-payment--confirm"><!-- [D] 활성화 시 dis 클래스 제거 -->
 								<span>다음</span>
 							</a>
 						</div>
@@ -193,7 +193,7 @@
 							<i class="icon icon--arrow-16"></i>
 						</a>
 					</div>
-					<div class="flex-column justify-spacing-def pdt8" id="mny_acct_list"><!-- sample:begin -->표본<!-- sample:end --></div>
+					<div class="flex-column justify-spacing-def pdt8" id="mny_acct_list"><!-- sample:begin --><button data-text="안내 문구" data-bank-nm="국민은행" data-dec-acct-no="1234-56-789012" data-acct-no="1234-56-789012" data-bank-cd="004" type="button" class="acct_item select__button js-select-content js-popup-close "><span>안내 문구</span><i class="icon icon--check-24_primary"></i></button><!-- sample:end --></div>
 				</section>
 			</div>
 		</div>		
@@ -210,7 +210,7 @@
 
 				<div class="headline" id="req_lmt_info_area">
 					<!-- [D] 이미지 미사용 시 주석 또는 이미지 태그 삭제 -->
-					<img alt="" class="head-image">
+					<img alt="" class="head-image" src="../assets/_sample/card.svg">
 					<p class="head-text">
 						<span class="method-name" id="req_lmt_nm"><!-- sample:begin -->홍길동<!-- sample:end --></span>
 						<strong class="method-amount"><span id="req_lmt_amt"><!-- sample:begin -->4,500<!-- sample:end --></span> 원</strong>
@@ -267,7 +267,5 @@
 			</article>
 		</section>
 	</div>
-</body>
-</html>
 </body>
 </html>

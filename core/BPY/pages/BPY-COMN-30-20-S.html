@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>고객센터 popup</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-COMN-30-20-S">
+<!-- 해피톡 도움말 Chat SDK -->
+<script type="text/javascript">
+
+    // Initialize happytalk instance to use SDK in add
+    var ht = new Happytalk({
+            siteId: '4000002048',
+            siteName: '비플페이',
+            categoryId: '141498',
+            divisionId: '141499',
+        });
+
+    setTimeout(function() {
+        // open happTalk
+        ht.open();
+    }, 1000);
+
+    // event handler after happyTalk initialized
+    /* ht.event.on('happytalk:ready', functino () {
+        // open happTalk
+        ht.open();
+    }); */
+
+    // close browser tab
+    ht.event.on('happytalk:close', function () {
+        window.close();
+    });
+
+</script>
+</body>
+</html>

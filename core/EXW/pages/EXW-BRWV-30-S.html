@@ -61,30 +61,30 @@
 	 				<p class="txt_bold">상품권 구매를 위한<br>계좌 정보를 관리합니다.</p>
 					<!-- 계좌 목록 -->
 					<h2 class="acc_list_tit"><strong></strong>님의 등록계좌</h2>
-					<ul class="acc_list" id="bank_list"><!-- sample:begin -->	<div class="innerY mainY dis">	<input type="hidden" onClick="uf_acctSelect(this);" name="sel_acct" id="lrh-1" Ychecked value="1" bank_cd="004" acct_no="1234-56-789012" />	<p class="ico">	<img src="../assets/image/bank/ico_account_004.png" alt="국민은행 ">   </p><div class="con_w"><p class="name">국민은행(1234-56-789012)</p>   <p class="fcRed">계좌를 삭제 후 재등록해주세요</p></div>   <p class="acc_set_btn"><a href="\#none" onclick="show_dim('국민은행','1','004','1234-56-789012','	</div></li><!-- sample:end --></ul>
+					<ul class="acc_list" id="bank_list"><!-- sample:begin --><li aria-checked="false" aria-label="국민은행,1234-56-789012" bank_cd="004">	<div class="inner">	<input type="hidden" onClick="uf_acctSelect(this);" name="sel_acct" id="lrh-1" value="1" bank_cd="004" acct_no="1234-56-789012" />	<p class="ico">	<img src="../assets/image/bank/ico_account_004.png" alt="국민은행 ">   </p><div class="con_w"><p class="name">국민은행(1234-56-789012)</p>   <p class="fcRed">계좌를 삭제 후 재등록해주세요</p></div>   <p class="acc_set_btn"><a href="\#none" onclick="show_dim('국민은행','1','004','1234-56-789012','Y');" ><img src="../assets/resource/images/ico_acc_set_btn.png" alt="계좌설정"></a></p>	</div></li><!-- sample:end --></ul>
 					<!--
 					<p class="btn_plus_bx">님의 등록계좌<a id="acct_add" style="display:none" role="button" aria-label="계좌추가">+ 계좌추가</a></p>--><!-- 20160704 수정 -->
 		
 					<!-- 계좌 추가/등록 버튼 -->
 					<div class="btn_botFix_w webView_bnk">
 						<div class="inner">
-							<a  id="acct_add" class="btn-skyBlue btn-style-h46 round_r8 on">
+							<a data-element-id="EXW-BRWV-30-S-e03"  id="acct_add" class="btn-skyBlue btn-style-h46 round_r8 on">
 								<span>계좌 추가</span>
 							</a>
 						</div>
 						<nav class="nav_w bg_white">
 							<div class="prev">
-								<a onclick="uf_move('prev');">
+								<a data-element-id="EXW-BRWV-30-S-e04" onclick="uf_move('prev');">
 									<span>이전</span>
 								</a>
 							</div>
 							<div class="home">
-								<a onclick="uf_move('home');">
+								<a data-element-id="EXW-BRWV-30-S-e05" data-nav-target="EXW-BRWV-10-S" onclick="uf_move('home');">
 									<span>홈</span>
 								</a>
 							</div>
 							<div class="my_info">
-								<a onclick="uf_move('list');">
+								<a data-element-id="EXW-BRWV-30-S-e06" data-nav-target="EXW-BRWV-20-S" onclick="uf_move('list');">
 									<span>MY</span>
 								</a>
 							</div>
@@ -98,7 +98,7 @@
  		</div><!-- // container -->
  	</div><!-- // wrap -->
  	<!-- 레이어팝업 -->
-	<div class="layer_overlay" id="acc_settings">
+	<div class="layer_overlay" id="acc_settings" style="display:none;">
 		<div class="layer_bPop">
 			<div class="popup_con pd0">
 				<!-- 계좌설정 -->

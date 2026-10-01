@@ -1,0 +1,1454 @@
+/* =============================================================================
+ * components.css — 라이브러리 컴포넌트 스타일 (heat@1.0 mobile, 24)
+ * 출처: BD-002_heat-plus@0.2.0 bundle.css [2] LIBRARY COMPONENTS 섹션 분리.
+ * 토큰 정의는 tokens.css 선행(@import 순서). 본 파일은 var(--*) 참조만.
+ * ========================================================================== */
+
+/* ===== [2] LIBRARY COMPONENTS (heat@1.0 mobile, 24) ===== */
+
+/* --- icon --- */
+/* ============================================================
+   ds-icon — Icon Set / 아이콘 (mobile)
+   Figma: ico_more/check/close/arrow_right/arrow_bottom 외
+   방식: 인라인 SVG, stroke/fill="currentColor". 색은 부모 color=var(--text-*)로 주입.
+   .ds-icon 은 정렬 헬퍼(인라인 플렉스). 색상은 사용처에서 color 토큰으로 지정.
+   받는 토큰: (색) 부모 color=var(--text-primary/-tertiary 등) 상속
+   ============================================================ */
+.ds-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: inherit;
+}
+.ds-icon svg, .ds-icon img { display: block; }
+
+/* --- divider --- */
+/* ============================================================
+   ds-divider — Divider / 구분선 (mobile)
+   Figma: line / line_mid_dash (node 357:7003 하위)
+   구조: .ds-divider (solid) + --dashed(점선)
+   - 색상은 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --border-default
+   ============================================================ */
+.ds-divider {
+    border: none;
+    height: 1px;
+    margin: 0;
+    background-color: var(--border-default);
+}
+.ds-divider--dashed {
+    height: 0;
+    background: none;
+    border-top: 1px dashed var(--border-default);
+}
+
+/* --- badge --- */
+/* ============================================================
+   ds-badge — Badge / 배지 (mobile)
+   Figma: flag_round(품절) / 카테고리 배지 (node 476:1829, 362:1962)
+   구조: .ds-badge (베이스 pill) + --soldout / --category
+   - 색상/반경은 var(--*) semantic 슬롯만 사용.
+   - 배경은 accent 10% 틴트(토큰 --color-accent-weak).
+   받는 토큰: --color-accent, --color-accent-weak, --radius-pill
+   ============================================================ */
+.ds-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+    padding: 2px 8px;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-accent-weak);
+    color: var(--color-accent);
+    font-family: var(--font-family);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: var(--letter-spacing-base);
+    white-space: nowrap;
+}
+.ds-badge--category {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+.ds-badge--soldout {
+    border-radius: var(--radius-md);   /* Figma flag_round 36×20 r12, "품절" 10/700 */
+    padding: 5px 9px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* --- button --- */
+/* ============================================================
+   ds-button — Button (mobile)
+   Figma: btn_xlarge(Primary, 357:7003) / btn_large(Secondary, 357:4248)
+   구조: .ds-button(베이스) + --primary/--secondary + --block + 상태(:disabled/--disabled)
+   - 색상/폰트/반경은 var(--*) semantic 슬롯만 사용.
+   - 높이 52px·패딩은 컴포넌트 고유 레이아웃(직접 허용).
+   - disabled 흐림은 opacity로 표현(Figma opacity 재현).
+   받는 토큰: --color-primary, --color-on-primary, --color-primary-weak,
+             --border-disabled, --radius-md
+   ============================================================ */
+.ds-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 48px;                /* Figma btn_large 48 */
+    padding: 0 24px;
+    border: none;
+    border-radius: 10px;         /* Figma btn_large r10 */
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: var(--letter-spacing-base);
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.ds-button--block { width: 100%; }
+
+/* Primary: filled primary + on-primary 텍스트 */
+.ds-button--primary {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+.ds-button--primary:active {
+    opacity: 0.88;  /* 눌림 — active 진한톤 토큰 부재(예외, 추후 토큰화) */
+}
+
+/* Secondary: 연한 primary 틴트 + primary 텍스트 */
+.ds-button--secondary {
+    background-color: var(--color-primary-weak);
+    color: var(--color-primary);
+}
+.ds-button--secondary:active {
+    opacity: 0.88;
+}
+
+/* Outline: 흰 배경 + #cccccc 테두리 + 회색 텍스트 (Figma btn_xlarge secondary outline) */
+.ds-button--outline {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-disabled);
+    color: var(--text-tertiary);
+}
+.ds-button--outline:active {
+    opacity: 0.88;
+}
+
+/* Outline-primary: 흰 배경 + primary 테두리 + primary 텍스트 (Figma btn_small "첨부하기" 357:7152) */
+.ds-button--outline-primary {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+.ds-button--outline-primary:active {
+    opacity: 0.88;
+}
+
+/* disabled: 속성 + 클래스 이중 지원. 비활성 보더/흐림 */
+.ds-button:disabled,
+.ds-button--disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.ds-button--primary:disabled,
+.ds-button--primary.ds-button--disabled {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    opacity: 0.3;   /* Figma btn_xlarge 비활성 = primary@30% (선택 전) */
+}
+.ds-button--secondary:disabled,
+.ds-button--secondary.ds-button--disabled {
+    background-color: var(--color-primary-weak);
+    color: var(--color-primary);
+    opacity: 0.4;
+}
+
+.ds-button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* btn_xlarge: Figma btn_xlarge 52px / r12 / 18px/600 (저장·다음 전용) */
+.ds-button--xlarge {
+    height: 52px;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+/* btn_small: Figma btn_small 32px / r8 / 14px/600 */
+.ds-button--small {
+    height: 32px;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 0 12px;
+}
+
+/* 2열 배치(간격 8px, 균등 분할) */
+.ds-button__group {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+}
+.ds-button__group > .ds-button { flex: 1 1 0; min-width: 0; }
+
+/* --- statusbar --- */
+/* ============================================================
+   ds-statusbar — System Status Bar (mobile)
+   Figma: [HADM-MENU-001] 전 화면 상단 (node 357:1532 하위)
+   구조: .ds-statusbar (우측 정렬) + __icons + __time
+   - 색상/폰트는 var(--*) semantic 슬롯만 사용.
+   - 높이/간격 등 레이아웃 px는 컴포넌트 고유값으로 직접 허용.
+   받는 토큰: --bg-surface, --text-primary
+   ============================================================ */
+.ds-statusbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    height: 24px;
+    padding: 0 var(--space-4);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: 12px;
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-statusbar__icons {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 11px;
+}
+.ds-statusbar__time {
+    font-weight: 600;
+}
+
+/* --- appbar --- */
+/* ============================================================
+   ds-appbar — Top App Bar / Navigation (mobile)
+   Figma: Header_aos / Header (node 476:1835)
+   구조: .ds-appbar (48/1fr/48 그리드) + __title(중앙) + __action(leading/trailing 슬롯)
+   - 색상/폰트는 var(--*) semantic 슬롯만 사용.
+   - 높이 48px·슬롯 폭 48px는 컴포넌트 고유 레이아웃 px(직접 허용).
+   받는 토큰: --text-primary, --bg-surface
+   ============================================================ */
+.ds-appbar {
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    align-items: center;
+    height: 48px;
+    background-color: var(--bg-surface);
+    position: sticky;               /* 헤더 상단 고정 — 스크롤 시 top:0 유지 */
+    top: 0;
+    z-index: var(--z-appbar, 10);   /* 오버레이(sheet 900·dialog 1000·toast 1100) 미만 */
+}
+.ds-appbar__title {
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: 18px;          /* Figma 476:1829 앱바 타이틀 18/600 */
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: var(--letter-spacing-base);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 좌/우 액션 슬롯 — 버튼 또는 빈 span(균형용) */
+.ds-appbar__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.ds-appbar__action--leading { justify-self: start; }
+.ds-appbar__action--trailing { justify-self: end; }
+.ds-appbar__action:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -4px;
+    border-radius: var(--radius-sm);
+}
+
+/* --- week-nav --- */
+/* ============================================================
+   ds-week-nav — Weekly Date Navigator (mobile)
+   Figma: 주간 날짜 네비게이터 (node 476:1829)
+   구조: .ds-week-nav(40/1fr/40 그리드) + __arrow + __range + __label + __cal
+   - 색상/폰트는 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --text-primary, --color-primary
+   ============================================================ */
+.ds-week-nav {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    height: 48px;                       /* Figma 476:1829 week-nav 360x48 */
+    padding: 0 var(--app-gutter);
+}
+.ds-week-nav__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.ds-week-nav__range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.ds-week-nav__label {
+    font-family: var(--font-family);
+    font-size: 18px;          /* Figma 476:1829 주간범위 18/700 */
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-week-nav__cal {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+.ds-week-nav__arrow:focus-visible,
+.ds-week-nav__cal:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* --- day-group --- */
+/* ============================================================
+   ds-day-group — Day Group Header / 요일 그룹 헤더 (mobile)
+   Figma: 요일 그룹 헤더 (node 476:1829)
+   구조: __head(날짜+요일) + __today((오늘) 마커) + __empty(빈 요일)
+   - 색상/폰트는 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --text-tertiary, --color-primary, --text-disabled
+   ============================================================ */
+.ds-day-group__head {
+    margin: var(--space-4) 0 var(--space-3);
+    font-family: var(--font-family);
+    font-size: 14px;              /* Figma 476:1829 요일헤더 14/500 #999 */
+    font-weight: 500;
+    color: var(--text-disabled);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-day-group__today {
+    margin-left: 4px;
+    font-size: 12px;             /* Figma (오늘) 12/600 #0d84ff */
+    color: var(--color-primary);
+    font-weight: 600;
+}
+.ds-day-group__empty {
+    padding: var(--space-5) 0;
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: 15px;             /* Figma 446:1743 "등록된 메뉴가 없습니다" 15/600 #999 (강수민 260706) */
+    font-weight: 600;
+    line-height: 15px;
+    color: var(--text-disabled);
+    letter-spacing: var(--letter-spacing-base);
+}
+
+/* --- more-toggle --- */
+/* ============================================================
+   ds-more-toggle — More / Fold Toggle (mobile)
+   Figma: 더보기/접기 (node 446:1743)
+   구조: .ds-more-toggle(풀폭 텍스트 버튼) + __label + __chevron
+   - 색상/폰트는 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --text-tertiary
+   ============================================================ */
+.ds-more-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    width: 100%;
+    padding: var(--space-3) 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 12px;             /* Figma btn_text "더보기" 12/400 #999 */
+    font-weight: 400;
+    color: var(--text-disabled);
+    letter-spacing: var(--letter-spacing-base);
+    -webkit-tap-highlight-color: transparent;
+}
+.ds-more-toggle--today {
+    margin-top: var(--space-4);
+    font-size: 14px;             /* Figma 446:1743 "오늘날짜로 이동" 14/600 #666 — "더보기"(12/400/#999)와 별도 (강수민 260706) */
+    font-weight: 600;
+    color: var(--text-tertiary);
+}
+.ds-more-toggle__chevron {
+    display: inline-flex;
+    align-items: center;
+}
+.ds-more-toggle:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* --- fab --- */
+/* ============================================================
+   ds-fab — Floating Action Button (mobile)
+   Figma: FAB "메뉴 추가 +" (node 476:1829)
+   구조: .ds-fab__wrap(우하단 sticky) + .ds-fab(pill 버튼) + __label + __icon
+   - 색상/반경은 var(--*) semantic 슬롯만 사용.
+   - sticky 위치·패딩은 컴포넌트 고유 레이아웃(직접 허용).
+   받는 토큰: --color-primary, --color-on-primary, --radius-pill, --shadow-fab, --app-gutter
+   ============================================================ */
+.ds-fab__wrap {
+    position: sticky;
+    bottom: 48px;               /* Figma 476:1829 FAB 하단거터 48 (frame800 - y704 - h48) */
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;        /* Figma FAB 우거터 20 (360 - x226 - w114) */
+    pointer-events: none;
+}
+.ds-fab {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;                   /* Figma btn_medium gap 2 */
+    min-height: 48px;           /* Figma btn_medium 48 (pad t12 b12 + 아이콘 24) */
+    padding: 12px 12px 12px 18px;  /* Figma pad(l18 r12) */
+    border: none;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: var(--shadow-fab);
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 16px;            /* Figma FAB 라벨 16/600 */
+    font-weight: 600;
+    letter-spacing: var(--letter-spacing-base);
+    -webkit-tap-highlight-color: transparent;
+}
+.ds-fab__icon {
+    display: inline-flex;
+    align-items: center;
+}
+.ds-fab:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* --- text-field --- */
+/* ============================================================
+   ds-text-field — Text Field / 입력 필드 (mobile)
+   Figma: textfield_box (node 357:4242)
+   구조: __label + __control(box) + __input + __suffix
+   상태: 기본 / :focus-within(보더 primary) / disabled
+   - 색상/폰트/반경은 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --border-default, --color-primary, --text-primary, --text-disabled,
+             --bg-surface, --bg-muted, --radius-sm
+   ============================================================ */
+.ds-text-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-text-field__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+.ds-text-field__control {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    height: 48px;
+    padding: 0 var(--space-3);
+    border: 1px solid var(--border-strong);   /* Figma 357:7059 border #dbdbdb(--border-strong) */
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-surface);
+}
+.ds-text-field__control:focus-within {
+    border-color: var(--color-primary);
+}
+.ds-text-field__input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--text-secondary);   /* Figma textfield_box 입력값 #333333 */
+    letter-spacing: inherit;
+}
+.ds-text-field__input::placeholder {
+    color: var(--text-placeholder);
+}
+.ds-text-field__suffix {
+    flex: none;
+    font-size: 16px;
+    font-weight: 500;                  /* Figma 357:7064 suffix Medium(500) */
+    color: var(--text-disabled);       /* Figma 357:7064 suffix #999(--text-disabled) */
+}
+/* disabled */
+.ds-text-field--disabled .ds-text-field__control,
+.ds-text-field__control:has(.ds-text-field__input:disabled) {
+    background-color: var(--bg-muted);
+    border-color: var(--border-default);
+}
+.ds-text-field__input:disabled {
+    color: var(--text-disabled);
+    -webkit-text-fill-color: var(--text-disabled);
+}
+
+
+/* --- textarea --- */
+/* ============================================================
+   ds-textarea — Textarea / 멀티라인 입력 (mobile)
+   Figma: 메뉴 구성 textarea (node 357:7003)
+   구조: __label + __control + __input(textarea) + __counter/__count
+   - 색상/폰트/반경은 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --border-default, --color-primary, --text-primary, --text-disabled,
+             --text-tertiary, --bg-surface, --radius-sm
+   ============================================================ */
+.ds-textarea {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-textarea__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);   /* Figma textarea label #333333 */
+}
+.ds-textarea__control {
+    position: relative;
+    border: 1px solid var(--border-strong);   /* Figma 357:7074 border #dbdbdb(--border-strong) */
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-surface);
+    padding: var(--space-3);
+    min-height: 128px;                        /* Figma 357:7074 h128 */
+}
+.ds-textarea__control:focus-within {
+    border-color: var(--color-primary);
+}
+.ds-textarea__input {
+    display: block;
+    width: 100%;
+    min-height: 72px;
+    border: none;
+    outline: none;
+    resize: none;
+    background: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--text-primary);
+    letter-spacing: inherit;
+    line-height: 1.5;
+}
+.ds-textarea__input::placeholder {
+    color: var(--text-placeholder);
+}
+.ds-textarea__counter {
+    display: block;
+    margin-top: var(--space-2);
+    text-align: right;
+    font-size: 12px;
+    color: var(--text-placeholder);   /* Figma 357:6964 전체분("/ 100") #ccc (강수민 260706) */
+}
+.ds-textarea__count {
+    color: var(--text-secondary);     /* Figma 입력 글자수("0"/"30") #333 — 전체분과 색 분리 (강수민 260706) */
+}
+
+/* --- select --- */
+/* ============================================================
+   ds-select — Select Field / 드롭다운 필드 (mobile)
+   Figma: 드롭다운(분류명/제공형태/끼니) (node 357:7003)
+   구조: __label + __control(button) + __value(--placeholder) + __chevron
+   - 색상/폰트/반경은 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --border-default, --color-primary, --text-primary, --text-disabled, --bg-surface, --radius-sm
+   ============================================================ */
+.ds-select {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-select__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+.ds-select__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    width: 100%;
+    height: 48px;
+    padding: 0 var(--space-3);
+    border: 1px solid var(--border-strong);   /* Figma 357:7053 border #dbdbdb(--border-strong) */
+    border-radius: 10px;                       /* Figma 357:7053 rounded-10 */
+    background-color: var(--bg-surface);
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+.ds-select__value {
+    font-size: 16px;
+    color: var(--text-secondary);   /* Figma select 선택값 #333333 */
+}
+.ds-select__value--placeholder {
+    color: var(--text-placeholder);
+}
+.ds-select__chevron {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-tertiary);
+}
+.ds-select__control:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-color: var(--color-primary);
+}
+
+/* --- date-field --- */
+/* ============================================================
+   ds-date-field — Date Field / 날짜 입력 필드 (mobile)
+   Figma: 날짜 데이트피커 (node 357:7003)
+   구조: __label + __control(button) + __value + __icon(달력)
+   - 색상/폰트/반경은 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --border-default, --color-primary, --text-primary, --text-tertiary, --bg-surface, --radius-sm
+   ============================================================ */
+.ds-date-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-date-field__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+.ds-date-field__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    width: 100%;
+    height: 48px;
+    padding: 0 var(--space-3);
+    border: 1px solid var(--border-strong);   /* Figma 362:2599 border #dbdbdb(--border-strong) */
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-surface);
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+.ds-date-field__value {
+    font-size: 16px;
+    color: var(--text-secondary);   /* Figma date 선택값 #333333 */
+}
+.ds-date-field__icon {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-tertiary);
+}
+.ds-date-field__control:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-color: var(--color-primary);
+}
+
+/* --- radio --- */
+/* ============================================================
+   ds-radio — Radio / 라디오 (mobile)
+   Figma: Radio (node 357:5201) — 플레인 라디오(원+라벨, 48행, 카드/행배경 없음)
+   구조: .ds-radio(그룹) + __item + __input(시각 숨김) + __mark(원) + __label
+   상태: :checked → __mark primary 채움(내부 점). 선택 행 배경 강조 없음(Figma 정합).
+   - 색상/반경은 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --color-primary, --border-strong, --text-secondary
+   ============================================================ */
+.ds-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 0;                       /* Figma 357:5201 항목 48행 연속(간격 0) */
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-radio__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);          /* Figma 라디오(20)→라벨 gap 8: 라디오 x24, 라벨 x52 */
+    min-height: 48px;             /* Figma 357:5201 항목 312×48 */
+    padding: 0;                   /* Figma 플레인 라디오 — 카드 패딩/보더/배경 없음 */
+    cursor: pointer;
+}
+.ds-radio__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.ds-radio__mark {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--border-strong);   /* Figma 라디오 원 1px #dbdbdb */
+    box-sizing: border-box;
+    position: relative;
+}
+.ds-radio__item--checked .ds-radio__mark,
+.ds-radio__input:checked + .ds-radio__mark {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);      /* Figma radio_active_20 Rectangle 4632: 20⌀ 프라이머리 디스크 */
+}
+.ds-radio__item--checked .ds-radio__mark::after,
+.ds-radio__input:checked + .ds-radio__mark::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;                                 /* Figma Rectangle 4633: 중앙 10⌀ 화이트 홀 */
+    height: 10px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: var(--color-on-primary);   /* #fff */
+}
+.ds-radio__label {
+    font-size: 16px;
+    color: var(--text-secondary);   /* Figma 357:5201 라디오 항목 텍스트 #333333 */
+}
+.ds-radio__input:focus-visible + .ds-radio__mark {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* --- checkbox --- */
+/* ============================================================
+   ds-checkbox — Checkbox / 체크박스 (mobile)
+   Figma: checkbox (node 357:7003)
+   구조: .ds-checkbox(label) + __input(숨김) + __box(체크) + __label
+   상태: :checked → __box primary 채움 + 흰 체크
+   - 색상/반경은 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --color-primary, --color-on-primary, --border-disabled, --text-primary, --radius-sm
+   ============================================================ */
+.ds-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    cursor: pointer;
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-checkbox__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.ds-checkbox__box {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-disabled);
+    border-radius: 6px;                          /* Figma checkbox_20 cornerRadius 6 (--radius-sm 8 아님) */
+    box-sizing: border-box;
+    color: transparent;
+    background-color: var(--bg-surface);
+}
+.ds-checkbox__input:checked + .ds-checkbox__box {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+.ds-checkbox__label {
+    font-size: 14px;               /* Figma 357:7071 checkbox 라벨 14px */
+    color: var(--text-secondary);  /* Figma checkbox 텍스트 #333333 */
+}
+.ds-checkbox__input:focus-visible + .ds-checkbox__box {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* --- repeat-card --- */
+/* ============================================================
+   ds-repeat-card — Repeatable Card / 반복 입력 카드 (mobile)
+   Figma: 메뉴정보/영양정보 반복카드 (node 357:7003)
+   구조: __group + __card(+__remove) + __row(__field-label/__field/__unit) + __add
+   - 색상/폰트/반경은 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --border-default, --radius-md/-sm, --text-primary/-tertiary,
+             --color-primary, --bg-surface
+   ============================================================ */
+.ds-repeat-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-repeat-card__group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+.ds-repeat-card__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;                                   /* Figma 357:7081 행 구분 divider — gap 대신 border-bottom */
+    padding: var(--space-3) 0;               /* Figma 카드 상하 여백 12px (3행 188·2행 134 ≈ Figma 189/135) */
+    border: 1px solid var(--border-strong);   /* Figma 357:7081 border #dbdbdb(--border-strong) */
+    border-radius: var(--radius-sm);          /* Figma 357:7081 rounded-8(--radius-sm) */
+    background-color: var(--bg-surface);
+    overflow: hidden;                         /* 첫/마지막 행 radius 클립 */
+}
+.ds-repeat-card__remove {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;  /* 탭 시 배경 하이라이트 억제 */
+}
+.ds-repeat-card__row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    height: 54px;                             /* Figma 357:7081 행 pitch 54 (3행×54+pad24+border2=188≈189, 2행×54+24+2=134≈135) */
+    padding: 0 var(--space-3);
+    border: none;                             /* Figma 357:7081 단일 카드 안 행 — 외곽 박스 border 없음 */
+    border-radius: 0;
+    border-bottom: 1px solid var(--border-default);  /* 행 구분 divider(#ededed), 마지막 행 제외 */
+}
+.ds-repeat-card__row:last-of-type {
+    border-bottom: none;                      /* 마지막 행 divider 제거 */
+}
+.ds-repeat-card__field-label {
+    flex: none;
+    width: 41px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+}
+.ds-repeat-card__field {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--text-secondary);   /* Figma 357:7003 반복카드 값 #333 (강수민 260706, 구 #111) */
+    letter-spacing: inherit;
+}
+.ds-repeat-card__field::placeholder { color: var(--text-placeholder); }
+.ds-repeat-card__unit {
+    flex: none;
+    font-size: 16px;             /* Figma 357:7003 반복카드 단위(kcal/g) 16/500 (강수민 260706, 구 14px) */
+    font-weight: 500;
+    color: var(--text-tertiary);
+}
+.ds-repeat-card__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    height: 40px;
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--bg-muted);
+    color: var(--text-tertiary);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: inherit;
+    -webkit-tap-highlight-color: transparent;  /* 탭 시 배경 하이라이트 억제 */
+}
+.ds-repeat-card__add:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* --- menu-image --- */
+/* ============================================================
+   ds-menu-image — Menu Hero Image / 대표 이미지 (mobile)
+   Figma: 대표 이미지 + 품절 오버레이 (node 362:1962)
+   구조: .ds-menu-image(정사각) + img + __soldout(오버레이) + __placeholder
+   - 색상/반경은 var(--*) semantic 슬롯만 사용.
+   - 160px·정사각 비율은 컴포넌트 고유 레이아웃(직접 허용).
+   받는 토큰: --bg-muted, --radius-md, --dim-overlay, --color-on-primary, --color-icon-placeholder
+   ============================================================ */
+.ds-menu-image {
+    position: relative;
+    width: 150px;
+    aspect-ratio: 1 / 1;
+    margin: var(--space-4) auto 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: var(--bg-muted);
+}
+.ds-menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.ds-menu-image__soldout {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--overlay-soldout);   /* Figma 362:1972 rgba(0,0,0,0.5) — dim-overlay(시트/팝업)와 분리 */
+    color: var(--color-on-primary);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-menu-image__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-icon-placeholder);
+}
+/* placeholder 글리프는 고정 크기(Figma 357:6932 ~39×39) — 위 .ds-menu-image img{100%} 상속 차단 */
+.ds-menu-image__placeholder img { width: 40px; height: 40px; }
+
+/* --- menu-card --- */
+/* ============================================================
+   ds-menu-card — Menu Card / 메뉴 카드 (mobile)
+   Figma: 메뉴 카드 (node 476:1829)
+   구조: __thumb(img/__pen/__placeholder) + __info(__name-row/__name/__desc/__price) + __more
+   상태: --soldout(dim+배지) / __price--hidden(취소선) / --no-image(placeholder)
+   - 색상/폰트/반경은 var(--*) semantic 슬롯만 사용.
+   - 썸네일 64px·간격 등 레이아웃 px는 컴포넌트 고유값(직접 허용).
+   받는 토큰: --bg-surface, --border-default, --text-primary/-tertiary/-disabled,
+             --bg-muted, --radius-md/-sm/-pill, --color-icon-placeholder, --shadow-thumb
+   ============================================================ */
+.ds-menu-card {
+    display: flex;
+    gap: 14px;                           /* Figma 476:1829 썸네일↔본문 gap 14 */
+    align-items: center;
+    padding: var(--space-5);             /* Figma 카드 내부 패딩 20 (썸네일68+20*2=108) */
+    margin-bottom: 10px;                 /* Figma 카드 간격 10 */
+    box-shadow: inset 0 0 0 1px var(--border-default);  /* Figma stroke inside(높이 108 유지, border 외곽 가산 회피) */
+    border-radius: var(--radius-sm);     /* Figma 476:1829 카드 r8 */
+    background-color: var(--bg-surface);
+}
+
+/* 썸네일 */
+.ds-menu-card__thumb {
+    position: relative;
+    flex: none;
+    width: 68px;                          /* Figma 썸네일 68×68 r10 */
+    height: 68px;
+    border-radius: var(--radius-thumb);
+    overflow: hidden;
+    background-color: var(--bg-muted);
+}
+.ds-menu-card__thumb > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.ds-menu-card__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-icon-placeholder);
+}
+.ds-menu-card__pen {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    width: 16px;                  /* Figma Group 17365 16×16 (흰원+pen vector) */
+    height: 16px;
+    border-radius: var(--radius-pill);
+    background-color: var(--bg-surface);
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-thumb);
+    cursor: pointer;
+}
+.ds-menu-card__pen img {
+    width: 7px;                   /* Figma Group 17365 pen vector ~7×7 (원 16 안 글리프) */
+    height: 7px;
+}
+/* 사진 변경/추가 버튼 — 썸네일 전체를 덮는 클릭영역(펜 배지는 시각 힌트로 버튼 안에 유지).
+   __thumb(position:relative) 안에서 inset:0로 채워 펜 배지의 절대좌표(우하단 2/2)를 보존한다. */
+.ds-menu-card__photo {
+    position: absolute;
+    inset: 0;                     /* 썸네일 68×68 전체 = 클릭영역 */
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.ds-menu-card__photo:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -2px;         /* 썸네일 안쪽 인셋 — overflow:hidden 박스 밖 삐침 방지 */
+    border-radius: var(--radius-thumb);
+}
+
+/* 본문 */
+.ds-menu-card__info {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-menu-card__name-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.ds-menu-card__name {
+    font-size: 16px;              /* Figma 카드명 16/600 #333, lh=16 */
+    font-weight: 600;
+    line-height: 1;               /* Figma lh=fontSize (세로 리듬 T24) */
+    color: var(--text-secondary);
+    white-space: nowrap;          /* 장문 메뉴명 1줄 말줄임 (ST-LIST-longName) */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+.ds-menu-card__desc {
+    margin-top: 8px;             /* Figma 메뉴명T24→설명T48 = 16+8 */
+    font-size: 14px;             /* Figma 카드 설명 14/400 #666, lh=14 */
+    line-height: 1;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ds-menu-card__price {
+    margin-top: 8px;             /* Figma 설명T48→가격T70 = 14+8 */
+    font-size: 14px;             /* Figma 가격 14/700 #333, lh=14 */
+    line-height: 1;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+/* 금액숨김 (ST-LIST-priceHidden) — Figma 446:1812 취소선 가격은 #333/700 유지(취소선만 추가), 흐림처리 아님 (강수민 260706) */
+.ds-menu-card__price--hidden {
+    text-decoration: line-through;
+}
+.ds-menu-card__price--hidden::after {
+    content: " (금액숨김)";
+    text-decoration: none;
+    font-size: 12px;             /* Figma (금액숨김) 12/500 #666 */
+    font-weight: 500;
+    color: var(--text-tertiary);
+}
+
+/* 더보기 ⋮ */
+.ds-menu-card__more {
+    align-self: center;          /* Figma 476:1829 more (T38 — 정중앙보다 4px 위) */
+    display: flex;               /* svg 줄높이 여백 제거 → 박스 24 (좌표 정합) */
+    align-items: center;
+    margin-bottom: 8px;          /* center(T42) → T38 보정 (Figma more 정중앙 아님) */
+    padding: 0;                  /* Figma more 24×24 L268 R20 (패딩 제거로 좌표 정합) */
+    border: none;
+    background: none;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.ds-menu-card__more:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* 썸네일 없음 (ST-LIST-noImage): __thumb 내부를 __placeholder 구조로 교체(HTML 조건부).
+   img가 함께 올 경우 대비한 방어 규칙 — placeholder만 노출. */
+.ds-menu-card--no-image .ds-menu-card__thumb > img { display: none; }
+
+/* 품절 (ST-LIST-soldout): Figma 446:1743 — 텍스트 #999 회색 + 썸네일 흐림 */
+.ds-menu-card--soldout .ds-menu-card__thumb > img {
+    opacity: 0.45;
+}
+.ds-menu-card--soldout .ds-menu-card__name,
+.ds-menu-card--soldout .ds-menu-card__desc,
+.ds-menu-card--soldout .ds-menu-card__price {
+    color: var(--text-disabled);   /* #999 — Figma 품절 텍스트 실측 */
+}
+
+/* --- dialog --- */
+/* ============================================================
+   ds-dialog — Dialog / Popup Type1b (mobile)
+   Figma: 기본팝업 Type1b.기본형 3줄 (node 357:7337)
+   구조: .ds-dialog(오버레이 컨테이너) + __dim + __panel(__message/__actions)
+   - 액션 버튼은 ds-button(secondary/primary) 컴포넌트 조합.
+   - 색상/반경/그림자는 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --dim-overlay, --bg-surface, --radius-lg, --text-primary, --shadow-popup, --app-max
+   ============================================================ */
+.ds-dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    max-width: var(--frame-max);   /* dim은 .app 프레임 전체(≤960, 초과 시 중앙정렬) 덮음 — 시트/피커와 일관 */
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-5);
+}
+.ds-dialog[hidden] { display: none; }
+.ds-dialog__dim {
+    position: absolute;
+    inset: 0;
+    background-color: var(--dim-overlay);
+}
+.ds-dialog__panel {
+    position: relative;
+    width: 280px;
+    padding: 32px 20px var(--space-5);   /* Figma 357:7337 좌우 20px(버튼 116 등분 정합) */
+    border-radius: var(--radius-lg);
+    background-color: var(--bg-surface);
+    box-shadow: var(--shadow-popup);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-dialog__message {
+    margin: 0 4px 36px;          /* Figma 357:7322: 메시지 pad-x 24(패널20+4) · 메시지블록↔버튼 gap. 3줄예약48+36 → 패널 h184 */
+    min-height: 48px;            /* Type1b "3줄" 예약(3×16px). 1줄이면 상단정렬 후 하단여백(Figma 357:7322 gap68 재현) */
+    text-align: left;            /* Figma 357:7324 style.textAlignHorizontal=LEFT */
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;           /* Figma 357:7324 lineHeightPx 16 (구 1.5 → +8px 편차 해소) */
+    color: var(--text-secondary);
+    /* 최대 3줄 (Type1b) */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+/* 여러 줄 메시지(예 이탈확인 357:7372): 텍스트 박스 60px = 3줄 × line-height 20
+   (Figma는 lineHeightPx16 + paragraphSpacing6 = 60; CSS auto-wrap엔 문단간격이 없어 line-height로 녹임).
+   버튼 y116·패널 184 유지 위해 margin-bottom 36→24(60+24 = 48+36 = 84). */
+.ds-dialog__message--multiline {
+    line-height: 22px;          /* 상하 줄간격 22px (사용자 지정) */
+    margin-bottom: 24px;
+}
+.ds-dialog__actions {
+    display: flex;
+    gap: var(--space-2);
+}
+.ds-dialog__actions > .ds-button { flex: 1 1 0; min-width: 0; }
+
+/* --- banner --- */
+/* ============================================================
+   ds-banner — Banner / 공지·전용앱 배너 (mobile)
+   Figma: 전용앱(H-eat+) 메인 공지 (node 362:2269)
+   구조: .ds-banner(띠) + __icon + __text + __chevron
+   - 색상은 var(--*) semantic 슬롯만 사용.
+   받는 토큰: --bg-muted, --text-secondary, --text-tertiary
+   ============================================================ */
+.ds-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;                   /* Figma 362:2269 아이콘↔텍스트 gap 10 */
+    width: 100%;
+    min-height: 38px;
+    padding: 0 20px;             /* Figma 362:2269 좌우 20 (구 24 → +4 해소) */
+    background-color: var(--bg-inverse);     /* Figma 바나 배경 #333333 → 토큰화 */
+    color: var(--color-on-inverse);          /* Figma 바나 텍스트 #ffffff → 토큰화 */
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-size: 13px;
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-banner__icon {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-on-inverse);          /* Figma 아이콘 #ffffff → 토큰화 */
+    flex: none;
+}
+.ds-banner__text {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ds-banner__chevron {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-on-inverse);          /* Figma chevron #ffffff → 토큰화 */
+    flex: none;
+}
+
+/* --- bottom-sheet --- */
+/* ============================================================
+   ds-bottom-sheet — Bottom Sheet / 바텀시트 (mobile)
+   Figma: 357:6066(메뉴액션) · 357:5642(가맹점) · 357:7243(분류) · 357:5864(필터)
+   구조: __dim + __panel(상단 라운드) + __header(__title/__close) + __list(__item[--selected/--danger]/__check)
+   - 색상/반경은 var(--*) semantic 슬롯만 사용. dim=프레임 전체(--frame-max, ≤960·초과 시 중앙), 시트 패널=프레임 폭 확장(2026-07-01).
+   - dim 슬라이드업 타이밍 [추정] 200~300ms.
+   받는 토큰: --dim-overlay, --bg-surface, --radius-lg, --text-primary/-secondary,
+             --color-primary, --color-danger, --bg-muted, --app-max
+   ============================================================ */
+.ds-bottom-sheet {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    max-width: var(--frame-max);   /* dim은 .app 프레임 전체(≤960, 초과 시 중앙정렬) 덮음 */
+    margin-inline: auto;
+}
+.ds-bottom-sheet[hidden] { display: none; }
+.ds-bottom-sheet__dim {
+    position: absolute;
+    inset: 0;
+    background-color: var(--dim-overlay);
+}
+.ds-bottom-sheet__panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 0 0 var(--space-6);   /* Figma 357:6025 하단 24. 상단 여백은 __header가 소유(제목 rel-y 32·리스트 76) */
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-bottom-sheet__header {
+    position: relative;
+    height: 76px;                       /* Figma 357:6025 리스트 시작 rel-y 76 (헤더블록) */
+    padding: 32px var(--app-gutter) 0;  /* Figma 제목 rel-y 32 (좌거터 24) */
+}
+.ds-bottom-sheet__title {
+    margin: 0;
+    font-size: 20px;             /* Figma 357:6025 시트 제목 20/700 */
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.025em;    /* 20px 기준 -0.5px */
+    color: var(--text-primary);
+}
+.ds-bottom-sheet__close {
+    position: absolute;
+    top: 8px;                    /* Figma 357:6059 닫기 rel-y 8 */
+    right: 8px;                  /* Figma 우거터 8 (32 프레임) */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+/* 항목 리스트 */
+.ds-bottom-sheet__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ds-bottom-sheet__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;            /* Figma 357:6025 항목 312×48 */
+    padding: 0 var(--app-gutter);
+    font-size: 16px;
+    line-height: 16px;           /* Figma 357:6025 항목 lineHeightPx 16 (스펙 완전일치) */
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+.ds-bottom-sheet__item:active {
+    background-color: var(--bg-muted);
+}
+.ds-bottom-sheet__item--selected {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+.ds-bottom-sheet__item--danger {
+    color: var(--color-danger);
+}
+.ds-bottom-sheet__check {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 4px;           /* Figma 357:7243·357:5665 체크 우거터 28 (항목 padding 24 + 4) */
+    color: var(--color-primary);
+}
+
+/* --- toast --- */
+/* ============================================================
+   ds-toast — Toast / 토스트 (mobile)
+   Figma: 정답지 없음 — interactions.md §6 명세 기반([추정] 검수).
+   구조: .ds-toast (하단 중앙 고정, scrim 배경 + on-primary 텍스트)
+   - 색상/반경은 var(--*) semantic 슬롯만 사용.
+   - 자동 소멸 타이밍 [추정] 2초(bundle.js).
+   받는 토큰: --color-scrim, --color-on-primary, --radius-sm, --app-max, --app-gutter
+   ============================================================ */
+.ds-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+    z-index: 1100;
+    max-width: calc(var(--app-max) - 2 * var(--app-gutter));
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-scrim);
+    color: var(--color-on-primary);
+    font-family: var(--font-family);
+    font-size: 14px;
+    letter-spacing: var(--letter-spacing-base);
+    text-align: center;
+    white-space: nowrap;
+}
+.ds-toast[hidden] { display: none; }
+
+/* --- wheel-picker --- */
+/* ============================================================
+   ds-wheel-picker — Wheel Picker / 휠 피커 (mobile)
+   Figma: 357:5817(기간) · 357:6814(월)
+   구조: __dim + __panel(✕) + __wheels(__col/__option[--selected]/__band) + 하단 ds-button 확인
+   - 색상/반경은 var(--*) semantic 슬롯만 사용. 선택행 밴드 = --color-primary-weak.
+   - 정적 표현(실제 스크롤 없음). 하단 버튼은 ds-button 조합.
+   받는 토큰: --dim-overlay, --bg-surface, --radius-lg, --color-primary,
+             --color-primary-weak, --text-disabled, --radius-md, --app-max, --app-gutter
+   ============================================================ */
+.ds-wheel-picker {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    max-width: var(--frame-max);   /* dim은 .app 프레임 전체(≤960, 초과 시 중앙정렬) 덮음 */
+    margin-inline: auto;
+}
+.ds-wheel-picker[hidden] { display: none; }
+.ds-wheel-picker__dim {
+    position: absolute;
+    inset: 0;
+    background-color: var(--dim-overlay);
+}
+.ds-wheel-picker__panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: var(--space-2) 20px var(--space-6);   /* Figma 357:6814: top8 좌우20(확인버튼 x20 w320) bottom24 */
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;   /* Figma 357:6818 상단 24 (시트 16과 다름) */
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-base);
+}
+.ds-wheel-picker__close {
+    display: block;
+    margin: 0 -12px 0 auto;   /* Figma 357:6814 닫기 rel-y8·우거터 8px(패널20-12)·아래 gap0(행1 바로붙음) */
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+.ds-wheel-picker__wheels {
+    position: relative;
+    display: flex;
+    justify-content: center;   /* 프레임 폭 확장 시 휠 3열(고정96) 중앙 배치(360선 폭 꽉 차 무영향) */
+    gap: 12px;                 /* Figma 357:6814 열 간격 12 */
+    padding: 0 0 32px;         /* 휠→확인버튼 gap 32 · top0(닫기 바로 아래). 좌우는 중앙정렬로 처리 */
+}
+.ds-wheel-picker__col {
+    flex: 0 0 96px;            /* Figma 357:6814 열 96px 고정(flex 균등 금지) */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.ds-wheel-picker__option {
+    height: 48px;
+    line-height: 48px;
+    font-size: 20px;
+    color: var(--border-disabled);  /* Figma 비선택 #cccccc = --border-disabled */
+}
+.ds-wheel-picker__option--selected {
+    position: relative;
+    z-index: 1;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+/* 중앙 선택 밴드 (3번째 행 = 96~144px, wheels top-pad 제거로 96 기준) */
+.ds-wheel-picker__band {
+    position: absolute;
+    left: 4px;
+    right: 4px;      /* Figma 357:6821 밴드 x24 w312(휠 콘텐츠 정렬) */
+    top: 96px;
+    height: 48px;
+    border-radius: 10px;   /* Figma 357:6821 cornerRadius 10 (--radius-md=12 미참조) */
+    background-color: var(--color-primary-weak);
+    z-index: 0;
+}
+
+/* --- chip (filter) --- */
+/* ds-chip — 필터 이용구분 칩 (Figma 357:5864). 선택=blue outline+blue text */
+.ds-chip {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 32px; padding: 4px 12px;   /* Figma 357:5871 칩 h32·pad 4·12 */
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    background: var(--bg-surface);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 500;                  /* Figma 357:5871 칩 라벨 500 */
+    letter-spacing: var(--letter-spacing-base);
+    color: var(--text-tertiary);
+    cursor: pointer;
+}
+.ds-chip--selected {
+    border-color: var(--color-primary);
+    background: var(--c-blue-025);     /* Figma 357:5871 선택 배경 #fbfdff */
+    color: var(--color-primary);
+}

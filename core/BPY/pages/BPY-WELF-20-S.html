@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>기업복지 인증 및 정보 조회</title>
+  <link rel="stylesheet" href="../assets/resource/css/zeropayReset.css">
+  <link rel="stylesheet" href="../assets/resource/css/zeropayReport.rw.css">
+</head>
+<body data-screen-id="BPY-WELF-20-S">
+<div class="wrapper">
+		<strong id="title_txt" style="font-size: 16px;">기업복지 인증 정보 조회</strong>
+		<br/>
+		<br/>
+		<div>
+			<select data-element-id="BPY-WELF-20-S-e03" class="cb_select" style="min-width:120px;" id="SRCH_TYPE">
+				<option value="MOB_NO">핸드폰번호</option>
+				<option value="EMPL_NO">사원번호</option>
+			</select>
+			<input data-element-id="BPY-WELF-20-S-e04" type="text" id="SRCH_WORD" />
+			<input type="button" id="btn_search" style="cursor:pointer;" value="검색" />
+		</div>
+		<br/>
+		<br/>
+		
+		<div id="value_wrap">
+			<div>
+				<div class="wrap_div"><h1>이름</h1></div>
+				<span class="val_div" id="memb_nm"><!-- sample:begin -->홍길동<!-- sample:end --></span>
+			</div>
+			<div>
+				<div class="wrap_div"><h1>사원번호</h1></div>
+				<span class="val_div" id="empl_no"><!-- sample:begin -->1<!-- sample:end --></span>
+			</div>
+			<div>
+				<div class="wrap_div"><h1>핸드폰번호</h1></div>
+				<span class="val_div" id="mob_no"><!-- sample:begin -->1<!-- sample:end --></span>
+			</div>
+			<div>
+				<div class="wrap_div"><h1>앱가입일자</h1></div>
+				<span class="val_div" id="app_reg_dttm"><!-- sample:begin -->14:22<!-- sample:end --></span>
+			</div>
+			<div>
+				<div class="wrap_div"><h1>임직원인증여부 (Y/N)</h1></div>
+				<span class="val_div" id="empl_join_yn"><!-- sample:begin -->Y<!-- sample:end --></span>
+			</div>
+			<div>
+				<div class="wrap_div"><h1>임직원인증일자</h1></div>
+				<span class="val_div" id="empl_reg_dttm"><!-- sample:begin -->14:22<!-- sample:end --></span>
+			</div>
+			<div>
+				<div class="wrap_div"><h1>복지몰가입여부 (Y/N)</h1></div>
+				<span class="val_div" id="gabi_join_yn"><!-- sample:begin -->Y<!-- sample:end --></span>
+			</div>
+			<div>
+				<div class="wrap_div"><h1>복지몰가입일자</h1></div>
+				<span class="val_div" id="gabi_join_dttm"><!-- sample:begin -->14:22<!-- sample:end --></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

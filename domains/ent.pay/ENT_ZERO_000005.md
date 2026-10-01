@@ -1,0 +1,270 @@
+# 엔터프라이즈_제로페이 결제하기(고정형MPM) (ENT_ZERO_000005)
+
+- 처리: 읽기·쓰기
+- 화면 겸함: 아니오
+- 상태: 따라감
+
+## 부르는 화면
+
+| 화면ID | 화면 이름 | 요소 |
+|---|---|---|
+| HIT-PAY-10-10-S | 엔터프라이즈_개인제로페이 MPM 결제 | HIT-PAY-10-10-S-e26 |
+| HIT-PAY-20-S | 엔터프라이즈_법인 제로페이 결제화면 호출 | HIT-PAY-20-S-e24 |
+
+## 입력
+
+- QR코드 (QR_CODE)
+- 결제금액 (AMT)
+- 카드번호 (CARD_NO)
+- 은행코드 (BANK_CD)
+- 계좌번호 (ACCT_NO)
+- 계좌SEQ (ACCT_SEQ)
+- 결제유형 (PAY_TYPE)
+- MEMO
+- ONLN_YN
+- 마스킹여부 (MASKING_YN)
+- TGT_YN
+- TGT_ORDER_ID
+- TGT_ORDER_DT
+- TYPE_CD
+- MNY_CHRG_ACCT_NO
+- MNY_CHRG_BANK_CD
+- MNY_CHRG_AMT
+- COMPLEX_YN
+- 2차 결제수단 구분(M: 비플머니, S: 급여공제) (SEC_PAY_MSR_TP)
+- 한도조회리스트 (MOK_LIST)
+
+## 출력
+
+- 거래일자 (TRX_DT)
+- 거래번호 (TRX_SEQ)
+
+## 데이터 처리
+
+### 비플머니 총 잔액조회 (TB_MEMBER_MNY_R001)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER_MNY, TB_MEMBER_APP
+- 입력: 회원코드 (MEMB_CD), 앱코드 (APP_CD), DYNAMIC_0
+
+### 법인 계좌정보 조회 (TB_CORP_ACCOUNT_R001)
+
+- 종류: SELECT
+- 테이블: TB_CORP_ACCOUNT
+- 입력: 사업자번호 (BIZ_NO), 은행코드 (BANK_CD), 계좌번호 (ACCT_NO)
+
+### 계좌상세조회(BY 계좌번호) (TB_ACCOUNT_R008)
+
+- 종류: SELECT
+- 테이블: TB_ACCOUNT
+- 입력: 회원코드 (MEMB_CD), 은행코드 (BANK_CD), 계좌번호 (ACCT_NO)
+
+### 가맹점정보 조회 (TB_AFFILIATION_MNG_R001)
+
+- 종류: SELECT
+- 테이블: TB_AFFILIATION_MNG, TB_AFFILIATION_MY
+- 입력: 가맹점ID (AFLT_ID)
+
+### 제로페이 가맹점QR정보 조회 (TB_AFFILIATION_QR_R001)
+
+- 종류: SELECT
+- 테이블: TB_AFFILIATION_QR
+- 입력: AFLT_ID, QR_CODE
+
+### 회원정보조회(MEMB_CD, APP_CD) (TB_MEMBER_R001)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER, TB_MEMBER_APP
+- 입력: 앱코드 (APP_CD), 회원코드 (MEMB_CD)
+
+### 식권제로페이 함께결제 총금액 조회 (TB_ZEROPAY_MT_ODR_R006)
+
+- 종류: SELECT
+- 테이블: TB_ZEROPAY_MT_ODR
+- 입력: ORDER_DT, ORDER_ID
+
+### 일일 거래금액(여러거래 통합) (TB_ZEROPAY_TRAN_R027)
+
+- 종류: SELECT
+- 테이블: TB_ZEROPAY_TRAN, TB_ZEROPAY_PG_TRAN, TB_MNY_TRAN_MST
+- 입력: 거래일자 (TRX_DT), INPUT_0, INPUT_1, INPUT_2, INPUT_3, INPUT_4, CI, 앱코드 (APP_CD), DYNAMIC_0, 거래일자 (TRX_DT), 앱코드 (APP_CD), CI, DYNAMIC_1, 거래일자 (TRX_DT), 앱코드 (APP_CD), CI, DYNAMIC_2
+
+### 월 거래금액(여러거래 통합) (TB_ZEROPAY_TRAN_R026)
+
+- 종류: SELECT
+- 테이블: TB_ZEROPAY_TRAN, TB_ZEROPAY_PG_TRAN, TB_MNY_TRAN_MST
+- 입력: 거래일자 (TRX_DT), INPUT_0, INPUT_1, INPUT_2, INPUT_3, INPUT_4, CI, 앱코드 (APP_CD), DYNAMIC_0, 거래일자 (TRX_DT), 앱코드 (APP_CD), CI, DYNAMIC_1, 거래일자 (TRX_DT), 앱코드 (APP_CD), CI, DYNAMIC_2
+
+### 거래내역 등록 (TB_ZEROPAY_TRAN_C001)
+
+- 종류: INSERT
+- 테이블: TB_ZEROPAY_TRAN
+- 입력: 거래일자 (TRX_DT), 거래코드 (TRX_CD), 업무코드 (BIZ_CD), 거래번호 (TRX_SEQ), 거래시간 (TRX_TM), 거래구분 (TRX_TP), 결제금액 (AMT), VAT, SVC_AMT, FEE_TOT, FEE_VAT, MSG, ORG_TRX_DT, ORG_TRX_SEQ, 가맹점ID (AFLT_ID), DVC_ID, 회원코드 (MEMB_CD), CI, 은행코드 (BANK_CD), 계좌번호 (ACCT_NO), QR거래일자 (QR_TRX_DT), QR거래번호 (QR_TRX_SEQ), HOST_MNG_CD, FIRM_TRX_DT, 펌거래 일련번호 (FIRM_TRX_SEQ), 응답코드 (RES_CD), 응답메시지 (RES_MSG), 처리상태 (PROC_ST), REFD_PROC_ST, PTFM_NOTI_YN, PTFM_NOTI_CNT, PTFM_NOTI_DTTM, HUB_NOTI_YN, HUB_NOTI_CNT, HUB_NOTI_DTTM, 거래구분 (CP_TP), 앱코드 (APP_CD), TGT_YN, CLS_DSP_SEQ, 한도일련번호 (LMT_SEQ), COSMO_TRAN_YN, COSMO_AMT, BOX_TRX_SEQ, BOX_TRX_DT, MNY_UCD_TRX_SEQ, MNY_UCD_TRX_DT, MNY_TRAN_YN, TYPE_CD, COMPLEX_YN, MNY_CHRG_TRX_SEQ, MNY_CHRG_TRX_DT, MNY_AUTO_CHRG_YN, 대행정산여부 (PRXY_YN), SALY_TRAN_YN, HUB_PAY_TYPE, WLFE_AGNC_YN, WLFE_AGNC_DV, API_APP_CD
+
+### 복합결제거래내역 원장 등록 (TB_ZEROPAY_COMPLEX_TRAN_C001)
+
+- 종류: INSERT
+- 테이블: TB_ZEROPAY_COMPLEX_TRAN
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 거래구분 (TRX_TP), PAY_MEASURE_TP, 거래시간 (TRX_TM), PREPAID_TRX_SEQ, PREPAID_TRX_DT, PREPAID_AUTO_CHRG_YN, PREPAID_AUTO_CHRG_AMT, 회원코드 (MEMB_CD), 총금액 (TOT_AMT), 직선불 거래금액 (FIRM_AMT), PREPAID_AMT, FIRM_FEE, FIRM_VAT, PREPAID_FEE, PREPAID_VAT, COSMO_PAY_MSR_TP, FIRM_PROC_ST, PREPAID_PROC_ST, UPD_DTTM, MNY_MEMB_CD, 앱코드 (APP_CD)
+
+### 식권제로페이 주문원장 업데이트 (TB_ZEROPAY_MT_ODR_U001)
+
+- 종류: UPDATE
+- 테이블: TB_ZEROPAY_MT_ODR
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 결제금액 (PAY_AMT), ORDER_DT, ORDER_ID
+
+### 비대면결제 거래내역 등록 (TB_ONLN_AFF_TRAN_C001)
+
+- 종류: INSERT
+- 테이블: TB_ONLN_AFF_TRAN
+- 입력: 거래번호 (TRX_SEQ), 거래일자 (TRX_DT), 거래시간 (TRX_TM), 회원코드 (MEMB_CD), 가맹점ID (AFLT_ID), 앱코드 (APP_CD), ONLN_TRX_DT, ONLN_TRX_TM, 결제금액 (AMT), 메모 (MEMO), 마스킹여부 (MASKING_YN)
+
+### 비대면 최근결제원장 등록/수정 (TB_ONLN_AFF_MNG_U001)
+
+- 종류: INSERT
+- 테이블: TB_ONLN_AFF_MNG, UPSERT
+- 입력: LST_PAY_DT, UPD_DTTM, 회원코드 (MEMB_CD), 가맹점ID (AFLT_ID), 앱코드 (APP_CD), 회원코드 (MEMB_CD), 가맹점ID (AFLT_ID), 앱코드 (APP_CD), ONAF_REG_DT, USE_YN, REG_DTTM, UPD_DTTM, LST_PAY_DT
+
+### 결제코드정보 입력 (TB_QR_MNG_C001)
+
+- 종류: INSERT
+- 테이블: TB_QR_MNG
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 거래시간 (TRX_TM), 회원코드 (MEMB_CD), CI, 거래구분 (TRX_TP), ORG_CD, 가맹점ID (AFLT_ID), DVC_ID, FILLER, QR_TP, QR_CHECK_TXT, BAR_CHECK_TXT, QR_TOKEN, BAR_TOKEN, EVT_CD, MSG, 결제금액 (AMT), VAT, SVC_AMT, 이용기관구분 (ORG_TP), 이용기관ID (ORG_ID), 기관명 (ORG_NM), 사업자번호 (BIZ_NO), 은행코드 (BANK_CD), 계좌번호 (ACCT_NO), 카드번호 (CARD_NO), 부서코드 (DEPT_CD), 부서명 (DEPT_NM), 회계코드 (ACCO_CD), 회계명 (ACCO_NM), 계정코드 (ACNT_CD), 계정명 (ACNT_NM), 목코드 (MOK_CD), 목명 (MOK_NM), 한도일련번호 (LMT_SEQ), 한도명 (LMT_NM), 1회한도 (ONCE_LIM_AMT), 일한도 (DD_LIM_AMT), 월한도 (MM_LIM_AMT), 한도 (LMT_AMT), 1회한도사용여부 (ONCE_LMT_YN), 일한도사용여부 (DD_LMT_YN), 월한도사용여부 (MM_LMT_YN), 그룹명 (CLS_DSP_NM), 처리상태 (PROC_ST), 거래구분 (CP_TP), 앱코드 (APP_CD), CLS_DSP_SEQ, MNY_TRAN_YN, WAPI_TRAN_YN, WAPI_APP_CD, WAPI_ORG_ID, TGT_YN, MNY_CHRG_ACCT_NO, MNY_CHRG_BANK_CD, 대행정산여부 (PRXY_YN), TG_STTL_YN, APV_AUTH_DV, SETL_IMPS_RSN, SETL_IMPS_RSN_DTL, 정산여부 (CALC_YN), SETL_PSBL_TIME_YN, SALY_DUCT_USE_YN, POINT_EXP_YN, MEAL_REQ_DV, MEAL_TYPE, ONLINE_PSBL_YN, MEAL_REQ_NO, REQ_EMPL_NO, 소속회사명 (ORG_COMP_NM), MEAL_USE_NM, TERM_ID, PTNR_NO, ZERO_AMT_SETL_YN, CPMT_YN, CPMT_AMT, MIX_SETL_USE_YN, HUB_PAY_TYPE, WLFE_AGNC_YN, WLFE_AGNC_DV, API_APP_CD, UUID, 거래번호 (TNO), POINT_VAR_YN
+
+### 거래내역 상태 변경 (TB_ZEROPAY_TRAN_U002)
+
+- 종류: UPDATE
+- 테이블: TB_ZEROPAY_TRAN
+- 입력: 처리상태 (PROC_ST), REFD_PROC_ST, HUB_NOTI_YN, RES_CD, 응답메시지 (RES_MSG), MNY_UCD_TRX_SEQ, MNY_UCD_TRX_DT, MNY_TRAN_YN, MNY_CHRG_TRX_SEQ, MNY_CHRG_TRX_DT, MNY_AUTO_CHRG_YN, CNCL_FIRM_TRX_DT, CNCL_FIRM_TRX_SEQ, 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 업무코드 (BIZ_CD), 거래코드 (TRX_CD)
+
+### 복합결제거래내역원장 수정 (TB_ZEROPAY_COMPLEX_TRAN_U001)
+
+- 종류: UPDATE
+- 테이블: TB_ZEROPAY_COMPLEX_TRAN
+- 입력: 거래구분 (TRX_TP), PAY_MEASURE_TP, 거래시간 (TRX_TM), PREPAID_TRX_SEQ, PREPAID_TRX_DT, PREPAID_AUTO_CHRG_YN, PREPAID_AUTO_CHRG_AMT, 회원코드 (MEMB_CD), TOT_AMT, 직선불 거래금액 (FIRM_AMT), PREPAID_AMT, FIRM_FEE, FIRM_VAT, PREPAID_FEE, PREPAID_VAT, COSMO_PAY_MSR_TP, FIRM_PROC_ST, PREPAID_PROC_ST, MNY_MEMB_CD, 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 거래구분 (TRX_TP)
+
+### 급여공제 집계내역 등록 (TB_SALY_SUM_C001)
+
+- 종류: INSERT
+- 테이블: TB_SALY_SUM
+- 입력: 거래일자 (TRX_DT), 가맹점ID (AFLT_ID), 거래구분 (TRX_TP), PAY_CNT, 결제금액 (PAY_AMT), PAY_FEE, PAY_FEE_VAT, SETTLE_YN, SETTLE_DT
+
+### 제로페이 대표모계좌 (TB_ZEROPAY_REPR_SUM_C001)
+
+- 종류: INSERT
+- 테이블: TB_ZEROPAY_REPR_SUM
+- 입력: 서비스코드 (SVC_CD), 거래일자 (TRX_DT), 가맹점ID (AFLT_ID), OUT_ACCT_NO, OUT_BANK_CD, APRV_SUCC_CNT, APRV_SUCC_AMT, APRV_FEE, CNCL_SUCC_CNT, CNCL_SUCC_AMT, CNCL_FEE, RFND_SUCC_CNT, RFND_SUCC_AMT, RFND_FEE, SETTLE_YN, SETTLE_DT
+
+### 식권제로페이 결제 정보(ORDER_DT, ORDER_SEQ) (TB_ZEROPAY_MT_ODR_R002)
+
+- 종류: SELECT
+- 테이블: TB_ZEROPAY_MT_ODR, TB_MEMBER_APP
+- 입력: ORDER_DT, ORDER_ID, 앱코드 (APP_CD)
+
+### 제로페이HUB 전처리 결과 업데이트 (TB_ZEROPAY_TRAN_U003)
+
+- 종류: UPDATE
+- 테이블: TB_ZEROPAY_TRAN
+- 입력: 처리상태 (PROC_ST), HUB_NOTI_YN, HUB_NOTI_CNT, HUB_NOTI_DTTM, RES_CD, 응답메시지 (RES_MSG), 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 업무코드 (BIZ_CD), 거래코드 (TRX_CD)
+
+### 제로페이 펌기관코드 조회 (TB_ZEROPAY_BANK_R001)
+
+- 종류: SELECT
+- 테이블: TB_ZEROPAY_BANK
+- 입력: 은행코드 (BANK_CD), SMALL_TD
+
+### 비플머니 원장 조회(MEMB_CD) (TB_MEMBER_MNY_R003)
+
+- 종류: SELECT
+- 테이블: TB_MEMBER_MNY, TB_MEMBER_APP
+- 입력: 앱코드 (APP_CD), 회원코드 (MEMB_CD), DYNAMIC_0
+
+### 회원별 비플머니 업데이트 (TB_MEMBER_MNY_U001)
+
+- 종류: UPDATE
+- 테이블: TB_MEMBER_MNY
+- 입력: CHRG_TP, MNY_ST, EXP_DTTM, REG_DTTM, BLC_TP, BLC_AMT, BLC_TP, BLC_AMT, REQ_WDRW_AMT, MNY_ID, MNY_MEMB_CD, 앱코드 (APP_CD), DYNAMIC_0
+
+### 비플머니 사용 및 취소 상세내역 등록 (TB_MNY_USE_CNCL_DTL_C002)
+
+- 종류: INSERT
+- 테이블: TB_MNY_USE_CNCL_DTL
+- 입력: 거래번호 (TRX_SEQ), MNY_MEMB_CD, 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), MNY_ID, 거래일자 (TRX_DT), 거래시간 (TRX_TM), 거래구분 (TRX_TP), 가맹점ID (AFLT_ID), 총 결제금액 (TOT_TRX_AMT), 거래금액 (TRX_AMT), AFT_TRX_AMT, TRX_SIGN, UPD_DTTM, 회원코드 (MEMB_CD), 앱코드 (APP_CD), ORG_TRX_SEQ, ORG_DTL_SEQ, ORG_TRX_DT, MNY_MEMB_CD, PART_CNCL_YN
+
+### 비플머니 통합 거래내역 원장 등록 (TB_MNY_TRAN_MST_C001)
+
+- 종류: INSERT
+- 테이블: TB_MNY_TRAN_MST
+- 입력: 거래번호 (TRX_SEQ), MNY_ID, 거래일자 (TRX_DT), 거래시간 (TRX_TM), 거래구분 (TRX_TP), TRX_AMT, TRX_SIGN, 처리상태 (PROC_ST), 가맹점ID (AFLT_ID), UPD_DTTM, 회원코드 (MEMB_CD), 앱코드 (APP_CD), MNY_MEMB_CD, AFT_TRX_TOT_MNY_BLC_AMT, WDRW_TP
+
+### 제로페이 결제결과 업데이트 (TB_QR_MNG_U001)
+
+- 종류: UPDATE
+- 테이블: TB_QR_MNG
+- 입력: 처리상태 (PROC_ST), 은행코드 (BANK_CD), 계좌번호 (ACCT_NO), 카드번호 (CARD_NO), 회원코드 (MEMB_CD), 정산여부 (CALC_YN), CI, CLS_DSP_SEQ, 한도일련번호 (LMT_SEQ), 거래일자 (TRX_DT), 거래번호 (TRX_SEQ)
+
+### 제로페이 집계 입력 (TB_ZEROPAY_SUM_C001)
+
+- 종류: INSERT
+- 테이블: TB_ZEROPAY_SUM
+- 입력: 거래일자 (TRX_DT), 가맹점ID (AFLT_ID), 거래구분 (TRX_TP), 은행코드 (BANK_CD), PAY_CNT, PAY_AMT, PAY_VAT, PAY_SVC_AMT, PAY_FEE, PAY_FEE_VAT, BANK_FEE, PLTFM_FEE, POS_FEE, SETTLE_YN, PRE_FEE, PRE_FEE_VAT, DEBIT_FEE, DEBIT_FEE_VAT
+
+### 결제원 결과등록 결과 업데이트 (TB_ZEROPAY_TRAN_U004)
+
+- 종류: UPDATE
+- 테이블: TB_ZEROPAY_TRAN
+- 입력: PTFM_RES_CD, PTFM_RES_MSG, 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 업무코드 (BIZ_CD), 거래코드 (TRX_CD)
+
+### 연계기관 통지여부 (TB_ZEROPAY_TRAN_U001)
+
+- 종류: UPDATE
+- 테이블: TB_ZEROPAY_TRAN
+- 입력: PTFM_NOTI_YN, PTFM_NOTI_CNT, PTFM_NOTI_DTTM, HOST_MNG_CD, HUB_NOTI_YN, HUB_NOTI_CNT, HUB_NOTI_DTTM, PTFM_RES_CD, PTFM_RES_MSG, BIZP_NOTI_YN, BIZP_NOTI_CNT, BIZP_NOTI_DTTM, WLFE_PTAX_AMT, WLFE_PTAX_FREE_AMT, 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 업무코드 (BIZ_CD), 거래코드 (TRX_CD)
+
+### 정상 펌거래내역 조회 (TB_FIRM_TRAN_R002)
+
+- 종류: SELECT
+- 테이블: TB_FIRM_TRAN
+- 입력: 거래일자 (TRX_DT), 거래번호 (TRX_SEQ), 응답코드 (RSPS_CD), 처리상태 (PROC_ST)
+
+- 공통 헤더 처리(이 업무 아님): TB_APP_MNG_R001
+
+## 실패
+
+- (없음)
+
+## 근거
+
+- BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ENT_ZERO_000005.xml:6
+- BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/pay/ENT_ZERO_000005_act.jsp:38
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CORP_ACCOUNT_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ACCOUNT_R008.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MNG_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_QR_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R006.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R027.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_R026.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_COMPLEX_TRAN_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ONLN_AFF_TRAN_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ONLN_AFF_MNG_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_QR_MNG_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_U002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_COMPLEX_TRAN_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_SALY_SUM_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_REPR_SUM_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_MT_ODR_R002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_U003.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_BANK_R001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R003.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_USE_CNCL_DTL_C002.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_QR_MNG_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_SUM_C001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_U004.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ZEROPAY_TRAN_U001.xml:10
+- BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_FIRM_TRAN_R002.xml:10

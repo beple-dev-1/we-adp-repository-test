@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>주문내역(메인)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-HIST-30-10-S">
+<!-- wrap -->
+    <div class="wrap beple-ui">
+    
+        <!-- header -->
+        
+            
+        
+        <!-- //header -->
+            
+        <!-- container -->
+        <div class="container js-container-wrap">
+            <!-- content -->
+            <div class="content">
+                <!-- 요기요 - 주문내역 -->
+                <div class="bp-ygy"><!-- 2025-02-26 - [D] 'flexWrap no_vh' 클래스 제거-->
+                    <!-- 주문내역 -->
+                    <div class="oder_list">
+                        <div class="list_box" id ="order_list">
+                        </div>
+                        
+	                    <!-- 2026-03-16 더보기 버튼 추가 -->
+	                    <button data-element-id="BPG-HIST-30-10-S-e07" type="button" class="button button--more flex-row mgt16" id="btn_more" style="display:none !important;">
+	                        더보기<i class="icon icon--arrow-16 pointer-bottom"></i>
+	                    </button>
+	                    <!-- // 2026-03-16 더보기 버튼 추가 -->
+                    </div>
+                    
+                    <!-- 내역없음 -->
+                    <div class="item_none" id="order_none_list" style="display:none !important;"><!-- 사용 시 display:none 제거 -->
+                        <p>주문 내역이 없습니다.</p><!-- 2025-03-06 -->
+                    </div>
+                    <!-- //주문내역 -->
+                </div>
+                <!--
+                <!-- 하단 고정버튼 영역 ->
+                <div class="btn_botFix_w">
+                    <!-- 주문버튼 ->
+                    <div class="oder_btn-wrap bg_white" id="order_none_list2" style="display: none;"><!-- 활성 = display:block; / 비활성 시 display: none; ->
+                        <div class="oder__minimum-msg" style="display: none;">최소주문금액 <p><span>5,000</span>원</p></div><!-- 최소 주문금액 충족 시 해당 메세지 display: none; ->
+                        <div class="inner bg_f7">
+                            <a href="javascript:go_menu();" class="round_r8 on"><!-- 활성화 시 on 클래스 추가 ->
+                                <p class="amount" style="display: none;">
+                                    <strong>100,000,000</strong>원
+                                </p>
+                                <p class="more" style="display: none;">
+                                    장바구니 보기
+                                    <span class="count">99</span>
+                                </p>
+                                <!-- 배달 준비중 등 메세지 및 금액 ->
+                                <div>주문하러 가기</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 -->
+                 
+                <!-- 2025-02-26 - [D] page-util 신규 생성 -->
+                <!-- 페이지 유틸박스 -->
+                <div class="page-util">
+                    <!-- 문서 최상단으로 가기 버튼 -->
+                    <div class="document-top">
+                        <button data-element-id="BPG-HIST-30-10-S-e08" type="button" class="document-top__button"><i class="icon icon--arrow_nav_cr-32_black">시작지점으로</i></button>
+                    </div>
+                </div>
+                <!-- // 2025-02-26 - [D] page-util 신규 생성 -->
+                
+                <!-- 2025-02-26 - [D] 플로팅영역 nav추가, 구조 및 클래스 변경 -->
+                <!-- 하단 플로팅 영역 -->
+                <div class="container-floating js-floating-container">
+                    <!-- 토스트메세지 -->
+                    <div class="toast-box"><!-- [D] 툴팁 노출 시 view 클래스 추가 -->
+                        <!-- 토스트 메세지 -->
+                        <div class="toast__body"><!-- [D] 활성화 시 active 클래스 추가 -->
+                            <i class="icon icon--check_cr-20_primary"></i><span>현재 위치로 주소 정보가 설정되었습니다.</span>
+                        </div>
+                    </div>
+
+                    <!-- 요기요 하단 네비게이션 -->
+                    
+
+<!-- 네비게이션 컨테이너 -->
+                    <nav class="navigation-container yogiyo">
+                        <!-- 홈 -->
+                        <a data-element-id="BPG-HIST-30-10-S-e09" class="navigation__button home" data-id="bp_ygyo_main.act"><!-- [D] 선택 시 'active' 클래스 추가 -->
+                            <span>홈</span>
+                        </a>
+                        <!-- 검색 -->
+                        <a data-element-id="BPG-HIST-30-10-S-e10" class="navigation__button search" data-id="bp_ygyo_srch_shops.act">
+                            <span>검색</span>
+                        </a>
+                        <!-- 주문내역 -->
+                        <a data-element-id="BPG-HIST-30-10-S-e11" class="navigation__button history" data-id="bp_ygyo_purchase_info.act">
+                            <span>주문내역</span>
+                        </a>
+                        <!-- 찜 -->
+                        <a data-element-id="BPG-HIST-30-10-S-e12" class="navigation__button favorites" data-id="bp_ygyo_fav.act">
+                            <span>찜</span>
+                        </a>
+                    </nav>
+
+                    <!-- //요기요 하단 네비게이션 -->
+                </div>
+                <!-- // 2025-02-26 - [D] 플로팅영역 nav추가, 구조 및 클래스 변경 -->
+            </div>
+            <!-- // content -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+</body>
+</html>

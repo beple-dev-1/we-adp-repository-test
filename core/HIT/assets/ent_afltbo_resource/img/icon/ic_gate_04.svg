@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 96 96">
+    <defs>
+        <linearGradient id="8wq6iub7ua" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#8fbdfa"/>
+            <stop offset="1" stop-color="#74b0ff"/>
+        </linearGradient>
+        <linearGradient id="sii1ygtpvb" x1=".93" y1=".671" x2=".088" y2="0" xlink:href="#8wq6iub7ua"/>
+        <linearGradient id="qeb7cvxu8c" x1=".415" y1=".126" x2="1" y2="1.089" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#67aafc"/>
+            <stop offset="1" stop-color="#3e84f7"/>
+        </linearGradient>
+    </defs>
+    <g data-name="그룹 25507">
+        <g data-name="그룹 25140">
+            <path data-name="다각형 7" d="M3.051 2.846a1 1 0 0 1 1.9 0l2.613 7.838A1 1 0 0 1 6.613 12H1.387a1 1 0 0 1-.949-1.316z" transform="rotate(180 26 25.033)" style="fill:url(#8wq6iub7ua)"/>
+            <g data-name="그룹 25138">
+                <g data-name="그룹 25134">
+                    <path data-name="패스 22101" d="M-19071.918 152.945s-4.189 4 0 8.4 0 8.984 0 8.984" transform="translate(19133.09 -140.945)" style="fill:none;stroke:#4689f9;stroke-linecap:round;stroke-width:2px"/>
+                    <path data-name="패스 22103" d="M-19071.918 152.945s-4.189 4 0 8.4 0 8.984 0 8.984" transform="translate(19119.436 -140.945)" style="fill:none;stroke:#4689f9;stroke-linecap:round;stroke-width:2px"/>
+                    <path data-name="패스 22104" d="M-19071.918 152.945s-4.189 4 0 8.4 0 8.984 0 8.984" transform="translate(19105.779 -140.945)" style="fill:none;stroke:#4689f9;stroke-linecap:round;stroke-width:2px"/>
+                </g>
+                <g data-name="그룹 25136">
+                    <path data-name="사각형 30840" d="M1 0h74a1 1 0 0 1 1 1v2a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V1a1 1 0 0 1 1-1z" transform="translate(10 79.997)" style="fill:url(#sii1ygtpvb)"/>
+                    <path data-name="빼기 12" d="M19862 35h-70a35 35 0 1 1 70 0z" transform="translate(-19778.996 45)" style="fill:url(#qeb7cvxu8c)"/>
+                    <path data-name="빼기 15" d="M19796.5 34.006h-4.5a34.074 34.074 0 0 1 9.891-24.049A33.534 33.534 0 0 1 19825.752 0c.75 0 1.5.025 2.246.074a33.2 33.2 0 0 0-10.877 2.6 33.974 33.974 0 0 0-17.963 18.1A34.1 34.1 0 0 0 19796.5 34z" transform="translate(-19776 45.992)" style="fill:#fff;opacity:.2"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

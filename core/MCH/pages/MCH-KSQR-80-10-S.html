@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>KSQR온가신등록_신청내역 상세</title>
+  <link rel="stylesheet" href="../assets/ksqr_resource/css/ksqr_style.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KSQR-80-10-S">
+<form id="frm">
+    <input type="hidden" id="CLS_CD" name="CLS_CD">
+</form>
+<div class="wrap" class="wrap" com-step-id="step1">
+    
+	<input data-element-id="MCH-KSQR-80-10-S-e10" id="apy_seq" hidden="hidden" value="">
+	<input data-element-id="MCH-KSQR-80-10-S-e11" id="ci" hidden="hidden" value="">
+	<input data-element-id="MCH-KSQR-80-10-S-e12" id="ac" hidden="hidden" value="">
+        <div class="header floating-back-header floating-sticky">
+            <h1>상세 내역</h1>
+            <p class="history_back">
+                <a data-element-id="MCH-KSQR-80-10-S-e07" data-nav-target="MCH-KSQR-80-S" onclick="uf_back();" class="btn-history-back">뒤로가기</a>
+            </p>
+        </div>
+        <!-- // header -->
+
+        <div class="container">
+            <div class="content">
+                <!-- 가맹점 신청 내역, 상세 내역 -->
+                <div class="new_store">
+                    <div class="join_history more-view">
+                        <!-- 신청서 목록 -->
+                        <div class="list_w">
+                            <!-- 신청서 박스 -->
+                            <div class="item_box">
+                                <!-- 구조변경 -->
+                                <div class="item_wrap">
+                                
+                                    <!-- 신청서 - 가맹점명, 사업자번호 -->
+                                    <!-- <div class="list">
+                                        <div class="list_inner">
+                                            <div class="list_header">
+                                                <h3 class="name">가맹점명 가맹점명 가맹점명 가맹점명가맹점명가맹점명가맹점명가맹점명가맹점명가맹점명</h3>
+                                            </div>
+
+                                            content-item div 추가
+                                            <div class="list_content">
+                                                <div class="content-item">
+                                                    <p class="item__head">접수일</p>
+                                                    <p class="item__data">2023.09.09</p>
+                                                </div>
+                                                <div class="content-item">
+                                                    <p class="item__head">사업자등록번호</p>
+                                                    <p class="item__data">0000-0000-0000</p>
+                                                </div>
+                                                <div class="content-item">
+                                                    <p class="item__head">종사업장번호</p>
+                                                    <p class="item__data">0000-0000-0000</p>
+                                                </div>
+                                            </div>
+                                            // content-item div 추가
+                                        </div>
+                                    </div>
+
+                                    <div class="type-box">
+                                        가맹점 타입 - KSQR 가맹점
+                                        <div class="list">
+                                            <div class="list_inner">
+                                                <div class="list_header">
+                                                    <h3 class="name">KSQR 가맹점</h3>
+                                                </div>
+
+                                                정산계좌 항목 수정
+                                                <div class="list_content">
+                                                    <div class="content-item">
+                                                        <p class="item__head">심사상태</p>
+                                                        <p class="item__data">심사중</p>
+                                                    </div>
+                                                    <div class="content-item">
+                                                        <p class="item__head">가맹점주</p>
+                                                        <p class="item__data">홍*동 (010-****-1984)</p>
+                                                    </div>
+                                                    <div class="content-item">
+                                                        <p class="item__head">정산계좌</p>
+                                                        <p class="item__data">
+                                                            (KB국민은행) **********3456<br>
+                                                            (주)위** 
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                알림
+                                                <div class="noti_box" style="display: ;">[D] 미사용 시 display: none
+                                                    <p class="noti_text">
+                                                        가맹점 신청 접수 후 5영업일 이내에 서류 심사가 완료됩니다.<br>
+                                                        가맹점 문의가 많은 경우 7영업일이 소요될 수 있습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    
+                                </div><!-- //구조변경 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+    
+	<!-- step 2 -->
+	<div com-step-id="step2"   style="position: fixed; left: 0; background: white; overflow: auto;">
+	    <div class="header floating-back-header floating-sticky">
+	        <a data-element-id="MCH-KSQR-80-10-S-e08" role="button" onclick="go_back();" class="btn-history-back">뒤로가기</a>
+	        <h1 id="clause_title" style="position: relative;"></h1>
+	    </div>
+	
+	    <!-- // container -->
+	    <div class="container" style="height:100%;">
+	        <div class="content" style="height:100%;">
+	            <div class="body" id="clause_content" style="height:calc(100vh - 95px);"><!-- sample:begin -->표본<!-- sample:end --></div>
+	            <div class="fixed-bottom-section" style="position: fixed; top: 602px;">
+	                <a data-element-id="MCH-KSQR-80-10-S-e09" role="button" class="btn-submit pink" onclick="go_back();"><span>확인</span></a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- // step 2 -->
+</body>
+</html>

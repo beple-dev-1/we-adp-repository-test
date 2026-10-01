@@ -1,0 +1,31 @@
+/* =============================================================================
+ * loading.css — 로딩 오버레이 화면 글루 (public/loading.html)
+ * 스코프: .loading (전역 @import 충돌 방지). 인라인 <style>에서 이관, 값·순서 불변.
+ * 스피너 keyframes는 이름 고유(rotate-outer08 등)라 전역 유지(스코프 불가·충돌 없음).
+ * ========================================================================== */
+.loading {z-index:10000;position:fixed;top:0;left:0;right:0;width:100%;height:100vh;background-color:rgba(0,0,0, 0.15);}
+.loading .loading_inner {display:flex;align-items:center;justify-content:center;height:100%;}
+.loading .ui-loader {display: inline-block;width:40px;height:40px;}
+.loading .loader-blk {color:#0d84ff;animation: rotate-outer08 1.2s linear infinite;}
+.loading .multiColor-loader {display:block;animation: color-anim08 1.2s infinite;}
+.loading .loader-circle {
+    stroke:currentColor;
+    color:currentColor;
+    text-shadow:-1px -1px 0 #0d84ff, 1px -1px 0 #0d84ff, -1px 1px 0 #0d84ff, 1px 1px 0 #0d84ff;
+    stroke-width:4;
+    fill:none
+}
+.loading .loader-circle-animation {animation:rotate-inner08 1.2s ease-in-out infinite;stroke-dasharray: 80px, 200px;stroke-dashoffset: 0;}
+@keyframes rotate-outer08 {
+    0% {transform-origin:50% 50%;}
+    100% {transform: rotate(360deg);}
+}
+@keyframes rotate-inner08 {
+    0% {stroke-dasharray:1px, 200px;stroke-dashoffset: 0;}
+    50% {stroke-dasharray:100px, 200px;stroke-dashoffset:-15px;}
+    100% {stroke-dasharray:100px, 200px;stroke-dashoffset:-125px;}
+}
+@keyframes color-anim08 {
+    0% {color:#0d84ff;}
+    50% {color:#2A9DFF;}
+}

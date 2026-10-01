@@ -54,6 +54,7 @@ _APP_CD = "";
 
      헤더 타이틀은 퍼블리싱 v1.3(2026-08-31) 에서 「계좌 등록」으로 확정됐다 —
      v1.2 의 「본인인증」은 ARS 스텝(D855a) 문구가 남은 오기였다.
+     단 B_ABY 는 기관 요청으로 「머니 계좌 등록」이다 (MONEY_ACCT_APP_CD · :123).
      ================================================================ -->
 
 <!-- ================================================================
@@ -63,7 +64,7 @@ _APP_CD = "";
 
 	<header class="header position-sticky">
 		<nav class="header__navi">
-			<a href="#none" class="header__btn btn-back js-btn-back">
+			<a data-element-id="EXW-UWV-40-30-S-e01" href="#none" class="header__btn btn-back js-btn-back">
 				<span class="blind">이전페이지로</span>
 			</a>
 		</nav>
@@ -71,7 +72,7 @@ _APP_CD = "";
 			<h1 class="page-name"><span>계좌 인증</span></h1>
 		</div>
 		<nav class="header__navi">
-			<a href="#none" class="header__btn btn-close js-btn-close">
+			<a data-element-id="EXW-UWV-40-30-S-e02" href="#none" class="header__btn btn-close js-btn-close">
 				<span class="blind">닫기</span>
 			</a>
 		</nav>
@@ -85,7 +86,7 @@ _APP_CD = "";
 					<div class="page-header__headline-wrap">
 						<h2 class="flex-column">
 							<p class="container__headline container__headline--lv4 display-block">
-								<strong class="fc-primary" id="certAcctText"><!-- sample:begin -->국민은행 (1234)<!-- sample:end --></strong><br>
+								<strong class="fc-0d84ff" id="certAcctText"><!-- sample:begin -->국민은행 (1234)<!-- sample:end --></strong><br>
 								해당 계좌로 1원을 입금했습니다
 							</p>
 						</h2>
@@ -99,10 +100,11 @@ _APP_CD = "";
 				</article>
 			</section>
 
-			<section class="container js-container">
+			<!-- 퍼블리싱 v1.7 (2026-09-09) -->
+			<section class="container js-container pdt101">
 				<article class="container__body">
 					<div class="body__content account-cert">
-						<div class="pd-lr50">
+						<div class="pd-lr24">
 							<img src="../assets/webview_api/image/contents/acc_cert-sampleimg.png"
 							     alt="계좌인증 예시 이미지 // 입금자명 : 비플*** / 입금액 : 1원">
 						</div>
@@ -122,7 +124,7 @@ _APP_CD = "";
 						</div>
 
 						<div class="input-button-wrap">
-							<a href="#none" class="button button-small button--lv5 js-num-input">
+							<a data-element-id="EXW-UWV-40-30-S-e03" href="#none" class="button button-small button--lv5 js-num-input">
 								<span>숫자 입력하기</span>
 							</a>
 						</div>
@@ -133,7 +135,7 @@ _APP_CD = "";
 
 		<div class="container-floating js-floating-container">
 			<article class="floating__box button-box-spacing">
-				<a href="#none" class="button button-xl button--lv1 dis" id="btnCertNext">
+				<a data-element-id="EXW-UWV-40-30-S-e04" href="#none" class="button button-xl button--lv1 dis" id="btnCertNext">
 					<span>ARS 인증 받기</span>
 				</a>
 			</article>
@@ -171,6 +173,11 @@ _APP_CD = "";
 			<section class="body__content">
 				<ul class="pdb24">
 					<li>
+						<!-- 퍼블리싱 v1.7 (2026-09-09) 은 이 버튼에 js-toast-handler +
+						     data-toast-icon/data-toast-text 를 붙였으나 채택하지 않는다.
+						     common-ui.js 의 핸들러는 클릭 즉시 토스트를 띄워 실패해도 성공 문구가
+						     뜨고, 성공 시에는 zero_webview_account_v2.js 의 uf_toast 가 같은
+						     아이콘·문구로 다시 띄워 중복된다. 마크업은 종전 그대로 둔다. -->
 						<button type="button" id="btnSetMainAcct"
 						        class="flex-row align-center height-48 fs-16 ta-left js-popup-close">
 							<span class="grow-y">주계좌 설정</span>

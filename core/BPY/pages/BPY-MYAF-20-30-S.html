@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 프로필 > 영업시간 수정</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-MYAF-20-30-S">
+<script>
+<!-- 기타 영업정보 텍스트박스 크기조정 -->
+$(function(){
+    var txtAr = $(".autoresize textarea");
+
+    scHeight();
+    txtAr.on('keydown keyup', scHeight);
+
+    function scHeight() {
+        if(txtAr.prop("scrollHeight") > 20){
+            txtAr.height(40);
+        }
+    }
+})
+<!-- //기타 영업정보 텍스트박스 크기조정 -->
+</script>
+<input type="hidden" name="AFLT_ID" id="AFLT_ID" value=""/>
+<input type="hidden" name="APP_CD" id="APP_CD" value=""/>
+<input type="hidden" name="FLAG" id="FLAG" value=""/>	<!-- 0:등록, 1:수정 -->
+<input type="hidden" id="ENTER_FLAG" name="ENTER_FLAG" value=""/>
+<div class="wrap bg_f7">
+	<div class="header floating-back-header floating-sticky">
+		<h1>영업시간 등록</h1>
+		<a data-element-id="BPY-MYAF-20-30-S-e06" href="#" class="btn-history-back" id="btn_back">뒤로가기</a>
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<!-- 영업시간 등록 -->
+			<div class="store_profile addBtn-pb58">
+				<div class="tit_bx">
+					<h2>
+						<strong>영업시간을 입력해 주세요.</strong>
+					</h2>
+				</div>
+
+				<div class="work_time_w">
+					<!-- 영업시간 목록 -->
+					<ul class="week">
+						<!-- <li>
+							<div class="inner">
+								<div class="chk_bx"><label><input type="checkbox">&nbsp;월요일</label></div>
+								<div class="time_bx ipt"> 	영업시간 입력 시 ipt 클래스 추가 
+									<a href="#none">입력해 주세요.</a>
+								</div>
+							</div>
+						</li> -->
+						
+						
+							<li>
+								<div class="inner" name="day_total" str="" end="" hol_yn="" etc="" yoil="">
+									<div class="chk_bx"><label><input name="chk_day" type="checkbox" yoil="">&nbsp;</label></div>									
+									
+									<div class="time_bx ipt" name="day"  etc="">
+										<a data-element-id="BPY-MYAF-20-30-S-e07" name="wt_text" href="#none">휴무일
+											<br> 
+									
+										</a>
+										<textarea style="display: none" name="hidden_etc" ></textarea>
+									</div>	
+								</div>
+							</li>
+						
+					</ul>
+					<!-- //영업시간 목록 -->
+					<!-- 선택한 요일 수정버튼 -->
+					<p class="multi_sel_btn" id="upd_btn"><!-- 요일 선택 시 active 클래스 추가 -->
+						<a data-element-id="BPY-MYAF-20-30-S-e08" href="#none">선택한 요일 수정</a>
+					</p>
+					<!-- //선택한 요일 수정버튼 -->
+					<!-- 기타 영업정보 -->
+					<div class="etc_info">
+						<div class="info_tit">
+							<h2>기타 영업정보</h2>
+							<p class="txt_count"><span id="etc_cnt">0</span>/50</p>
+						</div>
+						<div class="iptbx autoresize"><!-- 페이지 아래쪽에 2줄까지 늘어나도록 스크립트 적요되어있습니다. -->
+							<div class="inner">
+								<textarea data-element-id="BPY-MYAF-20-30-S-e10" placeholder="ex) 라스트 오더 22:00, 둘째 주 일요일 쉽니다." spellcheck="false" id="etc_info"></textarea>
+							</div>
+						</div>
+					</div>
+					<!-- //기타 영업정보 -->
+				</div>
+			</div>
+			<!--//영업시간 등록 -->
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_grey">
+					<a data-element-id="BPY-MYAF-20-30-S-e09" href="#" class="btn_default btn-style-h48 round_r8 on" id="save_btn"><span>저장</span></a><!-- 활성/비활성화 시 클래스 on 추가/제거 -->
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- layer_overlay -->
+<div class="layer_overlay" id="pop_settings" style="display:none;">
+	<!-- layerpopup -->
+	<div class="popup_w">
+		<div class="popup_con pd20">
+			<!-- 영업시간 설정pop -->
+			<div class="set_time">
+				<!-- 타이틀 -->
+				<h2 class="ly_pop_tit close_add">영업시간 설정</h2>
+				<p class="btn_close" id="pop_close"><a href="#none">팝업 닫기</a></p>
+				<!-- //타이틀 -->
+				<!-- 설정 영역 -->
+				<div class="content">
+					<!-- 선택요일 노출 -->
+					<div class="set_con">
+						<h3>선택 요일</h3>
+						<div class="iptbx">
+							<div class="inner" id="selected_day"><!-- sample:begin -->표본<!-- sample:end --></div>
+						</div>
+					</div>
+					<!-- //선택요일 노출 -->
+					<!-- 영업시간 선택 -->
+					<div class="set_con" id="worktime_area"><!-- 영업시간 미입력 시 err 클래스 추가 -->
+						<h3>영업시간</h3>
+						<div class="iptbx" id="time_box"><!-- 휴무일 체크 시 closed 클래스 추가 -->
+							<div class="timebx"><!-- 시간 입력 시 ipt클래스 추가 -->
+								<h4>시작</h4>
+								<a href="#none">
+									<div class="inner" id="str_div">
+										<span id="str_tm">시간 선택</span>
+									</div>
+								</a>
+							</div>
+							<p class="space">-</p>
+							<div class="timebx">
+								<h4>종료</h4>
+								<a href="#none">
+									<div class="inner" id="end_div">
+										<span id="end_tm">시간 선택</span>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="holiday_chk">
+							<label><input type="checkbox" id="chk_dayoff">휴무일</label>
+						</div>
+						<p class="worktime_err" id="alert_worktime">영업시간을 입력해 주세요.</p>
+					</div>
+					<!-- //영업시간 선택 -->
+					<!-- 기타 정보 입력 -->
+					<div class="set_con">
+						<div class="tx_count_w">
+							<h3>해당 영업일 기타 정보 (선택)</h3>
+							<p class="txt_count"><span id="wk_cnt">0</span>/50자</p>
+						</div>
+						<div class="iptbx">
+							<div class="inner">
+								<input type="text" id="etc_input" placeholder="ex) 브레이크타임 13:00~14:00">
+							</div>
+						</div>
+					</div>
+					<!-- //기타 정보 입력 -->
+				</div>
+				<!-- //설정 영역 -->
+				<!-- 버튼영역 -->
+				<div class="ly_pop_btw btns_half">
+					<a href="#none" class="typeC" id="delete_wt">삭제</a>
+					<a href="#none" class="typeA" id="update_wt">확인</a>
+				</div>
+				<!-- //버튼영역 -->
+			</div>
+			<!-- //영업시간 설정pop -->
+		</div>
+	</div>
+	<!-- //layerpopup -->
+</div>
+<!-- //layer_overlay -->
+</body>
+</html>

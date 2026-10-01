@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>주문 내역 상세</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-10-10-10-S">
+<input type="hidden" name="bpAfltSeq" id="bpAfltSeq" value=""/>
+	<input type="hidden" name="orderDt" id="orderDt" value=""/>
+	<input type="hidden" name="orderId" id="orderId" value=""/>
+	<input type="hidden" name="orderType" id="orderType" value=""/>
+	<input type="hidden" name="type" id="type" value=""/>
+	<input type="hidden" name="tabStatus" id="tabStatus" value=""/>
+	<input type="hidden" name="filterDate" id="filterDate" value=""/>
+	<input type="hidden" name="filterStartDate" id="filterStartDate" value=""/>
+	<input type="hidden" name="filterEndDate" id="filterEndDate" value=""/>
+	<input type="hidden" name="filterSt" id="filterSt" value=""/>
+
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>주문 내역 상세</h1>
+			<a data-element-id="BPG-OBO-10-10-10-S-e05" href="#" class="btn-history-back" id="back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 비플오더 -->
+				<div class="flexWrap">
+					<div class="bpleOder addBtn-pb56 tooltip_add">
+						<div class="top_bx store">
+							
+								<p class="oder_num">
+									<span>주문번호</span><strong></strong>
+								</p>
+							
+							<!-- 
+								주문취소 = cancel
+							-->
+							<h2 class="state"></h2>
+							<p class="preview_txt">
+								<span class="ellipsis"></span>&nbsp;
+								
+								<span>외 1개</span>
+								
+							</p>
+							<div class="oder_info">
+								<div>
+									<p class="tit">주문일시</p>
+									<p></p>
+								</div>
+								
+								<div>
+									<p class="tit"></p>
+									<p></p>
+								</div>
+								
+								
+								<div>
+									<p class="tit">완료일시</p>
+									<p></p>
+								</div>
+								
+								<div>
+									<p class="tit">결제상태</p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<!-- 주문내역 상세 - 매장 -->
+						<div class="oder_detail_view">
+							<div class="menu">
+								<h3 class="detail_tit">메뉴 정보</h3>
+								<div>
+									<p>메뉴명/수량</p>
+									<p>금액</p>
+								</div>
+								<div class="oder_wrap">
+									
+												</ul>
+											</div>
+											</div>
+										
+										
+										 
+										<!-- 메뉴 -->
+										<div>
+											<div class="oder">
+												<p></p>
+												<p>4,500원</p>	
+											</div>
+											<div class="option">
+												<ul class="list_bar">
+										
+												
+													<li>
+														<p></p>
+														<p><span>4,500</span>원</p>
+													</li>
+												
+									
+											</div>
+												</ul>
+										</div>
+								</div>
+								<!-- 총 주문금액 -->
+								<div class="total">
+									<p>총 주문금액(<span>1</span>개)</p>
+									<p class="amount"><strong id="sumPdtPriceStrong">4,500</strong>원</p>
+								</div>
+							</div>
+
+														
+							<!-- 주문거부 사유 -->
+							<div class="reject">
+								<h3 class="detail_tit">주문 거부 사유</h3>
+								<p class="msg">
+									
+								</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- //비플오더 -->
+			</div>
+			<!-- // content -->
+			
+			
+			<div class="btn_botFix_w bg_white">
+				<div class="inner half type2">
+					<a data-element-id="BPG-OBO-10-10-10-S-e06" href="#none" class="typeB btn-style-h46 round_r8 on" id="reject">
+						<span>거절</span>
+					</a>
+					<a data-element-id="BPG-OBO-10-10-10-S-e07" href="#none" class="typeA long btn-style-h46 round_r8 on" id="accept" value="1">
+						<div class="tooltip_w">
+							<p class="tooltip_msg">주문접수를 진행해주세요<span>&#128578;</span></p>
+						</div>
+						<span>접수</span>
+					</a>
+				</div>
+			</div>
+			
+
+			<!-- 하단 고정버튼 영역  -->
+			
+			<div class="btn_botFix_w">
+				<div class="inner bg_white">
+					<a data-element-id="BPG-OBO-10-10-10-S-e08" href="#none" class="btn_default btn-style-h46 round_r8 on" id="success" value="2">
+						<div class="tooltip_w">
+							<p class="tooltip_msg">제조가 완료되면 눌러주세요<span>&#128578;</span></p>
+						</div>
+						제조완료
+					</a>
+				</div>
+			</div>
+			
+			<!-- 하단 고정버튼 영역 -->
+		</div>
+		<!-- // container -->
+	</div>
+	
+	<!-- 레이어팝업 -->
+	<div class="layer_overlay" id="orderReject" style="display: none;">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 설정팝업 -->
+				<div class="edit_pop add_tit">
+					<h2 class="ly_pop_tit">주문 거부 사유 선택</h2>
+					<p class="btn_close">
+						<a href="javascript:doRejectSetting('none');"><span class="blind">닫기</span></a>
+					</p>
+					<!-- 주문거부사유 선택 -->
+					<ul id="rejectUl">
+						<li><a href="#none" value="L">주문불가 지역</a></li><!-- 선택 시 select 클래스 추가 -->
+						<li><a href="#none" value="O">재료소진</a></li>
+						<li><a href="#none" value="M">주문불가 메뉴</a></li>
+						<li><a href="#none" value="E">기타</a></li>
+					</ul>
+					<!-- //주문거부사유 선택 -->
+					<!-- 버튼영역 -->
+					<div class="ly_pop_btw btn_full pdb0 mgt10">
+						<a href="#none" class="btn_default btn-style-h48 round_r8 pd0" id="confirm"><span>확인</span></a><!-- 활성화 시 on 클래스 추가 -->
+					</div>
+				</div>
+				<!-- //설정팝업 -->
+			</div>
+		</div>
+	</div>
+	<!-- //레이어팝업 -->
+</body>
+</html>

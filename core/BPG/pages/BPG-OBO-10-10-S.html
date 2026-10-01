@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>주문 내역</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-10-10-S">
+<input type="hidden" name="bpAfltSeq" id="bpAfltSeq" value=""/>
+	<input type="hidden" name="serviceChnl" id="serviceChnl" value=""/>
+	<input type="hidden" name="type" id="type" value=""/>
+	<input type="hidden" name="tabStatus" id="tabStatus" value=""/>
+	<input type="hidden" name="filterDate" id="filterDate" value=""/>
+	<input type="hidden" name="filterStartDate" id="filterStartDate" value=""/>
+	<input type="hidden" name="filterEndDate" id="filterEndDate" value=""/>
+	<input type="hidden" name="filterSt" id="filterSt" value=""/>
+
+	
+	<script>
+		ComPopup.showHtmlAlert("1. 로봇배송으로 주문한 내역은 비플페이 앱에서 확인이 불가능합니다. <br><br>2.로봇배송 주문 내역은 매장 POS기에서 확인 부탁드립니다.","","로봇배송 주문 내역 안내")
+	</script>
+	
+
+	<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>주문 내역</h1>
+			<a data-element-id="BPG-OBO-10-10-S-e06" href="#" class="btn-history-back" id="back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 비플오더 -->
+				<div class="flexWrap">
+					<div class="bpleOder add_flex_column">
+						<div class="tab_menu two" id="statusDiv">
+							<a data-element-id="BPG-OBO-10-10-S-e07" href="#none" class="on" value="ing"><span>진행중</span></a><!-- 선택 시 on 클래스 추가 -->
+							<a data-element-id="BPG-OBO-10-10-S-e08" href="#none" value="completed"><span>완료/취소</span></a>
+						</div>
+						<div>
+							<!-- 진행중 start -->
+							<div class="st_history" id="ing" style="display: none;"></div><!-- 내역 없을 시 oder_none 추가 -->
+							<!-- 진행중 end -->
+	
+							<!-- 완료/취소 start -->
+							<div class="st_history" id="completed"><!-- 내역 없을 시 oder_none 추가 -->
+								<div class="round_filter add_arr" id="searchFilter">
+									<ul>
+										<li class="on"><a data-element-id="BPG-OBO-10-10-S-e09" href="#none">1개월 <span class="arr">더보기</span></a></li><!-- 설정 시 on 클래스 추가 -->
+										<li><a data-element-id="BPG-OBO-10-10-S-e10" href="#none">전체 상태 <span class="arr">더보기</span></a></li>
+									</ul>
+								</div>
+								<!-- 완료내역 박스 -->
+								<div class="complete_bx">
+									<ul id="completedList"></ul>
+								</div>
+							</div>
+							<!-- 완료/취소 end -->
+						</div>
+					</div>
+					<!-- 완료/취소 내역없음 start -->
+					<div class="empty" id="emptyId"><!-- sample:begin -->표본<!-- sample:end --></div>
+					<!-- 완료/취소 내역없음 end -->
+				</div>
+				<!-- //비플오더 -->
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+	
+	<!-- 레이어팝업 - 기간 및 상세필터 -->
+	<div class="layer_overlay" id="orderDateFilter" style="display: none;">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 상세필터 -->
+				<div class="detail_filter addBtn-pb56">
+					<!-- 기간 -->
+					<h2 class="filter_tit">기간</h2>
+					<!-- 탭영역 -->
+					<div class="filter_tab">
+						<div class="inner four" id="filterDateDiv">
+							<a href="#none" class="on" title="선택됨" value="1">1개월</a>
+							<a href="#none" value="3">3개월</a>
+							<a href="#none" value="6">6개월</a>
+							<a href="#none" value="0">기간설정</a>
+						</div>
+					</div>
+					<!-- 날짜 -->
+					<div class="filter_date">
+						<div class="inner">
+							<div class="date" id="strDiv"><input type="text" value="" id="strInput" readonly><a class="btn_cal"><span class="blind">달력</span></a></div>
+							<div class="dash">-</div>
+							<div class="date" id="endDiv"><input type="text" value="" id="endInput" readonly><a class="btn_cal"><span class="blind">달력</span></a></div>
+						</div>
+						<!-- 오류메시지 -->
+						<div class="err_txt" style="display:none;">조회기간은 6개월을 넘을 수 없습니다.</div><!-- 기간설정 조회기간 오류 시(6개월 넘길경우) display:block; -->
+					</div>
+					<!-- 결제 상태 영역 -->
+					<h2 class="filter_tit">내역 상태</h2>
+					<!-- 탭영역 -->
+					<div class="filter_tab">
+						<div class="inner" id="filterStDiv">
+							<a href="#none" class="on" title="선택됨" text="전체 상태" value="">전체</a>
+							<a href="#none" text="제조완료" value="2">제조완료</a>
+							<a href="#none" text="주문취소" value="9">주문취소</a>
+						</div>
+					</div>
+				</div>
+				<!-- //상세필터 -->
+				<!-- 하단 고정버튼 -->
+				<div class="btn_botFix_w">
+					<div class="inner bg_white">
+						<a href="javascript:doSearch();" class="btn_default round_r8 btn-style-h46 on">조회하기</a>
+					</div>
+				</div>
+				<!-- //하단 고정버튼 -->
+			</div>
+		</div>
+	</div>
+	<!-- //레이어팝업 -->
+
+	<!-- 레이어팝업 -->
+	<div class="layer_overlay topSlide new_menu" id="topSlide" style="display:none;"><!-- 활성/비활성 시 over클래스 추가/제거 -->
+		<div class="oder_flat_pop" id="flatPop">
+			<div class="flat_top_bx" id="newCntDiv">
+				<p class="bar"><a href="#none"></a></p>
+				<h2 class="tit">신규 주문건 <span class="txt_key_color" id="newOrderCnt"><!-- sample:begin -->1<!-- sample:end --></span></h2>
+			</div>
+			<div class="inner" id="newOrder"><!-- sample:begin -->표본<!-- sample:end --></div>
+		</div>
+	</div>
+</body>
+</html>

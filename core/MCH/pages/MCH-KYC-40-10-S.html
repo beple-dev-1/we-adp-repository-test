@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>고객확인서등록_서류첨부등록</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KYC-40-10-S">
+<form id="frm">
+        <input type="hidden" id="biz_no" name="BIZ_NO" value="표본">
+        <input type="hidden" id="aml_seq" name="AML_SEQ" value="표본">
+        <input type="hidden" id="ac"  name="AC"  value=""/>
+    	<input type="hidden" id="ci"  name="CI"  value="" />
+    	<input type="hidden" id="substr_biz_no"  name="SUBSTR_BIZ_NO"  value="" />
+    </form>
+
+   <form name="form1" id="form1" target="_self" method="post" action="file_download.act">
+	    <input type="hidden" name="FILE_TYPE"   id="file_type"  value=""/>
+	    <input type="hidden" name="FILE_NAME"   id="file_name"  value=""/>
+	    <input type="hidden" name="FILE_PATH"   id="file_path"  value="/WAS_DATA/webRoot/bls/data/down/"/>
+	</form>
+
+	<div class="wrap">
+	    <div class="header floating-back-header floating-sticky">
+	        <h1>가맹점 고객확인서</h1>
+	        <a data-element-id="MCH-KYC-40-10-S-e12" id="goback" class="btn-history-back">뒤로가기</a>
+	    </div>
+	    <!-- // header -->
+	
+	    <div class="container">
+	        <div class="content">
+	            <!-- 고객확인서 -> 개인 -->
+	            <section class="customer-verification js-cv-container">
+	
+	                <div class="step-box">
+	                    <ol class="step__list">
+	                        <li class="step__item"><span>1</span></li>
+	                        <li class="step__item"><span>2</span></li>
+	                        <li class="step__item"><span>3</span></li>
+	                        <li class="step__item on"><span>4</span></li>
+	                    </ol>
+	                </div>
+	
+	                <!-- 파일 첨부 -->
+	                <div class="verification-section">
+	                    <article class="verification__header">
+	                        <h2 class="header__title">파일 첨부</h2>
+	                        <ul class="list_bar">
+	                            <li>서류 정보를 가리지 않도록 모든 모서리가 나온 이미지를 사용해 주세요.</li>
+	                            <li>zip 파일은 압축을 풀어서 하나씩 첨부해 주세요.</li>
+	                            <li>excel, docs, hwp 등 문서 파일은 pdf 파일로 변환하여 첨부해 주세요.</li>
+	                            <li>첨부 가능 확장자: jpg, jpeg, png, pdf, tiff</li>
+	                            <li>용량: 파일 하나당 10MB 이하</li>
+	                        </ul>
+	                    </article>
+						<!-- not 개인  -->
+						
+	                    <!-- 파일첨부 form -->
+	                    <article class="verification__content mgt32">
+	                        <!-- 
+	                            form input 상태별 attr 아래 속성 추가할 것.
+	    
+	                            읽기전용 = readonly 추가
+	                            비활성화 = disabled 추가
+	                        -->
+	                        <div class="form-box">
+	                            <!-- 사업자 등록증 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label line-h22">사업자등록증</h3>
+	                                    <p class="form__description">
+	                                        사업자등록증, 사업자등록증명원(발급 3개월 이내), 고유번호증(비영리법인/단체) 중 보유하신 서류를 첨부해 주세요.<br>
+	                                        업종/업태에 대한 별지가 있을 경우 별지까지 첨부해 주세요.
+	                                    </p>
+	                                </div>
+	
+	                                <div class="form__item-wrap">
+	                                    <div class="type-button">
+	                                        <div class="form-button">
+	                                            <input type="file" data-value="A" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                            <span class="name js-file-name">파일 첨부하기</span>
+	                                            <i class="icon arr_right-20"></i>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	
+	                            <!-- 법인등기부등본 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label line-h22">법인등기부등본</h3>
+	                                    <p class="form__description">
+	                                        3개월 이내 발급된 법인등기부등본 사본을 제출해 주세요.<br>
+	                                        법인등기부등본이 없는 단체인 경우 대표자 신분증을 제출해 주세요.
+	                                    </p>
+	                                </div>
+	
+	                                <div class="form__item-wrap">
+	                                    <div class="type-button">
+	                                        <div class="form-button">
+	                                            <input type="file" data-value="B" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                            <span class="name js-file-name">파일 첨부하기</span>
+	                                            <i class="icon arr_right-20"></i>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	
+	                            <!-- 법인인감증명서 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label line-h22">법인인감증명서</h3>
+	                                    <p class="form__description">
+	                                        3개월 이내 발급된 법인인감증명서를 첨부해 주세요.<br>
+	                                        공동대표자가 있다면 대표자 전원의 법인인감증명서는 필수입니다.
+	                                    </p>
+	                                </div>
+	
+	                                <div class="form__item-wrap">
+	                                    <div class="type-button">
+	                                        <div class="form-button">
+	                                            <input type="file" data-value="C" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                            <span class="name js-file-name">파일 첨부하기</span>
+	                                            <i class="icon arr_right-20"></i>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            
+								
+	                            <!-- 실제 소유자 확인 서류 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label line-h22">실제 소유자 확인 서류</h3>
+	                                    <p class="form__description">
+	                                        법인의 경우 주주명부를 첨부해 주세요. 실제 소유자 확인 단계에서 여러 개의 법인을 거쳤다면 모든 법인의 주주명부를 첨부해 주세요. 단, 전자공시 시스템에 사업보고서를 제출하는 법인의 경우 제출하지 않으셔도 괜찮아요.<br>
+	                                        단체의 경우 이사회명부, 정관/규약 등 단체의 설립 목적과 운영 수칙 및 단체 직인 날인을 확인할 수 있는 문서를 첨부해 주세요.
+	                                    </p>
+	                                </div>
+	
+	                                <div class="form__item-wrap mgt4">
+	                                    <div class="type-button">
+	                                        <div class="form-button">
+	                                            <input type="file" data-value="D" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                            <span class="name js-file-name">파일 첨부하기</span>
+	                                            <i class="icon arr_right-20"></i>
+	                                        </div>
+	                                    </div>
+	                                    <div class="more_buttons_add"></div>
+	                                    
+	                                    <div class="type-button">
+	                                        <button data-element-id="MCH-KYC-40-10-S-e08" type="button" class="form-button button-upload_add">
+	                                            <i class="icon plus-24"></i>
+	                                            <span class="name">파일 추가하기</span>
+	                                        </button>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            
+								
+								
+	                            <!-- 비영리법인 설립목적 확인 서류 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label line-h22">비영리법인 설립목적 확인 서류</h3>
+	                                    <p class="form__description">비영리법인/단체의 경우 설립목적 확인 서류를 첨부해 주세요.</p>
+	                                </div>
+	
+	                                <div class="form__item-wrap">
+	                                    <div class="type-button">
+	                                        <div class="form-button">
+	                                            <input type="file" data-value="E" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                            <span class="name js-file-name">파일 첨부하기</span>
+	                                            <i class="icon arr_right-20"></i>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                             
+	
+								
+	                            <!-- 대리인 신분증 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label line-h22">대리인 신분증</h3>
+	                                    <p class="form__description">
+	                                        주민등록증, 운전면허증은 신분증으로 제출 가능해요.<br>
+	                                        외국인등록증은 앞면, 뒷면 모두 제출해 주세요.
+	                                    </p>
+	                                </div>
+	
+	                                <div class="form__item-wrap">
+	                                    <div class="type-button">
+	                                        <div class="form-button">
+	                                            <input type="file" data-value="F" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                            <span class="name js-file-name">파일 첨부하기</span>
+	                                            <i class="icon arr_right-20"></i>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            
+	
+								
+	                            <!-- 대리인 위임장 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label line-h22">대리인 위임장</h3>
+	                                    <p class="form__description">
+	                                        대리인이 신청하는 경우 대표자의 위임장을 첨부해야 합니다.<br>
+	                                        3개월 이내 발급된 서류를 첨부해 주세요.
+	                                    </p>
+	                                </div>
+	
+	                                <div class="form__item-wrap">
+	                                    <div class="type-button">
+	                                        <button data-element-id="MCH-KYC-40-10-S-e09" type="button" class="form-button button-download" id="download_file1">
+	                                            <i class="icon download-24"></i>
+	                                            <span class="name">대리인위임장 양식 내려받기</span>
+	                                        </button>
+	                                    </div>
+	                                    <div class="type-button">
+	                                        <div class="form-button">
+	                                            <input type="file" data-value="G" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                            <span class="name js-file-name">파일 첨부하기</span>
+	                                            <i class="icon arr_right-20"></i>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            
+	
+								
+	                            <!-- 공동대표자 동의서 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label line-h22">공동대표자 동의서</h3>
+	                                    <p class="form__description">
+	                                        대표자가 여러 명인 경우,<br>
+	                                        모든 대표자들의 동의를 확인할 수 있는 동의서를 첨부해 주세요.
+	
+	                                    </p>
+	                                </div>
+	
+	                                <div class="form__item-wrap">
+	                                    <div class="type-button">
+	                                        <button data-element-id="MCH-KYC-40-10-S-e10" type="button" class="form-button button-download" id="download_file2">
+	                                            <i class="icon download-24"></i>
+	                                            <span class="name">공동대표자 동의서 양식 내려받기</span>
+	                                        </button>
+	                                    </div>
+	                                    <div class="type-button">
+	                                        <div class="form-button">
+	                                            <input type="file" data-value="H" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                            <span class="name js-file-name">파일 첨부하기</span>
+	                                            <i class="icon arr_right-20"></i>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            
+	
+	                            <!-- 재무 증빙 자료 -->
+	                            <div class="form__item">
+	                                <div class="form__item-header">
+	                                    <h3 class="form__label line-h22">재무 증빙 자료</h3>
+                                        <p class="form__description" style="color:#FF3D01 !important;">
+                                            전년도 표준재무제표증명원, 프랜차이즈 가맹계약(석유공급계약서) 등 재무 증빙 자료를 첨부해 주세요.<br>
+                                        </p>
+	                                    <p class="form__description">
+                                            신설사업자는 매장임대계약서, 프랜차이즈 가맹계약(석유공급계약서 등), 자본금 납입증명, 사업계획서, 매출추정, 수주계약서, 매출 인보이스, 원자재 매입장표 등을 첨부해 주세요.
+	                                    </p>
+	                                </div>
+	
+	                                <div class="form__item-wrap mgt4">
+	                                    <div class="type-check">
+	                                        <label class="check__label">
+	                                            <input data-element-id="MCH-KYC-40-10-S-e14" type="checkbox" id="checkbox1">
+	                                            <span>전자공시시스템(DART)에 공시된 법인입니다.</span>
+	                                        </label>
+	                                    </div>
+	                                    <div class="type-button">
+	                                        <div class="form-button">
+	                                            <input type="file" data-value="I" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                            <span class="name js-file-name">파일 첨부하기</span>
+	                                            <i class="icon arr_right-20"></i>
+	                                        </div>
+	                                    </div>
+	                                    <div class="more_buttons_add"></div>
+	                                    <div class="type-button">
+	                                        <button type="button" class="form-button button-upload_add">
+	                                            <i class="icon plus-24"></i>
+	                                            <span class="name">파일 추가하기</span>
+	                                        </button>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </article>
+	
+	                    <!-- 선택 파일 첨부 form -->
+	                    <article class="verification__content mgt32 border-t10">
+	                        <div class="verification__drop-box js-drop_box open">
+	                            <div class="drop__trigger js-drop_trigger">
+	                                <button data-element-id="MCH-KYC-40-10-S-e11" type="button" class="trigger-button"><span>선택 파일 첨부</span><i class="icon arr_bottom-24"></i></button>
+	                            </div>
+	    
+	                            <div class="form-box drop_content mgt20" style="display:;">
+	                                <!-- 대표자 신분증 (선택) -->
+	                                <div class="form__item">
+	                                    <div class="form__item-header">
+	                                        <h3 class="form__label line-h22">대표자 신분증 (선택)</h3>
+	                                        <p class="form__description">
+	                                            아래 상황 중 해당하는 경우 대표자 신분증을 필수로 제출해 주세요.<br>
+	                                            파일은 최대 5개까지 추가 가능합니다.
+	                                        </p>
+	                                        <ul class="list_bar">
+	                                            <li>대표자가 외국인일 경우 외국인등록증 앞면, 뒷면 모두 첨부해 주세요. </li>
+	                                            <li>법인등기부등본이 없는 비영리 단체 등의 경우 모든 대표자들의 주민등록증 혹은 운전면허증을 제출해 주세요</li>
+	                                        </ul>
+	                                    </div>
+	
+	                                    <div class="form__item-wrap">
+	                                        <div class="type-button">
+	                                            <div class="form-button">
+	                                                <input type="file" data-value="J" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                                <span class="name js-file-name">파일 첨부하기</span>
+	                                                <i class="icon arr_right-20"></i>
+	                                            </div>
+	                                        </div>
+	                                        
+	                                        <div class="more_buttons_add"></div>
+	
+	                                        <div class="type-button">
+	                                            <button type="button" class="form-button button-upload_add">
+	                                                <i class="icon plus-24"></i>
+	                                                <span class="name">파일 추가하기</span>
+	                                            </button>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	
+	                                <!-- 사용인감계 (선택) -->
+	                                <div class="form__item">
+	                                    <div class="form__item-header">
+	                                        <h3 class="form__label line-h22">사용인감계 (선택)</h3>
+	                                        <p class="form__description">사용인감으로 날인 시 사용인감계 제출은 필수입니다</p>
+	                                    </div>
+	
+	                                    <div class="form__item-wrap">
+	                                        <div class="type-button">
+	                                            <div class="form-button">
+	                                                <input type="file" data-value="K" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                                <span class="name js-file-name">파일 첨부하기</span>
+	                                                <i class="icon arr_right-20"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	
+	                                <!-- 기타 파일 (선택) -->
+	                                <div class="form__item">
+	                                    <div class="form__item-header">
+	                                        <h3 class="form__label line-h22">기타 파일 (선택)</h3>
+	                                        <p class="form__description">
+	                                            안내된 파일 외 추가 전달이 필요한 서류가 있으면 첨부해 주세요.<br>
+	                                            파일은 최대 5개까지 추가 가능합니다.
+	                                        </p>
+	                                    </div>
+	
+	                                    <div class="form__item-wrap">
+	                                        <div class="type-button">
+	                                            <div class="form-button">
+	                                                <input type="file" data-value="L" accept=".jpg, .jpeg, .png, .pdf, .tiff">
+	                                                <span class="name js-file-name">파일 첨부하기</span>
+	                                                <i class="icon arr_right-20"></i>
+	                                            </div>
+	                                        </div>
+	                                        <div class="more_buttons_add"></div>
+	
+	                                        <div class="type-button">
+	                                            <button type="button" class="form-button button-upload_add">
+	                                                <i class="icon plus-24"></i>
+	                                                <span class="name">파일 추가하기</span>
+	                                            </button>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </article>
+	                    
+	                    
+	                </div>
+	            </section>
+	
+	            <!-- 하단 고정버튼 -->
+	            <div class="btn_botFix_w js-floating-box">
+	                <div class="inner bg_white">
+	                    <a data-element-id="MCH-KYC-40-10-S-e13" id="next_button" class="btn_default btn-style-h48 round_r8"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+	                        <span>최종 제출</span>
+	                    </a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

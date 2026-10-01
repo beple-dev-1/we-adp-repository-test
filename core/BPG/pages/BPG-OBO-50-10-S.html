@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플오더 메뉴관리 메뉴 상세</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-50-10-S">
+<form name = "frm" id = "frm" method="post">
+		<input type="hidden" id="BP_AFLT_SEQ" name = "BP_AFLT_SEQ"  value="">
+	</form>
+	<input type="hidden" id="BP_AFLT_PDT_SEQ" 	name = "BP_AFLT_PDT_SEQ" 		value="">
+	<input type="hidden" id="OLD_CATG_SEQ"  	name = "OLD_CATG_SEQ" 			value="">
+	<input type="hidden" id="BP_AFLT_CATG_SEQ" 	name = "BP_AFLT_CATG_SEQ" 		value="">
+	<input type="hidden" id="BP_AFLT_ID" 		name = "BP_AFLT_ID" 			value="">
+	<input type="hidden" id="IMG_INFO" 			name = "IMG_INFO" 				value="">
+	<input type="hidden" id="THUMB_INFO" 		name = "THUMB_INFO" 			value="">
+	<input type="hidden" id="DSP_SEQ" 			name = "DSP_SEQ" 				value="">
+	<input type="hidden" id="STR_TM" 			name = "STR_TM" 				value="">
+	<input type="hidden" id="END_TM" 			name = "END_TM" 				value="">
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>메뉴</h1>
+			<a data-element-id="BPG-OBO-50-10-S-e15"  class="btn-history-back">뒤로가기</a>
+		</div>
+		<!-- // header -->
+	
+		<div class="container">
+			<div class="content">
+				<div class="flexWrap">
+					<div class="bpleOder addBtn-pb56 bg_f7">
+						<!-- 메뉴 등록 -->
+						<div class="store_profile">
+							<!-- 메뉴사진 -->
+							<div class="thumb_bx" id="btn_photo">
+								<div class="inner">
+									<p class="thumbNail"><a data-element-id="BPG-OBO-50-10-S-e16" title="사진상세보기"><img id="menu_img_u" 
+									img_src="" 
+									thumb_src="" 
+									adult_lvl="" 
+									spoof_lvl=""
+									medical_lvl=""
+									violence_lvl=""
+									racy_lvl=""
+								 alt="메뉴사진" src="../assets/_sample/menu.svg"></a></p>
+									<p class="thumb_modify"><a><span class="blind">사진수정</span></a></p>
+								</div>
+							</div>
+							<!-- //메뉴사진 -->
+							<!-- 상품정보 -->
+							<div class="store_info_box">
+								<div class="inner">
+									<!-- 카테고리 -->
+									<h3 class="info_tit"><strong>카테고리</strong></h3>
+									<div class="iptbx">
+										<div class="inner btn">
+											<a id="btn_catgView"><!-- sample:begin --><!-- sample:end --></a>
+										</div>
+									</div>
+									<!-- 메뉴명 -->
+									<h3 class="info_tit"><strong>메뉴명(필수)</strong></h3>
+									<div class="iptbx">
+										<div class="inner">
+											<input data-element-id="BPG-OBO-50-10-S-e21" type="text" id="pdtNm" maxlength="15"   placeholder="메뉴명을 입력해 주세요." value="홍길동" data-fill="demo">
+										</div>
+									</div>
+									<div class="chk_bx"><label><input data-element-id="BPG-OBO-50-10-S-e22" id="rcmdChk" type="checkbox" checked>추천 메뉴로 등록하기</label></div>
+									<!-- 소개 -->
+									<h3 class="info_tit"><strong>메뉴소개(선택)</strong></h3>
+									<div class="iptbx text_bx">
+										<div class="inner">
+											<textarea data-element-id="BPG-OBO-50-10-S-e23" id="pdtInfo" maxlength="50" placeholder="메뉴소개를 입력해 주세요."></textarea>
+										</div>
+										<p class="text_count"><span>0/</span>50</p>
+									</div>
+									<!-- 가격 -->
+									<h3 class="info_tit"><strong>가격(필수)</strong></h3>
+									<div class="iptbx">
+										<div class="inner">
+											<input data-element-id="BPG-OBO-50-10-S-e24" type="tel" maxlength="11" id="pdtPrice" placeholder="가격을 입력해 주세요." value="4,500" data-fill="demo">
+											<span class="won">원</span>
+										</div>
+									</div>
+									<!-- 주문가능시간 — 이 화면의 표준 입력행(.iptbx > .inner > input) 사용.
+									     .timebx/.space 는 CSS 가 .popup_w .set_time 하위로만 정의돼 있어 폼 안에서는 렌더되지 않는다 -->
+									<h3 class="info_tit"><strong>주문가능 시작시간(선택)</strong></h3>
+									<div class="iptbx">
+										<div class="inner">
+											<input data-element-id="BPG-OBO-50-10-S-e25" type="text" id="strTmTxt" placeholder="시간 선택" readonly value="안내 문구" data-fill="demo">
+										</div>
+									</div>
+									<h3 class="info_tit"><strong>주문가능 종료시간(선택)</strong></h3>
+									<div class="iptbx">
+										<div class="inner">
+											<input type="text" id="endTmTxt" placeholder="시간 선택" readonly value="안내 문구" data-fill="demo">
+										</div>
+									</div>
+									<div class="chk_bx"><label><input data-element-id="BPG-OBO-50-10-S-e26" id="noOdrTmChk" type="checkbox" checked>시간 제한 없음(종일 주문 가능)</label></div>
+									
+									<p class="info_msg">같은 가맹점의 기존 메뉴 시간을 불러왔습니다. 저장해야 반영됩니다.</p>
+									
+									<!-- 옵션 -->
+									<h3 class="info_tit mgb0"><strong>옵션(선택)</strong></h3>
+									<div class="option_add item-move" >
+										<ul class="list"  id="opt_ul" style="display:none;">
+											
+												
+												
+													<li>
+														<!-- 옵션 상세 -->
+														<div name='opt_div' id="opt_div" dsp_seq="" opt_catg_seq="">
+															<p class="move" ><a data-element-id="BPG-OBO-50-10-S-e17" href="#none"><span>순서변경</span></a></p>
+															<div class="cont">
+																<p class="name"></p>
+																<p class="sub">4,500</p>
+															</div>
+															<p class="del"><a data-element-id="BPG-OBO-50-10-S-e18" onclick="optDelete(this);"><span>옵션삭제</span></a></p>
+														</div>
+													</li>
+													
+												
+											
+										</ul>
+										<div class="btn_add">
+											<a data-element-id="BPG-OBO-50-10-S-e19" id="btn_optView">+ 옵션 추가</a>
+										</div>
+									</div>
+									
+									<!-- 오더퀸(POS) 연동 정보 — 오더퀸 연동 가맹점(API_ROUTE_TYPE=O)에만 노출. 두 값은 필수 — 저장 버튼 활성화 조건은 bo_my_pdt_det.js uf_btnSet (기획 260921, 비밀번호 잠금 삭제) -->
+									<h3 class="info_tit"><strong>오더퀸 메뉴코드</strong></h3>
+									<div class="iptbx">
+										<div class="inner">
+											<input data-element-id="BPG-OBO-50-10-S-e27" type="text" id="odqMenuCd" maxlength="16" placeholder="오더퀸 메뉴코드 입력" value="004" data-fill="demo">
+										</div>
+									</div>
+									<h3 class="info_tit"><strong>프린트번호</strong></h3>
+									<div class="iptbx">
+										<div class="inner">
+											<input data-element-id="BPG-OBO-50-10-S-e28" type="text" id="prtNo" maxlength="20" placeholder="프린트번호 입력" value="1" data-fill="demo">
+										</div>
+									</div>
+									
+								</div>
+							</div>
+							<!-- // 상품정보 -->
+						</div>
+						<!--//메뉴 등록 -->
+					</div>
+				</div>
+				<!-- 하단 고정버튼 -->
+				<div class="btn_botFix_w">
+					<div class="inner bg_grey">
+						<a data-element-id="BPG-OBO-50-10-S-e20" href="#none" id="btn_save" class="btn_default btn-style-h46 round_r8 on"><span>저장</span></a><!-- 활성/비활성화 시 클래스 on 추가/제거 -->
+					</div>
+				</div>
+				<!-- //하단 고정버튼 -->
+			</div>
+		</div><!-- // container -->
+	</div><!-- // wrap -->
+	<!-- 레이어팝업 -->
+	<div class="layer_overlay topSlide" id="optlayer"  style="display:none;">
+		<div class="oder_flat_pop">
+			<div class="flat_top_bx">
+				<p class="bar"><a id="btn_optClose"></a></p>
+				<h2 class="tit fz18">옵션 추가</h2>	
+				<p class="info_msg">해당 메뉴에 추가할 옵션을 선택해 주세요.</p>
+			</div>
+			<div class="inner" style="display:none;">
+				<p class="item_none">
+					등록된 옵션이 없습니다.
+				</p>
+			</div>
+			<div class="inner addBtn-pb46">
+				<div class="menu_admin">
+					<!-- 옵션추가 -->
+					<div class="menu_option_add">
+						
+							
+								<!-- 메뉴 -->
+								<div class="menu_option_list" opt_catg_seq="" onclick="optSelect(this);"><!-- 선택 시 select 클래스 추가 -->
+									<a >
+										<h3 class="tit"></h3>
+										<p>4,500</p>
+										
+										<dl class="chain_menu">
+											<dt>연결메뉴</dt>
+											<dd></dd>
+										</dl>
+											
+									</a>
+								</div>
+							
+					</div>
+					<!-- //옵션추가 -->
+				</div>
+			</div>
+		</div>
+		<!-- 하단 고정버튼 -->
+		<div class="btn_botFix_w">
+			<div class="inner bg_white">
+				<a id="btn_optAdd" class="btn_default btn-style-h46 round_r8 on"><span>확인</span></a><!-- 활성/비활성화 시 클래스 on 추가/제거 -->
+			</div>
+		</div>
+		<!-- //하단 고정버튼 -->
+	</div>
+	<!-- 카테고리 레이어팝업 -->
+	<div class="layer_overlay" id="catglayer" style="display:none;">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 설정팝업 -->
+				<div class="edit_pop add_tit_t2">
+					<h2 class="ly_pop_tit">카테고리</h2>
+					<p class="btn_close">
+						<a id="btn_catgClose"><span class="blind">닫기</span></a>
+					</p>
+					<!-- 카테고리 선택 -->
+					<ul id="catg_ul">
+						
+							
+							<li class=""><!-- 품절 시 sold_out 클래스 추가, 숨김 시 hide 클래스 추가 -->
+								<a onclick="catgSelect(this);" catg_seq=""></a>
+							</li>		
+							
+					</ul>
+					<!-- //카테고리 선택 -->
+				</div>
+				<!-- //설정팝업 -->
+			</div>
+		</div>
+	</div>
+	<!-- //레이어팝업 -->
+	<!-- 사진 수정 레이어팝업 -->
+	<div class="layer_overlay" id="edit_dim" style="display:none;">
+		<div class="layer_bPop">
+			<div class="popup_con pd0">
+				<!-- 사진 추가/수정 시 dim 팝업 -->
+				<div class="st_profile_pop">
+					<!-- 메뉴선택 -->
+					<ul id="btn_menu">
+						<li><a id="btn_basic" href="#none" style="display:none">기본 이미지로 변경</a></li>
+						<li><a href="#none" id="btn_cam">사진 촬영</a></li>
+						<li><a href="#none" id="btn_alb">앨범에서 가져오기</a></li>
+					</ul>
+					<!-- //메뉴선택 -->
+				</div>
+				<!-- //사진 추가/수정 시 dim 팝업 -->
+			</div>
+		</div>
+	</div>
+	<!-- //레이어팝업 -->
+</body>
+</html>

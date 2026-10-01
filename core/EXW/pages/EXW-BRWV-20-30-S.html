@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../assets/resource/css/event.css">
   <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
   <link rel="stylesheet" href="../assets/resource/css/bple_order.css">
+  <link rel="stylesheet" href="../assets/js/lib/jquery/datepicker/daterangepicker.css">
 </head>
 <body data-screen-id="EXW-BRWV-20-30-S">
 <form id="frm" name="frm">
@@ -44,30 +45,30 @@
 						</div>
 
 						<!-- 내역 목록 -->
-						<div class="dtl_list buy" id="hist_area"><!-- sample:begin --><p class="date">2026.09.02</p><div class=""><a><p class="img"></p><div class="info" data-bgcNo="1"><p class="brand" title="홍길동">홍길동</p><p class="tit" title="홍길동">홍길동</p><p class="limit_day">유효기간 </p></div></a></div><!-- sample:end --></div>
+						<div class="dtl_list buy" id="hist_area"><!-- sample:begin --><p class="date">2026.09.02</p><div class="list"><a><p class="img"></p><div class="info" data-bgcNo="1"><p class="brand" title="홍길동">홍길동</p><p class="tit" title="홍길동">홍길동</p><p class="limit_day">유효기간 </p></div></a></div><!-- sample:end --></div>
 					</div>
 				</div>
 				<!-- 하단 고정버튼 -->
 				<div class="btn_botFix_w">
 					<nav class="nav_w bg_white">
 						<div class="home on"><!-- 선택 시 on -->
-							<a onclick="uf_move('home');">
+							<a data-element-id="EXW-BRWV-20-30-S-e01" onclick="uf_move('home');">
 								<span>홈</span>
 							</a>
 						</div>
 						<div class="history on">
-							<a onclick="uf_move('list');">
+							<a data-element-id="EXW-BRWV-20-30-S-e02" onclick="uf_move('list');">
 								<span>내역</span>
 							</a>
 						</div>
 						<div class="prev on">
 						<!-- <a onclick="uf_move('prev');"> -->
-							<a onclick="uf_move('list');">
+							<a data-element-id="EXW-BRWV-20-30-S-e06" onclick="uf_move('list');">
 								<span>이전</span>
 							</a>
 						</div>
 						<div class="next on">
-							<a onclick="uf_move('next');">
+							<a data-element-id="EXW-BRWV-20-30-S-e04" onclick="uf_move('next');">
 								<span>다음</span>
 							</a>
 						</div>
@@ -104,9 +105,9 @@
 				<!-- 날짜 -->
 				<div class="filter_date disabled" style="display:block;" id="set_period"><!-- 기간설정 시 display:block; -->
 					<div class="inner">
-						<div class="date"><input type="text" readonly id="set_str_date" name="set_str_date"><a onclick="javascript:dateClick('str');" id="strD" style="display: none;"  class="btn_cal"><span class="blind">달력</span></a></div>
+						<div class="date"><input type="text" readonly id="set_str_date" name="set_str_date" value="2026.09.02" data-fill="demo"><a onclick="javascript:dateClick('str');" id="strD" style="display: none;"  class="btn_cal"><span class="blind">달력</span></a></div>
 						<div class="dash">-</div>
-						<div class="date"><input type="text" readonly id="set_end_date" name="set_end_date"><a onclick="javascript:dateClick('end');" id="endD" style="display: none;" class="btn_cal"><span class="blind">달력</span></a></div>
+						<div class="date"><input type="text" readonly id="set_end_date" name="set_end_date" value="2026.09.02" data-fill="demo"><a onclick="javascript:dateClick('end');" id="endD" style="display: none;" class="btn_cal"><span class="blind">달력</span></a></div>
 					</div>
 					<!-- 오류메시지 -->
 					<div id="over_data" class="err_txt" style="display:none;">조회기간은 6개월을 넘을 수 없습니다.</div><!-- 기간설정 조회기간 오류 시(3개월 넘길경우) display:block; -->

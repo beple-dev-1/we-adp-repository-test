@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점관리 > 직원 정보 수정</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="MCH-AFMG-40-10-S">
+<div class="wrap">
+<input data-element-id="MCH-AFMG-40-10-S-e15" type="text" id="zp_id" hidden="hidden" value="표본">
+	<div class="header floating-back-header floating-sticky">
+		<h1>직원관리</h1>
+		<!-- <a href="#" class="btn-history-back">뒤로가기</a> -->
+		<div class="right">
+			<a data-element-id="MCH-AFMG-40-10-S-e11" href="#none" class="btn_outpage">페이지나가기</a>
+		</div>
+	</div><!-- // header -->
+	<div class="container">
+		<div class="content">
+			<div class="row-bothpadding25-style ">
+				<div class="input_wrap">
+					<div class="store_tit">
+						관리가맹점 : <span class="store_tit" id="store_nm">비플머니</span>
+					</div>
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">이름</div></td></tr>
+								<tr>
+									<td>
+										<div class="input_type">
+											<input data-element-id="MCH-AFMG-40-10-S-e16" type="text" id="user_nm" maxlength="20" value="홍길동">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">연락처</div></td></tr>
+								<tr>
+									<td>
+										<div class="input_type">
+											<input data-element-id="MCH-AFMG-40-10-S-e17" type="text" id="mob" value="표본" maxlength="13" readonly="readonly">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col><col width="82px"></colgroup>
+							<tbody>
+								<tr><td colspan="2"><div class="tit">상태</div></td></tr>
+								<tr>
+									<td>
+										<div class="input_type">
+											<input data-element-id="MCH-AFMG-40-10-S-e18" type="text" id="status" readonly="readonly" value="표본">
+										</div>
+									</td>
+									<td class="vab">
+										<div><a data-element-id="MCH-AFMG-40-10-S-e12" href="#none" class="btn_nuse"><span id="stat">사용중지</span></a></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">등록일</div></td></tr>
+								<tr>
+									<td>
+										<div class="input_type">
+											<input data-element-id="MCH-AFMG-40-10-S-e19" type="text" id="inst_date" readonly="readonly" value="2026.09.02">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="cont_cell">
+						<table class="tbl_style">
+							<caption></caption><colgroup><col></colgroup>
+							<tbody>
+								<tr><td><div class="tit">메모</div></td></tr>
+								<tr>
+									<td>
+										<div class="memo_txt">
+											<textarea data-element-id="MCH-AFMG-40-10-S-e20" id="memo" placeholder="메모는 필수사항이 아닙니다." maxlength="200"></textarea>
+										</div>
+										<div class="countxt">(0/200자)</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="fixed-bottom-section" style="position: fixed; top: 712px;">
+				<a data-element-id="MCH-AFMG-40-10-S-e13" href="#" id="btn_del" class="btn-submit btn-half btn-dark-op90"><span>삭제</span></a><!-- 활성화클래스 on -->
+				<a data-element-id="MCH-AFMG-40-10-S-e14" href="#" id="btn_upd" class="btn-submit btn-half btn-deepblack-op90 on"><span>수정</span></a>
+			</div>
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+<!-- modal overlay -->
+<div class="modaloverlay" id="del_confirm" style="display: none;">
+		<div class="lytb"><div class="lytb_row"><div class="lytb_td">
+		<!-- layerpopup -->
+		<div class="layer_style1">
+			<div class="layer_po">
+				<div class="cont">
+					<div class="pop_txt row-bothpadding15-style">
+						삭제 후 더 이상 서비스를 이용할 수 없습니다. 삭제 하시겠습니까?
+					</div>
+				</div>
+			</div>
+			<div class="ly_btn_fix_botm btn_both">
+				<a class="btn_pop gray_st" id="no_del"><span>취소</span></a>
+				<a class="btn_pop" id="ok_del"><span>확인</span></a>
+			</div>
+		</div>
+		<!-- //layerpopup -->
+		</div></div></div>
+	</div>
+<!-- //modal overlay -->
+<!-- modal overlay -->
+<div class="modaloverlay" id="stop_confirm" style="display: none;">
+		<div class="lytb"><div class="lytb_row"><div class="lytb_td">
+		<!-- layerpopup -->
+		<div class="layer_style1">
+			<div class="layer_po">
+				<div class="cont">
+					<div class="pop_txt row-bothpadding15-style">
+						중지 해지 전까지 서비스를 이용할 수 없습니다. 사용중지 하시겠습니까?
+					</div>
+				</div>
+			</div>
+			<div class="ly_btn_fix_botm btn_both">
+				<a class="btn_pop gray_st" id="no_stop"><span>취소</span></a>
+				<a class="btn_pop" id="ok_stop"><span>확인</span></a>
+			</div>
+		</div>
+		<!-- //layerpopup -->
+		</div></div></div>
+	</div>
+<!-- //modal overlay -->
+<!-- modal overlay -->
+<div class="modaloverlay" id="active_confirm" style="display: none;">
+		<div class="lytb"><div class="lytb_row"><div class="lytb_td">
+		<!-- layerpopup -->
+		<div class="layer_style1">
+			<div class="layer_po">
+				<div class="cont">
+					<div class="pop_txt row-bothpadding15-style">
+						서비스를 이용하실 수 있습니다.<br />
+						사용 변경 하시겠습니까?
+					</div>
+				</div>
+			</div>
+			<div class="ly_btn_fix_botm btn_both">
+				<a class="btn_pop gray_st" id="no_active"><span>취소</span></a>
+				<a class="btn_pop" id="ok_active"><span>확인</span></a>
+			</div>
+		</div>
+		<!-- //layerpopup -->
+		</div></div></div>
+	</div>
+<!-- //modal overlay -->
+</body>
+</html>

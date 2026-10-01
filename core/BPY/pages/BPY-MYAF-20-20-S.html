@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 프로필 > 대표번호 수정</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-MYAF-20-20-S">
+<input type="hidden" id="APP_CD" value=""/>
+<input type="hidden" id="AFLT_ID" value=""/>
+<input type="hidden" id="REPR_NO1" value=""/>
+<input type="hidden" id="REPR_NO2" value=""/>
+<input type="hidden" id="ENTER_FLAG" name="ENTER_FLAG" value=""/>
+
+<div class="wrap bg_br">
+	<div class="header floating-back-header floating-sticky">
+		<h1>대표번호 등록</h1>
+		<a data-element-id="BPY-MYAF-20-20-S-e04" href="#" class="btn-history-back" id="backBtn">뒤로가기</a>
+		<!-- <div class="right">
+			<a href="#none" class="btn_outpage">페이지나가기</a>
+		</div> -->
+	</div><!-- // header -->
+
+	<div class="container">
+		<div class="content" id="step3">
+			<!-- 컨텐츠 영역 -->
+			<div class="store_profile addBtn-pb58">
+				<!-- 타이틀 영역 -->
+				<div class="tit_bx">
+					<h2>
+						<strong>대표번호 등록</strong>
+					</h2>
+					<p>고객이 문의할 수 있는 전화번호를 입력해 주세요.</p>
+				</div>
+				<!-- //타이틀 영역 -->
+				
+				<div class="con_area">
+					<!-- 입력박스 -->
+					<div id="telBox">
+	<!-- 					<div class="br_iptbx on" id="new_repr_no1">활성화클래스 on -->
+	<!-- 						<div class="inner"> -->
+	<!-- 							<input id="inputTel1" type="tel" placeholder="ex)  02-0000-0000" maxlength="11">  -->
+	<!-- 							<a class="btn_del"><span class="blind">삭제</span></a> -->
+	<!-- 						</div> -->
+	<!-- 					</div> -->
+						 
+	<!-- 					<div class="br_iptbx" id="new_repr_no2" style="display:none;"> -->
+	<!-- 						<div class="inner"> -->
+	<!-- 							<input id="inputTel2" type="tel" placeholder="ex)  02-0000-0000" maxlength="11">  -->
+	<!-- 							<a class="btn_del"><span class="blind">삭제</span></a> -->
+	<!-- 						</div> -->
+	<!-- 					</div>  -->
+					</div>
+					<!-- 입력박스 -->
+					<!-- 번호추가 버튼 -->
+					<div class="btn_add">
+						<a data-element-id="BPY-MYAF-20-20-S-e05" href="#none" id="addTel">
+							<span>+ 대표번호 추가</span>
+						</a>
+					</div>
+					<!-- 번호추가 버튼 -->
+				</div>
+
+			</div>
+			<!-- //컨텐츠 영역 -->
+			
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w">
+				<div class="inner bg_grey">
+					<a data-element-id="BPY-MYAF-20-20-S-e06" href="#"  class="btn_default btn-style-h48 round_r8" id="btn_ok"><span>저장</span></a><!-- 활성화클래스 on -->
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+		</div>
+		 
+	</div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- modal overlay -->
+<div class="modaloverlay no_dim" id="err_num" style="display: none;"><!-- 2022-09-20 가맹점프로필 검수 -->
+	<div class="lytb">
+		<div class="lytb_row">
+			<div class="lytb_td style_padding_lr40">
+				<!-- layerpopup -->
+				<div class="noti_pop basic">
+					<div class="layer_po">
+						<div class="cont">
+							<!-- 2022-07-18 -->
+							<p class="fch_pop_err">
+								유효하지 않은 번호에요.<br>
+								번호를 다시 확인해 주세요.
+							</p>
+							<!-- //2022-07-18 -->
+						</div>
+					</div>
+
+					<div class="confirm">
+						<a class="btn_pop_txt_blue" id="err_ok"><span>확인</span></a>
+					</div>
+				</div>
+				<!-- //layerpopup -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //modal overlay -->
+</body>
+</html>

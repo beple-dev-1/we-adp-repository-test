@@ -54,6 +54,7 @@ _APP_CD = "";
 
      헤더 타이틀은 퍼블리싱 v1.3(2026-08-31) 에서 「계좌 등록」으로 확정됐다 —
      v1.2 의 「본인인증」은 ARS 스텝(D855a) 문구가 남은 오기였다.
+     단 B_ABY 는 기관 요청으로 「머니 계좌 등록」이다 (MONEY_ACCT_APP_CD · :123).
      ================================================================ -->
 
 <!-- ================================================================
@@ -80,7 +81,8 @@ _APP_CD = "";
 		</div>
 	</header>
 
-	<main class="container-wrap js-container-wrap pdt32">
+	<!-- 퍼블리싱 v1.7 (2026-09-09) — pdt32 제거 -->
+	<main class="container-wrap js-container-wrap">
 		<section class="container end-container js-container">
 			<article class="container__body justify-spacing-def">
 				<div class="body__content">
@@ -109,7 +111,7 @@ _APP_CD = "";
 				</div>
 			</div>
 			<div class="floating__box button-box-spacing">
-				<a href="#none" class="button button-xl button--lv1" id="btnComplete" aria-label="확인">
+				<a data-element-id="EXW-UWV-40-50-S-e01" href="#none" class="button button-xl button--lv1" id="btnComplete" aria-label="확인">
 					<span>확인</span>
 				</a>
 			</div>
@@ -134,6 +136,11 @@ _APP_CD = "";
 			<section class="body__content">
 				<ul class="pdb24">
 					<li>
+						<!-- 퍼블리싱 v1.7 (2026-09-09) 은 이 버튼에 js-toast-handler +
+						     data-toast-icon/data-toast-text 를 붙였으나 채택하지 않는다.
+						     common-ui.js 의 핸들러는 클릭 즉시 토스트를 띄워 실패해도 성공 문구가
+						     뜨고, 성공 시에는 zero_webview_account_v2.js 의 uf_toast 가 같은
+						     아이콘·문구로 다시 띄워 중복된다. 마크업은 종전 그대로 둔다. -->
 						<button type="button" id="btnSetMainAcct"
 						        class="flex-row align-center height-48 fs-16 ta-left js-popup-close">
 							<span class="grow-y">주계좌 설정</span>

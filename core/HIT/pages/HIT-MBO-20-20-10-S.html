@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>카테고리</title>
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/bp_admin_pc.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/datepicker.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
+  <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+</head>
+<body data-screen-id="HIT-MBO-20-20-10-S">
+<script>
+  	let onloadData = ``;
+  </script>
+  <div class="bp-root">
+    <!-- gnb -->
+		
+
+<!-- gnb -->
+<div class="bp-aside">
+  <!-- <div class="top">
+    <div class="logo">
+      <img src="../assets/resource/img/icon/ic_gate_small_02.svg" alt="">
+    </div>
+    <div class="right">
+      <p class="user-name">
+        김식권
+        <span>님</span>
+      </p>
+      <span class="user-position">매니저</span>
+      <button class="btn-logout" type="button">로그아웃</button>
+    </div>
+  </div> -->
+  <div class="bottom">
+    <div class="gnb gnb-type02">
+      <ul class="d1">
+        <li class="item item-01"> <!--[D]active-->
+          <i class="ic ic-gnb-bo-05 normal"></i>
+          <i class="ic ic-gnb-bo-05 active"></i>
+          <a data-element-id="HIT-MBO-20-20-10-S-e09" data-nav-target="HIT-MBO-20-10-10-S" href="/ent_afltbo_frsh_brk_list.act">다과 신청 내역</a>
+          <!-- <ul class="d2">
+            <li class="item"> <\!--[D]active--\>
+              <a href="/ent_afltbo_frsh_brk_list.act">다과 신청 내역</a>
+            </li>
+          </ul> -->
+        </li>
+        <li class="item item-02"> <!--[D]active-->
+          <i class="ic ic-gnb-bo-06 normal"></i>
+          <i class="ic ic-gnb-bo-06 active"></i>
+          <a data-element-id="HIT-MBO-20-20-10-S-e10" data-nav-target="HIT-MBO-20-20-10-S" href="/ent_afltbo_frsh_brk_catg.act">다과 메뉴 관리</a>
+          <ul class="d2">
+            <li class="item" name="ent_afltbo_frsh_brk_catg"> <!--[D]active-->
+              <a data-element-id="HIT-MBO-20-20-10-S-e11" data-nav-target="HIT-MBO-20-20-10-S" href="/ent_afltbo_frsh_brk_catg.act">카테고리</a>
+            </li>
+            <li class="item" name="ent_afltbo_frsh_brk_menu">
+              <a data-element-id="HIT-MBO-20-20-10-S-e12" data-nav-target="HIT-MBO-20-20-20-S" href="/ent_afltbo_frsh_brk_menu.act">메뉴</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+	<!-- gnb -->
+
+    <div class="bp-main">
+      <div class="layout">
+        <div class="row">
+          <div class="col col-10">
+            <div class="con-wrap">
+              
+              <div class="page-header">
+                <p class="tit-01 with-desc">
+                  카테고리
+                  <span>
+                    카테고리는 메뉴를 하나로 묶어주는 단위입니다, 커피, 패키지, 단품 등 성격별로 카테고리를 설정해 주세요.<br>
+                    등록하신 카테고리 순서대로 고객화면에 노출됩니다. (카테고리 드래그시 순서 변경가능)
+                  </span>
+                </p>
+              </div>
+
+              <div class="card-group-sorting" id="sortable"><!-- sample:begin --><div class="card type04" catg-seq="1" catg-order="">
+                    <div class="btn-grab">손잡이</div>
+                    <div class="tit-txt-price">
+                      <p class="tit">홍길동</p>
+                    </div>
+                    <div class="menu-root">
+                      <button class="btn-more" type="button">더보기</button>
+                      <div class="menu-body">
+                        <div class="menu-item btn-update-catg-alert">수정</div>
+                        <div class="menu-item btn-delete-catg-alert">삭제</div>
+                      </div>
+                    </div>
+                  </div> <!-- sample:end --></div>	 
+              <!--//[D]수정:20230405-->             
+                          
+              <div class="btn-group ta-center block mt20 btn-save-block">
+                <button data-element-id="HIT-MBO-20-20-10-S-e13" class="btn btn-big btn-gray-outline btn-add-catg" type="button">+ 추가하기</button>
+              </div>              
+
+            </div><!--con-wrap-->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ===================================Modal===================================== -->
+<!-- new category modal -->
+  <div class="modal w370" id="new-catg-pop" style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type01">
+          <p class="tit">카테고리 추가</p>
+          <div class="desc">카테고리를 추가해 주세요</div>
+        </div>
+        <button class="btn-close" type="button" onclick="pop.newCatgPop.close()">닫기</button>
+      </div>
+      <div class="modal-con">
+        <table class="data-table form-table no-bd">
+          <colgroup>
+            <col width="90px">
+            <col width="">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left pl0">카테고리명</th>
+              <td class="ta-right pr0">
+                <input name="" maxlength="20" id="new-catg-name" class="ip-txt w100p" type="text" value="" placeholder="카테고리명을 입력해 주세요">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn btn-md-a btn-primary" type="button" id="btn-save-catg">저장</button>
+        </div>        
+      </div>
+    </div>
+  </div>  
+  <div class="dim" id="new-catg-pop-dim" style="display:none;"></div>
+  
+  <!-- ---------------Update category Modal----------------------------------------- -->
+  <div class="modal w370" id="update-catg-pop" style="display:none;"><!--[D]active-->
+    <div class="inner">
+      <div class="modal-header">
+        <div class="tit-area type01">
+          <p class="tit">카테고리 수정</p>
+          <div class="desc">카테고리를 수정해 주세요</div>
+        </div>
+        <button class="btn-close" type="button" onclick="pop.updateCatgPop.close()">닫기</button>
+      </div>
+      <div class="modal-con">
+        <table class="data-table form-table no-bd">
+          <colgroup>
+            <col width="90px">
+            <col width="">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class="ta-left pl0">카테고리명</th>
+              <td class="ta-right pr0">
+                <input name="" maxlength="20" id="update-catg-name" class="ip-txt w100p" type="text" value="" placeholder="카테고리명을 입력해 주세요">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn btn-md-a btn-primary" type="button" id="btn-update-catg">저장</button>
+        </div>        
+      </div>
+    </div>
+  </div>  
+  <div class="dim" id="update-catg-pop-dim" style="display:none;"></div>
+  
+  <!-- modal ask for delete category -->
+  <div class="alert type02 w360" id="delete-catg-pop"><!--[D]active-->
+		<div class="inner">
+			<div class="alert-con">
+				<p class="txt-01 fc-111 fs-16 ta-center">
+					카테고리를 삭제하시겠습니까?
+				</p>
+			</div>
+			<div class="alert-footer">
+				<div class="btn-group">
+					<button data-element-id="HIT-MBO-20-20-10-S-e14" class="btn btn-md-a btn-primary-outline" type="button" onclick="pop.deletCatgPop.close()">아니오</button>
+					<button data-element-id="HIT-MBO-20-20-10-S-e15" class="btn btn-md-a btn-primary" type="button" id="btn-delete-catg">예</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dim" id='delete-catg-pop-dim' style="display:none;"></div><!--[D]active-->
+	
+	<!-- alert modal -->
+	<div class="alert type02 w360" id="empty-catg-nm-pop"><!--[D]active-->
+		<div class="inner">
+			<div class="alert-con">
+				<p class="txt-01 fc-111 fs-16 ta-center" id="alert-msg">
+					카테고리명을 입력해 주세요.
+				</p>
+			</div>
+			<div class="alert-footer">
+				<div class="btn-group">
+					<button data-element-id="HIT-MBO-20-20-10-S-e16" class="btn btn-md-a btn-primary" type="button" id="btn-reopen-pop">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dim" id="empty-catg-nm-pop-dim" style="display:none;"></div><!--[D]active-->
+	
+	<!-- alert can't delete category -->
+	<div class="alert type02 w360" id="cannot-delete-pop"><!--[D]active-->
+		<div class="inner">
+			<div class="alert-con">
+				<p class="txt-01 fc-111 fs-16 ta-center">
+					카테고리에 속한 메뉴가 있어 삭제가 불가능합니다.
+				</p>
+			</div>
+			<div class="alert-footer">
+				<div class="btn-group">
+					<button class="btn btn-md-a btn-primary" type="button" onclick="pop.cannotDeleteCatgPop.close()">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dim" id="cannot-delete-pop-dim" style="display:none;"></div><!--[D]active-->
+</body>
+</html>

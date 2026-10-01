@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>스마트오더 주문내역 상세</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-HIST-10-10-S">
+<form name="frm" id="frm" method="post">
+    <input type="hidden" id="ORDER_DT"  name="ORDER_DT"  value="" />
+    <input type="hidden" id="ORDER_ID"  name="ORDER_ID"  value="" />
+    <input type="hidden" id="ORDER_TYPE"  name="ORDER_TYPE"  value="" />
+    <input type="hidden" id="CFTR_PSIB_CNCL_YN"  name="CFTR_PSIB_CNCL_YN"  value="" />
+    <input type="hidden" id="TRX_DT"  name="TRX_DT"  value="" />
+    <input type="hidden" id="TRX_SEQ"  name="TRX_SEQ"  value="" />
+    <input type="hidden" id="TRX_TP"  name="TRX_TP"  value="" />
+    <input type="hidden" id="AMT"  name="AMT"  value="" />
+    <input type="hidden" id="SERVICE_DTL_CHNL"  name="SERVICE_DTL_CHNL"  value="" />
+    <input type="hidden" id="PICK_BARCODE_SHOW_CNT"  name="PICK_BARCODE_SHOW_CNT"  value="" />
+    <input type="hidden" id="POSTPAID_YN"  name="POSTPAID_YN"  value="" />
+    <input type="hidden" id="DEAD_LINE_DTTM"  name="DEAD_LINE_DTTM"  value="" />
+    <input type="hidden" id="CAN_ST"  name="CAN_ST"  value="" />
+</form>
+
+<div class="wrap js-wrap">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-HIST-10-10-S-e08" href="#none"class="hd-btn back" onclick="uf_back();"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title">내역상세</h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 컨테이너 -->
+        <section class="smart_oder-container">
+            <!-- 신규추가 -->
+            <div class="container-hd type2 flex-column pdt16">
+                <h2 class="container-text title large ns-ac"></h2>
+                <!-- 주문정보 -->
+                <div class="hd__text-wrap">
+                    <div class="text-item">
+                        <p class="container-text head">주문시간</p>
+                        <p class="container-text"></p>
+                    </div>
+                    <div class="text-item">
+                        <p class="container-text head">결제 방법</p>
+                        
+                            <p class="container-text">복합결제</p>
+                        
+                    </div>
+                    
+                        <div class="text-item">
+                            <p class="container-text head">배송지</p>
+                            <p class="container-text">서울 강남구 테헤란로 1길 10 101동 1001호</p>
+                        </div>
+                    
+                </div>
+            </div>
+            <!-- // 신규추가 -->
+            <!-- 컨테이너 컨텐츠 -->
+            <!-- 주문상태 -->
+            <article class="oder_state_dtl  theft ">
+                <p class="oder_num">주문번호<strong></strong></p>
+
+                <!--
+                    <div class="progress_bar "><!-- 각 스탭별 클래스 step 1~3 ->
+                        <div class="anchor"><span>주문완료</span></div>
+                        <div class="anchor"><span>접수완료</span></div>
+                        <div class="anchor"><span>배달완료</span></div>
+                    </div>
+                -->
+
+                
+                    <p class="qr_btn" id="pickup_qr_btn" txt_tit="표본" qr_code=""><a data-element-id="HIT-HIST-10-10-S-e09" href="#none"> QR</a></p>
+                
+
+                
+                    <p class="theft-label"><span href="#none">도난신고</span></p>
+                
+            </article>
+            <!-- 주문내역 -->
+            <article class="oder_cart border-t10">
+                <div class="cart_w">
+                    <!-- wrap-hd 및 버튼 추가됨 -->
+                    <div class="wrap-hd flex-row">
+                        <h2 class="tit grow-y">주문내역</h2>
+                        
+                            <a data-element-id="HIT-HIST-10-10-S-e10" href="#none" class="text-btn shrink-n" id="recipt_view">
+                            
+                                <span class="icon arr_right-14">영수증 상세내역</span></a>
+                            
+                        
+                    </div>
+                    <!-- // wrap-hd 추가됨 -->
+                    <div class="list_w">
+                        <!-- 목록 -->
+                        <!-- 메뉴 -->
+                        <div class="list">
+                            <h3 class="name"></h3>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- 구조 변경됨 -->
+            <!-- 결제상세 -->
+            <article class="oder_payment">
+                <div class="payment_w">
+                    <!-- 결제상세 내역 -->
+                    <div class="payment_con pdt22"><!-- 원본기준 변경사항 -> payment_dtl > payment_con 클래스 변경됨 내역상세 케이스 화면에서만 pdt22 추가 -->
+                        
+                        <div class="payment-detail">
+                            <!-- 상세항목 -->
+                            <div class="detail-con">
+                                <p class="detail-text fw-bold">주문금액</p>
+                                <p class="detail-text fw-bold"><span>4,500</span> M</p>
+                            </div>
+                            
+                                
+                                    <!-- 상세항목 -->
+                                    <div class="detail-con">
+                                        <p class="detail-text">비플머니</p>
+                                        <p class="detail-text">-<span>4,500</span> M</p>
+                                    </div>
+                                
+                            
+                            
+                                <!-- 상세항목 -->
+                                <div class="detail-con">
+                                    <p class="detail-text">주문취소금액</p>
+                                    <p class="detail-text">+<span>4,500</span> M</p>
+                                </div>
+                            
+                            <!-- 총 결제금액 -->
+                            <div class="detail-con total border-t1 pdt16 mgt6">
+                                <p class="detail-text fw-bold">총 결제 금액</p>
+                                <p class="detail-text fw-bold"><span>4,500</span> M</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- 기타 안내사항 -->
+                    <div class="payment_con"><!-- 원본기준 변경사항 -> payment_dtl > payment_con 클래스 변경됨 -->
+                        <div class="con-hd">
+                            <h3 class="pay_tit">주문취소 및 환불</h3>
+                        </div>
+                        
+                            <div class="con-wrap">
+                                <p class="con-text">
+                                    주문취소는 까지 가능합니다.<br>
+                                    매장으로 전화주시거나 하단 ‘주문취소’버튼을 클릭하여
+                                    주문을 취소할 수 있습니다.
+                                </p>
+                            </div>
+                        
+
+                        
+                            <div class="con-wrap" id="cancel">
+                                <a data-element-id="HIT-HIST-10-10-S-e11" href="#none" class="option-btn">주문취소</a>
+                            </div>
+                        
+
+                        
+                            <div class="con-wrap" id="theft_view">
+                                <a data-element-id="HIT-HIST-10-10-S-e12" href="#none" class="option-btn type2">도난신고 현황보기</a>
+                            </div>
+                        
+                    </div>
+
+                    <!---->
+                    
+                        <div class="payment_con"><!-- 원본기준 변경사항 -> payment_dtl > payment_con 클래스 변경됨 -->
+                            <div class="con-hd">
+                                <p class="pay_tit fw-bold">주문하신 음식이 지정된 장소에 없나요?</p>
+                            </div>
+                            <div class="con-wrap" id="theft_reg">
+                                <a data-element-id="HIT-HIST-10-10-S-e13" href="#none" class="option-btn type2">도난신고하기</a>
+                            </div>
+                        </div>
+                    
+                </div>
+            </article>
+            <!-- // 구조 변경됨 -->
+        </section>
+
+        <!-- 레이어팝업 -->
+        <section class="popup-container overlay" id="layer_pickup_bar" style="display:none;">
+            <div class="popup-box center"><!-- 가운데 정렬일 시 center 클래스 추가 -->
+                <!-- 사전예약 안내 - 바코드 -->
+                <div class="inner-box reservation-info">
+                    <!-- 컨테이너 헤더 -->
+                    <div class="box-hd">
+                        <p class="box__hd-text" id="text_tit"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                    </div>
+                    <div class="box-con">
+                        <div class="info-msg">
+                            <ol id="qr_text">
+                                <li>리더기에 QR 코드를 스캔해주세요</li>
+                                <li>주문한 메뉴를 수령해주세요.</li>
+                            </ol>
+                        </div>
+                        <div class="barcode-box" style="display:none">
+                            <p class="barcode">
+                                <img alt="" src="../assets/_sample/card.svg">
+                            </p>
+                        </div>
+                        <div class="qrcode-box">
+                            <p class="qrcode" id="qr_area">
+                                <img alt="" src="../assets/_sample/card.svg">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

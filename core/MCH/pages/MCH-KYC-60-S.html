@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>고객확인서등록_대리인정보입력</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KYC-60-S">
+<form id="frm">
+        <input type="hidden" id="SEOUL_PAY_YN" name="SEOUL_PAY_YN" value=""/>
+        <input type="hidden" id="AML_SEQ" name="AML_SEQ" value="">
+        <input type="hidden" id="CI"  name="CI"  value="" />
+        <input type="hidden" id="AC"  name="AC"  value=""/>
+        <input type="hidden" id="MOB_NO"  name="MOB_NO"  value=""/>
+        <input type="hidden" id="MEMB_NM" name="MEMB_NM" value="">
+        <input type="hidden" id="BRT_DT" name="BRT_DT" value="">
+        <input type="hidden" id="GNDR" name="GNDR" value="">
+        <input type="hidden" id="BIZ_NO" name="BIZ_NO" value="">
+        <input type="hidden" id="PREV_PAGE" name="PREV_PAGE" value="aml_reg_acct_cert.act">
+        <input type="hidden" id="NEXT_PAGE" name="NEXT_PAGE" value="aml_reg_info.act">
+        <input type="hidden" id="MODIFY_YN" name="MODIFY_YN" value="">
+    </form>
+
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>가맹점 고객확인서</h1>
+        <a data-element-id="MCH-KYC-60-S-e20" href="#" class="btn-history-back" id="back_btn">뒤로가기</a>
+    </div>
+    <!-- // header -->
+
+    <div class="container">
+        <div class="content">
+            <!-- 고객확인서 -->
+            <section class="customer-verification js-cv-container"><!-- 2024-11-19 'js-cv-container' 클래스 추가 / 'addBtn-pb58' 제거 -->
+                <article class="verification__header">
+                    <h2 class="header__title">대리인 정보</h2>
+                </article>
+
+                <!-- 정보 form -->
+                <article class="verification__content mgt32">
+                    <!-- 
+                        form input 상태별 attr 아래 속성 추가할 것.
+
+                        읽기전용 = readonly 추가
+                        비활성화 = disabled 추가
+                    -->
+                    <div class="form-box">
+                        <!-- 대리인명 -->
+                        <div class="form__item item-disabled"><!-- 읽기전용, 비활성화 시 item-disabled 추가 -->
+                            <div class="form__item-header">
+                                <h3 class="form__label">대리인명</h3>
+                            </div>
+
+                            <div class="form__item-wrap">
+                                <div class="type-box">
+                                    <input data-element-id="MCH-KYC-60-S-e23" type="text" id="deputy_nm" value="" readonly><!-- 읽기전용 = readonly -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 대리인명(영문) -->
+                        <div class="form__item">
+                            <div class="form__item-header">
+                                <h3 class="form__label">대리인명(영문)</h3>
+                            </div>
+
+                            <div class="form__item-wrap">
+                                <div class="type-box">
+                                    <input data-element-id="MCH-KYC-60-S-e24" type="text" id="deputy_eng_nm" value="" placeholder="대리인 여권상 영문명 입력" maxlength="100">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 국적 -->
+                        <div class="form__item">
+                            <div class="form__item-header">
+                                <h3 class="form__label">국적</h3>
+                            </div>
+
+                            <div class="form__item-wrap">
+                                <div class="drop-type2 js-drop_box">
+                                    <p class="drop__trigger js-drop_trigger">
+                                        <button data-element-id="MCH-KYC-60-S-e15" type="button" class="trigger-button" id="deputy_nation" name="deputy_nation" value="KR">대한민국 (KR)</button>
+                                        </p>
+
+                                    <div class="drop__content js-drop_content" style="display:none;">
+                                        <ul class="content__item-list" id="deputy_nation_list">
+                                            <!-- <li class="content__item"><button type="button" class="item-button" value="US">미국 (US)</button></li> -->
+                                            <!-- <li class="content__item"><button type="button" class="item-button" value="KR">대한민국 (KR)</button></li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 국내거주여부 -->
+                        <div class="form__item">
+                            <div class="form__item-header">
+                                <h3 class="form__label">국내거주여부</h3>
+                            </div>
+
+                            <div class="form__item-wrap">
+                                <div class="type-radio">
+                                    <label class="radio__label"><input type="radio" name="deputy_domest_yn" value="Y" checked><span>거주</span></label>
+                                    <label class="radio__label"><input type="radio" name="deputy_domest_yn" value="N"><span>비거주</span></label>
+                                </div>
+                            </div>
+
+                            <div class="form__item-wrap" style="display: none;" id="div_deputy_forgn_nation">
+                                <div class="drop-type2 js-drop_box">
+                                    <p class="drop__trigger js-drop_trigger">
+                                        <button type="button" class="trigger-button" id="deputy_forgn_nation" name="deputy_forgn_nation" value="">국가 선택</button>
+                                        </p>
+
+                                    <div class="drop__content js-drop_content" style="display:none;">
+                                        <ul class="content__item-list" id="deputy_forgn_nation_list">
+                                            <!-- <li class="content__item"><button type="button" class="item-button" value="US">미국 (US)</button></li> -->
+                                            <!-- <li class="content__item"><button type="button" class="item-button" value="KR">대한민국 (KR)</button></li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 국내거주여부 -->
+
+                        <!-- 가맹점 주소 -->
+                        <div class="form__item item-disabled address-box">
+                            <!-- 2024-11-22 -->
+                            <div class="form__item-header">
+                                <div class="tooltip-verification js-tooltip"><!-- 활성화 시 view 클래스 추가 -->
+                                    <div class="tooltip__trigger">
+                                        <h3 class="form__label">주소</h3>
+                                        <button data-element-id="MCH-KYC-60-S-e16" type="button" class="tooltip__button"><span class="blind-i">툴 팁 보기</span><i class="button-icon"></i></button>
+                                    </div>
+                                    <div class="tooltip__content js-tooltip__content">
+                                        국내거주여부를 비거주(해외 거주자)로 선택하신 경우, 국내 가맹점 주소 혹은 국내 거주시 주소 등 국내에서 연락이 가능한 주소지로 입력해 주세요.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // 2024-11-22 -->
+
+                            <div class="form__item-wrap code-box">
+                                <div class="type-box">
+                                    <input data-element-id="MCH-KYC-60-S-e25" type="tel" value="" id="deputy_zip_cd" placeholder="우편번호" readonly>
+                                </div>
+                                <div class="code__search">
+                                    <a data-element-id="MCH-KYC-60-S-e21" href="#none" class="search-button" id="btn_srch_addr"><span>주소 검색</span></a>
+                                </div>
+                            </div>
+
+                            <div class="form__item-wrap">
+                                <div class="type-box">
+                                    <input data-element-id="MCH-KYC-60-S-e26" type="text" id="deputy_addr" value="" readonly>
+                                </div>
+                            </div>
+
+                            <div class="form__item-wrap self-input">
+                                <div class="type-box">
+                                    <input data-element-id="MCH-KYC-60-S-e27" type="text" id="deputy_addr2" value="" placeholder="상세주소 입력" maxlength="100" onkeyup='this.value=this.value.replace(/[<>\"]/g,"");'>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 직업 -->
+                        <div class="form__item">
+                            <div class="form__item-header">
+                                <h3 class="form__label">직업</h3>
+                            </div>
+
+                            <div class="form__item-wrap">
+                                <div class="drop-type2 js-drop_box noabs">
+                                    <p class="drop__trigger js-drop_trigger placeholder"><!-- 값 선택 시 placeholder 클래스 제거 -->
+                                        <button data-element-id="MCH-KYC-60-S-e17" type="button" class="trigger-button" id="deputy_job" name="deputy_job" value="">직업 선택</button>
+                                        </p>
+
+                                    <div class="drop__content js-drop_content" style="display:none;">
+                                        <ul class="content__item-list" id="deputy_job_list">
+                                            <!-- <li class="content__item"><button type="button" class="item-button" name="deputy_job" value="">직업 선택</button></li> -->
+                                        
+                                        
+                                            <li class="content__item">
+                                                <button type="button" class="item-button" name="deputy_job" value="">비플머니</button>
+                                            </li>
+                                        
+                                            <!-- 
+                                            <li class="content__item"><button type="button" class="item-button">직장인</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">학생/주부/군인/무직</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">의료/금융 전문가</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">세무/법조/부동산 전문가</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">일반 제조/판매/서비스업 종사자</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">법무/회계/세무/부동산 관리 서비스업 종사자</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">여행/복권/오락 관련 서비스업 종사자</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">고위(차관급이상)/선출직 공무원</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">프리랜서</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">대부업/환전상/전당포/금융업 종사자</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">귀금속/무기/예술품 제조 및 도소매업 종사자</button></li>
+                                             -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 법인과의 관계 -->
+                        <div class="form__item">
+                            <div class="form__item-header">
+                                <h3 class="form__label">법인과의 관계</h3>
+                            </div>
+
+                            <div class="form__item-wrap">
+                                <div class="drop-type2 js-drop_box noabs">
+                                    <p class="drop__trigger js-drop_trigger placeholder"><!-- 값 선택 시 placeholder 클래스 제거 -->
+                                        <button data-element-id="MCH-KYC-60-S-e18" type="button" class="trigger-button" id="deputy_relation" name="deputy_relation" value="">법인과의 관계 선택</button>
+                                        </p>
+
+                                    <div class="drop__content js-drop_content" style="display:none;">
+                                        <ul class="content__item-list" id="deputy_relation_list">
+                                            <!-- <li class="content__item"><button type="button" class="item-button" name="deputy_relation" value="">법인과의 관계 선택</button></li> -->
+                                            
+                                        
+                                            <li class="content__item">
+                                                <button type="button" class="item-button" name="deputy_relation" value="">비플머니</button>
+                                            </li>
+                                        
+                                            <!-- 
+                                            <li class="content__item"><button type="button" class="item-button">업무담당자</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">법정대리인</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">가족</button></li>
+                                            <li class="content__item"><button type="button" class="item-button">기타</button></li>
+                                             -->
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- 기타 선택 시 -> style="display: none;" 제거 -->
+                                <div class="type-box" style="display: none;" id="div_deputy_relation_tx">
+                                    <input type="text" value="" placeholder="기타를 선택한 경우 상세 내용 작성" id="deputy_relation_tx" maxlength="50" onkeyup='this.value=this.value.replace(/[<>\"]/g,"");'>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 20205-02-12 -->
+						<div class="form__item">
+							<div class="form__item-header">
+								<h3 class="form__label">대리인 이메일</h3>
+							</div>
+
+							<div class="form__item-wrap mail-box" id="deputy_email">
+								<div class="type-box">
+									<input data-element-id="MCH-KYC-60-S-e28" type="text" value="" placeholder="이메일 입력" class="input_number_only" id="input_deputy_email">
+								</div>
+								<div class="type-button" id="div_email_domain"><!-- 버튼 클릭 시 on 클래스 추가. -->
+									<button data-element-id="MCH-KYC-60-S-e19" class="form-button">
+										<span class="tx_ellipsis" id="email_domain" data-value="">직접 입력</span>
+										<i class="icon arr_down-20"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- // 20205-02-12 -->
+
+                    </div>
+                </article>
+            </section>
+
+            <!-- 하단 고정영역 -->
+            <div class="btn_botFix_w js-floating-box"><!-- 2024-11-19 js-floating-box 클래스 추가 -->
+                <div class="inner bg_white">
+                    <a data-element-id="MCH-KYC-60-S-e22" href="#" class="btn_default btn-style-h48 round_r8" id="btn_cif"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                        <span>고객확인서 작성하기</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- 레이어팝업 -->
+<div class="layer_overlay" id="mail_layer" style="display:none;">
+    <div class="layer_bPop">
+        <div class="popup_con pd0">
+            <!-- 설정팝업 -->
+            <div class="edit_pop add_tit_t2">
+                <!-- 팝업 헤더 -->
+                <div class="popup-header">
+                    <h2 class="ly_pop_tit">이메일 선택</h2>
+                </div>
+
+                <!-- 팝업 컨텐츠 -> 도메인 선택 -->
+                <div class="popup-content">
+                    
+                    <ul id="select_email">
+                        <li><a data-value="">직접 입력</a></li>
+                        <li><a data-value="@gmail.com">gmail.com</a></li><!-- 선택 시 select 클래스 추가 -->
+                        <li><a data-value="@naver.com">naver.com</a></li>
+                        <li><a data-value="@yahoo.com">yahoo.com</a></li>
+                        <li><a data-value="@hanmail.co.kr">hanmail.co.kr</a></li>
+                        <li><a data-value="@outlook.com">outlook.com</a></li>
+                        <li><a data-value="@nate.com">nate.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //설정팝업 -->
+        </div>
+    </div>
+</div>
+<!-- //레이어팝업 -->
+</body>
+</html>

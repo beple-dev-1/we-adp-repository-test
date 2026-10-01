@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>상품권 구매(금액·결제수단)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="MGC-GIFT-20-S">
+<input type="hidden" id="rsps_cd"    value="" />
+<input type="hidden" id="rsps_msg"   value="" />
+<input type="hidden" id="hint_msg"   value="" />
+<input type="hidden" id="odr_no"     value="" />
+<input type="hidden" id="odr_dt"     value="" />
+<input type="hidden" id="bank_cd"    />
+<input type="hidden" id="acct_no"    />
+<input type="hidden" id="acct_seq"   />
+
+<form id="rslt_form">
+	<input type="hidden" name="ODR_NO"        value=""       />
+	<input type="hidden" name="USER_NO"       value=""      /> 
+	<input type="hidden" name="DEAL_DIV_CD"   value=""  />
+	<input type="hidden" name="SALE_CHANNEL"  value="" />
+	<input type="hidden" name="PRDT_AMT"      value=""     />
+	<input type="hidden" name="PRDT_NM"       value=""      />
+	<input type="hidden" name="CALL_BACK_URL" value=""/>
+</form>
+
+<div class="wrap" id="aprv_area">
+	<div class="header floating-back-header floating-sticky">
+		<h1>상품권 </h1>
+		<a data-element-id="MGC-GIFT-20-S-e05" class="btn-out-page" onClick="uf_back();" role="button">상품권  닫기</a>
+	</div><!-- // header -->
+	
+	<div class="container buy_gift">
+		<div class="content">
+			<div class="row-bothpadding25-style">
+				<!-- MPM 결제 -->
+				<div class="mpm_paybx">
+					<div class="inner">
+						<div class="mpm_ipt">
+							<dl>
+								<dt>상품권</dt>
+								<dd><div class="txt_nm">비플머니</div></dd>
+							</dl>
+							<dl>
+								<dt>금액</dt>
+								<dd>
+									<div class="ipt_linebx bd_color-e">
+										<h1 id="aria_tr_amt" tabindex="1" aria-label="원">
+											<span class="bg" aria-hidden="true"><input id="tr_amt" type="tel" maxlength="10" readonly='readonly' inputmode="numeric" placeholder="0" data-input="commaFormat" value="4,500" data-fill="demo"/></span>
+										</h1>
+										<div aria-hidden="true" class="won">원</div>
+									</div>
+								</dd>
+							</dl>
+						</div>
+						
+						<div class="paybx__content-wrap">
+							<div class="wrap-hd">
+								<p class="wrap-text tit">결제수단</p>
+							</div>
+							<div class="wrap-con">
+								<!-- 구매계좌 목록 -->
+								<div id="acct_area" class="paybx__acc-list " ><!-- 온누리 일 시 type2 클래스 추가 -->
+								
+								
+									<p class="acc-item wrap-text " data-bankCd="kb" data-seq="표본" data-acctNo="표본">									
+										<button data-element-id="MGC-GIFT-20-S-e04" type="button" class="acc-btn" >
+											<img src="../assets/image/bank/ico_bank_kb.png" alt="" class="acc-img">
+											<span>kb</span>
+										</button>
+									</p>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //MPM 결제 -->
+			
+			<!-- 2023.10.26 주석 
+				
+				
+				<!-- 하단 롤링버튼 ->
+				<div class="mpm_btn_roll">
+
+					<div class="roll_controls">
+						<a href="#none" class="roll_prev slick-prev" aria-label="이전 계좌" role="button" style="z-index: 1;">
+							<img src="../assets/resource/images/zero/mpm_roll_prev.png" alt="이전">
+						</a>
+						
+							
+							
+						
+						<a href="#none" class="roll_next slick-next" aria-label="다음 계좌" role="button">
+							<img src="../assets/resource/images/zero/mpm_roll_next.png" alt="다음">
+						</a>
+					</div>
+				</div> 
+				<!-- //하단 롤링버튼 ->
+				
+					
+						
+						
+					
+				 
+			-->
+
+			</div>
+
+			<!-- 하단 고정버튼 -->
+			<div class="btn_botFix_w" >
+				<div class="inner">
+					<a data-element-id="MGC-GIFT-20-S-e06" id="approve" class="btn-default btn-style-h48 round_r8 "><!-- 2023-10-26 온누리 일 경우 onnuri-on 클래스 추가, 비플페이 일 경우 on 클래스 추가 -->
+						하기
+					</a>
+				</div>
+			</div>
+			<!-- //하단 고정버튼 -->
+
+		</div>
+	</div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- //modal overlay -->
+</body>
+</html>

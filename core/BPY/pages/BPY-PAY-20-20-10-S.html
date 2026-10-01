@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>개인 제로페이 결제화면 호출</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-PAY-20-20-10-S">
+<!-- hidden input -->
+<input type="hidden" id="pay_once_min_amt" value="" />
+<input type="hidden" id="pay_once_max_amt" value="" />
+<input type="hidden" id="pay_day_max_amt"  value="" />
+<input type="hidden" id="pay_mm_max_amt"   value="" />
+<input type="hidden" id="day_amt"          value="" />
+<input type="hidden" id="mm_amt"           value="" />
+<input type="hidden" id="qr_tp"            value="" />
+<input type="hidden" id="qr_code"          value="" />
+<input type="hidden" id="bank_cd" />
+<input type="hidden" id="acct_no" />
+<input type="hidden" id="acct_seq" />
+<input type="hidden" id="pay_type" 		   value=""/>
+<input type="hidden" id="img_yn" 		   value=""/>
+<input type="hidden" id="aflt_id" 		   value=""/>
+<input type="hidden" id="app_cd" 		   value=""/>
+<input type="hidden" id="memb_cd"		   value=""/>
+<input type="hidden" id="qck_yn" 		   value=""/>
+
+<!-- MPM 결제 -->
+<div class="wrap" com-step-id="step1">
+	<div class="header floating-back-header floating-sticky">
+		<h1 id="title" style="position: relative;">제로페이 QR결제</h1>
+		<a data-element-id="BPY-PAY-20-20-10-S-e06" role="button" class="btn-out-page" onClick="uf_back();">닫기</a>
+	</div>
+	<div class="container">
+		<div class="content">
+			<div class="row-bothpadding25-style">
+				<div class="mpm_paybx">
+					<div class="inner">
+						<div class="mpm_ipt">
+							<dl>
+								<dt>매장이름</dt>
+								<dd><div class="txt_nm">비플카페 역삼점</div></dd>
+							</dl>
+							<dl>
+								<dt>결제금액</dt>
+								<dd>
+									<div class="ipt_linebx inputbox-m">
+										<span class="bg">
+											
+											<a id="amt_delete" role="button" aria-label="원 지우기" class="btn_del btn-clear-text" style="display:none;"></a>
+											
+											<!--<div id="tr_amt_div" role="textbox" aria-label="원, 결제금액 입력">-->
+											<input data-element-id="BPY-PAY-20-20-10-S-e10" type="tel" maxlength="10"  aria-label="4,500원, 결제금액 입력" id="tr_amt" jex-input="commaFormat" placeholder="0" data-input="commaFormat" value="4,500" data-fill="demo">
+											<!--</div>	-->
+										</span>
+										<div aria-hidden="true" class="won">원</div>
+									</div>
+									<div class="title-page-13 error" id="err_txt" style="margin-top: 5px;"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+								</dd>
+							</dl>
+						</div> 
+					</div>
+				</div>
+
+				
+				<!-- 하단 롤링버튼 -->
+				<div class="mpm_btn_roll">
+					<!--<div class="inner">
+						<a></a>
+						<a></a>
+						<a></a>
+						<a class="on"></a>
+					</div>-->
+					<!-- 2021-11-24 -->
+					<div class="roll_controls">
+						<a data-element-id="BPY-PAY-20-20-10-S-e07" href="#none" class="roll_prev" aria-label="이전 계좌" role="button" style="z-index: 1;">
+							<img src="../assets/resource/images/zero/mpm_roll_prev.png" alt="이전">
+						</a>
+
+						
+							
+							
+							
+						
+
+						<a data-element-id="BPY-PAY-20-20-10-S-e08" href="#none" class="roll_next" aria-label="다음 계좌" role="button">
+							<img src="../assets/resource/images/zero/mpm_roll_next.png" alt="다음">
+						</a>
+					</div>
+					<!-- // 2021-11-24 -->
+				</div>
+				<!-- //하단 롤링버튼 -->
+				
+
+			</div>
+			<div class="fixed-bottom-section">
+				<a data-element-id="BPY-PAY-20-20-10-S-e09" id="approve" class="btn-submit btn-dark-op90" role="button"><span>결제하기</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 결제금액 확인 팝업 -->
+<div class="pop-wrap" style="display: none;" id="apr_popup_area" role="dialog" aria-modal="true">
+	<div class="pop">
+		<section class="pop-container">
+			<div class="pop-ct">
+				<p class="pop-paragraph-16"><strong tabindex="1">김대표(비플카페 역삼점)</strong><br><strong id="apr_amt">결제금액 : 100,000원</strong></p>
+				<p class="pop-paragraph">결제 정보를 다시 한번 확인 해 주세요.<br><strong>확인</strong>을 누르시면 결제가 완료 됩니다.</p>
+			</div>
+			<div class="pbs-multi-2">
+				<a class="btn-pop btn-pop-dark" id="cncl_popup" role="button">취소</a>
+				<a class="btn-pop btn-pop-gray" id="apr_popup" role="button">확인</a>
+			</div>
+		</section>
+	</div>
+</div>
+
+<!-- 가맹점 결제확인 대기 팝업 -->
+<div class="pop-wrap" id="loading_pop" style="display: none; z-index: 19;">
+	<div class="pop">
+		<section class="pop-container">
+			<div class="pop-ct type_loading">
+			<p><img src="../assets/resource/images/loading.gif" alt=""></p>
+			<p>loading..</p>
+			<p>가맹점에서 결제금액을 확인 중입니다.<br>잠시만 기다려 주세요.</p>					
+			<p>(화면에서 결제확인 버튼을 클릭하셔야 결제가 완료됩니다.)</p>					
+			</div>
+		</section>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>비플머니 충전</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-MNY-10-10-S">
+<!-- 비플 머니 충전 -->
+<div com-step-id="step1">
+    <div class="wrap full_height">
+        <div class="header floating-back-header floating-sticky">
+            <h1>비플머니 충전</h1>
+            <a data-element-id="BPY-MNY-10-10-S-e10" href="#" class="btn-history-back" id="go_back">뒤로가기</a>
+        </div>
+        <!-- // header -->
+
+        <div class="container">
+            <div class="content">
+                <!--비플머니 -->
+                <div class="bp_money">
+                    <!-- 비플머니 잔액 -->
+                    <div class="top_bx bdt_none">
+                        <div class="inner">
+                            <div class="balance_info">
+                                <dl>
+                                    <dt>사용 가능 비플머니</dt>
+                                    <dd>
+                                        <strong>4,500<span class="won">원</span></strong>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //비플머니 잔액 -->
+                    <!-- 충전/출금 wrap -->
+                    <div class="cash_wrap addBtn-pb58">
+                        <!-- 충전수단 선택 -->
+                        <dl class="acc_sel">
+                            <dt><strong>충전수단</strong></dt>
+                            <dd>
+                            
+                                <a data-element-id="BPY-MNY-10-10-S-e11" id="acct_info" href="#none" class="sel_acc_btn">
+                                    <!-- 계좌리스트 -->
+                                    <div class="p_acc_sltbx">
+                                        <ul id="selected_acct">
+                                            <li name="acct" bank_cd="" acct_no="" bank_nm="국민은행" 
+	                                            firm_join_yn="" obank_join_yn=""
+	                                            firm_use_yn=""obank_use_yn="">
+	                                            <span class="ic_b ic_b"></span>비플머니
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- //계좌리스트 -->
+                                </a>
+                            
+                            </dd>
+                        </dl>
+                        <!-- //충전수단 선택 -->
+                        <!-- 충전금액 -->
+                        <dl class="amount_ipt">
+                            <dt><strong>충전금액</strong></dt>
+                            <dd>
+                                <div class="ipt_bx"><!-- 내용 입력/삭제 시 ipt클래스 추가/제거 -->
+                                    <p>
+                                        <input data-element-id="BPY-MNY-10-10-S-e17" type="tel" id="tr_amt" placeholder="금액을 입력해 주세요" maxlength="10" jex-input="commaFormat" data-input="commaFormat">
+                                        <a data-element-id="BPY-MNY-10-10-S-e12" href="#none" class="del"><img src="../assets/resource/images/bpmoney/ico_amount_ipt_delete.png" alt="내용삭제"></a>
+                                    </p>
+                                </div>
+                                <p id="info_msg" class="info_msg">비플머니 1회 최소 충전금액은 4,500원입니다.</p>
+                                <div class="amount_sel">
+                                    <div class="add_amount">
+                                        <a data-element-id="BPY-MNY-10-10-S-e13" id="man" href="#none">+1만원</a>
+                                        <a data-element-id="BPY-MNY-10-10-S-e14" id="fiveman" href="#none">+5만원</a>
+                                        <a data-element-id="BPY-MNY-10-10-S-e15" id="temman" href="#none">+10만원</a>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                        <!-- //충전금액 -->
+                        <dl class="notice">
+                            <dt>유의사항</dt>
+                            <dd>
+                                <ul>
+                                    <li>비플페이 등록 계좌 결제로 비플머니를 충전하여 비플페이 간편 결제에 편리하게 사용하실 수 있습니다.</li>
+                                    <li>비플머니 보유 한도는 최대 4,500원입니다.</li>
+                                    <li>최소 충전금액은 4,500원, 최대 충전 가능 금액은 1회 4,500원 / 1일 4,500원 / 월 4,500원입니다.</li>
+                                    <!--<li>충전 가능 금융기관 : <strong>SC, 토스뱅크, 저축은행중앙회, 산림조합중앙회 및 증권사 제외</strong>한 모든 은행</li>-->
+                                    <li>충전된 비플머니는 언제든지 출금신청이 가능하며 최소 인출 금액은 4,500원입니다. (비플머니 > 기본 정보 > 충전 안내)</li>
+                                    <li>출금신청한 출금금액은 신청일 다음 영업일에 입금됩니다.</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- //충전/출금 wrap -->
+
+                    <div class="btn_botFix_w">
+                        <div class="inner bg_white">
+                            <a data-element-id="BPY-MNY-10-10-S-e16" id="open_chrg_info" href="#" class="btn_default btn-style-h48 round_r8"><span>충전하기</span></a><!-- 활성화 시 클래스 on 추가 -->
+                        </div>
+                    </div>
+                </div>
+                <!-- // 비플머니 -->
+            </div>
+        </div><!-- // container -->
+    </div><!-- // wrap -->
+</div>
+
+<!-- step 2.충전 완료 -->
+<div com-step-id="step2" class="wrap full_height" style="display: none;">
+    <div class="header floating-back-header floating-sticky">
+        <h1></h1>
+        <div class="right">
+            <a id="com_close" href="#none" class="btn_outpage">페이지나가기</a>
+        </div>
+    </div>
+    <!-- // header -->
+
+    <div class="container">
+        <div class="content">
+            <!--비플머니 -->
+            <div class="bp_money">
+                <!-- 충전/출금 신청완료 -->
+                <div class="regist_complete" style="display:none;">
+                    <div class="inner type1"><!-- 충전 = type1, 출금 = type2 -->
+                        <!-- 완료 메세지 -->
+                        <div class="message">
+                            <p>
+                                비플머니<br>
+                                <strong id="com_chrg_amt"><!-- sample:begin -->4,500<!-- sample:end --></strong> 구매 완료
+                            </p>
+                        </div>
+                        <!-- //완료 메세지 -->
+                        <!-- 계좌 내역 안내 -->
+                        <div class="acc_info">
+                            <dl>
+                                <dt><strong id="com_acct"><!-- sample:begin -->표본<!-- sample:end --></strong></dt>
+                                <dd>
+                                    <ul>
+                                        <li>
+                                            <span>충전 금액</span>
+                                            <strong id="tb_chrg_amt"><!-- sample:begin -->4,500<!-- sample:end --></strong>
+                                        </li>
+                                        <li>
+                                            <span>구매 전 잔액</span>
+                                            <strong id="tb_bef_amt"><!-- sample:begin -->4,500<!-- sample:end --></strong>
+                                        </li>
+                                        <li>
+                                            <span>구매 후 잔액</span>
+                                            <strong id="tb_aft_amt"><!-- sample:begin -->4,500<!-- sample:end --></strong>
+                                        </li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                        <!-- //계좌 내역 안내 -->
+                    </div>
+                </div>
+                <!-- //충전/출금 신청완료 -->
+
+                <!-- 하단 고정버튼 -->
+                <div class="btn_botFix_w">
+                    <div class="inner padding0">
+                        <a id="com_complete" href="#none" class="btn_default btn-style-h48 on"><span>확인</span></a>
+                    </div>
+                </div>
+                <!-- 하단 고정버튼 -->
+            </div>
+            <!-- // 비플머니 -->
+        </div>
+    </div><!-- // container -->
+</div><!-- // wrap -->
+
+<!-- STEP 2_2. 하이브리드 오픈뱅킹 계좌등록인 경우 약관동의를 받는다. -->
+<div com-step-id="step6_2" style="display: none;">
+    <div class="wrap">
+        <div class="header floating-back-header floating-sticky">
+            <h1>계좌 등록</h1>
+            <a onClick="uf_back();" class="btn-history-back move_back type2" role="button" >뒤로가기</a>
+        </div>
+        <!-- // header -->
+
+        <div class="container">
+            <div class="content">
+                <div class="open_bank">
+                    <p class="msg_agree">
+                        오픈뱅킹 계좌 등록 시 <br>아래 약관 동의가 필요합니다.
+                    </p>
+
+                    <!-- 약관동의 체크 -->
+                    <div class="agree_w">
+                        <!-- 안내메세지 -->
+                        <div class="info">
+                            <p class="txt_bg"><strong>오픈뱅킹이란?</strong></p>
+                            <p>은행 및 증권사 간에 송금, 결제 등의 금융 서비스를 개방하여 제공하는 표준화된 금융 시스템입니다.</p>
+                        </div>
+                        <!-- //안내메세지 -->
+
+                        <!-- 개별동의 -->
+                        <div class="agree_con" id="div_cls">
+<!--                            <div class="agree"><label for="a1"><input type="checkbox" onclick="chkCtrl();" name="clsChk" data-clscd="062091" data-bankcd="034" id="agree_chk1" cls_cd="062091"><a id="a1" onclick="uf_showAgreement('062091', '034', 'agree_chk1'); return false;"><strong>(필수)오픈뱅킹 참여은행 자동이체 이용약관</strong></a></label></div>-->
+<!--                            <div class="agree"><label for="a2"><input type="checkbox" onclick="chkCtrl();" name="clsChk" data-clscd="062092" data-bankcd="034" id="agree_chk2" cls_cd="062092"><a id="a2" onclick="uf_showAgreement('062092', '034', 'agree_chk2'); return false;"><strong>(필수)개인정보 제3자 정보제공 동의</strong></a></label></div>-->
+                        </div>
+                        <!-- //개별동의 -->
+                        <!-- 전체 동의하기 -->
+                        <div class="agree all">
+                            <label for=""><strong>전체 동의하기</strong><input type="checkbox" id="allAgr"></label>
+                        </div>
+                        <!-- //전체 동의하기 -->
+                    </div>
+                    <!-- //약관동의 체크 -->
+                    <!-- 알림 -->
+                    <div class="noti_bx">
+                        <p class="noti_txt">은행으로부터 문자 메시지를 받더라도 놀라지 마세요!</p>
+                        <ul class="list_bl">
+                            <li>오픈뱅킹 시스템에 계좌가 잘 등록됐다는 안내이며, 간편결제 계좌를 여러 개 등록하셨다면 계좌마다 문자메시지를 받으실 수 있습니다.</li>
+                            <li>이미 출금이체 동의하셨던 간편결제 계좌에서 출금(결제, 구매, 환불 등) 시 오픈뱅킹이 사용될 수 있습니다.</li>
+                        </ul>
+                    </div>
+                    <!-- //알림 -->
+                    <!-- 확인/취소 버튼 -->
+                    <div class="fixed-bottom-section">
+                        <div class="btns" style="margin-top:-5px;">
+                            <a href="#none" class="typeB move_back" onclick="uf_back();">취소</a>
+                            <a href="#none" class="typeA" id="btn_next_2">확인</a>
+                        </div>
+                    </div>
+                    <!-- //확인/취소 버튼 -->
+
+                </div>
+            </div>
+
+            <!--<div class="m_checkpay nonBtn">
+                <p><img src="../assets/resource/images/ci_checkpay.png" alt="Powered by CHECKPAY"></p>
+            </div>-->
+
+        </div><!-- // container -->
+    </div><!-- // wrap -->
+</div>
+
+<!-- STEP 2_2. 약관상세조회 -->
+<div com-step-id="step7" style="display: none;">
+    <div class="wrap">
+        <div class="header floating-back-header floating-sticky" >
+            <!--a class="btn-history-back" onClick="uf_back();" role="button" >상위메뉴로 이동</a -->
+            <a class="btn-history-back type2" onClick="uf_back();" role="button" >상위메뉴로 이동</a>
+            <h1 class="title-header" style="top:2px;" id="detail_header">「오픈뱅킹공동업무」 금융정보조회 약관 </h1>
+        </div><!-- // header -->
+        <div class="container" id="detail_ctnt"><!-- sample:begin --><p>제1조 (목적) 이 약관은 서비스 이용에 관한 기본 사항을 정합니다.</p><p>제2조 (정의) 이 약관에서 쓰는 용어의 뜻은 관련 법령과 서비스 안내에 따릅니다.</p><p>제3조 (약관의 효력) 이 약관은 서비스 화면에 게시하여 효력이 생깁니다.</p><!-- sample:end --></div><!-- // container -->
+    </div><!-- // wrap -->
+</div>
+
+<!-- 계좌 선택 -->
+<div id="acct_list" class="layer_bPop" style="display:none;">
+    <div class="pop_box radius_16">
+        <div class="pop_content">
+            <div class="pop_b_cn type1">
+                <div class="p_lytit">
+                    계좌선택
+                </div>
+                <div class="p_acc_sltbx">
+                    <ul>
+                        
+                            <li name="acct" firm_use_yn="" obank_use_yn="" bank_cd="kb" 
+	                            acct_no="" bank_nm="국민은행"
+	                            firm_join_yn="" obank_join_yn="">
+	                            <span class="ic_b ic_b"></span>비플머니
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--        <div class="pop_button btns" style="display:none;">-->
+<!--            <a href="#" class="typeB">아니오</a>-->
+<!--            <a href="#" class="typeA">예</a>-->
+<!--        </div>-->
+    </div>
+</div>
+
+<!-- 비플머니 충전 정보 -->
+<div id="chrg_info" class="layer_bPop" style="display:none;">
+    <div class="pop_box radius_16">
+        <a id="chrh_info_close" class="btn_close"><span class="blind">닫기</span></a>
+        <div class="pop_content tp_br">
+            <div class="pop_b_cn">
+                <div class="p_lytit" style="width: 70%">
+                    비플머니 충전 정보
+                </div>
+                <div class="bpop_acc_info">
+                    <dl>
+                        <dt>충전금액</dt>
+                        <dd><strong id="info_chrg_amt"><!-- sample:begin -->4,500<!-- sample:end --></strong></dd>
+                    </dl>
+                    <dl>
+                        <dt>충전수단</dt>
+                        <dd><strong id="info_acct"><!-- sample:begin -->표본<!-- sample:end --></strong></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="pop_b_btn">
+                <a id="chrg" href="#none" class="btn-style-h48 on"><span>충전하기</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

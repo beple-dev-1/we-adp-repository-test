@@ -26,6 +26,9 @@
                   "value": "#1F1F1F"
                 },
                 {
+                  "value": "rgb(31, 31, 31, 2%)"
+                },
+                {
                   "value": "rgb(31, 31, 31, 15%)"
                 },
                 {
@@ -185,7 +188,7 @@
               ]
             },
             {
-              "label": "토큰 없이 직접 쓴 색 · 전체 525색 중 상위 6",
+              "label": "토큰 없이 직접 쓴 색 · 전체 530색 중 상위 6",
               "entries": [
                 {
                   "value": "#222"
@@ -212,80 +215,6 @@
         "typography": {
           "fonts": [
             {
-              "family": "NanumSquareR",
-              "sampleWeights": []
-            },
-            {
-              "family": "NanumSquareB",
-              "sampleWeights": []
-            },
-            {
-              "family": "NanumSquareEB",
-              "sampleWeights": []
-            },
-            {
-              "family": "NanumSquareAcR",
-              "sampleWeights": []
-            },
-            {
-              "family": "NanumSquareAcB",
-              "sampleWeights": []
-            },
-            {
-              "family": "NanumSquareAcEB",
-              "sampleWeights": []
-            },
-            {
-              "family": "PretendardR",
-              "sampleWeights": []
-            },
-            {
-              "family": "PretendardM",
-              "sampleWeights": []
-            },
-            {
-              "family": "PretendardSB",
-              "sampleWeights": []
-            },
-            {
-              "family": "PretendardB",
-              "sampleWeights": []
-            },
-            {
-              "family": "PretendardEB",
-              "sampleWeights": []
-            },
-            {
-              "family": "NanumSquareNeoL",
-              "sampleWeights": []
-            },
-            {
-              "family": "NanumSquareNeoR",
-              "sampleWeights": []
-            },
-            {
-              "family": "NanumSquareNeoB",
-              "sampleWeights": []
-            },
-            {
-              "family": "NanumSquareNeoEb",
-              "sampleWeights": []
-            },
-            {
-              "family": "NanumSquareNeoHv",
-              "sampleWeights": []
-            },
-            {
-              "family": "Pretendard",
-              "sampleWeights": [
-                "400",
-                "500",
-                "600",
-                "700",
-                "800"
-              ]
-            },
-            {
               "family": "NanumSquare",
               "sampleWeights": [
                 "400",
@@ -299,6 +228,26 @@
                 "400",
                 "700",
                 "800"
+              ]
+            },
+            {
+              "family": "Pretendard",
+              "sampleWeights": [
+                "400",
+                "500",
+                "600",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareNeo",
+              "sampleWeights": [
+                "300",
+                "400",
+                "700",
+                "800",
+                "900"
               ]
             }
           ],
@@ -375,7 +324,7 @@
             "value": "12px"
           },
           {
-            "value": "2rem"
+            "value": "0.4rem"
           }
         ],
         "radius": [
@@ -528,9 +477,9 @@
               ]
             },
             {
-              "id": "button--narrow-button-large-button--lv5_line",
-              "label": "button--narrow button-large button--lv5_line",
-              "class": "button button--narrow button-large button--lv5_line",
+              "id": "button-xsmall-button--lv5",
+              "label": "button-xsmall button--lv5",
+              "class": "button button-xsmall button--lv5",
               "states": [
                 {
                   "state": "default",
@@ -541,14 +490,14 @@
             }
           ],
           "usage": {
-            "count": 127
+            "count": 24
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
             "range": {
               "file": "core/EXW/pages/EXW-UWV-10-S.html",
-              "from": 1,
-              "to": 3
+              "from": 223,
+              "to": 225
             }
           },
           "specimen": {
@@ -557,127 +506,6 @@
             "systemStyleId": "EXW",
             "width": 375,
             "height": 120
-          }
-        },
-        {
-          "id": "icon",
-          "label": "아이콘",
-          "category": "etc",
-          "variants": [
-            {
-              "id": "arr_right-16",
-              "label": "arr_right-16",
-              "class": "icon arr_right-16",
-              "states": [
-                {
-                  "state": "default",
-                  "label": "기본",
-                  "renderable": true
-                }
-              ]
-            },
-            {
-              "id": "icon--arrow-24-pointer-bottom",
-              "label": "icon--arrow-24 pointer-bottom",
-              "class": "icon icon--arrow-24 pointer-bottom",
-              "states": [
-                {
-                  "state": "default",
-                  "label": "기본",
-                  "renderable": true
-                }
-              ]
-            },
-            {
-              "id": "icon--arrow-16",
-              "label": "icon--arrow-16",
-              "class": "icon icon--arrow-16",
-              "states": [
-                {
-                  "state": "default",
-                  "label": "기본",
-                  "renderable": true
-                }
-              ]
-            },
-            {
-              "id": "icon--info-16",
-              "label": "icon--info-16",
-              "class": "icon icon--info-16",
-              "states": [
-                {
-                  "state": "default",
-                  "label": "기본",
-                  "renderable": true
-                }
-              ]
-            },
-            {
-              "id": "icon--state_check-64",
-              "label": "icon--state_check-64",
-              "class": "icon icon--state_check-64",
-              "states": [
-                {
-                  "state": "default",
-                  "label": "기본",
-                  "renderable": true
-                }
-              ]
-            },
-            {
-              "id": "icon--check-24_primary",
-              "label": "icon--check-24_primary",
-              "class": "icon icon--check-24_primary",
-              "states": [
-                {
-                  "state": "default",
-                  "label": "기본",
-                  "renderable": true
-                }
-              ]
-            },
-            {
-              "id": "icon--more-24",
-              "label": "icon--more-24",
-              "class": "icon icon--more-24",
-              "states": [
-                {
-                  "state": "default",
-                  "label": "기본",
-                  "renderable": true
-                }
-              ]
-            },
-            {
-              "id": "icon--document2-64",
-              "label": "icon--document2-64",
-              "class": "icon icon--document2-64",
-              "states": [
-                {
-                  "state": "default",
-                  "label": "기본",
-                  "renderable": true
-                }
-              ]
-            }
-          ],
-          "usage": {
-            "count": 184
-          },
-          "evidence": {
-            "sourceScreen": "core/EXW/pages/EXW-BRWV-10-10-10-S.html",
-            "range": {
-              "file": "core/EXW/pages/EXW-BRWV-10-10-10-S.html",
-              "from": 1,
-              "to": 1
-            }
-          },
-          "specimen": {
-            "status": "visible",
-            "html": "fragments/EXW--icon.html",
-            "systemStyleId": "EXW",
-            "width": 375,
-            "height": 80
           }
         },
         {
@@ -705,8 +533,8 @@
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
             "range": {
               "file": "core/EXW/pages/EXW-UWV-10-S.html",
-              "from": 1,
-              "to": 3
+              "from": 266,
+              "to": 268
             }
           },
           "specimen": {
@@ -743,6 +571,12 @@
                   "state": "default",
                   "label": "기본",
                   "renderable": true
+                },
+                {
+                  "state": "disabled",
+                  "label": "비활성",
+                  "selector": "input[type=checkbox].checkbox--line[disabled]",
+                  "renderable": true
                 }
               ]
             },
@@ -754,6 +588,12 @@
                 {
                   "state": "default",
                   "label": "기본",
+                  "renderable": true
+                },
+                {
+                  "state": "disabled",
+                  "label": "비활성",
+                  "selector": "input[type=checkbox].checkbox--line[disabled]",
                   "renderable": true
                 }
               ]
@@ -767,6 +607,12 @@
                   "state": "default",
                   "label": "기본",
                   "renderable": true
+                },
+                {
+                  "state": "disabled",
+                  "label": "비활성",
+                  "selector": ".button.button--lv5_line.dis",
+                  "renderable": true
                 }
               ]
             },
@@ -779,61 +625,30 @@
                   "state": "default",
                   "label": "기본",
                   "renderable": true
-                }
-              ]
-            }
-          ],
-          "usage": {
-            "count": 29
-          },
-          "evidence": {
-            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
-            "range": {
-              "file": "core/EXW/pages/EXW-UWV-10-S.html",
-              "from": 1,
-              "to": 109
-            }
-          },
-          "specimen": {
-            "status": "visible",
-            "html": "fragments/EXW--form-box.html",
-            "systemStyleId": "EXW",
-            "width": 375,
-            "height": 160
-          }
-        },
-        {
-          "id": "list-bullet",
-          "label": "점 목록",
-          "category": "etc",
-          "variants": [
-            {
-              "id": "----",
-              "label": "(기본)",
-              "class": "list-bullet",
-              "states": [
+                },
                 {
-                  "state": "default",
-                  "label": "기본",
+                  "state": "disabled",
+                  "label": "비활성",
+                  "selector": ".button.button.dis",
                   "renderable": true
                 }
               ]
             }
           ],
           "usage": {
-            "count": 15
+            "count": 13
           },
           "evidence": {
-            "sourceScreen": "core/EXW/pages/EXW-UWV-40-10-S.html",
+            "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
             "range": {
-              "file": "core/EXW/pages/EXW-UWV-40-10-S.html",
-              "from": 1,
-              "to": 4
+              "file": "core/EXW/pages/EXW-UWV-10-S.html",
+              "from": 102,
+              "to": 210
             }
           },
           "specimen": {
             "status": "visible",
-            "html": "fragments/EXW--list-bullet.html",
+            "html": "fragments/EXW--form-box.html",
             "systemStyleId": "EXW",
             "width": 375,
             "height": 160
@@ -864,8 +679,8 @@
             "sourceScreen": "core/EXW/pages/EXW-UWV-30-20-S.html",
             "range": {
               "file": "core/EXW/pages/EXW-UWV-30-20-S.html",
-              "from": 1,
-              "to": 9
+              "from": 73,
+              "to": 81
             }
           },
           "specimen": {
@@ -968,9 +783,9 @@
               ]
             },
             {
-              "id": "popup--bottom-popup-payment--confirm",
-              "label": "popup--bottom popup-payment--confirm",
-              "class": "popup-container popup--bottom popup-payment--confirm",
+              "id": "popup--full-popup-use-info",
+              "label": "popup--full popup-use-info",
+              "class": "popup-container popup--full popup-use-info",
               "states": [
                 {
                   "state": "default",
@@ -981,14 +796,14 @@
             }
           ],
           "usage": {
-            "count": 41
+            "count": 18
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
             "range": {
               "file": "core/EXW/pages/EXW-UWV-10-S.html",
-              "from": 1,
-              "to": 28
+              "from": 616,
+              "to": 643
             }
           },
           "specimen": {
@@ -1042,14 +857,14 @@
             }
           ],
           "usage": {
-            "count": 34
+            "count": 18
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
             "range": {
               "file": "core/EXW/pages/EXW-UWV-10-S.html",
-              "from": 1,
-              "to": 12
+              "from": 617,
+              "to": 628
             }
           },
           "specimen": {
@@ -1085,8 +900,8 @@
             "sourceScreen": "core/EXW/pages/EXW-UWV-40-10-S.html",
             "range": {
               "file": "core/EXW/pages/EXW-UWV-40-10-S.html",
-              "from": 1,
-              "to": 5
+              "from": 448,
+              "to": 452
             }
           },
           "specimen": {
@@ -1128,14 +943,14 @@
             }
           ],
           "usage": {
-            "count": 32
+            "count": 17
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
             "range": {
               "file": "core/EXW/pages/EXW-UWV-10-S.html",
-              "from": 1,
-              "to": 5
+              "from": 265,
+              "to": 269
             }
           },
           "specimen": {
@@ -1154,7 +969,7 @@
           "kind": "shell",
           "description": "상단 고정 헤더 + 본문. 사이드바가 없는 모바일 웹뷰 골격이다.",
           "usage": {
-            "count": 68
+            "count": 56
           },
           "regions": [
             {
@@ -1180,7 +995,15 @@
                 "height": 640
               }
             }
-          ]
+          ],
+          "evidence": {
+            "sourceScreen": "core/EXW/pages/EXW-BRWV-10-10-10-S.html",
+            "range": {
+              "file": "core/EXW/pages/EXW-BRWV-10-10-10-S.html",
+              "from": 69,
+              "to": 208
+            }
+          }
         }
       ],
       "templates": [
@@ -1209,8 +1032,8 @@
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
             "range": {
               "file": "core/EXW/pages/EXW-UWV-10-S.html",
-              "from": 1,
-              "to": 28
+              "from": 616,
+              "to": 643
             }
           },
           "specimen": {
@@ -1300,14 +1123,14 @@
             }
           ],
           "usage": {
-            "count": 30
+            "count": 18
           },
           "evidence": {
             "sourceScreen": "core/EXW/pages/EXW-UWV-10-S.html",
             "range": {
               "file": "core/EXW/pages/EXW-UWV-10-S.html",
-              "from": 1,
-              "to": 144
+              "from": 70,
+              "to": 213
             }
           },
           "specimen": {
@@ -1343,18 +1166,3477 @@
               "purpose": "값을 입력받아 하단 버튼으로 보낸다."
             },
             {
-              "id": "EXW-UWV-10-S",
-              "path": "core/EXW/pages/EXW-UWV-10-S.html",
+              "id": "EXW-UWV-30-10-S",
+              "path": "core/EXW/pages/EXW-UWV-30-10-S.html",
               "purpose": "값을 입력받아 하단 버튼으로 보낸다."
             },
             {
-              "id": "EXW-UWV-10-S",
-              "path": "core/EXW/pages/EXW-UWV-10-S.html",
+              "id": "EXW-UWV-30-20-S",
+              "path": "core/EXW/pages/EXW-UWV-30-20-S.html",
               "purpose": "값을 입력받아 하단 버튼으로 보낸다."
             }
           ]
         }
       ]
+    },
+    "MGC": {
+      "styles": [
+        {
+          "id": "MGC",
+          "css": "styles/MGC.css"
+        }
+      ],
+      "foundations": {
+        "colorRoles": {
+          "roles": [
+            {
+              "label": "토큰 없이 직접 쓴 색 · 전체 490색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#222"
+                },
+                {
+                  "value": "#fff"
+                },
+                {
+                  "value": "#333"
+                },
+                {
+                  "value": "#0d84ff"
+                },
+                {
+                  "value": "#7e7e7e"
+                },
+                {
+                  "value": "#a9a9a9"
+                }
+              ]
+            }
+          ]
+        },
+        "typography": {
+          "fonts": [
+            {
+              "family": "NanumSquare",
+              "sampleWeights": [
+                "400",
+                "600",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareAc",
+              "sampleWeights": [
+                "300",
+                "400",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "Pretendard",
+              "sampleWeights": [
+                "400",
+                "500",
+                "600",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareNeo",
+              "sampleWeights": [
+                "300",
+                "400",
+                "700",
+                "800",
+                "900"
+              ]
+            }
+          ],
+          "sizes": [
+            {
+              "value": "14px"
+            },
+            {
+              "value": "13px"
+            },
+            {
+              "value": "12px"
+            },
+            {
+              "value": "16px"
+            },
+            {
+              "value": "15px"
+            },
+            {
+              "value": "11px"
+            },
+            {
+              "value": "18px"
+            },
+            {
+              "value": "20px"
+            }
+          ],
+          "weights": [
+            {
+              "value": "400"
+            },
+            {
+              "value": "700"
+            },
+            {
+              "value": "300"
+            },
+            {
+              "value": "500"
+            },
+            {
+              "value": "600"
+            },
+            {
+              "value": "900"
+            }
+          ]
+        },
+        "spacing": [
+          {
+            "value": "8px"
+          },
+          {
+            "value": "20px"
+          },
+          {
+            "value": "10px"
+          },
+          {
+            "value": "12px"
+          },
+          {
+            "value": "4px"
+          },
+          {
+            "value": "16px"
+          },
+          {
+            "value": "5px"
+          },
+          {
+            "value": "32px"
+          }
+        ],
+        "radius": [
+          {
+            "value": "8px"
+          },
+          {
+            "value": "50%"
+          },
+          {
+            "value": "6px"
+          },
+          {
+            "value": "4px"
+          },
+          {
+            "value": "3px"
+          },
+          {
+            "value": "35px"
+          },
+          {
+            "value": "2px"
+          },
+          {
+            "value": "5px"
+          }
+        ],
+        "effects": {
+          "shadows": [
+            {
+              "value": "0 3px 2px -2px #d0d0d0"
+            },
+            {
+              "value": "0px 2px 4px rgba(0,0,0,.02)"
+            },
+            {
+              "value": "0px 8px 25px rgba(0,0,0,.1)"
+            },
+            {
+              "value": "0 10px 10px rgba(38,18,77,0.25)"
+            },
+            {
+              "value": "0px 4px 10px rgba(0,0,0,.16)"
+            },
+            {
+              "value": "0 0 5px hsla(0,0%,40%,.4)"
+            }
+          ]
+        },
+        "breakpoints": [
+          "max-width: 319px",
+          "max-width: 320px",
+          "max-width: 359px",
+          "max-width:320px",
+          "max-width: 321px",
+          "max-width: 299px",
+          "max-width: 362px",
+          "max-width: 350px"
+        ]
+      },
+      "components": [
+        {
+          "id": "button",
+          "label": "버튼",
+          "category": "button",
+          "variants": [
+            {
+              "id": "btn-skyBlue-round_r8-on",
+              "label": "btn-skyBlue round_r8 on",
+              "class": "btn-style-h48 btn-skyBlue round_r8 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-default-round_r8",
+              "label": "btn-default round_r8",
+              "class": "btn-style-h48 btn-default round_r8",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 2
+          },
+          "evidence": {
+            "sourceScreen": "core/MGC/pages/MGC-COMN-10-10-10-S.html",
+            "range": {
+              "file": "core/MGC/pages/MGC-COMN-10-10-10-S.html",
+              "from": 34,
+              "to": 36
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/MGC--button.html",
+            "systemStyleId": "MGC",
+            "width": 375,
+            "height": 120
+          }
+        },
+        {
+          "id": "table",
+          "label": "표",
+          "category": "table",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "tbl_terms",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 3
+          },
+          "evidence": {
+            "sourceScreen": "core/MGC/pages/MGC-COMN-10-10-20-S.html",
+            "range": {
+              "file": "core/MGC/pages/MGC-COMN-10-10-20-S.html",
+              "from": 64,
+              "to": 100
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/MGC--table.html",
+            "systemStyleId": "MGC",
+            "width": 375,
+            "height": 240
+          }
+        }
+      ],
+      "compositions": [
+        {
+          "id": "button-box",
+          "label": "하단 버튼 영역",
+          "category": "composition",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "btn_botFix_w",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 2
+          },
+          "evidence": {
+            "sourceScreen": "core/MGC/pages/MGC-COMN-10-10-10-S.html",
+            "range": {
+              "file": "core/MGC/pages/MGC-COMN-10-10-10-S.html",
+              "from": 32,
+              "to": 38
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/MGC--button-box.html",
+            "systemStyleId": "MGC",
+            "width": 375,
+            "height": 140
+          }
+        }
+      ],
+      "layouts": [
+        {
+          "id": "webview-shell",
+          "label": "웹뷰 공통 골격",
+          "kind": "shell",
+          "description": "상단 헤더 + 본문(`container`). 사이드바가 없는 모바일 웹뷰 골격이다.",
+          "usage": {
+            "count": 15
+          },
+          "regions": [
+            {
+              "id": "header",
+              "label": "상단 헤더",
+              "required": true
+            },
+            {
+              "id": "content",
+              "label": "본문",
+              "required": true
+            }
+          ],
+          "variants": [
+            {
+              "id": "MGC",
+              "label": "MGC",
+              "specimen": {
+                "status": "visible",
+                "html": "fragments/MGC--l-webview-shell.html",
+                "systemStyleId": "MGC",
+                "width": 375,
+                "height": 640
+              }
+            }
+          ],
+          "evidence": {
+            "sourceScreen": "core/MGC/pages/MGC-COMN-10-10-10-S.html",
+            "range": {
+              "file": "core/MGC/pages/MGC-COMN-10-10-10-S.html",
+              "from": 18,
+              "to": 42
+            }
+          }
+        }
+      ],
+      "templates": []
+    },
+    "BPY": {
+      "styles": [
+        {
+          "id": "BPY",
+          "css": "styles/BPY.css"
+        }
+      ],
+      "foundations": {
+        "colorRoles": {
+          "roles": [
+            {
+              "label": "주색 토큰 `--color-primary*`",
+              "entries": [
+                {
+                  "value": "#EBF6FF"
+                },
+                {
+                  "value": "#EEF6FF"
+                },
+                {
+                  "value": "#B2E5FC"
+                },
+                {
+                  "value": "#87D5FF"
+                },
+                {
+                  "value": "#4AA9FF"
+                },
+                {
+                  "value": "#0D84FF"
+                }
+              ]
+            },
+            {
+              "label": "회색 계단 토큰 `--color-gray*` · 전체 9색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#f5f5f5"
+                },
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#ededed"
+                },
+                {
+                  "value": "#dbdbdb"
+                },
+                {
+                  "value": "#ccc"
+                },
+                {
+                  "value": "#999"
+                }
+              ]
+            },
+            {
+              "label": "보조색 토큰 `--color-second*` · 전체 7색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#80DEEA"
+                },
+                {
+                  "value": "#01BCD5"
+                },
+                {
+                  "value": "#ff8a65"
+                },
+                {
+                  "value": "#ff3d01"
+                },
+                {
+                  "value": "#e70000"
+                },
+                {
+                  "value": "#ffd73f"
+                }
+              ]
+            },
+            {
+              "label": "그 밖의 색 토큰",
+              "entries": [
+                {
+                  "value": "#fafafa"
+                },
+                {
+                  "value": "#dbdbdb"
+                },
+                {
+                  "value": "#ededed"
+                },
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#fff"
+                }
+              ]
+            },
+            {
+              "label": "배경 토큰 `--bg-*`",
+              "entries": [
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#fafafa"
+                }
+              ]
+            },
+            {
+              "label": "토큰 없이 직접 쓴 색 · 전체 516색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#222"
+                },
+                {
+                  "value": "#fff"
+                },
+                {
+                  "value": "#333"
+                },
+                {
+                  "value": "#0d84ff"
+                },
+                {
+                  "value": "#7e7e7e"
+                },
+                {
+                  "value": "#a9a9a9"
+                }
+              ]
+            }
+          ]
+        },
+        "typography": {
+          "fonts": [
+            {
+              "family": "NanumSquare",
+              "sampleWeights": [
+                "400",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareAc",
+              "sampleWeights": [
+                "400",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "Pretendard",
+              "sampleWeights": [
+                "400",
+                "500",
+                "600",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareNeo",
+              "sampleWeights": [
+                "300",
+                "400",
+                "700",
+                "800",
+                "900"
+              ]
+            }
+          ],
+          "sizes": [
+            {
+              "value": "14px"
+            },
+            {
+              "value": "13px"
+            },
+            {
+              "value": "12px"
+            },
+            {
+              "value": "16px"
+            },
+            {
+              "value": "15px"
+            },
+            {
+              "value": "11px"
+            },
+            {
+              "value": "18px"
+            },
+            {
+              "value": "20px"
+            }
+          ],
+          "weights": [
+            {
+              "value": "400"
+            },
+            {
+              "value": "600"
+            },
+            {
+              "value": "700"
+            },
+            {
+              "value": "500"
+            },
+            {
+              "value": "300"
+            },
+            {
+              "value": "800"
+            },
+            {
+              "value": "900"
+            }
+          ]
+        },
+        "spacing": [
+          {
+            "value": "8px"
+          },
+          {
+            "value": "20px"
+          },
+          {
+            "value": "10px"
+          },
+          {
+            "value": "12px"
+          },
+          {
+            "value": "1.2rem"
+          },
+          {
+            "value": "4px"
+          },
+          {
+            "value": "5px"
+          },
+          {
+            "value": "16px"
+          }
+        ],
+        "radius": [
+          {
+            "value": "8px"
+          },
+          {
+            "value": "50%"
+          },
+          {
+            "value": "6px"
+          },
+          {
+            "value": "4px"
+          },
+          {
+            "value": "3px"
+          },
+          {
+            "value": "35px"
+          },
+          {
+            "value": "2px"
+          },
+          {
+            "value": "0.8rem"
+          }
+        ],
+        "effects": {
+          "shadows": [
+            {
+              "value": "0 3px 2px -2px #d0d0d0"
+            },
+            {
+              "value": "0px 2px 4px rgba(0,0,0,.02)"
+            },
+            {
+              "value": "0px 8px 25px rgba(0,0,0,.1)"
+            },
+            {
+              "value": "0 10px 10px rgba(38,18,77,0.25)"
+            },
+            {
+              "value": "0px 4px 10px rgba(0,0,0,.16)"
+            },
+            {
+              "value": "0 0 5px hsla(0,0%,40%,.4)"
+            }
+          ]
+        },
+        "breakpoints": [
+          "max-width: 320px",
+          "max-width: 319px",
+          "max-width: 359px",
+          "min-width: 961px",
+          "max-width:320px",
+          "max-width: 349px",
+          "max-width: 321px",
+          "max-width: 960px"
+        ]
+      },
+      "components": [
+        {
+          "id": "button",
+          "label": "버튼",
+          "category": "button",
+          "variants": [
+            {
+              "id": "btn-submit-btn-skyBlue",
+              "label": "btn-submit btn-skyBlue",
+              "class": "btn-style-h48 btn-submit btn-skyBlue",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-submit-btn-skyBlue-on",
+              "label": "btn-submit btn-skyBlue on",
+              "class": "btn-style-h48 btn-submit btn-skyBlue on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-round_r8",
+              "label": "btn_default round_r8",
+              "class": "btn-style-h48 btn_default round_r8",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-round_r8-on",
+              "label": "btn_default round_r8 on",
+              "class": "btn-style-h48 btn_default round_r8 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "typeB-round_r8",
+              "label": "typeB round_r8",
+              "class": "btn-style-h48 typeB round_r8",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "typeA-round_r8-on",
+              "label": "typeA round_r8 on",
+              "class": "btn-style-h48 typeA round_r8 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-round_r6-on",
+              "label": "btn_default round_r6 on",
+              "class": "btn-style-h48 btn_default round_r6 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-submit-btn-skyBlue-round_r8-on",
+              "label": "btn-submit btn-skyBlue round_r8 on",
+              "class": "btn-style-h48 btn-submit btn-skyBlue round_r8 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 31
+          },
+          "evidence": {
+            "sourceScreen": "core/BPY/pages/BPY-ACCT-20-30-S.html",
+            "range": {
+              "file": "core/BPY/pages/BPY-ACCT-20-30-S.html",
+              "from": 103,
+              "to": 103
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/BPY--button.html",
+            "systemStyleId": "BPY",
+            "width": 375,
+            "height": 120
+          }
+        },
+        {
+          "id": "layer",
+          "label": "레이어 팝업",
+          "category": "modal",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "layer_bPop",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "sort_layer",
+              "label": "sort_layer",
+              "class": "layer_bPop sort_layer",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "detail",
+              "label": "detail",
+              "class": "layer_bPop detail",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 36
+          },
+          "evidence": {
+            "sourceScreen": "core/BPY/pages/BPY-ACCT-20-10-S.html",
+            "range": {
+              "file": "core/BPY/pages/BPY-ACCT-20-10-S.html",
+              "from": 143,
+              "to": 170
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/BPY--layer.html",
+            "systemStyleId": "BPY",
+            "width": 375,
+            "height": 480
+          }
+        }
+      ],
+      "compositions": [
+        {
+          "id": "button-box",
+          "label": "하단 버튼 영역",
+          "category": "composition",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "btn_botFix_w",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "brand_rn_btn",
+              "label": "brand_rn_btn",
+              "class": "btn_botFix_w brand_rn_btn",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "auto-bottom-space",
+              "label": "auto-bottom-space",
+              "class": "btn_botFix_w auto-bottom-space",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "bg_white",
+              "label": "bg_white",
+              "class": "btn_botFix_w bg_white",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "brand_rn_buy-on",
+              "label": "brand_rn_buy on",
+              "class": "btn_botFix_w brand_rn_buy on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 42
+          },
+          "evidence": {
+            "sourceScreen": "core/BPY/pages/BPY-ACCT-20-10-S.html",
+            "range": {
+              "file": "core/BPY/pages/BPY-ACCT-20-10-S.html",
+              "from": 80,
+              "to": 86
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/BPY--button-box.html",
+            "systemStyleId": "BPY",
+            "width": 375,
+            "height": 140
+          }
+        }
+      ],
+      "layouts": [
+        {
+          "id": "webview-shell",
+          "label": "웹뷰 공통 골격",
+          "kind": "shell",
+          "description": "상단 헤더 + 본문(`container`). 사이드바가 없는 모바일 웹뷰 골격이다.",
+          "usage": {
+            "count": 100
+          },
+          "regions": [
+            {
+              "id": "header",
+              "label": "상단 헤더",
+              "required": true
+            },
+            {
+              "id": "content",
+              "label": "본문",
+              "required": true
+            }
+          ],
+          "variants": [
+            {
+              "id": "BPY",
+              "label": "BPY",
+              "specimen": {
+                "status": "visible",
+                "html": "fragments/BPY--l-webview-shell.html",
+                "systemStyleId": "BPY",
+                "width": 375,
+                "height": 640
+              }
+            }
+          ],
+          "evidence": {
+            "sourceScreen": "core/BPY/pages/BPY-ACCT-10-S.html",
+            "range": {
+              "file": "core/BPY/pages/BPY-ACCT-10-S.html",
+              "from": 16,
+              "to": 66
+            }
+          }
+        }
+      ],
+      "templates": []
+    },
+    "BPG": {
+      "styles": [
+        {
+          "id": "BPG",
+          "css": "styles/BPG.css"
+        }
+      ],
+      "foundations": {
+        "colorRoles": {
+          "roles": [
+            {
+              "label": "주색 토큰 `--color-primary*`",
+              "entries": [
+                {
+                  "value": "#EBF6FF"
+                },
+                {
+                  "value": "#EEF6FF"
+                },
+                {
+                  "value": "#B2E5FC"
+                },
+                {
+                  "value": "#87D5FF"
+                },
+                {
+                  "value": "#4AA9FF"
+                },
+                {
+                  "value": "#0D84FF"
+                }
+              ]
+            },
+            {
+              "label": "회색 계단 토큰 `--color-gray*` · 전체 9색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#f5f5f5"
+                },
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#ededed"
+                },
+                {
+                  "value": "#dbdbdb"
+                },
+                {
+                  "value": "#ccc"
+                },
+                {
+                  "value": "#999"
+                }
+              ]
+            },
+            {
+              "label": "보조색 토큰 `--color-second*` · 전체 7색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#80DEEA"
+                },
+                {
+                  "value": "#01BCD5"
+                },
+                {
+                  "value": "#ff8a65"
+                },
+                {
+                  "value": "#ff3d01"
+                },
+                {
+                  "value": "#e70000"
+                },
+                {
+                  "value": "#ffd73f"
+                }
+              ]
+            },
+            {
+              "label": "그 밖의 색 토큰",
+              "entries": [
+                {
+                  "value": "#fafafa"
+                },
+                {
+                  "value": "#dbdbdb"
+                },
+                {
+                  "value": "#ededed"
+                },
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#fff"
+                }
+              ]
+            },
+            {
+              "label": "배경 토큰 `--bg-*`",
+              "entries": [
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#fafafa"
+                }
+              ]
+            },
+            {
+              "label": "토큰 없이 직접 쓴 색 · 전체 528색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#222"
+                },
+                {
+                  "value": "#fff"
+                },
+                {
+                  "value": "#333"
+                },
+                {
+                  "value": "#0d84ff"
+                },
+                {
+                  "value": "#7e7e7e"
+                },
+                {
+                  "value": "#a9a9a9"
+                }
+              ]
+            }
+          ]
+        },
+        "typography": {
+          "fonts": [
+            {
+              "family": "NanumSquare",
+              "sampleWeights": [
+                "400",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareAc",
+              "sampleWeights": [
+                "400",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "Pretendard",
+              "sampleWeights": [
+                "400",
+                "500",
+                "600",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareNeo",
+              "sampleWeights": [
+                "300",
+                "400",
+                "700",
+                "800",
+                "900"
+              ]
+            }
+          ],
+          "sizes": [
+            {
+              "value": "14px"
+            },
+            {
+              "value": "13px"
+            },
+            {
+              "value": "12px"
+            },
+            {
+              "value": "16px"
+            },
+            {
+              "value": "15px"
+            },
+            {
+              "value": "11px"
+            },
+            {
+              "value": "18px"
+            },
+            {
+              "value": "20px"
+            }
+          ],
+          "weights": [
+            {
+              "value": "400"
+            },
+            {
+              "value": "600"
+            },
+            {
+              "value": "700"
+            },
+            {
+              "value": "500"
+            },
+            {
+              "value": "300"
+            },
+            {
+              "value": "800"
+            },
+            {
+              "value": "900"
+            }
+          ]
+        },
+        "spacing": [
+          {
+            "value": "8px"
+          },
+          {
+            "value": "1.2rem"
+          },
+          {
+            "value": "10px"
+          },
+          {
+            "value": "20px"
+          },
+          {
+            "value": "12px"
+          },
+          {
+            "value": "0.8rem"
+          },
+          {
+            "value": "2.4rem"
+          },
+          {
+            "value": "4px"
+          }
+        ],
+        "radius": [
+          {
+            "value": "8px"
+          },
+          {
+            "value": "50%"
+          },
+          {
+            "value": "6px"
+          },
+          {
+            "value": "4px"
+          },
+          {
+            "value": "3px"
+          },
+          {
+            "value": "0.8rem"
+          },
+          {
+            "value": "35px"
+          },
+          {
+            "value": "12px"
+          }
+        ],
+        "effects": {
+          "shadows": [
+            {
+              "value": "0 3px 2px -2px #d0d0d0"
+            },
+            {
+              "value": "0px 2px 4px rgba(0,0,0,.02)"
+            },
+            {
+              "value": "0px 8px 25px rgba(0,0,0,.1)"
+            },
+            {
+              "value": "0 10px 10px rgba(38,18,77,0.25)"
+            },
+            {
+              "value": "0px 4px 10px rgba(0,0,0,.16)"
+            },
+            {
+              "value": "0 0 5px hsla(0,0%,40%,.4)"
+            }
+          ]
+        },
+        "breakpoints": [
+          "max-width: 319px",
+          "max-width: 320px",
+          "max-width: 359px",
+          "max-width:320px",
+          "min-width: 961px",
+          "max-width: 349px",
+          "max-width: 321px",
+          "max-width: 960px"
+        ]
+      },
+      "components": [
+        {
+          "id": "button",
+          "label": "버튼",
+          "category": "button",
+          "variants": [
+            {
+              "id": "btn-skyBlue-round_r8-on",
+              "label": "btn-skyBlue round_r8 on",
+              "class": "btn-style-h48 btn-skyBlue round_r8 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-round_r8",
+              "label": "btn_default round_r8",
+              "class": "btn-style-h48 btn_default round_r8",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-round_r8-on",
+              "label": "btn_default round_r8 on",
+              "class": "btn-style-h48 btn_default round_r8 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "on-btn-default-radius-mid",
+              "label": "on btn-default radius-mid",
+              "class": "btn-style-h48 on btn-default radius-mid",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-btn_line-round_r8",
+              "label": "btn_default btn_line round_r8",
+              "class": "btn-style-h48 btn_default btn_line round_r8",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-round_r8-pd0",
+              "label": "btn_default round_r8 pd0",
+              "class": "btn-style-h48 btn_default round_r8 pd0",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-on",
+              "label": "btn_default on",
+              "class": "btn-style-h48 btn_default on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-submit-btn-skyBlue",
+              "label": "btn-submit btn-skyBlue",
+              "class": "btn-style-h48 btn-submit btn-skyBlue",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 34
+          },
+          "evidence": {
+            "sourceScreen": "core/BPG/pages/BPG-COMN-10-20-S.html",
+            "range": {
+              "file": "core/BPG/pages/BPG-COMN-10-20-S.html",
+              "from": 26,
+              "to": 26
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/BPG--button.html",
+            "systemStyleId": "BPG",
+            "width": 375,
+            "height": 120
+          }
+        },
+        {
+          "id": "ipt",
+          "label": "입력칸",
+          "category": "text-field",
+          "variants": [
+            {
+              "id": "inner",
+              "label": "inner",
+              "class": "ipt inner",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                },
+                {
+                  "state": "filled",
+                  "label": "입력됨",
+                  "selector": ".bpleOder .complete_time .iptbx .time input::placeholder",
+                  "renderable": true
+                },
+                {
+                  "state": "focus",
+                  "label": "포커스",
+                  "selector": ".store_profile .iptbx .inner input:focus",
+                  "renderable": false
+                },
+                {
+                  "state": "disabled",
+                  "label": "비활성",
+                  "selector": ".bpleOder .complete_time .iptbx .time.disabled .inner",
+                  "renderable": false
+                }
+              ]
+            },
+            {
+              "id": "btn-arr_d",
+              "label": "btn arr_d",
+              "class": "ipt btn arr_d",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-arr_r",
+              "label": "btn arr_r",
+              "class": "ipt btn arr_r",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "bg_white",
+              "label": "bg_white",
+              "class": "ipt bg_white",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                },
+                {
+                  "state": "filled",
+                  "label": "입력됨",
+                  "selector": ".bpleOder .ipt_area .ipt input::placeholder",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "time_bx",
+              "label": "time_bx",
+              "class": "ipt time_bx",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "ipt",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 9
+          },
+          "evidence": {
+            "sourceScreen": "core/BPG/pages/BPG-OBO-10-20-10-S.html",
+            "range": {
+              "file": "core/BPG/pages/BPG-OBO-10-20-10-S.html",
+              "from": 39,
+              "to": 42
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/BPG--ipt.html",
+            "systemStyleId": "BPG",
+            "width": 375,
+            "height": 120
+          }
+        },
+        {
+          "id": "tab",
+          "label": "탭",
+          "category": "tabs",
+          "variants": [
+            {
+              "id": "two",
+              "label": "two",
+              "class": "tab_menu two",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "four",
+              "label": "four",
+              "class": "tab_menu four",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "tab_menu",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 6
+          },
+          "evidence": {
+            "sourceScreen": "core/BPG/pages/BPG-OBO-10-10-S.html",
+            "range": {
+              "file": "core/BPG/pages/BPG-OBO-10-10-S.html",
+              "from": 44,
+              "to": 47
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/BPG--tab.html",
+            "systemStyleId": "BPG",
+            "width": 375,
+            "height": 100
+          }
+        },
+        {
+          "id": "layer",
+          "label": "레이어 팝업",
+          "category": "modal",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "layer_bPop",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "beple-ui",
+              "label": "beple-ui",
+              "class": "layer_bPop beple-ui",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 20
+          },
+          "evidence": {
+            "sourceScreen": "core/BPG/pages/BPG-OBO-10-10-10-S.html",
+            "range": {
+              "file": "core/BPG/pages/BPG-OBO-10-10-10-S.html",
+              "from": 174,
+              "to": 197
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/BPG--layer.html",
+            "systemStyleId": "BPG",
+            "width": 375,
+            "height": 480
+          }
+        }
+      ],
+      "compositions": [
+        {
+          "id": "button-box",
+          "label": "하단 버튼 영역",
+          "category": "composition",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "btn_botFix_w",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "bg_white",
+              "label": "bg_white",
+              "class": "btn_botFix_w bg_white",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "bg_f7",
+              "label": "bg_f7",
+              "class": "btn_botFix_w bg_f7",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "bpOder",
+              "label": "bpOder",
+              "class": "btn_botFix_w bpOder",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 50
+          },
+          "evidence": {
+            "sourceScreen": "core/BPG/pages/BPG-COMN-10-20-S.html",
+            "range": {
+              "file": "core/BPG/pages/BPG-COMN-10-20-S.html",
+              "from": 26,
+              "to": 26
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/BPG--button-box.html",
+            "systemStyleId": "BPG",
+            "width": 375,
+            "height": 140
+          }
+        }
+      ],
+      "layouts": [
+        {
+          "id": "webview-shell",
+          "label": "웹뷰 공통 골격",
+          "kind": "shell",
+          "description": "상단 헤더 + 본문(`container`). 사이드바가 없는 모바일 웹뷰 골격이다.",
+          "usage": {
+            "count": 73
+          },
+          "regions": [
+            {
+              "id": "header",
+              "label": "상단 헤더",
+              "required": true
+            },
+            {
+              "id": "content",
+              "label": "본문",
+              "required": true
+            }
+          ],
+          "variants": [
+            {
+              "id": "BPG",
+              "label": "BPG",
+              "specimen": {
+                "status": "visible",
+                "html": "fragments/BPG--l-webview-shell.html",
+                "systemStyleId": "BPG",
+                "width": 375,
+                "height": 640
+              }
+            }
+          ],
+          "evidence": {
+            "sourceScreen": "core/BPG/pages/BPG-COMN-10-20-S.html",
+            "range": {
+              "file": "core/BPG/pages/BPG-COMN-10-20-S.html",
+              "from": 20,
+              "to": 31
+            }
+          }
+        }
+      ],
+      "templates": []
+    },
+    "MCH": {
+      "styles": [
+        {
+          "id": "MCH",
+          "css": "styles/MCH.css"
+        }
+      ],
+      "foundations": {
+        "colorRoles": {
+          "roles": [
+            {
+              "label": "토큰 없이 직접 쓴 색 · 전체 556색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#222"
+                },
+                {
+                  "value": "#fff"
+                },
+                {
+                  "value": "#333"
+                },
+                {
+                  "value": "#0d84ff"
+                },
+                {
+                  "value": "#7e7e7e"
+                },
+                {
+                  "value": "#a9a9a9"
+                }
+              ]
+            }
+          ]
+        },
+        "typography": {
+          "fonts": [
+            {
+              "family": "NanumSquare",
+              "sampleWeights": [
+                "400",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareAc",
+              "sampleWeights": [
+                "400",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "Pretendard",
+              "sampleWeights": [
+                "400",
+                "500",
+                "600",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareNeo",
+              "sampleWeights": [
+                "300",
+                "400",
+                "700",
+                "800",
+                "900"
+              ]
+            }
+          ],
+          "sizes": [
+            {
+              "value": "14px"
+            },
+            {
+              "value": "13px"
+            },
+            {
+              "value": "12px"
+            },
+            {
+              "value": "16px"
+            },
+            {
+              "value": "15px"
+            },
+            {
+              "value": "18px"
+            },
+            {
+              "value": "11px"
+            },
+            {
+              "value": "20px"
+            }
+          ],
+          "weights": [
+            {
+              "value": "400"
+            },
+            {
+              "value": "700"
+            },
+            {
+              "value": "300"
+            },
+            {
+              "value": "500"
+            },
+            {
+              "value": "600"
+            },
+            {
+              "value": "900"
+            }
+          ]
+        },
+        "spacing": [
+          {
+            "value": "8px"
+          },
+          {
+            "value": "10px"
+          },
+          {
+            "value": "20px"
+          },
+          {
+            "value": "12px"
+          },
+          {
+            "value": "4px"
+          },
+          {
+            "value": "32px"
+          },
+          {
+            "value": "16px"
+          },
+          {
+            "value": "5px"
+          }
+        ],
+        "radius": [
+          {
+            "value": "8px"
+          },
+          {
+            "value": "50%"
+          },
+          {
+            "value": "6px"
+          },
+          {
+            "value": "4px"
+          },
+          {
+            "value": "3px"
+          },
+          {
+            "value": "35px"
+          },
+          {
+            "value": "5px"
+          },
+          {
+            "value": "2px"
+          }
+        ],
+        "effects": {
+          "shadows": [
+            {
+              "value": "0 -5px 12px rgba(0,0,0,.06)"
+            },
+            {
+              "value": "inset 0 1px 1px rgba(0, 0, 0, .075)"
+            },
+            {
+              "value": "0 3px 2px -2px #d0d0d0"
+            },
+            {
+              "value": "0px 2px 4px rgba(0,0,0,.02)"
+            },
+            {
+              "value": "0px 8px 25px rgba(0,0,0,.1)"
+            },
+            {
+              "value": "0 10px 10px rgba(38,18,77,0.25)"
+            }
+          ]
+        },
+        "breakpoints": [
+          "min-width: 768px",
+          "max-width: 319px",
+          "max-width: 320px",
+          "max-width: 359px",
+          "max-width: 767px",
+          "max-width:320px",
+          "max-width: 321px",
+          "min-width: 320px"
+        ]
+      },
+      "components": [
+        {
+          "id": "button",
+          "label": "버튼",
+          "category": "button",
+          "variants": [
+            {
+              "id": "btn_default-round_r6",
+              "label": "btn_default round_r6",
+              "class": "btn-style-h48 btn_default round_r6",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-round_r8",
+              "label": "btn_default round_r8",
+              "class": "btn-style-h48 btn_default round_r8",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-round_r8-on",
+              "label": "btn_default round_r8 on",
+              "class": "btn-style-h48 btn_default round_r8 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-btn_line-round_r8",
+              "label": "btn_default btn_line round_r8",
+              "class": "btn-style-h48 btn_default btn_line round_r8",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-on",
+              "label": "btn_default on",
+              "class": "btn-style-h48 btn_default on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn_default-round_r6-on",
+              "label": "btn_default round_r6 on",
+              "class": "btn-style-h48 btn_default round_r6 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-skyBlue-round_r8-on",
+              "label": "btn-skyBlue round_r8 on",
+              "class": "btn-style-h48 btn-skyBlue round_r8 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 42
+          },
+          "evidence": {
+            "sourceScreen": "core/MCH/pages/MCH-AFLT-10-10-10-S.html",
+            "range": {
+              "file": "core/MCH/pages/MCH-AFLT-10-10-10-S.html",
+              "from": 98,
+              "to": 100
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/MCH--button.html",
+            "systemStyleId": "MCH",
+            "width": 375,
+            "height": 120
+          }
+        },
+        {
+          "id": "ipt-box",
+          "label": "입력 상자",
+          "category": "text-field",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "ipt_bx",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                },
+                {
+                  "state": "filled",
+                  "label": "입력됨",
+                  "selector": ".new_store .ipt_area .ipt input::placeholder",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "upload",
+              "label": "upload",
+              "class": "ipt_bx upload",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "adress",
+              "label": "adress",
+              "class": "ipt_bx adress",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                },
+                {
+                  "state": "filled",
+                  "label": "입력됨",
+                  "selector": ".new_store .ipt_area .ipt input::placeholder",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "email",
+              "label": "email",
+              "class": "ipt_bx email",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                },
+                {
+                  "state": "filled",
+                  "label": "입력됨",
+                  "selector": ".new_store .ipt_area .ipt input::placeholder",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "c_code",
+              "label": "c_code",
+              "class": "ipt_bx c_code",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                },
+                {
+                  "state": "filled",
+                  "label": "입력됨",
+                  "selector": ".new_store .ipt_area .ipt input::placeholder",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "cert_name",
+              "label": "cert_name",
+              "class": "ipt_bx cert_name",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                },
+                {
+                  "state": "filled",
+                  "label": "입력됨",
+                  "selector": ".new_store .ipt_area .ipt input::placeholder",
+                  "renderable": false
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 17
+          },
+          "evidence": {
+            "sourceScreen": "core/MCH/pages/MCH-AFLT-10-10-10-S.html",
+            "range": {
+              "file": "core/MCH/pages/MCH-AFLT-10-10-10-S.html",
+              "from": 61,
+              "to": 66
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/MCH--ipt-box.html",
+            "systemStyleId": "MCH",
+            "width": 375,
+            "height": 160
+          }
+        },
+        {
+          "id": "sel-box",
+          "label": "선택 줄",
+          "category": "radio",
+          "variants": [
+            {
+              "id": "justify",
+              "label": "justify",
+              "class": "sel_bx justify",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "sel_bx",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "d-flex-justify",
+              "label": "d-flex justify",
+              "class": "sel_bx d-flex justify",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 8
+          },
+          "evidence": {
+            "sourceScreen": "core/MCH/pages/MCH-AFLT-10-10-10-S.html",
+            "range": {
+              "file": "core/MCH/pages/MCH-AFLT-10-10-10-S.html",
+              "from": 69,
+              "to": 74
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/MCH--sel-box.html",
+            "systemStyleId": "MCH",
+            "width": 375,
+            "height": 120
+          }
+        },
+        {
+          "id": "layer",
+          "label": "레이어 팝업",
+          "category": "modal",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "layer_bPop",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 8
+          },
+          "evidence": {
+            "sourceScreen": "core/MCH/pages/MCH-AFLT-70-S.html",
+            "range": {
+              "file": "core/MCH/pages/MCH-AFLT-70-S.html",
+              "from": 191,
+              "to": 231
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/MCH--layer.html",
+            "systemStyleId": "MCH",
+            "width": 375,
+            "height": 480
+          }
+        },
+        {
+          "id": "table",
+          "label": "표",
+          "category": "table",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "tbl_style",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 5
+          },
+          "evidence": {
+            "sourceScreen": "core/MCH/pages/MCH-AFMG-10-20-S.html",
+            "range": {
+              "file": "core/MCH/pages/MCH-AFMG-10-20-S.html",
+              "from": 25,
+              "to": 40
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/MCH--table.html",
+            "systemStyleId": "MCH",
+            "width": 375,
+            "height": 240
+          }
+        }
+      ],
+      "compositions": [
+        {
+          "id": "button-box",
+          "label": "하단 버튼 영역",
+          "category": "composition",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "btn_botFix_w",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 40
+          },
+          "evidence": {
+            "sourceScreen": "core/MCH/pages/MCH-AFLT-10-10-10-S.html",
+            "range": {
+              "file": "core/MCH/pages/MCH-AFLT-10-10-10-S.html",
+              "from": 96,
+              "to": 102
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/MCH--button-box.html",
+            "systemStyleId": "MCH",
+            "width": 375,
+            "height": 140
+          }
+        }
+      ],
+      "layouts": [
+        {
+          "id": "webview-shell",
+          "label": "웹뷰 공통 골격",
+          "kind": "shell",
+          "description": "상단 헤더 + 본문(`container`). 사이드바가 없는 모바일 웹뷰 골격이다.",
+          "usage": {
+            "count": 57
+          },
+          "regions": [
+            {
+              "id": "header",
+              "label": "상단 헤더",
+              "required": true
+            },
+            {
+              "id": "content",
+              "label": "본문",
+              "required": true
+            }
+          ],
+          "variants": [
+            {
+              "id": "MCH",
+              "label": "MCH",
+              "specimen": {
+                "status": "visible",
+                "html": "fragments/MCH--l-webview-shell.html",
+                "systemStyleId": "MCH",
+                "width": 375,
+                "height": 640
+              }
+            }
+          ],
+          "evidence": {
+            "sourceScreen": "core/MCH/pages/MCH-AFLT-10-10-10-S.html",
+            "range": {
+              "file": "core/MCH/pages/MCH-AFLT-10-10-10-S.html",
+              "from": 18,
+              "to": 106
+            }
+          }
+        }
+      ],
+      "templates": []
+    },
+    "HIT": {
+      "styles": [
+        {
+          "id": "HIT",
+          "css": "styles/HIT.css"
+        }
+      ],
+      "foundations": {
+        "colorRoles": {
+          "roles": [
+            {
+              "label": "주색 토큰 `--color-primary*` · `ent_aflt_resource/css/heat_admin-mobile.css`",
+              "entries": [
+                {
+                  "value": "#0d84ff"
+                },
+                {
+                  "value": "#eef6ff"
+                }
+              ]
+            },
+            {
+              "label": "주색 토큰 `--color-primary*` · `ent_resource/css/ent_beple.css`",
+              "entries": [
+                {
+                  "value": "#EBF6FF"
+                },
+                {
+                  "value": "#EEF6FF"
+                },
+                {
+                  "value": "#B2E5FC"
+                },
+                {
+                  "value": "#87D5FF"
+                },
+                {
+                  "value": "#4AA9FF"
+                },
+                {
+                  "value": "#0D84FF"
+                }
+              ]
+            },
+            {
+              "label": "회색 계단 토큰 `--color-gray*` · 전체 9색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#f5f5f5"
+                },
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#ededed"
+                },
+                {
+                  "value": "#dbdbdb"
+                },
+                {
+                  "value": "#ccc"
+                },
+                {
+                  "value": "#999"
+                }
+              ]
+            },
+            {
+              "label": "보조색 토큰 `--color-second*` · 전체 7색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#80DEEA"
+                },
+                {
+                  "value": "#01BCD5"
+                },
+                {
+                  "value": "#ff8a65"
+                },
+                {
+                  "value": "#ff3d01"
+                },
+                {
+                  "value": "#e70000"
+                },
+                {
+                  "value": "#ffd73f"
+                }
+              ]
+            },
+            {
+              "label": "그 밖의 색 토큰 · `ent_aflt_resource/css/heat_admin-mobile.css` · 전체 8색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#ff3d01"
+                },
+                {
+                  "value": "rgba(255, 61, 1, 0.08)"
+                },
+                {
+                  "value": "#ff9d00"
+                },
+                {
+                  "value": "rgba(255, 157, 0, 0.10)"
+                },
+                {
+                  "value": "#f70000"
+                },
+                {
+                  "value": "#cccccc"
+                }
+              ]
+            },
+            {
+              "label": "그 밖의 색 토큰 · `ent_resource/css/ent_beple.css`",
+              "entries": [
+                {
+                  "value": "#fafafa"
+                },
+                {
+                  "value": "#dbdbdb"
+                },
+                {
+                  "value": "#ededed"
+                },
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#fff"
+                }
+              ]
+            },
+            {
+              "label": "배경 토큰 `--bg-*` · `ent_aflt_resource/css/heat_admin-mobile.css`",
+              "entries": [
+                {
+                  "value": "#333333"
+                },
+                {
+                  "value": "#fafafa"
+                },
+                {
+                  "value": "#f4f4f4"
+                },
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#ffffff"
+                }
+              ]
+            },
+            {
+              "label": "배경 토큰 `--bg-*` · `ent_resource/css/ent_beple.css`",
+              "entries": [
+                {
+                  "value": "#f7f7f7"
+                },
+                {
+                  "value": "#fafafa"
+                }
+              ]
+            },
+            {
+              "label": "토큰 없이 직접 쓴 색 · 전체 597색 중 상위 6",
+              "entries": [
+                {
+                  "value": "#fff"
+                },
+                {
+                  "value": "#222"
+                },
+                {
+                  "value": "#333"
+                },
+                {
+                  "value": "#0d84ff"
+                },
+                {
+                  "value": "#7e7e7e"
+                },
+                {
+                  "value": "#a9a9a9"
+                }
+              ]
+            }
+          ]
+        },
+        "typography": {
+          "fonts": [
+            {
+              "family": "NanumSquare",
+              "sampleWeights": [
+                "400",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareAc",
+              "sampleWeights": [
+                "400",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "Pretendard",
+              "sampleWeights": [
+                "400",
+                "500",
+                "600",
+                "700",
+                "800"
+              ]
+            },
+            {
+              "family": "NanumSquareNeo",
+              "sampleWeights": [
+                "300",
+                "400",
+                "700",
+                "800",
+                "900"
+              ]
+            }
+          ],
+          "sizes": [
+            {
+              "value": "14px"
+            },
+            {
+              "value": "13px"
+            },
+            {
+              "value": "12px"
+            },
+            {
+              "value": "16px"
+            },
+            {
+              "value": "15px"
+            },
+            {
+              "value": "1.4rem"
+            },
+            {
+              "value": "11px"
+            },
+            {
+              "value": "18px"
+            }
+          ],
+          "weights": [
+            {
+              "value": "400"
+            },
+            {
+              "value": "600"
+            },
+            {
+              "value": "700"
+            },
+            {
+              "value": "800"
+            },
+            {
+              "value": "500"
+            },
+            {
+              "value": "300"
+            },
+            {
+              "value": "900"
+            },
+            {
+              "value": "200"
+            }
+          ]
+        },
+        "spacing": [
+          {
+            "value": "8px"
+          },
+          {
+            "value": "20px"
+          },
+          {
+            "value": "1.2rem"
+          },
+          {
+            "value": "10px"
+          },
+          {
+            "value": "12px"
+          },
+          {
+            "value": "0.8rem"
+          },
+          {
+            "value": "4px"
+          },
+          {
+            "value": "5px"
+          }
+        ],
+        "radius": [
+          {
+            "value": "8px"
+          },
+          {
+            "value": "50%"
+          },
+          {
+            "value": "4px"
+          },
+          {
+            "value": "6px"
+          },
+          {
+            "value": "0.8rem"
+          },
+          {
+            "value": "3px"
+          },
+          {
+            "value": "12px"
+          },
+          {
+            "value": "35px"
+          }
+        ],
+        "effects": {
+          "shadows": [
+            {
+              "value": "0px 4px 10px rgba(0,0,0,.16)"
+            },
+            {
+              "value": "0 3px 2px -2px #d0d0d0"
+            },
+            {
+              "value": "0px 2px 4px rgba(0,0,0,.02)"
+            },
+            {
+              "value": "0px 8px 25px rgba(0,0,0,.1)"
+            },
+            {
+              "value": "0 3px 6px #ccc"
+            },
+            {
+              "value": "0 10px 10px rgba(38,18,77,0.25)"
+            }
+          ]
+        },
+        "breakpoints": [
+          "max-width: 320px",
+          "max-width: 319px",
+          "max-width: 359px",
+          "max-width:320px",
+          "max-width: 321px",
+          "max-width: 299px",
+          "max-width: 362px",
+          "max-width: 350px"
+        ]
+      },
+      "components": [
+        {
+          "id": "button",
+          "label": "버튼",
+          "category": "button",
+          "variants": [
+            {
+              "id": "btn-submit-btn-skyBlue",
+              "label": "btn-submit btn-skyBlue",
+              "class": "btn-style-h48 btn-submit btn-skyBlue",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-submit-btn-skyBlue-on",
+              "label": "btn-submit btn-skyBlue on",
+              "class": "btn-style-h48 btn-submit btn-skyBlue on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-skyBlue-round_r8-on",
+              "label": "btn-skyBlue round_r8 on",
+              "class": "btn-style-h48 btn-skyBlue round_r8 on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-default-radius-mid-on",
+              "label": "btn-default radius-mid on",
+              "class": "btn-style-h48 btn-default radius-mid on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-default-radius-mid",
+              "label": "btn-default radius-mid",
+              "class": "btn-style-h48 btn-default radius-mid",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "on-btn-default-radius-mid",
+              "label": "on btn-default radius-mid",
+              "class": "btn-style-h48 on btn-default radius-mid",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-default-btn-line-radius-mid-short",
+              "label": "btn-default btn-line radius-mid short",
+              "class": "btn-style-h48 btn-default btn-line radius-mid short",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-default-radius-mid-long-on",
+              "label": "btn-default radius-mid long on",
+              "class": "btn-style-h48 btn-default radius-mid long on",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 42
+          },
+          "evidence": {
+            "sourceScreen": "core/HIT/pages/HIT-ACCT-10-30-S.html",
+            "range": {
+              "file": "core/HIT/pages/HIT-ACCT-10-30-S.html",
+              "from": 94,
+              "to": 94
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/HIT--button.html",
+            "systemStyleId": "HIT",
+            "width": 375,
+            "height": 120
+          }
+        },
+        {
+          "id": "form-input",
+          "label": "입력칸",
+          "category": "text-field",
+          "variants": [
+            {
+              "id": "form-item",
+              "label": "form-item",
+              "class": "form-input form-item",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                },
+                {
+                  "state": "filled",
+                  "label": "입력됨",
+                  "selector": ".form-box .form-item input::placeholder",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "form-item-btn-add",
+              "label": "form-item btn-add",
+              "class": "form-input form-item btn-add",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                },
+                {
+                  "state": "filled",
+                  "label": "입력됨",
+                  "selector": ".form-box .form-item input::placeholder",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 9
+          },
+          "evidence": {
+            "sourceScreen": "core/HIT/pages/HIT-HIST-10-20-20-S.html",
+            "range": {
+              "file": "core/HIT/pages/HIT-HIST-10-20-20-S.html",
+              "from": 207,
+              "to": 209
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/HIT--form-input.html",
+            "systemStyleId": "HIT",
+            "width": 375,
+            "height": 120
+          }
+        },
+        {
+          "id": "popup",
+          "label": "팝업",
+          "category": "modal",
+          "variants": [
+            {
+              "id": "popup--bottom-popup-payment--cancel",
+              "label": "popup--bottom popup-payment--cancel",
+              "class": "popup-container popup--bottom popup-payment--cancel",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "popup--bottom-popup-receipt--send",
+              "label": "popup--bottom popup-receipt--send",
+              "class": "popup-container popup--bottom popup-receipt--send",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "popup--full",
+              "label": "popup--full",
+              "class": "popup-container popup--full",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "popup--full-delivery_use-guide",
+              "label": "popup--full delivery_use-guide",
+              "class": "popup-container popup--full delivery_use-guide",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "overlay",
+              "label": "overlay",
+              "class": "popup-container overlay",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 27
+          },
+          "evidence": {
+            "sourceScreen": "core/HIT/pages/HIT-HIST-10-S.html",
+            "range": {
+              "file": "core/HIT/pages/HIT-HIST-10-S.html",
+              "from": 1362,
+              "to": 1424
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/HIT--popup.html",
+            "systemStyleId": "HIT",
+            "width": 375,
+            "height": 480
+          }
+        },
+        {
+          "id": "pc-button",
+          "label": "PC 버튼",
+          "category": "button",
+          "variants": [
+            {
+              "id": "btn-big-btn-primary",
+              "label": "btn-big btn-primary",
+              "class": "btn btn-big btn-primary",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-md-a-btn-primary",
+              "label": "btn-md-a btn-primary",
+              "class": "btn btn-md-a btn-primary",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-md-a-btn-primary-outline",
+              "label": "btn-md-a btn-primary-outline",
+              "class": "btn btn-md-a btn-primary-outline",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-md-b-btn-gray-outline-btn-new-menu-pop",
+              "label": "btn-md-b btn-gray-outline btn-new-menu-pop",
+              "class": "btn btn-md-b btn-gray-outline btn-new-menu-pop",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-md-b-btn-gray-outline",
+              "label": "btn-md-b btn-gray-outline",
+              "class": "btn btn-md-b btn-gray-outline",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-md-b-btn-primary-ml0",
+              "label": "btn-md-b btn-primary ml0",
+              "class": "btn btn-md-b btn-primary ml0",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-big-btn-gray-outline",
+              "label": "btn-big btn-gray-outline",
+              "class": "btn btn-big btn-gray-outline",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "btn-sm-btn-gray-outline",
+              "label": "btn-sm btn-gray-outline",
+              "class": "btn btn-sm btn-gray-outline",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 25
+          },
+          "evidence": {
+            "sourceScreen": "core/HIT/pages/HIT-MBO-10-10-10-S.html",
+            "range": {
+              "file": "core/HIT/pages/HIT-MBO-10-10-10-S.html",
+              "from": 95,
+              "to": 95
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/HIT--pc-button.html",
+            "systemStyleId": "HIT",
+            "width": 1440,
+            "height": 120
+          }
+        },
+        {
+          "id": "pc-table",
+          "label": "PC 정보 표",
+          "category": "table",
+          "variants": [
+            {
+              "id": "mb40",
+              "label": "mb40",
+              "class": "data-table mb40",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "form-table-no-bd",
+              "label": "form-table no-bd",
+              "class": "data-table form-table no-bd",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "form-table-pd-table",
+              "label": "form-table pd-table",
+              "class": "data-table form-table pd-table",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "form-table",
+              "label": "form-table",
+              "class": "data-table form-table",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "no-bd-left",
+              "label": "no-bd-left",
+              "class": "data-table no-bd-left",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "no-bd-left-mt12",
+              "label": "no-bd-left mt12",
+              "class": "data-table no-bd-left mt12",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "type-auto-no-active-mt15",
+              "label": "type-auto no-active mt15",
+              "class": "data-table type-auto no-active mt15",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            },
+            {
+              "id": "no-active-form-table-mt15-pd-table",
+              "label": "no-active form-table mt15 pd-table",
+              "class": "data-table no-active form-table mt15 pd-table",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 20
+          },
+          "evidence": {
+            "sourceScreen": "core/HIT/pages/HIT-MBO-10-10-10-S.html",
+            "range": {
+              "file": "core/HIT/pages/HIT-MBO-10-10-10-S.html",
+              "from": 37,
+              "to": 91
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/HIT--pc-table.html",
+            "systemStyleId": "HIT",
+            "width": 1440,
+            "height": 240
+          }
+        }
+      ],
+      "compositions": [
+        {
+          "id": "pc-page-header",
+          "label": "PC 화면 머리",
+          "category": "composition",
+          "variants": [
+            {
+              "id": "----",
+              "label": "(기본)",
+              "class": "page-header",
+              "states": [
+                {
+                  "state": "default",
+                  "label": "기본",
+                  "renderable": true
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "count": 21
+          },
+          "evidence": {
+            "sourceScreen": "core/HIT/pages/HIT-MBO-10-10-10-S.html",
+            "range": {
+              "file": "core/HIT/pages/HIT-MBO-10-10-10-S.html",
+              "from": 26,
+              "to": 34
+            }
+          },
+          "specimen": {
+            "status": "visible",
+            "html": "fragments/HIT--pc-page-header.html",
+            "systemStyleId": "HIT",
+            "width": 1440,
+            "height": 100
+          }
+        }
+      ],
+      "layouts": [
+        {
+          "id": "webview-shell",
+          "label": "모바일 공통 골격",
+          "kind": "shell",
+          "description": "상단 헤더 + 본문(`container-wrap`). 사이드바가 없는 모바일 골격이다.",
+          "usage": {
+            "count": 82
+          },
+          "regions": [
+            {
+              "id": "header",
+              "label": "상단 헤더",
+              "required": true
+            },
+            {
+              "id": "content",
+              "label": "본문",
+              "required": true
+            }
+          ],
+          "variants": [
+            {
+              "id": "HIT",
+              "label": "HIT",
+              "specimen": {
+                "status": "visible",
+                "html": "fragments/HIT--l-webview-shell.html",
+                "systemStyleId": "HIT",
+                "width": 375,
+                "height": 640
+              }
+            }
+          ],
+          "evidence": {
+            "sourceScreen": "core/HIT/pages/HIT-ACCT-10-10-S.html",
+            "range": {
+              "file": "core/HIT/pages/HIT-ACCT-10-10-S.html",
+              "from": 38,
+              "to": 108
+            }
+          }
+        },
+        {
+          "id": "pc-bo-shell",
+          "label": "PC 백오피스 골격",
+          "kind": "shell",
+          "description": "왼쪽 메뉴(`bp-aside`) + 본문(`bp-main`). PC 백오피스 골격이다.",
+          "usage": {
+            "count": 16
+          },
+          "regions": [
+            {
+              "id": "aside",
+              "label": "왼쪽 메뉴",
+              "required": true
+            },
+            {
+              "id": "main",
+              "label": "본문",
+              "required": true
+            }
+          ],
+          "variants": [
+            {
+              "id": "HIT",
+              "label": "HIT",
+              "specimen": {
+                "status": "visible",
+                "html": "fragments/HIT--l-pc-bo-shell.html",
+                "systemStyleId": "HIT",
+                "width": 1440,
+                "height": 800
+              }
+            }
+          ],
+          "evidence": {
+            "sourceScreen": "core/HIT/pages/HIT-MBO-10-10-10-S.html",
+            "range": {
+              "file": "core/HIT/pages/HIT-MBO-10-10-10-S.html",
+              "from": 14,
+              "to": 104
+            }
+          }
+        }
+      ],
+      "templates": []
     }
   }
 }

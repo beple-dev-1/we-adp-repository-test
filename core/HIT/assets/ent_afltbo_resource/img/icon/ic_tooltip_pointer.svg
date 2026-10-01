@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8">
+    <g data-name="다각형 3" style="fill:#fff">
+        <path d="M11 7.5H1L6 .833 11 7.5z" style="stroke:none"/>
+        <path d="M6 1.667 2 7h8L6 1.667M6 .333c.15 0 .3.067.4.2l5 6.667a.5.5 0 0 1-.4.8H1a.5.5 0 0 1-.4-.8l5-6.667c.1-.133.25-.2.4-.2z" style="fill:#0d84ff;stroke:none"/>
+    </g>
+    <path data-name="사각형 23243" transform="translate(0 7)" style="fill:#fff" d="M0 0h12v1H0z"/>
+</svg>

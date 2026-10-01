@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>배송지 등록(로케이션)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OFFD-10-10-S">
+<form name = "frm" id = "frm" method="post">
+		<input id="BP_AFLT_SEQ"  name = "BP_AFLT_SEQ" type="hidden" value="">
+		<input id="LOC_ID"		 name = "LOC_ID" 	  type="hidden" value="">
+		<input id="LOC_TITLE" 	 name = "LOC_TITLE"   type="hidden" value="">
+		<input id="ADDR1" 		 name = "ADDR1" 	  type="hidden" value="">
+		<input id="ADDR2" 		 name = "ADDR2" 	  type="hidden" value="">
+		<input id="REQ_URL" 	 name = "REQ_URL" 	  type="hidden" value="">
+		<input id="MORE" 	 	 name = "MORE" 	  	  type="hidden" value="">
+	</form>
+	<!-- wrap -->
+	<div class="header floating-back-header floating-sticky">
+			<h1>배송지 등록</h1>
+			<a data-element-id="BPG-OFFD-10-10-S-e02" href="#" class="btn-history-back">뒤로가기</a>
+	</div><!-- // header -->
+
+	<!-- container -->
+	<div class="container">
+		<!-- content -->
+		<div class="content">
+			<!-- 컨텐츠 영역 -->
+			<div class="flexWrap line_height-normal">
+				<div class="fooding">
+					<!-- 배송지 등록 - 주소선택 -->
+					<div class="fooding_delivery select">
+						<!-- 타이틀영역 박스 -->
+						<div class="top_bx">
+							<h3 class="sub_title extra_01">배송받으실 주소를 선택해 주세요.</h3>
+						</div>
+						<!-- 주소목록 박스 -->
+						<div class="bx_container"><!-- sample:begin --><div class="con">	<a onclick="go_deliv_add(this);" addr1="서울 강남구 테헤란로 1길 10" addr2="101동 1001호"  loc_id="" loc_title="안내">		<div class="border_bx arrow20 arr-right">			<h4 class="sub_title bold_02">안내</h4>			<p class="caption_txt reg_02">서울 강남구 테헤란로 1길 10</p>		</div>	</a></div><!-- sample:end --></div>
+					</div>
+				</div>
+			</div>
+			<!-- // 컨텐츠 영역 -->
+		</div>
+		<!-- // content -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>주문설정(로봇배송)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-OBO-10-30-10-S">
+<input id="bpAfltSeq" name="bpAfltSeq" type="hidden" value="">
+<input id="odrYn" name="odrYn" type="hidden" value="">
+<input id="preUrl" name="preUrl" type="hidden" value="">
+
+<!-- wrap -->
+<div class="wrap">
+    <div class="header floating-back-header floating-sticky">
+        <h1>로봇배송 주문 설정</h1>
+        <a data-element-id="BPG-OBO-10-30-10-S-e08" href="#none" class="btn-history-back" id="back">뒤로가기</a>
+    </div>
+    <!-- // header -->
+
+    <!-- container -->
+    <div class="container">
+        <!-- content -->
+        <div class="content">
+            <!-- 비플오더 -->
+            <div class="flexWrap">
+                <div class="bpleOder addBtn-pb56"><!-- 하단 버튼 생성 시 addBtn-pb58 클래스 추가 -->
+                    <!-- 주문설정 -->
+                    <div class="oder_set">
+                        <form action="">
+                            <fieldset>
+                                <legend>주문 설정</legend>
+                                <!-- 정보입력 -->
+                                <div class="ipt_area">
+                                    <!-- 가맹점 상태 -->
+                                    <div class="ipt_bx">
+                                        <h3>주문 가맹점 상태</h3>
+                                        <div class="ipt btn arr_d" id="odrSt"><!-- sample:begin -->표본<!-- sample:end --></div>
+                                    </div>
+                                    <!-- 가맹점 상태 -->
+                                    <div class="ipt_bx">
+                                        <h3>주문 이용가능 시간</h3>
+                                        <div class="ipt btn arr_r">
+                                            <a href="/bo_my_wt.act?BP_AFLT_SEQ=&PRE_URL=&ORDER_TYPE=R">
+                                                <!-- 영업시간 -->
+                                                <div class="work_time">
+                                                    <!-- 영업시간 목록 -->
+                                                    <div class="inner">
+                                                        
+                                                        <div>
+                                                            <p>
+                                                                <strong></strong>&nbsp;
+                                                                
+                                                            </p>
+                                                        </div>
+                                                        
+                                                        <div id="etcInfoDiv">
+                                                            <p>
+                                                                <strong></strong>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- 평균 배송 시간 -->
+                                    <div class="ipt_bx">
+                                        <h3>평균 배송 시간</h3>
+                                        <div class="ipt btn arr_r"><a data-element-id="BPG-OBO-10-30-10-S-e05" data-nav-target="BPG-OBO-10-30-20-S" href="bo_my_deli_robot_tm.act?BP_AFLT_SEQ=&PRE_URL=">분 ~ 분</a></div>
+                                    </div>
+                                    <!-- 주문 가능 수량 (선택) -->
+                                    <div class="ipt_bx">
+                                        <h3>주문 가능 수량 (선택)</h3>
+                                        <div class="ipt btn arr_r"><a data-element-id="BPG-OBO-10-30-10-S-e06" data-nav-target="BPG-OBO-10-30-30-S" href="bo_my_odr_qty.act?BP_AFLT_SEQ=&PRE_URL=">
+                                            
+                                                수량 제한 없음
+                                            
+                                        </a></div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!-- 주문설정 -->
+                </div>
+            </div>
+            <!-- //비플오더 -->
+        </div>
+        <!-- // content -->
+
+        <!-- 하단 고정버튼 -->
+        <div class="btn_botFix_w">
+            <div class="inner">
+                <a data-element-id="BPG-OBO-10-30-10-S-e07" data-nav-target="BPG-OBO-10-S" href="bo_my_main.act?BP_AFLT_SEQ=" class="btn_default btn-style-h46 round_r8 on"><!-- 활성화 시 on 클래스 추가 -->
+                    확인
+                </a>
+            </div>
+        </div>
+        <!-- //하단 고정버튼 -->
+    </div>
+    <!-- // container -->
+</div>
+
+<!-- 레이어팝업 -->
+<div class="layer_overlay" id="odrYnLayer" style="display:none;">
+    <div class="layer_bPop">
+        <div class="popup_con pd0">
+            <!-- 설정팝업 -->
+            <div class="edit_pop add_tit pdb0">
+                <h2 class="ly_pop_tit">주문 가맹점 상태</h2>
+                <p class="btn_close" id="odrClose"><a href="#none"></a></p>
+                <p>
+                    비플 오더에 노출될 가맹점 상태를 설정해 주세요.<br>
+                    숨김 처리로 설정하실 경우 가맹점 리스트에서 노출이 되지 않아요.
+                </p>
+                <!-- 영업상태 선택 -->
+                <ul id="select-ul">
+                    <li><a href="#none">영업중</a></li><!-- 선택 시 select 클래스 추가 -->
+                    <li><a href="#none">숨김 처리</a></li>
+                </ul>
+                <!-- //영업상태 선택 -->
+                <div class="btn_w">
+                    <div class="inner bg_white">
+                        <a href="#none" class="btn_default btn-style-h48 round_r8 on" id="odrConfirm"><!-- 활성화 시 on 클래스 추가 -->
+                            적용
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- //설정팝업 -->
+        </div>
+    </div>
+</div>
+</body>
+</html>

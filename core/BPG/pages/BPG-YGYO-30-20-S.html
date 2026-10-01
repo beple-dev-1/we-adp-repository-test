@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>요기요 즐겨찾기 등록매장</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-YGYO-30-20-S">
+<!-- wrap -->
+    <div class="wrap beple-ui">
+    
+        <!-- header -->
+        
+            
+        
+        <!-- //header -->
+            
+        <!-- container -->
+        <div class="container js-container-wrap">
+            <!-- content -->
+            <div class="content">
+                <div class="bp-ygy"><!-- 2025-02-26 - [D] 'flexWrap no_vh' 클래스 제거-->
+                    <div class="ygy__detail-view category">
+                        <div class="place">
+                            <!-- 즐겨찾기 등록매장 -->
+                            <div class="favorite-store" id='resultArea'>
+                                <!-- 배달 시 - 기본 -->
+                                    <!-- <div class="place__store-list pdt8 view" id='resultArea'> -->
+                                    <ul id='favoriList'><!-- sample:begin --><li><div class="store-item"><a class="store-link" data-shop-id=""><div class="favorite__store-img"></div><div class="favorite-info"><p class='store-name' title=""></p><p class="take_out-text">포장가능</p></div></a><button class="favorite-btn added" data-shop-id="" data-shop-name="" data-img-url=""><span class="blind">관심가게</span></button></div></li><!-- sample:end --></ul>
+                                    <!-- </div> -->
+                            </div>
+                            <!-- 목록 없음 -->
+                            <div class="item_none" id='noResult' style="display: none"><!-- [D] 미사용 시 display: none; , 사용 시 diaplsy:none 삭제 -->
+                                <!-- 2025-03-04 - [D] span 태그 추가 -->
+                                <p>즐겨찾기로 설정한 맛집이 없습니다.</p>
+                                <!-- // 2025-03-04 -->
+                            </div>
+                            
+                        </div>
+                        <!-- // 메인 - 우리동네 인기 맛집 -->
+                    </div>
+                </div>
+
+                <!-- 2025-02-26 - [D] page-util 신규 생성 -->
+                <!-- 페이지 유틸박스 -->
+                <div class="page-util">
+                    <!-- 문서 최상단으로 가기 버튼 -->
+                    <div class="document-top">
+                        <button data-element-id="BPG-YGYO-30-20-S-e06" type="button" class="document-top__button"><i class="icon icon--arrow_nav_cr-32_black">시작지점으로</i></button>
+                    </div>
+                </div>
+                <!-- // 2025-02-26 - [D] page-util 신규 생성 -->
+                
+                <!-- 2025-02-26 - [D] 플로팅영역 nav추가, 구조 및 클래스 변경 -->
+                <!-- 하단 플로팅 영역 -->
+                <div class="container-floating js-floating-container">
+                    <!-- 요기요 하단 네비게이션 -->
+                    
+
+<!-- 네비게이션 컨테이너 -->
+                    <nav class="navigation-container yogiyo">
+                        <!-- 홈 -->
+                        <a data-element-id="BPG-YGYO-30-20-S-e07" class="navigation__button home" data-id="bp_ygyo_main.act"><!-- [D] 선택 시 'active' 클래스 추가 -->
+                            <span>홈</span>
+                        </a>
+                        <!-- 검색 -->
+                        <a data-element-id="BPG-YGYO-30-20-S-e08" class="navigation__button search" data-id="bp_ygyo_srch_shops.act">
+                            <span>검색</span>
+                        </a>
+                        <!-- 주문내역 -->
+                        <a data-element-id="BPG-YGYO-30-20-S-e09" class="navigation__button history" data-id="bp_ygyo_purchase_info.act">
+                            <span>주문내역</span>
+                        </a>
+                        <!-- 찜 -->
+                        <a data-element-id="BPG-YGYO-30-20-S-e10" class="navigation__button favorites" data-id="bp_ygyo_fav.act">
+                            <span>찜</span>
+                        </a>
+                    </nav>
+
+                    <!-- //요기요 하단 네비게이션 -->
+                </div>
+                <!-- // 2025-02-26 - [D] 플로팅영역 nav추가, 구조 및 클래스 변경 -->
+            </div>
+            <!-- // content -->
+        </div>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+</body>
+</html>

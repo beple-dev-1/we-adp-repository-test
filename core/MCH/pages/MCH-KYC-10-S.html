@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 고객확인서 작성을 위해</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jexmd.css">
+  <link rel="stylesheet" href="../assets/js/jexjs/jex.css">
+</head>
+<body data-screen-id="MCH-KYC-10-S">
+<input type="hidden" id="fromPage" value="표본">
+<input type="hidden" id="checkboxlist" value="표본">
+<div class="wrap">
+	<div class="header intro__header">
+		<!-- <h1 class="intro__logo"><a href="#none"><img src="../assets/resource/images/logo-bzp.svg" alt="비즈플레이"></a></h1> -->
+	</div>
+	<!-- // header -->
+
+	<div class="container">
+		<div class="content">
+			<div class="new_store">
+				<div class="join_intro">
+					<div class="inner">
+						<h2>
+							가맹점 고객확인서를<br>
+							작성해 주세요
+						</h2>
+						<div class="btn_wrap">
+							<p class="btn_box"><a data-element-id="MCH-KYC-10-S-e07" id="btn_register" class="btn_default btn-style-h48 round_r8 on">고객확인서 작성하기</a></p>
+							<p class="btn_box"><a data-element-id="MCH-KYC-10-S-e08" id="btn_view_status" class="btn_default btn_line btn-style-h48 round_r8">고객확인서 수집현황</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // container -->
+
+	<!-- 가맹점 신청 하단 버튼 -->
+	<div class="intro__footer">
+		<div class="footer__inner">
+			<p class="btn_box"><a data-element-id="MCH-KYC-10-S-e05" data-nav-target="MCH-KYC-10-30-S" onclick="Common.simpleSubmit('aml_main_guide.act');" class="footer_btn"><span>고객확인서 작성안내</span></a></p>
+			<p class="btn_box"><a data-element-id="MCH-KYC-10-S-e06" data-nav-target="MCH-KYC-10-20-S" onclick="Common.simpleSubmit('aml_main_clause.act');" class="footer_btn"><span>이용약관</span></a></p>
+		</div>
+	</div>
+</div>
+<div class="container">
+		<div class="content">
+			<!-- 레이어 -->
+			<div class="layer_bPop" style="display: none;" id="agreement_popup">
+				<div class="pop_box radius_16">
+					<div class="pop_content">
+						<!-- 약관동의 -->
+						<div class="pop_content__agree">
+							<h2 class="agree__tit pdt32">
+								가맹점 고객확인서 작성을 위해<br>
+								약관에 동의해 주세요
+							</h2>
+							<p class="btn_close" id="close_agreement_popup">
+								<a href="#none"><span class="blind">닫기</span></a>
+							</p>
+							<!-- 약관동의 체크박스 -->
+							<div class="agree-wrap">
+								<!-- 전체동의 -->
+								<div class="agree all">
+									<label><input type="checkbox" id="agree_check_all"><span>약관 전체 동의</span></label>
+								</div>
+								<!-- 개별 항목 동의 -->
+								<div class="toggleWrap">
+
+									<!-- 개별동의 -->
+									<div class="agree">
+										<label>
+											<input type="checkbox" class="agree_check">
+											<span>
+												[필수] 가맹점 고객확인을 위한 개인(신용)정보 수집 이용 동의
+											</span>
+										</label>
+										<button data-id="terms_1" type="button" class="view-btn"><span class="icon arr_right-16">약관 보기</span></button>
+									</div>
+
+									<!-- 개별동의 -->
+									<div class="agree">
+										<label>
+											<input type="checkbox" class="agree_check">
+											<span>
+												[필수] 가맹점 고객확인을 위한 고유식별정보 수집 이용 동의
+											</span>
+										</label>
+										<button data-id="terms_2" type="button" class="view-btn"><span class="icon arr_right-16">약관 보기</span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="pop_button padding10 mgt32">
+						<a id="btn_agree" class="btn_default btn-style-h48 round_r8">동의하기</a>
+					</div>
+					<!-- //약관동의 -->
+				</div>
+			</div>
+			<!-- //레이어 -->
+		</div>
+	</div><!-- // container -->
+</body>
+</html>

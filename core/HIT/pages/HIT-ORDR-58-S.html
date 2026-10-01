@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>가맹점 상세 기본정보</title>
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_header.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_style.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/ent_reset.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/ent_resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/ent_resource/css/swiper.min.css">
+</head>
+<body data-screen-id="HIT-ORDR-58-S">
+<div class="wrap js-wrap" id="app">
+    <!-- 헤더 영역 -->
+    <header class="header position-sticky">
+        <!-- 헤더 네비 -->
+        <nav class="header-nav">
+            <a data-element-id="HIT-ORDR-58-S-e09" href="#none" class="hd-btn back" id="backBtn"><span class="blind-i">뒤로가기</span></a>
+        </nav>
+        <!-- 헤더 타이틀 -->
+        <div class="page-title">
+            <h1 class="header-title"></h1>
+        </div>
+    </header>
+
+    <!-- 컨텐츠 영역 -->
+    <main class="container-wrap js-container-wrap">
+        <!-- 컨테이너 -->
+        <section class="smart_oder-container">
+            <!-- 컨테이너 컨텐츠 -->
+            <article class="store-detail">
+                <div class="detail-header pdt8">
+                    <!-- 가맹점 명 -->
+                    <div class="store-box">
+                        <!--
+                            가맹점 별 아이콘 클래스 명
+                            음식점/카페		= restr
+                            농산물/청과		= agri
+                            축산물/정육		= meat
+                            수산물/횟집		= seafood
+                            식료품/반찬		= grocery
+                            학원/교육		= edu
+                            의료/보건		= medi
+                            미용/패션		= beauty
+                            가전/가구		= interior
+                            서비스업		= service
+                            기타 도/소매	= retail
+                        -->
+                        <div class="ico">
+                            <!--매장 사진 --> <!-- 빈 이미지 일 시 해당 img 태그(svg경로 포함된)와 empty 클래스 추가 / 이미지 변경 시 empty 클래스 제거 -->
+                        </div>
+                        <div class="box-con">
+                            <h2 class="name">
+                                <strong></strong> <!--매장명-->
+                            </h2>
+                            <p class="cate"></p> <!--카테고리-->
+                        </div>
+<!--                        <div class="favorite-box">
+                            <button type="button" class="favorite-btn added"><span class="blind-i">즐겨찾기</span></button>
+                        </div>-->
+                    </div>
+                    <!-- 탭박스 -->
+                    <div class="tab-box mgt18">
+                        <!--정보, 안내사항 탭 -->
+                        <div class="tab-wrap js-tab-button">
+                            <button data-element-id="HIT-ORDR-58-S-e07" type="button" class="tab-btn on"><span>기본정보</span></button>
+                            <button data-element-id="HIT-ORDR-58-S-e08" type="button" class="tab-btn"><span>안내사항</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 가맹점 상세 컨텐츠 -->
+                <!-- tab-area -->
+                <div class="detail-content tab-area js-tab-area">
+                    <!-- tab 1 - 기본정보 -->
+                    <!-- 기본정보 및 주문가능 메뉴 목록 -->
+                    <div class="tab-content tab-1 js-tab-content" style="display: block;"><!-- 활성/비활성 시 style="display: none;" 추가/제거. -->
+                        <!-- 주소 대표전화 -->
+                        <div class="content-info">
+                            <!-- 내부 컨텐츠 -->
+                            <div class="info__inner flex-row">
+                                <div class="info-hd">
+                                    <p class="detail-text head">주소</p>
+                                </div>
+                                <div class="info-con">
+                                    <p class="detail-text" id="address">
+                                    </p>
+                                    <!--<<p class="location" style="display:none;"><a href="#none" class="location-btn icon map-14">지도보기</a></p>사용 시 display:none 제거 -->
+                                </div>
+                            </div>
+                            <div class="info__inner flex-row">
+                                <div class="info-hd">
+                                    <p class="detail-text head">대표전화</p>
+                                </div>
+                                <div class="info-con">
+                                    <p class="detail-text fc-primary"><a href="" id="main-telephone-number"></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 메뉴목록 묶음 -->
+                        <div class="menu-box">
+                            <!-- 카테고리 -->
+                            <div class="categori-wrap sticky pdb10" id="category">
+                                <div class="categori__item-wrap js-indicator-btn-wrap">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- tab 2 - 안내사항 등 -->
+                    <div class="tab-content tab-2 js-tab-content" style="display: none;"><!-- 활성/비활성 시 style="display: none;" 추가/제거. -->
+                        <!-- 주소 대표전화 -->
+                        <div class="content-info">
+                            <div class="tab-content__hd">
+                                <h2 class="info-title">주문정보</h2>
+                            </div>
+                            <!-- 내부 컨텐츠 -->
+                            <div class="info__inner flex-row open-time">
+                                <div class="info-hd">
+                                    <p class="detail-text head">주문가능시간</p>
+                                </div>
+                                <div class="info-con toggle_wrap"><!-- 영업시간 클릭 시 view 클래스 추가 / 제거-->
+                                    <!-- 영업시간 -->
+                                    <button type="button" class="trigger" >
+                                        <div class="toggle_con" id="wt_info_area">
+                                        </div>
+                                        <div class="today" id="today">
+                                        </div>
+                                    </button>
+                                    <!-- // 영업시간 -->
+                                </div>
+                            </div>
+                            <div class="info__inner flex-row" id ="div_order_time">
+                                <div class="info-hd">
+                                    <p class="detail-text head">평균제조시간</p>
+                                </div>
+                                <div class="info-con tooltip-box js-tooltip-wrap">
+                                    <p class="detail-text"><button type="button" class="tooltip-btn icon info_round-22" id="order_time"></button></p>
+                                    <div class="tooltip-content" style="display: none">
+                                        평균 제조 시간은<br>
+                                        실제 제조 시간과 차이가 있을 수 있습니다.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info__inner flex-row" id ="div_odr_min_req">
+                                <div class="info-hd">
+                                    <p class="detail-text head">주문취소조건</p>
+                                </div>
+                                <div class="info-con">
+                                    <p class = "detail-text" id="odr_min_req">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info__inner flex-row" id ="div_odr_privil">
+                                <div class="info-hd">
+                                    <p class="detail-text head">주문 안내 및 혜택</p>
+                                </div>
+                                <div class="info-con ">
+                                    <div class="detail-text" id="odr_privil">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- 소개 -->
+                        <div class="content-info" id="intro_area">
+                            <div class="tab-content__hd">
+                                <h2 class="detail-text title">소개</h2>
+                            </div>
+                            <div class="info-con">
+                                <p class="detail-text" id="intro_text"><!-- sample:begin -->안내 문구<!-- sample:end --></p>
+                            </div>
+                        </div>
+                        <!-- 메뉴판 사진-->
+                        <div class="content-info" id="menu_area" style="display: none;">
+                            <div class="tab-content__hd">
+                                 <h2 class="detail-text title">메뉴판</h2>
+                            </div>
+                            <div class="info-con menu-board js-photo-item-box" id="menuboard_area">
+                            </div>
+                        </div>
+                        <!-- 매장 사진-->
+                        <div class="content-info" id="img_area" style="display: none;">
+                            <div class="tab-content__hd">
+                                <h2 class="detail-text title">사진</h2>
+                            </div>
+                            <div class="info-con menu-board js-photo-item-box" id="img_list">
+                            </div>
+                        </div>
+                        <!-- 원산지정보 -->
+                        <div class="content-info" id="origin_area">
+                            <div class="tab-content__hd">
+                                <h2 class="detail-text title">원산지 정보</h2>
+                            </div>
+                            <div class="info-con">
+                                <p class="detail-text" id="origin_info">
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 사업자정보 -->
+                        <div class="content-info">
+                            <div class="tab-content__hd">
+                                <h2 class="detail-text title width-112">사업자 정보</h2>
+                            </div>
+                            <div class="info__inner flex-row">
+                                <div class="info-hd">
+                                    <p class="detail-text head width-112">대표자명</p>
+                                </div>
+                                <div class="info-con">
+                                    <p class="detail-text" id="reprNm"></p>
+                                </div>
+                            </div>
+                            <div class="info__inner flex-row">
+                                <div class="info-hd">
+                                    <p class="detail-text head width-112">상호명</p>
+                                </div>
+                                <div class="info-con">
+                                    <p class="detail-text" id="businessShopNm"></p>
+                                </div>
+                            </div>
+                            <div class="info__inner flex-row">
+                                <div class="info-hd">
+                                    <p class="detail-text head width-112">사업자 주소</p>
+                                </div>
+                                <div class="info-con">
+                                    <p class="detail-text" id="businessAddr"></p>
+                                </div>
+                            </div>
+                            <div class="info__inner flex-row">
+                                <div class="info-hd">
+                                    <p class="detail-text head width-112">사업자등록번호</p>
+                                </div>
+                                <div class="info-con">
+                                    <p class="detail-text" id="businessNo"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <!-- 플로팅 박스 -->
+        <section class="floating-container bottom js-floating-wrap" id="btn_cover">
+            <!-- 메인 버튼영역 -->
+            <article class="main_btn-box bg-white">
+                <div class="btn-main multi-view">
+                    <a data-element-id="HIT-ORDR-58-S-e10" href="#none" class="btn-default radius-mid btn-style-h48" id="btn_ready">
+                        지금은 주문가능 시간이 아닙니다.
+                    </a>
+
+                    <a data-element-id="HIT-ORDR-58-S-e11" href="#none" class="btn-default radius-mid btn-style-h48 on" id="btn_box">
+                        <p class="amount">
+                            <span id="amount"><!-- sample:begin -->4,500<!-- sample:end --></span>원
+                        </p>
+                        <p class="more">
+                            장바구니 보기
+                            <span class="count"></span>
+                        </p>
+                    </a>
+                </div>
+            </article>
+        </section>
+        <!-- 사진상세 팝업 -->
+        <section class="photo_detail-popup"  id="img_detail_area">
+            <div class="popup_w"><!-- 기존 동일 -->
+                <div class="photo__view-box">
+                    <!-- 닫기버튼 -->
+                    <div class="btn_photo_close">
+                        <a data-element-id="HIT-ORDR-58-S-e12" href="#none" onclick="uf_hide()"><span class="blind">닫기</span></a>
+                    </div>
+                    <!-- 이미지 영역 -->
+                    <div class="swiper-container photo_w">
+                        <!-- 슬라이드 이미지 영역 -->
+                        <div class="swiper-wrapper" id="slide_area"><!-- sample:begin --><div class="swiper-slide"><div class="img"></div><div class="intro_msg">       <div class="inner"><p>안내 문구</p></div></div></div><!-- sample:end --></div>
+                        <!-- paging -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- // 사진상세 팝업 -->
+    </main>
+</div>
+</body>
+</html>

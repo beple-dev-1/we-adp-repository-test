@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>배달 현황 문의</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_ygy.css">
+  <link rel="stylesheet" href="../assets/resource/css/beple_header.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPG-COMN-20-20-10-S">
+<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>도움이 필요하신가요?</h1>
+			<a data-element-id="BPG-COMN-20-20-10-S-e04" href="#" class="btn-history-back" id="btnBack">뒤로가기</a>
+		</div>
+		<!-- // header -->
+
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<!-- 요기요 -->
+				<div class="bp-ygy add_flex_column no-vh" id='code1'>
+					<div class="cs__center more">
+						<div class="top-bx">
+							<h2 class="cs__info-tit">배달 현황 문의</h2>
+							<p class="cs__info-text">
+								비플페이 내 요기요 서비스는 현재 주문접수 여부와 배달 예상시간만 제공하고 있습니다.
+							</p>
+							<p class="cs__info-text"><strong>배달 상황이 궁금하신 경우 주문하신 가게로 문의 주시면 확인이 가능합니다.</strong></p>
+							<p class="cs__info-text">
+								가게로 직접 통화가 어려운 경우 요기요 고객센터로 문의 부탁드립니다.
+							</p>
+						</div>
+						<div class="question">
+							<ul>
+								<li class="question-item">
+									<a data-element-id="BPG-COMN-20-20-10-S-e05" onclick="callMode('C');" class="question-btn phone"><span>매장에 연락하기</span></a>
+								</li>
+								<li class="question-item">
+									<a data-element-id="BPG-COMN-20-20-10-S-e06" onclick="ygyoUrl()" class="question-btn chat"><span>요기요 채팅 상담</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="bp-ygy add_flex_column no-vh" id='code2' style="display: none">
+					<div class="cs__center more">
+						<div class="top-bx">
+							<h2 class="cs__info-tit">배달 주소 변경</h2>
+							<p class="cs__info-text">
+								매장에서 주문을 수락한 후에는 조리가 시작되어<strong> 배달 주소를 수정할 수 없습니다.</strong>
+							</p>
+				
+							<p class="cs__info-text">
+								추가 문의가 있다면 요기요 고객센터로 문의 부탁드립니다
+							</p>
+						</div>
+						<div class="question">
+							<ul>
+								<li class="question-item">
+									<a onclick="callMode('C');" class="question-btn phone"><span>매장에 연락하기</span></a>
+								</li>
+								<li class="question-item">
+									<a onclick="ygyoUrl()" class="question-btn chat"><span>요기요 채팅 상담</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="bp-ygy add_flex_column no-vh" id='code3' style="display: none">
+					<div class="cs__center more">
+						<div class="top-bx">
+							<h2 class="cs__info-tit">요청사항 수정</h2>
+							<p class="cs__info-text">
+								매장에서 주문을 수락한 후에는<strong> 요청사항을 수정할 수 없습니다.</strong>
+							</p>
+				
+							<p class="cs__info-text">
+								추가 문의가 있다면 매장에 연락해 주세요. 가게로 직접 통화가 어려운 경우 요기요 고객센터로 문의 부탁드립니다.
+							</p>
+						</div>
+						<div class="question">
+							<ul>
+								<li class="question-item">
+									<a onclick="callMode('C');" class="question-btn phone"><span>매장에 연락하기</span></a>
+								</li>
+								<li class="question-item">
+									<a onclick="ygyoUrl()" class="question-btn chat"><span>요기요 채팅 상담</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="bp-ygy add_flex_column no-vh" id='code4' style="display: none">
+					<div class="cs__center more">
+						<div class="top-bx">
+							<h2 class="cs__info-tit">메뉴/수량 변경</h2>
+							<p class="cs__info-text">
+								매장에서 주문을 수락한 후에는 조리가 시작되어<strong> 메뉴 및 수량 변경이 어렵습니다.</strong>
+							</p>
+				
+							<p class="cs__info-text">
+								메뉴를 추가하실 경우에는 재 주문 및 결제 부탁드립니다.
+							</p>
+						</div>
+						<div class="question">
+							<ul>
+								<li class="question-item">
+									<a onclick="callMode('C');" class="question-btn phone"><span>매장에 연락하기</span></a>
+								</li>
+								<li class="question-item">
+									<a onclick="ygyoUrl()"  class="question-btn chat"><span>요기요 채팅 상담</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="bp-ygy add_flex_column no-vh" id='code5' style="display: none">
+					<div class="cs__center more type2">
+						<div class="top-bx">
+							<h2 class="cs__info-tit">기타문의</h2>
+							<p class="cs__info-text">
+								<strong>주문취소/환불 문의</strong><br>
+								연중무휴 24시간
+							</p>
+						</div>
+						<div class="question">
+							<ul>
+								<li class="question-item">
+									<a onclick="callMode('A');" class="question-btn phone"><span>요기요 전화 상담</span></a>
+								</li>
+								<li class="question-item">
+									<a onclick="ygyoUrl()"  class="question-btn chat"><span>요기요 채팅 상담</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="cs__center more type2">
+						<div class="top-bx">
+							<p class="cs__info-text">
+								<strong>앱서비스/식권 관련 문의</strong><br>
+								평일 9:00~18:00 / 주말. 공휴일 휴무
+							</p>
+						</div>
+						<div class="question">
+							<ul>
+								<li class="question-item">
+									<a onclick="callMode('B');" class="question-btn phone"><span>비플 전화 상담</span></a>
+								</li>
+								<li class="question-item">
+									<a class="question-btn chat" id='bepleChat'><span>비플 채팅 상담</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // content -->
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+</body>
+</html>

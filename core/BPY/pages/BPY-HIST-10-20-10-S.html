@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>브랜드상품권 구매내역 상세조회 (info)</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-HIST-10-20-10-S">
+<!-- wrap -->
+	<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<h1>상품권 내역 상세</h1>
+			<a data-element-id="BPY-HIST-10-20-10-S-e09" onclick="uf_back();" class="btn-history-back">뒤로가기</a>
+		</div><!-- // header -->
+
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div class="content">
+				<div class="br_gift_rn bg_f7">
+					<!-- 구매 상세 -->
+					<div class="buy_detail">
+						<!--
+							적용예시 = class="top_bx use"
+
+							사용가능 	= ""
+							사용완료	= use
+							선물 		= present
+							기간만료	= end
+							환불완료	= refund
+						-->
+											
+						<div class="top_bx">
+					
+							<!-- 상품(권) 이미지 & 권종 명 및 금액 -->
+							<div class="img_bx">
+								<div class="inner">
+									<p class="img">
+										<a><img alt="" src="../assets/_sample/card.svg"></a>
+									</p>
+									<p class="stemp">
+										<span class="blind"></span>
+									</p>
+								</div>
+							</div>
+							<!-- 권종 명 및 금액 -->
+							<div class="name_bx">
+								<p class="brand">비플머니</p>
+								<p class="gift_name">
+									<a>비플머니</a>
+								</p>
+							
+								<p class="balance">잔액 <span>4,500</span>원</p>
+							
+							</div>
+						</div>
+						<!-- 정보영역 -->
+						<div class="info_view">
+							<div class="inner">
+								<dl>
+									<dt>상품권 번호</dt>
+									<dd><button id="copyButton" type="button" class="copy_btn"><span></span></button></dd><!-- 2024-04-05 -->
+								</dl>
+								<dl>
+									<dt>구매가격</dt>
+									<dd>4,500</dd>
+								</dl>
+								<dl>
+									<dt>발행일자</dt>
+									<dd>2026.09.02</dd>
+								</dl>
+								<dl>
+									<dt>유효기간</dt>
+									<dd class="expired">2026.09.02</dd><!-- 기한 만료 임박 시 class="expired" 추가 -->
+								</dl>
+								
+							
+								<dl>
+									<dt>비플머니</dt>
+									<dd></dd>
+								</dl>
+							
+							</div>
+						</div>
+
+						<!-- 토글영역 -->
+						<!-- 구매/선물/환불 내역 -->
+						<div class="dtl_history toggle_wrap">
+							<p class="trigger"><a>구매/선물/환불 내역</a></p>
+							<div class="history_con toggle_con" id="hist_area">
+								<ul>
+								
+									<li data-orderId="">
+										<div class="inner">
+										
+											<p class=""><span class="blind">비플머니</span></p>
+											<div class="status_w">
+												<p class="status"><span title="비플머니">비플머니</span>&nbsp;<strong>비플머니</strong></p>
+												<p class="date">2026.09.02</p>
+											</div>
+											<!-- 2023.03.14 경남은행 브랜드상품권 수정 사항 적용 
+											 <p class="bal">4,500원</p> 
+											-->
+											
+												<p class="bal">4,500원</p>
+											
+										</div>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+						<!-- 2023-03-31 -->
+						<!-- 상품 고시조건 및 거래조건 -->
+						<div class="dtl_notice toggle_wrap">
+							<p class="trigger"><a data-element-id="BPY-HIST-10-20-10-S-e10" href="#none">상품권 상세</a></p>
+							<div class="notice_con toggle_con">
+								<div class="inner">
+									<div class="info-box">
+										<h3 class="info-tit">기본정보</h3>
+										<div class="info-con">
+											
+											<div>
+												<p class="con-tit">상품권 소개</p>
+												<p></p>
+											</div>
+											
+											<div>
+												<p class="con-tit">상품권 종류</p>
+												<p>비플머니</p>
+											</div>
+											<div>
+												<p class="con-tit">사용 유효기간</p>
+												<p>구매일로부터 일</p>
+											</div>
+											
+											<div>
+												<p class="con-tit">사용가능 매장</p>
+												<p>
+													
+												</p>
+											</div>
+											
+										</div>
+									</div>
+									
+									<div class="info-box">
+										<h3 class="info-tit">유의사항</h3>
+										<div class="info-con">
+											<p>
+												
+											</p>
+										</div>
+									</div>
+									
+									<div class="info-box">
+										<h3 class="info-tit">상품 필수 표기 정보</h3>
+										<div class="info-con">
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //2023-03-31 -->
+						
+						<!-- 하단 버튼 -->
+					
+						<div class="btn_bottom"> 
+						
+							<a data-element-id="BPY-HIST-10-20-10-S-e11" onClick="uf_sendGift();">해당 금액권 선물하기</a>
+						
+							<a data-element-id="BPY-HIST-10-20-10-S-e08" onclick="uf_btnAction();">유효기간 연장</a>
+						
+							<a data-element-id="BPY-HIST-10-20-10-S-e12" onclick="uf_btnAction('Y');">환불</a>
+						
+						</div>
+					
+						<!-- //하단 버튼 -->						
+						
+					</div>
+					<!-- //구매 상세 -->
+				</div>
+
+				<!-- 하단 고정버튼 영역 -->
+				<div id="toastBox" class="btn_botFix_w" style="display: none;">
+					<!-- 토스트 메세지 -->
+					<div class="toast-container"><!-- 토스트메세지 노출 시 style="display:block;" -->
+						<p class="toast-text"><!-- 토스트메세지 노출 시 style="display:block;" -->
+							<span class="icon chk-round-18">상품권 번호 복사되었습니다.</span>
+						</p>
+					</div>
+				</div>
+				<!-- // 2024-04-05 -->
+				
+			</div>
+			<!-- // content -->
+
+		</div>
+		<!-- // container -->
+	</div>
+	<!-- // wrap -->
+
+<!-- layer_overlay -->
+<div class="layer_overlay" id="refund_noti_popup" style="display: none;">
+	<!-- layerpopup -->
+	<div class="popup_w">
+		<div class="popup_con">
+			<!-- 안내팝업_type2 -->
+			<div class="temp info_pop type2">
+				<div class="icon notice">안내사항</div>
+				<h2 class="ly_pop_tit">환불 안내</h2>
+				<!-- 텍스트 입력 -->
+				<div class="inner">
+					<p>
+						
+					</p>
+				</div>
+				<!-- //텍스트 입력 -->
+				<!-- 버튼영역 -->
+				<div class="ly_pop_btw btn_full type2">
+					<a id="refund_noti_popup_close" class="typeA">확인</a>
+				</div>
+				<!-- //버튼영역 -->
+			</div>
+			<!-- //안내팝업_type2 -->
+		</div>
+	</div>
+	<!-- //layerpopup -->
+</div>
+<!-- //layer_overlay -->
+</body>
+</html>
