@@ -6118,7 +6118,7 @@
 - `zstore_list`
 <!-- classes:end -->
 
-## 목업이 쓰는데 소스 css 에 선택자가 없는 이름 (56종)
+## 목업이 쓰는데 소스 css 에 선택자가 없는 이름 (58종)
 
 > 사실만 적는다. 「쓰지 마라」인지 「아직 판정 전」인지는 사람이 정한다.
 
@@ -6166,6 +6166,7 @@
 - `js-tooltip__content`
 - `mg110`
 - `more_buttons_add`
+- `original`
 - `period_tab`
 - `progress_state`
 - `reg_no`
@@ -6175,6 +6176,7 @@
 - `selection_box`
 - `state_tab`
 - `store_list`
+- `supOrgLi`
 - `terms`
 - `toggle_con2`
 - `tran_item`

@@ -14,10 +14,8 @@ id: HIT-COMN-20-20-S / system: HIT / 기능: 힛플러스 > 공통 > 알림·공
 - 요소: 화면 / 업무: 제로페이 상품권 플랫폼 분기 / 처리: 읽기·쓰기 / 테이블: TB_ACCOUNT, TB_BANK, TB_ZEROPAY_BANK, TB_MEMBER, TB_MEMBER_APP / 입력: CHNL_CD / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_gift_multi.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/zpp/zero_gift_multi_act.jsp:19 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ACCOUNT_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R026.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_U023.xml:10
 
 --- 정의 ---
-- 구분: 기능 / 좌표: id=share_close / 라벨: 팝업닫기 / 앵커: HIT-COMN-20-20-S-e05 / 해설: 팝업닫기
 - 구분: 기능 / 좌표: id=back_btn / 라벨: 뒤로가기 / 앵커: HIT-COMN-20-20-S-e06 / 해설: 뒤로가기
 - 구분: 기능 / 좌표: id=share_btn / 라벨: 공유하기 / 앵커: HIT-COMN-20-20-S-e07 / 해설: 공유하기
-- 구분: 기능 / 좌표: - / 라벨: URL복사 / 앵커: HIT-COMN-20-20-S-e08 / 해설: URL복사
 
 --- 원본 글 ---
 > 역추출 소스: BIZ_ZEROPAY/web/view/jex/biz_zeropay/ent/main/ent_notice_list_view.jsp

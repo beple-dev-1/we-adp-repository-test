@@ -28,7 +28,15 @@
         <!-- 컨텐츠 영역 -->
         <main class="container-wrap">
             <section class="notice_list" id="notice_area">
-                <ul id="notice_list"><!-- sample:begin -->표본<!-- sample:end --></ul>
+                <ul id="notice_list"><!-- sample:begin --><li class="original supOrgLi" style="">
+                        <a>
+                            <div class="msg">표본 항목</div>
+                        </a>
+                    </li><li class="original supOrgLi" style="">
+                        <a>
+                            <div class="msg">표본 항목</div>
+                        </a>
+                    </li><!-- sample:end --></ul>
             </section>
             <section class="end-container content-none" id="no_list" style="display: none;">
 				<article class="end__item-wrap">
@@ -88,7 +96,7 @@
         </main>
     </div>       
        
-    <div class="wrap js-wrap" id="share_div">
+    <div class="wrap js-wrap" id="share_div" style="display: none;">
         <!-- 컨텐츠 영역 -->
         <main class="container-wrap js-container-wrap">
         <!-- 레이어팝업 -->
@@ -104,11 +112,11 @@
                     <article class="share">
                         <!-- 공유하기 목록 -->
                         <ul class="share_list">
-                            <li  id="shareLink"><a data-element-id="HIT-COMN-20-20-S-e08" href="#none" class="on"><img src="../assets/ent_resource/img/icon/ico_copy.png" alt="">URL복사</a></li><!-- 선택 시 클래스 on -->
+                            <li  id="shareLink"><a href="#none" class="on"><img src="../assets/ent_resource/img/icon/ico_copy.png" alt="">URL복사</a></li><!-- 선택 시 클래스 on -->
                         </ul>
                     </article>
                     <!-- 닫기버튼 -->
-                    <p class="close_btn-box"><button data-element-id="HIT-COMN-20-20-S-e05" id="share_close" type="button" class="close-btn icon close-14"><span class="blind-i">팝업닫기</span></button></p>
+                    <p class="close_btn-box"><button id="share_close" type="button" class="close-btn icon close-14"><span class="blind-i">팝업닫기</span></button></p>
                 </div>
             </div>
         </section>
