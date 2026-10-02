@@ -1,0 +1,233 @@
+{
+ "declaration": {
+  "declaration": "기획: BIZ_ZEROPAY r126218 · last-changed r126218 · svn status -q 0줄 = 5e70439 를 굽던 때와 같음(10-02 기획 확인)",
+  "initAt": "2026-10-02 13:10",
+  "kind": "사람 선언 init",
+  "svnDirtyLines": 0,
+  "svnLastChanged": "126218",
+  "svnRevision": "126218"
+ },
+ "schema": 1,
+ "screens": {
+  "MGC-COMN-10-10-10-S": {
+   "digest": "f2c40db5deacfbfbdd39c83b02e286bcbf6623b27f75ecb9f20cd21a3d50b6ab",
+   "files": {
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/inc/view/inc_view_bottom_view.jsp": "ce192586686414812a257155a6a75f2e246255601024c3d442afbff0a4f6ac10",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/inc/view/inc_view_header_view.jsp": "04c2c1ae9e8f79c89d58ce38424512d30076de691ceba24a640a6afd8e307c5f",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0010_view.jsp": "5df5be44732455118f137f1af3833540b91ccf20e164750ceb1024ae8e9b3770",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0010.js": "a2410042a9a95285cea02f6e96ab56ccc676477a2bf01c32c2290967d6521562",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/event.css": "5d3b833a3f4a38a8847d11980c9fd3b300ffd9e7e4acbeb79476b350e3f8d93a",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/normalize.css": "2d6e540b946ffaedf270c1fdb7da05e67383a11c91b977d39c14925caf895151",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/style.css": "81559d572ae830265d390bbd662ef755795a8cc72a6cf3f4abb961e83d06f29a",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/swiper.min.css": "1fdb4225f0b9c5996aa7a0050057ef042110981c3a956ce0616f8bac83c1eaa8",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/zero.css": "c6d84fe2126ca634e627e35cae084ae24a6935a7866bf5812986bab8cfa01d30",
+    "BIZ_ZEROPAY_STATIC/web/resource/slick/slick-theme.css": "176c73bb63643040dcac166d3302d91e0005d7bf4e3b8998d5e260861fdd141c",
+    "BIZ_ZEROPAY_STATIC/web/resource/slick/slick.css": "d917660c3d6f7aad32ebc4b0012c6d0bb84a13e201a012e334bcca4b9f4686c9"
+   },
+   "jsp": "CLAULIST0010"
+  },
+  "MGC-COMN-10-10-20-S": {
+   "digest": "192e7923ddfa9473cb486b22bffe6077ee0b664756cd1089572dcb87d906cb16",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0011_view.jsp": "d4e4b8fdec5c50de48037d21910c1e123bdef922fac3b5bc3511ca0e122430f9",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0011.js": "318eff51e0a81cba276ae8fd90f9eeb9cc17cad0e9daaf3f722792b35be9c062",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "CLAULIST0011"
+  },
+  "MGC-COMN-10-10-30-S": {
+   "digest": "eb14452895f2cb68ae9a37cf0f14ad549f2ac500420f3c839e99711b23b09c40",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0012_view.jsp": "b87ed25d9ce467708646f686f38f02f8f918ad37d7bc2b43e17261481492ce1e",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0012.js": "ef2016acd339f5d228edb519638bc411ebe9b748da4ff3ea121a45b4df0595dc",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "CLAULIST0012"
+  },
+  "MGC-COMN-10-10-40-S": {
+   "digest": "265635060e988353c50f38844d3a225d88f23e843bc099d8482cade4e86fe223",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0013_view.jsp": "00e7866ee9d93d190f43641afc9c00db02b3cdacc07bfdd76f5e97c4b9b4dc92",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0013.js": "58c656aeaeb2833dbc8fe97a89177e77538c0b147a84d2c9e2c4f958511c4c8b",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "CLAULIST0013"
+  },
+  "MGC-COMN-10-10-S": {
+   "digest": "71cd8c2c2690ebe5066d0156051c013177f1eea4632847d58f255504ef0e52b2",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0000_view.jsp": "3bcebcc038cc75a6fe3de89e528fa974320bd9e8eeb605b22509cc4cf1e39f1c",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0000.js": "ffeea6ec63b1f5c93f1a4c9dab40ff2c80dcd866a001638c32a85d637d11412c",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "CLAULIST0000"
+  },
+  "MGC-COMN-20-10-S": {
+   "digest": "8b61164d1909e64f5a5cf5276ab8225141dec93c1112b03776018efbb0986160",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/main/cscenter/CSCENTER0000_view.jsp": "ce9de144a6bd7733380c195d8118857d800dc4d6e1c4cd6dc96032270e6fdc48",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/main/cscenter/CSCENTER0000.js": "64ac5828234c031fd587653fe2296ee3198887de303f62330b0d0a8da55bbe7e",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "CSCENTER0000"
+  },
+  "MGC-GIFT-10-S": {
+   "digest": "0dca2569e37b7024c7c934ae84394fc43a8b073e472de7a113aae95859053061",
+   "files": {
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/inc/view/inc_view_header_view.jsp": "04c2c1ae9e8f79c89d58ce38424512d30076de691ceba24a640a6afd8e307c5f",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/zero/zpp/zero_gift_join_view.jsp": "cad28794e29e8ee86e38288a6ba147efa7ee41ae97d1d2973da0b6a57cc806d6",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/zero/zpp/zero_gift_join.js": "d6443994a9fa8eeeafa9aee439f90d9a17c2372aac8660b0f6380abc53157b14",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/event.css": "5d3b833a3f4a38a8847d11980c9fd3b300ffd9e7e4acbeb79476b350e3f8d93a",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/normalize.css": "2d6e540b946ffaedf270c1fdb7da05e67383a11c91b977d39c14925caf895151",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/style.css": "81559d572ae830265d390bbd662ef755795a8cc72a6cf3f4abb961e83d06f29a",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/swiper.min.css": "1fdb4225f0b9c5996aa7a0050057ef042110981c3a956ce0616f8bac83c1eaa8",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/zero.css": "c6d84fe2126ca634e627e35cae084ae24a6935a7866bf5812986bab8cfa01d30",
+    "BIZ_ZEROPAY_STATIC/web/resource/slick/slick-theme.css": "176c73bb63643040dcac166d3302d91e0005d7bf4e3b8998d5e260861fdd141c",
+    "BIZ_ZEROPAY_STATIC/web/resource/slick/slick.css": "d917660c3d6f7aad32ebc4b0012c6d0bb84a13e201a012e334bcca4b9f4686c9"
+   },
+   "jsp": "zero_gift_join"
+  },
+  "MGC-GIFT-20-S": {
+   "digest": "5937f77322806e56de7d5a274e13a7778dcc52e383adfb87ca0072bf52a18a81",
+   "files": {
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/inc/view/inc_view_bottom_view.jsp": "ce192586686414812a257155a6a75f2e246255601024c3d442afbff0a4f6ac10",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/inc/view/inc_view_header_view.jsp": "04c2c1ae9e8f79c89d58ce38424512d30076de691ceba24a640a6afd8e307c5f",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/zero/zpp/zero_gift_purchase_view.jsp": "ef9a07909de8357aff510cec6b8db86ca1bf18db3023a371d3e3499907c3637e",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/zero/zpp/zero_gift_purchase.js": "fd98591df7cd1673b917df7aaac0b8f967300342446bf8133188b9c623cfc4b3",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/event.css": "5d3b833a3f4a38a8847d11980c9fd3b300ffd9e7e4acbeb79476b350e3f8d93a",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/normalize.css": "2d6e540b946ffaedf270c1fdb7da05e67383a11c91b977d39c14925caf895151",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/style.css": "81559d572ae830265d390bbd662ef755795a8cc72a6cf3f4abb961e83d06f29a",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/swiper.min.css": "1fdb4225f0b9c5996aa7a0050057ef042110981c3a956ce0616f8bac83c1eaa8",
+    "BIZ_ZEROPAY_STATIC/web/resource/css/zero.css": "c6d84fe2126ca634e627e35cae084ae24a6935a7866bf5812986bab8cfa01d30",
+    "BIZ_ZEROPAY_STATIC/web/resource/slick/slick-theme.css": "176c73bb63643040dcac166d3302d91e0005d7bf4e3b8998d5e260861fdd141c",
+    "BIZ_ZEROPAY_STATIC/web/resource/slick/slick.css": "d917660c3d6f7aad32ebc4b0012c6d0bb84a13e201a012e334bcca4b9f4686c9"
+   },
+   "jsp": "zero_gift_purchase"
+  },
+  "MGC-HIST-10-S": {
+   "digest": "1f2106f19467dfc84dd1b95253e5e39f4290f619008fa3a4d90082d0300165a4",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/main/tranhist/TRANHIST0000_view.jsp": "ac3d370e0eea10a9ef493547367813e610d84859fb8a24d75bcf08f931add53b",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/main/tranhist/TRANHIST0000.js": "1b6467523d6d2a237e14d7acdb4d2ea42a50f335d337a0b517c5c85bac463c0a",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "TRANHIST0000"
+  },
+  "MGC-LGFT-10-10-10-S": {
+   "digest": "068faec4a095c3b2923c182d0294df509d34c664c0996d94a726b56bad038ca8",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/afltsrch/AFLTSRCH0000_view.jsp": "0a02f1813ddf39c3d28533c3f645645f7ab733ddfa150cdb19bd3e24231253a9",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/afltsrch/AFLTSRCH0000.js": "b75f3e7aef5dc32ec9a1c4b7c5989c8fd26285a7ad2f707dd2bdcef93e9262ee",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "AFLTSRCH0000"
+  },
+  "MGC-LGFT-10-10-20-S": {
+   "digest": "f0fd8a26458df881db4d46d379615a78790a58cf2bf44807bb4ba580841d00f8",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/afltsrch/AFLTSRCH0020_view.jsp": "68efefaad6fa68a770a84865cad6ad9b47ceb27b10a6722951aa7eab41c7276b",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/afltsrch/AFLTSRCH0020.js": "0811347b5d0bf8db73b585f3b461f157870086c6e4f990b7f5cdd02e2397179e",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "AFLTSRCH0020"
+  },
+  "MGC-LGFT-10-10-30-S": {
+   "digest": "d09d97116e4f53574d6a20731b94c3a5963bd2043aa2ffd3f122980899f0ee64",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/afltsrch/AFLTSRCH0030_view.jsp": "e6eae4dc721d23b4e70fff1b3ace2612f5a198435994535fb7cf631b1760ae73",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/afltsrch/AFLTSRCH0030.js": "a6922b0293ddfe7014df9c01e197c0e132c28b4c2dd9a4ed03787aba7e353171",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "AFLTSRCH0030"
+  },
+  "MGC-LGFT-10-10-40-S": {
+   "digest": "fbf60f1f7c54b5e40a47de0b9cc47bd0a10c8aded0821936c529a36530ee4f95",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/afltsrch/AFLTSRCH0040_view.jsp": "8db04c72e7971a78fcc39d495cf1d7319089d9aa4ba5e44d2435614388b1e21c",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/afltsrch/AFLTSRCH0040.js": "7e9aa9a64bc3f7739e7b0808b83f5262e97809db6b82c8697560ae2dc405cdd9",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "AFLTSRCH0040"
+  },
+  "MGC-LGFT-10-10-S": {
+   "digest": "1b00ea9fc43d6bffdfb3980ae24f2b41f06e8606c67b7a7d73d1692444fc022e",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/afltsrch/AFLTSRCH0010_view.jsp": "eb927b8f17196d9bc79b64c269c350cce16085ed9e0f26d41389b0e1de62bc6d",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/afltsrch/AFLTSRCH0010.js": "f968935a9651c3f8ecd3f5b5eb108bb7d4a05c2c6a015d4747609e5afa5da6e9",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "AFLTSRCH0010"
+  },
+  "MGC-LGFT-20-20-S": {
+   "digest": "ed6790832a6425ee2e8c8218a922dcfb4e53394d25b016ee191f7b9cd59301a3",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/link/BKW_LINK_view.jsp": "fa9bd9602faacf76ad342dd7c89f55dba17eafc6ee0093ec1dbc24790ebafb1e",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/link/BKW_LINK.js": "c9abbcc2707a038c9cd721598a65d90ceff149abe89e0a8fc8b489f10db95d10",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "BKW_LINK"
+  },
+  "MGC-LGFT-20-30-S": {
+   "digest": "7c495c9290256f884b5b595d539537d7c9868704659a19a7cb7b52c97827e781",
+   "files": {
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_bottom.jsp": "cdf03257249713f73de217ed785ac116940c92ce582235a83ce901d12237393e",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_head.jsp": "3fddf57bdccaff60020e46b42b796097134147d6e3c5f4b05dc8739681f4d783",
+    "BIZ_ZEROPAY/web/common/include/view/inc_view_header.jsp": "73b052e838085e3092b8704acc316fdd992e13a798bd0d7ed24a1f0497885dd7",
+    "BIZ_ZEROPAY/web/view/jex/biz_zeropay/localgift/exte/ZMAP_LANDING_view.jsp": "b2a0826f933a19fe1381b49d7fe32ac6bcbe0d67f8689c2f8cb2fe5e98742089",
+    "BIZ_ZEROPAY_STATIC/web/js/jex/biz_zeropay/localgift/exte/ZMAP_LANDING.js": "a7778cc9dc83c1d4da4368072c723975b2cf427d773a01889619f88c66b8da47",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/common.css": "a7b02f25f3f6750cc4d7209acfd78da0a7ea6ddcd20b5c7392f2dc9cc534a5be",
+    "BIZ_ZEROPAY_STATIC/web/localgift/css/zeropay_local.css": "a0430851a29512eb0d64e3962ac50e91443ebf8b5ba88685aca6292a05676c70"
+   },
+   "jsp": "ZMAP_LANDING"
+  }
+ },
+ "system": "MGC"
+}
