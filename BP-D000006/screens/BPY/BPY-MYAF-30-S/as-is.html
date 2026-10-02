@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>tb_affiliation_my_news_info 조회</title>
+  <link rel="stylesheet" href="../assets/resource/css/style.css">
+  <link rel="stylesheet" href="../assets/resource/css/zero.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick-theme.css">
+  <link rel="stylesheet" href="../assets/resource/slick/slick.css">
+  <link rel="stylesheet" href="../assets/resource/css/event.css">
+  <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+</head>
+<body data-screen-id="BPY-MYAF-30-S">
+<div class="wrap">
+		<div class="header floating-back-header floating-sticky">
+			<a data-element-id="BPY-MYAF-30-S-e02" class="btn-history-back type2" id="back">뒤로가기</a>
+			<h1>가맹점 소식 관리</h1>
+		</div><!-- // header -->
+		<div class="container">
+			<!-- content -->
+			<div class="contents flexWrap no_vh">
+				<!-- 단골상품권 -->
+				<div class="regular">
+					<div class="regular__store-container addBtn-pb58">
+						<!-- 가맹점 소식관리 -->
+						<div class="noti-admin" style="display: none">
+							<!-- 소식 -->
+							<div class="admin__item" id="sample_row" style="display: none">
+								<div class="item-header">
+									<!-- 소식 - 정보 -->
+									<div class="item-header__info">
+										<p class="date" id="REG_DTTM"></p>
+										<p class="state" id="OPEN_YN"></p>
+									</div>
+									<!-- 수정, 삭제 버튼 -->
+									<div class="item-header__util">
+										<p class="modify-btn"><button>수정</button></p>
+										<p class="del-btn"><button>삭제</button></p>
+									</div>
+								</div>
+								<!-- 제목 및 내용 -->
+								<div class="item-content">
+									<h2 class="item-content__tit" id="NEWS_TITLE"></h2>
+									<p class="item-content__text" id="NEWS_CONTENT"></p>
+								</div>
+							</div>
+							
+						</div>
+						<p class="list-more" style="display: none"><!-- 활성화 시 display:none; 제거 -->
+							<button data-element-id="BPY-MYAF-30-S-e01" type="button" class="more-btn">
+								<span class="icon arr_bottom2-14">다음 소식보기</span>
+							</button>
+						</p>
+						
+						<!-- 등록된 게시글 없음 -->
+						<div class="content-none"><!-- 목록 모두 없을 시 all-none 클래스 추가 -->
+							<p>
+								등록된 소식이 없습니다.<br>
+								고객에게 새로운 소식을 전해보세요.
+							</p>
+						</div>
+					</div>
+					<!-- // 상품권 구매하기 -->
+					<!-- 하단 고정버튼 영역 -->
+					<div class="btn_botFix_w auto-bottom-space"><!-- 활성화 시 style=display:block; -->
+						<div class="inner bg_white">
+							<a data-element-id="BPY-MYAF-30-S-e03" id="new_reg_btn" class="btn_default btn-style-h48 round_r8 on">새로운 소식 등록하기</a><!-- 비활성 시 on 클래스 제거 -->
+						</div>
+					</div>
+				</div>
+				<!-- //단골상품권 -->
+			</div>
+			<!-- //content -->
+		</div><!-- // container -->
+	</div><!-- // wrap -->
+</body>
+</html>

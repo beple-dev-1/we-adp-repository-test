@@ -1,0 +1,33 @@
+{
+  "specVersion": 3,
+  "request": {
+    "label": "BP-D000006",
+    "groupCode": "BP",
+    "revision": 1,
+    "asIsCommit": "346afeadc6426ba7e937a378c2f630675d8d8c1b",
+    "toBeCommit": "8210c0de0d42c0dc5b5d591ac6d729dad4adf1a6"
+  },
+  "screens": [
+    {
+      "systemCode": "BPY",
+      "screenId": "BPY-MYAF-30-S",
+      "displayName": "tb_affiliation_my_news_info 조회",
+      "newScreen": false,
+      "files": [
+        {"path": "screens/BPY/BPY-MYAF-30-S/as-is.html", "kind": "as-is-html", "sha256": "1ad4dd5aa59dc8d86036a04ab77c67dd7b150a3aef9b0f2e25252ffb1bcd1212"},
+        {"path": "screens/BPY/BPY-MYAF-30-S/as-is.md", "kind": "as-is-md", "sha256": "7644c83a95cafd4bc09d319318a5f7522fe9875103595d303e5d571b2d78a376"},
+        {"path": "screens/BPY/BPY-MYAF-30-S/to-be.html", "kind": "to-be-html", "sha256": "5d629823eb31f028fc45b6491f671a2890e8f984a1376ec4ad51cac7973ed45d"},
+        {"path": "screens/BPY/BPY-MYAF-30-S/to-be.md", "kind": "to-be-md", "sha256": "53a670c9b188d23c3f98140d8c6b59845eec6cf891dc41dfe321c6fe80662300"},
+        {"path": "screens/BPY/BPY-MYAF-30-S/changes.md", "kind": "changes", "sha256": "e1084e83b00c92dd0a318911e01e192c0bb04a77d2a47b8944420df12ffee543"}
+      ]
+    }
+  ],
+  "assetRoots": [{"systemCode": "BPY", "from": "core/BPY/assets"}],
+  "expectedBack": {
+    "returnBranch": "feedback/BPY/BP-D000006",
+    "base": "346afeadc6426ba7e937a378c2f630675d8d8c1b",
+    "screens": [{"screenId": "BPY-MYAF-30-S", "system": "BPY", "required": ["pages", "screen-md", "index"]}],
+    "domains": [{"target": "가맹점 소식 조회 API (my_aflt_news_list_r001)", "change": "변경 없음. 안내 문구는 화면에서 고정 출력하며 API 응답과 관계없음."}],
+    "tests": {"unit": [], "integration": ["TC-001", "TC-002", "TC-003"]}
+  }
+}
