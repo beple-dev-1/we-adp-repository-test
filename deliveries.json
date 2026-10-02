@@ -51,6 +51,20 @@
     "screens" : [ "BPY-MYAF-30-S" ],
     "sentAt" : "2026-09-28T22:49:39.136443900Z",
     "sendKey" : "485e4fc9-f460-4749-a663-158cf612e312"
+  }, {
+    "specVersion" : 3,
+    "dr" : "BP-D000006",
+    "groupCode" : "BP",
+    "revision" : 1,
+    "type" : "FRD",
+    "status" : "sent",
+    "branch" : "dr/BPY/BP-D000006",
+    "commit" : "31054451c04e7b337169551bc6245ced573154c4",
+    "base" : "346afeadc6426ba7e937a378c2f630675d8d8c1b",
+    "system" : "BPY",
+    "screens" : [ "BPY-MYAF-30-S" ],
+    "sentAt" : "2026-10-02T00:44:44.315919900Z",
+    "sendKey" : "3199ae5a-f943-4061-b518-2111fc57a180"
   } ],
   "specVersion" : 3
 }
