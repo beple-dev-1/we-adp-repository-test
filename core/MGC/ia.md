@@ -26,7 +26,6 @@
 - MGC/LGFT/10/10/30: 가맹점 정보
 - MGC/LGFT/10/10/40: 최근 검색 위치
 - MGC/LGFT/20: 진입·연결
-- MGC/LGFT/20/10: 지역상품권 Gateway
 - MGC/LGFT/20/20: 지역사랑상품권 링크 연결
 - MGC/LGFT/20/30: 지도 페이지 이동 랜딩
 
@@ -39,20 +38,19 @@
 - 순서: 006 / 경로: MGC/LGFT/10/10/30 / 화면: MGC-LGFT-10-10-30-S
 - 순서: 007 / 경로: MGC/LGFT/10/10/40 / 화면: MGC-LGFT-10-10-40-S
 - 순서: 008 / 경로: MGC/LGFT/20 / 화면:
-- 순서: 009 / 경로: MGC/LGFT/20/10 / 화면: MGC-LGFT-20-10-S
-- 순서: 010 / 경로: MGC/LGFT/20/20 / 화면: MGC-LGFT-20-20-S
-- 순서: 011 / 경로: MGC/LGFT/20/30 / 화면: MGC-LGFT-20-30-S
-- 순서: 012 / 경로: MGC/COMN / 화면:
-- 순서: 013 / 경로: MGC/COMN/10 / 화면:
-- 순서: 014 / 경로: MGC/COMN/10/10 / 화면: MGC-COMN-10-10-S
-- 순서: 015 / 경로: MGC/COMN/10/10/10 / 화면: MGC-COMN-10-10-10-S
-- 순서: 016 / 경로: MGC/COMN/10/10/20 / 화면: MGC-COMN-10-10-20-S
-- 순서: 017 / 경로: MGC/COMN/10/10/30 / 화면: MGC-COMN-10-10-30-S
-- 순서: 018 / 경로: MGC/COMN/10/10/40 / 화면: MGC-COMN-10-10-40-S
-- 순서: 019 / 경로: MGC/COMN/20 / 화면:
-- 순서: 020 / 경로: MGC/COMN/20/10 / 화면: MGC-COMN-20-10-S
-- 순서: 021 / 경로: MGC/GIFT / 화면:
-- 순서: 022 / 경로: MGC/GIFT/10 / 화면: MGC-GIFT-10-S
-- 순서: 023 / 경로: MGC/GIFT/20 / 화면: MGC-GIFT-20-S
-- 순서: 024 / 경로: MGC/HIST / 화면:
-- 순서: 025 / 경로: MGC/HIST/10 / 화면: MGC-HIST-10-S
+- 순서: 009 / 경로: MGC/LGFT/20/20 / 화면: MGC-LGFT-20-20-S
+- 순서: 010 / 경로: MGC/LGFT/20/30 / 화면: MGC-LGFT-20-30-S
+- 순서: 011 / 경로: MGC/COMN / 화면:
+- 순서: 012 / 경로: MGC/COMN/10 / 화면:
+- 순서: 013 / 경로: MGC/COMN/10/10 / 화면: MGC-COMN-10-10-S
+- 순서: 014 / 경로: MGC/COMN/10/10/10 / 화면: MGC-COMN-10-10-10-S
+- 순서: 015 / 경로: MGC/COMN/10/10/20 / 화면: MGC-COMN-10-10-20-S
+- 순서: 016 / 경로: MGC/COMN/10/10/30 / 화면: MGC-COMN-10-10-30-S
+- 순서: 017 / 경로: MGC/COMN/10/10/40 / 화면: MGC-COMN-10-10-40-S
+- 순서: 018 / 경로: MGC/COMN/20 / 화면:
+- 순서: 019 / 경로: MGC/COMN/20/10 / 화면: MGC-COMN-20-10-S
+- 순서: 020 / 경로: MGC/GIFT / 화면:
+- 순서: 021 / 경로: MGC/GIFT/10 / 화면: MGC-GIFT-10-S
+- 순서: 022 / 경로: MGC/GIFT/20 / 화면: MGC-GIFT-20-S
+- 순서: 023 / 경로: MGC/HIST / 화면:
+- 순서: 024 / 경로: MGC/HIST/10 / 화면: MGC-HIST-10-S

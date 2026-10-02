@@ -54,7 +54,7 @@
 					</header>
 
 					<!-- 컨테이너 바디 -->
-					<section class="pay-history__body" id="tran_list_content"><!-- [D] 목록 없을 시 display: none; -->
+					<section class="pay-history__body" id="tran_list_content" style="display:none;"><!-- [D] 목록 없을 시 display: none; -->
                         <!-- 결제내역 -->
                         <div class="pay-history__wrap" id="tran_list">
 
@@ -75,10 +75,10 @@
 
                                         <!-- 결제내역 -->
                                         <div class="column__item" id="sample_item"><!-- [D] 결제 취소 시 item--cancel 클래스 추가. -->
-                                            <a data-element-id="BPY-HIST-50-S-e11" class="flex-column">
+                                            <a data-element-id="BPY-HIST-50-S-e13" class="flex-column">
                                                 <div class="item__header">
                                                     <p class="info__text--lv2 item__title ellipsis-line--1" id="aflt_nm"></p>
-                                                    <p class="info__text--lv2 item__price"><strong id="price"></strong>원</p>
+                                                    <p class="info__text--lv2 item__price"><strong id="price">15,000</strong>원</p>
                                                 </div>
                                                 <div class="item__details">
                                                     <div class="status">
@@ -98,8 +98,8 @@
                         </div>
 
                         <!-- 더보기 버튼 -->
-                        <div class="mgt16 justify-spacing-def" id="btn_more">
-                            <a data-element-id="BPY-HIST-50-S-e12" href="#none" class="button button-mid button--more">
+                        <div class="mgt16 justify-spacing-def" id="btn_more" style="display:none;">
+                            <a href="#none" class="button button-mid button--more">
                                 <span>더보기</span><i class="icon icon--arrow-16 pointer-bottom"></i>
                             </a>
                         </div>

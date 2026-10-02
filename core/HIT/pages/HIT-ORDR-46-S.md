@@ -8,9 +8,6 @@ id: HIT-ORDR-46-S / system: HIT / 기능: 힛플러스 > 스마트오더 > 스�
 --- IA ---
 - 종류: 화면 / 상위화면:
 
---- 업무 ---
-- 요소: 화면 / 업무: 스마트오더 임직원 DID 인증 QR 생성 / 처리: 읽기·쓰기 / 테이블: TB_BP_QR_MNG / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.bp_order_did_auth_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/bpp/smartorder/bp_order_did_auth_r001_act.jsp:27 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_QR_MNG_R002.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_QR_MNG_C001.xml:10
-
 --- 정의 ---
 - 구분: 기능 / 좌표: id=go_back / 라벨: 뒤로가기 / 앵커: HIT-ORDR-46-S-e03 / 해설: 뒤로가기
 - 구분: 기능 / 좌표: id=reset_btn / 라벨: 새로고침 / 앵커: HIT-ORDR-46-S-e04 / 해설: 새로고침

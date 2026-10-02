@@ -22,7 +22,6 @@
 - MCH/AFLT/80/10/10: 약관동의
 - MCH/AFMG: 가맹점 관리
 - MCH/AFMG/10: 가맹점 인증
-- MCH/AFMG/10/10: 가맹점관리
 - MCH/AFMG/10/20: 다수 가맹점 선택
 - MCH/AFMG/20: 가맹점관리 > 결제내역
 - MCH/AFMG/30: 가맹점 설정
@@ -35,7 +34,6 @@
 - MCH/COMN/10: 약관
 - MCH/COMN/10/10: 온라인가맹점신청 이용약관
 - MCH/COMN/20: 검색
-- MCH/COMN/20/10: 주소검색
 - MCH/COMN/20/20: 업종검색
 - MCH/COMN/30: 고객센터
 - MCH/COMN/30/10: 가맹점서비스 QnA
@@ -74,77 +72,73 @@
 - MCH/KYC/50/10: 사업자 번호 확인
 - MCH/KYC/50/10/10: 고객확인서등록_작성완료
 - MCH/KYC/60: 고객확인서등록_대리인정보입력
-- MCH/KYC/70: 고객확인서등록_실패
 
 --- 배치 ---
-- 순서: 001 / 경로: MCH/KYC / 화면:
-- 순서: 002 / 경로: MCH/KYC/10 / 화면: MCH-KYC-10-S
-- 순서: 003 / 경로: MCH/KYC/10/10 / 화면: MCH-KYC-10-10-S
-- 순서: 004 / 경로: MCH/KYC/10/10/10 / 화면: MCH-KYC-10-10-10-S
-- 순서: 005 / 경로: MCH/KYC/10/10/20 / 화면: MCH-KYC-10-10-20-S
-- 순서: 006 / 경로: MCH/KYC/10/20 / 화면: MCH-KYC-10-20-S
-- 순서: 007 / 경로: MCH/KYC/10/30 / 화면: MCH-KYC-10-30-S
-- 순서: 008 / 경로: MCH/KYC/20 / 화면: MCH-KYC-20-S
-- 순서: 009 / 경로: MCH/KYC/20/10 / 화면: MCH-KYC-20-10-S
-- 순서: 010 / 경로: MCH/KYC/30 / 화면: MCH-KYC-30-S
-- 순서: 011 / 경로: MCH/KYC/40 / 화면: MCH-KYC-40-S
-- 순서: 012 / 경로: MCH/KYC/40/10 / 화면: MCH-KYC-40-10-S
-- 순서: 013 / 경로: MCH/KYC/50 / 화면: MCH-KYC-50-S
-- 순서: 014 / 경로: MCH/KYC/50/10 / 화면: MCH-KYC-50-10-S
-- 순서: 015 / 경로: MCH/KYC/50/10/10 / 화면: MCH-KYC-50-10-10-S
-- 순서: 016 / 경로: MCH/KYC/60 / 화면: MCH-KYC-60-S
-- 순서: 017 / 경로: MCH/KYC/70 / 화면: MCH-KYC-70-S
-- 순서: 018 / 경로: MCH/KSQR / 화면:
-- 순서: 019 / 경로: MCH/KSQR/10 / 화면: MCH-KSQR-10-S
-- 순서: 020 / 경로: MCH/KSQR/10/10 / 화면: MCH-KSQR-10-10-S
-- 순서: 021 / 경로: MCH/KSQR/10/20 / 화면: MCH-KSQR-10-20-S
-- 순서: 022 / 경로: MCH/KSQR/10/20/10 / 화면: MCH-KSQR-10-20-10-S
-- 순서: 023 / 경로: MCH/KSQR/20 / 화면: MCH-KSQR-20-S
-- 순서: 024 / 경로: MCH/KSQR/20/10 / 화면: MCH-KSQR-20-10-S
-- 순서: 025 / 경로: MCH/KSQR/20/20 / 화면: MCH-KSQR-20-20-S
-- 순서: 026 / 경로: MCH/KSQR/30 / 화면: MCH-KSQR-30-S
-- 순서: 027 / 경로: MCH/KSQR/30/10 / 화면: MCH-KSQR-30-10-S
-- 순서: 028 / 경로: MCH/KSQR/40 / 화면: MCH-KSQR-40-S
-- 순서: 029 / 경로: MCH/KSQR/50 / 화면: MCH-KSQR-50-S
-- 순서: 030 / 경로: MCH/KSQR/60 / 화면: MCH-KSQR-60-S
-- 순서: 031 / 경로: MCH/KSQR/70 / 화면: MCH-KSQR-70-S
-- 순서: 032 / 경로: MCH/KSQR/80 / 화면: MCH-KSQR-80-S
-- 순서: 033 / 경로: MCH/KSQR/80/10 / 화면: MCH-KSQR-80-10-S
-- 순서: 034 / 경로: MCH/KSQR/80/10/10 / 화면: MCH-KSQR-80-10-10-S
-- 순서: 035 / 경로: MCH/AFLT / 화면:
-- 순서: 036 / 경로: MCH/AFLT/10 / 화면: MCH-AFLT-10-S
-- 순서: 037 / 경로: MCH/AFLT/10/10 / 화면: MCH-AFLT-10-10-S
-- 순서: 038 / 경로: MCH/AFLT/10/10/10 / 화면: MCH-AFLT-10-10-10-S
-- 순서: 039 / 경로: MCH/AFLT/20 / 화면: MCH-AFLT-20-S
-- 순서: 040 / 경로: MCH/AFLT/20/10 / 화면: MCH-AFLT-20-10-S
-- 순서: 041 / 경로: MCH/AFLT/20/20 / 화면: MCH-AFLT-20-20-S
-- 순서: 042 / 경로: MCH/AFLT/30 / 화면: MCH-AFLT-30-S
-- 순서: 043 / 경로: MCH/AFLT/30/10 / 화면: MCH-AFLT-30-10-S
-- 순서: 044 / 경로: MCH/AFLT/40 / 화면: MCH-AFLT-40-S
-- 순서: 045 / 경로: MCH/AFLT/50 / 화면: MCH-AFLT-50-S
-- 순서: 046 / 경로: MCH/AFLT/60 / 화면: MCH-AFLT-60-S
-- 순서: 047 / 경로: MCH/AFLT/70 / 화면: MCH-AFLT-70-S
-- 순서: 048 / 경로: MCH/AFLT/80 / 화면: MCH-AFLT-80-S
-- 순서: 049 / 경로: MCH/AFLT/80/10 / 화면: MCH-AFLT-80-10-S
-- 순서: 050 / 경로: MCH/AFLT/80/10/10 / 화면: MCH-AFLT-80-10-10-S
-- 순서: 051 / 경로: MCH/AFMG / 화면:
-- 순서: 052 / 경로: MCH/AFMG/10 / 화면: MCH-AFMG-10-S
-- 순서: 053 / 경로: MCH/AFMG/10/10 / 화면: MCH-AFMG-10-10-S
-- 순서: 054 / 경로: MCH/AFMG/10/20 / 화면: MCH-AFMG-10-20-S
-- 순서: 055 / 경로: MCH/AFMG/20 / 화면: MCH-AFMG-20-S
-- 순서: 056 / 경로: MCH/AFMG/30 / 화면: MCH-AFMG-30-S
-- 순서: 057 / 경로: MCH/AFMG/30/10 / 화면: MCH-AFMG-30-10-S
-- 순서: 058 / 경로: MCH/AFMG/30/20 / 화면: MCH-AFMG-30-20-S
-- 순서: 059 / 경로: MCH/AFMG/40 / 화면: MCH-AFMG-40-S
-- 순서: 060 / 경로: MCH/AFMG/40/10 / 화면: MCH-AFMG-40-10-S
-- 순서: 061 / 경로: MCH/AFMG/40/20 / 화면: MCH-AFMG-40-20-S
-- 순서: 062 / 경로: MCH/COMN / 화면:
-- 순서: 063 / 경로: MCH/COMN/10 / 화면:
-- 순서: 064 / 경로: MCH/COMN/10/10 / 화면: MCH-COMN-10-10-S
-- 순서: 065 / 경로: MCH/COMN/20 / 화면:
-- 순서: 066 / 경로: MCH/COMN/20/10 / 화면: MCH-COMN-20-10-S
-- 순서: 067 / 경로: MCH/COMN/20/20 / 화면: MCH-COMN-20-20-S
-- 순서: 068 / 경로: MCH/COMN/30 / 화면:
-- 순서: 069 / 경로: MCH/COMN/30/10 / 화면: MCH-COMN-30-10-S
-- 순서: 070 / 경로: MCH/COMN/40 / 화면:
-- 순서: 071 / 경로: MCH/COMN/40/10 / 화면: MCH-COMN-40-10-S
+- 순서: 001 / 경로: MCH/KSQR / 화면:
+- 순서: 002 / 경로: MCH/KSQR/10 / 화면: MCH-KSQR-10-S
+- 순서: 003 / 경로: MCH/KSQR/10/10 / 화면: MCH-KSQR-10-10-S
+- 순서: 004 / 경로: MCH/KSQR/10/20 / 화면: MCH-KSQR-10-20-S
+- 순서: 005 / 경로: MCH/KSQR/10/20/10 / 화면: MCH-KSQR-10-20-10-S
+- 순서: 006 / 경로: MCH/KSQR/20 / 화면: MCH-KSQR-20-S
+- 순서: 007 / 경로: MCH/KSQR/20/10 / 화면: MCH-KSQR-20-10-S
+- 순서: 008 / 경로: MCH/KSQR/20/20 / 화면: MCH-KSQR-20-20-S
+- 순서: 009 / 경로: MCH/KSQR/30 / 화면: MCH-KSQR-30-S
+- 순서: 010 / 경로: MCH/KSQR/30/10 / 화면: MCH-KSQR-30-10-S
+- 순서: 011 / 경로: MCH/KSQR/40 / 화면: MCH-KSQR-40-S
+- 순서: 012 / 경로: MCH/KSQR/50 / 화면: MCH-KSQR-50-S
+- 순서: 013 / 경로: MCH/KSQR/60 / 화면: MCH-KSQR-60-S
+- 순서: 014 / 경로: MCH/KSQR/70 / 화면: MCH-KSQR-70-S
+- 순서: 015 / 경로: MCH/KSQR/80 / 화면: MCH-KSQR-80-S
+- 순서: 016 / 경로: MCH/KSQR/80/10 / 화면: MCH-KSQR-80-10-S
+- 순서: 017 / 경로: MCH/KSQR/80/10/10 / 화면: MCH-KSQR-80-10-10-S
+- 순서: 018 / 경로: MCH/KYC / 화면:
+- 순서: 019 / 경로: MCH/KYC/10 / 화면: MCH-KYC-10-S
+- 순서: 020 / 경로: MCH/KYC/10/10 / 화면: MCH-KYC-10-10-S
+- 순서: 021 / 경로: MCH/KYC/10/10/10 / 화면: MCH-KYC-10-10-10-S
+- 순서: 022 / 경로: MCH/KYC/10/10/20 / 화면: MCH-KYC-10-10-20-S
+- 순서: 023 / 경로: MCH/KYC/10/20 / 화면: MCH-KYC-10-20-S
+- 순서: 024 / 경로: MCH/KYC/10/30 / 화면: MCH-KYC-10-30-S
+- 순서: 025 / 경로: MCH/KYC/20 / 화면: MCH-KYC-20-S
+- 순서: 026 / 경로: MCH/KYC/20/10 / 화면: MCH-KYC-20-10-S
+- 순서: 027 / 경로: MCH/KYC/30 / 화면: MCH-KYC-30-S
+- 순서: 028 / 경로: MCH/KYC/40 / 화면: MCH-KYC-40-S
+- 순서: 029 / 경로: MCH/KYC/40/10 / 화면: MCH-KYC-40-10-S
+- 순서: 030 / 경로: MCH/KYC/50 / 화면: MCH-KYC-50-S
+- 순서: 031 / 경로: MCH/KYC/50/10 / 화면: MCH-KYC-50-10-S
+- 순서: 032 / 경로: MCH/KYC/50/10/10 / 화면: MCH-KYC-50-10-10-S
+- 순서: 033 / 경로: MCH/KYC/60 / 화면: MCH-KYC-60-S
+- 순서: 034 / 경로: MCH/AFLT / 화면:
+- 순서: 035 / 경로: MCH/AFLT/10 / 화면: MCH-AFLT-10-S
+- 순서: 036 / 경로: MCH/AFLT/10/10 / 화면: MCH-AFLT-10-10-S
+- 순서: 037 / 경로: MCH/AFLT/10/10/10 / 화면: MCH-AFLT-10-10-10-S
+- 순서: 038 / 경로: MCH/AFLT/20 / 화면: MCH-AFLT-20-S
+- 순서: 039 / 경로: MCH/AFLT/20/10 / 화면: MCH-AFLT-20-10-S
+- 순서: 040 / 경로: MCH/AFLT/20/20 / 화면: MCH-AFLT-20-20-S
+- 순서: 041 / 경로: MCH/AFLT/30 / 화면: MCH-AFLT-30-S
+- 순서: 042 / 경로: MCH/AFLT/30/10 / 화면: MCH-AFLT-30-10-S
+- 순서: 043 / 경로: MCH/AFLT/40 / 화면: MCH-AFLT-40-S
+- 순서: 044 / 경로: MCH/AFLT/50 / 화면: MCH-AFLT-50-S
+- 순서: 045 / 경로: MCH/AFLT/60 / 화면: MCH-AFLT-60-S
+- 순서: 046 / 경로: MCH/AFLT/70 / 화면: MCH-AFLT-70-S
+- 순서: 047 / 경로: MCH/AFLT/80 / 화면: MCH-AFLT-80-S
+- 순서: 048 / 경로: MCH/AFLT/80/10 / 화면: MCH-AFLT-80-10-S
+- 순서: 049 / 경로: MCH/AFLT/80/10/10 / 화면: MCH-AFLT-80-10-10-S
+- 순서: 050 / 경로: MCH/AFMG / 화면:
+- 순서: 051 / 경로: MCH/AFMG/10 / 화면: MCH-AFMG-10-S
+- 순서: 052 / 경로: MCH/AFMG/10/20 / 화면: MCH-AFMG-10-20-S
+- 순서: 053 / 경로: MCH/AFMG/30 / 화면: MCH-AFMG-30-S
+- 순서: 054 / 경로: MCH/AFMG/30/10 / 화면: MCH-AFMG-30-10-S
+- 순서: 055 / 경로: MCH/AFMG/30/20 / 화면: MCH-AFMG-30-20-S
+- 순서: 056 / 경로: MCH/AFMG/20 / 화면: MCH-AFMG-20-S
+- 순서: 057 / 경로: MCH/AFMG/40 / 화면: MCH-AFMG-40-S
+- 순서: 058 / 경로: MCH/AFMG/40/10 / 화면: MCH-AFMG-40-10-S
+- 순서: 059 / 경로: MCH/AFMG/40/20 / 화면: MCH-AFMG-40-20-S
+- 순서: 060 / 경로: MCH/COMN / 화면:
+- 순서: 061 / 경로: MCH/COMN/10 / 화면:
+- 순서: 062 / 경로: MCH/COMN/10/10 / 화면: MCH-COMN-10-10-S
+- 순서: 063 / 경로: MCH/COMN/20 / 화면:
+- 순서: 064 / 경로: MCH/COMN/20/20 / 화면: MCH-COMN-20-20-S
+- 순서: 065 / 경로: MCH/COMN/30 / 화면:
+- 순서: 066 / 경로: MCH/COMN/30/10 / 화면: MCH-COMN-30-10-S
+- 순서: 067 / 경로: MCH/COMN/40 / 화면:
+- 순서: 068 / 경로: MCH/COMN/40/10 / 화면: MCH-COMN-40-10-S

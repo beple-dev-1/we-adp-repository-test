@@ -8,10 +8,8 @@ id: BPG-COMN-10-20-S / system: BPG / 기능: 비플PG > 공통 > 약관 > 가맹
 --- IA ---
 - 종류: 화면 / 상위화면:
 
---- 업무 ---
-- 요소: 화면 / 업무: 요기요_약관정보_조회 / 처리: 읽기 / 테이블: TB_CLAUSE / 입력: 이용기관ID, 약관 코드 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.bp_ygyo_clause_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/bpp/bp_ygyo_clause_r001_act.jsp:24 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CLAUSE_YGYO_CLAUSE_R001.xml:10
-
 --- 정의 ---
+- 구분: 이동 / 좌표: - / 라벨: 확인 / 앵커: BPG-COMN-10-20-S-e01 / 이동: BPG-YGYO-30-S / 해설: 확인
 
 --- 원본 글 ---
 > 역추출 소스: BIZ_ZEROPAY/web/view/jex/biz_zeropay/bpp/bp_ygyo_clause_detail_view.jsp

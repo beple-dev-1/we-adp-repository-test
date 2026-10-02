@@ -7677,7 +7677,7 @@
 - `zstore_list`
 <!-- classes:end -->
 
-## 목업이 쓰는데 소스 css 에 선택자가 없는 이름 (104종)
+## 목업이 쓰는데 소스 css 에 선택자가 없는 이름 (103종)
 
 > 사실만 적는다. 「쓰지 마라」인지 「아직 판정 전」인지는 사람이 정한다.
 
@@ -7766,7 +7766,6 @@
 - `popup-box`
 - `popup__text`
 - `radius-mid`
-- `reOder`
 - `receipt-container`
 - `receipt-share`
 - `receipt-text`

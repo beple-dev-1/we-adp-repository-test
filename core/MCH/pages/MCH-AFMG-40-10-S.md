@@ -8,9 +8,6 @@ id: MCH-AFMG-40-10-S / system: MCH / 기능: 가맹점관리 > 가맹점 관리 
 --- IA ---
 - 종류: 화면 / 상위화면: MCH-AFMG-40-S
 
---- 업무 ---
-- 요소: MCH-AFMG-40-10-S-e13, MCH-AFMG-40-10-S-e14 / 업무: 가맹점관리 > 직원 정보 수정 / 처리: 미확인 / 입력: MDN, STATUS, MEMO, 가맹점 ID, 직원명 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_aflt_wrk_chg_u001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/main/zero_aflt_wrk_chg_u001_act.jsp:25
-
 --- 정의 ---
 - 구분: 기능 / 좌표: - / 라벨: 페이지나가기 / 앵커: MCH-AFMG-40-10-S-e11 / 해설: 페이지나가기
 - 구분: 기능 / 좌표: - / 라벨: 사용중지 / 앵커: MCH-AFMG-40-10-S-e12 / 해설: 사용중지

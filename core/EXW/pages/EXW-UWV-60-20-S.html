@@ -65,10 +65,10 @@
 					<header id="lmt_info_area" class="container__header">
 						<div class="headline">
 							<!-- [D] 이미지 미사용 시 주석 또는 이미지 태그 삭제 -->
-							 <img alt="" class="head-image" src="../assets/_sample/card.svg"> 
+							 <img style="max-width:100%;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTVlNWU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJNYWxndW4gR290aGljLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM5YTlhOWEiPuydtOuvuOyngDwvdGV4dD48L3N2Zz4=" alt="" class="head-image"> 
 							<p class="head-text">
 								<span class="method-name" id="lmt_nm"><!-- sample:begin -->홍길동<!-- sample:end --></span>
-								<span class="method-amount" id="lmt_amt"><!-- sample:begin -->4,500<!-- sample:end --></span>
+								<span class="method-amount" id="lmt_amt"><!-- sample:begin -->15,000<!-- sample:end --></span>
 							</p>
 						</div>
 					</header>
@@ -78,7 +78,7 @@
 						<div class="body__content">
 							<!-- 결제 매장 -->
 							<h2 class="pay-store">
-								<span class="store" id="aflt_nm"><!-- sample:begin -->홍길동<!-- sample:end --></span>
+								<span class="store" id="aflt_nm"><!-- sample:begin -->비플카페 강남점<!-- sample:end --></span>
 							</h2>
 							<!-- 결제금액 -->
 							<div class="pay-amount">
@@ -89,8 +89,8 @@
 								
 								<!-- 금액 입력 - [D] 금액 미입력/전체 제거 시 display: none; 추가 -->
 								<div id="input_amount_area" class="amount" style="display: none;">
-									<p class="amount-value js-amount-value"></p>
-									<p class="amount-text">원</p>
+									<p class="amount-value js-amount-value"><!-- sample:begin -->13,500원<!-- sample:end --></p>
+									<p class="amount-text">15,000원</p>
 								</div>
 								
 								<!-- 경고메세지 - [D] 안내사항 있으 시 노출 / [D] 금액 미입력/ 전체 제거 시 display: none; 추가 -->
@@ -120,13 +120,13 @@
 								<tbody>
 									<tr>
 										<th><p>보유 비플머니</p></th>
-										<td><p class="fw-600" id="cur_mny"><!-- sample:begin -->표본<!-- sample:end --></p></td>
+										<td><p class="fw-600" id="cur_mny"><!-- sample:begin -->4,500<!-- sample:end --></p></td>
 									</tr>
 									<tr>
 										<th><p>자동충전 계좌</p></th>
 										<td>
 											<p>
-												<button data-element-id="EXW-UWV-60-20-S-e01" id="mny_acct_info" type="button" class="flex-row align-center button js-popup-open" data-modal="popup-select--bank"><!-- sample:begin -->표본<!-- sample:end --></button>
+												<button data-element-id="EXW-UWV-60-20-S-e01" id="mny_acct_info" type="button" class="flex-row align-center button js-popup-open" data-modal="popup-select--bank"><!-- sample:begin -->국민은행 123-456-789012<!-- sample:end --></button>
 											</p>
 										</td>
 									</tr>
@@ -193,7 +193,7 @@
 							<i class="icon icon--arrow-16"></i>
 						</a>
 					</div>
-					<div class="flex-column justify-spacing-def pdt8" id="mny_acct_list"><!-- sample:begin --><button data-text="안내 문구" data-bank-nm="국민은행" data-dec-acct-no="1234-56-789012" data-acct-no="1234-56-789012" data-bank-cd="004" type="button" class="acct_item select__button js-select-content js-popup-close "><span>안내 문구</span><i class="icon icon--check-24_primary"></i></button><!-- sample:end --></div>
+					<div class="flex-column justify-spacing-def pdt8" id="mny_acct_list"><!-- sample:begin --><button data-text="" data-bank-nm="국민은행" data-dec-acct-no="1234-56-789012" data-acct-no="1234-56-789012" data-bank-cd="004" type="button" class="acct_item select__button js-select-content js-popup-close "><span><!-- sample:begin -->국민은행 123-456-789012<!-- sample:end --></span><i class="icon icon--check-24_primary"></i></button><button data-text="" data-bank-nm="국민은행" data-dec-acct-no="1234-56-789012" data-acct-no="1234-56-789012" data-bank-cd="004" type="button" class="acct_item select__button js-select-content js-popup-close "><span></span><i class="icon icon--check-24_primary"></i></button><!-- sample:end --></div>
 				</section>
 			</div>
 		</div>		
@@ -204,16 +204,16 @@
 		<section class="popup-container popup--bottom popup-payment--confirm">
 			<header class="popup-container__header">
 				<h3 class="headline-text">
-					<span id="title_aflt_nm"><!-- sample:begin -->안내<!-- sample:end --></span>에서<br>
-					<strong><span id="title_pay_amt"><!-- sample:begin -->4,500<!-- sample:end --></span>원</strong> 결제하시겠습니까?
+					<span id="title_aflt_nm"><!-- sample:begin -->비플카페 강남점<!-- sample:end --></span>에서<br>
+					<strong><span id="title_pay_amt"><!-- sample:begin -->13,500<!-- sample:end --></span>원</strong> 결제하시겠습니까?
 				</h3>
 
 				<div class="headline" id="req_lmt_info_area">
 					<!-- [D] 이미지 미사용 시 주석 또는 이미지 태그 삭제 -->
-					<img alt="" class="head-image" src="../assets/_sample/card.svg">
+					<img style="max-width:100%;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTVlNWU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJNYWxndW4gR290aGljLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM5YTlhOWEiPuydtOuvuOyngDwvdGV4dD48L3N2Zz4=" alt="" class="head-image">
 					<p class="head-text">
 						<span class="method-name" id="req_lmt_nm"><!-- sample:begin -->홍길동<!-- sample:end --></span>
-						<strong class="method-amount"><span id="req_lmt_amt"><!-- sample:begin -->4,500<!-- sample:end --></span> 원</strong>
+						<strong class="method-amount"><span id="req_lmt_amt"><!-- sample:begin -->15,000<!-- sample:end --></span> 원</strong>
 					</p>
 				</div>
 			</header>
@@ -232,7 +232,7 @@
 										<p>보유 비플머니</p>
 									</th>
 									<td>
-										<p id="req_cur_mny"><!-- sample:begin -->표본<!-- sample:end --></p>
+										<p id="req_cur_mny"><!-- sample:begin -->4,500<!-- sample:end --></p>
 									</td>
 								</tr>
 								<tr>
@@ -240,7 +240,7 @@
 										<p>충전 비플머니</p>
 									</th>
 									<td>
-										<p id="req_chrg_mny"><!-- sample:begin -->표본<!-- sample:end --></p>
+										<p id="req_chrg_mny"><!-- sample:begin -->4,500<!-- sample:end --></p>
 									</td>
 								</tr>
 								<tr>
@@ -248,7 +248,7 @@
 										<p>자동충전 계좌</p>
 									</th>
 									<td>
-										<p id="req_mny_acct"><!-- sample:begin -->표본<!-- sample:end --></p>
+										<p id="req_mny_acct"><!-- sample:begin -->국민은행 123-456-789012<!-- sample:end --></p>
 									</td>
 								</tr>
 							</tbody>

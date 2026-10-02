@@ -8,9 +8,6 @@ id: HIT-MBO-10-50-10-S / system: HIT / 기능: 힛플러스 > 점주 백오피�
 --- IA ---
 - 종류: 화면 / 상위화면:
 
---- 업무 ---
-- 요소: HIT-MBO-10-50-10-S-e16 / 업무: 현대차 엔터프라이즈 PC 스마트오더 가맹점주 거래내역 조회 / 처리: 읽기 / 테이블: TB_ENT_CORP_SITE, TB_CTGR_CATG_CD, TB_CTGR_CATG, TB_BPPAY_TRAN, TB_BP_AFLT_ODR, TB_MEMBER_ENT_APP … / 입력: START_DATE, END_DATE, STR_TIME, END_TIME, 거래구문 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ent_afltbo_odr_tran_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/afltbo/ent_afltbo_odr_tran_r001_act.jsp:24 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BPPAY_TRAN_R017.xml:10
-
 --- 정의 ---
 - 구분: 기능 / 좌표: id=tran_type / 라벨: 전체 / 앵커: HIT-MBO-10-50-10-S-e12 / 해설: 전체
 - 구분: 기능 / 좌표: - / 라벨: 결제 / 앵커: HIT-MBO-10-50-10-S-e13 / 해설: 결제

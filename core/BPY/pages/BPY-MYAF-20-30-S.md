@@ -8,9 +8,6 @@ id: BPY-MYAF-20-30-S / system: BPY / 기능: 비플페이 앱 > MY 가맹점 > M
 --- IA ---
 - 종류: 화면 / 상위화면: BPY-MYAF-20-S
 
---- 업무 ---
-- 요소: BPY-MYAF-20-30-S-e09 / 업무: MY 가맹점 영업시간 등록/수정 정보 반영 / 처리: 읽기·쓰기 / 테이블: TB_AFFILIATION_MY_WT_INFO_HIST, TB_AFFILIATION_MY_WT_INFO, TEMP, TB_AFFILIATION_MY, TB_AFFILIATION_MY_DETAIL, TB_MEMBER_APP … / 입력: DAY_INFO, 가맹점ID, ETC_INFO / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.my_aflt_update_wt_c001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/my_aflt_update_wt_c001_act.jsp:32 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_WT_INFO_HIST_C001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_WT_INFO_C001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MY_R007.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ALARM_INFO_R001.xml:10
-
 --- 정의 ---
 - 구분: 기능 / 좌표: id=btn_back / 라벨: 뒤로가기 / 앵커: BPY-MYAF-20-30-S-e06 / 해설: 뒤로가기
 - 구분: 기능 / 좌표: - / 라벨: 휴무일 / 앵커: BPY-MYAF-20-30-S-e07 / 해설: 휴무일

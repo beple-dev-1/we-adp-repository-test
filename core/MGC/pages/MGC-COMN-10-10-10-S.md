@@ -8,9 +8,6 @@ id: MGC-COMN-10-10-10-S / system: MGC / 기능: 모바일상품권 > 공통 > �
 --- IA ---
 - 종류: 화면 / 상위화면: MGC-COMN-10-10-S
 
---- 업무 ---
-- 요소: 화면 / 업무: 이용약관 상세조회 (화면) / 처리: 읽기 / 테이블: TB_CLAUSE / 입력: 거래구분, 거래번호 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.CLAULIST0010.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/localgift/conf/claulist/CLAULIST0010_act.jsp:24 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CLAUSE_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CLAUSE_R007.xml:10
-
 --- 정의 ---
 - 구분: 기능 / 좌표: - / 라벨: 상위메뉴로 이동 / 앵커: MGC-COMN-10-10-10-S-e03 / 해설: 상위메뉴로 이동
 - 구분: 기능 / 좌표: - / 라벨: > 확인 / 앵커: MGC-COMN-10-10-10-S-e04 / 해설: > 확인

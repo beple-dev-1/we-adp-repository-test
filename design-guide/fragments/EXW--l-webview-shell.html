@@ -1,140 +1,547 @@
 <div class="dg-body"><div class="wrap">
 		
-		<div class="container">
+		<header class="header position-sticky">
+			<div class="header__title-wrap">
+				<h1 class="page-name"><span>본인인증</span></h1>
+			</div>
+			<nav class="header__navi">
+				<a href="#none" class="header__btn btn-close" id="btnClose">
+					<span class="blind">닫기</span>
+				</a>
+			</nav>
+		</header>
+
+		
+		<main class="container-wrap js-container-wrap">
 			
-			<div class="content">
-				<div class="br_gift_rn add_flex_column addBtn-pb58 addNav">
-					<div class="product">
-						
-						<div class="img_bx"><img alt="" src="../assets/_sample/card.svg"></div>
-						
-						<div class="info_bx label_special">
+			<div id="step_cert">
+			
+			<section class="page-header justify-spacing-def pdt24">
+				<article class="page-header__content flex-column gap-16">
+					<div class="page-header__headline-wrap">
+						<h2 class="flex-row">
 							
-							<p class="brand">
-								비플머니
-								
-									<span class="label">특가상품</span>
-								
+							<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="1">
+								주민등록번호를<br>
+								입력해 주세요
 							</p>
-							
-							<p class="name">비플머니</p>
-							
-							<p class="price">
-							
-							
-								<span class="discount">%</span>
-								<strong>4,500<span class="won">원</span></strong>
-								<span class="price_original">4,500원</span>
-							
+							<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="2" style="display:none;">
+								통신사를<br>
+								선택해 주세요
 							</p>
-						</div>
-						
-						
-						<div class="detail_info_bx">
-							<div class="tab_menu">
-								<a data-element-id="EXW-BRWV-10-10-10-S-e01" href="#none" class="on"><span>기본정보</span></a>
-								<a data-element-id="EXW-BRWV-10-10-10-S-e02" href="#none"><span>안내사항</span></a>
-							</div>
-							<div class="tab_wrap">
+							<p class="page__headline page__headline--lv1 fw-600 js-step-headline" data-step="5" style="display:none;">
+								이메일을<br>
+								입력해 주세요
+							</p>
+						</h2>
+					</div>
+				</article>
+			</section>
+
+			
+			<section class="container js-container justify-spacing-def pdt32">
+				<article class="container__body">
+					<div class="body__content">
+						<div class="flex-column">
+							
+
+							
+							
+							<div id="info_div" class="form-box js-form-box gap-32">
 								
-								<div class="def_info on">
-									<dl>
-										<dt>상품권 소개</dt>
-										<dd></dd>
-									</dl>
-									<dl>
-										<dt>상품권 종류</dt>
-										<dd>비플머니</dd>
-									</dl>
-									<dl>
-										<dt>사용 유효기간</dt>
-										<dd>구매일로부터 일</dd>
-									</dl>
-									<dl>
-										<dt>사용가능 매장</dt>
-										<dd>
-											<ul>
-												<li></li>
-											</ul>
-										</dd>
-									</dl>
+								
+								<div class="form__item js-form-item js-require item--disabled">
+									<div class="form__item-header input-line--header">
+										<h3 class="form__label container__headline container__headline--lv1">
+											<label>휴대폰번호</label>
+										</h3>
+									</div>
+
+									<div class="form__item-wrap">
+										<div class="input-type--line js-phone-number">
+											<input id="mob_no" type="tel" value="010-1234-5678" placeholder="휴대폰번호" maxlength="13" inputmode="numeric" readonly>
+										</div>
+										<p class="fs-13" style="margin-top:8px;color:var(--color-gray--lv6);">에이블리에서 전달받은 번호라 수정할 수 없어요</p>
+									</div>
 								</div>
+
 								
-								<div class="noti">
-									<dl>
-										<dt>유의사항</dt>
-										<dd>
+								<div class="form__item js-form-item js-step-2 js-require">
+									<div class="form__item-header input-line--header">
+										<h3 class="form__label container__headline container__headline--lv1">
+											<label>통신사</label>
+										</h3>
+									</div>
+
+									<div class="form__item-wrap">
+										<div class="input-type--line">
+											<button type="button" class="input-unit fc-placeholder js-select--result js-popup-open" data-modal="popup-select--telecom">
+												<span id="tel_corp" class="target">통신사 선택</span><i class="icon icon--arrow-24 pointer-bottom"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+
+								
+								<div class="form__item regist-code js-form-item js-step-1 js-require">
+									<div class="form__item-header input-line--header">
+										<h3 class="form__label container__headline container__headline--lv1">
+											<label>주민등록번호</label>
+										</h3>
+									</div>
+
+									<div class="form__item-wrap">
+										<div class="input-type--line">
+											<input id="birth" type="text" value="900101" placeholder="생년월일 6자리" maxlength="6" inputmode="numeric" readonly style="color:var(--color-gray--lv6);pointer-events:none;">
+											<span class="between-bar">-</span>
+											<input id="gender" type="text" value="" placeholder="0" maxlength="1" inputmode="numeric">
+											<div class="currency-box">
+												<p class="currency-bullet"></p>
+												<p class="currency-bullet"></p>
+												<p class="currency-bullet"></p>
+												<p class="currency-bullet"></p>
+												<p class="currency-bullet"></p>
+												<p class="currency-bullet"></p>
+											</div>
+										</div>
+										<p class="fs-13" style="margin-top:8px;color:var(--color-gray--lv6);">생년월일은 에이블리에서 전달받아 수정할 수 없어요</p>
+									</div>
+								</div>
+
+								
+								<div class="form__item js-form-item js-require item--disabled">
+									<div class="form__item-header input-line--header">
+										<h3 class="form__label container__headline container__headline--lv1">
+											<label>이름</label>
+										</h3>
+									</div>
+
+									<div class="form__item-wrap">
+										<div class="input-type--line">
+											<input id="name" type="text" value="홍길동" placeholder="이름" enterkeyhint="next" readonly style="text-transform:uppercase;">
+										</div>
+										<p class="fs-13" style="margin-top:8px;color:var(--color-gray--lv6);">에이블리에서 전달받은 이름이라 수정할 수 없어요</p>
+									</div>
+								</div>
+
+								
+								<div class="form__item js-form-item">
+									<div class="form__item-header input-line--header">
+										<h3 class="form__label container__headline container__headline--lv1">
+											<label>메모(선택)</label>
+										</h3>
+									</div>
+
+									<div class="form__item-wrap">
+										<div class="input-type--line">
+											<input id="memo" type="text" value="" placeholder="메모를 입력해 주세요" maxlength="100">
+										</div>
+									</div>
+								</div>
+
+								
+								<div class="form__item js-form-item js-step-5">
+									<div class="form__item-header input-line--header">
+										<h3 class="form__label container__headline container__headline--lv1">
+											<label>이메일(선택)</label>
+										</h3>
+									</div>
+
+									<div class="form__item-wrap">
+										<div class="input-type--line">
+											<input id="email" type="text" value="" placeholder="이메일 아이디" maxlength="100" inputmode="email" autocomplete="off">
+											<span class="between-bar">@</span>
+											<button type="button" class="input-unit fc-placeholder js-select--result js-popup-open" data-modal="popup-select--email-domain">
+												<span id="email_domain" class="target">도메인 선택</span><i class="icon icon--arrow-24 pointer-bottom"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
+
+			
+			<section class="container-floating js-floating-container">
+				<div class="floating__box button-box-spacing">
+					
+					<a id="req_certify" href="#none" class="button button-xl button--lv1 dis js-step-submit">
+						<span>인증하기</span>
+					</a>
+				</div>
+			</section>
+			</div>
+			
+
+			
+			<div id="step_clause" style="display:none;">
+				
+				<section class="container cert-agree js-container">
+					
+					<article class="container__header">
+						<div class="container__header-content justify-spacing-def">
+							<div class="">
+								<h3 class="container__headline container__headline--lv6">
+									에이블리 페이(머니결제) 서비스를<br>이용하려면 약관 동의가 필요해요
+								</h3>
+							</div>
+						</div>
+					</article>
+
+					
+					<article class="container__body cert--agree__body">
+						<div class="body__content grow-y">
+							<div class="form-box js-form-box grow-y js-checked--handle">
+								<div class="flex-column gap-16">
+									
+									<div class="column__head agree-head">
+										<label class="input-type--check flex-row">
+											<input id="check_all" type="checkbox" class="js-all-check"><span>전체 동의하기</span>
+										</label>
+									</div>
+
+									
+									<div class="form-box js-form-box justify-spacing-def">
+										<div class="flex-column gap-12">
+
 											
-										</dd>
-									</dl>
-									<div class="toggle_wrap">
-										<p class="trigger"><a>상품 필수 표기 정보</a></p>
-										<div class="toggle_con">
-											<div class="inner">
+											<div id="bpp_clause_box" class="form__item-wrap flex-column drop-box js-drop-box open">
+												<div class="input-type--check">
+													<label class="grow-y flex-row">
+														<input id="bpp_clause" type="checkbox">
+														<span>(필수) 비플페이 필수항목 모두 동의</span>
+													</label>
+													<button type="button" class="drop-trigger js-drop-trigger">
+														<i class="icon icon--arrow-16"></i>
+														<span class="blind">세부 약관 열기</span>
+													</button>
+												</div>
+
 												
+												<div id="bpp_agree_div" class="drop-content js-drop-content">
+													<div class="input-type--check">
+														<label class="grow-y flex-row">
+															<input type="checkbox" class="checkbox--line">
+															<a href="#none" class="terms-view--button" data-terms-code="060001">
+																<span>서비스 이용약관</span>
+																<i class="icon icon--arrow-16"></i>
+																<span class="blind">약관 상세보기</span>
+															</a>
+														</label>
+													</div>
+													<div class="input-type--check">
+														<label class="grow-y flex-row">
+															<input type="checkbox" class="checkbox--line">
+															<a href="#none" class="terms-view--button" data-terms-code="060016">
+																<span>개인정보 수집 및 이용동의</span>
+																<i class="icon icon--arrow-16"></i>
+																<span class="blind">약관 상세보기</span>
+															</a>
+														</label>
+													</div>
+													<div class="input-type--check">
+														<label class="grow-y flex-row">
+															<input type="checkbox" class="checkbox--line">
+															<a href="#none" class="terms-view--button" data-terms-code="060002">
+																<span>개인정보 제 3자 제공동의</span>
+																<i class="icon icon--arrow-16"></i>
+																<span class="blind">약관 상세보기</span>
+															</a>
+														</label>
+													</div>
+													<div class="input-type--check">
+														<label class="grow-y flex-row">
+															<input type="checkbox" class="checkbox--line">
+															<a href="#none" class="terms-view--button" data-terms-code="060004">
+																<span>통합 전자금융거래 이용약관</span>
+																<i class="icon icon--arrow-16"></i>
+																<span class="blind">약관 상세보기</span>
+															</a>
+														</label>
+													</div>
+												</div>
+											</div>
+
+											
+											<div id="agree_form_div" class="form__item-wrap flex-column drop-box js-drop-box open">
+												<div class="input-type--check">
+													<label class="grow-y flex-row">
+														<input id="cert_clause" type="checkbox">
+														<span>(필수) 본인 인증 필수항목 모두 동의</span>
+													</label>
+													<button type="button" class="drop-trigger js-drop-trigger">
+														<i class="icon icon--arrow-16"></i>
+														<span class="blind">세부 약관 열기</span>
+													</button>
+												</div>
+
+												
+												<div id="agree_div" class="drop-content js-drop-content">
+													<div class="input-type--check">
+														<label class="grow-y flex-row">
+															<input type="checkbox" class="checkbox--line">
+															<a href="#none" class="terms-view--button" data-terms-code="060011">
+																<span>통신사 이용약관</span>
+																<i class="icon icon--arrow-16"></i>
+																<span class="blind">약관 상세보기</span>
+															</a>
+														</label>
+													</div>
+													<div class="input-type--check">
+														<label class="grow-y flex-row">
+															<input type="checkbox" class="checkbox--line">
+															<a href="#none" class="terms-view--button" data-terms-code="060012">
+																<span>본인확인 서비스 이용약관</span>
+																<i class="icon icon--arrow-16"></i>
+																<span class="blind">약관 상세보기</span>
+															</a>
+														</label>
+													</div>
+													<div class="input-type--check">
+														<label class="grow-y flex-row">
+															<input type="checkbox" class="checkbox--line">
+															<a href="#none" class="terms-view--button" data-terms-code="060013">
+																<span>개인정보 수집 · 이용 · 취급 · 위탁 동의</span>
+																<i class="icon icon--arrow-16"></i>
+																<span class="blind">약관 상세보기</span>
+															</a>
+														</label>
+													</div>
+													<div class="input-type--check">
+														<label class="grow-y flex-row">
+															<input type="checkbox" class="checkbox--line">
+															<a href="#none" class="terms-view--button" data-terms-code="060014">
+																<span>고유식별정보 처리 동의</span>
+																<i class="icon icon--arrow-16"></i>
+																<span class="blind">약관 상세보기</span>
+															</a>
+														</label>
+													</div>
+													
+													<div id="agree_plus" class="input-type--check">
+														<label class="grow-y flex-row">
+															<input type="checkbox" class="checkbox--line">
+															<a href="#none" class="terms-view--button" data-terms-code="999999">
+																<span>알뜰폰 개인정보 제3자 제공 동의</span>
+																<i class="icon icon--arrow-16"></i>
+																<span class="blind">약관 상세보기</span>
+															</a>
+														</label>
+													</div>
+												</div>
+											</div>
+
+											
+											<div class="form__item-wrap flex-column">
+												<div class="input-type--check">
+													<label class="grow-y flex-row">
+														<input id="agree-chk3" type="checkbox">
+														<span>(선택) 마케팅 정보 수신 동의</span>
+													</label>
+													<a href="#none" class="terms-view--button" data-terms-code="060005">
+														<i class="icon icon--arrow-16"></i>
+														<span class="blind">약관 상세보기</span>
+													</a>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+
 						
-						
-						
-						<div class="product_push">
-							<h2>이런 상품권 어때요</h2>
-							
-							<div class="item_list">
-								
-								
-									<div class="push_item" code="" bgc="">
-										<p class="img"><img alt="" src="../assets/_sample/card.svg"></p>
-										<p class="brand" title="비플머니">비플머니</p>
-										<p class="name" title="비플머니">비플머니</p>
-										<p class="price">
-										
-											<span class="discount">%</span>
-										
-											<strong>4,500<span class="won">원</span></strong>
-										</p>
-									</div>
+						<div class="infomation infomation-box mgt24">
+							<div class="flex-column">
+								<div class="column__head">
+									<i class="icon icon--info-16"><span class="blind">안내</span></i>
+									<h5 class="container__headline container__headline--lv1">서비스 제공 주체 안내</h5>
+								</div>
+								<div class="column__item">
+									<p class="info__text--lv1">
+										에이블리페이는 ㈜비즈플레이가 발행·관리하는 선불전자지급수단입니다.<br>
+										충전금은 전자금융거래법에 따라 별도관리되는 이용자의 재산입니다.
+									</p>
+								</div>
+							</div>
+						</div>
+					</article>
+				</section>
+
+				
+				<section class="container-floating js-floating-container">
+					<article class="floating__box button-box-spacing">
+						<a id="clause_next" href="#none" class="button button-xl button--lv1 dis">
+							<span>다음</span>
+						</a>
+					</article>
+				</section>
+			</div>
+			
+
+			
+			<div id="step_certify" style="display:none;">
+				
+				<section class="page-header justify-spacing-def pdt24">
+					<article class="page-header__content flex-column gap-16">
+						<div class="page-header__headline-wrap">
+							<h2 class="flex-row">
+								<p class="page__headline page__headline--lv1 fw-600">
+									인증번호를<br>
+									입력해 주세요
+								</p>
+							</h2>
+						</div>
+					</article>
+				</section>
+
+				
+				<section class="container js-container justify-spacing-def pdt32">
+					<article class="container__body">
+						<div class="body__content">
+							<div class="flex-column">
+								<div class="form-box js-form-box">
 									
+									<div id="certify_item" class="form__item js-form-item">
+										<div class="form__item-header input-line--header">
+											<h3 class="form__label container__headline container__headline--lv1">
+												<label>인증번호</label>
+											</h3>
+										</div>
+
+										<div class="form__item-wrap">
+											<div class="input-type--line">
+												<input id="certify_no" type="tel" value="" placeholder="6자리 입력" maxlength="6" inputmode="numeric">
+												
+												<span id="timeCheck" class="shrink-n">05:00</span>
+											</div>
+										</div>
+
+										
+										<div class="flex-row justify-space-b">
+											<p class="form__hint info__text--lv1">
+												<span id="certify_msg" class="blind">인증번호를 다시 확인해 주세요.</span>
+											</p>
+											<button type="button" id="re_certify" class="button button-small button--lv5_line"><span>인증번호 재요청</span></button>
+										</div>
 									</div>
 								</div>
-								
-					</div>
+							</div>
+						</div>
+					</article>
+				</section>
+
+				
+				<section class="container-floating js-floating-container">
 					
-					
-					<div class="brand-footer bg_f9">
-						<div class="d_flex-column">
-							<div class="brand-footer--text">상호: 비즈플레이㈜</div>
-							<div class="brand-footer--text">대표이사: 석창규</div>
-							<div class="brand-footer--text">주소: 서울시 영등포구 영신로 220 KnK디지털타워 12층</div>
-							<div class="brand-footer--text"><span>사업자등록번호: 107-88-36127</span><i>|</i><a data-element-id="EXW-BRWV-10-10-10-S-e03" id="buss_info" class="fc-666">사업자정보 확인<i class="icon arr_right-16"></i></a></div>
-							<div class="brand-footer--text">통신판매신고번호: 2015-서울영등포-0113호</div>
-							<div class="brand-footer--text">고객센터: 1670-0136</div>
-							<div class="brand-footer--text">이메일: <a data-element-id="EXW-BRWV-10-10-10-S-e04" href="bpay@bizplay.co.kr" target="_blank">bpay@bizplay.co.kr</a></div>
-							<div class="brand-footer--text">
-								비즈플레이㈜는 통신판매중개자이며, 통신판매의
-								당사자가 아닙니다. 상품, 상품정보, 거래에 관한 의무와
-								책임은 판매자에게 있습니다.
+					<div class="infomation infomation-box mgb24">
+						<div class="flex-column">
+							<div class="column__head">
+								<i class="icon icon--info-16"><span class="blind">안내</span></i>
+								<h5 class="container__headline container__headline--lv1">인증번호가 오지 않나요?</h5>
+							</div>
+							<div class="column__item">
+								<p class="info__text--lv1 bullet-text">
+									인증 오류가 발생되는 경우, 02-708-1000으로 연락주세요.
+								</p>
+								<p class="info__text--lv1 bullet-text">
+									인증번호 문자가 오지 않는 경우, 02-708-1007 전화 번호 차단 여부를 확인해 주세요.
+								</p>
 							</div>
 						</div>
 					</div>
-						
-										
-				</div>
+					<div class="floating__box button-box-spacing">
+						<a id="result_btn" href="#none" class="button button-xl button--lv1 dis">
+							<span>인증 완료</span>
+						</a>
+					</div>
+				</section>
 			</div>
 			
+
 			
-			<div id="btn_dim" class="btn_botFix_w brand_rn_btn">
+			<div id="step_done" style="display:none;">
 				
+				<section class="container end-container js-container">
+					<article class="container__body justify-spacing-def">
+						<div class="body__content">
+							<i class="icon icon--state_check-64" aria-hidden="true">가입이 완료되었습니다</i>
+							<div class="desc-box">
+								<h3 class="container__headline--lv5 fw-600">가입이 완료되었습니다</h3>
+							</div>
+						</div>
+					</article>
+				</section>
+
 				
-					<div class="inner half bg_white">
-						<a data-element-id="EXW-BRWV-10-10-10-S-e05" id="gift_btn" class="typeB round_r8 btn-style-h48">선물하기</a>
-						<a data-element-id="EXW-BRWV-10-10-10-S-e06" id="buy_btn" class="typeA round_r8 btn-style-h48 on">구매하기</a>
+				<section class="container-floating js-floating-container">
+					<div class="floating__box button-box-spacing">
+						<a id="done_btn" href="#none" class="button button-xl button--lv1" aria-label="확인하고 페이지 닫기">
+							<span>확인</span>
+						</a>
 					</div>
-				
+				</section>
+			</div>
+			
+		</main>
+		
+
+		
+		<div class="popup-wrap js-popup-wrap" data-modal="popup-select--telecom" style="display:none;">
+			<div class="popup-container popup--bottom popup-select--type1 box-padding--type2 js-popup-select">
+				<section class="popup-container__body">
+					<div id="tel_list" class="flex-column justify-spacing-def">
+						<button type="button" value="01" class="select__button js-select-content js-popup-close">
+							<span>SKT</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="02" class="select__button js-select-content js-popup-close">
+							<span>KT</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="03" class="select__button js-select-content js-popup-close">
+							<span>LG U+</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="04" class="select__button js-select-content js-popup-close">
+							<span>SKT 알뜰폰</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="05" class="select__button js-select-content js-popup-close">
+							<span>KT 알뜰폰</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="06" class="select__button js-select-content js-popup-close">
+							<span class="target">LG U+ 알뜰폰</span><i class="icon icon--check-24_primary"></i>
+						</button>
+					</div>
+				</section>
 			</div>
 		</div>
+
+		
+		<div class="popup-wrap js-popup-wrap" data-modal="popup-select--email-domain" style="display:none;">
+			<div class="popup-container popup--bottom popup-select--type1 box-padding--type2 js-popup-select">
+				<section class="popup-container__body">
+					<div id="email_domain_list" class="flex-column justify-spacing-def">
+						<button type="button" value="naver.com" class="select__button js-select-content js-popup-close">
+							<span>naver.com</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="gmail.com" class="select__button js-select-content js-popup-close">
+							<span>gmail.com</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="daum.net" class="select__button js-select-content js-popup-close">
+							<span>daum.net</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="hanmail.net" class="select__button js-select-content js-popup-close">
+							<span>hanmail.net</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="nate.com" class="select__button js-select-content js-popup-close">
+							<span>nate.com</span><i class="icon icon--check-24_primary"></i>
+						</button>
+						<button type="button" value="kakao.com" class="select__button js-select-content js-popup-close">
+							<span class="target">kakao.com</span><i class="icon icon--check-24_primary"></i>
+						</button>
+					</div>
+				</section>
+			</div>
+		</div>
+
 	</div></div>

@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
   <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
   <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+<style>
+/* 메뉴분류 사진 자동노출 시 "기본이미지" 오버레이 텍스트 숨김 - 이 페이지 한정, 공용 CSS 미수정 */
+.image.dv-fallback-img.empty::after {content: none;}
+</style>
 </head>
 <body data-screen-id="HIT-MBO-10-30-10-S">
 <input type="hidden" id="BP_AFLT_SEQ"	name="BP_AFLT_SEQ"	value="" />
@@ -121,7 +125,7 @@
                             </div>
                         </div>
 
-                        <div class="data-table-wrap" id="menu_list" hidden style="min-height: 529px;">
+                        <div class="data-table-wrap" id="menu_list" style="min-height: 529px;">
                             <table class="data-table form-table pd-table" id="table">
                                 <!-- <caption>표 제목</caption> -->
                                 <colgroup>
@@ -144,7 +148,94 @@
                                 </thead>
                                 <tbody>
                                 <!-- 메뉴목록 -->
-                                <tr style="display: none;" onclick="clk_menu($(this))">
+                                <!-- sample:begin --><tr onclick="clk_menu($(this))">
+                                    <td class="button" colspan="6"><!-- 활성화 시 active -->
+                                        <div>
+                                            <a href="#none">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width: 150px;">
+                                                        <col style="width: 145px;">
+                                                        <col style="width: 90px;">
+                                                        <col style="width: 145px;">
+                                                        <col style="width: 330px;">
+                                                        <col style="width: 120px;">
+                                                    </colgroup>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td hidden><div></div></td>
+                                                        <td hidden><div></div></td>
+                                                        <td><div>2026.10.02 14:30</div></td>
+                                                        <td><div class="tx-ellipsis">중식</div></td>
+                                                        <td><div>중식</div></td>
+                                                        <td><div class="tx-ellipsis">커피</div></td>
+                                                        <td><div class="tx-ellipsis">아메리카노 T</div></td>
+                                                        <td><div class="ta-right">15,000원</div></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr><tr onclick="clk_menu($(this))">
+                                    <td class="button" colspan="6"><!-- 활성화 시 active -->
+                                        <div>
+                                            <a href="#none">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width: 150px;">
+                                                        <col style="width: 145px;">
+                                                        <col style="width: 90px;">
+                                                        <col style="width: 145px;">
+                                                        <col style="width: 330px;">
+                                                        <col style="width: 120px;">
+                                                    </colgroup>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td hidden><div></div></td>
+                                                        <td hidden><div></div></td>
+                                                        <td><div>2026.10.02 14:30</div></td>
+                                                        <td><div class="tx-ellipsis">중식</div></td>
+                                                        <td><div>중식</div></td>
+                                                        <td><div class="tx-ellipsis">커피</div></td>
+                                                        <td><div class="tx-ellipsis">아메리카노 T</div></td>
+                                                        <td><div class="ta-right">15,000원</div></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr><tr onclick="clk_menu($(this))">
+                                    <td class="button" colspan="6"><!-- 활성화 시 active -->
+                                        <div>
+                                            <a href="#none">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width: 150px;">
+                                                        <col style="width: 145px;">
+                                                        <col style="width: 90px;">
+                                                        <col style="width: 145px;">
+                                                        <col style="width: 330px;">
+                                                        <col style="width: 120px;">
+                                                    </colgroup>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td hidden><div></div></td>
+                                                        <td hidden><div></div></td>
+                                                        <td><div>2026.10.02 14:30</div></td>
+                                                        <td><div class="tx-ellipsis">중식</div></td>
+                                                        <td><div>중식</div></td>
+                                                        <td><div class="tx-ellipsis">커피</div></td>
+                                                        <td><div class="tx-ellipsis">아메리카노 T</div></td>
+                                                        <td><div class="ta-right">15,000원</div></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr><!-- sample:end --><tr style="display: none;" onclick="clk_menu($(this))">
                                     <td class="button" colspan="6"><!-- 활성화 시 active -->
                                         <div>
                                             <a href="#none">
@@ -177,7 +268,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="data-table-wrap h524" id="no_menu_list" hidden>
+                        <div class="data-table-wrap h524" id="no_menu_list" hidden style="display:none;">
                             <table class="data-table form-table">
                                 <!-- <caption>표 제목</caption> -->
                                 <colgroup>
@@ -247,7 +338,7 @@
                                     </select>
                                 </div>
                                 <div class="td-item ta-right">
-                                    <p class="lh-32">검색결과: 총 <span class="fc-pri fw-600" id="tot_cnt"><!-- sample:begin -->1<!-- sample:end --></span>건</p>
+                                    <p class="lh-32">검색결과: 총 <span class="fc-pri fw-600" id="tot_cnt"><!-- sample:begin -->2<!-- sample:end --></span>건</p>
                                 </div>
                             </div>
                         </div>
@@ -476,7 +567,7 @@
                                 <div class="image_write-box mb2" id="add_tot_img">
                                     <div class="image w132 empty" id="add_img"><!-- 기본이미지 = empty 클래스 추가 -->
                                         <img id="preview_img" alt="이미지 영역" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'><rect fill='rgba(0,0,0,0)' x='0' y='0' width='100%' height='100%'/></svg>">
-                                        <!-- <img src="../assets/resource/img/dummy/download 1.png" alt=""> -->
+                                        <!-- <img style="max-width:100%;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTVlNWU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJNYWxndW4gR290aGljLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM5YTlhOWEiPuydtOuvuOyngDwvdGV4dD48L3N2Zz4="  alt=""> -->
                                     </div>
                                     <div class="btn-group">
                                         <button class="btn btn-sm btn-gray-outline" type="button" onclick="btn_img()">첨부하기</button>
@@ -505,7 +596,7 @@
                                         
                                         
                                         <p class="drop-item" name="order_form_c" hidden><!-- 선택 시 select -->
-                                            <button type="button" class="drop-btn" order-form-tp="" prvd-tp="" data-img-path="" data-img-file-nm="비플머니" data-img-file-ext="" name="menu_gubun" id="menu_dv_" onclick="add_menu_gubun($(this))" value="">비플머니</button>
+                                            <button type="button" class="drop-btn" order-form-tp="" prvd-tp="" data-img-path="" data-img-file-nm="" data-img-file-ext="" name="menu_gubun" id="menu_dv_" onclick="add_menu_gubun($(this))" value="">비플머니</button>
                                         </p>
                                         
                                         
@@ -686,7 +777,7 @@
                             <div>
                                 <div class="ip-wrap type-unit w100p">
                                     <input name="" id="ADD_MENU_AMT" class="ip-txt" type="text" value="" placeholder="메뉴 금액을 입력해 주세요" maxlength="9" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
-                                    <p class="unit">원</p>
+                                    <p class="unit">15,000원</p>
                                 </div>
                             </div>
                         </td>
@@ -700,7 +791,7 @@
                             <div>
                                 <div class="ip-wrap type-unit w100p">
                                     <input name="" id="ADD_MENU_CNT" class="ip-txt" type="text" value="" placeholder="수량을 입력해 주세요" maxlength="9" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
-                                    <p class="unit">개</p>
+                                    <p class="unit">2개</p>
                                 </div>
                                 <p class="fs-12 fc-666 mt5">수량은 픽업, 사전예약 메뉴일 경우 입력해 주세요.</p>
                             </div>
@@ -764,7 +855,7 @@
                                     <tr class="p0">
                                         <th><div>제공형태</div></th>
                                         <td>
-                                            <div class="txt-01 fc-333" id="conf_prvd_tp"><!-- sample:begin -->표본<!-- sample:end --></div>
+                                            <div class="txt-01 fc-333" id="conf_prvd_tp"><!-- sample:begin -->카드 결제<!-- sample:end --></div>
                                         </td>
                                         <th>
                                             <div>제공일자</div>
@@ -782,13 +873,13 @@
                     <tr>
                         <th><div>식사형태</div></th>
                         <td colspan="3">
-                            <div class="txt-01 fc-333" id="conf_meal_tp"><!-- sample:begin -->표본<!-- sample:end --></div>
+                            <div class="txt-01 fc-333" id="conf_meal_tp"><!-- sample:begin -->일반<!-- sample:end --></div>
                         </td>
                     </tr>
                     <tr>
                         <th><div>금액숨김여부</div></th>
                         <td colspan="3">
-                            <div class="txt-01 fc-333" id="conf_amt_hide_yn"><!-- sample:begin -->4,500<!-- sample:end --></div>
+                            <div class="txt-01 fc-333" id="conf_amt_hide_yn"><!-- sample:begin -->15,000<!-- sample:end --></div>
                         </td>
                     </tr>
                     </tbody>
@@ -824,7 +915,7 @@
                             <div>메뉴분류명</div>
                         </th>
                         <td>
-                            <div class="txt-01 fc-333" id="conf_menu_dv"><!-- sample:begin -->표본<!-- sample:end --></div>
+                            <div class="txt-01 fc-333" id="conf_menu_dv"><!-- sample:begin -->한식<!-- sample:end --></div>
                         </td>
                     </tr>
                     <tr>
@@ -832,7 +923,7 @@
                             <div>메뉴명</div>
                         </th>
                         <td>
-                            <div class="txt-01 fc-333" id="conf_menu_nm"><!-- sample:begin -->홍길동<!-- sample:end --></div>
+                            <div class="txt-01 fc-333" id="conf_menu_nm"><!-- sample:begin -->아메리카노 T<!-- sample:end --></div>
                         </td>
                     </tr>
                     <tr>
@@ -849,7 +940,7 @@
                         </th>
                         <td>
                             <div class="txt-01 fc-333">
-                                <ul id="conf_menu_info"><!-- sample:begin -->표본<!-- sample:end --></ul>
+                                <ul id="conf_menu_info"><!-- sample:begin --><li>아메리카노 T Kcal<span class='fc-7e'>(1234)</span></li><li>아메리카노 T Kcal<span class='fc-7e'>(1234)</span></li><!-- sample:end --></ul>
                             </div>
                         </td>
                     </tr>
@@ -858,7 +949,7 @@
                             <div>영양정보</div>
                         </th>
                         <td>
-                            <div id="conf_nutr_info"><!-- sample:begin -->표본<!-- sample:end --></div>
+                            <div id="conf_nutr_info"><!-- sample:begin -->열량 520kcal<!-- sample:end --></div>
                         </td>
                     </tr>
                     <!--<tr>
@@ -876,7 +967,7 @@
                             <div>메뉴금액</div>
                         </th>
                         <td>
-                            <div class="txt-01 fc-333" id="conf_menu_amt"><!-- sample:begin -->4,500<!-- sample:end --></div>
+                            <div class="txt-01 fc-333" id="conf_menu_amt"><!-- sample:begin -->15,000<!-- sample:end --></div>
                         </td>
                     </tr>
                     <!--<tr>
@@ -1110,7 +1201,7 @@
                                 <div class="image_write-box mb2" id="mod_tot_img">
                                     <div class="image w132 empty" id="mod_img"><!-- 기본이미지 = empty 클래스 추가 -->
                                         <img id="mod_preview_img" alt="이미지 영역" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'><rect fill='rgba(0,0,0,0)' x='0' y='0' width='100%' height='100%'/></svg>">
-                                        <!-- <img src="../assets/resource/img/dummy/download 1.png" alt=""> -->
+                                        <!-- <img style="max-width:100%;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTVlNWU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJNYWxndW4gR290aGljLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM5YTlhOWEiPuydtOuvuOyngDwvdGV4dD48L3N2Zz4="  alt=""> -->
                                     </div>
                                     <div class="btn-group">
                                         <button class="btn btn-sm btn-gray-outline" type="button" onclick="btn_img()">첨부하기</button>
@@ -1139,7 +1230,7 @@
                                         
                                         
                                         <p class="drop-item" name="order_form_c" hidden><!-- 선택 시 select -->
-                                            <button type="button" class="drop-btn" order-form-tp="" prvd-tp="" data-img-path="" data-img-file-nm="비플머니" data-img-file-ext="" name="mod_menu_gubun" id="mod_menu_dv_" onclick="add_menu_gubun($(this))" value="">비플머니</button>
+                                            <button type="button" class="drop-btn" order-form-tp="" prvd-tp="" data-img-path="" data-img-file-nm="" data-img-file-ext="" name="mod_menu_gubun" id="mod_menu_dv_" onclick="add_menu_gubun($(this))" value="">비플머니</button>
                                         </p>
                                         
                                         
@@ -1321,12 +1412,12 @@
                             <div>
                                 <div class="ip-wrap type-unit w100p">
                                     <input name="" id="MOD_MENU_AMT" class="ip-txt" type="text" value="" placeholder="메뉴 금액을 입력해 주세요" maxlength="9" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
-                                    <p class="unit">원</p>
+                                    <p class="unit">15,000원</p>
                                 </div>
                             </div>
                         </td>
                     </tr>
-                    <tr id="mod_tr_add_menu_cnt">
+                    <tr id="mod_tr_add_menu_cnt" style="display:none;">
                         <th class="vat" id="mod_cnt_menu">
                             <div>잔여수량</div>
                         </th>
@@ -1334,7 +1425,7 @@
                             <div>
                                 <div class="ip-wrap type-unit w100p">
                                     <input name="" id="MOD_MENU_CNT" class="ip-txt" type="text" value="" placeholder="잔여수량을 입력해 주세요" maxlength="9" onKeyup="this.value=this.value.replace(/[^0-9]/g, '');">
-                                    <p class="unit">개</p>
+                                    <p class="unit">2개</p>
                                 </div>
                                 <p class="fs-12 fc-666 mt5">수량은 픽업, 사전예약 메뉴일 경우 입력해 주세요.</p>
                             </div>

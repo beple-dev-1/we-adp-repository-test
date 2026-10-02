@@ -107,11 +107,10 @@
 		                 <a class="btn_r" onclick="$('#clause_modal').hide();"><span class="btn_close"><span class="blind">닫기</span></span></a>
 		                 <div class="cont2">
 		                     <div class="ly_st_tit">
-		                         <p></p>
+		                         <p><!-- sample:begin -->안내<!-- sample:end --></p>
 		                     </div>
 		
-		                     <div class="ly_st_clause">
-		                     </div>
+		                     <div class="ly_st_clause"><!-- sample:begin -->서비스 이용약관<!-- sample:end --></div>
 		
 		                     <div class="ly_st_btn" onclick="$('#clause_modal').hide()">
 		                         <a class="on">확인</a>
@@ -188,7 +187,7 @@
 <!-- // wrap -->
 
 <!--동의요청 성공 -->
-<div class="wrap" id="success" style="">
+<div class="wrap" id="success" style="display:none;">
 						
 	<div class="header floating-back-header floating-sticky">
 		<h1>가맹점 찾기</h1>
@@ -218,7 +217,7 @@
 		<!-- 하단 고정버튼 -->
 		<div class="btn_botFix_w">
 			<div class="inner pd0">
-				<a data-element-id="BPY-KID-20-S-e13" id="success_btn" class="btn-default btn-style-h48 on">
+				<a id="success_btn" class="btn-default btn-style-h48 on">
 										
 						확인
 					

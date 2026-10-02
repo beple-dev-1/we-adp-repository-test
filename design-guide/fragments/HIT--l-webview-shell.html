@@ -1,71 +1,313 @@
-<div class="dg-body"><div class="wrap bg_f7">
- 		<div class="header floating-back-header floating-sticky"> 			
- 			<a data-element-id="HIT-ACCT-10-10-S-e03" class="btn-history-back move_back type2" role="button">상위메뉴로 이동</a>
- 			<h1>계좌 관리</h1> 			 		
- 		</div>
-		
- 		<div class="container">
- 			<div class="content">
-	 			<div class="account_select addBtn-pb58" id="no_account" style="display: none;">
-	 				<p class="txt_bold">제로페이 결제와 상품권 구매를 위한<br>계좌 정보를 관리합니다.</p>
-				
-					
-					<p class="acc_none">등록된 계좌가 없습니다.</p>
-					
-					
-					<div class="acc_use_info_bx">
-						<h2 class="info_tit">계좌 사용 안내</h2>
-						<ul class="list_bl">
-							<li>모바일상품권 구매 가능 기관 : <strong>씨티, 토스뱅크, 카카오뱅크, 산림조합, 저축은행 제외</strong>한 모든 은행</li>
-							
-							<li>브랜드상품권 구매 가능 기관 : 모든 은행 및 증권사</li>
-							
-							<li>계좌 결제 가능 기관 : <strong>씨티, 토스뱅크, 카카오뱅크, 산림조합, 저축은행 제외</strong>한 모든 은행</li>
-							
-							<li>비플머니 충전 가능 기관 : 모든 은행 및 증권사</li>
-						</ul>
-					</div>
-						
-					
-					<div class="btn_botFix_w">
-						<div class="inner">
-							<a href="#none" id="account_register" class="btn-skyBlue btn-style-h46 round_r8 on">
-								<span>계좌 등록</span>
-							</a>
-						</div>
-					</div>
-					
-	 			</div>
-	 			<div class="account_select addBtn-pb58" id="hava_account">
-	 				<p class="txt_bold">제로페이 결제와 상품권 구매를 위한<br>계좌 정보를 관리합니다.</p>
-					
-					<h2 class="acc_list_tit">님의 등록계좌</h2>
-					<ul class="acc_list" id="bank_list"><li aria-checked="false" aria-label="국민은행,1234-56-789012" bank_cd="004">	<div class="inner">	<input type="hidden" name="sel_acct" id="lrh-1" value="1" bank_cd="004" acct_no="1234-56-789012" />	<p class="ico">	<img src="../assets/image/bank/ico_account_004.png" alt="국민은행 ">   </p><div class="con_w"><p class="name">국민은행(1234-56-789012)</p>   <p class="fcRed">계좌를 삭제 후 재등록해주세요</p></div>   <p class="acc_set_btn"><a href="\#none" ><img src="../assets/resource/images/ico_acc_set_btn.png" alt="계좌설정"></a></p>	</div></li></ul>
-					
-					
-					<div class="acc_use_info_bx">
-						<h2 class="info_tit">계좌 사용 안내</h2>
-						<ul class="list_bl">
-							<li>모바일상품권 구매 가능 기관 : <strong>씨티, 토스뱅크, 산림조합, 저축은행  및  증권사  제외</strong>한 모든 은행</li>
-							
-							<li>브랜드상품권 구매 가능 기관 : 모든 은행 및 증권사</li>
-							
-							<li>계좌 결제 가능 기관 : <strong>씨티, 토스뱅크, 카카오뱅크, 산림조합, 저축은행  및  증권사  제외</strong>한 모든 은행</li>
-							
-							<li>비플머니 충전 가능 기관 : 모든 은행 및 증권사</li>
-						</ul>
-					</div>
-						
-					
-					<div class="btn_botFix_w">
-						<div class="inner">
-							<a data-element-id="HIT-ACCT-10-10-S-e04" href="#none" id="acct_add" class="btn-skyBlue btn-style-h46 round_r8 on">
-								<span>계좌 추가</span>
-							</a>
-						</div>
-					</div>
-					
-	 			</div>
- 			</div>
- 		</div>
- 	</div></div>
+<div class="dg-body"><div class="wrap js-wrap bg-f7">
+        
+        <header class="header position-sticky">
+            
+            <nav class="header-nav">
+                <a data-element-id="HIT-ORDR-22-S-e13" id="go_back" href="#" class="hd-btn back"><span class="blind-i">뒤로가기</span></a>
+            </nav>
+            
+            <div class="page-title">
+                <h1 class="header-title">결제하기</h1>
+            </div>
+        </header>
+
+        
+        <main class="container-wrap js-container-wrap">
+            
+            <section class="smart_oder-container">
+                
+                
+                    <div id="pickup" class="container-hd type2 flex-column pdt16" style="display: none;">
+                        <p class="oder-type"></p>
+                        
+                        
+                        
+                        <article class="infomation-box">
+                            
+                            <div class="column__head">
+                                <i class="icon icon--info-24"><span class="blind">안내</span></i>
+                            </div>
+                            
+                            <div class="column__item">
+                                <p class="info__text">
+                                    주문하신 음식은 5분 이내로 수령해 주세요.<br>
+                                    수령하지 않으실 경우, 자동 폐기될 수 있으니 유의하시기 바랍니다.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                
+                
+                
+                <div class="container-hd type2 flex-column pdt16" id="robot">
+                    <p class="container-text title store tx_ellipsis"></p>
+                    <h2 class="container-text title large fc-primary">로봇 배송으로 받을게요</h2>
+                    <div class="option_bx pdt12">
+                        <div class="opt_list flex-row">
+                            <i class="icon icon--watch-16"></i><p class="status"></i>1건 수령 대기중</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                
+                
+                
+                    <div id="fodi_delv_adr" class="container-hd type2 flex-column pdt16" style="display: none;">
+                        <h2 class="container-text title sub">배송지</h2>
+                        <p class="container-text">  서울 강남구 테헤란로 1길 10</p>
+                    </div>
+                
+                
+                
+                    <div id="delv_delv_adr" class="container-hd type2 flex-column pdt16" style="display: none;">
+                        <h2 class="container-text title sub">배송지</h2>
+                        <p class="container-text">비플머니 비플머니</p>
+                        
+                    </div>
+                
+
+                
+                <article class="oder_payment">
+                    
+                    <div class="payment_w">
+                        
+                        
+                            <div class="payment_con" id="new_payment_con" style="display: none;">
+                                <input type="hidden" id="meal_tr_amt">
+
+                                
+                                <div class="con-hd">
+                                    <h3 class="pay_tit">결제 수단</h3>
+                                    
+
+                                    <p class="hd-text my-point" id="point" recIndex="" card_no=""><strong class="LMT_NM"></strong>
+                                        
+                                            (보유<span>4,500 M</span>)
+                                        
+                                    </p>
+                                    
+                                    
+                                </div>
+
+                                <div class="pay_method" id="mny_pay_method" style="display:none;">
+                                    <div class="inner">
+                                        <label>
+                                            <p class="label-item"><input type="radio" id="mny_select"></p>
+                                            <p class="label-item"><strong>비플머니</strong>(보유 <span>4,500</span>원)</p>
+                                        </label>
+                                        <p class="message">부족한 금액은 자동으로 충전됩니다.</p>
+                                        <div class="sub-bx" style="display: ;">
+                                            <p class="sub-item" id="org_mny_acct"   >
+                                                
+                                                <a href="#none" class="sub-btn">+ 계좌 등록</a>
+                                                
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                        
+                        <div class="payment_con">
+                            
+                            <div class="con-hd">
+                                <h3 class="pay_tit">결제 상세</h3>
+                            </div>
+                            
+                            <div class="payment-detail">
+                                
+                                <div class="detail-con">
+                                    <p class="detail-text fw-bold">주문 금액</p>
+                                    <p class="detail-text fw-bold"><span name="order_total">4,500</span>원</p>
+                                </div>
+                                
+                                <div class="detail-con">
+                                    <p class="detail-text" id="lmt_nm_detail">마일리지</p>
+                                    <p class="detail-text">-<span id="use_point_amt">0</span> M</p>
+                                </div>
+                                
+                                <div class="detail-con" id="sub_div">
+                                    <p class="detail-text" id="use_sub_name">홍길동</p>
+                                    <p class="detail-text">-<span id="use_sub_amt">0</span>원</p>
+                                </div>
+                                
+                                <div class="detail-con total">
+                                    <p class="detail-text fw-bold">총 결제 금액</p>
+                                    <p class="detail-text fw-bold" id="p_order_total"><span name="order_total" id="order_total">4,500</span>원</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+
+                    
+                    <div class="agree_wrap" id="bple_order">
+                        
+                        <p class="agree">
+                            <label><input data-element-id="HIT-ORDR-22-S-e17" type="checkbox" id="checkAll">아래 내용을 확인하였으며, 결제에 동의합니다.</label>
+                        </p>
+                        
+                        <div class="toggle_wrap">
+                            <p class="trigger agree">
+                                <label>
+                                    <input data-element-id="HIT-ORDR-22-S-e18" type="checkbox" id="chk1">주문 취소 및 환불 유의사항
+                                </label>
+                                <a data-element-id="HIT-ORDR-22-S-e14" href="#none" name="toggle_wrap">자세히 보기</a>
+                            </p>
+                            <div class="toggle_con" style="display: none;">
+                                <ol>
+                                    <li>
+                                        1. 구매 이용자의 주문에 따라 개별적으로 생산 또는 조리된 상품이 단순 변심에 따라 청약철회될 경우,
+                                        업주에게 회복할 수 없는 손해가 발생하므로 단순 변심에 의한 청약철회는 할 수 없습니다.
+                                    </li>
+                                    <li>
+                                        2. 구매 이용자가 직접 주문한 상품(또는 메뉴)을 찾아가는 주문의 경우, 일정 시간 이후에는 상품이 변질
+                                        되거나 부패되어 식품위생법에 위반될 여지가 있으므로, 상품을 별도로 보관하거나 상품의 다시 제공 또
+                                        는 환불이 어려울 수 있습니다.
+                                    </li>
+                                    <li>
+                                        3. 상품의 주문계약은 구매 이용자가 구매조건(상품의 내용 및 종류, 가격, 결제수단, 마일리지, 할인쿠폰 적
+                                        용여부 등)에 동의한 후 주문함으로써 성립합니다. 계약 성립 후 주문취소 또는 보상이 어려울 수 있으니
+                                        계약 성립 전 면밀한 확인 부탁드립니다.
+                                    </li>
+                                    <li>
+                                        4. 구매 이용자가 다음 각 호의 귀책사유로 제조된 음식을 수령하지 못할 경우, 구매 이용자는 대금지급의
+                                        무를 부담하며 회사 정책에 따른 손해배상을 부담할 수 있습니다.
+                                        <ol>
+                                            <li>① 업소주소지를 구매 이용자의 과실로 오인하여 잘못 주문한 경우, 이 경우 상품을 다시 제공하지 않을 수 있습니다.</li>
+                                            <li>② 주문상품과 관련하여 구매 이용자와 수차례 연락을 시도하였으나 연락이 되지 않는 경우, 이 경우 회사정책에 따라 서비스 이용에 제한이 있을 수 있습니다.</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        5. 비플페이에 등록된 메뉴를 제외하고, 구매 이용자가 별도로 추가 메뉴를 요청할 경우 제공이 불가
+                                        합니다.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="toggle_wrap">
+                            <p class="trigger agree">
+                                <label>
+                                    <input data-element-id="HIT-ORDR-22-S-e19" type="checkbox" id="chk2" type="checkbox">개인정보 제 3자 제공
+                                </label>
+                                <a href="#none" name="toggle_wrap">자세히 보기</a>
+                            </p>
+                            <div class="toggle_con" style="display: none;">
+                                <p>원활한 서비스 제공을 위해 최소한의 범위 내에서 아래와 같이 제3자에게 개인정보를 제공합니다.</p>
+                                <ol>
+                                    <li>1. 제공받는자: <strong></strong></li>
+                                    <li>2. 제공받는자의 개인정보 이용 목적: <strong>재화 제공 서비스(서비스 계약이행, 주문자 확인, 주문 관리, 교환/반품/취소 처리, 문의 및 상담)</strong></li>
+                                    <li>3. 제공하는 개인정보 항목: <strong>성명, 휴대전화번호, 주문정보</strong></li>
+                                    <li>4. 제공받는 자의 정보 이용 기간: <strong>서비스 제공 완료 후 파기</strong></li>
+                                </ol>
+                                
+                                    <ol>
+                                        <li>1. 제공받는자: <strong>비버웍스</strong></li>
+                                        <li>2. 제공받는자의 개인정보 이용 목적: <strong>키오스크 주문 및 결제 관리, 교환/반품/취소 처리</strong></li>
+                                        <li>3. 제공하는 개인정보 항목: <strong>성명, 휴대전화번호, 주문정보</strong></li>
+                                        <li>4. 제공받는 자의 정보 이용 기간: <strong>서비스 제공 완료 후 파기</strong></li>
+                                    </ol>
+                                
+                                <p>이용자는 개인정보 제공에 동의하지 않으실 수 있으며, 동의하지 않으실 경우 서비스 이용이 제한될 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="agree_wrap" id="fooding">
+                        
+                        <p class="agree">
+                            <label><input data-element-id="HIT-ORDR-22-S-e20" type="checkbox" id="checkAll2">아래 내용을 확인하였으며, 결제에 동의합니다.</label>
+                        </p>
+                        
+                        <div class="toggle_wrap">
+                            <p class="trigger agree">
+                                <label>
+                                    <input data-element-id="HIT-ORDR-22-S-e21" type="checkbox" name="subCheck2" id="chk3">주문 취소 및 환불 유의사항
+                                </label>
+                                <a href="#none" name="toggle_wrap">자세히 보기</a>
+                            </p>
+                            <div class="toggle_con" style="display: none;">
+                                <ol>
+                                    <li>
+                                        1. 구매 이용자의 주문에 따라 개별적으로 생산 또는 조리된 상품이 단순 변심에 따라 청약철회될 경우, 업주에게 회복할 수 없는 손해가 발생하므로 단순 변심에 의한 청약철회는 할 수 없습니다.
+                                    </li>
+                                    <li>
+                                        2. 구매 이용자가 직접 주문한 상품(또는 메뉴)을 찾아가는 주문의 경우, 일정 시간 이후에는 상품이 변질되거나 부패되어 식품위생법에 위반될 여지가 있으므로, 상품을 별도로 보관하거나 상품의 다시 제공 또는 환불이 어려울 수 있습니다.
+                                    </li>
+                                    <li>
+                                        3. 상품의 주문계약은 구매 이용자가 구매조건(상품의 내용 및 종류, 가격, 결제수단, 마일리지, 할인쿠폰 적용여부 등)에 동의한 후 주문함으로써 성립합니다. 계약 성립 후 주문취소 또는 보상이 어려울 수 있으니 계약 성립 전 면밀한 확인 부탁드립니다.
+                                    </li>
+                                    <li>
+                                        4. 구매 이용자가 다음 각 호의 귀책사유로 제조된 음식을 수령하지 못할 경우, 구매 이용자는 대금지급의무를 부담하며 회사 정책에 따른 손해배상을 부담할 수 있습니다.
+                                        <ol>
+                                            <li>① 배송지를 구매 이용자의 과실로 오인하여 잘못 주문한 경우, 이 경우 상품을 다시 제공하지 않을 수 있습니다.</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        5. 비플페이에 등록된 메뉴를 제외하고, 구매 이용자가 별도로 추가 메뉴를 요청할 경우 제공이 불가합니다.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="toggle_wrap">
+                            <p class="trigger agree">
+                                <label>
+                                    <input data-element-id="HIT-ORDR-22-S-e22" type="checkbox" name="subCheck2" id="chk4">개인정보 제 3자 제공
+                                </label>
+                                <a href="#none" name="toggle_wrap">자세히 보기</a>
+                            </p>
+                            <div class="toggle_con" style="display: none;">
+                                <p>원활한 서비스 제공을 위해 최소한의 범위 내에서 아래와 같이 제3자에게 개인정보를 제공합니다.</p>
+                                <ol>
+                                    <li>1. 제공받는자: <strong>푸딩</strong></li>
+                                    <li>2. 제공받는자의 개인정보 이용 목적: <strong>재화 제공 서비스(서비스 계약이행, 주문자 확인, 주문 관리, 교환/반품/취소 처리, 문의 및 상담)</strong></li>
+                                    <li>3. 제공하는 개인정보 항목: <strong>성명, 휴대전화번호</strong></li>
+                                    <li>4. 제공받는 자의 정보 이용 기간: <strong>서비스 제공 완료 후 파기</strong></li>
+                                </ol>
+                                <p>이용자는 개인정보 제공에 동의하지 않으실 수 있으며, 동의하지 않으실 경우 서비스 이용이 제한될 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+                
+                <article class="main_btn-box bg-f7 pdb10 pd-lr10 mgt16">
+                    <div class="btn-main">
+                        <a data-element-id="HIT-ORDR-22-S-e15" id="approve_btn" href="#none" class="btn-default radius-mid btn-style-h48">
+                            결제하기
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            
+            <section class="popup-container overlay" id="acct_list" style="display:none;">
+                <div class="popup-box bottom">
+                    <div class="inner-box pdb24">
+                        
+                        <div class="box-hd pd-lr20 pdt24">
+                            <p class="box__hd-text">계좌선택</p>
+                        </div>
+                        
+                        <article class="box-content pd-lr20 mgt16 max_height-150 scroll-y">
+                            <div class="p_acc_sltbx">
+                                <ul class="acc-list">
+                                    
+                                    <li class="acc-item" name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="국민은행" firm_join_yn="" obank_join_yn=""><a data-element-id="HIT-ORDR-22-S-e16" href="#none" class="acc-item__btn" ><span class="ic_b ic_b"></span>국민은행(1234)계좌</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </article>
+                        
+                        <p class="acc_btn-box"><button data-element-id="HIT-ORDR-22-S-e12" data-nav-target="HIT-CONF-10-S" type="button" class="acc__txt-btn"><span>계좌관리</span></button></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div></div>

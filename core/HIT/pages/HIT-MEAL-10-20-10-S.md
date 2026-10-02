@@ -8,9 +8,6 @@ id: HIT-MEAL-10-20-10-S / system: HIT / 기능: 힛플러스 > 식수 신청 > �
 --- IA ---
 - 종류: 화면 / 상위화면: HIT-MEAL-10-20-S
 
---- 업무 ---
-- 요소: 화면 / 업무: 식수신청 제외 날짜 정보조회 / 처리: 읽기 / 테이블: TB_ENT_RESTRIC_DATE / 입력: 회원코드, 앱코드 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ent_headcnt_calendar_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/ent_headcnt_calendar_r001_act.jsp:25 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ENT_RESTRIC_DATE_R001.xml:10
-
 --- 정의 ---
 - 구분: 기능 / 좌표: - / 라벨: 이전 / 앵커: HIT-MEAL-10-20-10-S-e07 / 해설: 이전
 - 구분: 기능 / 좌표: - / 라벨: 년 월 / 앵커: HIT-MEAL-10-20-10-S-e08 / 해설: 년 월

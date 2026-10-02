@@ -102,7 +102,7 @@
                                 <label class="ip-ch-label ml32">
                                   <input name="typeCheck" id="" class="ip-ch" type="checkbox" value="" checked onclick='checkSearch("typeCheck");'>
                                   <!--checked-->
-                                  <span class="check"></span> 일반
+                                  <span class="check">2</span> 일반
                                 </label>
                               </div>
                             </div>
@@ -211,7 +211,52 @@
                         </tr>
                       </thead>
                       <tbody id="list_item">
-                        <tr style="display: none;">
+                        <!-- sample:begin --><tr>
+                          <td id='NOTICE_NUM' ><div class="ta-center">12</div></td>
+                          <td id='NOTICE_TYPE' ><div class="ta-center">일반 공지</div></td>
+                          
+                      	  <td class="button" id='NOTICE_TITLE' onclick='detailPopupOpen(this)'>
+                            <a href="#none" class="col-btn">
+                              <div class="tx-ellipsis fc-pri" title="">
+                              </div>
+                            </a>
+                          </td>
+                          <td id='NOTICE_DATE' ><div class="ta-center">2026.10.02 14:30</div></td>
+                          <td id='NOTICE_STATE' ><div class="ta-center">접수 완료</div></td><!-- 게시중지 일 경우 fc-dis 추가 -->
+                          <td id='NOTICE_USER' ><div class="ta-center">홍길동</div></td>
+                          <td id='NOTICE_REGDATE' ><div class="ta-center">2026.10.02 14:30</div></td>
+                          <td id='SEQ' style="display: none"><div class="ta-center">2026.10.02 14:30</div></td>
+                        </tr><tr>
+                          <td id='NOTICE_NUM' ><div class="ta-center">12</div></td>
+                          <td id='NOTICE_TYPE' ><div class="ta-center">일반 공지</div></td>
+                          
+                      	  <td class="button" id='NOTICE_TITLE' onclick='detailPopupOpen(this)'>
+                            <a href="#none" class="col-btn">
+                              <div class="tx-ellipsis fc-pri" title="">
+                              </div>
+                            </a>
+                          </td>
+                          <td id='NOTICE_DATE' ><div class="ta-center">2026.10.02 14:30</div></td>
+                          <td id='NOTICE_STATE' ><div class="ta-center">접수 완료</div></td><!-- 게시중지 일 경우 fc-dis 추가 -->
+                          <td id='NOTICE_USER' ><div class="ta-center">홍길동</div></td>
+                          <td id='NOTICE_REGDATE' ><div class="ta-center">2026.10.02 14:30</div></td>
+                          <td id='SEQ' style="display: none"><div class="ta-center">2026.10.02 14:30</div></td>
+                        </tr><tr>
+                          <td id='NOTICE_NUM' ><div class="ta-center">12</div></td>
+                          <td id='NOTICE_TYPE' ><div class="ta-center">일반 공지</div></td>
+                          
+                      	  <td class="button" id='NOTICE_TITLE' onclick='detailPopupOpen(this)'>
+                            <a href="#none" class="col-btn">
+                              <div class="tx-ellipsis fc-pri" title="">
+                              </div>
+                            </a>
+                          </td>
+                          <td id='NOTICE_DATE' ><div class="ta-center">2026.10.02 14:30</div></td>
+                          <td id='NOTICE_STATE' ><div class="ta-center">접수 완료</div></td><!-- 게시중지 일 경우 fc-dis 추가 -->
+                          <td id='NOTICE_USER' ><div class="ta-center">홍길동</div></td>
+                          <td id='NOTICE_REGDATE' ><div class="ta-center">2026.10.02 14:30</div></td>
+                          <td id='SEQ' style="display: none"><div class="ta-center">2026.10.02 14:30</div></td>
+                        </tr><!-- sample:end --><tr style="display: none;">
                           <td id='NOTICE_NUM' ><div class="ta-center"></div></td>
                           <td id='NOTICE_TYPE' ><div class="ta-center"></div></td>
                           
@@ -301,7 +346,7 @@
                     <div class="ip-rd-group">
                       <label for="saveTypeG" class="ip-rd-label">
                         <input name="saveType" id="saveTypeG" class="ip-rd" type="radio" value="" checked="">
-                        <span class="check"></span> 일반
+                        <span class="check">2</span> 일반
                       </label>
                       <label for="saveTypeS" class="ip-rd-label">
                         <input name="saveType" id="saveTypeS" class="ip-rd" type="radio" value="" >
@@ -379,7 +424,7 @@
                   <div>
                     <div class="td-item-group">
                       <div class="ip-rd-group td-item">
-                        <p class="txt-01 lh-17 fc-333" id='userInfo'><!-- sample:begin -->표본<!-- sample:end --></p>
+                        <p class="txt-01 lh-17 fc-333" id='userInfo'><!-- sample:begin --><!-- sample:end --></p>
                       </div>
                       <div class="btn-group td-item">
                         <button class="btn btn-sm btn-gray-outline" id='deleteBtn' data-value='' onclick='detailInfDelete()' type="button">삭제</button>

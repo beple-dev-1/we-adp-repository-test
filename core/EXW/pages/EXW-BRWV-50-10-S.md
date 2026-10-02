@@ -8,9 +8,6 @@ id: EXW-BRWV-50-10-S / system: EXW / 기능: 외부제공 웹뷰 > 브랜드상�
 --- IA ---
 - 종류: 화면 / 상위화면: EXW-BRWV-50-S
 
---- 업무 ---
-- 요소: 화면 / 업무: 결제가능 상품권 조회API / 미확인: 외부 API 호출(IDO 없음) / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.brnd_webview_gift_pay_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/brnd/api/brnd_webview_gift_pay_r001_act.jsp:43
-
 --- 정의 ---
 - 구분: 이동 / 좌표: - / 라벨: 홈 / 앵커: EXW-BRWV-50-10-S-e01 / 이동: EXW-BRWV-10-S / 해설: 홈
 - 구분: 이동 / 좌표: - / 라벨: 내역 / 앵커: EXW-BRWV-50-10-S-e02 / 이동: EXW-BRWV-20-S / 해설: 내역

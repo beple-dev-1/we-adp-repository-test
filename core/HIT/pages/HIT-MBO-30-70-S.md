@@ -8,10 +8,6 @@ id: HIT-MBO-30-70-S / system: HIT / 기능: 힛플러스 > 점주 백오피스 P
 --- IA ---
 - 종류: 화면 / 상위화면:
 
---- 업무 ---
-- 요소: 화면 / 업무: 엔터프라이즈 가맹점pc_로그아웃 / 처리: 미확인 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ent_afltbo_logout.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/afltbo/ent_afltbo_logout_act.jsp:27
-- 요소: 화면 / 업무: 엔터프라이즈 가맹점pc_메인 (화면) / 처리: 미확인 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ent_afltbo_main.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/afltbo/ent_afltbo_main_act.jsp:26
-
 --- 정의 ---
 - 구분: 기능 / 좌표: id=logout / 라벨: 로그아웃 / 앵커: HIT-MBO-30-70-S-e04 / 해설: 로그아웃
 - 구분: 기능 / 좌표: - / 라벨: 가맹점 관리 / 앵커: HIT-MBO-30-70-S-e05 / 해설: 가맹점 관리

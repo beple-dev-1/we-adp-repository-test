@@ -62,7 +62,7 @@
                                     <!-- 계좌리스트 -->
                                     <div class="p_acc_sltbx">
                                         <ul id="selected_acct">
-                                            <li name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="국민은행" ><span class="ic_b ic_b"></span>국민은행()계좌</li>
+                                            <li name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="" ><span class="ic_b ic_b"></span>국민은행(1234)계좌</li>
                                         </ul>
                                     </div>
                                     <!-- //계좌리스트 -->
@@ -114,11 +114,11 @@
     </div><!-- // container -->
 </div><!-- // wrap -->
 
-<div com-step-id="step2" class="wrap full_height">
+<div com-step-id="step2" class="wrap full_height" style="display:none;">
     <div class="header floating-back-header floating-sticky">
         <h1></h1>
         <div class="right">
-            <a data-element-id="BPY-MNY-10-30-S-e15" id="com_close" href="#none" class="btn_outpage">페이지나가기</a>
+            <a id="com_close" href="#none" class="btn_outpage">페이지나가기</a>
         </div>
     </div>
     <!-- // header -->
@@ -146,7 +146,7 @@
                 <!-- 하단 고정버튼 -->
                 <div class="btn_botFix_w">
                     <div class="inner padding0">
-                        <a data-element-id="BPY-MNY-10-30-S-e16" id="com_complete" href="#none" class="btn_default btn-style-h48 on"><span>확인</span></a>
+                        <a id="com_complete" href="#none" class="btn_default btn-style-h48 on"><span>확인</span></a>
                     </div>
                 </div>
                 <!-- 하단 고정버튼 -->
@@ -167,7 +167,7 @@
                 <div class="p_acc_sltbx">
                     <ul>
                         
-                        <li name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="국민은행" ><span class="ic_b ic_b"></span>국민은행()계좌</li>
+                        <li name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="" ><span class="ic_b ic_b"></span>국민은행(1234)계좌</li>
                         
                     </ul>
                 </div>
@@ -195,11 +195,11 @@
                         <div class="bpop_acc_info">
                             <dl>
                                 <dt>출금금액</dt>
-                                <dd><strong id="info_wdrw_amt"><!-- sample:begin -->4,500<!-- sample:end --></strong></dd>
+                                <dd><strong id="info_wdrw_amt"><!-- sample:begin -->15,000<!-- sample:end --></strong></dd>
                             </dl>
                             <dl>
                                 <dt>입금계좌</dt>
-                                <dd><strong id="info_acct"><!-- sample:begin -->표본<!-- sample:end --></strong></dd>
+                                <dd><strong id="info_acct"><!-- sample:begin -->국민은행 1234-56-789012<!-- sample:end --></strong></dd>
                             </dl>
                         </div>
                     </div>

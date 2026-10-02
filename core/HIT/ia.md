@@ -53,13 +53,11 @@
 - HIT/MBO/10/40: 주문관리
 - HIT/MBO/10/40/10: 주문집계
 - HIT/MBO/10/40/20: 주문내역
-- HIT/MBO/10/40/30: 집계 상세 조회2
 - HIT/MBO/10/50: 거래관리
 - HIT/MBO/10/50/10: 거래내역
 - HIT/MBO/20: 다과 관리
 - HIT/MBO/20/10: 다과 신청 내역
 - HIT/MBO/20/10/10: 다과 신청 내역
-- HIT/MBO/20/10/20: 다과주문관리 상세
 - HIT/MBO/20/20: 다과 메뉴 관리
 - HIT/MBO/20/20/10: 카테고리
 - HIT/MBO/20/20/20: 메뉴
@@ -135,7 +133,6 @@
 - HIT/PAY/10/10: 엔터프라이즈_개인제로페이 MPM 결제
 - HIT/PAY/10/20: 식권제로페이 함께결제 (list)
 - HIT/PAY/20: 엔터프라이즈_법인 제로페이 결제화면 호출
-- HIT/PAY/30: 엔터프라이즈_식권제로페이 결제(보유식권 1개)
 - HIT/PAY/40: 엔터프라이즈_제로페이 결제 메인 > 계좌 상세
 - HIT/SNCK: 다과신청관리
 - HIT/SNCK/10: 다과 신청 내역 (list)
@@ -194,117 +191,114 @@
 - 순서: 035 / 경로: HIT/MBO/10/40 / 화면:
 - 순서: 036 / 경로: HIT/MBO/10/40/10 / 화면: HIT-MBO-10-40-10-S
 - 순서: 037 / 경로: HIT/MBO/10/40/20 / 화면: HIT-MBO-10-40-20-S
-- 순서: 038 / 경로: HIT/MBO/10/40/30 / 화면: HIT-MBO-10-40-30-S
-- 순서: 039 / 경로: HIT/MBO/10/50 / 화면:
-- 순서: 040 / 경로: HIT/MBO/10/50/10 / 화면: HIT-MBO-10-50-10-S
-- 순서: 041 / 경로: HIT/MBO/20 / 화면:
-- 순서: 042 / 경로: HIT/MBO/20/10 / 화면:
-- 순서: 043 / 경로: HIT/MBO/20/10/10 / 화면: HIT-MBO-20-10-10-S
-- 순서: 044 / 경로: HIT/MBO/20/10/20 / 화면: HIT-MBO-20-10-20-S
-- 순서: 045 / 경로: HIT/MBO/20/20 / 화면:
-- 순서: 046 / 경로: HIT/MBO/20/20/10 / 화면: HIT-MBO-20-20-10-S
-- 순서: 047 / 경로: HIT/MBO/20/20/20 / 화면: HIT-MBO-20-20-20-S
-- 순서: 048 / 경로: HIT/MBO/30 / 화면:
-- 순서: 049 / 경로: HIT/MBO/30/10 / 화면: HIT-MBO-30-10-S
-- 순서: 050 / 경로: HIT/MBO/30/20 / 화면: HIT-MBO-30-20-S
-- 순서: 051 / 경로: HIT/MBO/30/30 / 화면: HIT-MBO-30-30-S
-- 순서: 052 / 경로: HIT/MBO/30/40 / 화면: HIT-MBO-30-40-S
-- 순서: 053 / 경로: HIT/MBO/30/50 / 화면: HIT-MBO-30-50-S
-- 순서: 054 / 경로: HIT/MBO/30/60 / 화면: HIT-MBO-30-60-S
-- 순서: 055 / 경로: HIT/MBO/30/70 / 화면: HIT-MBO-30-70-S
-- 순서: 056 / 경로: HIT/MEAL / 화면:
-- 순서: 057 / 경로: HIT/MEAL/10 / 화면: HIT-MEAL-10-S
-- 순서: 058 / 경로: HIT/MEAL/10/10 / 화면: HIT-MEAL-10-10-S
-- 순서: 059 / 경로: HIT/MEAL/10/10/10 / 화면: HIT-MEAL-10-10-10-S
-- 순서: 060 / 경로: HIT/MEAL/10/20 / 화면: HIT-MEAL-10-20-S
-- 순서: 061 / 경로: HIT/MEAL/10/20/10 / 화면: HIT-MEAL-10-20-10-S
-- 순서: 062 / 경로: HIT/MEAL/10/20/20 / 화면: HIT-MEAL-10-20-20-S
-- 순서: 063 / 경로: HIT/MEAL/20 / 화면: HIT-MEAL-20-S
-- 순서: 064 / 경로: HIT/MEAL/20/10 / 화면: HIT-MEAL-20-10-S
-- 순서: 065 / 경로: HIT/MEAL/20/20 / 화면: HIT-MEAL-20-20-S
-- 순서: 066 / 경로: HIT/MEAL/20/30 / 화면: HIT-MEAL-20-30-S
-- 순서: 067 / 경로: HIT/MEAL/20/30/10 / 화면: HIT-MEAL-20-30-10-S
-- 순서: 068 / 경로: HIT/MLPC / 화면:
-- 순서: 069 / 경로: HIT/MLPC/10 / 화면: HIT-MLPC-10-S
-- 순서: 070 / 경로: HIT/MLPC/10/10 / 화면: HIT-MLPC-10-10-S
-- 순서: 071 / 경로: HIT/MLPC/10/20 / 화면: HIT-MLPC-10-20-S
-- 순서: 072 / 경로: HIT/MLPC/20 / 화면: HIT-MLPC-20-S
-- 순서: 073 / 경로: HIT/MLPC/30 / 화면: HIT-MLPC-30-S
-- 순서: 074 / 경로: HIT/MLPC/40 / 화면: HIT-MLPC-40-S
-- 순서: 075 / 경로: HIT/MLPC/50 / 화면: HIT-MLPC-50-S
-- 순서: 076 / 경로: HIT/MLPC/60 / 화면: HIT-MLPC-60-S
-- 순서: 077 / 경로: HIT/MLPC/70 / 화면: HIT-MLPC-70-S
-- 순서: 078 / 경로: HIT/MLPC/80 / 화면: HIT-MLPC-80-S
-- 순서: 079 / 경로: HIT/SNCK / 화면:
-- 순서: 080 / 경로: HIT/SNCK/10 / 화면: HIT-SNCK-10-S
-- 순서: 081 / 경로: HIT/SNCK/10/10 / 화면: HIT-SNCK-10-10-S
-- 순서: 082 / 경로: HIT/SNCK/10/20 / 화면: HIT-SNCK-10-20-S
-- 순서: 083 / 경로: HIT/SNCK/10/30 / 화면: HIT-SNCK-10-30-S
-- 순서: 084 / 경로: HIT/SNCK/10/30/10 / 화면: HIT-SNCK-10-30-10-S
-- 순서: 085 / 경로: HIT/SNCK/10/30/20 / 화면: HIT-SNCK-10-30-20-S
-- 순서: 086 / 경로: HIT/SNCK/10/30/30 / 화면: HIT-SNCK-10-30-30-S
-- 순서: 087 / 경로: HIT/SNCK/10/30/40 / 화면: HIT-SNCK-10-30-40-S
-- 순서: 088 / 경로: HIT/SNCK/10/30/50 / 화면: HIT-SNCK-10-30-50-S
-- 순서: 089 / 경로: HIT/SNCK/20 / 화면: HIT-SNCK-20-S
-- 순서: 090 / 경로: HIT/HIST / 화면:
-- 순서: 091 / 경로: HIT/HIST/10 / 화면: HIT-HIST-10-S
-- 순서: 092 / 경로: HIT/HIST/10/10 / 화면: HIT-HIST-10-10-S
-- 순서: 093 / 경로: HIT/HIST/10/20 / 화면: HIT-HIST-10-20-S
-- 순서: 094 / 경로: HIT/HIST/10/20/10 / 화면: HIT-HIST-10-20-10-S
-- 순서: 095 / 경로: HIT/HIST/10/20/20 / 화면: HIT-HIST-10-20-20-S
-- 순서: 096 / 경로: HIT/HIST/10/30 / 화면: HIT-HIST-10-30-S
-- 순서: 097 / 경로: HIT/HIST/20 / 화면: HIT-HIST-20-S
-- 순서: 098 / 경로: HIT/HIST/30 / 화면: HIT-HIST-30-S
-- 순서: 099 / 경로: HIT/HIST/30/10 / 화면: HIT-HIST-30-10-S
-- 순서: 100 / 경로: HIT/COMN / 화면:
-- 순서: 101 / 경로: HIT/COMN/10 / 화면:
-- 순서: 102 / 경로: HIT/COMN/10/10 / 화면: HIT-COMN-10-10-S
-- 순서: 103 / 경로: HIT/COMN/10/10/10 / 화면: HIT-COMN-10-10-10-S
-- 순서: 104 / 경로: HIT/COMN/20 / 화면:
-- 순서: 105 / 경로: HIT/COMN/20/10 / 화면: HIT-COMN-20-10-S
-- 순서: 106 / 경로: HIT/COMN/20/20 / 화면: HIT-COMN-20-20-S
-- 순서: 107 / 경로: HIT/COMN/20/30 / 화면: HIT-COMN-20-30-S
-- 순서: 108 / 경로: HIT/COMN/30 / 화면:
-- 순서: 109 / 경로: HIT/COMN/30/10 / 화면: HIT-COMN-30-10-S
-- 순서: 110 / 경로: HIT/COMN/40 / 화면:
-- 순서: 111 / 경로: HIT/COMN/40/10 / 화면: HIT-COMN-40-10-S
-- 순서: 112 / 경로: HIT/COMN/40/20 / 화면: HIT-COMN-40-20-S
-- 순서: 113 / 경로: HIT/MBOA / 화면:
-- 순서: 114 / 경로: HIT/MBOA/10 / 화면: HIT-MBOA-10-S
-- 순서: 115 / 경로: HIT/MBOA/10/10 / 화면: HIT-MBOA-10-10-S
-- 순서: 116 / 경로: HIT/MBOA/10/10/10 / 화면: HIT-MBOA-10-10-10-S
-- 순서: 117 / 경로: HIT/MBOA/10/10/20 / 화면: HIT-MBOA-10-10-20-S
-- 순서: 118 / 경로: HIT/MBOA/20 / 화면: HIT-MBOA-20-S
-- 순서: 119 / 경로: HIT/MBOA/20/10 / 화면: HIT-MBOA-20-10-S
-- 순서: 120 / 경로: HIT/MBOA/20/20 / 화면: HIT-MBOA-20-20-S
-- 순서: 121 / 경로: HIT/SRCH / 화면:
-- 순서: 122 / 경로: HIT/SRCH/10 / 화면: HIT-SRCH-10-S
-- 순서: 123 / 경로: HIT/SRCH/10/10 / 화면: HIT-SRCH-10-10-S
-- 순서: 124 / 경로: HIT/SRCH/20 / 화면: HIT-SRCH-20-S
-- 순서: 125 / 경로: HIT/SRCH/30 / 화면: HIT-SRCH-30-S
-- 순서: 126 / 경로: HIT/SRCH/30/10 / 화면: HIT-SRCH-30-10-S
-- 순서: 127 / 경로: HIT/SRCH/30/10/10 / 화면: HIT-SRCH-30-10-10-S
-- 순서: 128 / 경로: HIT/PAY / 화면:
-- 순서: 129 / 경로: HIT/PAY/10 / 화면: HIT-PAY-10-S
-- 순서: 130 / 경로: HIT/PAY/10/10 / 화면: HIT-PAY-10-10-S
-- 순서: 131 / 경로: HIT/PAY/10/20 / 화면: HIT-PAY-10-20-S
-- 순서: 132 / 경로: HIT/PAY/20 / 화면: HIT-PAY-20-S
-- 순서: 133 / 경로: HIT/PAY/30 / 화면: HIT-PAY-30-S
-- 순서: 134 / 경로: HIT/PAY/40 / 화면: HIT-PAY-40-S
-- 순서: 135 / 경로: HIT/MNY / 화면:
-- 순서: 136 / 경로: HIT/MNY/10 / 화면: HIT-MNY-10-S
-- 순서: 137 / 경로: HIT/MNY/10/10 / 화면: HIT-MNY-10-10-S
-- 순서: 138 / 경로: HIT/MNY/10/20 / 화면: HIT-MNY-10-20-S
-- 순서: 139 / 경로: HIT/MNY/10/30 / 화면: HIT-MNY-10-30-S
-- 순서: 140 / 경로: HIT/CONF / 화면:
-- 순서: 141 / 경로: HIT/CONF/10 / 화면: HIT-CONF-10-S
-- 순서: 142 / 경로: HIT/CONF/10/10 / 화면: HIT-CONF-10-10-S
-- 순서: 143 / 경로: HIT/CONF/20 / 화면: HIT-CONF-20-S
-- 순서: 144 / 경로: HIT/ACCT / 화면:
-- 순서: 145 / 경로: HIT/ACCT/10 / 화면:
-- 순서: 146 / 경로: HIT/ACCT/10/10 / 화면: HIT-ACCT-10-10-S
-- 순서: 147 / 경로: HIT/ACCT/10/20 / 화면: HIT-ACCT-10-20-S
-- 순서: 148 / 경로: HIT/ACCT/10/30 / 화면: HIT-ACCT-10-30-S
-- 순서: 149 / 경로: HIT/ACCT/10/40 / 화면: HIT-ACCT-10-40-S
-- 순서: 150 / 경로: HIT/ACCT/10/50 / 화면: HIT-ACCT-10-50-S
-- 순서: 151 / 경로: HIT/ACCT/10/60 / 화면: HIT-ACCT-10-60-S
+- 순서: 038 / 경로: HIT/MBO/10/50 / 화면:
+- 순서: 039 / 경로: HIT/MBO/10/50/10 / 화면: HIT-MBO-10-50-10-S
+- 순서: 040 / 경로: HIT/MBO/20 / 화면:
+- 순서: 041 / 경로: HIT/MBO/20/10 / 화면:
+- 순서: 042 / 경로: HIT/MBO/20/10/10 / 화면: HIT-MBO-20-10-10-S
+- 순서: 043 / 경로: HIT/MBO/20/20 / 화면:
+- 순서: 044 / 경로: HIT/MBO/20/20/10 / 화면: HIT-MBO-20-20-10-S
+- 순서: 045 / 경로: HIT/MBO/20/20/20 / 화면: HIT-MBO-20-20-20-S
+- 순서: 046 / 경로: HIT/MBO/30 / 화면:
+- 순서: 047 / 경로: HIT/MBO/30/10 / 화면: HIT-MBO-30-10-S
+- 순서: 048 / 경로: HIT/MBO/30/20 / 화면: HIT-MBO-30-20-S
+- 순서: 049 / 경로: HIT/MBO/30/30 / 화면: HIT-MBO-30-30-S
+- 순서: 050 / 경로: HIT/MBO/30/40 / 화면: HIT-MBO-30-40-S
+- 순서: 051 / 경로: HIT/MBO/30/50 / 화면: HIT-MBO-30-50-S
+- 순서: 052 / 경로: HIT/MBO/30/60 / 화면: HIT-MBO-30-60-S
+- 순서: 053 / 경로: HIT/MBO/30/70 / 화면: HIT-MBO-30-70-S
+- 순서: 054 / 경로: HIT/MEAL / 화면:
+- 순서: 055 / 경로: HIT/MEAL/10 / 화면: HIT-MEAL-10-S
+- 순서: 056 / 경로: HIT/MEAL/10/10 / 화면: HIT-MEAL-10-10-S
+- 순서: 057 / 경로: HIT/MEAL/10/10/10 / 화면: HIT-MEAL-10-10-10-S
+- 순서: 058 / 경로: HIT/MEAL/10/20 / 화면: HIT-MEAL-10-20-S
+- 순서: 059 / 경로: HIT/MEAL/10/20/10 / 화면: HIT-MEAL-10-20-10-S
+- 순서: 060 / 경로: HIT/MEAL/10/20/20 / 화면: HIT-MEAL-10-20-20-S
+- 순서: 061 / 경로: HIT/MEAL/20 / 화면: HIT-MEAL-20-S
+- 순서: 062 / 경로: HIT/MEAL/20/10 / 화면: HIT-MEAL-20-10-S
+- 순서: 063 / 경로: HIT/MEAL/20/20 / 화면: HIT-MEAL-20-20-S
+- 순서: 064 / 경로: HIT/MEAL/20/30 / 화면: HIT-MEAL-20-30-S
+- 순서: 065 / 경로: HIT/MEAL/20/30/10 / 화면: HIT-MEAL-20-30-10-S
+- 순서: 066 / 경로: HIT/MLPC / 화면:
+- 순서: 067 / 경로: HIT/MLPC/10 / 화면: HIT-MLPC-10-S
+- 순서: 068 / 경로: HIT/MLPC/10/10 / 화면: HIT-MLPC-10-10-S
+- 순서: 069 / 경로: HIT/MLPC/10/20 / 화면: HIT-MLPC-10-20-S
+- 순서: 070 / 경로: HIT/MLPC/20 / 화면: HIT-MLPC-20-S
+- 순서: 071 / 경로: HIT/MLPC/30 / 화면: HIT-MLPC-30-S
+- 순서: 072 / 경로: HIT/MLPC/40 / 화면: HIT-MLPC-40-S
+- 순서: 073 / 경로: HIT/MLPC/50 / 화면: HIT-MLPC-50-S
+- 순서: 074 / 경로: HIT/MLPC/60 / 화면: HIT-MLPC-60-S
+- 순서: 075 / 경로: HIT/MLPC/70 / 화면: HIT-MLPC-70-S
+- 순서: 076 / 경로: HIT/MLPC/80 / 화면: HIT-MLPC-80-S
+- 순서: 077 / 경로: HIT/SNCK / 화면:
+- 순서: 078 / 경로: HIT/SNCK/10 / 화면: HIT-SNCK-10-S
+- 순서: 079 / 경로: HIT/SNCK/10/10 / 화면: HIT-SNCK-10-10-S
+- 순서: 080 / 경로: HIT/SNCK/10/20 / 화면: HIT-SNCK-10-20-S
+- 순서: 081 / 경로: HIT/SNCK/10/30 / 화면: HIT-SNCK-10-30-S
+- 순서: 082 / 경로: HIT/SNCK/10/30/10 / 화면: HIT-SNCK-10-30-10-S
+- 순서: 083 / 경로: HIT/SNCK/10/30/20 / 화면: HIT-SNCK-10-30-20-S
+- 순서: 084 / 경로: HIT/SNCK/10/30/30 / 화면: HIT-SNCK-10-30-30-S
+- 순서: 085 / 경로: HIT/SNCK/10/30/40 / 화면: HIT-SNCK-10-30-40-S
+- 순서: 086 / 경로: HIT/SNCK/10/30/50 / 화면: HIT-SNCK-10-30-50-S
+- 순서: 087 / 경로: HIT/SNCK/20 / 화면: HIT-SNCK-20-S
+- 순서: 088 / 경로: HIT/HIST / 화면:
+- 순서: 089 / 경로: HIT/HIST/10 / 화면: HIT-HIST-10-S
+- 순서: 090 / 경로: HIT/HIST/10/10 / 화면: HIT-HIST-10-10-S
+- 순서: 091 / 경로: HIT/HIST/10/20 / 화면: HIT-HIST-10-20-S
+- 순서: 092 / 경로: HIT/HIST/10/20/10 / 화면: HIT-HIST-10-20-10-S
+- 순서: 093 / 경로: HIT/HIST/10/20/20 / 화면: HIT-HIST-10-20-20-S
+- 순서: 094 / 경로: HIT/HIST/10/30 / 화면: HIT-HIST-10-30-S
+- 순서: 095 / 경로: HIT/HIST/20 / 화면: HIT-HIST-20-S
+- 순서: 096 / 경로: HIT/HIST/30 / 화면: HIT-HIST-30-S
+- 순서: 097 / 경로: HIT/HIST/30/10 / 화면: HIT-HIST-30-10-S
+- 순서: 098 / 경로: HIT/COMN / 화면:
+- 순서: 099 / 경로: HIT/COMN/10 / 화면:
+- 순서: 100 / 경로: HIT/COMN/10/10 / 화면: HIT-COMN-10-10-S
+- 순서: 101 / 경로: HIT/COMN/10/10/10 / 화면: HIT-COMN-10-10-10-S
+- 순서: 102 / 경로: HIT/COMN/20 / 화면:
+- 순서: 103 / 경로: HIT/COMN/20/10 / 화면: HIT-COMN-20-10-S
+- 순서: 104 / 경로: HIT/COMN/20/20 / 화면: HIT-COMN-20-20-S
+- 순서: 105 / 경로: HIT/COMN/20/30 / 화면: HIT-COMN-20-30-S
+- 순서: 106 / 경로: HIT/COMN/30 / 화면:
+- 순서: 107 / 경로: HIT/COMN/30/10 / 화면: HIT-COMN-30-10-S
+- 순서: 108 / 경로: HIT/COMN/40 / 화면:
+- 순서: 109 / 경로: HIT/COMN/40/10 / 화면: HIT-COMN-40-10-S
+- 순서: 110 / 경로: HIT/COMN/40/20 / 화면: HIT-COMN-40-20-S
+- 순서: 111 / 경로: HIT/MBOA / 화면:
+- 순서: 112 / 경로: HIT/MBOA/10 / 화면: HIT-MBOA-10-S
+- 순서: 113 / 경로: HIT/MBOA/10/10 / 화면: HIT-MBOA-10-10-S
+- 순서: 114 / 경로: HIT/MBOA/10/10/10 / 화면: HIT-MBOA-10-10-10-S
+- 순서: 115 / 경로: HIT/MBOA/10/10/20 / 화면: HIT-MBOA-10-10-20-S
+- 순서: 116 / 경로: HIT/MBOA/20 / 화면: HIT-MBOA-20-S
+- 순서: 117 / 경로: HIT/MBOA/20/10 / 화면: HIT-MBOA-20-10-S
+- 순서: 118 / 경로: HIT/MBOA/20/20 / 화면: HIT-MBOA-20-20-S
+- 순서: 119 / 경로: HIT/SRCH / 화면:
+- 순서: 120 / 경로: HIT/SRCH/10 / 화면: HIT-SRCH-10-S
+- 순서: 121 / 경로: HIT/SRCH/10/10 / 화면: HIT-SRCH-10-10-S
+- 순서: 122 / 경로: HIT/SRCH/20 / 화면: HIT-SRCH-20-S
+- 순서: 123 / 경로: HIT/SRCH/30 / 화면: HIT-SRCH-30-S
+- 순서: 124 / 경로: HIT/SRCH/30/10 / 화면: HIT-SRCH-30-10-S
+- 순서: 125 / 경로: HIT/SRCH/30/10/10 / 화면: HIT-SRCH-30-10-10-S
+- 순서: 126 / 경로: HIT/PAY / 화면:
+- 순서: 127 / 경로: HIT/PAY/10 / 화면: HIT-PAY-10-S
+- 순서: 128 / 경로: HIT/PAY/10/10 / 화면: HIT-PAY-10-10-S
+- 순서: 129 / 경로: HIT/PAY/10/20 / 화면: HIT-PAY-10-20-S
+- 순서: 130 / 경로: HIT/PAY/20 / 화면: HIT-PAY-20-S
+- 순서: 131 / 경로: HIT/PAY/40 / 화면: HIT-PAY-40-S
+- 순서: 132 / 경로: HIT/MNY / 화면:
+- 순서: 133 / 경로: HIT/MNY/10 / 화면: HIT-MNY-10-S
+- 순서: 134 / 경로: HIT/MNY/10/10 / 화면: HIT-MNY-10-10-S
+- 순서: 135 / 경로: HIT/MNY/10/20 / 화면: HIT-MNY-10-20-S
+- 순서: 136 / 경로: HIT/MNY/10/30 / 화면: HIT-MNY-10-30-S
+- 순서: 137 / 경로: HIT/CONF / 화면:
+- 순서: 138 / 경로: HIT/CONF/10 / 화면: HIT-CONF-10-S
+- 순서: 139 / 경로: HIT/CONF/10/10 / 화면: HIT-CONF-10-10-S
+- 순서: 140 / 경로: HIT/CONF/20 / 화면: HIT-CONF-20-S
+- 순서: 141 / 경로: HIT/ACCT / 화면:
+- 순서: 142 / 경로: HIT/ACCT/10 / 화면:
+- 순서: 143 / 경로: HIT/ACCT/10/10 / 화면: HIT-ACCT-10-10-S
+- 순서: 144 / 경로: HIT/ACCT/10/20 / 화면: HIT-ACCT-10-20-S
+- 순서: 145 / 경로: HIT/ACCT/10/30 / 화면: HIT-ACCT-10-30-S
+- 순서: 146 / 경로: HIT/ACCT/10/40 / 화면: HIT-ACCT-10-40-S
+- 순서: 147 / 경로: HIT/ACCT/10/50 / 화면: HIT-ACCT-10-50-S
+- 순서: 148 / 경로: HIT/ACCT/10/60 / 화면: HIT-ACCT-10-60-S

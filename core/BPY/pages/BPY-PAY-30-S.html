@@ -69,14 +69,14 @@
                             <a class="btn_del btn-clear-text" style="display:none;"></a>
                         
                         <input data-element-id="BPY-PAY-30-S-e16" type="tel" maxlength="10" placeholder="결제금액 입력(원)" id="tr_amt" jex-input="commaFormat" data-input="commaFormat" value="" >
-                        <strong id="amt_won" style="display: none;" class="won">원</strong><!-- 2022-11-15 -->
+                        <strong id="amt_won" style="display: none;" class="won">15,000원</strong><!-- 2022-11-15 -->
                         <a data-element-id="BPY-PAY-30-S-e11" href="#none" class="remove" id="remove">내용삭제</a><!-- 2022-12-06-->
                     </div>
                     
                     <p id="charge_info" class="charge_info" style="display:none;">부족한 금액은 비플머니로 자동 충전됩니다.</p><!-- 충전금액 부족 시 노출, 결제 불가 메세지 노출 시 "fcRed" 추가 -->
                     
 <!--                    <div class="title-page-13 error" id="err_txt" style="margin-top: 5px; color:red;" aria-hidden="true"></div>-->
-                    <p id="err_txt" class="charge_info error_txt" style="display:none;"><!-- sample:begin -->안내 문구<!-- sample:end --></p><!-- 충전금액 부족 시 노출, 결제 불가 메세지 노출 시 "fcRed" 추가 -->
+                    <p id="err_txt" class="charge_info error_txt" style="display:none;"><!-- sample:begin --><!-- sample:end --></p><!-- 충전금액 부족 시 노출, 결제 불가 메세지 노출 시 "fcRed" 추가 -->
                 </div>
                 <!-- //매장명 및 결제금액 -->
                 <!-- 충전/결제 정보 -->
@@ -120,10 +120,8 @@
                     
                     <div class="info_bx message_bx">
                         <h3 class="tit">전달 메시지</h3>
-                        <div class="message" id="message_bx">
-<!--                            <textarea name="" id="memo" maxlength="200" placeholder=" 사장님에게 전달할 메시지를 입력하세요." readonly></textarea>-->
-<!--                            <p class="count"><span id="memo_count">0/</span>200</p>-->
-                        </div>
+                        <div class="message" id="message_bx"><!-- sample:begin --><textarea name="" id="memo" maxlength="200" placeholder=" 사장님에게 전달할 메시지를 입력하세요."></textarea>
+                    <p class="count"><span id="memo_count">0/</span>200</p><!-- sample:end --></div>
                         <p class="privacy_chk">
                             <label>
                                 <input data-element-id="BPY-PAY-30-S-e17" type="checkbox" id="chk_mask">
@@ -166,7 +164,7 @@
                                 
                                     
                                         
-                                            <li><a name="acct_item" bank_cd="" bank_nm="국민은행" acct_no="" acct_no_mask="" href="#none"><span class="ic_b ic_b"></span>국민은행 ()계좌</a></li>
+                                            <li><a name="acct_item" bank_cd="" bank_nm="" acct_no="" acct_no_mask="" href="#none"><span class="ic_b ic_b"></span>국민은행 (1234)계좌</a></li>
                                         
                                     
                                 
@@ -251,7 +249,7 @@
                 <!-- 상단 영역 -->
                 <div class="pb_toptxt" >
                     <p class="tit"><em class="nm"></em>에서</p>
-                    <p class="txt"><em class="won">원</em>을 결제하시겠습니까?</p>
+                    <p class="txt"><em class="won">15,000원</em>을 결제하시겠습니까?</p>
                 </div>
                 <!-- //상단 영역 -->
                 <!-- 컨텐츠 영역 -->
@@ -271,12 +269,12 @@
                         </tr>
                         <tr>
                             <th>결제수단</th>
-                            <td id="apr_way"><!-- sample:begin -->표본<!-- sample:end --></td>
+                            <td id="apr_way"><!-- sample:begin -->카드 결제<!-- sample:end --></td>
                         </tr>
                         
                         <tr>
                             <th>전달 메세지</th>
-                            <td id="apr_memo"><!-- sample:begin -->표본<!-- sample:end --></td>
+                            <td id="apr_memo"><!-- sample:begin -->요청사항 없음<!-- sample:end --></td>
                         </tr>
                         
                         </tbody>

@@ -201,10 +201,10 @@
     <!-- // wrap -->
     
     <!-- 업종코드 검색 popup -->
-    <div class="wrap" id="popup">
+    <div class="wrap" id="popup" style="display:none;">
         <div class="header floating-back-header floating-sticky">
             <h1>업종코드 검색</h1>
-            <a data-element-id="MCH-KSQR-40-S-e29" href="#" class="btn_outpage" onclick="exit($(this))">종료하기</a>
+            <a href="#" class="btn_outpage" onclick="exit($(this))">종료하기</a>
         </div>
         <!-- // header -->
 
@@ -215,8 +215,8 @@
                     <!-- 검색영역 -->
                     <div class="local_sch">
                         <div class="bg btn_right">
-                            <input data-element-id="MCH-KSQR-40-S-e44" type="text" placeholder="업종명 또는 업종코드 입력" value="" id="upjong" onkeyup="evt_upjong()">
-                            <a data-element-id="MCH-KSQR-40-S-e30" class="btn search_right" onclick="fnSearch()"><span class="blind">검색</span></a>
+                            <input type="text" placeholder="업종명 또는 업종코드 입력" value="" id="upjong" onkeyup="evt_upjong()">
+                            <a class="btn search_right" onclick="fnSearch()"><span class="blind">검색</span></a>
                         </div>
                     </div>
                     <!-- 검색결과 -->
@@ -226,7 +226,7 @@
                             <p class="result_text">검색 결과가 없습니다.</p>
                         </div>
                         <!-- 검색결과 -->
-                        <div class="result_content addBtn-pb58" id="data"><!-- sample:begin --><div class='result_item' name='upjong_nm' onclick='clk_upjong($(this))' data-uptae='홍길동' data-jongmok='홍길동' data-upjong-cd='' data-upjong-nm='홍길동'><button type='button' class='result_btn'><div class='detail_box'><p class='detail_text head'>업태</p><p class='detail_text'>홍길동</p></div><div class='detail_box'><p class='detail_text head'>종목</p><p class='detail_text'>홍길동</p></div><div class='detail_box'><p class='detail_text head'>(업종코드)<br>업종명</p><p class='detail_text'>()<br>홍길동</p></div></button><p class='select_icon icon chk-18'><span class='blind-i'>선택됨</span></p></div><!-- sample:end --></div>
+                        <div class="result_content addBtn-pb58" id="data"><!-- sample:begin --><div class='result_item' name='upjong_nm' onclick='clk_upjong($(this))' data-uptae='음식점업' data-jongmok='카페' data-upjong-cd='561011' data-upjong-nm='커피 전문점'><button type='button' class='result_btn'><div class='detail_box'><p class='detail_text head'>업태</p><p class='detail_text'>음식점업</p></div><div class='detail_box'><p class='detail_text head'>종목</p><p class='detail_text'>카페</p></div><div class='detail_box'><p class='detail_text head'>(업종코드)<br>업종명</p><p class='detail_text'>(561011)<br>커피 전문점</p></div></button><p class='select_icon icon chk-18'><span class='blind-i'>선택됨</span></p></div><div class='result_item' name='upjong_nm' onclick='clk_upjong($(this))' data-uptae='음식점업' data-jongmok='카페' data-upjong-cd='561011' data-upjong-nm='커피 전문점'><button type='button' class='result_btn'><div class='detail_box'><p class='detail_text head'>업태</p><p class='detail_text'>음식점업</p></div><div class='detail_box'><p class='detail_text head'>종목</p><p class='detail_text'>카페</p></div><div class='detail_box'><p class='detail_text head'>(업종코드)<br>업종명</p><p class='detail_text'>(561011)<br>커피 전문점</p></div></button><p class='select_icon icon chk-18'><span class='blind-i'>선택됨</span></p></div><!-- sample:end --></div>
                         <!-- 맨처음 -->
                         <div class="result_intro addBtn-pb58" id="intro" style="display:none;">
                             <div class="content-header">
@@ -261,7 +261,7 @@
                 <!-- 하단 플로팅 영역 -->
                 <div class="btn_botFix_w">
                     <div class="inner bg_white pdt10">
-                        <a data-element-id="MCH-KSQR-40-S-e31" href="#" class="btn_default btn-style-h48 round_r6" id="upjong_sel" onclick="exit($(this))"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
+                        <a href="#" class="btn_default btn-style-h48 round_r6" id="upjong_sel" onclick="exit($(this))"><!-- 활성/비활성 시 on클래스 추가/삭제 -->
                             <span>확인</span>
                         </a>
                     </div>

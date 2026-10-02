@@ -66,8 +66,8 @@
                             <!-- 계좌리스트 -->
                             <div class="p_acc_sltbx">
                                 <ul id="selected_acct">
-                                    <li name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="국민은행" >
-                                        <span class="ic_b ic_b"></span>국민은행()계좌
+                                    <li name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="" >
+                                        <span class="ic_b ic_b"></span>국민은행(1234)계좌
                                     </li>
                                 </ul>
                             </div>
@@ -134,9 +134,9 @@
                         <div class="p_acc_sltbx">
                             <ul class="acc-list">
                                 
-                                <li class="acc-item" name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="국민은행" >
+                                <li class="acc-item" name="acct" bank_cd="" acct_no="" dec_acct_no="" bank_nm="" >
                                     <a href="#none" class="acc-item__btn">
-                                        <span class="ic_b ic_b"></span>국민은행()계좌
+                                        <span class="ic_b ic_b"></span>국민은행(1234)계좌
                                     </a>
                                 </li>
                                 
@@ -164,11 +164,11 @@
                         <div class="store-info__item-wrap">
                             <div class="info-item justify-space">
                                 <p class="info-text head">출금금액</p>
-                                <p class="info-text fc-222" id="info_wdrw_amt"><!-- sample:begin -->4,500<!-- sample:end --></p>
+                                <p class="info-text fc-222" id="info_wdrw_amt"><!-- sample:begin -->15,000<!-- sample:end --></p>
                             </div>
                             <div class="info-item justify-space">
                                 <p class="info-text head">입금계좌</p>
-                                <p class="info-text fc-222" id="info_acct"><!-- sample:begin -->표본<!-- sample:end --></p>
+                                <p class="info-text fc-222" id="info_acct"><!-- sample:begin -->국민은행 1234-56-789012<!-- sample:end --></p>
                             </div>
                         </div>
                     </article>
@@ -189,7 +189,7 @@
     </main><!-- // container -->
 </div><!-- // wrap -->
 
-<div com-step-id="step2" class="wrap js-wrap">
+<div com-step-id="step2" class="wrap js-wrap" style="display:none;">
     <!-- 헤더 영역 -->
     <header class="header position-sticky flex-end">
         <!-- 헤더 타이틀 -->
@@ -198,7 +198,7 @@
         </div>
         <!-- 헤더 네비 -->
         <nav class="header-nav">
-            <a data-element-id="HIT-MNY-10-30-S-e17" id="com_close" href="#none"class="hd-btn close"><span class="blind-i">닫기</span></a>
+            <a id="com_close" href="#none"class="hd-btn close"><span class="blind-i">닫기</span></a>
         </nav>
     </header>
 
@@ -231,7 +231,7 @@
             <!-- 메인 버튼영역 -->
             <article class="main_btn-box pd0">
                 <div class="btn-main">
-                    <a data-element-id="HIT-MNY-10-30-S-e18" id="com_complete" href="#" class="btn-default btn-style-h48 on"><span>확인</span></a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
+                    <a id="com_complete" href="#" class="btn-default btn-style-h48 on"><span>확인</span></a><!-- 비활성 시 on 클래스 제거 / 활성 시 on 클래스 추가 -->
                 </div>
             </article>
         </section>

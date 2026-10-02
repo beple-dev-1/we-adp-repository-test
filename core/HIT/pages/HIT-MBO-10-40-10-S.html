@@ -70,7 +70,7 @@
                     <div class="td-item left">
                       <div class="refresh-noti">
                         <button data-element-id="HIT-MBO-10-40-10-S-e05" class="btn-refresh" type="button" id="btn_refresh">새로고침</button>
-                        <span class="text-refresh" id="text_refresh"><!-- sample:begin -->안내 문구<!-- sample:end --></span>
+                        <span class="text-refresh" id="text_refresh"><!-- sample:begin --><!-- sample:end --></span>
                       </div>
                     </div>
                     <div class="td-item-group td-item right" id="btn_group" style="display:none;"><!-- [D] 검색결과 없을 시 버튼 숨김 : style="display:none;" -->
@@ -112,9 +112,9 @@
                       <tfoot>
                         <tr>
                           <td colspan="2"><div>합계</div></td>
-                          <td class="ta-right"><div id="tot_qty_pre_order"><!-- sample:begin -->1<!-- sample:end --></div></td>	<!-- 준비수량 -->
-                          <td><div class="ta-right" id ="tot_qty_calc_order"></div></td>	<!-- 주문 총계 -->
-                          <td><div class="ta-right" id="tot_qty_remain"><!-- sample:begin -->1<!-- sample:end --></div></td>	<!-- 잔여수량 -->
+                          <td class="ta-right"><div id="tot_qty_pre_order"><!-- sample:begin -->2<!-- sample:end --></div></td>	<!-- 준비수량 -->
+                          <td><div class="ta-right" id ="tot_qty_calc_order"><!-- sample:begin -->2<!-- sample:end --></div></td>	<!-- 주문 총계 -->
+                          <td><div class="ta-right" id="tot_qty_remain"><!-- sample:begin -->2<!-- sample:end --></div></td>	<!-- 잔여수량 -->
                         </tr>
                       </tfoot>
                     </table>
@@ -205,25 +205,9 @@
             </thead>
 
             <!-- 컨텐츠 -->
-            <tbody id="aggr_det_list_body">
-              <!-- col -->
-             <!--   <tr>
-                <th><div class="ta-center fw-400">동관</div></th>
-                <th><div class="ta-center fw-400">1층</div></th>
-                <td><div class="ta-center">5</div></td>
-                <td><div class="ta-center">5</div></td>
-                <td><div class="ta-center">100000</div></td>
-                <td><div class="ta-center">10</div></td>
-                <td><div class="ta-center">10</div></td>
-                <td><div class="ta-center">10</div></td>
-                <td><div class="ta-center">10</div></td>
-                <td><div class="ta-center">10</div></td>
-                <td><div class="ta-center">10</div></td>
-              </tr>
-              -->
-            </tbody>
+            <tbody id="aggr_det_list_body"><!-- sample:begin --><tr><th><div class="ta-center fw-400" id="DELV_NM"></div></th><th><div class="ta-center fw-400" id="DELV_DETAIL_NM"></div></th><td><div class="ta-center"> 2</div></td><td><div class="ta-center">2</div></td></tr><!-- sample:end --></tbody>
             <!-- 컨텐츠 -->
-            <tbody id="no_aggr_det_list_body">	<!-- no data일 때 body -->
+            <tbody id="no_aggr_det_list_body" style="display:none;">	<!-- no data일 때 body -->
               <tr class="no-data"> 
                 <td colspan="11"> <!--[D]colspan:6-->
                   <!--[D] 검색결과가 없습니다.-->

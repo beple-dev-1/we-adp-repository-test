@@ -8,9 +8,6 @@ id: HIT-ORDR-28-S / system: HIT / 기능: 힛플러스 > 스마트오더 > 메�
 --- IA ---
 - 종류: 화면 / 상위화면:
 
---- 업무 ---
-- 요소: 화면 / 업무: 메뉴 상세 초기화 / 처리: 읽기 / 테이블: TB_CAFETERIA_MENU, TB_CAFETERIA_MENU_DTL, TB_CAFETERIA_MENU_DV, TB_CAFETERIA_OPEN_HOUR, TB_BP_AFLT_MY, TB_CAFETERIA_MENU_IMG … / 입력: 비플가맹점순번, MENU_SEQ, 제공날짜, 조중식구분, 제공방식, 주문구분 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ent_odr_menu_dtl_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/smartorder/ent_odr_menu_dtl_r001_act.jsp:18 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CAFETERIA_MENU_R004.xml:10
-
 --- 정의 ---
 - 구분: 기능 / 좌표: id=backBtn / 라벨: 뒤로가기 / 앵커: HIT-ORDR-28-S-e07 / 해설: 뒤로가기
 - 구분: 기능 / 좌표: - / 라벨: 메뉴 이미지 / 앵커: HIT-ORDR-28-S-e08 / 해설: 메뉴 이미지

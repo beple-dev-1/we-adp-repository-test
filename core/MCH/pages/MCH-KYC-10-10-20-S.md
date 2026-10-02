@@ -8,9 +8,6 @@ id: MCH-KYC-10-10-20-S / system: MCH / 기능: 가맹점관리 > 가맹점 고�
 --- IA ---
 - 종류: 화면 / 상위화면: MCH-KYC-10-10-S
 
---- 업무 ---
-- 요소: 화면 / 업무: 가맹점선택 (화면) / 처리: 읽기 / 테이블: TB_BP_AFLT_AML_TOKEN, TB_BP_AFLT_AML / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.aml_main_aflt.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/aml/main/aml_main_aflt_act.jsp:23 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_AML_TOKEN_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_BP_AFLT_AML_R003.xml:10
-
 --- 정의 ---
 - 구분: 이동 / 좌표: - / 라벨: 뒤로가기 / 앵커: MCH-KYC-10-10-20-S-e04 / 이동: MCH-KYC-10-10-10-S / 해설: 뒤로가기
 - 구분: 기능 / 좌표: - / 라벨: 심사안내 / 앵커: MCH-KYC-10-10-20-S-e05 / 해설: 심사안내

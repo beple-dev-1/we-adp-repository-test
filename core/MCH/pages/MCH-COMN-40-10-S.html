@@ -10,6 +10,38 @@
   <link rel="stylesheet" href="../assets/resource/slick/slick.css">
   <link rel="stylesheet" href="../assets/resource/css/event.css">
   <link rel="stylesheet" href="../assets/resource/css/swiper.min.css">
+<style>
+    .full-width {
+        background-color: white;
+        width: 100%;
+        position: fixed;
+        top: 60px;
+        left: 0px;
+        height: calc(100% - 60px);
+        overflow-y: scroll;
+    }
+    iframe {
+        overflow: hidden;
+    }
+    img {
+        -webkit-tap-highlight-color: transparent;
+    }
+    #detail_ctnt > p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5em;
+        overflow-x:hidden;
+    }
+    .event_stemp_kn .ent_kn_inBox.agree p{
+        line-height: 1.2 !important;
+    }
+    .event_stemp_kn .ent_kn_inBox.notiBox dl dt {
+        font-size:3.62vw !important;
+        font-family:'PretendardM', sans-serif !important;
+        color:#333 !important;
+        padding-left:3.7vw !important;
+    }
+</style>
 </head>
 <body data-screen-id="MCH-COMN-40-10-S">
 <input type="hidden" id="starddt" value="">
@@ -28,9 +60,9 @@
                 <!-- //2022-11-07 - 공지사항 -->
                 <div class="notice_list">
                     <ul id="notice_list"><!-- sample:begin --><li class="original supOrgLi" style="">
-                            <div class="msg">표본 항목</div>
+                            <div class="msg">요청사항 없음</div>
                         </li><li class="original supOrgLi" style="">
-                            <div class="msg">표본 항목</div>
+                            <div class="msg">요청사항 없음</div>
                         </li><!-- sample:end --></ul>
                 </div>
             </div>
@@ -56,7 +88,7 @@
                                 <span id="detail_reg_dt" aria-hidden="true"><!-- sample:begin -->2026.09.02<!-- sample:end --></span>
                             </h1>
                         </div>
-                        <div class="cont" id="detail_ctnt"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+                        <div class="cont" id="detail_ctnt"><!-- sample:begin --><div style="padding:16px 20px 24px;font-size:14px;line-height:1.6;word-break:keep-all"><p>제1조 (목적) 이 약관은 서비스 이용에 관한 기본 사항을 정합니다.</p><p>제2조 (정의) 이 약관에서 쓰는 용어의 뜻은 관련 법령과 서비스 안내에 따릅니다.</p><p>제3조 (약관의 효력) 이 약관은 서비스 화면에 게시하여 효력이 생깁니다.</p></div><!-- sample:end --></div>
                     </div>
                 </div>
             </div>
@@ -91,9 +123,9 @@
                 <!-- 공유하기 목록 -->
                 <ul class="share_list">
                     <li id="shareLink"><a href="#none"><img src="../assets/resource/images/ico_copy.png" alt="">URL복사</a></li><!-- 선택 시 클래스 on -->
-                    <!-- <li><a href="#none"><img src="../assets/resource/images/ico_kakao.png" alt="">카카오톡 공유</a></li>
-                    <li><a href="#none"><img src="../assets/resource/images/ico_facebook.png" alt="">페이스북 공유</a></li>
-                    <li><a href="#none"><img src="../assets/resource/images/ico_sms.png" alt="">문자로 공유</a></li> -->
+                    <!-- <li><a href="#none"><img style="max-width:100%;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTVlNWU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJNYWxndW4gR290aGljLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM5YTlhOWEiPuydtOuvuOyngDwvdGV4dD48L3N2Zz4="  alt="">카카오톡 공유</a></li>
+                    <li><a href="#none"><img style="max-width:100%;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTVlNWU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJNYWxndW4gR290aGljLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM5YTlhOWEiPuydtOuvuOyngDwvdGV4dD48L3N2Zz4="  alt="">페이스북 공유</a></li>
+                    <li><a href="#none"><img style="max-width:100%;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTVlNWU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJNYWxndW4gR290aGljLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM5YTlhOWEiPuydtOuvuOyngDwvdGV4dD48L3N2Zz4="  alt="">문자로 공유</a></li> -->
                 </ul>
                 <!-- //공유하기 목록 -->
             </div>

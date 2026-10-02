@@ -9,6 +9,19 @@
   <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/jquery-ui.min.css">
   <link rel="stylesheet" href="../assets/ent_afltbo_resource/css/slick.css">
   <link rel="stylesheet" href="../assets/js/lib/summernote/summernote-lite.min.css">
+<style>
+/* 메뉴분류 순서관리 팝업 전용 스타일 — 이 페이지 한정, 공용 CSS 미수정 */
+.dv-parent-box {display:flex; gap:45px; width:100%; align-items:center; padding:24px; outline:1px solid #E3E3E3; border-radius:8px;}
+.dv-parent-box--head {flex-shrink:0;}
+.dv-parent-box--content {flex-grow:1;}
+.icon--table-row-move {display:flex; flex-direction:column; gap:4px; width:20px; height:20px; padding:3px 1px; box-sizing:border-box; border:0 none; background:transparent; cursor:grab;}
+.icon--table-row-move:active {cursor:grabbing;}
+.icon--table-row-move span {display:block; width:100%; height:2px; background-color:#D9D9D9;}
+.sortableTable thead th {border-bottom-style:solid;}
+.sortableTable tbody tr.is-dragging {opacity:0.4;}
+#dv_dsp_modal .h90vh-250_fix-max {max-height: min(524px, calc(90vh - 250px)) !important;} /* 524px = thead 34 + 행 49 x 10 (최대 10건), 저해상도에서는 기존처럼 축소 */
+#dv_dsp_modal .sticky-table thead {position:sticky; top:0; background-color:#fff; z-index:1;}
+</style>
 </head>
 <body data-screen-id="HIT-MBO-10-30-30-S">
 <div class="bp-root">
@@ -40,7 +53,7 @@
               </div>
 
               <!-- 목록 (데이터 있음) — ComTable 템플릿 행 -->
-              <div class="data-table-wrap" id="dv_list" hidden style="min-height: 529px;">
+              <div class="data-table-wrap" id="dv_list" style="min-height: 529px;">
                 <table class="data-table form-table pd-table" id="table">
                   <colgroup>
                     <col style="width: 160px;">
@@ -57,7 +70,85 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <tr style="display: none;" onclick="clk_dv($(this))">
+                  <!-- sample:begin --><tr onclick="clk_dv($(this))">
+                    <td class="button" colspan="4">
+                      <div>
+                        <a href="#none">
+                          <table>
+                            <colgroup>
+                              <col style="width: 160px;">
+                              <col style="width: auto;">
+                              <col style="width: 110px;">
+                              <col style="width: 200px;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                              <td hidden><div></div></td>
+                              <td hidden><div></div></td>
+                              <td hidden><div></div></td>
+                              <td><div class="ta-center">중식</div></td>
+                              <td><div class="tx-ellipsis ta-center">커피</div></td>
+                              <td><div class="ta-center">사용</div></td>
+                              <td><div class="ta-center">2026.10.02 14:30</div></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </a>
+                      </div>
+                    </td>
+                  </tr><tr onclick="clk_dv($(this))">
+                    <td class="button" colspan="4">
+                      <div>
+                        <a href="#none">
+                          <table>
+                            <colgroup>
+                              <col style="width: 160px;">
+                              <col style="width: auto;">
+                              <col style="width: 110px;">
+                              <col style="width: 200px;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                              <td hidden><div></div></td>
+                              <td hidden><div></div></td>
+                              <td hidden><div></div></td>
+                              <td><div class="ta-center">중식</div></td>
+                              <td><div class="tx-ellipsis ta-center">커피</div></td>
+                              <td><div class="ta-center">사용</div></td>
+                              <td><div class="ta-center">2026.10.02 14:30</div></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </a>
+                      </div>
+                    </td>
+                  </tr><tr onclick="clk_dv($(this))">
+                    <td class="button" colspan="4">
+                      <div>
+                        <a href="#none">
+                          <table>
+                            <colgroup>
+                              <col style="width: 160px;">
+                              <col style="width: auto;">
+                              <col style="width: 110px;">
+                              <col style="width: 200px;">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                              <td hidden><div></div></td>
+                              <td hidden><div></div></td>
+                              <td hidden><div></div></td>
+                              <td><div class="ta-center">중식</div></td>
+                              <td><div class="tx-ellipsis ta-center">커피</div></td>
+                              <td><div class="ta-center">사용</div></td>
+                              <td><div class="ta-center">2026.10.02 14:30</div></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </a>
+                      </div>
+                    </td>
+                  </tr><!-- sample:end --><tr style="display: none;" onclick="clk_dv($(this))">
                     <td class="button" colspan="4">
                       <div>
                         <a href="#none">
@@ -88,7 +179,7 @@
                 </table>
               </div>
 
-              <div class="data-table-wrap h524" id="dv_no_list" hidden>
+              <div class="data-table-wrap h524" id="dv_no_list" hidden style="display:none;">
                 <table class="data-table form-table">
                   <colgroup>
                     <col style="width: 160px;">
@@ -151,7 +242,7 @@
                     </select>
                   </div>
                   <div class="td-item ta-right">
-                    <p class="lh-32">검색결과: 총 <span class="fc-pri fw-600" id="tot_cnt"><!-- sample:begin -->1<!-- sample:end --></span>건</p>
+                    <p class="lh-32">검색결과: 총 <span class="fc-pri fw-600" id="tot_cnt"><!-- sample:begin -->2<!-- sample:end --></span>건</p>
                   </div>
                 </div>
               </div>
@@ -182,7 +273,7 @@
             <tr>
               <th class="required ta-left pl0"><div>제공형태</div></th>
               <td class="ta-right pr0">
-                <div class="td-item w290 drop-box" id="dv_reg_prvd_drop" onclick="btn_drop($(this))">
+                <div class="td-item w290 drop-box" id="dv_reg_prvd_drop" onclick="btn_drop($(this))" style="display:none;">
                   <p class="placeholder" id="dv_reg_prvd_phd">
                     <button type="button" class="trigger drop-btn" id="DV_REG_PRVD_TP" value="">선택해주세요.</button>
                   </p>
@@ -199,7 +290,7 @@
                   </div>
                 </div>
                 <!-- 수정 모드: 디자인상 제공형태는 드롭다운이 아닌 텍스트로만 노출 -->
-                <div class="td-item ta-left" id="dv_reg_prvd_text" style="display: none"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+                <div class="td-item ta-left" id="dv_reg_prvd_text" style="display: none"><!-- sample:begin --><!-- sample:end --></div>
               </td>
             </tr>
             <tr>
@@ -207,7 +298,7 @@
               <td class="ta-right pr0">
                 <input maxlength="50" id="DV_REG_NM" class="ip-txt w100p" type="text" value="" placeholder="메뉴분류명을 입력해 주세요">
                 <!-- 수정 모드: 디자인상 메뉴분류명도 제공형태와 동일하게 텍스트로만 노출 -->
-                <div class="td-item ta-left" id="dv_reg_nm_text" style="display: none"><!-- sample:begin -->안내 문구<!-- sample:end --></div>
+                <div class="td-item ta-left" id="dv_reg_nm_text" style="display: none"><!-- sample:begin --><!-- sample:end --></div>
               </td>
             </tr>
             <tr>
@@ -303,7 +394,7 @@
                 <th><div class="ta-center">메뉴분류명</div></th>
               </tr>
             </thead>
-            <tbody id="dv_dsp_list_body"><!-- sample:begin --><tr dv-seq="1"><td><div class="ta-center"><button type="button" class="icon--table-row-move"><span></span><span></span><span></span></button></div></td><td><div class="ta-center dv-dsp-order"></div></td><td><div class="ta-center"></div></td></tr><!-- sample:end --></tbody>
+            <tbody id="dv_dsp_list_body"><!-- sample:begin --><tr dv-seq="1"><td><div class="ta-center"><button type="button" class="icon--table-row-move"><span></span><span></span><span></span></button></div></td><td><div class="ta-center dv-dsp-order"><!-- sample:begin -->커피<!-- sample:end --></div></td><td><div class="ta-center">한식</div></td></tr><tr dv-seq="1"><td><div class="ta-center"><button type="button" class="icon--table-row-move"><span></span><span></span><span></span></button></div></td><td><div class="ta-center dv-dsp-order"></div></td><td><div class="ta-center">한식</div></td></tr><!-- sample:end --></tbody>
           </table>
         </div>
       </div>

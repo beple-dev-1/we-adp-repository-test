@@ -8,10 +8,6 @@ id: BPY-EVNT-10-S / system: BPY / 기능: 비플페이 앱 > 혜택·이벤트 >
 --- IA ---
 - 종류: 화면 / 상위화면:
 
---- 업무 ---
-- 요소: 화면 / 업무: 비플페이 혜택 이동 데이터 생성 / 처리: 쓰기 / 테이블: TB_MEMBER_APP / 입력: TYPE, 광고아이디, 동의여부, 앱코드 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.event_main_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/main/event_main_r001_act.jsp:33 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_APP_U020.xml:10
-- 요소: 화면 / 업무: 공지사항 목록 (화면) / 미확인: 외부 API 호출(IDO 없음) / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.notice_list.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/main/notice_list_act.jsp:15
-
 --- 정의 ---
 - 구분: 기능 / 좌표: id=btn_history / 라벨: 비플 혜택 / 앵커: BPY-EVNT-10-S-e10 / 해설: 비플 혜택
 - 구분: 기능 / 좌표: - / 라벨: 알림 아이콘 / 앵커: BPY-EVNT-10-S-e11 / 해설: 알림 아이콘

@@ -8,9 +8,6 @@ id: EXW-BRWV-10-10-10-S / system: EXW / 기능: 외부제공 웹뷰 > 브랜드�
 --- IA ---
 - 종류: 화면 / 상위화면: EXW-BRWV-10-10-S
 
---- 업무 ---
-- 요소: 화면 / 업무: 브랜드상품권 웹뷰 API - 구매대상 상품권 상세정보 조회화면 (화면) / 처리: 읽기 / 테이블: TB_BANK, TB_ACCOUNT, TB_ACCOUNT_HB / 입력: 브랜드상품권ID, 권종 코드, 거래 구분, TOKEN, KEYWORD, CATE_BGC_ID, REF_GIFT_TYPE, REF_MIN_AMT, REF_MAX_AMT, REF_SORTING / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.brnd_webview_gift_detail.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/brnd/api/brnd_webview_gift_detail_act.jsp:39 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ACCOUNT_R021.xml:10
-
 --- 정의 ---
 - 구분: 기능 / 좌표: - / 라벨: 기본정보 / 앵커: EXW-BRWV-10-10-10-S-e01 / 해설: 기본정보
 - 구분: 기능 / 좌표: - / 라벨: 안내사항 / 앵커: EXW-BRWV-10-10-10-S-e02 / 해설: 안내사항

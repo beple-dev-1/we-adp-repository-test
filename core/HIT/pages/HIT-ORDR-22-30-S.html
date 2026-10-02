@@ -14,7 +14,7 @@
 <body data-screen-id="HIT-ORDR-22-30-S">
 <form name="frm" id="frm" method="post">
     
-        <input type="hidden" name="${item.key}" value="표본">
+        <input type="hidden" name="${item.key}" value="">
     
     <input type="hidden" name="BIZ_CD_NM" value="SMT"/>
 </form>
@@ -38,9 +38,9 @@
                 <div class="payment__head">
                     <i class="icon icon--state_check-64"></i>
                     <h2 class="container__headline">
-                        <p class="head-text"><strong class="storeNm">홍길동</strong>에서<br>
+                        <p class="head-text"><strong class="storeNm">비플카페 강남점</strong>에서<br>
                             
-                            <strong class="fc-primary"><span class="amt"></span>원</strong>
+                            <strong class="fc-primary"><span class="amt">15,000</span>원</strong>
                                 을
                             결제했습니다.
                         </p>
@@ -50,7 +50,7 @@
                 <div class="payment__info">
                     <div class="flex-row">
                         <p class="info-head">가맹점</p>
-                        <p class="info-data fw-600 fc-primary storeNm">홍길동</p>
+                        <p class="info-data fw-600 fc-primary storeNm">비플카페 강남점</p>
                     </div>
                     <div class="flex-row">
                         <p class="info-head">결제일시</p>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="flex-row">
                         <p class="info-head">주문형태</p>
-                        <p class="info-data orderType"></p>
+                        <p class="info-data orderType">일반</p>
                     </div>
                 </div>
 
@@ -74,8 +74,8 @@
                 <div class="payment__head">
                     <i class="icon icon--state_warning-64">결제 실패</i>
                     <h2 class="container__headline">
-                        <p class="head-text"><strong class="storeNm">홍길동</strong>에서<br>
-                            <strong class="fc-red"><span class="amt"></span>원</strong>을 결제했습니다.
+                        <p class="head-text"><strong class="storeNm">비플카페 강남점</strong>에서<br>
+                            <strong class="fc-red"><span class="amt">15,000</span>원</strong>을 결제했습니다.
                         </p>
                     </h2>
                 </div>
@@ -84,7 +84,7 @@
                 <div class="payment__info">
                     <div class="flex-row">
                         <p class="info-head">가맹점</p>
-                        <p class="info-data fw-600 storeNm">홍길동</p>
+                        <p class="info-data fw-600 storeNm">비플카페 강남점</p>
                     </div>
                     <div class="flex-row">
                         <p class="info-head">결제일시</p>
@@ -92,11 +92,11 @@
                     </div>
                     <div class="flex-row">
                         <p class="info-head">주문형태</p>
-                        <p class="info-data orderType"></p>
+                        <p class="info-data orderType">일반</p>
                     </div>
                     <div class="flex-row">
                         <p class="info-head">실패사유</p>
-                        <p class="info-data fc-red" id="failReason">004:</p>
+                        <p class="info-data fc-red" id="failReason">004:요청사항 없음</p>
                     </div>
                 </div>
 

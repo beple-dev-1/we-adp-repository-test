@@ -8,10 +8,6 @@ id: EXW-UWV-50-30-S / system: EXW / 기능: 외부제공 웹뷰 > 통합웹뷰AP
 --- IA ---
 - 종류: 화면 / 상위화면:
 
---- 업무 ---
-- 요소: 화면 / 업무: 웹뷰 API - 비플머니 출금 실행 ACTION(통합웹뷰버전) / 처리: 읽기·쓰기 / 테이블: TB_MEMBER, TB_MEMBER_APP, TB_MEMBER_NON_CI, TB_ACCOUNT, TB_MEMBER_MNY, TB_MNY_ACU_DTL … / 입력: 이용기관ID, 요청부, 출금금액, 은행코드, 계좌번호 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_webview_money_withdraw_v1_c001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/wapi/zero_webview_money_withdraw_v1_c001_act.jsp:40 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_NON_CI_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ACCOUNT_R008.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R011.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_U001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_CHRG_WDRW_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_ACU_DTL_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_CHRG_WDRW_DTL_C001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MNY_TRAN_MST_C001.xml:10
-- 요소: 화면 / 업무: 웹뷰 API - 출금계좌 및 잔액조회 ACTION(통합웹뷰버전) / 처리: 읽기 / 테이블: TB_MEMBER, TB_MEMBER_APP, TB_MEMBER_NON_CI, TB_MEMBER_MNY, TB_MNY_ACU_DTL, TB_BANK … / 입력: 이용기관ID, 요청부 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_webview_money_withdraw_v1_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/zero/wapi/zero_webview_money_withdraw_v1_r001_act.jsp:34 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_NON_CI_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R010.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_MNY_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_ACCOUNT_R024.xml:10
-
 --- 정의 ---
 - 구분: 이동 / 좌표: - / 라벨: 출금가능 비플머니 / 앵커: EXW-UWV-50-30-S-e01 / 이동modal: popup-transper--info / 해설: popup-transper--info 팝업 열기
 - 구분: 이동 / 좌표: id=btnSelectAccount / 라벨: 충전계좌 / 앵커: EXW-UWV-50-30-S-e02 / 이동modal: popup-select--bank / 해설: popup-select--bank 팝업 열기

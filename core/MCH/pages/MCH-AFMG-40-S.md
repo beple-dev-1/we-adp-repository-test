@@ -8,12 +8,6 @@ id: MCH-AFMG-40-S / system: MCH / 기능: 가맹점관리 > 가맹점 관리 > �
 --- IA ---
 - 종류: 화면 / 상위화면:
 
---- 업무 ---
-- 요소: 화면 / 업무: 가맹점설정 > 관리기능 메인 (화면) / 처리: 미확인 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_aflt_mng.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/main/zero_aflt_mng_act.jsp:26
-- 요소: 화면 / 업무: 가맹점관리 > 직원관리 상태상세/변경 (화면) / 미확인: 액션 JSP 없음(WSVC 만 있음) / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_aflt_wrk_chg.xml:6
-- 요소: 화면 / 업무: 가맹점관리 > 직원관리 > 등록된 가맹점 조회 / 처리: 미확인 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_aflt_wrk_mng_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/main/zero_aflt_wrk_mng_r001_act.jsp:35
-- 요소: 화면 / 업무: 가맹점관리>직원관리>직원정보조회 / 처리: 미확인 / 입력: 가맹점ID / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.zero_aflt_wrk_mng_r002.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/main/zero_aflt_wrk_mng_r002_act.jsp:33
-
 --- 정의 ---
 - 구분: 기능 / 좌표: - / 라벨: 페이지나가기 / 앵커: MCH-AFMG-40-S-e03 / 해설: 페이지나가기
 - 구분: 기능 / 좌표: id=reg_staff / 라벨: 직원 등록 / 앵커: MCH-AFMG-40-S-e04 / 해설: 직원 등록

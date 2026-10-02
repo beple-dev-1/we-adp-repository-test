@@ -8,9 +8,6 @@ id: HIT-ORDR-22-30-S / system: HIT / 기능: 힛플러스 > 스마트오더 > �
 --- IA ---
 - 종류: 화면 / 상위화면: HIT-ORDR-22-S
 
---- 업무 ---
-- 요소: 화면 / 업무: 스마트오더 메인 (화면) / 처리: 읽기 / 테이블: TB_BP_AFLT_MY, TB_CAFETERIA_WORK_PLCE, TB_MEMBER_ENT_APP / 입력: 채널구분 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ent_smt_odr_main.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/smartorder/ent_smt_odr_main_act.jsp:14 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_MEMBER_ENT_APP_R003.xml:10
-
 --- 정의 ---
 - 구분: 기능 / 좌표: id=receiptBtn / 라벨: 전자영수증 보기 / 앵커: HIT-ORDR-22-30-S-e05 / 해설: 전자영수증 보기
 - 구분: 기능 / 좌표: id=retryBtn / 라벨: 다시 시도하기 / 앵커: HIT-ORDR-22-30-S-e06 / 해설: 다시 시도하기

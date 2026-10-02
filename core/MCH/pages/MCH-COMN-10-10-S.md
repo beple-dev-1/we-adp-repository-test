@@ -8,9 +8,6 @@ id: MCH-COMN-10-10-S / system: MCH / 기능: 가맹점관리 > 공통 > 약관 >
 --- IA ---
 - 종류: 화면 / 상위화면:
 
---- 업무 ---
-- 요소: 화면 / 업무: 약관디테일 조회 / 처리: 읽기 / 테이블: TB_CLAUSE / 입력: 약관 코드, 거래번호 / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.bp_aflt_clause_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/main/bp_aflt_clause_r001_act.jsp:27 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CLAUSE_R001.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_CLAUSE_R007.xml:10
-
 --- 정의 ---
 - 구분: 이동 / 좌표: - / 라벨: 뒤로가기 / 앵커: MCH-COMN-10-10-S-e04 / 이동: MCH-AFLT-10-S / 해설: 뒤로가기
 - 구분: 기능 / 좌표: - / 라벨: 비즈플레이 가맹점 계약서 / 앵커: MCH-COMN-10-10-S-e05 / 해설: 비즈플레이 가맹점 계약서

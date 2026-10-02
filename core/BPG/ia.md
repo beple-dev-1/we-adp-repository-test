@@ -6,7 +6,6 @@
 - BPG: 비플PG
 - BPG/COMN: 공통
 - BPG/COMN/10: 약관
-- BPG/COMN/10/10: 약관
 - BPG/COMN/10/20: 가맹점 서비스 이용약관
 - BPG/COMN/20: 고객센터
 - BPG/COMN/20/10: 고객지원
@@ -184,9 +183,8 @@
 - 순서: 084 / 경로: BPG/ORDR/30 / 화면: BPG-ORDR-30-S
 - 순서: 085 / 경로: BPG/COMN / 화면:
 - 순서: 086 / 경로: BPG/COMN/10 / 화면:
-- 순서: 087 / 경로: BPG/COMN/10/10 / 화면: BPG-COMN-10-10-S
-- 순서: 088 / 경로: BPG/COMN/10/20 / 화면: BPG-COMN-10-20-S
-- 순서: 089 / 경로: BPG/COMN/20 / 화면:
-- 순서: 090 / 경로: BPG/COMN/20/10 / 화면: BPG-COMN-20-10-S
-- 순서: 091 / 경로: BPG/COMN/20/20 / 화면: BPG-COMN-20-20-S
-- 순서: 092 / 경로: BPG/COMN/20/20/10 / 화면: BPG-COMN-20-20-10-S
+- 순서: 087 / 경로: BPG/COMN/10/20 / 화면: BPG-COMN-10-20-S
+- 순서: 088 / 경로: BPG/COMN/20 / 화면:
+- 순서: 089 / 경로: BPG/COMN/20/10 / 화면: BPG-COMN-20-10-S
+- 순서: 090 / 경로: BPG/COMN/20/20 / 화면: BPG-COMN-20-20-S
+- 순서: 091 / 경로: BPG/COMN/20/20/10 / 화면: BPG-COMN-20-20-10-S

@@ -4,88 +4,657 @@
         
     
 
-    <div class="bp-main">
+    
+    <div class="bp-main" id="main">
         <div class="layout">
             <div class="row">
                 <div class="col col-10">
                     <div class="con-wrap">
-
+                        
                         <div class="page-header">
                             <p class="tit-01 with-desc">
-                                가맹점 기본정보
+                                시간설정
                                 <span>
-                    비플 직가맹점 신청시 작성한 기본정보를 관리합니다.
-                    해당 정보는 간편결제, 가맹점찾기 가맹점 정보에 실시간으로 반영됩니다.
-                  </span>
+									- 식사 시간을 설정해 주세요.<br>
+									- 매장식사 시 이용가능 시간은 참고용으로, 사전예약 및 딜리버리 시 주문가능 시간은 해당 시간 외에 주문은 불가능하도록 설정됩니다.
+								</span>
                             </p>
                         </div>
-
-                        <p class="tit-02">가맹점 정보</p>
-                        <table class="data-table mb40">
-                            
-                            <colgroup>
-                                <col width="150px">
-                                <col width="">
-                            </colgroup>
-                            <tbody>
-                            <tr>
-                                <th class="ta-left vam">가맹점명</th>
-                                <td class="ta-left">
-                                    <p class="txt-01"></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="ta-left vam">가맹점주명</th>
-                                <td class="ta-left">
-                                    <p class="txt-01"></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="ta-left vam">가맹점주 휴대폰번호</th>
-                                <td class="ta-left">
-                                    <p class="txt-01"></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="ta-left vam">가맹점 주소</th>
-                                <td class="ta-left">
-                                    <p class="txt-01">
-                                        () <br>
-                                        서울 강남구 테헤란로 1길 10 <br>
-                                        101동 1001호
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="ta-left vam">가맹점 대표번호</th>
-                                <td class="ta-left">
-                                    <p class="txt-01"></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="ta-left vam">업종 분류</th>
-                                <td class="ta-left">
-                                    <p class="txt-01"></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="ta-left vam">가맹점 추가정보</th>
-                                <td class="ta-left">
-                                    <p class="txt-01"></p>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-
                         
-                        <div style="display: none;" class="btn-group ta-center mt40">
-                            <button class="btn btn-big btn-primary" type="button">수정</button>
+                        <div class="row d-flex gap24 min-h450">
+                            
+                            <div class="col col-5">
+                                <p class="tit-02 fs-20 lh-28 mb0">매장식사</p>
+                                <div class="data-table-wrap brs-b">
+                                    <table class="data-table type-auto no-active mt15">
+                                        
+                                        <colgroup>
+                                            <col style="width: 125px;">
+                                            <col style="width: auto;">
+                                        </colgroup>
+                                        <tbody>
+                                        
+                                        <tr>
+                                            <th class="vam">
+                                                <div class="ta-left">매장식사(조식)</div>
+                                            </th>
+                                            <td class="ta-left">
+                                                <div>09:00 ~ 09:30</div>
+                                            </td>
+                                        </tr>
+                                        
+
+                                        
+                                        <tr>
+                                            <th class="vam">
+                                                <div class="ta-left">매장식사(중식)</div>
+                                            </th>
+                                            <td class="ta-left">
+                                                <div>09:00 ~ 09:30</div>
+                                            </td>
+                                        </tr>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+
+                            
+                            <div class="col col-5">
+                                <p class="tit-02 fs-20 lh-28 mb0">사전예약, 딜리버리/픽업</p>
+                                <div class="data-table-wrap brs-b">
+                                    <table class="data-table type-auto no-active mt15">
+                                        
+                                        <colgroup>
+                                            <col style="width: 125px;">
+                                            <col style="width: auto;">
+                                        </colgroup>
+                                        <tbody>
+                                        
+                                            <tr>
+                                                <th class="vam">
+                                                    <div class="ta-left">사전예약</div>
+                                                </th>
+                                                <td class="ta-left">
+                                                    <div></div>
+                                                </td>
+                                            </tr>
+                                        
+                                        
+                                            <tr>
+                                                <th class="vam">
+                                                    <div class="ta-left">딜리버리/픽업</div>
+                                                </th>
+                                                <td class="ta-left">
+                                                    <div></div>
+                                                </td>
+                                            </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
                         </div>
+
+                        <div class="btn-group ta-center mt40">
+                            <button data-element-id="HIT-MBO-10-30-20-S-e03" id="modify_btn" class="btn btn-big btn-primary" type="button">수정</button>
+                        </div>
+                        
 
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
+
+    
+
+    <div class="bp-main" id="modify" style="display: none;">
+        <div class="layout">
+            <div class="row">
+                <div class="col col-10">
+                    <div class="con-wrap">
+                        
+                        <div class="page-header">
+                            <p class="tit-01 with-desc">
+                                시간설정
+                                <span>
+                              - 식사 시간을 설정해 주세요.<br>
+                              - 매장식사 시 이용가능 시간은 참고용으로, 사전예약 및 딜리버리 시 주문가능 시간은 해당 시간 외에 주문은 불가능하도록 설정됩니다.
+                            </span>
+                            </p>
+                        </div>
+
+                        <div class="row min-h450">
+                            
+                            <p class="tit-02">매장식사</p>
+                            <div class="data-table-wrap brs-b">
+                                <table class="data-table no-active form-table mt15 pd-table">
+                                    
+                                    <colgroup>
+                                        <col style="width: 125px;">
+                                        <col style="width: auto;">
+                                    </colgroup>
+                                    <tbody>
+                                    
+                                    <tr>
+                                        <th class="vam">
+                                            <div class="ta-left">매장식사(조식)</div>
+                                        </th>
+                                        <td class="ta-left">
+                                            <div class="td-item-group left">
+                                                <div class="sel td-item w100">
+                                                    <select name="brunch_select" id="brunch_str_h" class="">
+                                                        <option value="00">00</option>
+                                                        <option value="01">01</option>
+                                                        <option value="02">02</option>
+                                                        <option value="03">03</option>
+                                                        <option value="04">04</option>
+                                                        <option value="05">05</option>
+                                                        <option value="06">06</option>
+                                                        <option value="07">07</option>
+                                                        <option value="08">08</option>
+                                                        <option value="09">09</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                    </select>
+                                                </div>
+                                                <span class="td-item">:</span>
+                                                <div class="sel td-item w100">
+                                                    <select name="brunch_select" id="brunch_str_m" class="">
+                                                        <option value="00">00</option>
+                                                        <option value="05">05</option>
+                                                        <option value="10">10</option>
+                                                        <option value="15">15</option>
+                                                        <option value="20">20</option>
+                                                        <option value="25">25</option>
+                                                        <option value="30">30</option>
+                                                        <option value="35">35</option>
+                                                        <option value="40">40</option>
+                                                        <option value="45">45</option>
+                                                        <option value="50">50</option>
+                                                        <option value="55">55</option>
+                                                    </select>
+                                                </div>
+                                                <span class="td-item">~</span>
+                                                <div class="sel td-item w100">
+                                                    <select name="brunch_select" id="brunch_end_h" class="">
+                                                        <option value="00">00</option>
+                                                        <option value="01">01</option>
+                                                        <option value="02">02</option>
+                                                        <option value="03">03</option>
+                                                        <option value="04">04</option>
+                                                        <option value="05">05</option>
+                                                        <option value="06">06</option>
+                                                        <option value="07">07</option>
+                                                        <option value="08">08</option>
+                                                        <option value="09">09</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                    </select>
+                                                </div>
+                                                <span class="td-item">:</span>
+                                                <div class="sel td-item w100">
+                                                    <select name="brunch_select" id="brunch_end_m" class="">
+                                                        <option value="00">00</option>
+                                                        <option value="05">05</option>
+                                                        <option value="10">10</option>
+                                                        <option value="15">15</option>
+                                                        <option value="20">20</option>
+                                                        <option value="25">25</option>
+                                                        <option value="30">30</option>
+                                                        <option value="35">35</option>
+                                                        <option value="40">40</option>
+                                                        <option value="45">45</option>
+                                                        <option value="50">50</option>
+                                                        <option value="55">55</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+
+                                    
+                                    <tr>
+                                        <th class="vam">
+                                            <div class="ta-left">매장식사(중식)</div>
+                                        </th>
+                                        <td class="ta-left">
+                                            <div class="td-item-group left">
+                                                <div class="sel td-item w100">
+                                                    <select name="lunch_select" id="lunch_str_h" class="">
+                                                        <option value="00">00</option>
+                                                        <option value="01">01</option>
+                                                        <option value="02">02</option>
+                                                        <option value="03">03</option>
+                                                        <option value="04">04</option>
+                                                        <option value="05">05</option>
+                                                        <option value="06">06</option>
+                                                        <option value="07">07</option>
+                                                        <option value="08">08</option>
+                                                        <option value="09">09</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                    </select>
+                                                </div>
+                                                <span class="td-item">:</span>
+                                                <div class="sel td-item w100">
+                                                    <select name="lunch_select" id="lunch_str_m" class="">
+                                                        <option value="00">00</option>
+                                                        <option value="05">05</option>
+                                                        <option value="10">10</option>
+                                                        <option value="15">15</option>
+                                                        <option value="20">20</option>
+                                                        <option value="25">25</option>
+                                                        <option value="30">30</option>
+                                                        <option value="35">35</option>
+                                                        <option value="40">40</option>
+                                                        <option value="45">45</option>
+                                                        <option value="50">50</option>
+                                                        <option value="55">55</option>
+                                                    </select>
+                                                </div>
+                                                <span class="td-item">~</span>
+                                                <div class="sel td-item w100">
+                                                    <select name="lunch_select" id="lunch_end_h" class="">
+                                                        <option value="00">00</option>
+                                                        <option value="01">01</option>
+                                                        <option value="02">02</option>
+                                                        <option value="03">03</option>
+                                                        <option value="04">04</option>
+                                                        <option value="05">05</option>
+                                                        <option value="06">06</option>
+                                                        <option value="07">07</option>
+                                                        <option value="08">08</option>
+                                                        <option value="09">09</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                    </select>
+                                                </div>
+                                                <span class="td-item">:</span>
+                                                <div class="sel td-item w100">
+                                                    <select name="lunch_select" id="lunch_end_m" class="">
+                                                        <option value="00">00</option>
+                                                        <option value="05">05</option>
+                                                        <option value="10">10</option>
+                                                        <option value="15">15</option>
+                                                        <option value="20">20</option>
+                                                        <option value="25">25</option>
+                                                        <option value="30">30</option>
+                                                        <option value="35">35</option>
+                                                        <option value="40">40</option>
+                                                        <option value="45">45</option>
+                                                        <option value="50">50</option>
+                                                        <option value="55">55</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            
+                            
+                            <p class="tit-02 mt40">사전예약, 딜리버리/픽업</p>
+                            <div class="data-table-wrap brs-b ovf-visible">
+                                <table class="data-table no-active form-table mt15 pd-table">
+                                    
+                                    <colgroup>
+                                        <col style="width: 125px;">
+                                        <col style="width: auto;">
+                                    </colgroup>
+                                        
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="2" class="vam">
+                                                <div class="ta-left">사전예약</div>
+                                            </th>
+                                            <td class="ta-left">
+                                                <div class="td-item-group left">
+                                                    
+                                                    <div id="r_str_select"  class="td-item drop-box">
+                                                        
+                                                        <p id="r_str_text" >
+                                                            <button type="button" class="trigger drop-btn"><span>전일</span></button>
+                                                        </p>
+                                                        
+                                                        <div class="drop-content">
+                                                            <p id="r_str_y" class="drop-item select">
+                                                                <button type="button" class="drop-btn">전일</button>
+                                                            </p>
+                                                            <p id="r_str_t" class="drop-item">
+                                                                <button type="button" class="drop-btn">당일</button>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="sel td-item w100">
+                                                        <select name="reservation_select" id="reservation_str_h" class="">
+                                                            <option value="00">00</option>
+                                                            <option value="01">01</option>
+                                                            <option value="02">02</option>
+                                                            <option value="03">03</option>
+                                                            <option value="04">04</option>
+                                                            <option value="05">05</option>
+                                                            <option value="06">06</option>
+                                                            <option value="07">07</option>
+                                                            <option value="08">08</option>
+                                                            <option value="09">09</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                                                            <option value="21">21</option>
+                                                            <option value="22">22</option>
+                                                            <option value="23">23</option>
+                                                        </select>
+                                                    </div>
+                                                    <span class="td-item">:</span>
+                                                    <div class="sel td-item w100">
+                                                        <select name="reservation_select" id="reservation_str_m" class="">
+                                                            <option value="00">00</option>
+                                                            <option value="05">05</option>
+                                                            <option value="10">10</option>
+                                                            <option value="15">15</option>
+                                                            <option value="20">20</option>
+                                                            <option value="25">25</option>
+                                                            <option value="30">30</option>
+                                                            <option value="35">35</option>
+                                                            <option value="40">40</option>
+                                                            <option value="45">45</option>
+                                                            <option value="50">50</option>
+                                                            <option value="55">55</option>
+                                                        </select>
+                                                    </div>
+                                                    <span class="td-item">~</span>
+                                                    
+                                                    <div id="r_end_select" class="td-item drop-box">
+                                                        
+                                                        <p id="r_end_text" >
+                                                            <button type="button" class="trigger drop-btn"><span>전일</span></button>
+                                                        </p>
+                                                        
+                                                        <div class="drop-content">
+                                                            <p id="r_end_y" class="drop-item select">
+                                                                <button type="button" class="drop-btn">전일</button>
+                                                            </p>
+                                                            <p id="r_end_t" class="drop-item">
+                                                                <button type="button" class="drop-btn">당일</button>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="sel td-item w100">
+                                                        <select name="reservation_select" id="reservation_end_h" class="">
+                                                            <option value="00">00</option>
+                                                            <option value="01">01</option>
+                                                            <option value="02">02</option>
+                                                            <option value="03">03</option>
+                                                            <option value="04">04</option>
+                                                            <option value="05">05</option>
+                                                            <option value="06">06</option>
+                                                            <option value="07">07</option>
+                                                            <option value="08">08</option>
+                                                            <option value="09">09</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                                                            <option value="21">21</option>
+                                                            <option value="22">22</option>
+                                                            <option value="23">23</option>
+                                                        </select>
+                                                    </div>
+                                                    <span class="td-item">:</span>
+                                                    <div class="sel td-item w100">
+                                                        <select name="reservation_select" id="reservation_end_m" class="">
+                                                            <option value="00">00</option>
+                                                            <option value="05">05</option>
+                                                            <option value="10">10</option>
+                                                            <option value="15">15</option>
+                                                            <option value="20">20</option>
+                                                            <option value="25">25</option>
+                                                            <option value="30">30</option>
+                                                            <option value="35">35</option>
+                                                            <option value="40">40</option>
+                                                            <option value="45">45</option>
+                                                            <option value="50">50</option>
+                                                            <option value="55">55</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <p class="fs-13 fc-7e mt8">전일/당일 시각을 구분하여 선택해 주세요.</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                        
+
+                                        
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="2" class="vam">
+                                                <div class="ta-left">딜리버리/픽업</div>
+                                            </th>
+                                            <td class="ta-left">
+                                                <div class="td-item-group left">
+                                                    
+                                                    <div id="p_str_select"  class="td-item drop-box">
+                                                        
+                                                        <p id="p_str_text" >
+                                                            <button type="button" class="trigger drop-btn"><span>전일</span></button>
+                                                        </p>
+                                                        
+                                                        <div class="drop-content">
+                                                            <p id="p_str_y" class="drop-item select">
+                                                                <button type="button" class="drop-btn">전일</button>
+                                                            </p>
+                                                            <p id="p_str_t" class="drop-item">
+                                                                <button type="button" class="drop-btn">당일</button>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="sel td-item w100">
+                                                        <select name="pickup_select" id="pickup_str_h" class="">
+                                                            <option value="00">00</option>
+                                                            <option value="01">01</option>
+                                                            <option value="02">02</option>
+                                                            <option value="03">03</option>
+                                                            <option value="04">04</option>
+                                                            <option value="05">05</option>
+                                                            <option value="06">06</option>
+                                                            <option value="07">07</option>
+                                                            <option value="08">08</option>
+                                                            <option value="09">09</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                                                            <option value="21">21</option>
+                                                            <option value="22">22</option>
+                                                            <option value="23">23</option>
+                                                        </select>
+                                                    </div>
+                                                    <span class="td-item">:</span>
+                                                    <div class="sel td-item w100">
+                                                        <select name="pickup_select" id="pickup_str_m" class="">
+                                                            <option value="00">00</option>
+                                                            <option value="05">05</option>
+                                                            <option value="10">10</option>
+                                                            <option value="15">15</option>
+                                                            <option value="20">20</option>
+                                                            <option value="25">25</option>
+                                                            <option value="30">30</option>
+                                                            <option value="35">35</option>
+                                                            <option value="40">40</option>
+                                                            <option value="45">45</option>
+                                                            <option value="50">50</option>
+                                                            <option value="55">55</option>
+                                                        </select>
+                                                    </div>
+                                                    <span class="td-item">~</span>
+                                                    
+                                                    <div id="p_end_select" class="td-item drop-box">
+                                                        
+                                                        <p id="p_end_text" >
+                                                            <button type="button" class="trigger drop-btn"><span>전일</span></button>
+                                                        </p>
+                                                        
+                                                        <div class="drop-content">
+                                                            <p id="p_end_y" class="drop-item select">
+                                                                <button type="button" class="drop-btn">전일</button>
+                                                            </p>
+                                                            <p id="p_end_t" class="drop-item">
+                                                                <button type="button" class="drop-btn">당일</button>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="sel td-item w100">
+                                                        <select name="pickup_select" id="pickup_end_h" class="">
+                                                            <option value="00">00</option>
+                                                            <option value="01">01</option>
+                                                            <option value="02">02</option>
+                                                            <option value="03">03</option>
+                                                            <option value="04">04</option>
+                                                            <option value="05">05</option>
+                                                            <option value="06">06</option>
+                                                            <option value="07">07</option>
+                                                            <option value="08">08</option>
+                                                            <option value="09">09</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                                                            <option value="21">21</option>
+                                                            <option value="22">22</option>
+                                                            <option value="23">23</option>
+                                                        </select>
+                                                    </div>
+                                                    <span class="td-item">:</span>
+                                                    <div class="sel td-item w100">
+                                                        <select name="pickup_select" id="pickup_end_m" class="">
+                                                            <option value="00">00</option>
+                                                            <option value="05">05</option>
+                                                            <option value="10">10</option>
+                                                            <option value="15">15</option>
+                                                            <option value="20">20</option>
+                                                            <option value="25">25</option>
+                                                            <option value="30">30</option>
+                                                            <option value="35">35</option>
+                                                            <option value="40">40</option>
+                                                            <option value="45">45</option>
+                                                            <option value="50">50</option>
+                                                            <option value="55">55</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <p class="fs-13 fc-7e mt8">전일/당일 시각을 구분하여 선택해 주세요.</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                        
+                                </table>
+                            </div>
+                            
+                        </div>
+
+                        <div class="btn-group ta-center mt40">
+                            <button id="cancel_btn" class="btn btn-big btn-gray" type="button">취소</button>
+                            <button id="save_btn" class="btn btn-big btn-primary" type="button">저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
 </div></div>

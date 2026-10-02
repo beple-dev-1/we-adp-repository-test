@@ -46,7 +46,7 @@
                 <div class="form-box">
                     <!-- 박스 컨텐츠 -->
                     <div class="form-item form-input btn-add"><!-- 내용 입력 시 btn-add 클래스 추가 / 내용 없을 시 btn-add 클래스 제거 -->
-                        <p class="icon search-20 pdl24"><input data-element-id="HIT-SRCH-30-10-10-S-e28" type="text" bef_value="" placeholder="매장명을 입력해 주세요." class="tx_ellipsis" id="search_txt" value="안내 문구" data-fill="demo"></p>
+                        <p class="icon search-20 pdl24"><input data-element-id="HIT-SRCH-30-10-10-S-e28" type="text" bef_value="" placeholder="매장명을 입력해 주세요." class="tx_ellipsis" id="search_txt" value="아메리카노" data-fill="demo"></p>
                         <p class="btn-box"><button data-element-id="HIT-SRCH-30-10-10-S-e15" type="button" class="delete-btn icon delete2-16" onclick="txt_delete();"><span class="blind-i">내용삭제</span></button></p>
                     </div>
                 </div>
@@ -64,11 +64,11 @@
 
             <!-- 박스형 리스트 묶음(매장목록 / 메뉴목록 등) -->
             <article class="item-wrap" id="data">
-                <div class="item-box"><!-- sample:begin --><div class='item' onclick='aflt_detail(this)'><a class='inner-wrap'><div class='label-wrap'><p class='label primary'><span>비플인증</span></p><p class='label'><span>최근결제인증</span></p></div><div class='item-con'><div class='item-info' aflt-mst-seq='1' lat='' lng=''><p class='name tx_ellipsis'>홍길동</p><p class='cute'><span>홍길동</span><strong> </strong><span> 결제 </span><strong class='fw-bold'>1건</strong></p><p class='address'>101동 1001호</p></div><div class='item-img'></div></div></a></div><!-- sample:end --></div>
+                <div class="item-box"><!-- sample:begin --><div class='item' onclick='aflt_detail(this)'><a class='inner-wrap'><div class='label-wrap'><p class='label primary'><span>비플인증</span></p><p class='label'><span>최근결제인증</span></p></div><div class='item-con'><div class='item-info' aflt-mst-seq='1' lat='' lng=''><p class='name tx_ellipsis'>비플카페 강남점</p><p class='cute'><span>홍길동</span><strong> </strong><span> 결제 </span><strong class='fw-bold'>2건</strong></p><p class='address'>101동 1001호</p></div><div class='item-img'><img style="max-width:100%;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTVlNWU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJNYWxndW4gR290aGljLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM5YTlhOWEiPuydtOuvuOyngDwvdGV4dD48L3N2Zz4=" ></div></div></a></div><div class='item' onclick='aflt_detail(this)'><a class='inner-wrap'><div class='label-wrap'><p class='label primary'><span>비플인증</span></p><p class='label'><span>최근결제인증</span></p></div><div class='item-con'><div class='item-info' aflt-mst-seq='1' lat='' lng=''><p class='name tx_ellipsis'>비플카페 강남점</p><p class='cute'><span>홍길동</span><strong> </strong><span> 결제 </span><strong class='fw-bold'>2건</strong></p><p class='address'>101동 1001호</p></div><div class='item-img'><img style="max-width:100%;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTVlNWU1Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJNYWxndW4gR290aGljLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM5YTlhOWEiPuydtOuvuOyngDwvdGV4dD48L3N2Zz4=" ></div></div></a></div><!-- sample:end --></div>
             </article>
         </section>
         <!-- 내역없음 -->
-        <section class="end-container content-none js-end-container" id="none_data" hidden><!-- 검색 결과 없을 시 style="display: none;"제거 -->
+        <section class="end-container content-none js-end-container" id="none_data" hidden style="display:none;"><!-- 검색 결과 없을 시 style="display: none;"제거 -->
             <article class="end__item-wrap">
                 <div class="end-box">
                     <div class="end-item mgt12">
@@ -137,7 +137,7 @@
                         <p class="box__hd-text">시/군/구</p>
                     </div>
                     <!-- 컨테이너 컨텐츠 -->
-                    <article class="box-content pd-lr20 mgt16 max_height-200 scroll-y" id="ctnt_sigungu"><!-- sample:begin --><div class='item' onclick='aflt_detail(this)'><a class='inner-wrap'><div class='label-wrap'><p class='label primary'><span>비플인증</span></p><p class='label'><span>최근결제인증</span></p></div><div class='item-con'><div class='item-info' aflt-mst-seq='1' lat='' lng=''><p class='name tx_ellipsis'>홍길동</p><p class='cute'><span>홍길동</span><strong> </strong><span> 결제 </span><strong class='fw-bold'>1건</strong></p><p class='address'>101동 1001호</p></div><div class='item-img'></div></div></a></div><!-- sample:end --></article>
+                    <article class="box-content pd-lr20 mgt16 max_height-200 scroll-y" id="ctnt_sigungu"><!-- sample:begin --><p class='popup__text'><button type='button' class='text-btn pdr34' id='si1' value='1' onclick='func_sigungu(this);'><span class='tx_ellipsis'>홍길동</span></button></p><p class='popup__text'><button type='button' class='text-btn pdr34' id='si1' value='1' onclick='func_sigungu(this);'><span class='tx_ellipsis'>홍길동</span></button></p><!-- sample:end --></article>
                     <!-- 메인버튼 - 팝업용 -->
                     <div class="main_btn-box pd-lr10 pdb10 mgt20">
                         <div class="btn-main">

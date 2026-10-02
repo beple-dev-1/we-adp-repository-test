@@ -8,9 +8,6 @@ id: HIT-SRCH-30-10-10-S / system: HIT / 기능: 힛플러스 > 가맹점 찾기 
 --- IA ---
 - 종류: 화면 / 상위화면: HIT-SRCH-30-10-S
 
---- 업무 ---
-- 요소: HIT-SRCH-30-10-10-S-e16, HIT-SRCH-30-10-10-S-e17, HIT-SRCH-30-10-10-S-e20, HIT-SRCH-30-10-10-S-e21 / 업무: 가맹점 찾기 검색 결과 조회 / 처리: 읽기 / 테이블: TB_POST_SI, TB_CTGR_CATG_CD, TB_CTGR_CATG, TB_AFFILIATION_MST, TB_BP_AFLT_MNG, TB_AFFILIATION_MNG … / 입력: 나의 위도, 나의 경도, 위도, 경도, 정렬, 시/군/구 코드, 카테고리 코드, 필터 코드, SRCH_KEYWORD, LIMIT_CNT … / 근거: BIZ_ZEROPAY_ETC/xml/service/WSVC/WSVC.ent_aflt_srch_keyword_list_r001.xml:6 · BIZ_ZEROPAY/web/WEB-INF/action/jex/biz_zeropay/ent/srch/ent_aflt_srch_keyword_list_r001_act.jsp:28 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_POST_SI_R005.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MST_R005.xml:10 · BIZ_ZEROPAY_ETC/xml/service/IDO/IDO.TB_AFFILIATION_MST_R006.xml:10
-
 --- 정의 ---
 - 구분: 기능 / 좌표: - / 라벨: 내용삭제 / 앵커: HIT-SRCH-30-10-10-S-e15 / 해설: 내용삭제
 - 구분: 기능 / 좌표: id=A / 라벨: 정확도순 / 앵커: HIT-SRCH-30-10-10-S-e16 / 해설: 정확도순
